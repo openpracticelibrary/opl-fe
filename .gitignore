@@ -1,11 +1,8 @@
 .DS_Store
 node_modules
 /dist
-
-/tests/e2e/reports/
-selenium-debug.log
-chromedriver.log
-geckodriver.log
+storybook-static
+_archive
 
 # local env files
 .env.local

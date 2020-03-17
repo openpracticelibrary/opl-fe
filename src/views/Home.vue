@@ -1,18 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <v-img
+      src='@/assets/img/kandinsky.jpg'
+      max-height='350px'
+    ></v-img>
+    <o-practices-pane></o-practices-pane>
   </div>
 </template>
 
 <script>
+import OPracticesPane from '@/components/O-PracticesPane.vue';
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    OPracticesPane,
   },
 };
 </script>
