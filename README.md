@@ -1,4 +1,8 @@
 # opl-fe
+The Open Practice Library is a community-driven repository of practices and tools. These are shared by people currently using them day-to-day for people looking to be inspired with new ideas and experience. This repository houses the front-end for the Open Practice Library website.
+
+## .env file
+Create a .env file and point the ```VUE_APP_CMSURL``` variable to a valid url.
 
 ## Project setup
 ```
