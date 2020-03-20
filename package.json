@@ -1,5 +1,5 @@
 {
-  "name": "opl2",
+  "name": "opl-fe",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -17,8 +17,10 @@
     "@mdi/font": "^5.0.45",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
+    "luxon": "^1.22.0",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.11",
+    "vue-markdown": "^2.2.4",
     "vue-router": "^3.1.5",
     "vuetify": "^2.2.11",
     "vuex": "^3.1.2"
@@ -49,7 +51,6 @@
     "node-sass": "^4.12.0",
     "sass": "^1.19.0",
     "sass-loader": "^8.0.2",
-    "vue-cli-plugin-markdown": "~0.1.2",
     "vue-cli-plugin-storybook": "~1.2.1",
     "vue-cli-plugin-styleguidist": "~4.13.1",
     "vue-cli-plugin-vuetify": "~2.0.5",

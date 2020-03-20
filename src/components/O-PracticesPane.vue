@@ -14,6 +14,9 @@
 <script>
 import OPracticesFilter from '@/components/O-PracticesFilter.vue';
 import OPracticesItem from '@/components/O-PracticesItem.vue';
+import axios from 'axios';
+
+const uri = process.env.VUE_APP_CMSURL;
 
 export default {
   name: 'O-PracticesPane',
@@ -21,44 +24,37 @@ export default {
     OPracticesFilter,
     OPracticesItem,
   },
+  async mounted() {
+    try {
+      const result = await axios({
+        method: 'POST',
+        url: `${uri}/graphql`,
+        data: {
+          query: `
+            {
+              articles{
+                id
+                title
+                comments {
+                  id
+                }
+                upvotes
+                image {
+                  url
+                }
+              }
+            }
+          `,
+        },
+      });
+      this.practiceItems = result.data.data.articles;
+      console.log(this.practiceItems);
+    } catch (error) {
+      console.error(error);
+    }
+  },
   data: () => ({
-    practiceItems: [
-      {
-        id: 0,
-        title: 'Start With Why',
-        image: 'startwithwhy.png',
-        comments: 20,
-        upvotes: 1143,
-      },
-      {
-        id: 1,
-        title: 'Lean UX Workshop',
-        image: 'leanuxworkshop.jpg',
-        comments: 20,
-        upvotes: 1143,
-      },
-      {
-        id: 3,
-        title: 'The Art Gallery',
-        image: 'theartgallery.jpg',
-        comments: 20,
-        upvotes: 1143,
-      },
-      {
-        id: 4,
-        title: 'Continuous Integration',
-        image: 'continuousintegration.jpg',
-        comments: 20,
-        upvotes: 1143,
-      },
-      {
-        id: 5,
-        title: 'AEIOU Observation Framework',
-        image: 'aeiouobservationframework.png',
-        comments: 20,
-        upvotes: 1143,
-      },
-    ],
+    practiceItems: [],
   }),
 };
 </script>

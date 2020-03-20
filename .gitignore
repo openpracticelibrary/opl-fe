@@ -4,7 +4,9 @@ node_modules
 storybook-static
 _archive
 
-# local env files
+# env files
+.env
+.env-dev
 .env.local
 .env.*.local
 

@@ -1,3 +1,4 @@
+/* eslint-disable vue/no-parsing-error */
 <template>
   <v-card
     :loading="loading"
@@ -7,11 +8,11 @@
     @click="openPost"
   >
     <v-img
-      :src="require(`@/assets/img/${carddata.image}`)"
+      :src='myImage'
       aspect-ratio="2.0"
     >
       <o-upvote :count="carddata.upvotes"></o-upvote>
-      <o-comment-count :count="carddata.comments"></o-comment-count>
+      <o-comment-count :count="carddata.comments.length"></o-comment-count>
     </v-img>
     <v-card-title>{{carddata.title}}</v-card-title>
   </v-card>
@@ -20,6 +21,8 @@
 <script>
 import OUpvote from '@/components/O-Upvote.vue';
 import OCommentCount from '@/components/O-CommentCount.vue';
+
+const uri = process.env.VUE_APP_CMSURL;
 
 export default {
   name: 'O-PracticesItem',
@@ -33,6 +36,11 @@ export default {
   data: () => ({
     loading: false,
   }),
+  computed: {
+    myImage() {
+      return `${uri}${this.carddata.image[0].url}`;
+    },
+  },
   methods: {
     openPost() {
       this.$router.push({ name: 'post', params: { id: this.carddata.id } });

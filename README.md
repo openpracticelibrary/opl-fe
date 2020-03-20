@@ -1,4 +1,4 @@
-# opl2
+# opl-fe
 
 ## Project setup
 ```
