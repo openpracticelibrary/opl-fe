@@ -7,6 +7,7 @@ test_cms_host: &test_cms_host ""
 imagestreams:
   enabled: true
   cicd: true
+  namespace: opl-ci-cd
 
 services:
   - ports:

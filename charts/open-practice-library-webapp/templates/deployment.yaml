@@ -6,7 +6,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ $appname}}
-  namespace: {{ .Values.deployment.namespace | default .Values.namespace | quote }}
+  namespace: {{ .Values.deployment.namespace | default .Values.dev_namespace | quote }}
   labels:
     app: {{ $appname }}
     chart: {{ template "opl-fe.chart" . }}
@@ -31,7 +31,7 @@ spec:
       - env:
 {{ toYaml $dc.env_vars | indent 8 }}
 {{- end }}
-        image: "{{ $dc.image_name | default $appname }}:{{ $imagetag }}"
+      - image: "{{ $dc.image_name | default $appname }}:{{ $imagetag }}"
         imagePullPolicy: Always
         name: "{{ $appname }}"
         ports:

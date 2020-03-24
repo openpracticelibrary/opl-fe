@@ -4,7 +4,7 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: {{ .Values.route.name | default .Values.app_name }}
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Values.dev_namespace }}
   labels:
     app: {{ .Values.app_name }}
     chart: {{ template "opl-fe.chart" . }}

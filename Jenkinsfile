@@ -27,7 +27,7 @@ openshift.withCluster() {
 pipeline {
    agent { label 'jenkins-slave-npm' }
    environment {
-     VUE_APP_CMSURL = env.CMS_DEV_URL
+     VUE_APP_CMSURL="${env.CMS_DEV_URL}"
    }
    stages {
     stage('Test') {

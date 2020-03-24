@@ -5,7 +5,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: {{ $appname }}
-  namespace: {{ .Values.namespace | quote }}
+  namespace: {{ .Values.dev_namespace | quote }}
   labels:
     app: {{ $appname }}
     chart: {{ template "opl-fe.chart" . }}
