@@ -48,6 +48,7 @@ configmap:
         FallbackResource /
 
 deployment:
+    image_name: "image-registry.openshift-image-registry.svc:5000"
     replicas: 1
     ports:
         - containerPort: 8080
