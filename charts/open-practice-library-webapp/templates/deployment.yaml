@@ -31,7 +31,7 @@ spec:
       - env:
 {{ toYaml $dc.env_vars | indent 8 }}
 {{- end }}
-      - image: "{{ $dc.image_name}}/{{ $dc.namespace | default $.Values.dev_namespace | quote }}/{{ $appname }}:{{ $imagetag }}"
+      - image: "{{ $dc.image_name | default $appname }}:{{ $imagetag }}"
         imagePullPolicy: Always
         name: "{{ $appname }}"
         ports:

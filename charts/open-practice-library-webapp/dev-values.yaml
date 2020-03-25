@@ -48,7 +48,7 @@ configmap:
         FallbackResource /
 
 deployment:
-    image_name: "image-registry.openshift-image-registry.svc:5000"
+    image_name: "image-registry.openshift-image-registry.svc:5000/opl-dev/opl-fe"
     replicas: 1
     ports:
         - containerPort: 8080
