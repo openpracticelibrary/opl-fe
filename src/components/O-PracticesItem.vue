@@ -1,13 +1,13 @@
 /* eslint-disable vue/no-parsing-error */
 <template>
   <v-card
-    :loading="loading"
     class="mx-auto my-12"
     width="33%"
     max-width="500"
     @click="openPost"
   >
     <v-img
+      v-if="carddata.image.length > 0"
       :src='myImage'
       aspect-ratio="2.0"
     >
@@ -33,12 +33,15 @@ export default {
   props: {
     carddata: Object,
   },
-  data: () => ({
-    loading: false,
-  }),
+  data() {
+    return {};
+  },
   computed: {
     myImage() {
-      return `${uri}${this.carddata.image[0].url}`;
+      if (this.carddata.image) {
+        return `${uri}${this.carddata.image[0].url}`;
+      }
+      return '';
     },
   },
   methods: {

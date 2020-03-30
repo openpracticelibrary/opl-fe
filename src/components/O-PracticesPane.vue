@@ -48,7 +48,6 @@ export default {
         },
       });
       this.practiceItems = result.data.data.articles;
-      console.log(this.practiceItems);
     } catch (error) {
       console.error(error);
     }
