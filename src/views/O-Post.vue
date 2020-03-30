@@ -134,7 +134,6 @@ export default {
         },
       });
       this.post = result.data.data.article;
-      console.log(result);
     } catch (error) {
       console.error(error);
     }
