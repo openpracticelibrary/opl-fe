@@ -2,7 +2,7 @@
 name: User Story
 about: Create a user story for OPL FE
 title: ''
-labels: ''
+labels: Delivery
 assignees: ''
 
 ---
