@@ -18,7 +18,6 @@ export default createMuiTheme({
     },
     typography: {
         fontFamily: [
-            '"Noto Serif"',
             'Roboto',
             '"Helvetica Neue"',
             'Arial',
