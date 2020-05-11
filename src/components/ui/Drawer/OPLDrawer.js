@@ -1,10 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
@@ -12,13 +11,9 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import OPLDrawerList from './OPLDrawerList';
-import ListSubheader from '@material-ui/core/ListSubheader';
+import {BottomListItems} from './ListItems';
+import {TopListItems} from './ListItems';
+
 
 const drawerWidth = 240;
 
@@ -100,7 +95,7 @@ export default function OPLDrawer() {
 
     return (
         <div className={classes.root}>
-            <CssBaseline />
+            <CssBaseline/>
             <AppBar
                 position="fixed"
                 className={clsx(classes.appBar, {
@@ -118,7 +113,7 @@ export default function OPLDrawer() {
                             [classes.hide]: open,
                         })}
                     >
-                        <MenuIcon />
+                        <MenuIcon/>
                     </IconButton>
                 </Toolbar>
             </AppBar>
@@ -137,40 +132,17 @@ export default function OPLDrawer() {
             >
                 <div className={classes.toolbar}>
                     <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                        {theme.direction === 'rtl' ? <ChevronRightIcon/> : <ChevronLeftIcon/>}
                     </IconButton>
                 </div>
 
-
-                <OPLDrawerList
-                    item1={"Please guide me"}
-                    item2={"See everything"}
-                    item3={"By mobius loop"}
-                    subitem1={"Discovery"}
-                    subitem2={"Options"}
-                    subitem3={"Delivery"}
-                    subitem4={"Foundation"}
-                    />
-
-                <Divider />
-                <List
-                    subheader={
-                        <ListSubheader component="div" id="nested-list-subheader">
-                            COMMUNITY
-                        </ListSubheader>
-                    }
-                >
-                    {['Find a mentor', 'Become a contributor', 'Latest happenings'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
+                <TopListItems />
+                <Divider/>
+                <BottomListItems />
 
             </Drawer>
             <main className={classes.content}>
-                <div className={classes.toolbar} />
+                <div className={classes.toolbar}/>
                 <Typography paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
