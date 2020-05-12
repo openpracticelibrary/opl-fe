@@ -2,7 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
@@ -12,6 +11,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import {BottomListItems, TopListItems} from './ListItems';
 import PracticePageContent from '../../../pages/PracticePageContent';
+import Box from '@material-ui/core/Box';
 
 const drawerWidth = 240;
 
@@ -19,14 +19,14 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
     },
-    appBar: {
+    box: {
         zIndex: theme.zIndex.drawer + 1,
         transition: theme.transitions.create(['width', 'margin'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
     },
-    appBarShift: {
+    boxShift: {
         marginLeft: drawerWidth,
         width: `calc(100% - ${drawerWidth}px)`,
         transition: theme.transitions.create(['width', 'margin'], {
@@ -36,6 +36,11 @@ const useStyles = makeStyles((theme) => ({
     },
     menuButton: {
         marginRight: 36,
+        backgroundColor: 'white',
+
+        '&:hover': {
+            backgroundColor: '#eeeeee',
+        }
     },
     hide: {
         display: 'none',
@@ -89,10 +94,10 @@ export default function OPLDrawer() {
     return (
         <div className={classes.root}>
             <CssBaseline/>
-            <AppBar
+            <Box
                 position="fixed"
-                className={clsx(classes.appBar, {
-                    [classes.appBarShift]: open,
+                className={clsx(classes.box, {
+                    [classes.boxShift]: open,
                 })}
                 color="inherit"
             >
@@ -109,7 +114,7 @@ export default function OPLDrawer() {
                         <MenuIcon/>
                     </IconButton>
                 </Toolbar>
-            </AppBar>
+            </Box>
             <Drawer
                 variant="permanent"
                 className={clsx(classes.drawer, {

@@ -1,5 +1,5 @@
 import React from 'react';
-import OPLDrawer from './ui/Drawer/OPLDrawer';
+import OPLDrawer from './ui/Drawer/index';
 import {ThemeProvider} from '@material-ui/core/styles';
 import theme from './ui/theme';
 
