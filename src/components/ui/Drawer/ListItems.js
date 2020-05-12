@@ -4,7 +4,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
 import LayersIcon from '@material-ui/icons/Layers';
 import ExpandLess from '@material-ui/icons/ExpandLess';
@@ -12,6 +11,9 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 import List from '@material-ui/core/List';
 import {makeStyles} from '@material-ui/core/styles';
+import TouchAppIcon from '@material-ui/icons/TouchApp';
+import MobiusLoopIcon from '@material-ui/icons/AllInclusive';
+import ContributeIcon from '@material-ui/icons/AddToPhotos';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -37,19 +39,19 @@ export function TopListItems() {
             <ListSubheader inset>PRACTICES</ListSubheader>
             <ListItem button>
                 <ListItemIcon>
-                    <DashboardIcon/>
+                    <TouchAppIcon/>
                 </ListItemIcon>
                 <ListItemText primary="Please guide me"/>
             </ListItem>
             <ListItem button>
                 <ListItemIcon>
-                    <ShoppingCartIcon/>
+                    <LayersIcon/>
                 </ListItemIcon>
                 <ListItemText primary="See everything"/>
             </ListItem>
             <ListItem button onClick={handleClick}>
                 <ListItemIcon>
-                    <PeopleIcon/>
+                    <MobiusLoopIcon/>
                 </ListItemIcon>
                 <ListItemText primary="By mobius loop"/>
                 {open ? <ExpandLess/> : <ExpandMore/>}
@@ -89,7 +91,7 @@ export function BottomListItems() {
             </ListItem>
             <ListItem button>
                 <ListItemIcon>
-                    <LayersIcon/>
+                    <ContributeIcon/>
                 </ListItemIcon>
                 <ListItemText primary="Become a contributor"/>
             </ListItem>

@@ -115,6 +115,7 @@ export default function OPLDrawer() {
                     </IconButton>
                 </Toolbar>
             </Box>
+
             <Drawer
                 variant="permanent"
                 className={clsx(classes.drawer, {
