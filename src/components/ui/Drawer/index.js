@@ -131,7 +131,7 @@ export default function OPLDrawer() {
             >
                 <div className={classes.toolbar}>
                     <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon/> : <ChevronLeftIcon/>}
+                        <MenuIcon />
                     </IconButton>
                 </div>
 
