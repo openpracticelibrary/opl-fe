@@ -9,6 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {BottomListItems, TopListItems} from './ListItems';
 import PracticePageContent from '../../../pages/PracticePageContent';
 import Box from '@material-ui/core/Box';
+import Footer from './Footer'
 
 const drawerWidth = 240;
 
@@ -133,7 +134,7 @@ export default function OPLDrawer() {
 
                 <TopListItems/>
                 <BottomListItems/>
-
+                <Footer />
             </Drawer>
             <PracticePageContent/>
         </div>
