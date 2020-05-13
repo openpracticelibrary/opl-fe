@@ -8,11 +8,11 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Avatar from "@material-ui/core/Avatar";
 import {makeStyles} from "@material-ui/core/styles/index";
 import Box from '@material-ui/core/Box';
+import TitleAndSubtitle from './TitleAndSubtitle'
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
-        maxWidth: 500,
     },
     toolbar: {
         display: 'flex',
@@ -36,20 +36,7 @@ export default function PracticeTitle() {
             <CssBaseline/>
             <Container maxWidth="lg">
                 <main className={classes.content}>
-                    <Box display="flex" flexDirection="column" p={1} m={1} bgcolor="pink">
-                        <Box p={1}>
-                            <Typography weight={"bold"} variant={"h4"} gutterBottom>
-                                Practice Title Lorem Ipsum
-                            </Typography>
-                        </Box>
-                        <Box p={1}>
-                            <Typography indent={"small"}>
-                                Subtext lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua.
-                            </Typography>
-                        </Box>
-                    </Box>
+                    <TitleAndSubtitle />
                     <Box display="flex" p={1} m={1} bgcolor="pink" alignItems="center">
                         <Box p={1} bgcolor='grey.200' flexGrow={1}>
                             <Typography variant={"overline"}>
