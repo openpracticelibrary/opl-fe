@@ -29,7 +29,6 @@ export default function TitleAndSubtitle() {
                         Practice Title Lorem Ipsum
                     </Typography>
                 </Box>
-                
                 <Box className={classes.subtitle}>
                     <Typography indent={"small"}>
                         Subtext lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
