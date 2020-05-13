@@ -1,7 +1,7 @@
 import React from 'react';
-import OPLDrawer from './ui/Drawer/index';
+import OPLDrawer from './shared/Drawer/index';
 import {ThemeProvider} from '@material-ui/core/styles';
-import theme from './ui/theme';
+import theme from './shared/theme';
 
 function App() {
     return (
