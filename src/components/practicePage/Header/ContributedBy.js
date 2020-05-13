@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
     row: {
         display: 'flex',
         flexDirection: 'row',
-        padding: theme.spacing(1),
         alignItems: 'centre',
     },
     date: {

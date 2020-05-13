@@ -136,7 +136,6 @@ export default function OPLDrawer() {
                 </div>
 
                 <TopListItems/>
-                <Divider/>
                 <BottomListItems/>
             </Drawer>
             <PracticePageContent/>
