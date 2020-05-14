@@ -10,12 +10,15 @@ const useStyles = makeStyles((theme) => ({
 
     content: {
         flexGrow: 1,
-        padding: theme.spacing(3),
+        padding: theme.spacing(1),
     },
     row: {
         display:'flex',
         padding: theme.spacing(1),
         margin: theme.spacing(1)
+    },
+    container:{
+        marginLeft: theme.spacing(2),
     }
 }));
 
@@ -25,7 +28,7 @@ export default function Header() {
     return (
         <React.Fragment>
             <CssBaseline/>
-            <Container maxWidth="lg">
+            <Container className={classes.container}>
                 <main className={classes.content}>
                     <TitleAndSubtitle/>
                     <Box className={classes.row}>

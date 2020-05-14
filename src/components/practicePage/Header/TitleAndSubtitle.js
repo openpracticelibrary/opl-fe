@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     },
     subtitle: {
         padding: theme.spacing(1),
+        color: theme.palette.text.secondary
     }
 }));
 
@@ -25,8 +26,8 @@ export default function TitleAndSubtitle() {
         <React.Fragment>
             <Box className={classes.root}>
                 <Box className={classes.title}>
-                    <Typography weight={"bold"} variant={"h4"} gutterBottom>
-                        Practice Title Lorem Ipsum
+                    <Typography variant={"h4"} gutterBottom>
+                        <strong> Practice Title Lorem Ipsum </strong>
                     </Typography>
                 </Box>
                 <Box className={classes.subtitle}>
