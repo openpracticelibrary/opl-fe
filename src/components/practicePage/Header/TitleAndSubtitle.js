@@ -32,9 +32,7 @@ export default function TitleAndSubtitle() {
                 </Box>
                 <Box className={classes.subtitle}>
                     <Typography indent={"small"}>
-                        Subtext lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut
-                        labore et dolore magna aliqua.
+                        Subtext lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </Typography>
                 </Box>
             </Box>

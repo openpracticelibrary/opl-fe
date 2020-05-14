@@ -8,6 +8,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 import List from '@material-ui/core/List';
 import {makeStyles} from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     },
     nested: {
-        paddingLeft: theme.spacing(8),
+        paddingLeft: theme.spacing(3),
     },
 }));
 
@@ -51,6 +52,7 @@ export function TopListItems() {
                 {open ? <ExpandLess/> : <ExpandMore/>}
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
+              
                 <List component="div" disablePadding className={classes.nested}>
                     <ListItem button>
                         <ListItemText primary="Discovery"/>
@@ -66,6 +68,7 @@ export function TopListItems() {
                     </ListItem>
 
                 </List>
+               
             </Collapse>
 
         </List>
