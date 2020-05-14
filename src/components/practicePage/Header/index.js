@@ -5,6 +5,7 @@ import {makeStyles} from "@material-ui/core/styles/index";
 import Box from '@material-ui/core/Box';
 import TitleAndSubtitle from './TitleAndSubtitle';
 import ContributedBy from './ContributedBy';
+import Collection from './Collection';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -34,6 +35,10 @@ export default function Header() {
                     <Box className={classes.row}>
                         <ContributedBy />
                     </Box>
+                    <Box className={classes.row}>
+                        <Collection />
+                    </Box>
+
                 </main>
             </Container>
         </React.Fragment>
