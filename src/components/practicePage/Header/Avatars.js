@@ -4,7 +4,14 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import Avatar from "@material-ui/core/Avatar";
 import Box from '@material-ui/core/Box';
+import {makeStyles} from "@material-ui/core/styles/index";
 
+const useStyles = makeStyles((theme) => ({
+    small: {
+        width: theme.spacing(3),
+        height: theme.spacing(3),
+    },
+}));
 
 export default function Avatars() {
 

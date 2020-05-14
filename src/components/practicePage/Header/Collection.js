@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     wrapIcon: {
         verticalAlign: 'middle',
         display: 'inline-flex',
-        color: theme.palette.text.light_grey,
+        color: theme.palette.text.secondary,
         marginLeft: theme.spacing(2)
     }
 
