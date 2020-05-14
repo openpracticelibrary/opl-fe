@@ -22,9 +22,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     },
 
-    fixedHeight: {
-        height: 50,
-    },
+   
 
  }));
 
@@ -35,7 +33,7 @@ export default function Footer() {
     return(
         <footer className={classes.footer}>
         <Box>  
-            <Box bgcolor="grey.300" pb={2}>
+            <Box pb={2}>
                 <Box display="flex">
                     <Box p={1}>
                         <LaunchIcon fontSize="small" />
@@ -88,7 +86,7 @@ export default function Footer() {
                 </Box>
             </Box>
 
-            <Box display="flex" bgcolor="skyblue">
+            <Box display="flex">
                 <Box>
                     <Box mx="auto" my="auto" p={1} >
                         I1
