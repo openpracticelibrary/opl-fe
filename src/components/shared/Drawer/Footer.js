@@ -8,7 +8,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
 import LaunchIcon from '@material-ui/icons/Launch';
 import RockIcon from '../../icons/RockIcon.js'
-import { flexbox } from '@material-ui/system';
+import BetaIcon from '../../icons/BetaIcon.js'
+import NewTabIcon from '../../icons/NewTabIcon.js'
+
 
 const useStyles = makeStyles((theme) => ({
     footer: {
@@ -42,28 +44,28 @@ export default function Footer() {
                 </Box>
                                             
                 <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
-                    <LaunchIcon fontSize="small" /> &nbsp;&nbsp;
+                    <BetaIcon /> &nbsp;&nbsp;
                     <Link href="#" onClick={preventDefault} color="inherit">
                         {'JOIN BETA'}
                     </Link>
                 </Box>
 
                 <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
-                    <LaunchIcon fontSize="small" /> &nbsp;&nbsp;
+                    <NewTabIcon /> &nbsp;&nbsp;
                     <Link href="#" onClick={preventDefault} color="inherit">
                         {'MEETUP'}                        
                     </Link>
                 </Box>
 
                 <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
-                    <LaunchIcon fontSize="small" /> &nbsp;&nbsp;
+                    <NewTabIcon /> &nbsp;&nbsp;
                     <Link href="#" onClick={preventDefault} color="inherit">
                         {'GITHUB'}
                     </Link>
                 </Box>
 
                 <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
-                    <LaunchIcon fontSize="small" /> &nbsp;&nbsp;
+                    <NewTabIcon /> &nbsp;&nbsp;
                     <Link href="#" onClick={preventDefault} color="inherit">
                         {'PODCAST'}
                     </Link> 
