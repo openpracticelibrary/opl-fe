@@ -46,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
-        whiteSpace: 'nowrap',
+        whiteSpace: 'wrap',
+        //whiteSpace: 'nowrap',
     },
     drawerOpen: {
         width: drawerWidth,
@@ -132,9 +133,17 @@ export default function OPLDrawer() {
                     </IconButton>
                 </div>
 
-                <TopListItems/>
-                <BottomListItems/>
+                <Box m={2}>
+                    <Box>
+                        <TopListItems/>
+                    </Box>
+                    <Box>
+                        <BottomListItems/>
+                    </Box>
+                </Box>
+                
                 <Footer />
+
             </Drawer>
             <PracticePageContent/>
         </div>

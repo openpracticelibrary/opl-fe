@@ -6,7 +6,10 @@ import {makeStyles} from '@material-ui/core/styles';
 import { List } from '@material-ui/core';
 import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
+import LaunchIcon from '@material-ui/icons/Launch';
+import RockIcon from '../../icons/RockIcon.js'
+import BetaIcon from '../../icons/BetaIcon.js'
+import NewTabIcon from '../../icons/NewTabIcon.js'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,58 +25,80 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     },
 
-    fixedHeight: {
-        height: 50,
-    },
-
  }));
 
 export default function Footer() {
     const classes = useStyles();
-    
+    const preventDefault = (event) => event.preventDefault();
+
     return(
-        
-            <footer className={classes.footer}>
-                 <List className={classes.listItem}>
-                    <Link>
-                        <ListItemText primary="ABOUT US"/> 
+        <footer className={classes.footer}>
+        <Box>  
+            <Box pb={1}>
+                
+                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
+                    <RockIcon /> &nbsp;
+                    <Link href="#" onClick={preventDefault} color="inherit">
+                        {'ABOUT US'}
                     </Link>
-                    <Link>
-                        <ListItemText primary="JOIN BETA"/>
+                </Box>
+                                            
+                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
+                    <BetaIcon /> &nbsp;&nbsp;
+                    <Link href="#" onClick={preventDefault} color="inherit">
+                        {'JOIN BETA'}
                     </Link>
-                    <Link>
-                        <ListItemText primary="MEETUP"/>
-                    </Link>
-                    <Link>
-                        <ListItemText primary="GITHUB"/>
-                    </Link>
-                    <Link>
-                        <ListItemText primary="PODCAST"/>
-                    </Link>   
-                </List>
+                </Box>
 
+                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
+                    <NewTabIcon /> &nbsp;&nbsp;
+                    <Link href="#" onClick={preventDefault} color="inherit">
+                        {'MEETUP'}                        
+                    </Link>
+                </Box>
+
+                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
+                    <NewTabIcon /> &nbsp;&nbsp;
+                    <Link href="#" onClick={preventDefault} color="inherit">
+                        {'GITHUB'}
+                    </Link>
+                </Box>
+
+                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
+                    <NewTabIcon /> &nbsp;&nbsp;
+                    <Link href="#" onClick={preventDefault} color="inherit">
+                        {'PODCAST'}
+                    </Link> 
+                </Box>
 {/*
-                <div style={{ width: '100%' }}>
-                    <Box display="flex" p={1} bgcolor="background.paper">
-                        {"I'm a flexbox container!"}
+                
+                <Box display="flex">
+                    <Box p={1}>
+                        <LaunchIcon fontSize="small" />
                     </Box>
-                </div>
-
+                    <Box p={1}>
+                        <Link href="#" onClick={preventDefault} color="inherit">
+                            {'PODCAST'}
+                        </Link>   
+                    </Box>
+                </Box>
 */}
+            </Box>
 
-{/*
-                <div>
-                    <Paper elevation={0}>
-                     <Typography>I'm footer.I'm footer.</Typography>   
-                    </Paper>
-                   
-                </div>
-*/}    
-               <Container>
-               
-                  I'm footer.I'm footer.I'm footer.I'm footer.I'm footer.I'm footer.I'm footer.I'm footer.I'm footer.I'm footer.I'm footer.I'm footer.
-                    
-                </Container>   
-            </footer>
+            <Box display="flex" bgcolor="gray">
+                <Box>
+                    <Box mx="auto" my="auto" p={1} >
+                        I1
+                    </Box>
+                    <Box mx="auto" my="auto" p={1} >
+                        I2
+                    </Box>
+                </Box>
+                <Box p={1} fontSize={7} textAlign="justify">              
+                    {"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project."}
+                </Box>        
+            </Box> 
+        </Box>
+        </footer>
     );
 }
