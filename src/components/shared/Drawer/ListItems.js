@@ -30,18 +30,24 @@ export function TopListItems() {
 
     return (
         <List className={classes.root}>
-            <ListSubheader inset>PRACTICES</ListSubheader>
+            <ListSubheader>PRACTICES</ListSubheader>
             <ListItem button>
-                <ListItemIcon />
-                <ListItemText primary="Please guide me"/>
+
+                <b>
+                    {"Please guide me"}
+                </b>
             </ListItem>
             <ListItem button>
-                <ListItemIcon />
-                <ListItemText primary="See everything"/>
+
+                <b>
+                    {"See everything"}
+                </b>                
             </ListItem>
             <ListItem button onClick={handleClick}>
-                <ListItemIcon />
-                <ListItemText primary="By mobius loop"/>
+                
+                <b>
+                    {"By mobius loop"}
+                </b>
                 {open ? <ExpandLess/> : <ExpandMore/>}
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
@@ -70,18 +76,24 @@ export function BottomListItems() {
     const classes = useStyles();
     return (
         <List className={classes.root}>
-            <ListSubheader inset>COMMUNITY</ListSubheader>
+            <ListSubheader>COMMUNITY</ListSubheader>
             <ListItem button>
-                <ListItemIcon />
-                <ListItemText primary="Find a mentor"/>
+              
+                <b>
+                    {"Find a mentor"}
+                </b>
             </ListItem>
             <ListItem button>
-                <ListItemIcon />
-                <ListItemText primary="Become a contributor"/>
+                
+                <b>
+                    {"Become a contributor"}
+                </b>
             </ListItem>
             <ListItem button>
-                <ListItemIcon />
-                <ListItemText primary="Latest happenings"/>
+                
+                <b>
+                    {"Latest happenings"}
+                </b>
             </ListItem>
         </List>
     )
