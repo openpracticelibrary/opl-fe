@@ -1,5 +1,5 @@
 import React from 'react';
-import PracticeHeader from '../components/practicePage/Header/index';
+import PageIntro from '../components/practicePage/PageIntro/index';
 import {makeStyles} from "@material-ui/core/styles/index";
 import Box from '@material-ui/core/Box';
 import PageMenu from '../components/practicePage/PageMenu';
@@ -36,7 +36,7 @@ export default function PracticePageContent() {
         <React.Fragment>
             <Box className={classes.root}>
                 <Box className={classes.titleBox}>
-                    <PracticeHeader/>
+                    <PageIntro/>
                 </Box>
                 <Box>
                     <Divider/>

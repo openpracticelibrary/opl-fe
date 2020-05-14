@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function Header() {
+export default function PageIntro() {
     const classes = useStyles();
 
     return (
