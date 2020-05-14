@@ -7,9 +7,9 @@ import { List } from '@material-ui/core';
 import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
 import LaunchIcon from '@material-ui/icons/Launch';
-import RockIcon from '../../icons/RockIcon.js'
-import BetaIcon from '../../icons/BetaIcon.js'
-import NewTabIcon from '../../icons/NewTabIcon.js'
+import RockIcon from '../../../assets/icons/RockIcon.js'
+import BetaIcon from '../../../assets/icons/BetaIcon.js'
+import NewTabIcon from '../../../assets/icons/NewTabIcon.js'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -83,8 +83,8 @@ export default function Footer() {
                     </Box>
                 </Box>
 */}
+ 
             </Box>
-
             <Box display="flex" bgcolor="gray">
                 <Box>
                     <Box mx="auto" my="auto" p={1} >
