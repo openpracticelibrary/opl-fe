@@ -6,8 +6,9 @@ import {makeStyles} from '@material-ui/core/styles';
 import { List } from '@material-ui/core';
 import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
-
 import LaunchIcon from '@material-ui/icons/Launch';
+import RockIcon from '../../icons/RockIcon.js'
+import { flexbox } from '@material-ui/system';
 
 const useStyles = makeStyles((theme) => ({
     footer: {
@@ -22,8 +23,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     },
 
-   
-
  }));
 
 export default function Footer() {
@@ -33,47 +32,44 @@ export default function Footer() {
     return(
         <footer className={classes.footer}>
         <Box>  
-            <Box pb={2}>
-                <Box display="flex">
-                    <Box p={1}>
-                        <LaunchIcon fontSize="small" />
-                    </Box>
-                    <Box p={1}>
-                        <Link href="#" onClick={preventDefault} color="inherit">
-                            {'ABOUT US'}
-                        </Link>
-                    </Box>
+            <Box pb={1}>
+                
+                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
+                    <RockIcon /> &nbsp;
+                    <Link href="#" onClick={preventDefault} color="inherit">
+                        {'ABOUT US'}
+                    </Link>
                 </Box>
-                <Box display="flex">
-                    <Box p={1}>
-                        <LaunchIcon fontSize="small" />
-                    </Box>
-                    <Box p={1}>
-                        <Link href="#" onClick={preventDefault} color="inherit">
-                            {'JOIN BETA'}
-                        </Link>
-                    </Box>
+                                            
+                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
+                    <LaunchIcon fontSize="small" /> &nbsp;&nbsp;
+                    <Link href="#" onClick={preventDefault} color="inherit">
+                        {'JOIN BETA'}
+                    </Link>
                 </Box>
-                <Box display="flex">
-                    <Box p={1}>
-                        <LaunchIcon fontSize="small" />
-                    </Box>
-                    <Box p={1}>
-                        <Link href="#" onClick={preventDefault} color="inherit">
-                            {'MEETUP'}
-                        </Link>
-                    </Box>
+
+                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
+                    <LaunchIcon fontSize="small" /> &nbsp;&nbsp;
+                    <Link href="#" onClick={preventDefault} color="inherit">
+                        {'MEETUP'}                        
+                    </Link>
                 </Box>
-                <Box display="flex">
-                    <Box p={1}>
-                        <LaunchIcon fontSize="small" />
-                    </Box>
-                    <Box p={1}>
-                        <Link href="#" onClick={preventDefault} color="inherit">                    
-                            {'GITHUB'}
-                        </Link>
-                    </Box>
+
+                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
+                    <LaunchIcon fontSize="small" /> &nbsp;&nbsp;
+                    <Link href="#" onClick={preventDefault} color="inherit">
+                        {'GITHUB'}
+                    </Link>
                 </Box>
+
+                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
+                    <LaunchIcon fontSize="small" /> &nbsp;&nbsp;
+                    <Link href="#" onClick={preventDefault} color="inherit">
+                        {'PODCAST'}
+                    </Link> 
+                </Box>
+{/*
+                
                 <Box display="flex">
                     <Box p={1}>
                         <LaunchIcon fontSize="small" />
@@ -84,9 +80,10 @@ export default function Footer() {
                         </Link>   
                     </Box>
                 </Box>
+*/}
             </Box>
 
-            <Box display="flex">
+            <Box display="flex" bgcolor="gray">
                 <Box>
                     <Box mx="auto" my="auto" p={1} >
                         I1
