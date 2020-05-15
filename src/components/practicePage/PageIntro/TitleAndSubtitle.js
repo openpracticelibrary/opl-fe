@@ -15,20 +15,20 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function TitleAndSubtitle() {
+export default function TitleAndSubtitle(props) {
     const classes = useStyles();
 
     return (
         <React.Fragment>
             <Box className={classes.root}>
-                <Box className={classes.space}>
-                    <Typography variant={"h1"}>
-                        Practice Title Lorem Ipsum
+                <Box className={classes.title}>
+                    <Typography variant={"h4"} gutterBottom>
+                        <strong> {props.title} </strong>
                     </Typography>
                 </Box>
-                <Box className={classes.space}>
-                    <Typography variant={"subtitle1"}>
-                        Subtext lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <Box className={classes.subtitle}>
+                    <Typography indent={"small"}>
+                      {props.subtitle}
                     </Typography>
                 </Box>
             </Box>

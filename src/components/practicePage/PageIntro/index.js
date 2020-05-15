@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function PageIntro() {
+export default function PageIntro(props) {
     const classes = useStyles();
 
     return (
@@ -33,7 +33,7 @@ export default function PageIntro() {
             <Container className={classes.container}>
                 <main className={classes.content}>
                     <BreadcrumbNav />
-                    <TitleAndSubtitle/>
+                    <TitleAndSubtitle title={props.title} subtitle={props.subtitle} />
                     <Box className={classes.row}>
                         <ContributedBy />
                     </Box>
