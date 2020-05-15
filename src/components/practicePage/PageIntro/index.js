@@ -6,6 +6,7 @@ import Box from '@material-ui/core/Box';
 import TitleAndSubtitle from './TitleAndSubtitle';
 import ContributedBy from './ContributedBy';
 import Collection from './Collection';
+import BreadcrumbNav from './BreadcrumbNav';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -31,6 +32,7 @@ export default function PageIntro() {
             <CssBaseline/>
             <Container className={classes.container}>
                 <main className={classes.content}>
+                    <BreadcrumbNav />
                     <TitleAndSubtitle/>
                     <Box className={classes.row}>
                         <ContributedBy />

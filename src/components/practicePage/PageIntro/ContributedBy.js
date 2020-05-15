@@ -12,14 +12,6 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         padding: theme.spacing(1),
     },
-    row: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'centre',
-    },
-    date: {
-        padding: theme.spacing(1.75, 6),
-    }
 }));
 
 export default function ContributedBy() {
