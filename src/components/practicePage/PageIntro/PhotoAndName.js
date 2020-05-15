@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function PhotoAndName() {
+export default function PhotoAndName(props) {
     const classes = useStyles();
 
     return (
@@ -31,7 +31,7 @@ export default function PhotoAndName() {
                         </Avatar>
                     </ListItemAvatar>
                     <Typography variant="body1">
-                        First Lastname
+                        { props.authorName }
                     </Typography>
                 </ListItem>
             </Box>

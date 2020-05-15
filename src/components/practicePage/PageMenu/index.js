@@ -26,8 +26,9 @@ export default function PageMenu(props) {
         <React.Fragment>
             <Divider />
             <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-                {sections.map((section) => (
-                    <Link
+                {sections.map((section, i) => (
+                  <Link
+                        key={i}
                         href={section.url}
                         className={classes.toolbarLink}
                         variant={'overline'}
