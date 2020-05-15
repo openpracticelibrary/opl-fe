@@ -9,6 +9,10 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         padding: theme.spacing(1),
     },
+    space: {
+        marginLeft: theme.spacing(7),
+        alignContent: 'stretch'
+    }
 }));
 
 export default function ContributedBy() {
@@ -40,7 +44,7 @@ export default function ContributedBy() {
                         <Grid item>
                             <PhotoAndName/>
                         </Grid>
-                        <Grid item>
+                        <Grid item className={classes.space}>
                             <Typography variant="overline">
                                 Published May 4, 2020 | Last edited June 8, 2020
                             </Typography>
