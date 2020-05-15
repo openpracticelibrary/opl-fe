@@ -1,26 +1,17 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from "@material-ui/core/styles/index";
-import Box from '@material-ui/core/Box';
-import Avatars from './Avatars';
+import PhotoAndName from './PhotoAndName';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        display: 'flex',
-        flexDirection: 'column',
         flexGrow: 1,
         padding: theme.spacing(1),
     },
-    row: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'centre',
-    },
-    smallText: {
-        color: theme.palette.text.light_grey
-    },
-    date: {
-        padding: theme.spacing(1.75, 6),
+    space: {
+        marginLeft: theme.spacing(7),
+        alignContent: 'stretch'
     }
 }));
 
@@ -29,21 +20,38 @@ export default function ContributedBy() {
 
     return (
         <React.Fragment>
-            <Box className={classes.root}>
-                <Typography className={classes.smallText} variant="overline">
-                    Contributed by
-                </Typography>
+            <Grid container direction="column"
+                  justify="center"
+                  alignItems="flex-start"
+                  className={classes.root}
+            >
+                <Grid item>
+                    <Typography variant="overline">
+                        Contributed by
+                    </Typography>
+                </Grid>
 
-                <Box className={classes.row}>
-                    <Avatars/>
-                    <Avatars/>
-                    <Box className={classes.date}>
-                        <Typography className={classes.smallText} variant="overline">
-                            Published May 4, 2020 | Last edited June 8, 2020
-                        </Typography>
-                    </Box>
-                </Box>
-            </Box>
+                <Grid item>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="center"
+                    >
+                        <Grid item>
+                            <PhotoAndName/>
+                        </Grid>
+                        <Grid item>
+                            <PhotoAndName/>
+                        </Grid>
+                        <Grid item className={classes.space}>
+                            <Typography variant="overline">
+                                Published May 4, 2020 | Last edited June 8, 2020
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
         </React.Fragment>
     );
 }

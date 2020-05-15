@@ -3,14 +3,12 @@ import PageIntro from '../components/practicePage/PageIntro/index';
 import {makeStyles} from "@material-ui/core/styles/index";
 import Box from '@material-ui/core/Box';
 import PageMenu from '../components/practicePage/PageMenu';
-import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         flexDirection: 'column',
         flexGrow: 1,
-        padding: theme.spacing(1),
     },
     titleBox: {
         display: "flex",
@@ -39,9 +37,7 @@ export default function PracticePageContent() {
                     <PageIntro/>
                 </Box>
                 <Box>
-                    <Divider/>
                     <PageMenu sections={sections}/>
-                    <Divider/>
                 </Box>
             </Box>
         </React.Fragment>
