@@ -27,18 +27,23 @@ const sections = [
     {title: 'AMA', url: '#'},
 ];
 
-export default function PracticePageContent() {
+//TODO: Retrieve specific practice page content and pass through props to children
+export default function PracticePageContent(props) {
     const classes = useStyles();
 
     return (
         <React.Fragment>
             <Box className={classes.root}>
                 <Box className={classes.titleBox}>
-                    <PageIntro/>
+                  <PageIntro
+                    title={ `Practice Title Lorem Ipsum -- ${props.name}` }
+                    subtitle="Subtext lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  />
                 </Box>
                 <Box>
                     <PageMenu sections={sections}/>
                 </Box>
+                { props.name }
             </Box>
         </React.Fragment>
     )
