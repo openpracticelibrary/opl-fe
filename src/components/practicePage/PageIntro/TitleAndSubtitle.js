@@ -10,12 +10,8 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(1),
         margin: theme.spacing(1)
     },
-    title: {
+    space: {
         padding: theme.spacing(1),
-    },
-    subtitle: {
-        padding: theme.spacing(1),
-        color: theme.palette.text.secondary
     }
 }));
 

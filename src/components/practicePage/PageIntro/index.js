@@ -6,12 +6,13 @@ import Box from '@material-ui/core/Box';
 import TitleAndSubtitle from './TitleAndSubtitle';
 import ContributedBy from './ContributedBy';
 import Collection from './Collection';
+import BreadcrumbNav from './BreadcrumbNav';
 
 const useStyles = makeStyles((theme) => ({
 
     content: {
         flexGrow: 1,
-        padding: theme.spacing(1),
+        padding: theme.spacing(3),
     },
     row: {
         display:'flex',
@@ -31,6 +32,7 @@ export default function PageIntro(props) {
             <CssBaseline/>
             <Container className={classes.container}>
                 <main className={classes.content}>
+                    <BreadcrumbNav />
                     <TitleAndSubtitle title={props.title} subtitle={props.subtitle} />
                     <Box className={classes.row}>
                       <ContributedBy

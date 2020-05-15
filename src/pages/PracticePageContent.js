@@ -3,7 +3,6 @@ import PageIntro from "../components/practicePage/PageIntro";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import PageMenu from "../components/practicePage/PageMenu";
-import Divider from "@material-ui/core/Divider";
 import PageBody from "../components/practicePage/PageBody";
 
 import { useQuery, useMutation } from "@apollo/react-hooks";
@@ -58,7 +57,7 @@ export default function PracticePageContent(props) {
   if (error) return `Error! ${error}`;
 
   return (
-    <React.Fragment>
+    <>
       <Box className={classes.root}>
         <Box className={classes.titleBox}>
           <PageIntro
@@ -75,9 +74,7 @@ export default function PracticePageContent(props) {
           />
         </Box>
         <Box>
-          <Divider />
           <PageMenu sections={sections} />
-          <Divider />
         </Box>
         <PageBody
           title={data.practices[0].title}
@@ -87,6 +84,6 @@ export default function PracticePageContent(props) {
           ama={data.practices[0].ama}
         />
       </Box>
-    </React.Fragment>
+    </>
   );
 }
