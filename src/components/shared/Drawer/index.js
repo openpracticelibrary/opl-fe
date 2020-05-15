@@ -132,7 +132,6 @@ export default function OPLDrawer() {
                         <MenuIcon />
                     </IconButton>
                 </div>
-
                 <Box m={2}>
                     <Box>
                         <TopListItems/>
@@ -141,9 +140,8 @@ export default function OPLDrawer() {
                         <BottomListItems/>
                     </Box>
                 </Box>
-                
-                <Footer />
-
+                           
+                <Footer />            
             </Drawer>
             <PracticePageContent/>
         </div>

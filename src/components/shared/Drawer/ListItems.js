@@ -9,6 +9,7 @@ import Collapse from '@material-ui/core/Collapse';
 import List from '@material-ui/core/List';
 import {makeStyles} from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -18,6 +19,14 @@ const useStyles = makeStyles((theme) => ({
     },
     nested: {
         paddingLeft: theme.spacing(3),
+    },
+    smallText: {
+        color: theme.palette.text.light_grey,
+    },
+
+    listText: {
+        fontSize: 16,
+        color: theme.palette.text.secondary,
     },
 }));
 
@@ -31,40 +40,39 @@ export function TopListItems() {
 
     return (
         <List className={classes.root}>
-            <ListSubheader>PRACTICES</ListSubheader>
+            <ListSubheader>
+                <Typography className={classes.smallText} variant="overline"> PRACTICES </Typography>
+            </ListSubheader>
             <ListItem button>
-
-                <b>
-                    {"Please guide me"}
-                </b>
+                <Typography className={classes.listText}>
+                    <b> Please guide me </b>
+                </Typography>
             </ListItem>
             <ListItem button>
-
-                <b>
-                    {"See everything"}
-                </b>                
+                <Typography className={classes.listText}>
+                    <b> See everything </b>   
+                </Typography>             
             </ListItem>
             <ListItem button onClick={handleClick}>
-                
-                <b>
-                    {"By mobius loop"}
-                </b>
+                <Typography className={classes.listText}>
+                    <b> By mobius loop </b>
+                </Typography>
                 {open ? <ExpandLess/> : <ExpandMore/>}
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
               
                 <List component="div" disablePadding className={classes.nested}>
-                    <ListItem button>
-                        <ListItemText primary="Discovery"/>
+                    <ListItem button className={classes.listText}>
+                        <ListItemText primary="Discovery" />
                     </ListItem>
-                    <ListItem button>
-                        <ListItemText primary="Options"/>
+                    <ListItem button className={classes.listText}>
+                        <ListItemText primary="Options" />
                     </ListItem>
-                    <ListItem button>
-                        <ListItemText primary="Delivery"/>
+                    <ListItem button className={classes.listText}>
+                        <ListItemText primary="Delivery" />
                     </ListItem>
-                    <ListItem button>
-                        <ListItemText primary="Foundation"/>
+                    <ListItem button className={classes.listText}>
+                        <ListItemText primary="Foundation" />
                     </ListItem>
 
                 </List>
@@ -79,24 +87,23 @@ export function BottomListItems() {
     const classes = useStyles();
     return (
         <List className={classes.root}>
-            <ListSubheader>COMMUNITY</ListSubheader>
+            <ListSubheader>
+                <Typography className={classes.smallText} variant="overline"> COMMUNITY </Typography>
+            </ListSubheader>
             <ListItem button>
-              
-                <b>
-                    {"Find a mentor"}
-                </b>
+                <Typography className={classes.listText}>
+                    <b> Find a mentor </b>
+                </Typography>
             </ListItem>
             <ListItem button>
-                
-                <b>
-                    {"Become a contributor"}
-                </b>
+                <Typography className={classes.listText}>
+                    <b> Become a contributor </b>
+                </Typography>
             </ListItem>
             <ListItem button>
-                
-                <b>
-                    {"Latest happenings"}
-                </b>
+                <Typography className={classes.listText}>
+                    <b> Latest happenings </b>
+                </Typography>
             </ListItem>
         </List>
     )
