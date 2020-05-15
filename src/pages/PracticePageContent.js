@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         flexGrow: 1,
-        padding: theme.spacing(1),
     },
     titleBox: {
         display: "flex",

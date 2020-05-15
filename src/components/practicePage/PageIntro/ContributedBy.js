@@ -16,9 +16,6 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row',
         alignItems: 'centre',
     },
-    smallText: {
-        color: theme.palette.text.light_grey
-    },
     date: {
         padding: theme.spacing(1.75, 6),
     }
@@ -30,7 +27,7 @@ export default function ContributedBy() {
     return (
         <React.Fragment>
             <Box className={classes.root}>
-                <Typography className={classes.smallText} variant="overline">
+                <Typography variant="overline">
                     Contributed by
                 </Typography>
 
@@ -38,7 +35,7 @@ export default function ContributedBy() {
                     <Avatars/>
                     <Avatars/>
                     <Box className={classes.date}>
-                        <Typography className={classes.smallText} variant="overline">
+                        <Typography variant="overline">
                             Published May 4, 2020 | Last edited June 8, 2020
                         </Typography>
                     </Box>
