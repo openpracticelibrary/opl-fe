@@ -26,7 +26,7 @@ export default function TitleAndSubtitle(props) {
         <React.Fragment>
             <Box className={classes.root}>
                 <Box className={classes.title}>
-                    <Typography variant={"h4"} gutterBottom>
+                    <Typography variant={"h3"} gutterBottom>
                         <strong> {props.title} </strong>
                     </Typography>
                 </Box>

@@ -131,17 +131,20 @@ export default function OPLDrawer(props) {
                         <MenuIcon />
                     </IconButton>
                 </div>
-
-                <Box m={2}>
-                    <Box>
+                { open &&
+                  <>
+                    <Box m={2}>
+                      <Box>
                         <TopListItems/>
-                    </Box>
-                    <Box>
+                      </Box>
+                      <Box>
                         <BottomListItems/>
+                      </Box>
                     </Box>
-                </Box>
 
-                <Footer />
+                    <Footer />
+                  </>
+                }
 
             </Drawer>
             {props.children}
