@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         verticalAlign: 'middle',
         display: 'inline-flex',
         marginLeft: theme.spacing(2),
-        color: theme.palette.common.brownish_grey,
+        color: theme.palette.common.brown_grey,
     }
 }));
 
