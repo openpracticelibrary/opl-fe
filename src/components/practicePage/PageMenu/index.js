@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Link from '@material-ui/core/Link';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -23,6 +24,7 @@ export default function PageMenu(props) {
 
     return (
         <React.Fragment>
+            <Divider />
             <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
                 {sections.map((section) => (
                     <Link
@@ -34,6 +36,7 @@ export default function PageMenu(props) {
                     </Link>
                 ))}
             </Toolbar>
+            <Divider />
         </React.Fragment>
     );
 }

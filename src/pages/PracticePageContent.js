@@ -3,7 +3,6 @@ import PageIntro from '../components/practicePage/PageIntro/index';
 import {makeStyles} from "@material-ui/core/styles/index";
 import Box from '@material-ui/core/Box';
 import PageMenu from '../components/practicePage/PageMenu';
-import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,11 +37,9 @@ export default function PracticePageContent() {
                 <Box className={classes.titleBox}>
                     <PageIntro/>
                 </Box>
-                <Box>
-                    <Divider/>
-                    <PageMenu sections={sections}/>
-                    <Divider/>
-                </Box>
+                {/*<Box>*/}
+                    {/*<PageMenu sections={sections}/>*/}
+                {/*</Box>*/}
             </Box>
         </React.Fragment>
     )
