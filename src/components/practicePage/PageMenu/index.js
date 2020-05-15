@@ -8,8 +8,8 @@ import Divider from '@material-ui/core/Divider';
 const useStyles = makeStyles((theme) => ({
 
     toolbarSecondary: {
-
         overflowX: 'auto',
+        paddingLeft: theme.spacing(9),
     },
     toolbarLink: {
         padding: theme.spacing(1),

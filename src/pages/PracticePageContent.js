@@ -36,9 +36,9 @@ export default function PracticePageContent() {
                 <Box className={classes.titleBox}>
                     <PageIntro/>
                 </Box>
-                {/*<Box>*/}
-                    {/*<PageMenu sections={sections}/>*/}
-                {/*</Box>*/}
+                <Box>
+                    <PageMenu sections={sections}/>
+                </Box>
             </Box>
         </React.Fragment>
     )
