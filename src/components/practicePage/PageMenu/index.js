@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Link from '@material-ui/core/Link';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
 
     toolbarSecondary: {
         overflowX: 'auto',
+        paddingLeft: theme.spacing(9),
     },
     toolbarLink: {
         padding: theme.spacing(1),
@@ -22,9 +24,11 @@ export default function PageMenu(props) {
 
     return (
         <React.Fragment>
+            <Divider />
             <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-                {sections.map((section) => (
-                    <Link
+                {sections.map((section, i) => (
+                  <Link
+                        key={i}
                         href={section.url}
                         className={classes.toolbarLink}
                         variant={'overline'}
@@ -33,6 +37,7 @@ export default function PageMenu(props) {
                     </Link>
                 ))}
             </Toolbar>
+            <Divider />
         </React.Fragment>
     );
 }

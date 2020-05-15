@@ -6,12 +6,13 @@ import Box from '@material-ui/core/Box';
 import TitleAndSubtitle from './TitleAndSubtitle';
 import ContributedBy from './ContributedBy';
 import Collection from './Collection';
+import BreadcrumbNav from './BreadcrumbNav';
 
 const useStyles = makeStyles((theme) => ({
 
     content: {
         flexGrow: 1,
-        padding: theme.spacing(1),
+        padding: theme.spacing(3),
     },
     row: {
         display:'flex',
@@ -23,20 +24,31 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function PageIntro() {
+export default function PageIntro(props) {
     const classes = useStyles();
 
-    return (
+  return (
         <React.Fragment>
             <CssBaseline/>
             <Container className={classes.container}>
                 <main className={classes.content}>
-                    <TitleAndSubtitle/>
+                    <BreadcrumbNav />
+                    <TitleAndSubtitle title={props.title} subtitle={props.subtitle} />
                     <Box className={classes.row}>
-                        <ContributedBy />
+                      <ContributedBy
+                        authors={ props.authors }
+                        createdAt={ props.createdAt }
+                        updatedAt={ props.updatedAt }
+                      />
                     </Box>
                     <Box className={classes.row}>
-                        <Collection />
+                      <Collection
+                        practiceId={ props.practiceId }
+                        upvotes={ props.upvotes }
+                        imgCount={ props.imgCount }
+                        questions={ props.questions }
+                        handleLike={ props.handleLike }
+                      />
                     </Box>
 
                 </main>

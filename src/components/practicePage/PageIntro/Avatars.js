@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Avatars() {
+export default function Avatars(props) {
 
     return (
         <React.Fragment>
@@ -21,11 +21,11 @@ export default function Avatars() {
                 <ListItem>
                     <ListItemAvatar>
                         <Avatar
-                            alt="image of contributor"
+                            alt={ props.authorName }
                             src="/static/images/avatar/1.jpg"
                         />
                     </ListItemAvatar>
-                    <ListItemText secondary='First Lastname'/>
+                    <ListItemText secondary={ props.authorName } />
                 </ListItem>
             </Box>
         </React.Fragment>
