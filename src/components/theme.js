@@ -114,7 +114,7 @@ export default createMuiTheme({
       fontFamily: "Assistant",
       fontWeight: "normal",
       fontSize: "0.5rem",
-      lineHeight: "0.5625rem",
+      lineHeight: "0.0071rem",
       letterSpacing: "-0.00625rem",
       color: `${brownish_grey}`,
     },
