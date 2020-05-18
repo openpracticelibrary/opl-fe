@@ -20,18 +20,6 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 'auto',
         
       },
-
-    listItem: {
-        width: '100%',
-        maxWidth: 360,
-        backgroundColor: theme.palette.background.paper,
-    },
-
-    listText: {
-        fontSize: 12,
-        color: theme.palette.text.secondary,
-    },
-
  }));
 
 
@@ -42,7 +30,7 @@ function FooterList (props){
             <Box display="flex" p={1}>                 
                 {props.children}                         
                 <Link href={props.link} onClick={preventDefault} color="inherit">
-                    {props.text}
+                    <Typography variant="button"> {props.text} </Typography> 
                 </Link>
             </Box>
         </React.Fragment>
@@ -58,8 +46,7 @@ export default function Footer() {
     return(
         <footer className={classes.footer}>
         <Box>  
-            <Box pb={1} className={classes.listText}>
-               
+            <Box pb={1}>              
                 <FooterList link="#" text="ABOUT US">
                         <RockIcon />
                 </FooterList>
@@ -76,7 +63,7 @@ export default function Footer() {
                         <NewTabIcon />
                 </FooterList>
             </Box>
-            <Box display="flex" className={classes.listText} bgcolor="yellow">
+            <Box display="flex" bgcolor="yellow">
                 <Box>
                     <Box mx="auto" my="auto" p={1} >
                         I1
@@ -85,8 +72,8 @@ export default function Footer() {
                         I2
                     </Box>
                 </Box>
-                <Box p={1} fontSize={7} textAlign="justify" flexWrap="wrap" bgcolor="cyan">              
-                    Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
+                <Box p={1} textAlign="justify" bgcolor="cyan">              
+                    <Typography variant="caption">   Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project. </Typography>
                 </Box>
             </Box> 
         </Box>

@@ -20,9 +20,7 @@ const useStyles = makeStyles((theme) => ({
     nested: {
         paddingLeft: theme.spacing(3),
     },
-    smallText: {
-        color: theme.palette.text.light_grey,
-    },
+    
 
     listText: {
         fontSize: 16,
@@ -41,44 +39,35 @@ export function TopListItems() {
     return (
         <List className={classes.root}>
             <ListSubheader>
-                <Typography className={classes.smallText} variant="overline"> PRACTICES </Typography>
+                <Typography variant="overline"> PRACTICES </Typography>
             </ListSubheader>
             <ListItem button>
-                <Typography className={classes.listText}>
-                    <b> Please guide me </b>
-                </Typography>
+                <Typography variant="body2"> Please guide me </Typography>
             </ListItem>
             <ListItem button>
-                <Typography className={classes.listText}>
-                    <b> See everything </b>   
-                </Typography>             
+                <Typography variant="body2"> See everything </Typography>             
             </ListItem>
             <ListItem button onClick={handleClick}>
-                <Typography className={classes.listText}>
-                    <b> By mobius loop </b>
-                </Typography>
+                <Typography variant="body2"> By mobius loop </Typography>  
                 {open ? <ExpandLess/> : <ExpandMore/>}
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
               
                 <List component="div" disablePadding className={classes.nested}>
-                    <ListItem button className={classes.listText}>
-                        <ListItemText primary="Discovery" />
+                    <ListItem button>
+                        <Typography variant="body1"> Discovery </Typography>
                     </ListItem>
-                    <ListItem button className={classes.listText}>
-                        <ListItemText primary="Options" />
+                    <ListItem button>
+                        <Typography variant="body1"> Options </Typography>
                     </ListItem>
-                    <ListItem button className={classes.listText}>
-                        <ListItemText primary="Delivery" />
+                    <ListItem button>
+                        <Typography variant="body1"> Delivery </Typography>
                     </ListItem>
-                    <ListItem button className={classes.listText}>
-                        <ListItemText primary="Foundation" />
+                    <ListItem button>
+                        <Typography variant="body1"> Foundation </Typography>
                     </ListItem>
-
-                </List>
-               
+                </List>   
             </Collapse>
-
         </List>
     );
 }
@@ -88,22 +77,16 @@ export function BottomListItems() {
     return (
         <List className={classes.root}>
             <ListSubheader>
-                <Typography className={classes.smallText} variant="overline"> COMMUNITY </Typography>
+                <Typography variant="overline"> COMMUNITY </Typography>
             </ListSubheader>
             <ListItem button>
-                <Typography className={classes.listText}>
-                    <b> Find a mentor </b>
-                </Typography>
+                <Typography variant="body2"> Find a mentor </Typography>
             </ListItem>
             <ListItem button>
-                <Typography className={classes.listText}>
-                    <b> Become a contributor </b>
-                </Typography>
+                <Typography variant="body2"> Become a contributor </Typography>
             </ListItem>
             <ListItem button>
-                <Typography className={classes.listText}>
-                    <b> Latest happenings </b>
-                </Typography>
+                <Typography variant="body2"> Latest happenings </Typography>
             </ListItem>
         </List>
     )

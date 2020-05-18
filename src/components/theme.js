@@ -90,6 +90,15 @@ export default createMuiTheme({
       color: `${brownish_grey}`,
     },
 
+    //NotoSerif-Bold
+    body2: {
+      fontFamily: "Noto Serif",
+      fontWeight: "bold",
+      fontSize: "1rem",
+      lineHeight: "1.375rem",
+      color: `${brownish_grey}`,
+    },
+
     //Navigation Text
     button: {
       fontFamily: "Assistant",
@@ -119,5 +128,7 @@ export default createMuiTheme({
       letterSpacing: "0.05625rem",
       color: `${brown_grey}`,
     },
+
+    
   },
 });
