@@ -1,8 +1,9 @@
 import ApolloClient from 'apollo-boost';
 
-// TODO: Set URI attribute to env var
+const GRAPHQL_ENDPOINT = process.env.REACT_APP_GRAPHQL_ENDPOINT || '/graphql';
+
 const client = new ApolloClient({
-  uri: 'http://localhost:4000'
+  uri: GRAPHQL_ENDPOINT
 });
 
 export default client;

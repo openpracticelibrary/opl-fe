@@ -1,0 +1,37 @@
+name: Pull Requests
+
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    env:
+      SHA8: ${GITHUB_SHA::8}
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - run: echo "checkout $SHA8"
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Use node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: npm install
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: v1-npm-deps-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: v1-npm-deps-
+
+      - name: Run Tests
+        run: npm test --watchAll=false
+
