@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -10,7 +11,8 @@ import LaunchIcon from '@material-ui/icons/Launch';
 import RockIcon from '../../../assets/icons/RockIcon.js'
 import BetaIcon from '../../../assets/icons/BetaIcon.js'
 import NewTabIcon from '../../../assets/icons/NewTabIcon.js'
-
+import PropTypes from "prop-types";
+import { flexbox } from '@material-ui/system';
 
 const useStyles = makeStyles((theme) => ({
     footer: {
@@ -25,67 +27,56 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     },
 
+    listText: {
+        fontSize: 12,
+        color: theme.palette.text.secondary,
+    },
+
  }));
+
+
+function FooterList (props){
+    const preventDefault = (event) => event.preventDefault();
+    return(
+        <React.Fragment>
+            <Box display="flex" p={1}>                 
+                {props.children}                         
+                <Link href={props.link} onClick={preventDefault} color="inherit">
+                    {props.text}
+                </Link>
+            </Box>
+        </React.Fragment>
+     );   
+}
+
+
 
 export default function Footer() {
     const classes = useStyles();
     const preventDefault = (event) => event.preventDefault();
-
+    
     return(
         <footer className={classes.footer}>
         <Box>  
-            <Box pb={1}>
-                
-                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
-                    <RockIcon /> &nbsp;
-                    <Link href="#" onClick={preventDefault} color="inherit">
-                        {'ABOUT US'}
-                    </Link>
-                </Box>
-                                            
-                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
-                    <BetaIcon /> &nbsp;&nbsp;
-                    <Link href="#" onClick={preventDefault} color="inherit">
-                        {'JOIN BETA'}
-                    </Link>
-                </Box>
-
-                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
-                    <NewTabIcon /> &nbsp;&nbsp;
-                    <Link href="#" onClick={preventDefault} color="inherit">
-                        {'MEETUP'}                        
-                    </Link>
-                </Box>
-
-                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
-                    <NewTabIcon /> &nbsp;&nbsp;
-                    <Link href="#" onClick={preventDefault} color="inherit">
-                        {'GITHUB'}
-                    </Link>
-                </Box>
-
-                <Box display="flex" p={1} bgcolor="yellow" justifyContent="flex-start">
-                    <NewTabIcon /> &nbsp;&nbsp;
-                    <Link href="#" onClick={preventDefault} color="inherit">
-                        {'PODCAST'}
-                    </Link> 
-                </Box>
-{/*
-                
-                <Box display="flex">
-                    <Box p={1}>
-                        <LaunchIcon fontSize="small" />
-                    </Box>
-                    <Box p={1}>
-                        <Link href="#" onClick={preventDefault} color="inherit">
-                            {'PODCAST'}
-                        </Link>   
-                    </Box>
-                </Box>
-*/}
- 
+            <Box pb={1} className={classes.listText}>
+               
+                <FooterList link="#" text="ABOUT US">
+                        <RockIcon />
+                </FooterList>
+                <FooterList link="#" text="JOIN BETA">
+                        <BetaIcon />
+                </FooterList>
+                <FooterList link="#" text="MEETUP">
+                        <NewTabIcon />
+                </FooterList>
+                <FooterList link="#" text="GITHUB">
+                        <NewTabIcon />
+                </FooterList>
+                <FooterList link="#" text="PODCAST">
+                        <NewTabIcon />
+                </FooterList>
             </Box>
-            <Box display="flex" bgcolor="gray">
+            <Box display="flex" className={classes.listText} bgcolor="yellow">
                 <Box>
                     <Box mx="auto" my="auto" p={1} >
                         I1
@@ -94,9 +85,9 @@ export default function Footer() {
                         I2
                     </Box>
                 </Box>
-                <Box p={1} fontSize={7} textAlign="justify">              
-                    {"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project."}
-                </Box>        
+                <Box p={1} fontSize={7} textAlign="justify" flexWrap="wrap" bgcolor="cyan">              
+                    Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project.
+                </Box>
             </Box> 
         </Box>
         </footer>
