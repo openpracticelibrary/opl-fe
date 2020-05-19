@@ -10,10 +10,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(1),
   },
-  space: {
-    marginLeft: theme.spacing(7),
-    alignContent: "stretch",
-  },
 }));
 
 export default function ContributedBy(props) {
@@ -30,6 +26,7 @@ export default function ContributedBy(props) {
         justify="center"
         alignItems="flex-start"
         className={classes.root}
+        spacing={1}
       >
         <Grid item>
           <Typography variant="overline">Contributed by</Typography>
@@ -39,7 +36,7 @@ export default function ContributedBy(props) {
           <Grid
             container
             direction="row"
-            justify="flex-start"
+            justify="space-between"
             alignItems="center"
           >
             {props.authors.map((author) => (
@@ -51,7 +48,7 @@ export default function ContributedBy(props) {
                 />
               </Grid>
             ))}
-            <Grid item className={classes.space}>
+            <Grid item>
               <Typography variant="overline">
                 Published {formatDate(props.createdAt)} | Last edited{" "}
                 {formatDate(props.updatedAt)}
