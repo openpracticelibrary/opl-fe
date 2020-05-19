@@ -1,6 +1,7 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const white = "#f5f5f5";
+const lighter_white = "#fafafa";
 const insights_yellow = "#fdb815";
 const foundation_purple = "#8977b6";
 const discovery_blue = "#4b90cd";
@@ -22,6 +23,7 @@ export default createMuiTheme({
       brownish_grey: `${brownish_grey}`,
       brown_grey: `${brown_grey}`,
       black: `${black}`,
+      lighter_white: `${lighter_white}`
     },
     primary: {
       main: `${black}`,
