@@ -90,6 +90,15 @@ export default createMuiTheme({
       color: `${brownish_grey}`,
     },
 
+    //NotoSerif-Bold
+    body2: {
+      fontFamily: "Noto Serif",
+      fontWeight: "bold",
+      fontSize: "1rem",
+      lineHeight: "1.375rem",
+      color: `${brownish_grey}`,
+    },
+
     //Navigation Text
     button: {
       fontFamily: "Assistant",
@@ -105,7 +114,7 @@ export default createMuiTheme({
       fontFamily: "Assistant",
       fontWeight: "normal",
       fontSize: "0.5rem",
-      lineHeight: "0.5625rem",
+      lineHeight: "0.0071rem",
       letterSpacing: "-0.00625rem",
       color: `${brownish_grey}`,
     },
@@ -119,5 +128,7 @@ export default createMuiTheme({
       letterSpacing: "0.05625rem",
       color: `${brown_grey}`,
     },
+
+    
   },
 });
