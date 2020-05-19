@@ -19,19 +19,19 @@ export default function TitleAndSubtitle(props) {
     const classes = useStyles();
 
     return (
-        <React.Fragment>
+        <>
             <Box className={classes.root}>
-                <Box className={classes.title}>
-                    <Typography variant={"h3"} gutterBottom>
-                        <strong> {props.title} </strong>
+                <Box className={classes.space}>
+                    <Typography variant={"h1"}>
+                        {props.title}
                     </Typography>
                 </Box>
-                <Box className={classes.subtitle}>
-                    <Typography indent={"small"}>
+                <Box className={classes.space}>
+                    <Typography variant={"subtitle1"}>
                       {props.subtitle}
                     </Typography>
                 </Box>
             </Box>
-        </React.Fragment>
+        </>
     )
 };

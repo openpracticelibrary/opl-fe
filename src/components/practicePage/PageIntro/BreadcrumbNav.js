@@ -14,7 +14,7 @@ export default function BreadcrumbNav() {
     const classes = useStyles();
 
     return (
-        <React.Fragment>
+        <>
             <Box className={classes.space}>
                 <Breadcrumbs aria-label="breadcrumb">
                     <Link variant="overline" href="/">
@@ -25,6 +25,6 @@ export default function BreadcrumbNav() {
                     </Link>
                 </Breadcrumbs>
             </Box>
-        </React.Fragment>
+        </>
     );
 }

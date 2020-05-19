@@ -28,7 +28,7 @@ export default function PageIntro(props) {
     const classes = useStyles();
 
   return (
-        <React.Fragment>
+        <>
             <CssBaseline/>
             <Container className={classes.container}>
                 <main className={classes.content}>
@@ -53,6 +53,6 @@ export default function PageIntro(props) {
 
                 </main>
             </Container>
-        </React.Fragment>
+        </>
     );
 }
