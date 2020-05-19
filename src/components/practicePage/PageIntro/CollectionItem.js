@@ -1,26 +1,34 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles/index";
+import {makeStyles} from "@material-ui/core/styles/index";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
-  wrapIcon: {
-    verticalAlign: "middle",
-    display: "inline-flex",
-    marginLeft: theme.spacing(2),
-    color: theme.palette.common.brown_grey,
-  },
+    space: {
+        marginLeft: theme.spacing(1),
+    },
 }));
 
 export default function CollectionItem(props) {
-  const classes = useStyles();
+    const classes = useStyles();
 
-  return (
-    <>
-      <Box className={classes.wrapIcon}>
-        {props.children}
-        <Typography variant="body1">{props.amount}</Typography>
-      </Box>
-    </>
-  );
+    return (
+        <>
+            <Grid
+                container
+                direction="row"
+                justify="flex-start"
+                alignItems="center"
+                className={classes.space}
+            >
+                <Grid item>
+                    {props.children}
+                </Grid>
+                <Grid item>
+                    <Typography variant="body1" className={classes.space}>{props.amount}</Typography>
+                </Grid>
+            </Grid>
+        </>
+    );
 }

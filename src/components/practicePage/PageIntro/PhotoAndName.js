@@ -1,40 +1,37 @@
 import React from 'react';
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
-import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import ImageIcon from '@material-ui/icons/Image';
 import {makeStyles} from "@material-ui/core/styles/index";
+import {UserIcon} from "../../../assets/icons";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
-    space: {
-        paddingRight: theme.spacing(3),
-    },
-    small: {
-        width: theme.spacing(4),
-        height: theme.spacing(4),
-        backgroundColor: theme.palette.common.brown_grey
-    },
+  space: {
+    paddingRight: theme.spacing(3),
+  },
 }));
 
 export default function PhotoAndName(props) {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    return (
-        <React.Fragment>
-            <Box>
-                <ListItem disableGutters className={classes.space}>
-                    <ListItemAvatar>
-                        <Avatar className={classes.small}>
-                            <ImageIcon fontSize='small'/>
-                        </Avatar>
-                    </ListItemAvatar>
-                    <Typography variant="body1">
-                        { props.authorName }
-                    </Typography>
-                </ListItem>
-            </Box>
-        </React.Fragment>
-    );
+  return (
+      <>
+        <Grid
+            container
+            direction="row"
+            justify="flex-start"
+            alignItems="center"
+            className={classes.space}
+            spacing={1}
+        >
+          <Grid item>
+            <UserIcon/>
+          </Grid>
+          <Grid item>
+            <Typography variant="body1">
+              {props.authorName}
+            </Typography>
+          </Grid>
+        </Grid>
+      </>
+  );
 }
