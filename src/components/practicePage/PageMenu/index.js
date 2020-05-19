@@ -7,42 +7,42 @@ import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
 
-    toolbarSecondary: {
-        overflowX: 'auto',
-        paddingLeft: theme.spacing(9),
-    },
-    toolbarLink: {
-        padding: theme.spacing(1),
-        flexShrink: 0,
-        color: theme.palette.text.secondary,
-    },
+  toolbarSecondary: {
+    overflowX: 'auto',
+    paddingLeft: theme.spacing(9),
+  },
+  toolbarLink: {
+    padding: theme.spacing(1),
+    flexShrink: 0,
+    color: theme.palette.text.secondary,
+  },
 }));
 
 export default function PageMenu(props) {
-    const classes = useStyles();
-    const {sections} = props;
+  const classes = useStyles();
+  const {sections} = props;
 
-    return (
-        <React.Fragment>
-            <Divider />
-            <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-                {sections.map((section, i) => (
-                  <Link
-                        key={i}
-                        href={section.url}
-                        className={classes.toolbarLink}
-                        variant={'overline'}
-                    >
-                        {section.title}
-                    </Link>
-                ))}
-            </Toolbar>
-            <Divider />
-        </React.Fragment>
-    );
+  return (
+      <>
+        <Divider/>
+        <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
+          {sections.map((section, i) => (
+              <Link
+                  key={i}
+                  href={section.url}
+                  className={classes.toolbarLink}
+                  variant={'overline'}
+              >
+                {section.title}
+              </Link>
+          ))}
+        </Toolbar>
+        <Divider/>
+      </>
+  );
 }
 
 PageMenu.propTypes = {
-    sections: PropTypes.array,
-    title: PropTypes.string,
+  sections: PropTypes.array,
+  title: PropTypes.string,
 };
