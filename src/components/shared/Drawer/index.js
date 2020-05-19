@@ -10,7 +10,7 @@ import {BottomListItems, TopListItems} from './ListItems';
 import Box from '@material-ui/core/Box';
 import Footer from './Footer'
 
-const drawerWidth = 240;
+const drawerWidth = '16.438rem';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -46,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
         width: drawerWidth,
         flexShrink: 0,
         whiteSpace: 'wrap',
-        //whiteSpace: 'nowrap',
     },
     drawerOpen: {
         width: drawerWidth,
@@ -108,7 +107,7 @@ export default function OPLDrawer(props) {
                             [classes.hide]: open,
                         })}
                     >
-                        <MenuIcon/>
+                        <MenuIcon />
                     </IconButton>
                 </Toolbar>
             </Box>
@@ -145,7 +144,6 @@ export default function OPLDrawer(props) {
                     <Footer />
                   </>
                 }
-
             </Drawer>
             {props.children}
         </div>
