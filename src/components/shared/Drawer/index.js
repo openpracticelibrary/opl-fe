@@ -14,7 +14,7 @@ const drawerWidth = '16.438rem';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        display: 'flex',
+        display: 'flex'
     },
     box: {
         zIndex: theme.zIndex.drawer + 1,
@@ -33,11 +33,6 @@ const useStyles = makeStyles((theme) => ({
     },
     menuButton: {
         marginRight: 36,
-        backgroundColor: 'white',
-
-        '&:hover': {
-            backgroundColor: '#eeeeee',
-        }
     },
     hide: {
         display: 'none',
@@ -53,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
+      backgroundColor: theme.palette.common.white
     },
     drawerClose: {
         transition: theme.transitions.create('width', {
@@ -64,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             width: theme.spacing(9) + 1,
         },
+      backgroundColor: theme.palette.common.white
     },
     toolbar: {
         display: 'flex',

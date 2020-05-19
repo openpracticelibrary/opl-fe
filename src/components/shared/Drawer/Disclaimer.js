@@ -3,8 +3,17 @@ import Typography from '@material-ui/core/Typography';
 import {CCHeartIcon} from '../../../assets/icons/index';
 import disclaimerIcon from '../../../assets/icons/noun-project@3x.png';
 import Grid from "@material-ui/core/Grid";
+import {makeStyles} from "@material-ui/core/styles/index";
+
+const useStyles = makeStyles(() => ({
+  space: {
+    lineHeight: '0.5rem'
+  },
+}));
 
 export default function Disclaimer() {
+  const classes = useStyles();
+
   return (
       <>
         <Grid
@@ -14,7 +23,7 @@ export default function Disclaimer() {
             alignItems="flex-end"
             spacing={1}
         >
-          <Grid item>
+          <Grid item className={classes.space}>
             <Grid
                 container
                 direction="column"
@@ -30,7 +39,7 @@ export default function Disclaimer() {
             </Grid>
           </Grid>
 
-          <Grid item xs={10}>
+          <Grid item xs={10} className={classes.space}>
             <Typography variant="caption">
               {"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project."}
             </Typography>
