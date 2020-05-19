@@ -1,71 +1,52 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import {makeStyles} from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import RockIcon from '../../../assets/icons/RockIcon.js'
-import CCHeartIcon from '../../../assets/icons/CCHeartIcon.js'
-import AngleIcon from '../../../assets/icons/CCHeartIcon.js'
-import BetaIcon from '../../../assets/icons/BetaIcon.js'
-import NewTabIcon from '../../../assets/icons/NewTabIcon.js'
+import FooterList from './FooterList';
+import Grid from "@material-ui/core/Grid";
+import Disclaimer from './Disclaimer';
+import {BetaIcon, NewTabIcon, RockIcon} from '../../../assets/icons/index';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    padding: theme.spacing(3, 2),
+    padding: theme.spacing(3),
     marginTop: 'auto',
-
+    color:theme.palette.common.brownish_grey,
+  },
+  space: {
+    marginTop: theme.spacing(3),
   },
 }));
 
-
-function FooterList(props) {
-  const preventDefault = (event) => event.preventDefault();
-  return (
-      <React.Fragment>
-        <Box display="flex" p={1}>
-          {props.children}
-          <Link href={props.link} onClick={preventDefault} color="inherit">
-            <Typography variant="button"> {props.text} </Typography>
-          </Link>
-        </Box>
-      </React.Fragment>
-  );
-}
+const sections = [
+  {title: "ABOUT US", url: "#whatis", icon: <RockIcon/>},
+  {title: "JOIN BETA", url: "#", icon: <BetaIcon/>},
+  {title: "MEETUP", url: "#", icon: <NewTabIcon/>},
+  {title: "GITHUB", url: "#howto", icon: <NewTabIcon/>},
+  {title: "PODCAST", url: "#", icon: <NewTabIcon/>}
+];
 
 export default function Footer() {
   const classes = useStyles();
 
   return (
       <footer className={classes.footer}>
-        <Box>
-          <Box pb={1}>
-            <FooterList link="#" text="ABOUT US">
-              <RockIcon/>
-            </FooterList>
-            <FooterList link="#" text="JOIN BETA">
-              <BetaIcon/>
-            </FooterList>
-            <FooterList link="#" text="MEETUP">
-              <NewTabIcon/>
-            </FooterList>
-            <FooterList link="#" text="GITHUB">
-              <NewTabIcon/>
-            </FooterList>
-            <FooterList link="#" text="PODCAST">
-              <NewTabIcon/>
-            </FooterList>
-          </Box>
-          <Box component="span" p={1} flexDirection="row" display="flex">
-            <Box bgcolor="yellow">
-              <CCHeartIcon/>
-              <img src={AngleIcon}/>
-            </Box>
-            <Box p={1} bgcolor="cyan">
-              <Typography
-                  variant="caption"> {"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project."} </Typography>
-            </Box>
-          </Box>
-        </Box>
+        <Grid
+            container
+            direction="column"
+            justify="flex-end"
+            alignItems="flex-start"
+        >
+          {sections.map((section) => (
+              <Grid item>
+                <FooterList link={section.url} text={section.title}>
+                  {section.icon}
+                </FooterList>
+              </Grid>
+          ))}
+
+          <Grid item className={classes.space}>
+            <Disclaimer/>
+          </Grid>
+        </Grid>
       </footer>
   );
 }
