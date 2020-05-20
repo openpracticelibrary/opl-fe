@@ -11,7 +11,7 @@ jobs:
   build-test-push:
     runs-on: ubuntu-latest
     env:
-      SHA8: ${GITHUB_SHA::8}
+      REACT_APP_GRAPHQL_ENDPOINT: "/graphql"
 
     strategy:
       matrix:
@@ -37,15 +37,15 @@ jobs:
         uses: redhat-cop/github-actions/s2i@v2
         with:
           base: registry.access.redhat.com/rhscl/httpd-24-rhel7:2.4
+          path: build
           username: ${{ secrets.QUAY_USER }}
           password: ${{ secrets.QUAY_PASS }}
           image_push_registry: quay.io
           output_image: openpracticelibrary/opl-fe
-          image_tags: $SHA8
+          image_tags: ${{ github.sha }}
   kustomize:
     runs-on: ubuntu-latest
-    env:
-      SHA8: ${GITHUB_SHA::8}
+
     steps:
       - name: Setup Kustomize
         uses: imranismail/setup-kustomize@v1
@@ -61,9 +61,11 @@ jobs:
       - name: Kustomize build
         run: |
           cd openpracticelibrary/frontend/overlays/development
-          kustomize edit set image quay.io/openpracticelibrary/opl-fe:${SHA8}
+          kustomize edit set image quay.io/openpracticelibrary/opl-fe:${{{ github.sha }}}
+          git config --global user.email "shahein@redhat.com"
+          git config --global user.name "GitHub Actions"
           git add .
-          git commit -m "Automated Action: Updated opl-fe dev image tag to `${SHA8}`"
+          git commit -m "Automated Action: Updated opl-fe dev image tag to `${{ github.sha }}`"
           git push origin master
 
 
