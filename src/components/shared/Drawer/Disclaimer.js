@@ -13,10 +13,6 @@ const useStyles = makeStyles(() => ({
   footerField: {
     overflowX: 'auto',
     whiteSpace: 'normal',
-    lineHeight: '11px',
-  },
-  footerTextPadding: {
-    paddingLeft: '12px !important',
   }
 }));
 
@@ -49,7 +45,7 @@ export default function Disclaimer() {
             </Grid>
           </Grid>
 
-          <Grid item xs={10} className={classes.footerTextPadding} >
+          <Grid item xs={10} className={classes.space} >
             <Typography variant="caption">
               {"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project."}
             </Typography>
