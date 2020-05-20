@@ -7,11 +7,9 @@ import {makeStyles} from "@material-ui/core/styles/index";
 
 const useStyles = makeStyles(() => ({
   space: {
-    lineHeight: '0.5rem'
-  },
-  footerField: {
-    overflowX: 'auto',
-    whiteSpace: 'normal',
+    lineHeight: '0.5rem',
+    whiteSpace: 'normal'
+    
   }
 }));
 
@@ -26,7 +24,6 @@ export default function Disclaimer() {
             justify="flex-start"
             alignItems="flex-end"
             spacing={1}
-            className={classes.footerField}
         >
           <Grid item className={classes.space}>
             <Grid
