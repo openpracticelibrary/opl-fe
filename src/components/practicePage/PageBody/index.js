@@ -1,8 +1,7 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import {Typography} from '@material-ui/core';
 import ReactMarkdown from 'react-markdown';
-import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
+import {makeStyles} from '@material-ui/core/styles';
 import MediaGallery from './MediaGallery';
 import Resources from './Resources';
 import AskMeAnything from './AskMeAnything';
@@ -48,33 +47,33 @@ export default function PageBody(props) {
           <main className={classes.content}>
 
             <WhatIs title={title} source={whatIs}/>
+            <MediaGallery mediaGallery={mediaGallery}/>
 
-            <MediaGallery mediaGallery={ mediaGallery } />
             <Typography variant={"h5"} href="whatis">
-              <strong>Why do { title }?</strong>
+              <strong>Why do {title}?</strong>
             </Typography>
             <Typography>
-              <ReactMarkdown source={whyDo} />
+              <ReactMarkdown source={whyDo}/>
             </Typography>
             <Typography variant={"h5"} href="howto">
-              <strong>How to do { title }?</strong>
+              <strong>How to do {title}?</strong>
             </Typography>
             <Typography>
-              <ReactMarkdown source={howTo} />
+              <ReactMarkdown source={howTo}/>
             </Typography>
             <Typography variant={"h5"} href="resources">
               <strong>Resources we love</strong>
             </Typography>
-            <Resources links={ resources } />
+            <Resources links={resources}/>
             <Typography variant={"h5"} href="howto">
               <strong>Ask me anything</strong>
             </Typography>
-            <AskMeAnything ama={ ama } />
+            <AskMeAnything ama={ama}/>
 
 
           </main>
         </Container>
-        </>
+      </>
   )
 };
 

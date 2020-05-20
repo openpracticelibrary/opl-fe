@@ -141,7 +141,9 @@ export default function OPLDrawer(props) {
                   </>
                 }
             </Drawer>
+          <Box width="100%">
             {props.children}
+          </Box>
         </div>
     );
 }
