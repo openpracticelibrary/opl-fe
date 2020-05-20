@@ -135,8 +135,8 @@ export default function OPLDrawer(props) {
                       <Box>
                         <BottomListItems/>
                       </Box>
-                    </Box>                    
-                    <Footer />
+                    </Box>             
+                    <Footer /> 
                   </>
                 }
             </Drawer>
