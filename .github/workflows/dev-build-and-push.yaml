@@ -45,6 +45,7 @@ jobs:
           image_tags: ${{ github.sha }}
   kustomize:
     runs-on: ubuntu-latest
+    needs: build-test-push
 
     steps:
       - name: Setup Kustomize
