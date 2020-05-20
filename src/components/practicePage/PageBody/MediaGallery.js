@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const images = [
+const testImages = [
   {
     original: 'https://picsum.photos/id/1018/1000/600/',
     thumbnail: 'https://picsum.photos/id/1018/250/150/',
@@ -66,14 +66,14 @@ export default function MediaGallery({mediaGallery}) {
             </Typography>
           </Box>
           <Box className={classes.gallery}>
-            {/*<GridList cellHeight={160} className={classes.gridList} cols={mediaGallery.length}>*/}
-            {/*{ images.map(tile => (*/}
-            {/*<GridListTile key={tile.link} cols={tile.cols || 1}>*/}
-            {/*<img src={tile.link} alt="An image" />*/}
-            {/*</GridListTile>*/}
-            {/*))}*/}
-            {/*</GridList>*/}
-            <ImageGallery items={images}/>
+            <ImageGallery
+                items={testImages}
+                showBullets={true}
+                showIndex={true}
+                showThumbnails={true}
+                lazyLoad={true}
+                showPlayButton={true}
+            />
           </Box>
         </Box>
       </>
