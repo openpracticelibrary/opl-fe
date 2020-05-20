@@ -1,0 +1,71 @@
+name: FE Dev Build
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - README.md
+
+jobs:
+  build-test-push:
+    runs-on: ubuntu-latest
+    env:
+      REACT_APP_GRAPHQL_ENDPOINT: "/graphql"
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Use node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: npm install
+
+      - name: Run tests
+        run: npm run test
+
+      - run: npm run build
+
+      - name: Build and push image
+        uses: redhat-cop/github-actions/s2i@v2
+        with:
+          base: registry.access.redhat.com/rhscl/httpd-24-rhel7:2.4
+          path: build
+          username: ${{ secrets.QUAY_USER }}
+          password: ${{ secrets.QUAY_PASS }}
+          image_push_registry: quay.io
+          output_image: openpracticelibrary/opl-fe
+          image_tags: ${{ github.sha }}
+  kustomize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Kustomize
+        uses: imranismail/setup-kustomize@v1
+        with:
+          kustomize-version: "3.5.5"
+
+      - name: Checkout cd repo
+        uses: actions/checkout@v2
+        with:
+          repository: openpracticelibrary/opl-cd
+          token: ${{ secrets.SERVICE_PAT }}
+
+      - name: Kustomize build
+        run: |
+          cd openpracticelibrary/frontend/overlays/development
+          kustomize edit set image quay.io/openpracticelibrary/opl-fe:${{{ github.sha }}}
+          git config --global user.email "shahein@redhat.com"
+          git config --global user.name "GitHub Actions"
+          git add .
+          git commit -m "Automated Action: Updated opl-fe dev image tag to `${{ github.sha }}`"
+          git push origin master
+
+
