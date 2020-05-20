@@ -10,8 +10,7 @@ import {BottomListItems, TopListItems} from './ListItems';
 import Box from '@material-ui/core/Box';
 import Footer from './Footer'
 
-const drawerWidth = '16.438rem';
-
+const drawerWidth = '16.5rem';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex'
@@ -131,7 +130,7 @@ export default function OPLDrawer(props) {
                   <>
                     <Box m={2}>
                       <Box>
-                        <TopListItems/>
+                        <TopListItems drawerOpen={open}/>
                       </Box>
                       <Box>
                         <BottomListItems/>

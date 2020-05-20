@@ -3,7 +3,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import FooterList from './FooterList';
 import Grid from "@material-ui/core/Grid";
 import Disclaimer from './Disclaimer';
-import {BetaIcon, NewTabIcon, RockIcon} from '../../../assets/icons/index';
+import {BetaIcon, NewTabIcon, RockIcon} from '../../../assets/icons';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
