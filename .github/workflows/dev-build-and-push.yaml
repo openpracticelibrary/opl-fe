@@ -61,7 +61,7 @@ jobs:
       - name: Kustomize build
         run: |
           cd openpracticelibrary/frontend/overlays/development
-          kustomize edit set image quay.io/openpracticelibrary/opl-fe:${{{ github.sha }}}
+          kustomize edit set image quay.io/openpracticelibrary/opl-fe:${{ github.sha }}
           git config --global user.email "shahein@redhat.com"
           git config --global user.name "GitHub Actions"
           git add .
