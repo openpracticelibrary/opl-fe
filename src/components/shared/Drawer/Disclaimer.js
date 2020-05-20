@@ -1,13 +1,27 @@
 import React from 'react';
+import {makeStyles} from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import {CCHeartIcon} from '../../../assets/icons/index';
 import disclaimerIcon from '../../../assets/icons/noun-project@3x.png';
 import Grid from "@material-ui/core/Grid";
 
+const useStyles = makeStyles((theme) => ({
+  footerField: {
+    overflowX: 'auto',
+    whiteSpace: 'normal',
+    lineHeight: '11px',
+  },
+  footerTextPadding: {
+    paddingLeft: '12px !important',
+  }
+}));
+
 export default function Disclaimer() {
+  const classes = useStyles();
   return (
       <>
         <Grid
+            className={classes.footerField}
             container
             direction="row"
             justify="flex-start"
@@ -30,7 +44,7 @@ export default function Disclaimer() {
             </Grid>
           </Grid>
 
-          <Grid item xs={10}>
+          <Grid item xs={10} className={classes.footerTextPadding}>
             <Typography variant="caption">
               {"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project."}
             </Typography>
