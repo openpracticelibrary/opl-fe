@@ -1,6 +1,7 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const white = "#f5f5f5";
+const lighter_white = "#fafafa";
 const insights_yellow = "#fdb815";
 const foundation_purple = "#8977b6";
 const discovery_blue = "#4b90cd";
@@ -22,6 +23,7 @@ export default createMuiTheme({
       brownish_grey: `${brownish_grey}`,
       brown_grey: `${brown_grey}`,
       black: `${black}`,
+      lighter_white: `${lighter_white}`
     },
     primary: {
       main: `${black}`,
@@ -90,6 +92,15 @@ export default createMuiTheme({
       color: `${brownish_grey}`,
     },
 
+    //NotoSerif-Bold
+    body2: {
+      fontFamily: "Noto Serif",
+      fontWeight: "bold",
+      fontSize: "1rem",
+      lineHeight: "1.375rem",
+      color: `${brownish_grey}`,
+    },
+
     //Navigation Text
     button: {
       fontFamily: "Assistant",
@@ -105,7 +116,7 @@ export default createMuiTheme({
       fontFamily: "Assistant",
       fontWeight: "normal",
       fontSize: "0.5rem",
-      lineHeight: "0.5625rem",
+      lineHeight: "0.5rem",
       letterSpacing: "-0.00625rem",
       color: `${brownish_grey}`,
     },
@@ -119,5 +130,7 @@ export default createMuiTheme({
       letterSpacing: "0.05625rem",
       color: `${brown_grey}`,
     },
+
+    
   },
 });

@@ -1,15 +1,19 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import Box from '@material-ui/core/Box';
+import {Typography} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
+    flexDirection: 'column',
+    padding: theme.spacing(1),
+    margin: theme.spacing(1)
+  },
+  space: {
+    padding: theme.spacing(1),
   },
   gridList: {
     width: 500,
@@ -17,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MediaGallery({ mediaGallery }) {
+export default function MediaGallery({mediaGallery}) {
   const classes = useStyles();
 
   const images = mediaGallery.map(media => {
@@ -31,22 +35,30 @@ export default function MediaGallery({ mediaGallery }) {
         original: media.link
       }
     }
-
     return {
       link: media.link
     }
   });
 
   return (
-    <div className={classes.root}>
-      <GridList cellHeight={160} className={classes.gridList} cols={mediaGallery.length}>
-        { images.map(tile => (
-          <GridListTile key={tile.link} cols={tile.cols || 1}>
-            <img src={tile.link} alt="An image" />
-          </GridListTile>
-        ))}
-      </GridList>
-    </div>
+      <>
+        <Box className={classes.root}>
+          <Box className={classes.space}>
+            <Typography variant={"h2"} href="#media">
+              Media Gallery
+            </Typography>
+          </Box>
+          <Box className={classes.space}>
+            <GridList cellHeight={160} className={classes.gridList} cols={mediaGallery.length}>
+              {images.map(tile => (
+                  <GridListTile key={tile.link} cols={tile.cols || 1}>
+                    <img src={tile.link} alt="Practice Image"/>
+                  </GridListTile>
+              ))}
+            </GridList>
+          </Box>
+        </Box>
+      </>
   )
 };
 

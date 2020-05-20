@@ -10,11 +10,10 @@ import {BottomListItems, TopListItems} from './ListItems';
 import Box from '@material-ui/core/Box';
 import Footer from './Footer'
 
-const drawerWidth = 240;
-
+const drawerWidth = '16.5rem';
 const useStyles = makeStyles((theme) => ({
     root: {
-        display: 'flex',
+        display: 'flex'
     },
     box: {
         zIndex: theme.zIndex.drawer + 1,
@@ -33,11 +32,6 @@ const useStyles = makeStyles((theme) => ({
     },
     menuButton: {
         marginRight: 36,
-        backgroundColor: 'white',
-
-        '&:hover': {
-            backgroundColor: '#eeeeee',
-        }
     },
     hide: {
         display: 'none',
@@ -45,8 +39,7 @@ const useStyles = makeStyles((theme) => ({
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
-        whiteSpace: 'wrap',
-        //whiteSpace: 'nowrap',
+        whiteSpace: 'nowrap',
     },
     drawerOpen: {
         width: drawerWidth,
@@ -54,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
+      backgroundColor: theme.palette.common.white
     },
     drawerClose: {
         transition: theme.transitions.create('width', {
@@ -65,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             width: theme.spacing(9) + 1,
         },
+      backgroundColor: theme.palette.common.white
     },
     toolbar: {
         display: 'flex',
@@ -108,7 +103,7 @@ export default function OPLDrawer(props) {
                             [classes.hide]: open,
                         })}
                     >
-                        <MenuIcon/>
+                        <MenuIcon />
                     </IconButton>
                 </Toolbar>
             </Box>
@@ -135,17 +130,15 @@ export default function OPLDrawer(props) {
                   <>
                     <Box m={2}>
                       <Box>
-                        <TopListItems/>
+                        <TopListItems drawerOpen={open}/>
                       </Box>
                       <Box>
                         <BottomListItems/>
                       </Box>
-                    </Box>
-
-                    <Footer />
+                    </Box>             
+                    <Footer /> 
                   </>
                 }
-
             </Drawer>
             {props.children}
         </div>

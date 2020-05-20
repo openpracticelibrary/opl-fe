@@ -13,12 +13,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     flexGrow: 1,
-    padding: theme.spacing(1),
   },
   titleBox: {
     display: "flex",
     justifyContent: "flex-start",
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: theme.palette.common.lighter_white,
     width: "100%",
   },
 }));

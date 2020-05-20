@@ -9,50 +9,49 @@ import Collection from './Collection';
 import BreadcrumbNav from './BreadcrumbNav';
 
 const useStyles = makeStyles((theme) => ({
-
-    content: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
-    },
-    row: {
-        display:'flex',
-        padding: theme.spacing(1),
-        margin: theme.spacing(1)
-    },
-    container:{
-        marginLeft: theme.spacing(2),
-    }
+  root: {
+    marginLeft: theme.spacing(2),
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+  },
+  row: {
+    display: 'flex',
+    padding: theme.spacing(1),
+    margin: theme.spacing(1)
+  },
 }));
 
 export default function PageIntro(props) {
-    const classes = useStyles();
+  const classes = useStyles();
 
   return (
-        <React.Fragment>
-            <CssBaseline/>
-            <Container className={classes.container}>
-                <main className={classes.content}>
-                    <BreadcrumbNav />
-                    <TitleAndSubtitle title={props.title} subtitle={props.subtitle} />
-                    <Box className={classes.row}>
-                      <ContributedBy
-                        authors={ props.authors }
-                        createdAt={ props.createdAt }
-                        updatedAt={ props.updatedAt }
-                      />
-                    </Box>
-                    <Box className={classes.row}>
-                      <Collection
-                        practiceId={ props.practiceId }
-                        upvotes={ props.upvotes }
-                        imgCount={ props.imgCount }
-                        questions={ props.questions }
-                        handleLike={ props.handleLike }
-                      />
-                    </Box>
+      <>
+        <CssBaseline/>
+        <Container className={classes.root}>
+          <main className={classes.content}>
+            <BreadcrumbNav/>
+            <TitleAndSubtitle title={props.title} subtitle={props.subtitle}/>
+            <Box className={classes.row}>
+              <ContributedBy
+                  authors={props.authors}
+                  createdAt={props.createdAt}
+                  updatedAt={props.updatedAt}
+              />
+            </Box>
+            <Box className={classes.row}>
+              <Collection
+                  practiceId={props.practiceId}
+                  upvotes={props.upvotes}
+                  imgCount={props.imgCount}
+                  questions={props.questions}
+                  handleLike={props.handleLike}
+              />
+            </Box>
 
-                </main>
-            </Container>
-        </React.Fragment>
-    );
+          </main>
+        </Container>
+      </>
+  );
 }
