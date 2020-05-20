@@ -7,8 +7,17 @@ import {makeStyles} from "@material-ui/core/styles/index";
 
 const useStyles = makeStyles(() => ({
   space: {
+    oveflowX: 'auto',
     lineHeight: '0.5rem'
   },
+  footerField: {
+    overflowX: 'auto',
+    whiteSpace: 'normal',
+    lineHeight: '11px',
+  },
+  footerTextPadding: {
+    paddingLeft: '12px !important',
+  }
 }));
 
 export default function Disclaimer() {
@@ -22,6 +31,7 @@ export default function Disclaimer() {
             justify="flex-start"
             alignItems="flex-end"
             spacing={1}
+            className={classes.footerField}
         >
           <Grid item className={classes.space}>
             <Grid
@@ -39,7 +49,7 @@ export default function Disclaimer() {
             </Grid>
           </Grid>
 
-          <Grid item xs={10} className={classes.space}>
+          <Grid item xs={10} className={classes.footerTextPadding} >
             <Typography variant="caption">
               {"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project."}
             </Typography>
