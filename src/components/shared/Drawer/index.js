@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
-        whiteSpace: 'wrap',
+        whiteSpace: 'nowrap',
     },
     drawerOpen: {
         width: drawerWidth,
@@ -135,9 +135,8 @@ export default function OPLDrawer(props) {
                       <Box>
                         <BottomListItems/>
                       </Box>
-                    </Box>
-
-                    <Footer />
+                    </Box>             
+                    <Footer /> 
                   </>
                 }
             </Drawer>

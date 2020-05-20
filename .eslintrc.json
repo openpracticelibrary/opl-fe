@@ -1,14 +1,11 @@
 {
-  "eslintConfig": {
-    "extends": ["react-app", "shared-config"],
-    "overrides": [
-      {
-        "files": ["**/*.js?(x)"],
-        "rules": {
-          "indent": ["warn", 2]
-        }
+  "extends": ["react-app", "shared-config"],
+  "overrides": [
+    {
+      "files": ["**/*.js?(x)"],
+      "rules": {
+        "indent": ["warn", 2]
       }
-    ]
-  }
+    }
+  ]
 }
-
