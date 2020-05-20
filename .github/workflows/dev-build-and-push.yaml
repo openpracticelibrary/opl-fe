@@ -45,6 +45,7 @@ jobs:
           image_tags: ${{ github.sha }}
   kustomize:
     runs-on: ubuntu-latest
+    needs: build-test-push
 
     steps:
       - name: Setup Kustomize
@@ -61,7 +62,7 @@ jobs:
       - name: Kustomize build
         run: |
           cd openpracticelibrary/frontend/overlays/development
-          kustomize edit set image quay.io/openpracticelibrary/opl-fe:${{{ github.sha }}}
+          kustomize edit set image quay.io/openpracticelibrary/opl-fe:${{ github.sha }}
           git config --global user.email "shahein@redhat.com"
           git config --global user.name "GitHub Actions"
           git add .
