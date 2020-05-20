@@ -1,6 +1,5 @@
 import React from 'react';
 import {Typography} from '@material-ui/core';
-import ReactMarkdown from 'react-markdown';
 import {makeStyles} from '@material-ui/core/styles';
 import MediaGallery from './MediaGallery';
 import Resources from './Resources';
@@ -8,6 +7,9 @@ import AskMeAnything from './AskMeAnything';
 import WhatIs from './WhatIs';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
+import WhyDo from "./WhyDo";
+import HowDo from "./HowDo";
+import Divider from "@material-ui/core/es/Divider/Divider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,19 +50,12 @@ export default function PageBody(props) {
 
             <WhatIs title={title} source={whatIs}/>
             <MediaGallery mediaGallery={mediaGallery}/>
+            <WhyDo title={title} source={whyDo}/>
+            <HowDo title={title} source={howTo}/>
 
-            <Typography variant={"h5"} href="whatis">
-              <strong>Why do {title}?</strong>
-            </Typography>
-            <Typography>
-              <ReactMarkdown source={whyDo}/>
-            </Typography>
-            <Typography variant={"h5"} href="howto">
-              <strong>How to do {title}?</strong>
-            </Typography>
-            <Typography>
-              <ReactMarkdown source={howTo}/>
-            </Typography>
+
+            <br/><br/><br/><br/><br/><br/><br/><br/>
+
             <Typography variant={"h5"} href="resources">
               <strong>Resources we love</strong>
             </Typography>
