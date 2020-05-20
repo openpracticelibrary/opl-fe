@@ -6,10 +6,15 @@ import Grid from "@material-ui/core/Grid";
 import {makeStyles} from "@material-ui/core/styles/index";
 
 const useStyles = makeStyles(() => ({
-  space: {
+  footerField: {
+    overflowX: 'auto',
+    whiteSpace: 'normal',
     lineHeight: '0.5rem',
-    whiteSpace: 'normal'
-    
+    flexWrap: 'nowrap',
+  },
+  footerTextPadding: {
+    paddingLeft: '0.75rem !important',
+    minWidth: '10.5rem',
   }
 }));
 
@@ -19,13 +24,14 @@ export default function Disclaimer() {
   return (
       <>
         <Grid
+            className={classes.footerField}
             container
             direction="row"
             justify="flex-start"
             alignItems="flex-end"
             spacing={1}
         >
-          <Grid item className={classes.space}>
+          <Grid item>
             <Grid
                 container
                 direction="column"
@@ -41,7 +47,7 @@ export default function Disclaimer() {
             </Grid>
           </Grid>
 
-          <Grid item xs={10} className={classes.space}>
+          <Grid item xs={10} className={classes.footerTextPadding}>
             <Typography variant="caption">
               {"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license. Icons by The Noun Project."}
             </Typography>
