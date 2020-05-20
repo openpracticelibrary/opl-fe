@@ -13,7 +13,6 @@ const useStyles = makeStyles(() => ({
     flexWrap: 'nowrap',
   },
   footerTextPadding: {
-    paddingLeft: '0.75rem !important',
     minWidth: '10.5rem',
   }
 }));
