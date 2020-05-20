@@ -9,6 +9,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import WhyDo from "./WhyDo";
 import HowDo from "./HowDo";
+import ResourcesWeLove from "./ResourcesWeLove";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,11 +52,8 @@ export default function PageBody(props) {
             <MediaGallery mediaGallery={mediaGallery}/>
             <WhyDo title={title} source={whyDo}/>
             <HowDo title={title} source={howTo}/>
+            <ResourcesWeLove links={resources}/>
 
-            <Typography variant={"h5"} href="resources">
-              <strong>Resources we love</strong>
-            </Typography>
-            <Resources links={resources}/>
             <Typography variant={"h5"} href="howto">
               <strong>Ask me anything</strong>
             </Typography>
