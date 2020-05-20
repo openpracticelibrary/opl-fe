@@ -6,8 +6,6 @@ import ResourceListItem from './ResourceListItem';
 import {makeStyles} from "@material-ui/core/styles/index";
 import {DownloadIcon, PodcastIcon, WebLinkIcon} from "../../../assets/icons";
 
-// todo: get the icons from design
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -18,13 +16,13 @@ const useStyles = makeStyles((theme) => ({
   space: {
     padding: theme.spacing(1),
   },
-  space2: {
-    lineHeight: "10px",
+  indent: {
+    paddingLeft: theme.spacing(3)
   }
 }));
 
 //todo: (@Darcie) icons for video, purchase, books
-//todo: (@shahein) what's the structure of the resource.description?
+//todo: review the structure of the resource.description
 
 const Icon = {
   web: <WebLinkIcon/>,
@@ -53,7 +51,7 @@ export default function ResourcesWeLove(props) {
             </Typography>
           </Box>
 
-          <Box className={classes.space2}>
+          <Box className={classes.indent}>
             {props.links.map((resource, i) => (
                 <ResourceListItem key={i} url={resource.link} description={resource.description}>
                   { Icon[resource.linkType] }
