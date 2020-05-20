@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   titleBox: {
     display: "flex",
     justifyContent: "flex-start",
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: theme.palette.common.lighter_white,
     width: "100%",
   },
 }));
