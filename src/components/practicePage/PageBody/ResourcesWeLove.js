@@ -1,14 +1,10 @@
 import React from 'react';
-import NewTabIcon from '../../../assets/icons/NewTabIcon.js'
-import MenuBookOutlinedIcon from '@material-ui/icons/MenuBookOutlined';
-import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import MicNoneOutlinedIcon from '@material-ui/icons/MicNoneOutlined';
 import {Typography} from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import ReactMarkdown from 'react-markdown';
 import ResourceListItem from './ResourceListItem';
 import {makeStyles} from "@material-ui/core/styles/index";
+import {DownloadIcon, PodcastIcon, WebLinkIcon} from "../../../assets/icons";
 
 // todo: get the icons from design
 
@@ -21,26 +17,22 @@ const useStyles = makeStyles((theme) => ({
   },
   space: {
     padding: theme.spacing(1),
+  },
+  space2: {
+    lineHeight: "10px",
   }
 }));
 
-const linkIcon = (linkType) => {
-  switch (linkType) {
-    case "web":
-      return (<NewTabIcon/>);
-    case "download":
-      return (<NewTabIcon/>);
-    case "podcast":
-      return (<MicNoneOutlinedIcon/>);
-    case "video":
-      return (<VideocamOutlinedIcon/>);
-    case "purchase":
-      return (<ShoppingCartOutlinedIcon/>);
-    case "book":
-      return (<MenuBookOutlinedIcon/>);
-    default:
-      return (<NewTabIcon/>);
-  }
+//todo: (@Darcie) icons for video, purchase, books
+//todo: (@shahein) what's the structure of the resource.description?
+
+const Icon = {
+  web: <WebLinkIcon/>,
+  download: <DownloadIcon/>,
+  podcast: <PodcastIcon/>,
+  video: <PodcastIcon/>,
+  purchase: <WebLinkIcon/>,
+  book: <WebLinkIcon/>,
 };
 
 export default function ResourcesWeLove(props) {
@@ -61,10 +53,10 @@ export default function ResourcesWeLove(props) {
             </Typography>
           </Box>
 
-          <Box className={classes.space}>
+          <Box className={classes.space2}>
             {props.links.map((resource, i) => (
                 <ResourceListItem key={i} url={resource.link} description={resource.description}>
-                  {linkIcon(resource.linkType)}
+                  { Icon[resource.linkType] }
                 </ResourceListItem>
             ))}
           </Box>

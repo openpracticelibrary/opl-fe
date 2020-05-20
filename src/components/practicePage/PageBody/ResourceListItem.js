@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
   },
   space: {
     paddingRight: theme.spacing(2),
+  },
+  //todo: (@Darcie) font and styling for the link  items
+  color: {
+    color: theme.palette.common.black
   }
 }));
 
@@ -27,7 +31,9 @@ export default function ResourceListItem(props) {
           </Box>
           <Box>
             <Link href={props.url}>
-              <Typography variant="body1" key={props.key}> {props.description} </Typography>
+              <Typography variant="body1" key={props.key} className={classes.color}>
+                {props.description}
+              </Typography>
             </Link>
           </Box>
         </Box>

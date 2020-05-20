@@ -2,7 +2,6 @@ import React from 'react';
 import {Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import MediaGallery from './MediaGallery';
-import Resources from './Resources';
 import AskMeAnything from './AskMeAnything';
 import WhatIs from './WhatIs';
 import CssBaseline from '@material-ui/core/CssBaseline';
