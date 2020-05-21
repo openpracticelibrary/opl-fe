@@ -6,7 +6,7 @@ on:
       - master
     paths-ignore:
       - README.md
-
+      - local/**
 jobs:
   build-test-push:
     runs-on: ubuntu-latest

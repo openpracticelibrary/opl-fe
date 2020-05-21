@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+  mongo:
+    image: mongo
+    container_name: strapi-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ""
+      MONGO_INITDB_ROOT_PASSWORD: ""
+    networks:
+      - opl-network
+    ports:
+      - "27017:27017"
+
+  content_api:
+    image: quay.io/openpracticelibrary/opl-content-api
+    container_name: opl-content-api
+    restart: unless-stopped
+    environment:
+      DATABASE_HOST: 'strapi-mongodb'
+    networks:
+      - opl-network
+    ports:
+      - "1337:1337"
+    depends_on:
+      - mongo
+
+  media_service:
+    image: quay.io/openpracticelibrary/opl-media-service
+    container_name: opl-media-service
+    restart: unless-stopped
+    environment:
+      GITHUB_PAT: ""
+    networks:
+      - opl-network
+    ports:
+      - "4002:4002"
