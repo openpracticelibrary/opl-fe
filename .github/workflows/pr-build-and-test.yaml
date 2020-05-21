@@ -35,3 +35,6 @@ jobs:
       - name: Run Tests
         run: npm test --watchAll=false
 
+      - name: Lint Build
+        run: npm run build
+

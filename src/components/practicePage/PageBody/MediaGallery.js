@@ -1,16 +1,16 @@
-import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import {Typography} from '@material-ui/core';
-import ImageGallery from 'react-image-gallery';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
+import { Typography } from "@material-ui/core";
+import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
     padding: theme.spacing(1),
-    margin: theme.spacing(1)
+    margin: theme.spacing(1),
   },
   space: {
     padding: theme.spacing(1),
@@ -25,20 +25,20 @@ const useStyles = makeStyles((theme) => ({
 
 const testImages = [
   {
-    original: 'https://picsum.photos/id/1018/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1018/250/150/',
+    original: "https://picsum.photos/id/1018/1000/600/",
+    thumbnail: "https://picsum.photos/id/1018/250/150/",
   },
   {
-    original: 'https://picsum.photos/id/1015/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1015/250/150/',
+    original: "https://picsum.photos/id/1015/1000/600/",
+    thumbnail: "https://picsum.photos/id/1015/250/150/",
   },
   {
-    original: 'https://picsum.photos/id/1019/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1019/250/150/',
+    original: "https://picsum.photos/id/1019/1000/600/",
+    thumbnail: "https://picsum.photos/id/1019/250/150/",
   },
 ];
 
-export default function MediaGallery({mediaGallery}) {
+export default function MediaGallery({ mediaGallery }) {
   const classes = useStyles();
 
   // const images = mediaGallery.map(media => {
@@ -58,25 +58,24 @@ export default function MediaGallery({mediaGallery}) {
   // });
 
   return (
-      <>
-        <Box className={classes.root}>
-          <Box className={classes.space}>
-            <Typography variant={"h2"} href="#media">
-              Media Gallery
-            </Typography>
-          </Box>
-          <Box className={classes.gallery}>
-            <ImageGallery
-                items={testImages}
-                showBullets={true}
-                showIndex={true}
-                showThumbnails={true}
-                lazyLoad={true}
-                showPlayButton={true}
-            />
-          </Box>
+    <>
+      <Box className={classes.root}>
+        <Box className={classes.space}>
+          <Typography variant={"h2"} href="#media">
+            Media Gallery
+          </Typography>
         </Box>
-      </>
-  )
-};
-
+        <Box className={classes.gallery}>
+          <ImageGallery
+            items={testImages}
+            showBullets={true}
+            showIndex={true}
+            showThumbnails={true}
+            lazyLoad={true}
+            showPlayButton={true}
+          />
+        </Box>
+      </Box>
+    </>
+  );
+}
