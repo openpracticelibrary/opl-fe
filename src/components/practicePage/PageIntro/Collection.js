@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Collection(props) {
   const classes = useStyles();
-  const [likePractice, {data: mutationData}] = useMutation(LIKE_PRACTICE);
+  const [likePractice] = useMutation(LIKE_PRACTICE);
 
   const handleLike = () => {
     const originalLikes = props.upvotes;
