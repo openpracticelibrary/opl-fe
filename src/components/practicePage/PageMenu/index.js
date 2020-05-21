@@ -18,9 +18,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PageMenu(props) {
+const sections = [
+  { title: "What is it", url: "#whatis" },
+  { title: "Media", url: "#" },
+  { title: "Why do it", url: "#" },
+  { title: "How to", url: "#howto" },
+  { title: "Resources", url: "#" },
+  { title: "AMA", url: "#" },
+];
+
+export default function PageMenu() {
   const classes = useStyles();
-  const {sections} = props;
 
   return (
       <>
@@ -31,7 +39,7 @@ export default function PageMenu(props) {
                   key={i}
                   href={section.url}
                   className={classes.toolbarLink}
-                  variant={'overline'}
+                  variant='overline'
               >
                 {section.title}
               </Link>

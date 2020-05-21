@@ -22,15 +22,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const sections = [
-  { title: "What is it", url: "#whatis" },
-  { title: "Media", url: "#" },
-  { title: "Why do it", url: "#" },
-  { title: "How to", url: "#howto" },
-  { title: "Resources", url: "#" },
-  { title: "AMA", url: "#" },
-];
-
 //TODO: Retrieve specific practice page content and pass through props to children
 export default function PracticePageContent(props) {
   const classes = useStyles();
@@ -62,7 +53,7 @@ export default function PracticePageContent(props) {
           />
         </Box>
         <Box>
-          <PageMenu sections={sections} />
+          <PageMenu />
         </Box>
         <PageBody
           title={data.practices[0].title}
