@@ -4,6 +4,7 @@ import {makeStyles} from "@material-ui/core/styles/index";
 import CollectionItem from "./CollectionItem";
 import Grid from "@material-ui/core/Grid";
 import {AmaIcon, CameraIcon, FilledHeartIcon} from "../../../assets/icons";
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,18 +31,28 @@ export default function Collection(props) {
           </Grid>
           <Grid item>
             <CollectionItem amount={props.upvotes}>
-              <FilledHeartIcon/>
+              <IconButton onClick={props.handleLike}>
+                <FilledHeartIcon/>
+              </IconButton>
             </CollectionItem>
           </Grid>
           <Grid item>
+
             <CollectionItem amount={props.imgCount}>
-              <CameraIcon/>
+              <IconButton onClick={props.handleLike}>
+                <CameraIcon/>
+              </IconButton>
             </CollectionItem>
+
           </Grid>
           <Grid item>
+
             <CollectionItem amount={props.questions}>
-              <AmaIcon/>
+              <IconButton onClick={props.handleLike}>
+                <AmaIcon/>
+              </IconButton>
             </CollectionItem>
+
           </Grid>
         </Grid>
       </>
