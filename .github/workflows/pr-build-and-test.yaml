@@ -7,14 +7,12 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    env:
-      SHA8: ${GITHUB_SHA::8}
+
     strategy:
       matrix:
         node-version: [12.x]
 
     steps:
-      - run: echo "checkout $SHA8"
       - name: Git checkout
         uses: actions/checkout@v2
 
@@ -34,4 +32,7 @@ jobs:
 
       - name: Run Tests
         run: npm test --watchAll=false
+
+      - name: Lint Build
+        run: npm run build
 

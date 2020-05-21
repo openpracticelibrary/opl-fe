@@ -1,14 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {makeStyles} from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
-import Link from '@material-ui/core/Link';
-import Divider from '@material-ui/core/Divider';
+import React from "react";
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
+import Link from "@material-ui/core/Link";
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
-
   toolbarSecondary: {
-    overflowX: 'auto',
+    overflowX: "auto",
     paddingLeft: theme.spacing(9),
   },
   toolbarLink: {
@@ -20,25 +19,29 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PageMenu(props) {
   const classes = useStyles();
-  const {sections} = props;
+  const { sections } = props;
 
   return (
-      <>
-        <Divider/>
-        <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-          {sections.map((section, i) => (
-              <Link
-                  key={i}
-                  href={section.url}
-                  className={classes.toolbarLink}
-                  variant={'overline'}
-              >
-                {section.title}
-              </Link>
-          ))}
-        </Toolbar>
-        <Divider/>
-      </>
+    <>
+      <Divider />
+      <Toolbar
+        component="nav"
+        variant="dense"
+        className={classes.toolbarSecondary}
+      >
+        {sections.map((section, i) => (
+          <Link
+            key={i}
+            href={section.url}
+            className={classes.toolbarLink}
+            variant={"overline"}
+          >
+            {section.title}
+          </Link>
+        ))}
+      </Toolbar>
+      <Divider />
+    </>
   );
 }
 

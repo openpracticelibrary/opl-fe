@@ -6,3 +6,6 @@ export { default as RockIcon } from './RockIcon';
 export { default as CCHeartIcon } from './CCHeartIcon';
 export { default as BetaIcon } from './BetaIcon';
 export { default as NewTabIcon } from './NewTabIcon';
+export { default as WebLinkIcon } from './WebLinkIcon';
+export { default as PodcastIcon } from './PodcastIcon';
+export { default as DownloadIcon } from './DownloadIcon';
