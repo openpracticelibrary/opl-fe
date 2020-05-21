@@ -41,7 +41,7 @@ jobs:
           image_push_username: ${{ secrets.QUAY_USER }}
           image_push_password: ${{ secrets.QUAY_PASS }}
           image_push_registry: quay.io
-          output_image: openpracticelibrary/opl-fe
+          output_image: quay.io/openpracticelibrary/opl-fe
           image_tags: ${{ github.sha }}
   kustomize:
     runs-on: ubuntu-latest
