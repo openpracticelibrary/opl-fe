@@ -38,8 +38,8 @@ jobs:
         with:
           base: registry.access.redhat.com/rhscl/httpd-24-rhel7:2.4
           path: build
-          username: ${{ secrets.QUAY_USER }}
-          password: ${{ secrets.QUAY_PASS }}
+          image_push_username: ${{ secrets.QUAY_USER }}
+          image_push_password: ${{ secrets.QUAY_PASS }}
           image_push_registry: quay.io
           output_image: openpracticelibrary/opl-fe
           image_tags: ${{ github.sha }}
