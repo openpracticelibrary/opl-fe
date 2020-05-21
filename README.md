@@ -1,6 +1,8 @@
 # Open Practice Library
 ![Pull Requests](https://github.com/openpracticelibrary/opl-fe/workflows/Pull%20Requests/badge.svg)
 
+![FE Dev Build](https://github.com/openpracticelibrary/opl-fe/workflows/FE%20Dev%20Build/badge.svg)
+
 This is the repository for the Open Practice Library web application.
 
 ## Install Project Dependencies
