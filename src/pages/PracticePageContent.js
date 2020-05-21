@@ -5,8 +5,8 @@ import Box from "@material-ui/core/Box";
 import PageMenu from "../components/practicePage/PageMenu";
 import PageBody from "../components/practicePage/PageBody";
 
-import { useQuery, useMutation } from "@apollo/react-hooks";
-import { GET_PRACTICE_PAGE, LIKE_PRACTICE } from "../graphql";
+import { useQuery } from "@apollo/react-hooks";
+import { GET_PRACTICE_PAGE } from "../graphql";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,15 +22,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const sections = [
-  { title: "What is it", url: "#whatis" },
-  { title: "Media", url: "#" },
-  { title: "Why do it", url: "#" },
-  { title: "How to", url: "#howto" },
-  { title: "Resources", url: "#" },
-  { title: "AMA", url: "#" },
-];
-
 //TODO: Retrieve specific practice page content and pass through props to children
 export default function PracticePageContent(props) {
   const classes = useStyles();
@@ -39,16 +30,6 @@ export default function PracticePageContent(props) {
   const { loading, error, data } = useQuery(GET_PRACTICE_PAGE, {
     variables: { slug },
   });
-
-  const [likePractice] = useMutation(LIKE_PRACTICE);
-
-  const handleLike = () => {
-    const propUpvotes = data.practices[0].upvotes;
-    const newUpvotes = propUpvotes + 1;
-    likePractice({
-      variables: { practiceId: data.practices[0].id, upvotes: newUpvotes },
-    });
-  };
 
   // TODO: Use loading bar/circle
   if (loading) return <p>Loading...</p>;
@@ -66,14 +47,13 @@ export default function PracticePageContent(props) {
             authors={data.practices[0].authors}
             createdAt={data.practices[0].createdAt}
             updatedAt={data.practices[0].updatedAt}
-            upvotes={data.practices[0].upvotes}
             imgCount={data.practices[0].mediaGallery.length}
             questions={data.practices[0].ama.length}
-            handleLike={handleLike}
+            upvotes={data.practices[0].upvotes}
           />
         </Box>
         <Box>
-          <PageMenu sections={sections} />
+          <PageMenu />
         </Box>
         <PageBody
           title={data.practices[0].title}

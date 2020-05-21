@@ -46,7 +46,6 @@ export default function PageIntro(props) {
               upvotes={props.upvotes}
               imgCount={props.imgCount}
               questions={props.questions}
-              handleLike={props.handleLike}
             />
           </Box>
         </main>

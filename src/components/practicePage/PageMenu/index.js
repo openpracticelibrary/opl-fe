@@ -17,10 +17,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PageMenu(props) {
-  const classes = useStyles();
-  const { sections } = props;
+const sections = [
+  { title: "What is it", url: "#whatis" },
+  { title: "Media", url: "#" },
+  { title: "Why do it", url: "#" },
+  { title: "How to", url: "#howto" },
+  { title: "Resources", url: "#" },
+  { title: "AMA", url: "#" },
+];
 
+export default function PageMenu() {
+  const classes = useStyles();
   return (
     <>
       <Divider />
