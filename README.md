@@ -1,79 +1,46 @@
 # Open Practice Library
 ![Pull Requests](https://github.com/openpracticelibrary/opl-fe/workflows/Pull%20Requests/badge.svg)
-
 ![FE Dev Build](https://github.com/openpracticelibrary/opl-fe/workflows/FE%20Dev%20Build/badge.svg)
 
 This is the repository for the Open Practice Library web application.
 
-## Install Project Dependencies
+![Mobius Loop](https://d33wubrfki0l68.cloudfront.net/57dbd09220d511e83b5f6a880c05448b4664f3a9/7845e/images/loop-labels-path.svg)
 
-Before running the yarn scripts below, you'll first need to install project dependencies.
+## Local Development
 
-### `npm install`
+### OPL's Back-end Services
 
-## Available Scripts
+To run locally, you will need a connection to a GraphQL server that holds the schema for the Open Practice Library. You can choose to run all of the following services locally, which can be something of a challenge, or you can use the `local/docker-compose.yaml` file in this repository to spin up the services you need. The only caveats to running the backend services in containers are:
 
-In the project directory, you can run:
+1. You will not be able to make any changes to backend services and test how they affect the frontend.
+2. You will not be able to run the API Gateway service in a container. If you want to use it, though, with the other services in containers, that is possible (it is a fairly simple service to run).
 
-### `yarn start`
+Here are the backend services at the current stage of development:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [opl-content-api](https://github.com/openpracticelibrary/opl-content-api) runs a headless CMS with a GraphQL endpoint at `/graphql` on port 1337.
+- [opl-media-service](https://github.com/openpracticelibrary/opl-media-service) runs a small Apollo Server that takes image uploads, compresses them, and sends them on to the `opl-media` repository. Runs on port 4002.
+- [opl-api-gateway](https://github.com/openpracticelibrary/opl-api-gateway) runs an Apollo Federation Gateway, which stitches the schemas of it's component services together to create one graph for our frontend to interact with. Runs on port 4000.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+There is also a `mongo` database that starts up to back opl-content-api. You may wish to simply stop the services, rather than removing them completely, if you run these applications in containers, which will keep any data you may have stored in the mongo database available the next time you start the services back up.
 
-### `yarn test`
+### Running this application locally
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Once you've started the backend services, or at least are able to connect at `localhost:1337/graphql`, create a `.env.local` file (will be ignored by git, but will override any other environment variables), and input:
+```
+REACT_APP_GRAPHQL_ENDPOINT="http://localhost:4000/graphql"
 
-### `yarn build`
+** OR ** if you are not running the opl-api-gateway,
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+REACT_APP_GRAPHQL_ENDPOINT="http://localhost:1337/graphql"
+```
+After that, the process is the same as every other React application:
+```
+npm install
+npm start
+```
+Happy Hacking! :nerd_face:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Further Reading
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The [wiki](https://github.com/openpracticelibrary/opl-docs/wiki), which will contain contribution guidelines, open source design documents, non-technical information about the Open Practice Library, and much more is under construction!
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
