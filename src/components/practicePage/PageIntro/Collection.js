@@ -12,6 +12,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     paddingLeft: theme.spacing(1),
+  },
+  button: {
+    "&:hover": {
+      backgroundColor: "transparent"
+    }
   }
 }));
 
@@ -20,12 +25,10 @@ export default function Collection(props) {
   const [likePractice, {data: mutationData}] = useMutation(LIKE_PRACTICE);
 
   const handleLike = () => {
-    const originalLikes = props.practice.upvotes;
-    console.log(originalLikes);
+    const originalLikes = props.upvotes;
     const newUpvotes = originalLikes + 1;
-    console.log(newUpvotes);
     likePractice({
-      variables: {practiceId: props.practice.id, upvotes: newUpvotes},
+      variables: {practiceId: props.practiceId, upvotes: newUpvotes},
     });
   };
 
@@ -37,34 +40,33 @@ export default function Collection(props) {
             justify="flex-start"
             alignItems="center"
             className={classes.root}
-            spacing={2}
         >
           <Grid item>
             <Typography variant="overline">Collection</Typography>
           </Grid>
           <Grid item>
-            <CollectionItem amount={props.practice.upvotes}>
-              <IconButton onClick={handleLike}>
+            <IconButton onClick={handleLike} className={classes.button}>
+              <CollectionItem amount={props.upvotes}>
                 <FilledHeartIcon/>
-              </IconButton>
-            </CollectionItem>
+              </CollectionItem>
+            </IconButton>
           </Grid>
 
           <Grid item>
-            <CollectionItem amount={props.imgCount}>
-              <IconButton disabled>
+            <IconButton disabled>
+              <CollectionItem amount={props.imgCount}>
                 <CameraIcon/>
-              </IconButton>
-            </CollectionItem>
+              </CollectionItem>
+            </IconButton>
 
           </Grid>
           <Grid item>
 
-            <CollectionItem amount={props.questions}>
-              <IconButton disabled>
+            <IconButton disabled>
+              <CollectionItem amount={props.questions}>
                 <AmaIcon/>
-              </IconButton>
-            </CollectionItem>
+              </CollectionItem>
+            </IconButton>
 
           </Grid>
         </Grid>

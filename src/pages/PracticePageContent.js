@@ -5,8 +5,8 @@ import Box from "@material-ui/core/Box";
 import PageMenu from "../components/practicePage/PageMenu";
 import PageBody from "../components/practicePage/PageBody";
 
-import { useQuery, useMutation } from "@apollo/react-hooks";
-import { GET_PRACTICE_PAGE, LIKE_PRACTICE } from "../graphql";
+import { useQuery } from "@apollo/react-hooks";
+import { GET_PRACTICE_PAGE } from "../graphql";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,7 +58,7 @@ export default function PracticePageContent(props) {
             updatedAt={data.practices[0].updatedAt}
             imgCount={data.practices[0].mediaGallery.length}
             questions={data.practices[0].ama.length}
-            practice={data.practices[0]}
+            upvotes={data.practices[0].upvotes}
           />
         </Box>
         <Box>

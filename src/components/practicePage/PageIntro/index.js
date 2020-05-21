@@ -45,7 +45,7 @@ export default function PageIntro(props) {
                   practiceId={props.practiceId}
                   imgCount={props.imgCount}
                   questions={props.questions}
-                  practice={props.practice}
+                  upvotes={props.upvotes}
               />
             </Box>
 
