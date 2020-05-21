@@ -1,6 +1,7 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
+import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles/index";
+import ReactMarkdown from "react-markdown";
 import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
@@ -15,17 +16,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TitleAndSubtitle(props) {
+export default function HowDo(props) {
   const classes = useStyles();
 
   return (
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h1"}>{props.title}</Typography>
+          <Typography variant={"h2"} href="#WhyDoIt">
+            How to do {props.title}?
+          </Typography>
         </Box>
         <Box className={classes.space}>
-          <Typography variant={"subtitle1"}>{props.subtitle}</Typography>
+          <Typography variant={"body1"}>
+            <ReactMarkdown source={props.source} />
+          </Typography>
         </Box>
       </Box>
     </>

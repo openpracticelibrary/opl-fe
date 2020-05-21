@@ -1,0 +1,38 @@
+name: Pull Requests
+
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Use node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: npm install
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: v1-npm-deps-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: v1-npm-deps-
+
+      - name: Run Tests
+        run: npm test --watchAll=false
+
+      - name: Lint Build
+        run: npm run build
+
