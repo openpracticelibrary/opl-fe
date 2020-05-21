@@ -23,6 +23,26 @@ Here are the backend services at the current stage of development:
 
 There is also a `mongo` database that starts up to back opl-content-api. You may wish to simply stop the services, rather than removing them completely, if you run these applications in containers, which will keep any data you may have stored in the mongo database available the next time you start the services back up.
 
+Running the container services is simple:
+```
+podman-compose up -d
+
+** OR **
+
+docker-compose up -d
+```
+
+This will start the services without the API Gateway. That will work, if all you want to do is manage content (most cases), just connect to the content API on port 1337.
+
+**If this is your first time running these services**, you will need to open a browser to `localhost:1337/admin` and create an account in the Strapi interface. You will also want to open the API publicly so that you can access it without an API key. To do that, sign in, go to `Roles & Permissions > Public > Permissions` and select all on every area that you can. Be sure to open the other menus, like `CONTENT-MANAGER`, to give yourself full permissions to your local API. You can find out more about Strapi [here](https://strapi.io/documentation/3.0.0-beta.x/getting-started/quick-start.html).
+
+If you really want to run the API Gateway, clone the repo (link is above), open the `Makefile` and point the environment variables at your services, then run:
+```
+npm install
+make start
+```
+You should see a GraphQL interface at port 4000.
+
 ### Running this application locally
 
 Once you've started the backend services, or at least are able to connect at `localhost:1337/graphql`, create a `.env.local` file (will be ignored by git, but will override any other environment variables), and input:
@@ -38,7 +58,7 @@ After that, the process is the same as every other React application:
 npm install
 npm start
 ```
-Happy Hacking! :nerd_face:
+Happy Hacking! :nerd_face: :rocket:
 
 ## Further Reading
 
