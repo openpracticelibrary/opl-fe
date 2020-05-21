@@ -40,7 +40,7 @@ export default function PracticePageContent(props) {
     variables: { slug },
   });
 
-  const [likePractice, { data: mutationData }] = useMutation(LIKE_PRACTICE);
+  const [likePractice] = useMutation(LIKE_PRACTICE);
 
   const handleLike = () => {
     const propUpvotes = data.practices[0].upvotes;
