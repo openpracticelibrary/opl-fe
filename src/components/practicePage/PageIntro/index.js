@@ -43,10 +43,8 @@ export default function PageIntro(props) {
             <Box className={classes.row}>
               <Collection
                   practiceId={props.practiceId}
-                  upvotes={props.upvotes}
                   imgCount={props.imgCount}
                   questions={props.questions}
-                  handleLike={props.handleLike}
                   practice={props.practice}
               />
             </Box>

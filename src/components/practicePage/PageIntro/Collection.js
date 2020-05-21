@@ -6,7 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import {AmaIcon, CameraIcon, FilledHeartIcon} from "../../../assets/icons";
 import IconButton from '@material-ui/core/IconButton';
 import {useMutation} from "@apollo/react-hooks/lib/index";
-import { GET_PRACTICE_PAGE, LIKE_PRACTICE } from "../../../graphql/";
+import {LIKE_PRACTICE} from "../../../graphql/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,13 +17,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Collection(props) {
   const classes = useStyles();
-  const [likePractice, { data: mutationData }] = useMutation(LIKE_PRACTICE);
+  const [likePractice, {data: mutationData}] = useMutation(LIKE_PRACTICE);
 
   const handleLike = () => {
     const originalLikes = props.practice.upvotes;
+    console.log(originalLikes);
     const newUpvotes = originalLikes + 1;
+    console.log(newUpvotes);
     likePractice({
-      variables: { practiceId: props.practice.id, upvotes: newUpvotes },
+      variables: {practiceId: props.practice.id, upvotes: newUpvotes},
     });
   };
 
@@ -41,7 +43,7 @@ export default function Collection(props) {
             <Typography variant="overline">Collection</Typography>
           </Grid>
           <Grid item>
-            <CollectionItem amount={props.upvotes}>
+            <CollectionItem amount={props.practice.upvotes}>
               <IconButton onClick={handleLike}>
                 <FilledHeartIcon/>
               </IconButton>
@@ -50,7 +52,7 @@ export default function Collection(props) {
 
           <Grid item>
             <CollectionItem amount={props.imgCount}>
-              <IconButton onClick={props.handleLike}>
+              <IconButton disabled>
                 <CameraIcon/>
               </IconButton>
             </CollectionItem>
@@ -59,7 +61,7 @@ export default function Collection(props) {
           <Grid item>
 
             <CollectionItem amount={props.questions}>
-              <IconButton onClick={props.handleLike}>
+              <IconButton disabled>
                 <AmaIcon/>
               </IconButton>
             </CollectionItem>
