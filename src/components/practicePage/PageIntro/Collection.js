@@ -5,6 +5,8 @@ import CollectionItem from "./CollectionItem";
 import Grid from "@material-ui/core/Grid";
 import {AmaIcon, CameraIcon, FilledHeartIcon} from "../../../assets/icons";
 import IconButton from '@material-ui/core/IconButton';
+import {useMutation} from "@apollo/react-hooks/lib/index";
+import { GET_PRACTICE_PAGE, LIKE_PRACTICE } from "../../../graphql/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,6 +17,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Collection(props) {
   const classes = useStyles();
+  const [likePractice, { data: mutationData }] = useMutation(LIKE_PRACTICE);
+
+  const handleLike = () => {
+    const originalLikes = props.practice.upvotes;
+    const newUpvotes = originalLikes + 1;
+    likePractice({
+      variables: { practiceId: props.practice.id, upvotes: newUpvotes },
+    });
+  };
 
   return (
       <>
@@ -31,13 +42,13 @@ export default function Collection(props) {
           </Grid>
           <Grid item>
             <CollectionItem amount={props.upvotes}>
-              <IconButton onClick={props.handleLike}>
+              <IconButton onClick={handleLike}>
                 <FilledHeartIcon/>
               </IconButton>
             </CollectionItem>
           </Grid>
-          <Grid item>
 
+          <Grid item>
             <CollectionItem amount={props.imgCount}>
               <IconButton onClick={props.handleLike}>
                 <CameraIcon/>

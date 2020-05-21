@@ -40,16 +40,6 @@ export default function PracticePageContent(props) {
     variables: { slug },
   });
 
-  const [likePractice, { data: mutationData }] = useMutation(LIKE_PRACTICE);
-
-  const handleLike = () => {
-    const propUpvotes = data.practices[0].upvotes;
-    const newUpvotes = propUpvotes + 1;
-    likePractice({
-      variables: { practiceId: data.practices[0].id, upvotes: newUpvotes },
-    });
-  };
-
   // TODO: Use loading bar/circle
   if (loading) return <p>Loading...</p>;
   // TODO: Create 404 page
@@ -66,10 +56,9 @@ export default function PracticePageContent(props) {
             authors={data.practices[0].authors}
             createdAt={data.practices[0].createdAt}
             updatedAt={data.practices[0].updatedAt}
-            upvotes={data.practices[0].upvotes}
             imgCount={data.practices[0].mediaGallery.length}
             questions={data.practices[0].ama.length}
-            handleLike={handleLike}
+            practice={data.practices[0]}
           />
         </Box>
         <Box>

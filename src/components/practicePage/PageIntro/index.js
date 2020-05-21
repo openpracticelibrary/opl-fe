@@ -47,6 +47,7 @@ export default function PageIntro(props) {
                   imgCount={props.imgCount}
                   questions={props.questions}
                   handleLike={props.handleLike}
+                  practice={props.practice}
               />
             </Box>
 
