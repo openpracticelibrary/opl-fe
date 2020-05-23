@@ -12,9 +12,6 @@ const useStyles = makeStyles((theme) => ({
   },
   space: {
     padding: theme.spacing(1),
-  },
-  demoTest: {
-    color: 'red'
   }
 }));
 
@@ -25,7 +22,7 @@ export default function TitleAndSubtitle(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h1"} className={classes.demoTest}>{props.title}</Typography>
+          <Typography variant={"h1"}>{props.title}</Typography>
         </Box>
         <Box className={classes.space}>
           <Typography variant={"subtitle1"}>{props.subtitle}</Typography>
