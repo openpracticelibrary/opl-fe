@@ -1,9 +1,10 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-import { Typography } from "@material-ui/core";
+import {Typography} from "@material-ui/core";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+import DefaultImage from "../../../assets/images/DefaultImage.png"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,35 +16,28 @@ const useStyles = makeStyles((theme) => ({
   space: {
     padding: theme.spacing(1),
   },
-  gallery: {
+  mediaBox: {
     display: "flex",
     justifyContent: "center",
     margin: theme.spacing(1),
     padding: theme.spacing(1),
-  },
-}));
+  }
+}))
+;
 
-const testImages = [
-  {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
-  },
-];
-
-export default function MediaGallery({ mediaGallery }) {
+export default function MediaGallery({mediaGallery}) {
   const classes = useStyles();
+  const images = [];
 
-  // const images = mediaGallery.map(media => {
-  //   const url = new URL(media.link);
-  //
+  mediaGallery.map(media => {
+    let image = {
+      original: media.link,
+      thumbnail: media.link
+    };
+    return images.push(image);
+  });
+
+  //todo: adding video to the gallery
   //   if (url.hostname.includes('youtu')) {
   //     const youtubeId = url.pathname.split('/')[1];
   //     const link = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
@@ -52,10 +46,6 @@ export default function MediaGallery({ mediaGallery }) {
   //       original: media.link
   //     }
   //   }
-  //   return {
-  //     link: media.link
-  //   }
-  // });
 
   return (
     <>
@@ -65,14 +55,15 @@ export default function MediaGallery({ mediaGallery }) {
             Media Gallery
           </Typography>
         </Box>
-        <Box className={classes.gallery}>
+        <Box className={classes.mediaBox}>
           <ImageGallery
-            items={testImages}
+            items={images}
             showBullets={true}
             showIndex={true}
             showThumbnails={true}
             lazyLoad={true}
             showPlayButton={true}
+            onErrorImageURL={DefaultImage}
           />
         </Box>
       </Box>
