@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
   },
+  paddedHamburger: {
+    marginLeft: 20,
+  },
   box: {
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(["width", "margin"], {
@@ -75,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function OPLDrawer(props) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -128,7 +131,10 @@ export default function OPLDrawer(props) {
             src={oplLogo}
             alt="labs"
           />
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton
+            onClick={handleDrawerClose}
+            className={clsx(classes.paddedHamburger)}
+          >
             <MenuIcon />
           </IconButton>
         </div>
