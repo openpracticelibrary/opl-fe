@@ -9,6 +9,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { BottomListItems, TopListItems } from "./ListItems";
 import Box from "@material-ui/core/Box";
 import Footer from "./Footer";
+import oplLogo from "../../../assets/icons/open-practice-librar.png";
 
 
 const drawerWidth = "16.5rem";
@@ -121,12 +122,17 @@ export default function OPLDrawer(props) {
             [classes.drawerClose]: !open,
           }),
         }}
-      >
+      >     
         <div className={classes.toolbar}>
+          <img
+            src={oplLogo}
+            alt="labs"
+          />
           <IconButton onClick={handleDrawerClose}>
             <MenuIcon />
           </IconButton>
         </div>
+       
         {open && (
           <>
             <Box m={2}>
