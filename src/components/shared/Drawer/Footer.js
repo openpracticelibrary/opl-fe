@@ -17,10 +17,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  { title: "ABOUT US", url: "#whatis", icon: <RockIcon /> },
+  { title: "ABOUT US", url: "#", icon: <RockIcon /> },
   { title: "JOIN BETA", url: "#", icon: <BetaIcon /> },
   { title: "MEETUP", url: "#", icon: <NewTabIcon /> },
-  { title: "GITHUB", url: "#howto", icon: <NewTabIcon /> },
+  { title: "GITHUB", url: "#", icon: <NewTabIcon /> },
   { title: "PODCAST", url: "#", icon: <NewTabIcon /> },
 ];
 

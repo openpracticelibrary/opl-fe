@@ -9,6 +9,7 @@ import Container from "@material-ui/core/Container";
 import WhyDo from "./WhyDo";
 import HowDo from "./HowDo";
 import ResourcesWeLove from "./ResourcesWeLove";
+import BodyFooter from "../../shared/BodyFooter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,6 +53,7 @@ export default function PageBody(props) {
           </Typography>
           <AskMeAnything ama={ama} />
         </main>
+        <BodyFooter />
       </Container>
     </>
   );

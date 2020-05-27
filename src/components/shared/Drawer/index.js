@@ -10,6 +10,7 @@ import { BottomListItems, TopListItems } from "./ListItems";
 import Box from "@material-ui/core/Box";
 import Footer from "./Footer";
 
+
 const drawerWidth = "16.5rem";
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function OPLDrawer(props) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);

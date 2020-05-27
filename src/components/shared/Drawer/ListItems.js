@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function TopListItems() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
     setOpen(!open);
