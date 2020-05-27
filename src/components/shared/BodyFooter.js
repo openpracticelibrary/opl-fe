@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import oplLogo from "../../assets/icons/open-practice-librar.png";
+import OPLlogo from "../../assets/icons/open-practice-librar.png";
 import labsLogo from "../../assets/icons/logo-red-hat-open-innovation-labs-a-black-rgb.png";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
@@ -50,7 +50,7 @@ export default function BodyFooter() {
           >
             <Grid item>
               <img
-                src={oplLogo}
+                src={OPLlogo}
                 alt="OPL"         
               />
             </Grid>

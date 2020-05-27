@@ -8,7 +8,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { BottomListItems, TopListItems } from "./ListItems";
 import Box from "@material-ui/core/Box";
 import Footer from "./Footer";
-import oplLogo from "../../../assets/icons/open-practice-librar.png";
+import OPLlogo from "../../../assets/icons/open-practice-librar.png";
 
 
 const drawerWidth = "16.5rem";
@@ -100,11 +100,7 @@ export default function OPLDrawer(props) {
         }}
       >     
         <div className={classes.toolbar}>
-          <img
-            src={oplLogo}
-            alt="labs"
-            width="170px"
-          />
+          <img src={OPLlogo} alt="OPL" width="170px" />
           <IconButton
             onClick={handleDrawerOpen}
             className={clsx(classes.paddedHamburger)}
