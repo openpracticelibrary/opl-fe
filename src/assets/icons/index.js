@@ -10,3 +10,4 @@ export { default as NewTabIcon } from './NewTabIcon';
 export { default as WebLinkIcon } from './WebLinkIcon';
 export { default as PodcastIcon } from './PodcastIcon';
 export { default as DownloadIcon } from './DownloadIcon';
+export { default as LabsIcon } from './LabsIcon';

@@ -7,6 +7,7 @@ import Collapse from "@material-ui/core/Collapse";
 import List from "@material-ui/core/List";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import ListItemText from '@material-ui/core/ListItemText';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function TopListItems() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
     setOpen(!open);
@@ -39,11 +40,13 @@ export function TopListItems() {
         <Typography variant="body2"> See everything </Typography>
       </ListItem>
       <ListItem button onClick={handleClick}>
-        <Typography variant="body2"> By mobius loop </Typography>
+        <ListItemText>
+          <Typography variant="body2"> By mobius loop </Typography>
+        </ListItemText>
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding className={classes.nested}>
+        <List component="div" className={classes.nested}>
           <ListItem button>
             <Typography variant="body1"> Discovery </Typography>
           </ListItem>
