@@ -1,29 +1,60 @@
 import React from "react";
-import { AmaIcon } from "../../../assets/icons";
 import { Typography } from "@material-ui/core";
-import TextField from "@material-ui/core/TextField";
 import Box from "@material-ui/core/Box";
+import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core/styles/index";
+import QuestionsAndAnswers from "./QuestionsAndAnswers";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    padding: theme.spacing(1),
+    margin: theme.spacing(1),
+  },
+  space: {
+    padding: theme.spacing(1),
+  },
+  input: {
+    '&::placeholder': {
+      fontStyle: 'italic',
+      fontFamily: "Noto Serif",
+      fontWeight: "normal italic",
+      fontSize: "1.625rem",
+      color: theme.palette.common.brown_grey,
+      padding: theme.spacing(1)
+    },
+  },
+}));
 
 export default function AskMeAnything(props) {
+  const classes = useStyles();
+
   return (
     <>
-      <Typography>Questions from the community</Typography>
-      <TextField
-        id="ama-question"
-        label="What questions do you have?"
-        variant="outlined"
-      />
-      <Box p={3}>
-        {props.ama.map((qAndA, i) => (
-          <React.Fragment key={i}>
-            <Typography variant={"h5"}>
-              <AmaIcon />
-              {qAndA.question}
-            </Typography>
-            <Typography variant="overline">Answer</Typography>
-            <Typography>{qAndA.answers.map((a) => a.answer)}</Typography>
-          </React.Fragment>
-        ))}
+      <Box className={classes.root}>
+        <Box className={classes.space}>
+          <Typography variant={"h2"} href="#WhyDoIt">
+            Ask me anything
+          </Typography>
+        </Box>
+        <Box className={classes.space}>
+          <Typography variant={"body1"}>
+            {'Questions from community aliquam id diam maecenas ultricies mi eget mauris. Odio tempor orci dapibus ultrices in. '}
+          </Typography>
+        </Box>
+        <Box className={classes.space}>
+          <TextField
+            id="ama"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            placeholder="What questions do you have?"
+            InputProps={{
+              classes: { input: classes.input}
+            }}/>
+        </Box>
+        <QuestionsAndAnswers ama={props.ama}/>
       </Box>
     </>
   );

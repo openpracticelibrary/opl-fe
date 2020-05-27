@@ -1,6 +1,5 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import MediaGallery from "./MediaGallery";
 import AskMeAnything from "./AskMeAnything";
 import WhatIs from "./WhatIs";
@@ -47,10 +46,6 @@ export default function PageBody(props) {
           <WhyDo title={title} source={whyDo} />
           <HowDo title={title} source={howTo} />
           <ResourcesWeLove links={resources} />
-
-          <Typography variant={"h5"} href="howto">
-            <strong>Ask me anything</strong>
-          </Typography>
           <AskMeAnything ama={ama} />
         </main>
         <BodyFooter />
