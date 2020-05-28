@@ -4,11 +4,8 @@ import { Typography, Paper, Box } from "@material-ui/core";
 import { navigate } from "@reach/router";
 
 const useStyles = makeStyles({
-  root: {
-    maxWidth: 325,
-  },
   coverImage: {
-    borderRadius: 25,
+    borderRadius: 10,
     height: 181,
     width: 295,
   },
@@ -29,7 +26,7 @@ export default function PracticeCardBase(props) {
       <Typography variant={"subtitle2"}>{props.practiceTitle}</Typography>
       {props.tags.map((t, i) => (
         <Typography key={i} variant={"overline"}>
-          #{t.tag}&nbsp;
+          #{t.tag}{" "}
         </Typography>
       ))}
     </Box>
