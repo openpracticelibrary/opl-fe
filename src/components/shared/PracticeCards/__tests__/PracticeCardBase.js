@@ -21,7 +21,7 @@ const mockPracticeCardProps = {
   slug: "event-storming",
 };
 
-it("should render the practice card with props", async () => {
+it("should render the practice base card with props", async () => {
   const { getByText } = render(
     <PracticeCardBase {...mockPracticeCardProps} />
   );

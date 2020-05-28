@@ -10,7 +10,6 @@ import Box from "@material-ui/core/Box";
 import Footer from "./Footer";
 import OPLlogo from "../../../assets/icons/open-practice-librar.png";
 
-
 const drawerWidth = "16.5rem";
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -98,7 +97,7 @@ export default function OPLDrawer(props) {
             [classes.drawerClose]: !open,
           }),
         }}
-      >     
+      >
         <div className={classes.toolbar}>
           <img src={OPLlogo} alt="OPL" width="170px" />
           <IconButton
@@ -108,7 +107,7 @@ export default function OPLDrawer(props) {
             <MenuIcon />
           </IconButton>
         </div>
-       
+
         {open && (
           <>
             <Box m={2}>

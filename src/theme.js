@@ -10,6 +10,7 @@ const very_light_grey = "#e9e9e9";
 const brownish_grey = "#717171";
 const brown_grey = "#a0a0a0";
 const black = "#2e2e2e";
+const true_white = "#ffffff";
 
 export default createMuiTheme({
   palette: {
@@ -23,7 +24,8 @@ export default createMuiTheme({
       brownish_grey: `${brownish_grey}`,
       brown_grey: `${brown_grey}`,
       black: `${black}`,
-      lighter_white: `${lighter_white}`
+      lighter_white: `${lighter_white}`,
+      true_white: `${true_white}`,
     },
     primary: {
       main: `${black}`,
@@ -83,6 +85,15 @@ export default createMuiTheme({
       color: `${brownish_grey}`,
     },
 
+    //card sub Text
+    h6: {
+      fontFamily: "Noto Serif",
+      fontWeight: "normal",
+      fontSize: "0.75rem",
+      lineHeight: "1.375rem",
+      color: `${brown_grey}`,
+    },
+
     //Body text
     body1: {
       fontFamily: "Noto Serif",
@@ -130,7 +141,5 @@ export default createMuiTheme({
       letterSpacing: "0.05625rem",
       color: `${brown_grey}`,
     },
-
-    
   },
 });

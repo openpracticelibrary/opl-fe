@@ -3,6 +3,7 @@ import React from "react";
 export default function FilledHeartIcon() {
   return (
     <svg
+      data-testid="heartSvg"
       xmlns="http://www.w3.org/2000/svg"
       width="20"
       height="17"
