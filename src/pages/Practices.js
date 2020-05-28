@@ -5,7 +5,6 @@ import { useQuery } from "@apollo/react-hooks";
 
 import { GET_PRACTICE_LIST } from "../graphql";
 import PracticeCard from "../components/shared/PracticeCards";
-// import PracticeCardDetails from "../components/shared/PracticeCards/PracticeCardDetails";
 
 const useStyles = makeStyles((theme) => ({
   root: {
