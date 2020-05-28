@@ -24,8 +24,8 @@ export default function Home() {
     <>
       <Box className={classes.root}>
         <Box className={classes.titleBox}>
-          <h2>Welcome to the Open Practice Library</h2>
-          <p>This page is currently under construction</p>
+          <h2>Practices muthafucka!</h2>
+          <p>Get em while they're hot!</p>
         </Box>
       </Box>
     </>
