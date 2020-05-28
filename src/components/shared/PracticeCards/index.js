@@ -38,6 +38,7 @@ export default function PracticeCard(props) {
       <div
         aria-owns={open ? props.practiceId : undefined}
         aria-haspopup="true"
+        data-testid="base"
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}
       >
@@ -50,6 +51,7 @@ export default function PracticeCard(props) {
       </div>
       <Popover
         id={props.practiceId}
+        data-testid="popover"
         className={classes.popover}
         open={open}
         anchorEl={anchorEl}

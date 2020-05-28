@@ -36,6 +36,7 @@ export default function PracticeCardDetails(props) {
     <Card className={classes.root}>
       <CardActionArea onClick={() => navigate(`/practice/${props.slug}`)}>
         <CardMedia
+          data-testid="detailCardImage"
           title={props.practiceTitle}
           image={props.coverImage}
           className={classes.coverImage}

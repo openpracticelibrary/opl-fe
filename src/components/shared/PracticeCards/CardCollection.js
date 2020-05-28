@@ -35,17 +35,17 @@ export default function CardCollection(props) {
       className={classes.root}
     >
       <Grid item>
-        <Typography variant="h6">
+        <Typography variant="h6" data-testid="heartIcon">
           <FilledHeartIcon onClick={handleLike} /> {props.upvotes}{" "}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography variant="h6">
+        <Typography variant="h6" data-testid="cameraIcon">
           <CameraIcon /> {props.imgCount}{" "}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography variant="h6">
+        <Typography variant="h6" data-testid="questionIcon">
           <AmaIcon /> {props.questions}{" "}
         </Typography>
       </Grid>
