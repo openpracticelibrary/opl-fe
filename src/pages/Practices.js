@@ -37,6 +37,7 @@ export default function Practices() {
             practiceTitle={p.title}
             coverImage={p.coverImage}
             tags={p.tags}
+            slug={p.slug}
           />
         ))}
       </Grid>
