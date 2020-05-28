@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function TopListItems() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
     setOpen(!open);
@@ -62,7 +62,7 @@ export function TopListItems() {
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding className={classes.nested}>
+        <List component="div" className={classes.nested}>
           <ListItem button>
             <Typography variant="body1"> Discovery </Typography>
           </ListItem>
