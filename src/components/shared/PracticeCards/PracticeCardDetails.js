@@ -29,9 +29,6 @@ const useStyles = makeStyles({
 export default function PracticeCardDetails(props) {
   const classes = useStyles();
 
-  const imgCount = props.mediaGallery.length;
-  const questions = props.ama.length;
-
   return (
     <Card className={classes.root}>
       <CardActionArea onClick={() => navigate(`/practice/${props.slug}`)}>
@@ -56,8 +53,8 @@ export default function PracticeCardDetails(props) {
       <CardActions className={classes.cardCollection}>
         <CardCollection
           upvotes={props.upvotes}
-          imgCount={imgCount}
-          questions={questions}
+          imgCount={props.mediaGallery}
+          questions={props.ama}
         />
       </CardActions>
     </Card>

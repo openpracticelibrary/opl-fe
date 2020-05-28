@@ -21,19 +21,8 @@ const mockPracticeCardProps = {
   upvotes: 42,
   updatedAt: "2020-05-27T20:24:29.223Z",
   slug: "event-storming",
-  mediaGallery: [
-    {
-      link: "https://a.picture",
-    },
-    {
-      link: "https://a.video.thumbnail",
-    },
-  ],
-  ama: [
-    {
-      question: "When do I do this?",
-    },
-  ],
+  mediaGallery: 2,
+  ama: 1,
 };
 
 it("should render the practice detail card with props", async () => {

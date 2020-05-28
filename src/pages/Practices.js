@@ -1,18 +1,17 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles/index";
-import { Typography, Grid, Divider } from "@material-ui/core";
+import { Grid, Divider } from "@material-ui/core";
 import { useQuery } from "@apollo/react-hooks";
 
 import { GET_PRACTICE_LIST } from "../graphql";
 import PracticeCard from "../components/shared/PracticeCards";
+import AllPracticesHero from "../components/allPractices/AllPracticesHero";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    flexDirection: "column",
-    flexGrow: 1,
-    padding: theme.spacing(1),
+    flexGrow: 2,
     width: "100%",
+    backgroundColor: theme.palette.common.true_white,
   },
   titleBox: {
     display: "flex",
@@ -23,10 +22,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   practiceList: {
-    display: "flex",
-    flexDirection: "center",
-    paddingLeft: theme.spacing(10),
-    width: "100%",
+    padding: theme.spacing(2, 0),
     backgroundColor: theme.palette.common.true_white,
   },
 }));
@@ -49,34 +45,42 @@ export default function Home() {
         alignItems="center"
         className={classes.titleBox}
       >
-        <Typography align="center" variant={"h1"}>
-          Explore the library{" "}
-          <span role="img" aria-label="library">
-            📚
-          </span>
-        </Typography>
+        <AllPracticesHero />
       </Grid>
       <Divider />
       <Grid
-        className={classes.practiceList}
         container
-        direction="row"
-        justify="space-around"
+        direction="column"
+        justify="center"
+        alignContent="center"
+        alignItems="center"
+        className={classes.root}
       >
-        {data.practices.map((p) => (
-          <PracticeCard
-            key={p.id}
-            practiceId={p.id}
-            practiceTitle={p.title}
-            coverImage={p.coverImage}
-            tags={p.tags}
-            slug={p.slug}
-            subtitle={p.subtitle}
-            mediaGallery={p.mediaGallery}
-            ama={p.ama}
-            upvotes={p.upvotes}
-          />
-        ))}
+        <Grid className={classes.practiceList} item xs={9}>
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignContent="center"
+            alignItems="center"
+            spacing={2}
+          >
+            {data.practices.map((practice) => (
+              <PracticeCard
+                key={practice.id}
+                practiceId={practice.id}
+                practiceTitle={practice.title}
+                coverImage={practice.coverImage}
+                tags={practice.tags}
+                slug={practice.slug}
+                subtitle={practice.subtitle}
+                mediaGallery={practice.mediaGallery.length}
+                ama={practice.ama.length}
+                upvotes={practice.upvotes}
+              />
+            ))}
+          </Grid>
+        </Grid>
       </Grid>
     </>
   );

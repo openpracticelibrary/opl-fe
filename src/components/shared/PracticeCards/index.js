@@ -11,9 +11,6 @@ const useStyles = makeStyles((theme) => ({
     height: 181,
     width: 295,
   },
-  practiceListItem: {
-    padding: theme.spacing(2),
-  },
   popover: {
     pointerEvents: "none",
   }
@@ -34,7 +31,7 @@ export default function PracticeCard(props) {
   const open = Boolean(anchorEl);
 
   return (
-    <Grid item className={classes.practiceListItem} sm={12} md={6} lg={3}>
+    <Grid item className={classes.practiceListItem} sm={12} md={6} lg={4} xl={3}>
       <div
         aria-owns={open ? props.practiceId : undefined}
         aria-haspopup="true"
@@ -56,12 +53,12 @@ export default function PracticeCard(props) {
         open={open}
         anchorEl={anchorEl}
         anchorOrigin={{
-          vertical: "center",
-          horizontal: "center",
+          vertical: "top",
+          horizontal: "left",
         }}
         transformOrigin={{
-          vertical: "center",
-          horizontal: "center",
+          vertical: "top",
+          horizontal: "left",
         }}
         onClose={handlePopoverClose}
         disableRestoreFocus

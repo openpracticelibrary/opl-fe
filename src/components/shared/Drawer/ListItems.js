@@ -56,7 +56,7 @@ export function TopListItems() {
       <ListItem button>
         <Typography variant="body2"> Please guide me </Typography>
       </ListItem>
-      <ListItemLink to="/practice" primary="See Everything" />
+      <ListItemLink to="/practice" primary="See everything" />
       <ListItem button onClick={handleClick}>
         <Typography variant="body2"> By mobius loop </Typography>
         {open ? <ExpandLess /> : <ExpandMore />}
