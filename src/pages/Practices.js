@@ -1,34 +1,27 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles/index';
-import Box from '@material-ui/core/Box';
+import React from "react";
+import { useQuery } from "@apollo/react-hooks";
+import { GET_PRACTICES } from "../graphql";
+import { Grid } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    flexGrow: 1,
-    padding: theme.spacing(1),
-  },
-  titleBox: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    backgroundColor: theme.palette.common.white,
-    width: '100%',
-  }
-}));
 
-export default function Home() {
-  const classes = useStyles();
+export default function Practices() {
+  const { loading, error, data } = useQuery(GET_PRACTICES);
+  if (loading) return <p>Loading...</p>;
+  if (error) return `Error! ${error}`;
 
   return (
     <>
-      <Box className={classes.root}>
-        <Box className={classes.titleBox}>
-          <h2>Practices muthafucka!</h2>
-          <p>Get em while they're hot!</p>
-        </Box>
-      </Box>
+      <Grid
+        container
+        direction="row"
+        justify="space-around"
+      >
+        {data.practices.map((p) => (
+          <div>{p.title}</div>
+        ))}
+      </Grid>
     </>
-  )
-};
+  );
+}
+
 
