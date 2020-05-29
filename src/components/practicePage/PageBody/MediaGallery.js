@@ -10,8 +10,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    padding: theme.spacing(1),
-    margin: theme.spacing(1),
   },
   space: {
     padding: theme.spacing(1),
@@ -19,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   mediaBox: {
     display: "flex",
     justifyContent: "center",
-    margin: theme.spacing(1),
     padding: theme.spacing(1),
   }
 }))

@@ -1,15 +1,14 @@
 import React from "react";
 import clsx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import { BottomListItems, TopListItems } from "./ListItems";
+import {BottomListItems, TopListItems} from "./ListItems";
 import Box from "@material-ui/core/Box";
 import Footer from "./Footer";
 import OPLlogo from "../../../assets/icons/open-practice-librar.png";
-
 
 const drawerWidth = "16.5rem";
 const useStyles = makeStyles((theme) => ({
@@ -61,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     overflowX: "hidden",
     width: theme.spacing(7) + 1,
     [theme.breakpoints.up("sm")]: {
-      width: theme.spacing(9) + 1,
+      width: theme.spacing(8) + 1,
     },
     backgroundColor: theme.palette.common.white,
   },
@@ -85,7 +84,7 @@ export default function OPLDrawer(props) {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
+      <CssBaseline/>
       <Drawer
         variant="permanent"
         className={clsx(classes.drawer, {
@@ -98,28 +97,28 @@ export default function OPLDrawer(props) {
             [classes.drawerClose]: !open,
           }),
         }}
-      >     
+      >
         <div className={classes.toolbar}>
-          <img src={OPLlogo} alt="OPL" width="170px" />
+          <img src={OPLlogo} alt="OPL" width="170px"/>
           <IconButton
             onClick={handleDrawerOpen}
             className={clsx(classes.paddedHamburger)}
           >
-            <MenuIcon />
+            <MenuIcon/>
           </IconButton>
         </div>
-       
+
         {open && (
           <>
             <Box m={2}>
               <Box>
-                <TopListItems drawerOpen={open} />
+                <TopListItems drawerOpen={open}/>
               </Box>
               <Box>
-                <BottomListItems />
+                <BottomListItems/>
               </Box>
             </Box>
-            <Footer />
+            <Footer/>
           </>
         )}
       </Drawer>
