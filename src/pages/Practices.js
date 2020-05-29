@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     backgroundColor: theme.palette.common.true_white,
   },
+  practicesCard: {
+    marginBottom: 50,
+  },
 }));
 
 export default function Practices() {
@@ -38,6 +41,11 @@ export default function Practices() {
             coverImage={p.coverImage}
             tags={p.tags}
             slug={p.slug}
+            subtitle={p.subtitle}
+            mediaGallery={p.mediaGallery}
+            ama={p.ama}
+            upvotes={p.upvotes}
+            className={classes.practicesCard}
           />
         ))}
       </Grid>

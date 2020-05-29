@@ -4,15 +4,33 @@ import { Typography, Paper, Box } from "@material-ui/core";
 import { navigate } from "@reach/router";
 
 const useStyles = makeStyles({
+  practiceItemBound: {
+    overflow: 'visible',
+    height: 220,
+    marginBottom: 13,
+  },
   practiceItem: {
-    overflow: 'hidden',
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    
   },
   coverImage: {
     borderRadius: 10,
     height: 181,
     width: 295,
   },
+  title: {
+    marginBottom: -5,
+  },
+  subtitle: {
+    width: 280,
+    fontSize: 12,
+    fontWeight: 'normal',
+    fontStretch: 'normal',
+    fontStyle: 'normal',
+    lineHeight: 1.83,
+    letterSpacing: .3,
+    whiteSpace: 'normal',
+  }
 });
 
 export default function PracticeCardBase(props) {
@@ -21,42 +39,60 @@ export default function PracticeCardBase(props) {
   
   return (
     <Box
-      className={classes.practiceItem}
-      onClick={() => navigate(`/practice/${props.slug}`)}
-      onMouseOut={() => setHovered(false)}
-      onMouseOver={() => setHovered(true)}
+      className={classes.practiceItemBound}
       style={{
-        transform: `${hovered ? 'scale(1.25,1.25)' : 'scale(1, 1)'}`,
-        transition: `${hovered ? '0.5s' : '0.5s'}`,
         zIndex: `${hovered ? '10' : '1'}`,
-        boxShadow: `${hovered ? '0px 2px 3px rgba(0,0,0,.4)' : '0px 0px 0px 0px'}`,
+        transition: `${hovered ? '0.5s' : '0.5s'}`,
       }}
     >
-      <Paper
-        elevation={0}
-        className={classes.coverImage}
-      >
-        <img
-          alt={props.practiceTitle}
-          src={props.coverImage}
-          className={classes.coverImage}
-        />
-      </Paper>
-      <Paper 
-        elevation={0}
+      <Box
+        className={classes.practiceItem}
+        onClick={() => navigate(`/practice/${props.slug}`)}
+        onMouseOut={() => setHovered(false)}
+        onMouseOver={() => setHovered(true)}
         style={{
-          height: `${hovered ? '300px' : '65px'}`,
-          transform: `${hovered ? 'scale(.90, .90)' : 'scale(1, 1)'}`,
+          transform: `${hovered ? 'scale(1.25,1.25)' : 'scale(1, 1)'}`,
           transition: `${hovered ? '0.5s' : '0.5s'}`,
+          zIndex: `${hovered ? '10' : '1'}`,
+          boxShadow: `${hovered ? '0px 2px 3px rgba(0,0,0,.4)' : '0px 0px 0px 0px'}`,
         }}
       >
-        <Typography variant={"subtitle2"}>{props.practiceTitle}</Typography>
-        {props.tags.map((t, i) => (
-          <Typography key={i} variant={"overline"}>
-            #{t.tag}&nbsp;
-          </Typography>
-        ))}
-      </Paper>
+        <Paper
+          elevation={0}
+          className={classes.coverImage}
+        >
+          <img
+            alt={props.practiceTitle}
+            src={props.coverImage}
+            className={classes.coverImage}
+          />
+        </Paper>
+        <Paper 
+          elevation={0}
+          style={{
+            transform: `${hovered ? 'scale(.92, .92)' : 'scale(1, 1)'}`,
+            transition: `${hovered ? '0.5s' : '0.5s'}`,
+          }}
+        >
+          <Typography className={classes.title}>{props.practiceTitle}</Typography>
+          {props.tags.map((t, i) => (
+            <Typography key={i} variant={"overline"}>
+              #{t.tag}&nbsp;
+            </Typography>
+          ))}
+
+          { hovered ? <Paper 
+            elevation={0}
+            style={{
+              
+              opacity: `${hovered ? 1 : 0 }`,
+              transition: `${hovered ? '1.5s' : '1.5s'}`,
+            }}
+          >
+            <div className={classes.subtitle} >{props.subtitle}</div>
+          </Paper> : null }
+        </Paper>
+      </Box>
     </Box>
   );
 }
