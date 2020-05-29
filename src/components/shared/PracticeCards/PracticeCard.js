@@ -84,17 +84,20 @@ export default function PracticeCard(props) {
               #{t.tag}&nbsp;
             </Typography>
           ))}
-
-          {hovered ? (
-            <Paper elevation={0}>
-              <Typography variant={"h6"} className={classes.subtitle}>{props.subtitle}</Typography>
-              <CardCollection
-                upvotes={props.upvotes}
-                imgCount={props.mediaGallery}
-                questions={props.ama}
-              />
-            </Paper>
-          ) : null}
+          <Paper
+            elevation={0}
+            style={{
+              opacity: `${hovered ? "1" : "0"}`,
+              transition: `${hovered ? "1.5s" : "0.5s"}`,
+            }}
+          >
+            <Typography variant={"h6"} className={classes.subtitle}>{props.subtitle}</Typography>
+            <CardCollection
+              upvotes={props.upvotes}
+              imgCount={props.mediaGallery}
+              questions={props.ama}
+            />
+          </Paper>
         </Paper>
       </Box>
     </Box>
