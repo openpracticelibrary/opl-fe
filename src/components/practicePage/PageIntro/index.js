@@ -1,25 +1,20 @@
 import React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core/styles/index";
-import Box from "@material-ui/core/Box";
+import {makeStyles} from "@material-ui/core/styles/index";
 import TitleAndSubtitle from "./TitleAndSubtitle";
 import ContributedBy from "./ContributedBy";
 import Collection from "./Collection";
 import BreadcrumbNav from "./BreadcrumbNav";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    marginLeft: theme.spacing(2),
-  },
-  content: {
+  layout: {
+    alignItems: "left",
+    justify: "flex-start",
     flexGrow: 1,
-    padding: theme.spacing(3),
+    marginTop: theme.spacing(2),
   },
   row: {
     display: "flex",
-    padding: theme.spacing(1),
-    margin: theme.spacing(1),
   },
 }));
 
@@ -28,28 +23,30 @@ export default function PageIntro(props) {
 
   return (
     <>
-      <CssBaseline />
-      <Container className={classes.root}>
-        <main className={classes.content}>
-          <BreadcrumbNav />
-          <TitleAndSubtitle title={props.title} subtitle={props.subtitle} />
-          <Box className={classes.row}>
-            <ContributedBy
-              authors={props.authors}
-              createdAt={props.createdAt}
-              updatedAt={props.updatedAt}
-            />
-          </Box>
-          <Box className={classes.row}>
-            <Collection
-              practiceId={props.practiceId}
-              upvotes={props.upvotes}
-              imgCount={props.imgCount}
-              questions={props.questions}
-            />
-          </Box>
-        </main>
-      </Container>
+      <Grid
+        container direction="column" className={classes.layout}>
+        <Grid item>
+          <BreadcrumbNav/>
+        </Grid>
+        <Grid item>
+          <TitleAndSubtitle title={props.title} subtitle={props.subtitle}/>
+        </Grid>
+        <Grid item className={classes.row}>
+          <ContributedBy
+            authors={props.authors}
+            createdAt={props.createdAt}
+            updatedAt={props.updatedAt}
+          />
+        </Grid>
+        <Grid item className={classes.row}>
+          <Collection
+            practiceId={props.practiceId}
+            upvotes={props.upvotes}
+            imgCount={props.imgCount}
+            questions={props.questions}
+          />
+        </Grid>
+      </Grid>
     </>
   );
 }

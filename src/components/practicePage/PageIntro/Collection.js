@@ -11,7 +11,11 @@ import {LIKE_PRACTICE} from "../../../graphql/";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    alignItems: "center",
+    justify: "flex-start",
+    direction: "row",
     paddingLeft: theme.spacing(1),
+    marginBottom: theme.spacing(5)
   },
   button: {
     "&:hover": {
@@ -34,13 +38,7 @@ export default function Collection(props) {
 
   return (
     <>
-      <Grid
-        container
-        direction="row"
-        justify="flex-start"
-        alignItems="center"
-        className={classes.root}
-      >
+      <Grid container className={classes.root}>
         <Grid item>
           <Typography variant="overline">Collection</Typography>
         </Grid>
