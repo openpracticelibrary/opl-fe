@@ -75,8 +75,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function OPLDrawer(props) {
+  const {initialDrawerOpenState} = props;
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+
+  const [open, setOpen] = React.useState(initialDrawerOpenState);
 
   const handleDrawerOpen = () => {
     setOpen(!open);

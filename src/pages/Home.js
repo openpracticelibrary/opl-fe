@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles/index';
 import Box from '@material-ui/core/Box';
+import OPLDrawer from '../components/shared/Drawer';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,12 +23,14 @@ export default function Home() {
 
   return (
     <>
-      <Box className={classes.root}>
-        <Box className={classes.titleBox}>
-          <h2>Welcome to the Open Practice Library</h2>
-          <p>This page is currently under construction</p>
+      <OPLDrawer initialDrawerOpenState={false}>
+        <Box className={classes.root}>
+          <Box className={classes.titleBox}>
+            <h2>Welcome to the Open Practice Library</h2>
+            <p>This page is currently under construction</p>
+          </Box>
         </Box>
-      </Box>
+      </OPLDrawer>
     </>
   )
 };

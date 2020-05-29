@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { GET_PRACTICE_LIST } from "../graphql";
 import PracticeCard from "../components/shared/PracticeCards";
 import AllPracticesHero from "../components/allPractices/AllPracticesHero";
+import OPLDrawer from "../components/shared/Drawer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,50 +39,52 @@ export default function Home() {
 
   return (
     <>
-      <Grid
-        container
-        direction="row"
-        justify="center"
-        alignItems="center"
-        className={classes.titleBox}
-      >
-        <AllPracticesHero />
-      </Grid>
-      <Divider />
-      <Grid
-        container
-        direction="column"
-        justify="center"
-        alignContent="center"
-        alignItems="center"
-        className={classes.root}
-      >
-        <Grid className={classes.practiceList} item xs={9}>
-          <Grid
-            container
-            direction="row"
-            justify="center"
-            alignContent="center"
-            alignItems="center"
-            spacing={2}
-          >
-            {data.practices.map((practice) => (
-              <PracticeCard
-                key={practice.id}
-                practiceId={practice.id}
-                practiceTitle={practice.title}
-                coverImage={practice.coverImage}
-                tags={practice.tags}
-                slug={practice.slug}
-                subtitle={practice.subtitle}
-                mediaGallery={practice.mediaGallery.length}
-                ama={practice.ama.length}
-                upvotes={practice.upvotes}
-              />
-            ))}
+      <OPLDrawer initialDrawerOpenState={false}>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+          className={classes.titleBox}
+        >
+          <AllPracticesHero />
+        </Grid>
+        <Divider />
+        <Grid
+          container
+          direction="column"
+          justify="center"
+          alignContent="center"
+          alignItems="center"
+          className={classes.root}
+        >
+          <Grid className={classes.practiceList} item xs={9}>
+            <Grid
+              container
+              direction="row"
+              justify="center"
+              alignContent="center"
+              alignItems="center"
+              spacing={2}
+            >
+              {data.practices.map((practice) => (
+                <PracticeCard
+                  key={practice.id}
+                  practiceId={practice.id}
+                  practiceTitle={practice.title}
+                  coverImage={practice.coverImage}
+                  tags={practice.tags}
+                  slug={practice.slug}
+                  subtitle={practice.subtitle}
+                  mediaGallery={practice.mediaGallery.length}
+                  ama={practice.ama.length}
+                  upvotes={practice.upvotes}
+                />
+              ))}
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </OPLDrawer>
     </>
   );
 }

@@ -7,6 +7,7 @@ import PageBody from "../components/practicePage/PageBody";
 
 import { useQuery } from "@apollo/react-hooks";
 import { GET_PRACTICE_PAGE } from "../graphql";
+import OPLDrawer from "../components/shared/Drawer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,31 +39,33 @@ export default function PracticePageContent(props) {
 
   return (
     <>
-      <Box className={classes.root}>
-        <Box className={classes.titleBox}>
-          <PageIntro
-            practiceId={data.practices[0].id}
+      <OPLDrawer initialDrawerOpenState={false}>
+        <Box className={classes.root}>
+          <Box className={classes.titleBox}>
+            <PageIntro
+              practiceId={data.practices[0].id}
+              title={data.practices[0].title}
+              subtitle={data.practices[0].subtitle}
+              authors={data.practices[0].authors}
+              createdAt={data.practices[0].createdAt}
+              updatedAt={data.practices[0].updatedAt}
+              imgCount={data.practices[0].mediaGallery.length}
+              questions={data.practices[0].ama.length}
+              upvotes={data.practices[0].upvotes}
+            />
+          </Box>
+          <Box>
+            <PageMenu />
+          </Box>
+          <PageBody
             title={data.practices[0].title}
-            subtitle={data.practices[0].subtitle}
-            authors={data.practices[0].authors}
-            createdAt={data.practices[0].createdAt}
-            updatedAt={data.practices[0].updatedAt}
-            imgCount={data.practices[0].mediaGallery.length}
-            questions={data.practices[0].ama.length}
-            upvotes={data.practices[0].upvotes}
+            body={data.practices[0].body}
+            mediaGallery={data.practices[0].mediaGallery}
+            resources={data.practices[0].resources}
+            ama={data.practices[0].ama}
           />
         </Box>
-        <Box>
-          <PageMenu />
-        </Box>
-        <PageBody
-          title={data.practices[0].title}
-          body={data.practices[0].body}
-          mediaGallery={data.practices[0].mediaGallery}
-          resources={data.practices[0].resources}
-          ama={data.practices[0].ama}
-        />
-      </Box>
+      </OPLDrawer>
     </>
   );
 }

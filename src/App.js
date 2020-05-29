@@ -1,5 +1,4 @@
 import React from 'react';
-import OPLDrawer from './components/shared/Drawer/index';
 import OPLRouter from './router/OPLRouter';
 import {ThemeProvider} from '@material-ui/core/styles';
 import theme from './theme';
@@ -11,9 +10,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
-        <OPLDrawer>
-          <OPLRouter />
-        </OPLDrawer>
+        <OPLRouter />
       </ThemeProvider>
     </ApolloProvider>
   );
