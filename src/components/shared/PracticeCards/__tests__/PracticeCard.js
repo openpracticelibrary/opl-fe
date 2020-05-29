@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 
@@ -26,14 +26,16 @@ const mockPracticeCardProps = {
 };
 
 it("should render the practice detail card with props", async () => {
-  const { getByText, getByTestId } = render(
+  const { getByTestId } = render(
     <MockedProvider mocks={[]}>
       <PracticeCard {...mockPracticeCardProps} />
     </MockedProvider>
   );
-  expect(getByText("A title")).toBeInTheDocument();
+  expect(getByTestId("practicecard")).toBeInTheDocument();
 
-  // fireEvent.mouseOver(getByTestId("base"));
+  expect(getByTestId("expandedcard")).toHaveStyle("opacity: 0");
 
-  // expect(getByTestId("popover")).toBeInTheDocument();
+  fireEvent.mouseOver(getByTestId("practicecard"));
+
+  waitFor(() => expect(getByTestId("expandedcard").toHaveStyle("opacity: 1")));
 });

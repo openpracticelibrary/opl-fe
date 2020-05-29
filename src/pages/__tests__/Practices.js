@@ -65,5 +65,5 @@ it("renders with graphql response", async () => {
   await waitFor(() => expect(getByText("A title")).toBeInTheDocument())
 
   // make sure the card is on the page
-  // expect(getByTestId("base")).toBeInTheDocument();
+  expect(getByTestId("practicecard")).toBeInTheDocument();
 });

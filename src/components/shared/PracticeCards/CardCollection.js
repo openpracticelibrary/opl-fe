@@ -9,6 +9,7 @@ import { LIKE_PRACTICE } from "../../../graphql/";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    paddingTop: theme.spacing(1),
     paddingLeft: theme.spacing(1),
     width: "100%",
   },
@@ -35,8 +36,8 @@ export default function CardCollection(props) {
       className={classes.root}
     >
       <Grid item>
-        <Typography variant="h6" data-testid="heartIcon">
-          <FilledHeartIcon onClick={handleLike} /> {props.upvotes}{" "}
+        <Typography variant="h6" data-testid="heartIcon" onClick={handleLike}>
+          <FilledHeartIcon /> {props.upvotes}{" "}
         </Typography>
       </Grid>
       <Grid item>

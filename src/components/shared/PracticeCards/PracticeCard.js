@@ -1,10 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Paper, Box } from "@material-ui/core";
-import { navigate } from "@reach/router";
+import { Paper, Box } from "@material-ui/core";
 import CardCollection from "./CardCollection";
+import CoverImage from "./CoverImage";
+import PracticeCardTitle from "./PracticeCardTitle";
+import Subtitle from "./Subtitle";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   practiceItemBound: {
     overflow: "visible",
     height: 220,
@@ -14,27 +16,7 @@ const useStyles = makeStyles({
     backgroundColor: "#fff",
     borderRadius: 10,
   },
-  coverImage: {
-    borderRadius: 10,
-    height: 181,
-    width: 295,
-  },
-  title: {
-    marginBottom: -3,
-  },
-  subtitle: {
-    width: 280,
-    fontWeight: "normal",
-    fontStretch: "normal",
-    fontStyle: "normal",
-    lineHeight: 1.83,
-    letterSpacing: 0.3,
-    whiteSpace: "normal",
-  },
-  cardCollection: {
-    alignItems: "left",
-  },
-});
+}));
 
 export default function PracticeCard(props) {
   const classes = useStyles();
@@ -49,50 +31,47 @@ export default function PracticeCard(props) {
       }}
     >
       <Box
+        data-testid="practicecard"
         className={classes.practiceItem}
-        onClick={() => navigate(`/practice/${props.slug}`)}
         onMouseOut={() => setHovered(false)}
         onMouseOver={() => setHovered(true)}
         style={{
-          transform: `${hovered ? "scale(1.2,1.2)" : "scale(1, 1)"}`,
+          transform: `${hovered ? "scale(1.1,1.05)" : "scale(1, 1)"}`,
           transition: `${hovered ? "0.5s" : "0.5s"}`,
           zIndex: `${hovered ? "10" : "1"}`,
           boxShadow: `${
-            hovered ? "1px 2px 0px rgba(0,0,0,.2)" : "0px 0px 0px 0px"
+            hovered ? "1px 2px 2px 1px rgba(0,0,0,.2)" : "0px 0px 0px 0px"
           }`,
         }}
       >
-        <Paper elevation={0} className={classes.coverImage}>
-          <img
-            alt={props.practiceTitle}
-            src={props.coverImage}
-            className={classes.coverImage}
-          />
-        </Paper>
+        <CoverImage
+          slug={props.slug}
+          practiceTitle={props.practiceTitle}
+          coverImage={props.coverImage}
+        />
         <Paper
           elevation={0}
           style={{
-            transform: `${hovered ? "scale(.925, .925)" : "scale(1, 1)"}`,
+            transform: `${hovered ? "scale(.9, 1)" : "scale(1, 1)"}`,
             transition: `${hovered ? "0.5s" : "0.5s"}`,
           }}
         >
-          <Typography className={classes.title}>
-            {props.practiceTitle}
-          </Typography>
-          {props.tags.map((t, i) => (
-            <Typography key={i} variant={"overline"}>
-              #{t.tag}&nbsp;
-            </Typography>
-          ))}
+          <PracticeCardTitle
+            slug={props.slug}
+            practiceTitle={props.practiceTitle}
+            tags={props.tags}
+          />
           <Paper
+            data-testid="expandedcard"
             elevation={0}
             style={{
               opacity: `${hovered ? "1" : "0"}`,
-              transition: `${hovered ? "1.5s" : "0.5s"}`,
+              transition: `${hovered ? "1.0s" : "0.5s"}`,
             }}
           >
-            <Typography variant={"h6"} className={classes.subtitle}>{props.subtitle}</Typography>
+            <Subtitle subtitle={props.subtitle} slug={props.slug} />
             <CardCollection
+              practiceId={props.practiceId}
               upvotes={props.upvotes}
               imgCount={props.mediaGallery}
               questions={props.ama}
