@@ -7,11 +7,11 @@ const useStyles = makeStyles({
   practiceItemBound: {
     overflow: 'visible',
     height: 220,
-    marginBottom: 13,
+    marginBottom: 20,
   },
   practiceItem: {
     backgroundColor: '#fff',
-    
+    borderRadius: 10,
   },
   coverImage: {
     borderRadius: 10,
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     width: 295,
   },
   title: {
-    marginBottom: -5,
+    marginBottom: -3,
   },
   subtitle: {
     width: 280,
@@ -51,10 +51,10 @@ export default function PracticeCardBase(props) {
         onMouseOut={() => setHovered(false)}
         onMouseOver={() => setHovered(true)}
         style={{
-          transform: `${hovered ? 'scale(1.25,1.25)' : 'scale(1, 1)'}`,
+          transform: `${hovered ? 'scale(1.2,1.2)' : 'scale(1, 1)'}`,
           transition: `${hovered ? '0.5s' : '0.5s'}`,
           zIndex: `${hovered ? '10' : '1'}`,
-          boxShadow: `${hovered ? '0px 2px 3px rgba(0,0,0,.4)' : '0px 0px 0px 0px'}`,
+          boxShadow: `${hovered ? '1px 2px 0px rgba(0,0,0,.2)' : '0px 0px 0px 0px'}`,
         }}
       >
         <Paper
@@ -70,7 +70,7 @@ export default function PracticeCardBase(props) {
         <Paper 
           elevation={0}
           style={{
-            transform: `${hovered ? 'scale(.92, .92)' : 'scale(1, 1)'}`,
+            transform: `${hovered ? 'scale(.925, .925)' : 'scale(1, 1)'}`,
             transition: `${hovered ? '0.5s' : '0.5s'}`,
           }}
         >
@@ -84,7 +84,6 @@ export default function PracticeCardBase(props) {
           { hovered ? <Paper 
             elevation={0}
             style={{
-              
               opacity: `${hovered ? 1 : 0 }`,
               transition: `${hovered ? '1.5s' : '1.5s'}`,
             }}
