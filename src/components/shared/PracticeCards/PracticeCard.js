@@ -52,7 +52,7 @@ export default function PracticeCard(props) {
         <Paper
           elevation={0}
           style={{
-            transform: `${hovered ? "scale(.9, 1)" : "scale(1, 1)"}`,
+            transform: `${hovered ? "scale(.9, .95)" : "scale(1, 1)"}`,
             transition: `${hovered ? "0.5s" : "0.5s"}`,
           }}
         >
