@@ -3,7 +3,7 @@ import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 
-import PracticeCard from "../";
+import PracticeCard from "../PracticeCard";
 
 const mockPracticeCardProps = {
   practiceId: "5ec55c99d36579001355faae",
