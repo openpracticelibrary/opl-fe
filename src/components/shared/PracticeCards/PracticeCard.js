@@ -7,7 +7,7 @@ const useStyles = makeStyles({
   practiceItemBound: {
     overflow: 'visible',
     height: 220,
-    marginBottom: 20,
+    margin: 10,
   },
   practiceItem: {
     backgroundColor: '#fff',
@@ -30,10 +30,13 @@ const useStyles = makeStyles({
     lineHeight: 1.83,
     letterSpacing: .3,
     whiteSpace: 'normal',
-  }
+  },
+  cardCollection: {
+    alignItems: "left",
+  },
 });
 
-export default function PracticeCardBase(props) {
+export default function PracticeCard(props) {
   const classes = useStyles();
   const [hovered, setHovered] = React.useState(false);
   
@@ -81,15 +84,12 @@ export default function PracticeCardBase(props) {
             </Typography>
           ))}
 
-          { hovered ? <Paper 
-            elevation={0}
-            style={{
-              opacity: `${hovered ? 1 : 0 }`,
-              transition: `${hovered ? '1.5s' : '1.5s'}`,
-            }}
-          >
-            <div className={classes.subtitle} >{props.subtitle}</div>
-          </Paper> : null }
+          { hovered ? 
+            <Paper 
+              elevation={0}
+            >
+              <div className={classes.subtitle} >{props.subtitle}</div>
+            </Paper> : null }
         </Paper>
       </Box>
     </Box>

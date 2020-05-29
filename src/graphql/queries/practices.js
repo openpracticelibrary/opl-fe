@@ -3,20 +3,21 @@ import { gql } from 'apollo-boost';
 const GET_PRACTICES = gql`
   query Practices {
     practices {
-      title
-      slug
       id
+      slug
       coverImage
+      title
+      tags {
+        tag
+      }
       subtitle
+      updatedAt
       upvotes
       mediaGallery {
         link
       }
       ama {
         question
-      }
-      tags {
-        tag
       }
     }
   }

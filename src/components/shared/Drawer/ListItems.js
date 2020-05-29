@@ -7,7 +7,27 @@ import Collapse from "@material-ui/core/Collapse";
 import List from "@material-ui/core/List";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import ListItemText from '@material-ui/core/ListItemText';
+import { Link as RouterLink } from "@reach/router";
+
+function ListItemLink(props) {
+  const { primary, to } = props;
+
+  const renderLink = React.useMemo(
+    () =>
+      React.forwardRef((itemProps, ref) => (
+        <RouterLink to={to} ref={ref} {...itemProps} />
+      )),
+    [to]
+  );
+
+  return (
+    <li>
+      <ListItem button component={renderLink}>
+        <Typography variant="body2">{primary}</Typography>
+      </ListItem>
+    </li>
+  );
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,13 +56,9 @@ export function TopListItems() {
       <ListItem button>
         <Typography variant="body2"> Please guide me </Typography>
       </ListItem>
-      <ListItem button>
-        <Typography variant="body2"> See everything </Typography>
-      </ListItem>
+      <ListItemLink to="/practice" primary="See everything" />
       <ListItem button onClick={handleClick}>
-        <ListItemText>
-          <Typography variant="body2"> By mobius loop </Typography>
-        </ListItemText>
+        <Typography variant="body2"> By mobius loop </Typography>
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
