@@ -5,41 +5,41 @@ import logoLabs from "../../../assets/icons/logo-red-hat-open-innovation-labs-a-
 import Grid from "@material-ui/core/Grid";
 
 export default function FooterLogoSection() {
-
   return (
-      <>
-        <Grid
+    <>
+      <Grid
+        container
+        direction="column"
+        justify="flex-start"
+        alignItems="center"
+        spacing={1}
+      >
+        <Grid item>
+          <img src={logoOPL} alt="OPL"/>
+        </Grid>
+        <Grid item>
+          <Grid
             container
-            direction="column"
+            direction="row"
             justify="flex-start"
-            alignItems="center"
-        >
-          <Grid item>
-            <img src={logoOPL} alt="OPL"/>
-          </Grid>
-          <Grid item>
-            <Grid
-                container
-                direction="row"
-                justify="flex-start"
-                alignItems="flex-start"
-            >
-              <Grid item xs={3}>
-                <Typography variant="caption">
-                  powered by
-                </Typography>
-              </Grid>
-              <Grid item xs={3}>
-                <img
-                    src={logoLabs}
-                    alt="labs"
-                    height="31px"
-                    width="162px"
-                />
-              </Grid>
+            alignItems="flex-start"
+          >
+            <Grid item xs={3}>
+              <Typography variant="caption">
+                {`powered by`}
+              </Typography>
+            </Grid>
+            <Grid item xs={9}>
+              <img
+                src={logoLabs}
+                alt="Open Innovation Labs"
+                height="31px"
+                width="162px"
+              />
             </Grid>
           </Grid>
         </Grid>
-      </>
+      </Grid>
+    </>
   );
 }

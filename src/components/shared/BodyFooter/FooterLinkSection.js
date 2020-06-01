@@ -5,18 +5,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
-      footer: {
-        marginTop: theme.spacing(5),
-        flexGrow: 1,
-      },
-      toolbarLink: {
-        padding: theme.spacing(2),
-        flexShrink: 0,
-      },
-      listFont: {
-        color: "#2e2e2e",
-      }
-    }
+  space: {
+    padding: theme.spacing(2),
+  },
+  color: {
+    color: theme.palette.common.black,
+  }}
 ));
 
 const sections = [
@@ -30,33 +24,33 @@ export default function FooterLogoSection() {
   const classes = useStyles();
 
   return (
-      <>
-        <Grid
-            container
-            direction="column"
-            justify="space-between"
-            alignItems="flex-end"
-            spacing={2}
-        >
-          <Grid item>
-            <Typography variant="overline">
-              CONNECT
-            </Typography>
-          </Grid>
-          <Grid item>
-            {sections.map((section, i) => (
-                <Link
-                    key={i}
-                    href={section.url}
-                    className={classes.toolbarLink}
-                >
-                  <Typography variant="overline" className={classes.listFont}>
-                    {section.title}
-                  </Typography>
-                </Link>
-            ))}
-          </Grid>
+    <>
+      <Grid
+        container
+        direction="column"
+        justify="space-between"
+        alignItems="flex-end"
+        spacing={2}
+      >
+        <Grid item>
+          <Typography variant="overline">
+            CONNECT
+          </Typography>
         </Grid>
-      </>
+        <Grid item>
+          {sections.map((section, i) => (
+            <Link
+              key={i}
+              href={section.url}
+              className={classes.space}
+            >
+              <Typography variant="overline" className={classes.color}>
+                {section.title}
+              </Typography>
+            </Link>
+          ))}
+        </Grid>
+      </Grid>
+    </>
   );
 }

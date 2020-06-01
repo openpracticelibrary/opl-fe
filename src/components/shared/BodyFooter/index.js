@@ -4,11 +4,11 @@ import Grid from "@material-ui/core/Grid";
 import FooterLogoSection from "./FooterLogoSection";
 import FooterLinkSection from "./FooterLinkSection";
 import Box from '@material-ui/core/Box';
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    margin: theme.spacing(7, 0),
-    flexGrow: 1,
+    margin: theme.spacing(6, 0)
   },
 }));
 
@@ -16,6 +16,8 @@ export default function BodyFooter() {
   const classes = useStyles();
 
   return (
+    <>
+      <Divider/>
       <footer className={classes.footer}>
         <Grid container>
           <Grid item xs={2}>
@@ -34,5 +36,6 @@ export default function BodyFooter() {
           </Grid>
         </Grid>
       </footer>
+    </>
   );
 }
