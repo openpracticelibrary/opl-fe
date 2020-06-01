@@ -13,6 +13,7 @@ import BodyFooter from "../../shared/BodyFooter";
 const useStyles = makeStyles((theme) => ({
   root: {
     marginLeft: theme.spacing(2),
+    marginTop: theme.spacing(2),
   },
   content: {
     flexGrow: 1,

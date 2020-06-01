@@ -1,12 +1,10 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
+import { Emojione } from "react-emoji-render";
 
 const AllPracticesHero = () => (
   <Typography align="center" variant={"h1"}>
-    Explore the library{" "}
-    <span role="img" aria-label="library">
-      📚
-    </span>
+    <Emojione data-testid="herotext" text="Explore the library 📚" />
   </Typography>
 );
 

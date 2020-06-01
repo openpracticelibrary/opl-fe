@@ -4,6 +4,11 @@ import { makeStyles } from "@material-ui/core/styles/index";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
+  layout: {
+    direction: "row",
+    justify: "flex-start",
+    alignItems: "center",
+  },
   space: {
     marginLeft: theme.spacing(1),
   },
@@ -14,13 +19,7 @@ export default function CollectionItem(props) {
 
   return (
     <>
-      <Grid
-        container
-        direction="row"
-        justify="flex-start"
-        alignItems="center"
-        className={classes.space}
-      >
+      <Grid container className={classes.layout}>
         <Grid item>{props.children}</Grid>
         <Grid item>
           <Typography variant="body1" className={classes.space}>

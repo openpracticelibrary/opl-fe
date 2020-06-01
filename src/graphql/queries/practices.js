@@ -1,6 +1,6 @@
 import { gql } from 'apollo-boost';
 
-const GET_PRACTICE_LIST = gql`
+const GET_PRACTICES = gql`
   query Practices {
     practices {
       id
@@ -23,4 +23,4 @@ const GET_PRACTICE_LIST = gql`
   }
 `;
 
-export default GET_PRACTICE_LIST;
+export default GET_PRACTICES;

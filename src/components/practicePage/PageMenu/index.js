@@ -1,53 +1,54 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Link from "@material-ui/core/Link";
-import Divider from "@material-ui/core/Divider";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
-  toolbarSecondary: {
-    overflowX: "auto",
-    paddingLeft: theme.spacing(9),
+  root: {
+    flexGrow: 1,
+    minHeight: 68,
+    minWidth: 1150,
+    display: "flex",
+    flexDirection: "column",
+    paddingTop: theme.spacing(1),
   },
-  toolbarLink: {
-    padding: theme.spacing(1),
-    flexShrink: 0,
-    color: theme.palette.text.secondary,
+  url: {
+    color: theme.palette.common.brownish_grey,
+    paddingRight: theme.spacing(2),
   },
 }));
 
 const sections = [
-  { title: "What is it", url: "#" },
-  { title: "Media", url: "#" },
-  { title: "Why do it", url: "#" },
-  { title: "How to", url: "#howto" },
-  { title: "Resources", url: "#" },
-  { title: "AMA", url: "#" },
+  {title: "What is it", url: "#"},
+  {title: "Media", url: "#"},
+  {title: "Why do it", url: "#"},
+  {title: "How to", url: "#howto"},
+  {title: "Resources", url: "#"},
+  {title: "AMA", url: "#"},
 ];
 
 export default function PageMenu() {
   const classes = useStyles();
+
   return (
     <>
-      <Divider />
-      <Toolbar
-        component="nav"
-        variant="dense"
-        className={classes.toolbarSecondary}
-      >
-        {sections.map((section, i) => (
-          <Link
-            key={i}
-            href={section.url}
-            className={classes.toolbarLink}
-            variant={"overline"}
-          >
-            {section.title}
-          </Link>
-        ))}
-      </Toolbar>
-      <Divider />
+      <Box className={classes.root}>
+        <Toolbar component="nav" variant="dense">
+
+          {sections.map((section, i) => (
+            <Link
+              key={i}
+              href={section.url}
+              className={classes.url}
+              variant={"overline"}
+            >
+              {section.title}
+            </Link>
+          ))}
+        </Toolbar>
+      </Box>
     </>
   );
 }
