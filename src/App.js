@@ -1,5 +1,6 @@
 import React from 'react';
 import OPLDrawer from './components/shared/Drawer/index';
+import BodyFooter from "./components/shared/BodyFooter/index";
 import OPLRouter from './router/OPLRouter';
 import {ThemeProvider} from '@material-ui/core/styles';
 import theme from './theme';
@@ -13,6 +14,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <OPLDrawer>
           <OPLRouter />
+          <BodyFooter/>
         </OPLDrawer>
       </ThemeProvider>
     </ApolloProvider>

@@ -5,7 +5,6 @@ import WhatIs from "./WhatIs";
 import WhyDo from "./WhyDo";
 import HowDo from "./HowDo";
 import ResourcesWeLove from "./ResourcesWeLove";
-import BodyFooter from "../../shared/BodyFooter";
 import Box from '@material-ui/core/Box';
 import {makeStyles} from "@material-ui/core/styles/index";
 
@@ -35,7 +34,6 @@ export default function PageBody(props) {
         <HowDo title={title} source={howTo}/>
         <ResourcesWeLove links={resources}/>
         <AskMeAnything ama={ama}/>
-        <BodyFooter/>
       </Box>
     </>
   );
