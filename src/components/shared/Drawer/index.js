@@ -76,11 +76,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function OPLDrawer(props) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(!open);
-  };
+  const {open, toggle} = props;
 
   return (
     <div className={classes.root}>
@@ -101,7 +97,7 @@ export default function OPLDrawer(props) {
         <div className={classes.toolbar}>
           <img src={OPLlogo} alt="OPL" width="170px" />
           <IconButton
-            onClick={handleDrawerOpen}
+            onClick={toggle}
             className={clsx(classes.paddedHamburger)}
           >
             <MenuIcon />
@@ -112,7 +108,7 @@ export default function OPLDrawer(props) {
           <>
             <Box m={2}>
               <Box>
-                <TopListItems drawerOpen={open} />
+                <TopListItems drawerOpen={open} toggle={toggle}/>
               </Box>
               <Box>
                 <BottomListItems />
