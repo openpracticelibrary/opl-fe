@@ -8,9 +8,8 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    marginTop: "auto",
+    marginTop: theme.spacing(5),
     flexGrow: 1,
-    padding: theme.spacing(3),
   },
   toolbarLink: {
     padding: theme.spacing(2),
