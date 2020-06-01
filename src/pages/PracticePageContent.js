@@ -7,18 +7,9 @@ import Grid from "@material-ui/core/Grid";
 import {useQuery} from "@apollo/react-hooks";
 import {GET_PRACTICE_PAGE} from "../graphql";
 import Divider from "@material-ui/core/Divider";
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
-  pageLayout: {
-    direction: "column",
-    justify: "flex-start",
-    alignItems: "stretch",
-  },
-  alignPageContent: {
-    direction: "column",
-    justify: "center",
-    alignItems: "center",
-  },
   alignComponentContent: {
     direction: "column",
     justify: "flex-start",
@@ -26,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   },
   color: {
     backgroundColor: theme.palette.common.white,
-    width: '100%',
   }
 }));
 
@@ -45,61 +35,59 @@ export default function PracticePageContent(props) {
 
   return (
     <>
-      <Grid container className={classes.pageLayout}>
-        <Grid item xs={12} className={classes.color}>
-          <Grid container justify="center" className={classes.alignPageContent}>
-            <Grid item >
-              <Grid container className={classes.alignComponentContent}>
-                <Grid item >
-                  <PageIntro
-                    practiceId={data.practices[0].id}
-                    title={data.practices[0].title}
-                    subtitle={data.practices[0].subtitle}
-                    authors={data.practices[0].authors}
-                    createdAt={data.practices[0].createdAt}
-                    updatedAt={data.practices[0].updatedAt}
-                    imgCount={data.practices[0].mediaGallery.length}
-                    questions={data.practices[0].ama.length}
-                    upvotes={data.practices[0].upvotes}
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
+      <Box display="flex" className={classes.color}>
+        <Grid container className={classes.alignComponentContent}>
+          <Grid item xs={2}>
+          </Grid>
+          <Grid item xs={8}>
+            <PageIntro
+              practiceId={data.practices[0].id}
+              title={data.practices[0].title}
+              subtitle={data.practices[0].subtitle}
+              authors={data.practices[0].authors}
+              createdAt={data.practices[0].createdAt}
+              updatedAt={data.practices[0].updatedAt}
+              imgCount={data.practices[0].mediaGallery.length}
+              questions={data.practices[0].ama.length}
+              upvotes={data.practices[0].upvotes}
+            />
+          </Grid>
+          <Grid item xs={2}>
           </Grid>
         </Grid>
-      </Grid>
+      </Box>
 
       <Divider/>
-      <Grid item xs={12}>
-        <Grid container justify="center" className={classes.alignPageContent}>
-          <Grid item>
-            <Grid container className={classes.alignComponentContent}>
-              <Grid item>
-                <PageMenu/>
-              </Grid>
-            </Grid>
+      <Box display="flex">
+        <Grid container className={classes.alignComponentContent}>
+          <Grid item xs={2}>
+          </Grid>
+          <Grid item xs={8}>
+            <PageMenu/>
+          </Grid>
+          <Grid item xs={2}>
           </Grid>
         </Grid>
-      </Grid>
+      </Box>
       <Divider/>
 
-      <Grid item xs={12}>
-        <Grid container justify="center" className={classes.alignPageContent}>
-          <Grid item>
-            <Grid container className={classes.alignComponentContent}>
-              <Grid item>
-                <PageBody
-                  title={data.practices[0].title}
-                  body={data.practices[0].body}
-                  mediaGallery={data.practices[0].mediaGallery}
-                  resources={data.practices[0].resources}
-                  ama={data.practices[0].ama}
-                />
-              </Grid>
-            </Grid>
+      <Box display="flex">
+        <Grid container className={classes.alignComponentContent}>
+          <Grid item xs={2}>
+          </Grid>
+          <Grid item xs={8}>
+            <PageBody
+              title={data.practices[0].title}
+              body={data.practices[0].body}
+              mediaGallery={data.practices[0].mediaGallery}
+              resources={data.practices[0].resources}
+              ama={data.practices[0].ama}
+            />
+          </Grid>
+          <Grid item xs={2}>
           </Grid>
         </Grid>
-      </Grid>
+      </Box>
     </>
   );
 }

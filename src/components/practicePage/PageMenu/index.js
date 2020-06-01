@@ -8,8 +8,6 @@ import Box from "@material-ui/core/Box";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    minHeight: 68,
-    minWidth: 1150,
     display: "flex",
     flexDirection: "column",
     paddingTop: theme.spacing(1),
@@ -35,18 +33,20 @@ export default function PageMenu() {
   return (
     <>
       <Box className={classes.root}>
-        <Toolbar component="nav" variant="dense">
+        <Toolbar component="nav" variant="dense" disableGutters>
+          <Box flexWrap="wrap">
+            {sections.map((section, i) => (
+              <Link
+                key={i}
+                href={section.url}
+                className={classes.url}
+                variant={"overline"}
+              >
+                {section.title}
+              </Link>
 
-          {sections.map((section, i) => (
-            <Link
-              key={i}
-              href={section.url}
-              className={classes.url}
-              variant={"overline"}
-            >
-              {section.title}
-            </Link>
-          ))}
+            ))}
+          </Box>
         </Toolbar>
       </Box>
     </>
