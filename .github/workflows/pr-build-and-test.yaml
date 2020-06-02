@@ -18,11 +18,11 @@ jobs:
         node-version: [12.x]
 
     steps:
-      - name: Notify Slack of Start
-        uses: act10ns/slack@v1
-        with:
-          status: starting
-        if: always()
+      # - name: Notify Slack of Start
+      #   uses: act10ns/slack@v1
+      #   with:
+      #     status: starting
+      #   if: always()
 
       - name: Git checkout
         id: git_checkout
@@ -53,10 +53,19 @@ jobs:
         id: lint
         run: npm run build
 
+      # - name: Notify Slack of Result
+      #   id: notify_slack
+      #   uses: act10ns/slack@v1
+      #   with: 
+      #     status: ${{ job.status }}
+      #     steps: ${{ toJson(steps) }}
+      #   if: always()
+
       - name: Notify Slack of Result
-        id: notify_slack
-        uses: act10ns/slack@v1
-        with: 
+        uses: 8398a7/action-slack@v3
+        with:
           status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-        if: always()
+          fields: repo,message,author,ref # selectable (default: repo,message)
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+        if: always() # Pick up events even if the job fails or is canceled.
