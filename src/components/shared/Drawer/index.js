@@ -96,7 +96,7 @@ export default function OPLDrawer(props) {
         }}
       >
         <div className={classes.toolbar}>
-          <Link to="/">
+          <Link to="/" onClick={toggle}>
             <img src={OPLlogo} alt="OPL" width="170px"/>
           </Link>
           <IconButton
