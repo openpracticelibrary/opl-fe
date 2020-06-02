@@ -24,6 +24,7 @@ export default function PracticePageContent(props) {
   const classes = useStyles();
 
   const {name: slug} = props;
+  console.log(props.name);
   const {loading, error, data} = useQuery(GET_PRACTICE_PAGE, {
     variables: {slug},
   });
