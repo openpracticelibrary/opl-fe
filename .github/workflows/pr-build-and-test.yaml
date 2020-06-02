@@ -10,23 +10,35 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
 
     strategy:
       matrix:
         node-version: [12.x]
 
     steps:
+      - name: Notify Slack of Start
+        uses: act10ns/slack@v1
+        with:
+          status: starting
+        if: always()
+
       - name: Git checkout
+        id: git_checkout
         uses: actions/checkout@v2
 
       - name: Use node.js ${{ matrix.node-version }}
+        id: setup_node
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
 
       - run: npm install
+        id: npm_install
 
       - name: Cache node modules
+        id: cache_node_modules
         uses: actions/cache@v1
         with:
           path: ~/.npm
@@ -34,8 +46,17 @@ jobs:
           restore-keys: v1-npm-deps-
 
       - name: Run Tests
+        id: npm_test
         run: npm test --watchAll=false
 
       - name: Lint Build
+        id: lint
         run: npm run build
 
+      - name: Notify Slack of Result
+        id: notify_slack
+        uses: act10ns/slack@v1
+        with: 
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+        if: always()
