@@ -31,25 +31,25 @@ export default function PageMenu() {
   const classes = useStyles();
 
   return (
-      <>
-        <Box className={classes.root}>
-          <Toolbar component="nav" variant="dense" disableGutters>
-            <Box flexWrap="wrap">
-              {sections.map((section, i) => (
-                <Link
-                  key={i}
-                  href={section.url}
-                  className={classes.url}
-                  variant={"overline"}
-                >
-                  {section.title}
-                </Link>
+    <>
+      <Box className={classes.root}>
+        <Toolbar component="nav" variant="dense" disableGutters>
+          <Box flexWrap="wrap">
+            {sections.map((section, i) => (
+              <Link
+                key={i}
+                href={section.url}
+                className={classes.url}
+                variant={"overline"}
+              >
+                {section.title}
+              </Link>
 
-              ))}
-            </Box>
-          </Toolbar>
-        </Box>
-      </>
+            ))}
+          </Box>
+        </Toolbar>
+      </Box>
+    </>
   );
 }
 
