@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display: "flex",
     flexDirection: "column",
-    paddingTop: theme.spacing(1),
+    padding: theme.spacing(2, 0),
   },
   url: {
     color: theme.palette.common.brownish_grey,
@@ -31,25 +31,25 @@ export default function PageMenu() {
   const classes = useStyles();
 
   return (
-    <>
-      <Box className={classes.root}>
-        <Toolbar component="nav" variant="dense" disableGutters>
-          <Box flexWrap="wrap">
-            {sections.map((section, i) => (
-              <Link
-                key={i}
-                href={section.url}
-                className={classes.url}
-                variant={"overline"}
-              >
-                {section.title}
-              </Link>
+      <>
+        <Box className={classes.root}>
+          <Toolbar component="nav" variant="dense" disableGutters>
+            <Box flexWrap="wrap">
+              {sections.map((section, i) => (
+                <Link
+                  key={i}
+                  href={section.url}
+                  className={classes.url}
+                  variant={"overline"}
+                >
+                  {section.title}
+                </Link>
 
-            ))}
-          </Box>
-        </Toolbar>
-      </Box>
-    </>
+              ))}
+            </Box>
+          </Toolbar>
+        </Box>
+      </>
   );
 }
 
