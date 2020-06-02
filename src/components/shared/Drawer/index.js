@@ -9,6 +9,7 @@ import {BottomListItems, TopListItems} from "./ListItems";
 import Box from "@material-ui/core/Box";
 import Footer from "./Footer";
 import OPLlogo from "../../../assets/icons/open-practice-librar.png";
+import { Link } from "@reach/router";
 
 const drawerWidth = "16.5rem";
 const useStyles = makeStyles((theme) => ({
@@ -95,7 +96,9 @@ export default function OPLDrawer(props) {
         }}
       >
         <div className={classes.toolbar}>
-          <img src={OPLlogo} alt="OPL" width="170px"/>
+          <Link to="/" onClick={toggle}>
+            <img src={OPLlogo} alt="OPL" width="170px"/>
+          </Link>
           <IconButton
             onClick={toggle}
             className={clsx(classes.paddedHamburger)}
