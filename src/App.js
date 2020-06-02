@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import OPLDrawer from './components/shared/Drawer/index';
 import BodyFooter from "./components/shared/BodyFooter/index";
 import OPLRouter from './router/OPLRouter';
@@ -9,10 +9,13 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import { client } from './graphql';
 
 function App() {
+
+  const [drawerOpen, toggle] = useReducer(drawerOpen => !drawerOpen, false);
+
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
-        <OPLDrawer>
+        <OPLDrawer open={drawerOpen} toggle={toggle}>
           <OPLRouter />
           <BodyFooter/>
         </OPLDrawer>

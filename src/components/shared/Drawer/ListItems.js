@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import { Link as RouterLink } from "@reach/router";
 
 function ListItemLink(props) {
-  const { primary, to } = props;
+  const { primary, to, toggle } = props;
 
   const renderLink = React.useMemo(
     () =>
@@ -22,7 +22,7 @@ function ListItemLink(props) {
 
   return (
     <li>
-      <ListItem button component={renderLink}>
+      <ListItem button component={renderLink} onClick={toggle}>
         <Typography variant="body2">{primary}</Typography>
       </ListItem>
     </li>
@@ -40,7 +40,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function TopListItems() {
+export function TopListItems(props) {
+  const {toggle} = props;
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
 
@@ -56,7 +57,7 @@ export function TopListItems() {
       <ListItem button>
         <Typography variant="body2"> Please guide me </Typography>
       </ListItem>
-      <ListItemLink to="/practice" primary="See everything" />
+      <ListItemLink to="/practice" primary="See everything" toggle={toggle}/>
       <ListItem button onClick={handleClick}>
         <Typography variant="body2"> By mobius loop </Typography>
         {open ? <ExpandLess /> : <ExpandMore />}
