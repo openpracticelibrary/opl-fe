@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches the snapshot 1`] = `
-Array [
+<div
+  className="MuiBox-root MuiBox-root-164 makeStyles-trueWhiteColor-2"
+>
   <hr
     className="MuiDivider-root"
-  />,
+  />
   <footer
     className="makeStyles-footer-1"
     data-testid="footer"
@@ -19,10 +21,10 @@ Array [
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8"
       >
         <div
-          className="MuiBox-root MuiBox-root-160"
+          className="MuiBox-root MuiBox-root-165"
         >
           <div
-            className="MuiBox-root MuiBox-root-161"
+            className="MuiBox-root MuiBox-root-166"
           >
             <div
               className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-direction-xs-column MuiGrid-align-items-xs-center"
@@ -66,7 +68,7 @@ Array [
             </div>
           </div>
           <div
-            className="MuiBox-root MuiBox-root-162"
+            className="MuiBox-root MuiBox-root-167"
           >
             <div
               className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-space-between"
@@ -85,49 +87,49 @@ Array [
                 className="MuiGrid-root MuiGrid-item"
               >
                 <a
-                  className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-space-146 MuiTypography-colorPrimary"
+                  className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-space-148 MuiTypography-colorPrimary"
                   href="#"
                   onBlur={[Function]}
                   onFocus={[Function]}
                 >
                   <span
-                    className="MuiTypography-root makeStyles-color-147 MuiTypography-overline"
+                    className="MuiTypography-root makeStyles-color-149 MuiTypography-overline"
                   >
                     PRIVACY
                   </span>
                 </a>
                 <a
-                  className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-space-146 MuiTypography-colorPrimary"
+                  className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-space-148 MuiTypography-colorPrimary"
                   href="#"
                   onBlur={[Function]}
                   onFocus={[Function]}
                 >
                   <span
-                    className="MuiTypography-root makeStyles-color-147 MuiTypography-overline"
+                    className="MuiTypography-root makeStyles-color-149 MuiTypography-overline"
                   >
                     TERMS
                   </span>
                 </a>
                 <a
-                  className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-space-146 MuiTypography-colorPrimary"
+                  className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-space-148 MuiTypography-colorPrimary"
                   href="#"
                   onBlur={[Function]}
                   onFocus={[Function]}
                 >
                   <span
-                    className="MuiTypography-root makeStyles-color-147 MuiTypography-overline"
+                    className="MuiTypography-root makeStyles-color-149 MuiTypography-overline"
                   >
                     POLICIES
                   </span>
                 </a>
                 <a
-                  className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-space-146 MuiTypography-colorPrimary"
+                  className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-space-148 MuiTypography-colorPrimary"
                   href="#"
                   onBlur={[Function]}
                   onFocus={[Function]}
                 >
                   <span
-                    className="MuiTypography-root makeStyles-color-147 MuiTypography-overline"
+                    className="MuiTypography-root makeStyles-color-149 MuiTypography-overline"
                   >
                     HELP
                   </span>
@@ -141,6 +143,6 @@ Array [
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2"
       />
     </div>
-  </footer>,
-]
+  </footer>
+</div>
 `;
