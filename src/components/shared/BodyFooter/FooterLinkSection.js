@@ -33,7 +33,7 @@ export default function FooterLogoSection() {
         spacing={2}
       >
         <Grid item>
-          <Typography variant="overline">
+          <Typography variant="overline" data-testid="connect">
             CONNECT
           </Typography>
         </Grid>

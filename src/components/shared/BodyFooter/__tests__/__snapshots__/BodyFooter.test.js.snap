@@ -19,10 +19,10 @@ Array [
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8"
       >
         <div
-          className="MuiBox-root MuiBox-root-157"
+          className="MuiBox-root MuiBox-root-160"
         >
           <div
-            className="MuiBox-root MuiBox-root-158"
+            className="MuiBox-root MuiBox-root-161"
           >
             <div
               className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-direction-xs-column MuiGrid-align-items-xs-center"
@@ -46,6 +46,7 @@ Array [
                   >
                     <span
                       className="MuiTypography-root MuiTypography-caption"
+                      data-testid="poweredBy"
                     >
                       powered by
                     </span>
@@ -65,7 +66,7 @@ Array [
             </div>
           </div>
           <div
-            className="MuiBox-root MuiBox-root-159"
+            className="MuiBox-root MuiBox-root-162"
           >
             <div
               className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-space-between"
@@ -75,6 +76,7 @@ Array [
               >
                 <span
                   className="MuiTypography-root MuiTypography-overline"
+                  data-testid="connect"
                 >
                   CONNECT
                 </span>

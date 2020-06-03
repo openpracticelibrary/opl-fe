@@ -25,10 +25,10 @@ export default function BodyFooter() {
           <Grid item xs={8}>
             <Box display="flex">
               <Box flexShrink={1}>
-                <FooterLogoSection data-testid="logoSection"/>
+                <FooterLogoSection />
               </Box>
               <Box width="100%">
-                <FooterLinkSection data-testid="linkSection"/>
+                <FooterLinkSection />
               </Box>
             </Box>
           </Grid>

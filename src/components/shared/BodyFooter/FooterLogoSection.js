@@ -25,7 +25,7 @@ export default function FooterLogoSection() {
             alignItems="flex-start"
           >
             <Grid item xs={3}>
-              <Typography variant="caption">
+              <Typography variant="caption" data-testid="poweredBy">
                 {`powered by`}
               </Typography>
             </Grid>

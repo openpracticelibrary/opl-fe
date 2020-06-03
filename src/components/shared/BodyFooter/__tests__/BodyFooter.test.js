@@ -17,6 +17,12 @@ it("renders BodyFooter correctly", ()=>{
   expect(getByTestId("footer")).toBeInTheDocument();
 });
 
+it("renders children components correctly", ()=>{
+  const { getByTestId } = render(<BodyFooter/>);
+  expect(getByTestId("connect")).toHaveTextContent("CONNECT");
+  expect(getByTestId("poweredBy")).toHaveTextContent("powered by");
+});
+
 it("matches the snapshot", ()=>{
   const tree = renderer.create(<BodyFooter/>).toJSON();
   expect(tree).toMatchSnapshot();
