@@ -6,8 +6,9 @@ import WhyDo from "./WhyDo";
 import HowDo from "./HowDo";
 import ResourcesWeLove from "./ResourcesWeLove";
 import BodyFooter from "../../shared/BodyFooter";
-import Box from '@material-ui/core/Box';
-import {makeStyles} from "@material-ui/core/styles/index";
+import FullText from "./FullText";
+import Box from "@material-ui/core/Box";
+import { makeStyles } from "@material-ui/core/styles/index";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,23 +21,31 @@ export default function PageBody(props) {
 
   const {
     title,
-    body: {whatIs, whyDo, howTo},
+    body: { whatIs, whyDo, howTo, fullText },
     mediaGallery,
     resources,
     ama,
   } = props;
 
-  return (
-    <>
+  if (whatIs && whyDo && howTo) {
+    return (
+      <>
+        <Box className={classes.root}>
+          <WhatIs title={title} source={whatIs} />
+          <MediaGallery mediaGallery={mediaGallery} />
+          <WhyDo title={title} source={whyDo} />
+          <HowDo title={title} source={howTo} />
+          <ResourcesWeLove links={resources} />
+          <AskMeAnything ama={ama} />
+          <BodyFooter />
+        </Box>
+      </>
+    );
+  } else {
+    return (
       <Box className={classes.root}>
-        <WhatIs title={title} source={whatIs}/>
-        <MediaGallery mediaGallery={mediaGallery}/>
-        <WhyDo title={title} source={whyDo}/>
-        <HowDo title={title} source={howTo}/>
-        <ResourcesWeLove links={resources}/>
-        <AskMeAnything ama={ama}/>
-        <BodyFooter/>
+        <FullText source={fullText} />
       </Box>
-    </>
-  );
+    );
+  }
 }
