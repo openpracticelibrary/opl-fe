@@ -45,15 +45,15 @@ export default function PracticePageContent(props) {
             </Grid>
             <Grid item xs={8}>
               <PageIntro
-                  practiceId={data.practices[0].id}
-                  title={data.practices[0].title}
-                  subtitle={data.practices[0].subtitle}
-                  authors={data.practices[0].authors}
-                  createdAt={data.practices[0].createdAt}
-                  updatedAt={data.practices[0].updatedAt}
-                  imgCount={data.practices[0].mediaGallery.length}
-                  questions={data.practices[0].ama.length}
-                  upvotes={data.practices[0].upvotes}
+                practiceId={data.practices[0].id}
+                title={data.practices[0].title}
+                subtitle={data.practices[0].subtitle}
+                authors={data.practices[0].authors}
+                createdAt={data.practices[0].createdAt}
+                updatedAt={data.practices[0].updatedAt}
+                imgCount={data.practices[0].mediaGallery.length}
+                questions={data.practices[0].ama.length}
+                upvotes={data.practices[0].upvotes}
               />
             </Grid>
             <Grid item xs={2}>
@@ -81,11 +81,11 @@ export default function PracticePageContent(props) {
             </Grid>
             <Grid item xs={8}>
               <PageBody
-                  title={data.practices[0].title}
-                  body={data.practices[0].body}
-                  mediaGallery={data.practices[0].mediaGallery}
-                  resources={data.practices[0].resources}
-                  ama={data.practices[0].ama}
+                title={data.practices[0].title}
+                body={data.practices[0].body}
+                mediaGallery={data.practices[0].mediaGallery}
+                resources={data.practices[0].resources}
+                ama={data.practices[0].ama}
               />
             </Grid>
             <Grid item xs={2}>
