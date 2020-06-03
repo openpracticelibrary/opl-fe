@@ -8,8 +8,11 @@ import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    margin: theme.spacing(6, 0)
+    padding: theme.spacing(6, 0),
   },
+  trueWhiteColor: {
+    backgroundColor: theme.palette.common.true_white,
+  }
 }));
 
 export default function BodyFooter() {
@@ -17,25 +20,27 @@ export default function BodyFooter() {
 
   return (
     <>
-      <Divider/>
-      <footer className={classes.footer} data-testid="footer">
-        <Grid container>
-          <Grid item xs={2}>
-          </Grid>
-          <Grid item xs={8}>
-            <Box display="flex">
-              <Box flexShrink={1}>
-                <FooterLogoSection />
+      <Box className={classes.trueWhiteColor}>
+        <Divider/>
+        <footer className={classes.footer} data-testid="footer">
+          <Grid container>
+            <Grid item xs={2}>
+            </Grid>
+            <Grid item xs={8}>
+              <Box display="flex">
+                <Box flexShrink={1}>
+                  <FooterLogoSection/>
+                </Box>
+                <Box width="100%">
+                  <FooterLinkSection/>
+                </Box>
               </Box>
-              <Box width="100%">
-                <FooterLinkSection />
-              </Box>
-            </Box>
+            </Grid>
+            <Grid item xs={2}>
+            </Grid>
           </Grid>
-          <Grid item xs={2}>
-          </Grid>
-        </Grid>
-      </footer>
+        </footer>
+      </Box>
     </>
   );
 }

@@ -17,6 +17,7 @@ const GET_PRACTICE_PAGE = gql`
         whyDo
         whatIs
         howTo
+        fullText
       }
       createdAt
       updatedAt

@@ -8,9 +8,8 @@ import PracticeCard from "../components/shared/PracticeCards/PracticeCard";
 import AllPracticesHero from "../components/allPractices/AllPracticesHero";
 
 const useStyles = makeStyles((theme) => ({
-  pagewrapper: {
+  pageWrapper: {
     backgroundColor: theme.palette.common.true_white,
-    height: "100vh",
   },
   root: {
     display: "flex",
@@ -47,7 +46,7 @@ export default function Practices() {
 
   return (
     <>
-      <Grid className={classes.pagewrapper}>
+      <Grid className={classes.pageWrapper}>
         <Grid
           container
           direction="row"

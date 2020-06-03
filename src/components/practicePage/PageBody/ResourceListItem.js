@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
   space: {
     paddingRight: theme.spacing(2),
   },
-  //todo: (@Darcie) font and styling for the link  items
   color: {
     color: theme.palette.common.black,
   },
