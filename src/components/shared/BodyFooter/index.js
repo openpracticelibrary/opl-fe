@@ -18,17 +18,17 @@ export default function BodyFooter() {
   return (
     <>
       <Divider/>
-      <footer className={classes.footer}>
+      <footer className={classes.footer} data-testid="footer">
         <Grid container>
           <Grid item xs={2}>
           </Grid>
           <Grid item xs={8}>
             <Box display="flex">
               <Box flexShrink={1}>
-                <FooterLogoSection/>
+                <FooterLogoSection data-testid="logoSection"/>
               </Box>
               <Box width="100%">
-                <FooterLinkSection/>
+                <FooterLinkSection data-testid="linkSection"/>
               </Box>
             </Box>
           </Grid>
