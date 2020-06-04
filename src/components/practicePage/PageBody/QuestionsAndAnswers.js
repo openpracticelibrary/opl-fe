@@ -21,9 +21,10 @@ export default function QuestionsAndAnswers(props) {
 
   return (
     <>
-      {props.ama.map((qAndA) => (
+      {props.ama.map((qAndA, i) => (
         <Grid
           container
+          key={i}
           direction="row"
           justify="flex-start"
           alignItems="flex-start"

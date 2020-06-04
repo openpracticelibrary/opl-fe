@@ -53,6 +53,7 @@ export default function ResourcesWeLove(props) {
           {props.links.map((resource, i) => (
             <ResourceListItem
               key={i}
+              listItemKey={i}
               url={resource.link}
               description={resource.description}
             >
