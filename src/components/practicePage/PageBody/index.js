@@ -5,14 +5,13 @@ import WhatIs from "./WhatIs";
 import WhyDo from "./WhyDo";
 import HowDo from "./HowDo";
 import ResourcesWeLove from "./ResourcesWeLove";
-import BodyFooter from "../../shared/BodyFooter";
 import FullText from "./FullText";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles/index";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: theme.spacing(7),
+    margin: theme.spacing(6, 0),
   },
 }));
 
@@ -37,7 +36,6 @@ export default function PageBody(props) {
           <HowDo title={title} source={howTo} />
           <ResourcesWeLove links={resources} />
           <AskMeAnything ama={ama} />
-          <BodyFooter />
         </Box>
       </>
     );

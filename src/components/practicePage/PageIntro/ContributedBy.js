@@ -39,8 +39,8 @@ export default function ContributedBy(props) {
             justify="space-between"
             alignItems="center"
           >
-            {props.authors.map((author) => (
-              <Grid item>
+            {props.authors.map((author, i) => (
+              <Grid item key={i}>
                 <PhotoAndName
                   key={author.id}
                   authorName={`${author.firstName} ${author.lastName}`}
@@ -49,7 +49,7 @@ export default function ContributedBy(props) {
               </Grid>
             ))}
             <Grid item>
-              <Typography variant="overline">
+              <Typography variant="overline" data-testid={"dates"}>
                 Published {formatDate(props.createdAt)} | Last edited{" "}
                 {formatDate(props.updatedAt)}
               </Typography>
