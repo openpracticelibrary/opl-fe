@@ -43,8 +43,8 @@ export default function Collection(props) {
           <Typography variant="overline">Collection</Typography>
         </Grid>
         <Grid item>
-          <IconButton onClick={handleLike} className={classes.button}>
-            <CollectionItem amount={props.upvotes}>
+          <IconButton onClick={handleLike} className={classes.button} data-testid={"heartIcon"}>
+            <CollectionItem amount={props.upvotes} >
               <FilledHeartIcon/>
             </CollectionItem>
           </IconButton>

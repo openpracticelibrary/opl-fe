@@ -20,10 +20,10 @@ export default function TitleAndSubtitle(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h1"}>{props.title}</Typography>
+          <Typography variant={"h1"} data-testid={"title"}>{props.title}</Typography>
         </Box>
         <Box className={classes.space}>
-          <Typography variant={"subtitle1"}>{props.subtitle}</Typography>
+          <Typography variant={"subtitle1"} data-testid={"subtitle"}>{props.subtitle}</Typography>
         </Box>
       </Box>
     </>

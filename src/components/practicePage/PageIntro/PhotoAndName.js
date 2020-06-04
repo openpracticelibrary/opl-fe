@@ -27,7 +27,7 @@ export default function PhotoAndName(props) {
           <UserIcon />
         </Grid>
         <Grid item>
-          <Typography variant="body1">{props.authorName}</Typography>
+          <Typography variant="body1" data-testid={"authorName"}>{props.authorName}</Typography>
         </Grid>
       </Grid>
     </>
