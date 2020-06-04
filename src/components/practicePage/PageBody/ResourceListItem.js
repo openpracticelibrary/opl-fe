@@ -30,7 +30,7 @@ export default function ResourceListItem(props) {
           <Link href={props.url}>
             <Typography
               variant="body1"
-              key={props.key}
+              key={props.listItemKey}
               className={classes.color}
             >
               {props.description}

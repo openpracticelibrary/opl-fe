@@ -21,12 +21,12 @@ export default function HowDo(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} href="#WhyDoIt">
+          <Typography variant={"h2"} href="#WhyDoIt" component={'span'}>
             How to do {props.title}?
           </Typography>
         </Box>
         <Box className={classes.space}>
-          <Typography variant={"body1"}>
+          <Typography variant={"body1"} component={'span'}>
             <ReactMarkdown source={props.source} />
           </Typography>
         </Box>
