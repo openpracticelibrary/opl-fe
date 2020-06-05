@@ -12,7 +12,7 @@ const PracticeCardGrid = (props) => {
   });
 
   function handleScroll() {
-    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
+    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || !props.onLoadMore) return;
     page = page + 8;
     props.onLoadMore(page);
   }
