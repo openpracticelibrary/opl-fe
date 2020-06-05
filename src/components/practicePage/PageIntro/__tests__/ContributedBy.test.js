@@ -31,13 +31,13 @@ const mockProps = {
 
 it("renders the createdAt and updatedAt dates", async () => {
   const {getByTestId} = render(
-      <MockedProvider mocks={[]}>
-        <ContributedBy {...mockProps} />
-      </MockedProvider>
+    <MockedProvider mocks={[]}>
+      <ContributedBy {...mockProps} />
+    </MockedProvider>
   );
 
   expect(getByTestId("dates")).toBeInTheDocument();
   expect(getByTestId("dates")).toHaveTextContent(
-      "Published " + todayInFormat + " | Last edited " + todayInFormat);
+    "Published " + todayInFormat + " | Last edited " + todayInFormat);
 });
 

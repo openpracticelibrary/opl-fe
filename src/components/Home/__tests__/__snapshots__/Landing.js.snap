@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<div
+  className="MuiGrid-root makeStyles-titleBox-199 MuiGrid-container"
+>
+  <div
+    className="MuiBox-root MuiBox-root-312 makeStyles-logo-200"
+  >
+    <svg
+      style={
+        Object {
+          "margin": -5,
+        }
+      }
+      viewBox="0 0 185 18"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <filter
+          filterUnits="objectBoundingBox"
+          height="113.8%"
+          id="prefix__a"
+          width="102.2%"
+          x="-.5%"
+          y="-3.4%"
+        >
+          <feOffset
+            dx="2"
+            dy="2"
+            in="SourceAlpha"
+            result="shadowOffsetOuter1"
+          />
+          <feColorMatrix
+            in="shadowOffsetOuter1"
+            values="0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 1 0"
+          />
+        </filter>
+        <text
+          fill="#2E2E2E"
+          fontFamily="Chewy-Regular, Chewy"
+          fontSize="19"
+          fontWeight="normal"
+          id="prefix__b"
+        >
+          <tspan
+            x="28"
+            y="43"
+          >
+            OPEN PRACTICE LIBRARY
+          </tspan>
+        </text>
+      </defs>
+      <g
+        fill="#2E2E2E"
+        fillRule="evenodd"
+        transform="translate(-28 -30)"
+      >
+        <use
+          filter="url(#prefix__a)"
+          xlinkHref="#prefix__b"
+        />
+        <use
+          xlinkHref="#prefix__b"
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-313 makeStyles-loginBox-201"
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined makeStyles-loginButton-202"
+      disabled={false}
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <span
+          className="MuiTypography-root MuiTypography-overline"
+        >
+          <b>
+            Login
+          </b>
+        </span>
+      </span>
+    </button>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-376 makeStyles-textBox-203"
+  >
+    <h4
+      className="MuiTypography-root makeStyles-hello-204 MuiTypography-h4"
+    >
+      <span
+        className=""
+        data-testid="hellotext"
+      >
+        Wazzup
+      </span>
+    </h4>
+    <h1
+      className="MuiTypography-root makeStyles-welcome-205 MuiTypography-h1"
+      data-testid="welcomeText"
+    >
+      What's up
+    </h1>
+    <h1
+      className="MuiTypography-root MuiTypography-h1"
+      data-testid="inquiryText"
+    >
+      What is up?
+    </h1>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-377 makeStyles-welcomeBottom-206"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-overline MuiTypography-alignCenter"
+    >
+      <b>
+        Tell me more
+      </b>
+    </p>
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root makeStyles-arrowIcon-207"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <svg
+        clipRule="evenodd"
+        fillRule="evenodd"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M24 12c0-6.623-5.377-12-12-12s-12 5.377-12 12 5.377 12 12 12 12-5.377 12-12zm-1 0c0-6.071-4.929-11-11-11s-11 4.929-11 11 4.929 11 11 11 11-4.929 11-11zm-11.5 4.828l-3.763-4.608-.737.679 5 6.101 5-6.112-.753-.666-3.747 4.604v-11.826h-1v11.828z"
+        />
+      </svg>
+    </svg>
+  </div>
+</div>
+`;

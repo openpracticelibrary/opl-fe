@@ -29,6 +29,7 @@ export default function PracticeCard(props) {
         zIndex: `${hovered ? "10" : "1"}`,
         transition: `${hovered ? "0.5s" : "0.5s"}`,
       }}
+      data-testid={props.practiceId}
     >
       <Box
         data-testid="practicecard"

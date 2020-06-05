@@ -1,8 +1,8 @@
 import { gql } from 'apollo-boost';
 
 const GET_PRACTICES = gql`
-  query Practices {
-    practices {
+  query Practices($start: Int, $limit: Int) {
+    practices(start: $start, limit: $limit) {
       id
       slug
       coverImage

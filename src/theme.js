@@ -41,7 +41,7 @@ export default createMuiTheme({
   },
 
   typography: {
-    fontFamily: ["Noto Serif", "Assistant", "Roboto"],
+    fontFamily: ["Noto Serif", "Assistant", "Roboto", "Itim"],
 
     //Main Title
     h1: {
@@ -62,9 +62,17 @@ export default createMuiTheme({
     //Pull quote
     h3: {
       fontFamily: "Noto Serif",
-      fontWeight: "normal italic",
+      fontWeight: "normal",
+      fontStyle: "italic",
       fontSize: "1.625rem",
       color: `${brown_grey}`,
+    },
+
+    h4: {
+      fontFamily: "Itim",
+      fontWeight: "normal",
+      fontSize: "6rem",
+      color: `${black}`,
     },
 
     //Subtitle

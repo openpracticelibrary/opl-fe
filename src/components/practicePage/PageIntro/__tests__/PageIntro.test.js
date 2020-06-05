@@ -36,17 +36,17 @@ const mockProps = {
 
 it("renders Page Introduction without crashing", () => {
   render(
-      <MockedProvider mocks={[]}>
-        <PageIntro {...mockProps} />
-      </MockedProvider>
+    <MockedProvider mocks={[]}>
+      <PageIntro {...mockProps} />
+    </MockedProvider>
   );
 });
 
 it("matches the snapshot", () => {
   const tree = renderer.create(
-      <MockedProvider mocks={[]}>
-        <PageIntro {...mockProps} />
-      </MockedProvider>
+    <MockedProvider mocks={[]}>
+      <PageIntro {...mockProps} />
+    </MockedProvider>
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

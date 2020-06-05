@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from 'react-dom';
 import { render, cleanup } from "@testing-library/react";
 import renderer from 'react-test-renderer';
 import "@testing-library/jest-dom/extend-expect";
@@ -9,7 +8,7 @@ afterEach(cleanup);
 
 it("renders BodyFooter without crashing", ()=>{
   const div = document.createElement("div");
-  ReactDOM.render(<BodyFooter/>, div);
+  render(<BodyFooter/>, div);
 });
 
 it("renders BodyFooter correctly", ()=>{
@@ -19,7 +18,7 @@ it("renders BodyFooter correctly", ()=>{
 
 it("renders children components correctly", ()=>{
   const { getByTestId } = render(<BodyFooter/>);
-  expect(getByTestId("connect")).toHaveTextContent("CONNECT");
+  expect(getByTestId("connect")).toHaveTextContent("Connect with us!");
   expect(getByTestId("poweredBy")).toHaveTextContent("powered by");
 });
 
