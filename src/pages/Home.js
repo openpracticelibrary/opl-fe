@@ -1,20 +1,22 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles/index';
-import Box from '@material-ui/core/Box';
+import Grid from "@material-ui/core/Grid";
+
+import Landing from "../components/Home/Landing";
+import Community from "../components/Home/Community";
+import CuratedPractices from "../components/Home/CuratedPractices";
+import Explore from "../components/Home/Explore";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    flexGrow: 1,
-    padding: theme.spacing(1),
+  pageWrapper: {
+    backgroundColor: theme.palette.common.true_white,
   },
-  titleBox: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    backgroundColor: theme.palette.common.white,
-    width: '100%',
-  }
+  content: {
+    display: "flex",
+    flexDirection: "center",
+    padding: theme.spacing(20),
+    width: "100%",
+  },
 }));
 
 export default function Home() {
@@ -22,12 +24,24 @@ export default function Home() {
 
   return (
     <>
-      <Box className={classes.root}>
-        <Box className={classes.titleBox}>
-          <h2>Welcome to the Open Practice Library</h2>
-          <p>This page is currently under construction</p>
-        </Box>
-      </Box>
+      <Grid data-testid="pageGrid" className={classes.pageWrapper}>
+        <Landing
+          greeting="Hiya! 😃"
+          welcomeMessage="Welcome to this open source library of best practices in digital product development."
+          inquiry="Sound up your alley?" />
+        <Grid
+          container
+          direction="row"
+          className={classes.content}
+          spacing={10}
+        >
+          <Community />
+          <CuratedPractices />
+        </Grid>
+        <Explore
+          exploreMessage="Learn something new from your peers & experiment with best practices!"
+        />
+      </Grid>
     </>
   )
 };

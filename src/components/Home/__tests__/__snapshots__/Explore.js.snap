@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<div
+  className="MuiGrid-root makeStyles-explore-183 MuiGrid-container"
+>
+  <div
+    className="MuiBox-root MuiBox-root-290 makeStyles-exploreBox-182"
+  >
+    <h1
+      className="MuiTypography-root makeStyles-learn-185 MuiTypography-h1"
+      data-testid="exploreMsg"
+    >
+      Snapshottin it up
+    </h1>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-exploreButton-184 MuiButton-disableElevation"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <span
+          className="MuiTypography-root MuiTypography-overline"
+        >
+          <b>
+            Explore the library
+          </b>
+        </span>
+      </span>
+    </button>
+    <div
+      style={
+        Object {
+          "height": "120px",
+          "margin": "0 auto",
+          "outline": "none",
+          "overflow": "hidden",
+          "width": "120px",
+        }
+      }
+      tab-index="0"
+    />
+  </div>
+</div>
+`;

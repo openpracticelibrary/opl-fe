@@ -1,0 +1,468 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<div
+  className="MuiBox-root MuiBox-root-231 makeStyles-root-229"
+>
+  <div
+    className="MuiBox-root MuiBox-root-234 makeStyles-root-232"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-235 makeStyles-space-233"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-h2"
+        href="#whatis"
+      >
+        What is 
+        Test title
+        ?
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-266 makeStyles-space-233"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        <p>
+          What is test
+        </p>
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-270 makeStyles-root-267"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-271 makeStyles-space-268"
+    >
+      <h2
+        className="MuiTypography-root MuiTypography-h2"
+        href="#media"
+      >
+        Media Gallery
+      </h2>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-272 makeStyles-mediaBox-269"
+    >
+      <div
+        aria-live="polite"
+        className="image-gallery"
+      >
+        <div
+          className="image-gallery-content bottom"
+        >
+          <div
+            className="image-gallery-slide-wrapper bottom"
+          >
+            <div
+              className="image-gallery-slides"
+            >
+              <div
+                className="image-gallery-slide  center "
+                onClick={null}
+                onFocus={null}
+                onKeyUp={[Function]}
+                onMouseLeave={null}
+                onMouseOver={null}
+                onTouchEnd={null}
+                onTouchMove={null}
+                onTouchStart={null}
+                role="button"
+                style={
+                  Object {
+                    "MozTransform": "translate3d(0%, 0, 0)",
+                    "OTransform": "translate3d(0%, 0, 0)",
+                    "WebkitTransform": "translate3d(0%, 0, 0)",
+                    "msTransform": "translate3d(0%, 0, 0)",
+                    "transform": "translate3d(0%, 0, 0)",
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <img
+                    className="image-gallery-image"
+                    onError={[Function]}
+                    onLoad={[Function]}
+                    src="https://test.com"
+                  />
+                </div>
+              </div>
+            </div>
+            <button
+              aria-label="Play or Pause Slideshow"
+              className="image-gallery-icon image-gallery-play-button"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                className="image-gallery-svg"
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="5 3 19 12 5 21 5 3"
+                />
+              </svg>
+            </button>
+            <div
+              className="image-gallery-bullets"
+            >
+              <div
+                aria-label="Bullet Navigation"
+                className="image-gallery-bullets-container"
+                role="navigation"
+              >
+                <button
+                  aria-label="Go to Slide 1"
+                  aria-pressed="true"
+                  className="image-gallery-bullet active"
+                  onClick={[Function]}
+                  type="button"
+                />
+              </div>
+            </div>
+            <button
+              aria-label="Open Fullscreen"
+              className="image-gallery-icon image-gallery-fullscreen-button"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                className="image-gallery-svg"
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
+                />
+              </svg>
+            </button>
+            <div
+              className="image-gallery-index"
+            >
+              <span
+                className="image-gallery-index-current"
+              >
+                1
+              </span>
+              <span
+                className="image-gallery-index-separator"
+              >
+                 / 
+              </span>
+              <span
+                className="image-gallery-index-total"
+              >
+                1
+              </span>
+            </div>
+          </div>
+          <div
+            className="image-gallery-thumbnails-wrapper bottom"
+            style={Object {}}
+          >
+            <div
+              className="image-gallery-thumbnails"
+            >
+              <div
+                aria-label="Thumbnail Navigation"
+                className="image-gallery-thumbnails-container"
+                style={
+                  Object {
+                    "MozTransform": "translate3d(0px, 0, 0)",
+                    "OTransform": "translate3d(0px, 0, 0)",
+                    "WebkitTransform": "translate3d(0px, 0, 0)",
+                    "msTransform": "translate3d(0px, 0, 0)",
+                    "transform": "translate3d(0px, 0, 0)",
+                  }
+                }
+              >
+                <button
+                  aria-label="Go to Slide 1"
+                  aria-pressed="true"
+                  className="image-gallery-thumbnail active"
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseLeave={null}
+                  onMouseOver={[Function]}
+                  tabIndex="0"
+                  type="button"
+                >
+                  <div
+                    className="image-gallery-thumbnail-inner"
+                  >
+                    <img
+                      className="image-gallery-thumbnail-image"
+                      onError={[Function]}
+                      src="https://test.com"
+                    />
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-275 makeStyles-root-273"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-276 makeStyles-space-274"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-h2"
+        href="#WhyDoIt"
+      >
+        Why do 
+        Test title
+        ?
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-277 makeStyles-space-274"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        <p>
+          Why do test
+        </p>
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-280 makeStyles-root-278"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-281 makeStyles-space-279"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-h2"
+        href="#WhyDoIt"
+      >
+        How to do 
+        Test title
+        ?
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-282 makeStyles-space-279"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        <p>
+          how to test
+        </p>
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-286 makeStyles-root-283"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-287 makeStyles-space-284"
+    >
+      <h2
+        className="MuiTypography-root MuiTypography-h2"
+        href="#WhyDoIt"
+      >
+        Resources we love
+      </h2>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-288 makeStyles-space-284"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1"
+      />
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-289 makeStyles-indent-285"
+    >
+      <div
+        className="MuiBox-root MuiBox-root-293 makeStyles-root-290"
+      >
+        <div
+          className="MuiBox-root MuiBox-root-294 makeStyles-space-291"
+        >
+          <svg
+            height="17"
+            viewBox="0 0 17 17"
+            width="17"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="#2E2E2E"
+            >
+              <path
+                d="M15.099 8.79V12.748c0 .264.007.528-.027.79l.034-.252c-.036.254-.102.5-.201.737l.095-.226c-.099.23-.224.446-.376.644l.148-.192c-.152.196-.329.372-.524.524l.191-.148c-.2.152-.414.28-.644.376.076-.032.152-.065.226-.095-.235.099-.482.165-.737.201l.253-.034c-.397.052-.811.027-1.21.027H4.888c-.345 0-.691.002-1.035 0-.133 0-.264-.01-.395-.027l.253.034c-.255-.036-.5-.102-.737-.2L3.2 15c-.23-.099-.447-.224-.644-.376l.192.148c-.196-.152-.373-.328-.525-.524.05.064.1.127.148.192-.151-.2-.279-.414-.376-.644.033.076.065.152.095.226-.098-.236-.165-.483-.201-.737l.034.253c-.051-.397-.026-.811-.026-1.21v-2.272-2.788V4.89c0-.346-.002-.692 0-1.035 0-.133.01-.264.026-.395l-.034.252c.036-.254.103-.5.201-.737l-.095.226c.1-.23.225-.446.376-.644l-.148.192c.152-.195.329-.372.525-.524l-.192.148c.2-.152.414-.279.644-.376-.076.032-.152.065-.226.095.235-.099.482-.165.737-.201l-.253.034c.23-.03.462-.027.693-.027h4.056c.243 0 .5-.106.672-.277.166-.165.29-.435.278-.672-.012-.245-.091-.5-.278-.673C8.693.107 8.465 0 8.207 0H3.87c-.623 0-1.217.152-1.774.425C1.473.731.946 1.24.578 1.823c-.38.6-.575 1.322-.577 2.03-.002.267 0 .533 0 .8v8.492c.002.67.178 1.343.513 1.924.68 1.186 1.98 1.926 3.343 1.93.294.002.589 0 .883 0h8.206c.084 0 .17.002.253 0 .709-.013 1.436-.218 2.029-.611.575-.382 1.079-.91 1.373-1.54.255-.55.399-1.118.399-1.725v-1.69-2.244-.397c0-.243-.106-.5-.277-.672-.166-.166-.435-.289-.673-.278-.245.012-.5.092-.672.278-.171.184-.28.412-.28.67zM11.932 2h4.136c.238 0 .49-.112.66-.292.161-.174.282-.458.271-.708-.01-.258-.09-.526-.272-.708-.182-.18-.406-.292-.66-.292H11.933c-.238 0-.49.112-.66.292-.161.174-.282.458-.271.708.01.258.09.526.272.708.182.178.408.292.66.292z"
+              />
+              <path
+                d="M17 5.068v-1.4-2.227-.509c0-.238-.112-.49-.292-.66C16.534.112 16.25-.01 16 .002c-.258.01-.526.09-.708.272-.18.182-.292.406-.292.66V5.067c0 .238.112.49.292.66.174.161.458.282.708.271.258-.01.526-.09.708-.272.178-.182.292-.408.292-.66z"
+              />
+              <path
+                d="M9.547 8.735l.72-.72 1.714-1.713 2.073-2.073 1.797-1.797c.29-.29.585-.578.872-.871l.012-.013C16.9 1.383 17 1.14 17 .907c0-.223-.098-.488-.265-.642-.172-.157-.398-.275-.641-.264-.241.01-.467.092-.641.264l-.72.72-1.714 1.713-2.073 2.073L9.15 6.568c-.29.29-.585.578-.872.871l-.012.013C8.1 7.617 8 7.86 8 8.093c0 .223.098.488.265.642.172.157.398.275.641.264.241-.009.467-.09.641-.264z"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="MuiBox-root MuiBox-root-295"
+        >
+          <a
+            className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+            href="https://test.com"
+            onBlur={[Function]}
+            onFocus={[Function]}
+          >
+            <p
+              className="MuiTypography-root makeStyles-color-292 MuiTypography-body1"
+            >
+              Test desc
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-305 makeStyles-root-302"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-306 makeStyles-space-303"
+    >
+      <h2
+        className="MuiTypography-root MuiTypography-h2"
+        href="#WhyDoIt"
+      >
+        Ask me anything
+      </h2>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-307 makeStyles-space-303"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        Questions from community aliquam id diam maecenas ultricies mi eget mauris. Odio tempor orci dapibus ultrices in. 
+      </p>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-308 makeStyles-space-303"
+    >
+      <div
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+      >
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoFocus={false}
+            className="MuiInputBase-input MuiOutlinedInput-input makeStyles-input-304"
+            disabled={false}
+            id="ama"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="What questions do you have?"
+            required={false}
+            type="text"
+          />
+          <fieldset
+            aria-hidden={true}
+            className="PrivateNotchedOutline-root-347 MuiOutlinedInput-notchedOutline"
+            style={
+              Object {
+                "paddingLeft": 8,
+              }
+            }
+          >
+            <legend
+              className="PrivateNotchedOutline-legend-348"
+              style={
+                Object {
+                  "width": 0.01,
+                }
+              }
+            >
+              <span
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "&#8203;",
+                  }
+                }
+              />
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root makeStyles-root-351 MuiGrid-container MuiGrid-align-items-xs-flex-start"
+    >
+      <div
+        className="MuiGrid-root makeStyles-space-352 MuiGrid-item"
+      >
+        <svg
+          height="30"
+          viewBox="0 0 30 30"
+          width="30"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="#2E2E2E"
+          >
+            <path
+              d="M14.97 0c8.268 0 14.971 6.703 14.971 14.97L30 30l-15.03-.06C6.703 29.94 0 23.239 0 14.97 0 6.704 6.703 0 14.97 0zm0 2.22c-7.042 0-12.75 5.708-12.75 12.75s5.708 12.751 12.75 12.751l12.81.058-.059-12.809c0-7.042-5.708-12.75-12.75-12.75z"
+            />
+            <path
+              d="M19.926 11.323c-.323-1.786-1.852-3.247-3.72-3.556-1.377-.243-2.753.114-3.789.958-1.053.845-1.648 2.079-1.648 3.378 0 .617.527 1.104 1.155 1.104.646 0 1.156-.487 1.156-1.104 0-.65.305-1.267.815-1.689.527-.422 1.206-.585 1.903-.47.9.145 1.682.892 1.835 1.753.237 1.25-.612 2.208-1.546 2.5-1.122.341-1.87 1.348-1.87 2.517v1.413c0 .617.527 1.104 1.156 1.104.646 0 1.155-.487 1.155-1.104v-1.413c0-.195.12-.357.272-.406 2.226-.682 3.534-2.776 3.126-4.985zM15.384 20c-.858 0-1.538.698-1.538 1.538 0 .86.698 1.539 1.538 1.539.859 0 1.539-.698 1.539-1.539.018-.84-.68-1.538-1.539-1.538z"
+            />
+          </g>
+        </svg>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item"
+      >
+        <h6
+          className="MuiTypography-root makeStyles-question-353 MuiTypography-subtitle1"
+        >
+          When do I do this?
+        </h6>
+        <br />
+        <span
+          className="MuiTypography-root MuiTypography-button"
+        >
+          Answer
+        </span>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          Test answer 1
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -21,12 +21,12 @@ export default function WhatIs(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} href="#whatis">
+          <Typography variant={"h2"} href="#whatis" component={'span'}>
             What is {props.title}?
           </Typography>
         </Box>
         <Box className={classes.space}>
-          <Typography variant={"body1"}>
+          <Typography variant={"body1"} component={'span'}>
             <ReactMarkdown source={props.source} />
           </Typography>
         </Box>

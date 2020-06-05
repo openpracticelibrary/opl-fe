@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<div
+  className="MuiBox-root MuiBox-root-454 makeStyles-trueWhiteColor-452"
+>
+  <hr
+    className="MuiDivider-root"
+  />
+  <footer
+    className="makeStyles-footer-451"
+    data-testid="footer"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2"
+      />
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8"
+      >
+        <div
+          className="MuiBox-root MuiBox-root-565"
+        >
+          <div
+            className="MuiBox-root MuiBox-root-566"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-direction-xs-column MuiGrid-align-items-xs-center"
+            >
+              <div
+                className="MuiGrid-root MuiGrid-item"
+              >
+                <img
+                  alt="OPL"
+                  src="open-practice-librar.png"
+                />
+              </div>
+              <div
+                className="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-flex-start"
+                >
+                  <div
+                    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
+                  >
+                    <span
+                      className="MuiTypography-root MuiTypography-caption"
+                      data-testid="poweredBy"
+                    >
+                      powered by
+                    </span>
+                  </div>
+                  <div
+                    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-9"
+                  >
+                    <img
+                      alt="Open Innovation Labs"
+                      height="31px"
+                      src="logo-red-hat-open-innovation-labs-a-standard-rgb.png"
+                      width="162px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="MuiBox-root MuiBox-root-597"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-space-between"
+            >
+              <div
+                className="MuiGrid-root MuiGrid-item"
+              >
+                <span
+                  className="MuiTypography-root makeStyles-connect-600 MuiTypography-overline"
+                  data-testid="connect"
+                >
+                  Connect with us!
+                </span>
+              </div>
+              <div
+                className="MuiGrid-root MuiGrid-item"
+              >
+                <span
+                  className="MuiTypography-root makeStyles-color-599 MuiTypography-overline"
+                  onClick={[Function]}
+                >
+                  Practices
+                </span>
+                <span
+                  className="MuiTypography-root makeStyles-color-599 MuiTypography-overline"
+                  onClick={[Function]}
+                >
+                  About
+                </span>
+                <span
+                  className="MuiTypography-root makeStyles-color-599 MuiTypography-overline"
+                  onClick={[Function]}
+                >
+                  Latest
+                </span>
+                <span
+                  className="MuiTypography-root makeStyles-color-599 MuiTypography-overline"
+                  onClick={[Function]}
+                >
+                  Terms
+                </span>
+                <span
+                  className="MuiTypography-root makeStyles-color-599 MuiTypography-overline"
+                  onClick={[Function]}
+                >
+                  Help
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2"
+      />
+    </div>
+  </footer>
+</div>
+`;

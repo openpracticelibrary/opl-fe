@@ -4,13 +4,14 @@ import { useQuery } from "@apollo/react-hooks";
 import { GET_PRACTICES } from "../graphql";
 import { Grid, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles/index";
-import PracticeCard from "../components/shared/PracticeCards/PracticeCard";
+import PracticeCardGrid from "../components/shared/PracticeCards/PracticeCardGrid";
 import AllPracticesHero from "../components/allPractices/AllPracticesHero";
+import ComponentLoading from "../components/shared/QueryState/ComponentLoading";
+import QueryError from "../components/shared/QueryState/QueryError";
 
 const useStyles = makeStyles((theme) => ({
-  pagewrapper: {
+  pageWrapper: {
     backgroundColor: theme.palette.common.true_white,
-    height: "100vh",
   },
   root: {
     display: "flex",
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     width: "100%",
     paddingTop: 27,
+    marginBottom: "75px",
     height: 'auto',
   },
   titleBox: {
@@ -40,14 +42,21 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Practices() {
   const classes = useStyles();
+  const { loading, error, data, fetchMore } = useQuery(GET_PRACTICES,
+    {
+      variables: {
+        start: 0,
+        limit: 8
+      },
+      fetchPolicy: "cache-and-network"
+    }
+  );
 
-  const { loading, error, data } = useQuery(GET_PRACTICES);
-  if (loading) return <p>Loading...</p>;
-  if (error) return `Error! ${error}`;
+  if (error) return <QueryError err={error} />;
 
   return (
     <>
-      <Grid className={classes.pagewrapper}>
+      <Grid className={classes.pageWrapper}>
         <Grid
           container
           direction="row"
@@ -67,29 +76,23 @@ export default function Practices() {
           className={classes.root}
         >
           <Grid className={classes.practicePane} item xs={9}>
-            <Grid
-              container
-              direction="row"
-              justify="center"
-              alignContent="center"
-              alignItems="center"
-              spacing={2}
-            >
-              {data.practices.map((practice) => (
-                <PracticeCard
-                  key={practice.id}
-                  practiceId={practice.id}
-                  practiceTitle={practice.title}
-                  coverImage={practice.coverImage}
-                  tags={practice.tags}
-                  slug={practice.slug}
-                  subtitle={practice.subtitle}
-                  mediaGallery={practice.mediaGallery.length}
-                  ama={practice.ama.length}
-                  upvotes={practice.upvotes}
-                />
-              ))}
-            </Grid>
+            { loading && !data ? <ComponentLoading /> :
+              <PracticeCardGrid
+                loading={loading}
+                practices={data.practices}
+                onLoadMore={(page) =>
+                  fetchMore({
+                    variables: {
+                      start: page,
+                    },
+                    updateQuery: (prev, { fetchMoreResult }) => {
+                      if (!fetchMoreResult) return prev;
+                      return Object.assign({}, prev, {
+                        practices: [...prev.practices, ...fetchMoreResult.practices]
+                      });
+                    }
+                  })}
+              />}
           </Grid>
         </Grid>
       </Grid>
