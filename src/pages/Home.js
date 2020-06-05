@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles/index';
 import { useQuery } from "@apollo/react-hooks";
 import Box from '@material-ui/core/Box';
-import { GET_EIGHT_POPULAR_PRACTICES } from '../graphql';
+import { GET_CURATED_PRACTICES } from '../graphql';
 import { Divider } from "@material-ui/core";
 import PracticeCardGrid from "../components/shared/PracticeCards/PracticeCardGrid";
 
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
   const classes = useStyles();
 
-  const { loading, error, data } = useQuery(GET_EIGHT_POPULAR_PRACTICES);
+  const { loading, error, data } = useQuery(GET_CURATED_PRACTICES, {variables: {limit: 8}});
   if (loading) return <p>Loading...</p>;
   if (error) return `Error! ${error}`;
   console.log(data.practices);

@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { GET_PRACTICES } from "../graphql";
 import { Grid, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles/index";
-import PracticeCard from "../components/shared/PracticeCards/PracticeCard";
+import PracticeCardGrid from "../components/shared/PracticeCards/PracticeCardGrid";
 import AllPracticesHero from "../components/allPractices/AllPracticesHero";
 
 const useStyles = makeStyles((theme) => ({
@@ -66,29 +66,7 @@ export default function Practices() {
           className={classes.root}
         >
           <Grid className={classes.practicePane} item xs={9}>
-            <Grid
-              container
-              direction="row"
-              justify="center"
-              alignContent="center"
-              alignItems="center"
-              spacing={2}
-            >
-              {data.practices.map((practice) => (
-                <PracticeCard
-                  key={practice.id}
-                  practiceId={practice.id}
-                  practiceTitle={practice.title}
-                  coverImage={practice.coverImage}
-                  tags={practice.tags}
-                  slug={practice.slug}
-                  subtitle={practice.subtitle}
-                  mediaGallery={practice.mediaGallery.length}
-                  ama={practice.ama.length}
-                  upvotes={practice.upvotes}
-                />
-              ))}
-            </Grid>
+            <PracticeCardGrid data={data}/>
           </Grid>
         </Grid>
       </Grid>
