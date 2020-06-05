@@ -6,7 +6,7 @@ import { MockedProvider } from "@apollo/react-testing";
 import { GET_PRACTICES } from "../../graphql";
 import Practices from "../Practices";
 
-const practices = [{
+const mockPracticeData = [{
   __typename: "Practice",
   id: "5ec55c99d36579001355faae",
   title: "A title",
@@ -47,8 +47,12 @@ const apolloMocks = [
   {
     request: {
       query: GET_PRACTICES,
+      variables: {
+        start: 0,
+        limit: 8
+      }
     },
-    result: { data: { practices } }
+    result: { data: { practices: mockPracticeData } }
   },
 ];
 
@@ -58,8 +62,8 @@ it("renders with graphql response", async () => {
       <Practices />
     </MockedProvider>
   );
-  // apollo hook renders while waiting for response
-  expect(getByText("Loading...")).toBeInTheDocument();
+
+  expect(getByTestId("loadingComponent")).toBeInTheDocument();
 
   // wait for response to load
   await waitFor(() => expect(getByText("A title")).toBeInTheDocument())

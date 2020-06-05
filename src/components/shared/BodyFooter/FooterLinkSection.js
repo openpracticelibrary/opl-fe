@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import Link from "@material-ui/core/Link";
+import { navigate } from "@reach/router";
 
 const useStyles = makeStyles((theme) => ({
   space: {
@@ -10,14 +10,20 @@ const useStyles = makeStyles((theme) => ({
   },
   color: {
     color: theme.palette.common.black,
-  }}
-));
+    margin: theme.spacing(2),
+  },
+  connect: {
+    color: theme.palette.common.black,
+    fontWeight: "SemiBold",
+  },
+}));
 
 const sections = [
-  { title: "PRIVACY", url: "#" },
-  { title: "TERMS", url: "#" },
-  { title: "POLICIES", url: "#" },
-  { title: "HELP", url: "#" },
+  { title: "Practices", url: "/practice" },
+  { title: "About", url: "#" },
+  { title: "Latest", url: "#" },
+  { title: "Terms", url: "#" },
+  { title: "Help", url: "#" },
 ];
 
 export default function FooterLogoSection() {
@@ -33,21 +39,20 @@ export default function FooterLogoSection() {
         spacing={2}
       >
         <Grid item>
-          <Typography variant="overline" data-testid="connect">
-            CONNECT
+          <Typography variant="overline" data-testid="connect" className={classes.connect}>
+            Connect with us!
           </Typography>
         </Grid>
         <Grid item>
           {sections.map((section, i) => (
-            <Link
+            <Typography
               key={i}
-              href={section.url}
-              className={classes.space}
+              variant="overline"
+              className={classes.color}
+              onClick={() => navigate(section.url)}
             >
-              <Typography variant="overline" className={classes.color}>
-                {section.title}
-              </Typography>
-            </Link>
+              {section.title}
+            </Typography>
           ))}
         </Grid>
       </Grid>

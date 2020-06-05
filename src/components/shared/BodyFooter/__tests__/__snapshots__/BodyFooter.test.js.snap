@@ -2,13 +2,13 @@
 
 exports[`matches the snapshot 1`] = `
 <div
-  className="MuiBox-root MuiBox-root-164 makeStyles-trueWhiteColor-2"
+  className="MuiBox-root MuiBox-root-454 makeStyles-trueWhiteColor-452"
 >
   <hr
     className="MuiDivider-root"
   />
   <footer
-    className="makeStyles-footer-1"
+    className="makeStyles-footer-451"
     data-testid="footer"
   >
     <div
@@ -21,10 +21,10 @@ exports[`matches the snapshot 1`] = `
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8"
       >
         <div
-          className="MuiBox-root MuiBox-root-165"
+          className="MuiBox-root MuiBox-root-565"
         >
           <div
-            className="MuiBox-root MuiBox-root-166"
+            className="MuiBox-root MuiBox-root-566"
           >
             <div
               className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-direction-xs-column MuiGrid-align-items-xs-center"
@@ -59,7 +59,7 @@ exports[`matches the snapshot 1`] = `
                     <img
                       alt="Open Innovation Labs"
                       height="31px"
-                      src="logo-red-hat-open-innovation-labs-a-black-rgb.png"
+                      src="logo-red-hat-open-innovation-labs-a-standard-rgb.png"
                       width="162px"
                     />
                   </div>
@@ -68,7 +68,7 @@ exports[`matches the snapshot 1`] = `
             </div>
           </div>
           <div
-            className="MuiBox-root MuiBox-root-167"
+            className="MuiBox-root MuiBox-root-597"
           >
             <div
               className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-space-between"
@@ -77,63 +77,45 @@ exports[`matches the snapshot 1`] = `
                 className="MuiGrid-root MuiGrid-item"
               >
                 <span
-                  className="MuiTypography-root MuiTypography-overline"
+                  className="MuiTypography-root makeStyles-connect-600 MuiTypography-overline"
                   data-testid="connect"
                 >
-                  CONNECT
+                  Connect with us!
                 </span>
               </div>
               <div
                 className="MuiGrid-root MuiGrid-item"
               >
-                <a
-                  className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-space-148 MuiTypography-colorPrimary"
-                  href="#"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
+                <span
+                  className="MuiTypography-root makeStyles-color-599 MuiTypography-overline"
+                  onClick={[Function]}
                 >
-                  <span
-                    className="MuiTypography-root makeStyles-color-149 MuiTypography-overline"
-                  >
-                    PRIVACY
-                  </span>
-                </a>
-                <a
-                  className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-space-148 MuiTypography-colorPrimary"
-                  href="#"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
+                  Practices
+                </span>
+                <span
+                  className="MuiTypography-root makeStyles-color-599 MuiTypography-overline"
+                  onClick={[Function]}
                 >
-                  <span
-                    className="MuiTypography-root makeStyles-color-149 MuiTypography-overline"
-                  >
-                    TERMS
-                  </span>
-                </a>
-                <a
-                  className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-space-148 MuiTypography-colorPrimary"
-                  href="#"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
+                  About
+                </span>
+                <span
+                  className="MuiTypography-root makeStyles-color-599 MuiTypography-overline"
+                  onClick={[Function]}
                 >
-                  <span
-                    className="MuiTypography-root makeStyles-color-149 MuiTypography-overline"
-                  >
-                    POLICIES
-                  </span>
-                </a>
-                <a
-                  className="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-space-148 MuiTypography-colorPrimary"
-                  href="#"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
+                  Latest
+                </span>
+                <span
+                  className="MuiTypography-root makeStyles-color-599 MuiTypography-overline"
+                  onClick={[Function]}
                 >
-                  <span
-                    className="MuiTypography-root makeStyles-color-149 MuiTypography-overline"
-                  >
-                    HELP
-                  </span>
-                </a>
+                  Terms
+                </span>
+                <span
+                  className="MuiTypography-root makeStyles-color-599 MuiTypography-overline"
+                  onClick={[Function]}
+                >
+                  Help
+                </span>
               </div>
             </div>
           </div>

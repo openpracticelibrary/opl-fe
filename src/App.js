@@ -13,7 +13,7 @@ function App() {
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
         <OPLRouter />
-        <BodyFooter/>
+        <BodyFooter />
       </ThemeProvider>
     </ApolloProvider>
   );
