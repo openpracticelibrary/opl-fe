@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 ;
 
-export default function MediaGallery({mediaGallery}) {
+export default function MediaGallery({ mediaGallery, mediaRef }) {
   const classes = useStyles();
   const images = [];
 
@@ -48,7 +48,7 @@ export default function MediaGallery({mediaGallery}) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} href="#media">
+          <Typography variant={"h2"} ref={mediaRef}>
             Media Gallery
           </Typography>
         </Box>

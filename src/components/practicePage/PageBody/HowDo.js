@@ -21,7 +21,7 @@ export default function HowDo(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} href="#WhyDoIt" component={'span'}>
+          <Typography variant={"h2"} ref={props.howToRef} component={'span'}>
             How to do {props.title}?
           </Typography>
         </Box>
