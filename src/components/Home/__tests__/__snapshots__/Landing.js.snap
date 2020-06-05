@@ -140,6 +140,7 @@ exports[`matches the snapshot 1`] = `
       aria-hidden={true}
       className="MuiSvgIcon-root makeStyles-arrowIcon-207"
       focusable="false"
+      onClick={[Function]}
       viewBox="0 0 24 24"
     >
       <svg

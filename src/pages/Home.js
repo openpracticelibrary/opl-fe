@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
   content: {
     display: "flex",
     flexDirection: "center",
+    justifyContent: "center",
     padding: theme.spacing(20),
     width: "100%",
   },
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
   const classes = useStyles();
+  const communityRef = React.useRef(null);
 
   return (
     <>
@@ -28,14 +30,16 @@ export default function Home() {
         <Landing
           greeting="Hiya! 😃"
           welcomeMessage="Welcome to this open source library of best practices in digital product development."
-          inquiry="Sound up your alley?" />
+          inquiry="Sound up your alley?"
+          communityRef={communityRef}
+        />
         <Grid
           container
           direction="row"
           className={classes.content}
           spacing={10}
         >
-          <Community />
+          <Community communityRef={communityRef} />
           <CuratedPractices />
         </Grid>
         <Explore

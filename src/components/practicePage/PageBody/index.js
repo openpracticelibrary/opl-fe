@@ -24,18 +24,24 @@ export default function PageBody(props) {
     mediaGallery,
     resources,
     ama,
+    whatIsRef,
+    mediaRef,
+    whyDoRef,
+    howToRef,
+    resourceRef,
+    amaRef,
   } = props;
 
   if (whatIs && whyDo && howTo) {
     return (
       <>
         <Box className={classes.root}>
-          <WhatIs title={title} source={whatIs} />
-          <MediaGallery mediaGallery={mediaGallery} />
-          <WhyDo title={title} source={whyDo} />
-          <HowDo title={title} source={howTo} />
-          <ResourcesWeLove links={resources} />
-          <AskMeAnything ama={ama} />
+          <WhatIs title={title} source={whatIs} whatIsRef={whatIsRef} />
+          <MediaGallery mediaGallery={mediaGallery} mediaRef={mediaRef} />
+          <WhyDo title={title} source={whyDo} whyDoRef={whyDoRef} />
+          <HowDo title={title} source={howTo} howToRef={howToRef} />
+          <ResourcesWeLove links={resources} resourceRef={resourceRef} />
+          <AskMeAnything ama={ama} amaRef={amaRef} />
         </Box>
       </>
     );

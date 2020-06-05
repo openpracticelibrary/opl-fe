@@ -15,10 +15,18 @@ import CCHeartLogo from "../../assets/images/ccheart-black.png";
 
 const useStyles = makeStyles((theme) => ({
   practiceBox: {
-    paddingLeft: "35%",
+    display: "flex",
+    alignItems: "center",
+    flexFlow: "column",
+    justifyContent: "center",
+    textAlign: "center",
   },
   contribBox: {
-    paddingRight: "35%",
+    display: "flex",
+    alignItems: "center",
+    flexFlow: "column",
+    justifyContent: "center",
+    textAlign: "center",
   },
   collabBox: {
     alignItems: "center",
@@ -70,12 +78,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Community = (props) => {
   const classes = useStyles();
-  const pageBody = React.useRef(null);
 
   return (
     <>
       <Grid item xs={10} data-testid="communityHeader">
-        <Typography variant={"h1"} ref={pageBody}>Community driven</Typography>
+        <Typography variant={"h1"} ref={props.communityRef}>Community driven</Typography>
       </Grid>
       <Grid item xs={2} className={classes.aboutTitle}>
         <Typography variant={"overline"} onClick={() => navigate("#")}>

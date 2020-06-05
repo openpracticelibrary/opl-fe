@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import PageIntro from "../components/practicePage/PageIntro";
 import {makeStyles} from "@material-ui/core/styles";
 import PageMenu from "../components/practicePage/PageMenu";
@@ -28,6 +28,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PracticePageContent(props) {
   const classes = useStyles();
+  const whatIsRef = useRef(null);
+  const mediaRef = useRef(null);
+  const whyDoRef = useRef(null);
+  const howToRef = useRef(null);
+  const resourceRef = useRef(null);
+  const amaRef = useRef(null);
 
   const {name: slug} = props;
   const {loading, error, data} = useQuery(GET_PRACTICE_PAGE, {
@@ -69,7 +75,14 @@ export default function PracticePageContent(props) {
               <Grid item xs={2}>
               </Grid>
               <Grid item xs={8}>
-                <PageMenu/>
+                <PageMenu
+                  whatIsRef={whatIsRef}
+                  mediaRef={mediaRef}
+                  whyDoRef={whyDoRef}
+                  howToRef={howToRef}
+                  resourceRef={resourceRef}
+                  amaRef={amaRef}
+                />
               </Grid>
               <Grid item xs={2}>
               </Grid>
@@ -88,6 +101,12 @@ export default function PracticePageContent(props) {
                   mediaGallery={data.practices[0].mediaGallery}
                   resources={data.practices[0].resources}
                   ama={data.practices[0].ama}
+                  whatIsRef={whatIsRef}
+                  mediaRef={mediaRef}
+                  whyDoRef={whyDoRef}
+                  howToRef={howToRef}
+                  resourceRef={resourceRef}
+                  amaRef={amaRef}
                 />
               </Grid>
               <Grid item xs={2}>

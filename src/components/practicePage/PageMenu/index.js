@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {makeStyles} from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
-import Link from "@material-ui/core/Link";
+import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,16 +19,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  {title: "What is it", url: "#"},
-  {title: "Media", url: "#"},
-  {title: "Why do it", url: "#"},
-  {title: "How to", url: "#howto"},
-  {title: "Resources", url: "#"},
-  {title: "AMA", url: "#"},
+  {title: "What is it", ref: "whatIsRef"},
+  {title: "Media", ref: "mediaRef"},
+  {title: "Why do it", ref: "whyDoRef"},
+  {title: "How to", ref: "howToRef"},
+  {title: "Resources", ref: "resourceRef"},
+  {title: "AMA", ref: "amaRef"},
 ];
 
-export default function PageMenu() {
+export default function PageMenu(props) {
   const classes = useStyles();
+
+  const handleClick = (ref) => {
+    props[ref].current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <>
@@ -36,14 +43,14 @@ export default function PageMenu() {
         <Toolbar component="nav" variant="dense" disableGutters>
           <Box flexWrap="wrap">
             {sections.map((section, i) => (
-              <Link
+              <Typography
                 key={i}
-                href={section.url}
+                onClick={() => handleClick(section.ref)}
                 className={classes.url}
                 variant={"overline"}
               >
                 {section.title}
-              </Link>
+              </Typography>
 
             ))}
           </Box>

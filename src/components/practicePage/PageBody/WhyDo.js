@@ -21,7 +21,7 @@ export default function WhyDo(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} href="#WhyDoIt" component={'span'}>
+          <Typography variant={"h2"} ref={props.whyDoRef} component={'span'}>
             Why do {props.title}?
           </Typography>
         </Box>

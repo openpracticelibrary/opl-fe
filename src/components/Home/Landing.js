@@ -66,6 +66,13 @@ const useStyles = makeStyles((theme) => ({
 const Landing = (props) => {
   const classes = useStyles();
 
+  const handleClick = () => {
+    props.communityRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <Grid
       container
@@ -100,7 +107,7 @@ const Landing = (props) => {
         <Typography align="center" variant={"overline"} component="p">
           <b>Tell me more</b>
         </Typography>
-        <SvgIcon className={classes.arrowIcon} >
+        <SvgIcon className={classes.arrowIcon} onClick={handleClick} >
           <ArrowDownIcon />
         </SvgIcon>
       </Box>

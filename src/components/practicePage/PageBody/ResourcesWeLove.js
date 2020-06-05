@@ -38,7 +38,7 @@ export default function ResourcesWeLove(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} href="#WhyDoIt">
+          <Typography variant={"h2"} ref={props.resourceRef}>
             Resources we love
           </Typography>
         </Box>
