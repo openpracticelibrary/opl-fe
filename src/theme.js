@@ -68,6 +68,7 @@ export default createMuiTheme({
       color: `${brown_grey}`,
     },
 
+    // Landing page large text
     h4: {
       fontFamily: "Itim",
       fontWeight: "normal",

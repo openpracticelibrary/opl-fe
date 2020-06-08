@@ -8,9 +8,11 @@ export { default as GET_PRACTICES_BY_TAG } from './queries/practicesByTagQuery';
 export { default as GET_TAGS } from './queries/tags';
 export { default as GET_CURATED_PRACTICES } from './queries/curatedPractices';
 export { default as GET_CONTRIBUTORS } from './queries/contributorCount';
+export { default as GET_PRACTICE_COUNT } from './queries/practiceCount';
 
 // mutations
 export { default as CREATE_TAG } from './mutations/createTagMutation';
 export { default as DELETE_TAG } from './mutations/deleteTagMutation';
 export { default as LIKE_PRACTICE } from './mutations/likePracticeMutation';
 export { default as MODIFY_PRACTICE_TAGS } from './mutations/modifyPracticeTagsMutation';
+export { default as LOGIN } from './mutations/login';
