@@ -4,7 +4,7 @@ import { YoutubeIcon, EmailIcon, PodIcon, InstaIcon, GitIcon } from "../../../as
 import Grid from "@material-ui/core/Grid";
 
 const sections = [
-  { url: "#", icon: <EmailIcon /> },
+  { url: "mailto:info@openpracticelibrary.com", icon: <EmailIcon /> },
   { url: "https://podcasts.apple.com/us/podcast/open-practice-podcast/id1501715186", icon: <PodIcon /> },
   { url: "https://www.instagram.com/openpracticelibrary/?hl=en", icon: <InstaIcon /> },
   { url: "https://github.com/openpracticelibrary", icon: <GitIcon /> },
