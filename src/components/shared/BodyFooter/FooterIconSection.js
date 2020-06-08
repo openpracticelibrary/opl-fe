@@ -12,7 +12,6 @@ const sections = [
 ];
 
 export default function FooterIconSection(props) {
-  const preventDefault = (event) => event.preventDefault();
   return (
     <>
       <Grid
@@ -23,7 +22,7 @@ export default function FooterIconSection(props) {
       >
         {sections.map((section, i) => (
           <Grid item>
-            <Link href={section.url} onClick={preventDefault}>
+            <Link href={section.url} target="_blank">
               {section.icon}
             </Link>
           </Grid>
