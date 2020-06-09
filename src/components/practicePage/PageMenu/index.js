@@ -1,10 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
 import {makeStyles} from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
+import SocialLinks from "./SocialLinks";
+import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     lineHeight: 2.42,
     color: theme.palette.common.brownish_grey,
-    paddingRight: theme.spacing(2),
+  
   },
 }));
 
@@ -55,28 +57,49 @@ export default function PageMenu(props) {
       block: "start",
     });
   };
-
   return (
     <>
       <Box className={classes.root}>
-        <Toolbar component="nav" variant="dense" disableGutters>
-          <Box classes={classes.wrapBox}>
-            {sections.map((section, i) => (
-              <Button
-                key={i}
-                onClick={() => handleClick(section.ref)}
-                className={classes.pageNavButton}
+        <Toolbar 
+          component="nav" 
+          variant="dense" 
+          disableGutters
+        > 
+          <Grid 
+            container 
+            direction="row" 
+            alignItems="center"
+          >
+            <Grid item xs={8}>       
+              <Grid
+                container
+                direction="row"
+                justify="flex-start"
+                alignItems="flex-start"
+                spacing={3} 
               >
-                <Typography
-                  align="center"
-                  className={classes.url}
-                  variant={"overline"}
-                >
-                  {section.title}
-                </Typography>
-              </Button>
-            ))}
-          </Box>
+                {sections.map((section, i) => (
+                  <Grid item>
+                    <Button
+                      key={i}
+                      onClick={() => handleClick(section.ref)}
+                      className={classes.pageNavButton}
+                    >
+                      <Typography
+                        className={classes.url}
+                        variant="overline"
+                      >
+                        {section.title}
+                      </Typography>
+                    </Button>
+                  </Grid>
+                ))}              
+              </Grid>
+            </Grid>
+            <Grid item xs={4}>
+              <SocialLinks />
+            </Grid>
+          </Grid>
         </Toolbar>
       </Box>
     </>

@@ -7,7 +7,7 @@ import PageIntro from '../index';
 
 afterEach(cleanup);
 
-const today = Date().now;
+const today = new Date(2020, 6, 8);
 const mockProps = {
   title: "This is a test title",
   subtitle: "A subtitle for your title",

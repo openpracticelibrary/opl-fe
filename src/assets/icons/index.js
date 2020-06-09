@@ -18,3 +18,5 @@ export { default as GitIcon } from './GitIcon';
 export { default as InstaIcon } from './InstaIcon';
 export { default as YoutubeIcon } from './YoutubeIcon';
 export { default as PodIcon } from './PodIcon';
+export { default as TwitterIcon } from './TwitterIcon';
+export { default as MoreItemsIcon } from './MoreItemsIcon';
