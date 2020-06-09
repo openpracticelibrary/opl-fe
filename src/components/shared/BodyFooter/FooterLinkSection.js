@@ -2,8 +2,6 @@ import React from "react";
 import { Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import FooterIconSection from "./FooterIconSection";
-//import Link from "@material-ui/core/Link";
 import { navigate } from "@reach/router";
 
 const useStyles = makeStyles((theme) => ({
@@ -11,7 +9,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   color: {
-    color: theme.palette.common.black, 
+    color: theme.palette.common.black,
+    margin: theme.spacing(2),
   },
   connect: {
     color: theme.palette.common.black,
@@ -40,44 +39,21 @@ export default function FooterLogoSection() {
         spacing={2}
       >
         <Grid item>
-          <Grid
-            container 
-            direction="row" 
-            spacing={2} 
-            alignItems="center"
-          >
-            <Grid item>
-              <Typography 
-                variant="overline" 
-                data-testid="connect" 
-                className={classes.connect}
-              >
-                Connect with us!
-              </Typography>
-            </Grid>  
-            <Grid item>
-              <FooterIconSection />
-            </Grid>                 
-          </Grid>
+          <Typography variant="overline" data-testid="connect" className={classes.connect}>
+            Connect with us!
+          </Typography>
         </Grid>
         <Grid item>
-          <Grid
-            container 
-            direction="row" 
-            spacing={5} 
-          >
-            {sections.map((section, i) => (
-              <Grid item>              
-                <Typography
-                  variant="overline"
-                  className={classes.color}
-                  onClick={() => navigate(section.url)}
-                >
-                  {section.title}
-                </Typography>           
-              </Grid>
-            ))}
-          </Grid>
+          {sections.map((section, i) => (
+            <Typography
+              key={i}
+              variant="overline"
+              className={classes.color}
+              onClick={() => navigate(section.url)}
+            >
+              {section.title}
+            </Typography>
+          ))}
         </Grid>
       </Grid>
     </>
