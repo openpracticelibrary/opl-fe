@@ -7,7 +7,7 @@ import PageIntro from '../index';
 
 afterEach(cleanup);
 
-const today = Date().now;
+const snapshotDate = new Date('2020-06-09')
 const mockProps = {
   title: "This is a test title",
   subtitle: "A subtitle for your title",
@@ -26,8 +26,8 @@ const mockProps = {
       mediaLink: "https://github.com/mtakane",
     }
   ],
-  createdAt: today,
-  updatedAt: today,
+  createdAt: snapshotDate,
+  updatedAt: snapshotDate,
   practiceId: "aFak3ID4y0U",
   upvotes: 42,
   imgCount: 3,
