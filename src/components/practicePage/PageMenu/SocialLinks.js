@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SocialLinks(props) {
   const classes = useStyles();
-  
+
   const [likePractice] = useMutation(LIKE_PRACTICE);
   const handleLike = () => {
     const originalLikes = props.upvotes;

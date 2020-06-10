@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     lineHeight: 2.42,
     color: theme.palette.common.brownish_grey,
-  
   },
 }));
 
@@ -60,23 +59,23 @@ export default function PageMenu(props) {
   return (
     <>
       <Box className={classes.root}>
-        <Toolbar 
-          component="nav" 
-          variant="dense" 
+        <Toolbar
+          component="nav"
+          variant="dense"
           disableGutters
-        > 
-          <Grid 
-            container 
-            direction="row" 
+        >
+          <Grid
+            container
+            direction="row"
             alignItems="center"
           >
-            <Grid item xs={8}>       
+            <Grid item xs={8}>
               <Grid
                 container
                 direction="row"
                 justify="flex-start"
                 alignItems="flex-start"
-                spacing={3} 
+                spacing={3}
               >
                 {sections.map((section, i) => (
                   <Grid item>
@@ -93,11 +92,11 @@ export default function PageMenu(props) {
                       </Typography>
                     </Button>
                   </Grid>
-                ))}              
+                ))}
               </Grid>
             </Grid>
             <Grid item xs={4}>
-              <SocialLinks 
+              <SocialLinks
                 practiceId={props.practiceId}
                 upvotes={props.upvotes}
               />
