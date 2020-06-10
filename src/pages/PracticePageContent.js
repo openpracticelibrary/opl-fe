@@ -82,6 +82,8 @@ export default function PracticePageContent(props) {
                   howToRef={howToRef}
                   resourceRef={resourceRef}
                   amaRef={amaRef}
+                  practiceId={data.practices[0].id}
+                  upvotes={data.practices[0].upvotes}
                 />
               </Grid>
               <Grid item xs={2}>

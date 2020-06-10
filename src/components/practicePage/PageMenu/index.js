@@ -97,7 +97,10 @@ export default function PageMenu(props) {
               </Grid>
             </Grid>
             <Grid item xs={4}>
-              <SocialLinks />
+              <SocialLinks 
+                practiceId={props.practiceId}
+                upvotes={props.upvotes}
+              />
             </Grid>
           </Grid>
         </Toolbar>

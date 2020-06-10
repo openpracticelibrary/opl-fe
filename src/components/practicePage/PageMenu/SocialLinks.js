@@ -8,7 +8,6 @@ import Grid from "@material-ui/core/Grid";
 import IconButton from '@material-ui/core/IconButton';
 import {useMutation} from "@apollo/react-hooks";
 import {LIKE_PRACTICE} from "../../../graphql/";
-import CollectionItem from "../PageIntro/CollectionItem";
 
 const useStyles = makeStyles((theme) => ({
   url: {
@@ -28,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SocialLinks(props) {
   const classes = useStyles();
+  
   const [likePractice] = useMutation(LIKE_PRACTICE);
-
   const handleLike = () => {
     const originalLikes = props.upvotes;
     const newUpvotes = originalLikes + 1;
@@ -45,22 +44,20 @@ export default function SocialLinks(props) {
         justify="flex-end"
         alignItems="center"
         spacing={1}
-      > 
-        <Grid item>
-          <Typography 
+      >
+        <Grid item xs={3}>
+          <Typography
             className={classes.url}
             variant="overline"
           >
-            LIKE 
-          </Typography>  
+            LIKE
+          </Typography>
           <IconButton onClick={handleLike} className={classes.button} data-testid={"heartIcon"}>
-            <CollectionItem amount={props.upvotes}>
-              <FilledHeartIcon/>
-            </CollectionItem>
+            <FilledHeartIcon/>
           </IconButton>
-        </Grid>  
+        </Grid>
         <Grid item>
-          <Typography 
+          <Typography
             className={classes.url}
             variant="overline"
           >
@@ -68,11 +65,11 @@ export default function SocialLinks(props) {
           </Typography>
         </Grid>
         <Grid item>
-          <TwitterShareButton url={window.location.href}> 
+          <TwitterShareButton url={window.location.href}>
             <TwitterIcon/>
           </TwitterShareButton>
         </Grid>
-        <Grid item>  
+        <Grid item>
           <LinkedinShareButton url={window.location.href}>
             <img src={linkedinIcon} alt="LinkedIn"/>
           </LinkedinShareButton>
@@ -80,7 +77,7 @@ export default function SocialLinks(props) {
         <Grid item>
           <MoreItemsIcon />
         </Grid>
-      </Grid>           
+      </Grid>
     </>
   );
 }
