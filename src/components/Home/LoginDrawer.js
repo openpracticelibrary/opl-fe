@@ -16,8 +16,11 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 0,
   },
   drawerPaper: {
+    display: "flex",
     width: drawerWidth,
     backgroundColor: theme.palette.common.true_white,
+    alignContent: "center",
+    alignItems: "center",
   },
   loginForm: {
     display: "flex",
@@ -46,16 +49,26 @@ const LoginDrawer = (props) => {
 
   const [login] = useMutation(LOGIN);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(`clicked login ${uRef.current.value}, ${pwdRef.current.value}`);
-    const data = login({
+    const { data } = await login({
       variables: { identifier: uRef.current.value, password: pwdRef.current.value },
+      update: (proxy, { data }) => {
+        if (data.login) {
+          const jwt = data.login.jwt;
+          proxy.writeData({
+            data: { jwt }
+          });
+        }
+      }
     });
 
-    console.log(data);
-    uRef.current.value = "";
-    pwdRef.current.value = "";
+    if (data.errors) console.error("Error logging in ", data.errors);
+    if (data.login) {
+      console.log(props);
+      localStorage.setItem('token', data.login.jwt);
+      props.navigate('/practice');
+    }
   };
 
   return (

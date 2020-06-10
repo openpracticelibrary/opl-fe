@@ -60,7 +60,7 @@ export default function PageMenu(props) {
     <>
       <Box className={classes.root}>
         <Toolbar component="nav" variant="dense" disableGutters>
-          <Box classes={classes.wrapBox}>
+          <Box className={classes.wrapBox}>
             {sections.map((section, i) => (
               <Button
                 key={i}

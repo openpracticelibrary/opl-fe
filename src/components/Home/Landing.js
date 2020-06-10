@@ -129,7 +129,7 @@ const Landing = (props) => {
           </SvgIcon>
         </Box>
       </Grid>
-      <LoginDrawer open={open}>
+      <LoginDrawer open={open} navigate={props.navigate}>
         <IconButton onClick={toggleLoginDrawer} className={classes.loginDrawerClose}>
           <CloseIcon />
         </IconButton>

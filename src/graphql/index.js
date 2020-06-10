@@ -16,3 +16,6 @@ export { default as DELETE_TAG } from './mutations/deleteTagMutation';
 export { default as LIKE_PRACTICE } from './mutations/likePracticeMutation';
 export { default as MODIFY_PRACTICE_TAGS } from './mutations/modifyPracticeTagsMutation';
 export { default as LOGIN } from './mutations/login';
+
+// cache queries
+export { default as currentUserQuery } from './queries/currentUserQuery';
