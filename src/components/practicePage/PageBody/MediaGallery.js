@@ -14,6 +14,11 @@ const useStyles = makeStyles((theme) => ({
   space: {
     padding: theme.spacing(1),
   },
+  mediaBox: {
+    "& img": {
+      borderRadius: 17,
+    }
+  },
   videoWrapper: {
     overflow: "hidden",
     paddingTop: "56.25%",
@@ -25,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
       left: 0,
       top: 0,
       width: "100%",
+      borderRadius: 17,
     },
   },
 }))
@@ -95,7 +101,7 @@ export default function MediaGallery({ title, mediaGallery, mediaRef }) {
             Look at {title}
           </Typography>
         </Box>
-        <Box>
+        <Box className={classes.mediaBox}>
           <ImageGallery
             items={images}
             showBullets={true}
