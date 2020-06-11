@@ -32,7 +32,27 @@ export default function MediaGallery({ title, mediaGallery, mediaRef }) {
   const classes = useStyles();
   const images = mediaGallery.map(media => {
     const url = new URL(media.link);
-    if (url.hostname.includes('youtu')) {
+    if (url.hostname.includes('youtube') && url.pathname.includes('watch')) {
+      const youtubeId = url.searchParams.get('v');
+      const link = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
+      const embedUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&showinfo=0`;
+      return {
+        original: link,
+        thumbnail: link,
+        embedUrl,
+        renderItem: () => renderVideo({ embedUrl, original: link })
+      }
+    } else if (url.hostname.includes('youtube') && url.pathname.includes('playlist')) {
+      const youtubeId = url.searchParams.get('list');
+      const link = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
+      const embedUrl = `https://www.youtube.com/embed/videoSeries?list=${youtubeId}?autoplay=1&showinfo=0`;
+      return {
+        original: link,
+        thumbnail: link,
+        embedUrl,
+        renderItem: () => renderVideo({ embedUrl, original: link })
+      }
+    } else if (url.hostname.includes('youtu')) {
       const youtubeId = url.pathname.split('/')[1];
       const link = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
       const embedUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&showinfo=0`;
