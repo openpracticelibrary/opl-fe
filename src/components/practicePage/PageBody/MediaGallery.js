@@ -45,7 +45,7 @@ export default function MediaGallery({ title, mediaGallery, mediaRef }) {
     if (url.hostname.includes('youtube') && url.pathname.includes('watch')) {
       const youtubeId = url.searchParams.get('v');
       const link = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
-      const embedUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&showinfo=0`;
+      const embedUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=0&showinfo=1`;
       return {
         original: link,
         thumbnail: link,
@@ -55,7 +55,7 @@ export default function MediaGallery({ title, mediaGallery, mediaRef }) {
     } else if (url.hostname.includes('youtube') && url.pathname.includes('playlist')) {
       const youtubeId = url.searchParams.get('list');
       const link = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
-      const embedUrl = `https://www.youtube.com/embed/videoSeries?list=${youtubeId}`;
+      const embedUrl = `https://www.youtube.com/embed/?listType=playlist&list=${youtubeId}`;
       return {
         original: link,
         thumbnail: link,
@@ -65,7 +65,7 @@ export default function MediaGallery({ title, mediaGallery, mediaRef }) {
     } else if (url.hostname.includes('youtu')) {
       const youtubeId = url.pathname.split('/')[1];
       const link = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
-      const embedUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&showinfo=0`;
+      const embedUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=0&showinfo=1`;
       return {
         original: link,
         thumbnail: link,
