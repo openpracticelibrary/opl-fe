@@ -228,7 +228,6 @@ export default function PracticePageContent(props) {
             </Grid>
           </Grid>
         </Box>
-
         <Divider/>
         <Box display="flex">
           <Grid container className={classes.alignComponentContent}>
