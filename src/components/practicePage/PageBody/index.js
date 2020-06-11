@@ -41,19 +41,25 @@ export default function PageBody(props) {
             source={whatIs}
             whatIsRef={whatIsRef}
             editing={props.editing}
-          />
+          >
+            {props.whatIsEditor}
+          </WhatIs>
           <WhyDo
             title={title}
             source={whyDo}
             whyDoRef={whyDoRef}
             editing={props.editing}
-          />
+          >
+            {props.whyDoEditor}
+          </WhyDo>
           <HowDo
             title={title}
             source={howTo}
             howToRef={howToRef}
             editing={props.editing}
-          />
+          >
+            {props.howToEditor}
+          </HowDo>
           <MediaGallery
             mediaGallery={mediaGallery}
             mediaRef={mediaRef}

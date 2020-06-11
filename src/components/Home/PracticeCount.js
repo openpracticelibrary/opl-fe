@@ -24,7 +24,10 @@ const PracticeCount = () => {
   if (error) return <ComponentQueryError err={error} />;
 
   return (
-    <div data-testid="practiceNum" className={classes.practiceNum}>{data.practicesConnection.aggregate.totalCount}</div>
+    <div
+      data-testid="practiceNum"
+      className={classes.practiceNum}>{data.practicesConnection.aggregate.totalCount}
+    </div>
   )
 };
 

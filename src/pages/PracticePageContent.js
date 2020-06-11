@@ -1,21 +1,21 @@
-import React, { useRef } from "react";
-import PageIntro from "../components/practicePage/PageIntro";
+import React, { useRef, useState, useContext } from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import PageMenu from "../components/practicePage/PageMenu";
-import PageBody from "../components/practicePage/PageBody";
 import Grid from "@material-ui/core/Grid";
-import { useQuery } from "@apollo/react-hooks";
-import { GET_PRACTICE_PAGE, currentUserQuery } from "../graphql";
+import { useQuery, useMutation } from "@apollo/react-hooks";
 import Divider from "@material-ui/core/Divider";
 import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
-import LoginDrawer from "../components/Home/LoginDrawer";
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+
+import LoginContext from "../components/shared/Login/LoginContext";
+import LoginButton from "../components/shared/Login/LoginButton";
+import { GET_PRACTICE_PAGE, UPDATE_PRACTICE } from "../graphql";
+import PageIntro from "../components/practicePage/PageIntro";
+import PageMenu from "../components/practicePage/PageMenu";
+import PageBody from "../components/practicePage/PageBody";
 import Loading from "../components/shared/QueryState/Loading.js";
 import QueryError from "../components/shared/QueryState/QueryError";
-import { EditIcon } from "../assets/icons";
+import RichMarkdownEditor from "../components/shared/Editor/RichMarkdownEditor";
+import { StartEditingButton, EditingButtons } from "../components/practicePage/PageIntro/EditControls";
 
 const useStyles = makeStyles((theme) => ({
   alignComponentContent: {
@@ -38,32 +38,74 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     padding: theme.spacing(3),
   },
-  loginButton: {
-    height: "34px",
-    width: "122px",
-    borderRadius: "17px",
+  titleTextField: {
+    width: "54%",
   },
-  loginDrawerClose: {
-    margin: theme.spacing(2),
-    borderRadius: "17px",
+  subtitleTextField: {
+    width: "50%",
   },
-  loginText: {
-    margin: theme.spacing(1),
+  titleInput: {
+    ...theme.typography.h1,
   },
+  subtitleInput: {
+    ...theme.typography.subtitle1,
+  }
 }));
 
+function reducer(state, action) {
+  switch (action.type) {
+  case "titleUpdate":
+    state.title = action.content;
+    return state;
+  case "subtitleUpdate":
+    state.subtitle = action.content;
+    return state;
+  case "whatIsUpdate":
+    state.whatIs = action.content;
+    return state;
+  case "whyDoUpdate":
+    state.whyDo = action.content;
+    return state;
+  case "howToUpdate":
+    state.howTo = action.content;
+    return state;
+  case "cancelUpdates":
+    return {
+      title: action.title,
+      subtitle: action.subtitle,
+      ...action.body
+    };
+  default:
+    throw new Error();
+  }
+};
+
 export default function PracticePageContent(props) {
-  const [open, setOpen] = React.useState();
-  const [editing, setEditing] = React.useState();
+  // State
+  const [editing, setEditing] = useState();
+  const loggedIn = useContext(LoginContext);
+  const [state, dispatch] = React.useReducer(reducer, {}, () => ({
+    title: "",
+    subtitle: "",
+    whatIs: "",
+    whyDo: "",
+    howTo: ""
+  }));
+
+  // Styles
   const classes = useStyles();
+
+  // Refs
   const whatIsRef = useRef(null);
   const mediaRef = useRef(null);
   const whyDoRef = useRef(null);
   const howToRef = useRef(null);
   const resourceRef = useRef(null);
   const amaRef = useRef(null);
+  const pageRefs = { whatIsRef, mediaRef, whyDoRef, howToRef, resourceRef, amaRef };
 
-  const { data: loggedIn } = useQuery(currentUserQuery);
+  // GraphQL
+  const [updatePractice] = useMutation(UPDATE_PRACTICE);
   const { name: slug } = props;
   const { loading, error, data } = useQuery(GET_PRACTICE_PAGE, {
     variables: { slug },
@@ -72,12 +114,81 @@ export default function PracticePageContent(props) {
   if (loading) return <Loading />;
   if (error) return <QueryError err={error} />;
 
-  const toggleLoginDrawer = () => {
-    setOpen(!open);
-  };
-
+  // Handler Functions
   const handleEdit = () => {
     setEditing(!editing);
+    dispatch({
+      type: "cancelUpdates",
+      title: data.practices[0].title,
+      subtitle: data.practices[0].subtitle,
+      body: data.practices[0].body
+    });
+  };
+
+  const handleSaveEdits = () => {
+    updatePractice({
+      variables: {
+        practiceId: data.practices[0].id,
+        title: state.title,
+        subtitle: state.subtitle,
+        whatIs: state.whatIs,
+        whyDo: state.whyDo,
+        howTo: state.howTo,
+      }
+    });
+    setEditing(false);
+  };
+
+  // Composition
+  const loggedInEditing = () => {
+    if (loggedIn && editing) {
+      return (<EditingButtons handleEdit={handleEdit} handleSaveEdits={handleSaveEdits} />);
+    } else if (loggedIn && !editing) {
+      return (<StartEditingButton handleEdit={handleEdit} />);
+    } else {
+      return "";
+    }
+  };
+
+  const titleEdit = (
+    <TextField
+      className={classes.titleTextField}
+      InputProps={{ classes: { input: classes.titleInput } }}
+      defaultValue={data.practices[0].title}
+      onChange={(event) => dispatch({ type: "titleUpdate", content: event.target.value }) }
+    />
+  );
+
+  const subtitleEdit = (
+    <TextField
+      className={classes.subtitleTextField}
+      InputProps={{ classes: { input: classes.subtitleInput } }}
+      defaultValue={data.practices[0].subtitle}
+      onChange={(event) => dispatch({ type: "subtitleUpdate", content: event.target.value }) }
+    />
+  );
+
+  const editors = {
+    whatIsEditor: () => (
+      <RichMarkdownEditor
+        source={data.practices[0].body.whatIs}
+        handleChange={(callback) => dispatch({ type: "whatIsUpdate", content: callback() }) }
+      />
+    ),
+
+    whyDoEditor: () => (
+      <RichMarkdownEditor
+        source={data.practices[0].body.whyDo}
+        handleChange={(callback) => dispatch({ type: "whyDoUpdate", content: callback() }) }
+      />
+    ),
+
+    howToEditor: () => (
+      <RichMarkdownEditor
+        source={data.practices[0].body.howTo}
+        handleChange={(callback) => dispatch({ type: "howToUpdate", content: callback() }) }
+      />
+    ),
   };
 
   return (
@@ -85,15 +196,11 @@ export default function PracticePageContent(props) {
       <Box className={classes.trueWhiteColor}>
         <Box display="flex" className={classes.whiteColor}>
           <Box className={classes.loginBox}>
-            <Button
-              variant="outlined"
-              className={classes.loginButton}
-              onClick={toggleLoginDrawer}
-            >
-              <Typography variant={"overline"}>
-                <b>Login</b>
-              </Typography>
-            </Button>
+            <LoginButton
+              loggedIn={props.loggedIn}
+              navigate={props.navigate}
+              redirect={`/practice/${data.practices[0].slug}`}
+            />
           </Box>
           <Grid container className={classes.alignComponentContent}>
             <Grid item xs={2}>
@@ -111,12 +218,10 @@ export default function PracticePageContent(props) {
                 questions={data.practices[0].ama.length}
                 upvotes={data.practices[0].upvotes}
                 editing={editing}
+                titleEdit={titleEdit}
+                subtitleEdit={subtitleEdit}
               >
-                { !loggedIn &&
-                <IconButton onClick={handleEdit}>
-                  {editing ? <CloseIcon /> : <EditIcon height="25" />}
-                </IconButton>
-                }
+                {loggedInEditing()}
               </PageIntro>
             </Grid>
             <Grid item xs={2}>
@@ -130,14 +235,7 @@ export default function PracticePageContent(props) {
             <Grid item xs={2}>
             </Grid>
             <Grid item xs={8}>
-              <PageMenu
-                whatIsRef={whatIsRef}
-                mediaRef={mediaRef}
-                whyDoRef={whyDoRef}
-                howToRef={howToRef}
-                resourceRef={resourceRef}
-                amaRef={amaRef}
-              />
+              <PageMenu { ...pageRefs } />
             </Grid>
             <Grid item xs={2}>
             </Grid>
@@ -163,6 +261,7 @@ export default function PracticePageContent(props) {
                 resourceRef={resourceRef}
                 amaRef={amaRef}
                 editing={editing}
+                {...editors}
               />
             </Grid>
             <Grid item xs={2}>
@@ -170,12 +269,6 @@ export default function PracticePageContent(props) {
           </Grid>
         </Box>
       </Box>
-      <LoginDrawer open={open} navigate={props.navigate}>
-        <IconButton onClick={toggleLoginDrawer} className={classes.loginDrawerClose}>
-          <CloseIcon />
-        </IconButton>
-        <Typography variant="h3" className={classes.loginText}>Login to the Open Practice Library!</Typography>
-      </LoginDrawer>
     </>
   );
 }

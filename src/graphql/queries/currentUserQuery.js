@@ -4,6 +4,7 @@ import { gql } from "apollo-boost";
 const currentUserQuery = gql`
   {
     jwt @client
+    id @client
   }
 `;
 

@@ -6,6 +6,9 @@ const LOGIN = gql`
       input: { identifier: $identifier, password: $password }
     ) {
       jwt
+      user {
+        id
+      }
     }
   }
 `;

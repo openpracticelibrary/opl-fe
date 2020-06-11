@@ -3,8 +3,6 @@ import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles/index";
 import ReactMarkdown from "react-markdown";
 import Box from "@material-ui/core/Box";
-import SimpleMDE from "react-simplemde-editor";
-import "easymde/dist/easymde.min.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,9 +27,8 @@ export default function WhyDo(props) {
         </Box>
         <Box className={classes.space}>
           {props.editing ?
-            <SimpleMDE
-              value={props.source}
-            /> :
+            props.children
+            :
             <Typography variant={"body1"} component={'span'}>
               <ReactMarkdown source={props.source} />
             </Typography>

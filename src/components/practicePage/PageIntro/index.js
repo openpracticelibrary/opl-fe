@@ -30,6 +30,8 @@ export default function PageIntro(props) {
             tags={props.tags}
             subtitle={props.subtitle}
             editing={props.editing}
+            titleEdit={props.titleEdit}
+            subtitleEdit={props.subtitleEdit}
           >
             {props.children}
           </TitleAndSubtitle>
