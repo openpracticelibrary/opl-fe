@@ -2,10 +2,10 @@
 
 exports[`matches the snapshot 1`] = `
 <div
-  className="MuiGrid-root makeStyles-titleBox-199 MuiGrid-container"
+  className="MuiGrid-root makeStyles-titleBox-209 MuiGrid-container"
 >
   <div
-    className="MuiBox-root MuiBox-root-312 makeStyles-logo-200"
+    className="MuiBox-root MuiBox-root-321 makeStyles-logo-210"
   >
     <svg
       style={
@@ -68,12 +68,14 @@ exports[`matches the snapshot 1`] = `
     </svg>
   </div>
   <div
-    className="MuiBox-root MuiBox-root-313 makeStyles-loginBox-201"
+    className="MuiBox-root MuiBox-root-322 makeStyles-loginBox-211"
   >
     <button
-      className="MuiButtonBase-root MuiButton-root MuiButton-outlined makeStyles-loginButton-202"
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined makeStyles-loginButton-325"
+      data-testid="loginButton"
       disabled={false}
       onBlur={[Function]}
+      onClick={[Function]}
       onDragLeave={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
@@ -101,10 +103,10 @@ exports[`matches the snapshot 1`] = `
     </button>
   </div>
   <div
-    className="MuiBox-root MuiBox-root-376 makeStyles-textBox-203"
+    className="MuiBox-root MuiBox-root-396 makeStyles-textBox-212"
   >
     <h4
-      className="MuiTypography-root makeStyles-hello-204 MuiTypography-h4"
+      className="MuiTypography-root makeStyles-hello-213 MuiTypography-h4"
     >
       <span
         className=""
@@ -114,7 +116,7 @@ exports[`matches the snapshot 1`] = `
       </span>
     </h4>
     <h1
-      className="MuiTypography-root makeStyles-welcome-205 MuiTypography-h1"
+      className="MuiTypography-root makeStyles-welcome-214 MuiTypography-h1"
       data-testid="welcomeText"
     >
       What's up
@@ -127,7 +129,7 @@ exports[`matches the snapshot 1`] = `
     </h1>
   </div>
   <div
-    className="MuiBox-root MuiBox-root-377 makeStyles-welcomeBottom-206"
+    className="MuiBox-root MuiBox-root-397 makeStyles-welcomeBottom-215"
   >
     <p
       className="MuiTypography-root MuiTypography-overline MuiTypography-alignCenter"
@@ -138,7 +140,7 @@ exports[`matches the snapshot 1`] = `
     </p>
     <svg
       aria-hidden={true}
-      className="MuiSvgIcon-root makeStyles-arrowIcon-207"
+      className="MuiSvgIcon-root makeStyles-arrowIcon-216"
       focusable="false"
       onClick={[Function]}
       viewBox="0 0 24 24"

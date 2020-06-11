@@ -36,10 +36,34 @@ export default function PageBody(props) {
     return (
       <>
         <Box className={classes.root}>
-          <WhatIs title={title} source={whatIs} whatIsRef={whatIsRef} />
-          <MediaGallery mediaGallery={mediaGallery} mediaRef={mediaRef} />
-          <WhyDo title={title} source={whyDo} whyDoRef={whyDoRef} />
-          <HowDo title={title} source={howTo} howToRef={howToRef} />
+          <WhatIs
+            title={title}
+            source={whatIs}
+            whatIsRef={whatIsRef}
+            editing={props.editing}
+          >
+            {props.whatIsEditor}
+          </WhatIs>
+          <WhyDo
+            title={title}
+            source={whyDo}
+            whyDoRef={whyDoRef}
+            editing={props.editing}
+          >
+            {props.whyDoEditor}
+          </WhyDo>
+          <HowDo
+            title={title}
+            source={howTo}
+            howToRef={howToRef}
+            editing={props.editing}
+          >
+            {props.howToEditor}
+          </HowDo>
+          <MediaGallery
+            mediaGallery={mediaGallery}
+            mediaRef={mediaRef}
+          />
           <ResourcesWeLove links={resources} resourceRef={resourceRef} />
           <AskMeAnything ama={ama} amaRef={amaRef} />
         </Box>

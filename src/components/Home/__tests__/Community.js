@@ -4,35 +4,39 @@ import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 import Community from '../Community';
 
-import { GET_PRACTICES, GET_CONTRIBUTORS } from "../../../graphql";
-import mockPracticeData from "../../../testHelpers/mockPracticeData";
+import { GET_PRACTICE_COUNT, GET_CONTRIBUTORS } from "../../../graphql";
 
 afterEach(cleanup);
 
-const mockContributorData = [
-  {
-    __typename: "UsersPermissionsUser",
-    id: "2342123451",
-  },
-  {
-    __typename: "UsersPermissionsUser",
-    id: "478129411",
+const mockPracticeData = {
+  __typename: "PracticeConnection",
+  aggregate: {
+    __typename: "PracticeAggregator",
+    totalCount: 107
   }
-];
+};
+
+const mockContributorData = {
+  __typename: "UsersPermissionsUserConnection",
+  aggregate: {
+    __typename: "UsersPermissionsUserAggregator",
+    totalCount: 50,
+  }
+};
 
 const apolloMocks = [
   {
     request: {
-      query: GET_PRACTICES,
+      query: GET_PRACTICE_COUNT,
       variables: {}
     },
-    result: { data: { practices: mockPracticeData } }
+    result: { data: { practicesConnection: mockPracticeData } }
   },
   {
     request: {
       query: GET_CONTRIBUTORS
     },
-    result: { data: { users: mockContributorData } }
+    result: { data: { usersConnection: mockContributorData } }
   },
 ];
 

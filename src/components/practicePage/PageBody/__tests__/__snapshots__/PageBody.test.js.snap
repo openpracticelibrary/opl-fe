@@ -31,10 +31,62 @@ exports[`matches the snapshot 1`] = `
     </div>
   </div>
   <div
-    className="MuiBox-root MuiBox-root-270 makeStyles-root-267"
+    className="MuiBox-root MuiBox-root-269 makeStyles-root-267"
   >
     <div
+      className="MuiBox-root MuiBox-root-270 makeStyles-space-268"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-h2"
+      >
+        Why do 
+        Test title
+        ?
+      </span>
+    </div>
+    <div
       className="MuiBox-root MuiBox-root-271 makeStyles-space-268"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        <p>
+          Why do test
+        </p>
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-274 makeStyles-root-272"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-275 makeStyles-space-273"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-h2"
+      >
+        How to do 
+        Test title
+        ?
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-276 makeStyles-space-273"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        <p>
+          how to test
+        </p>
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-280 makeStyles-root-277"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-281 makeStyles-space-278"
     >
       <h2
         className="MuiTypography-root MuiTypography-h2"
@@ -43,7 +95,7 @@ exports[`matches the snapshot 1`] = `
       </h2>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-272 makeStyles-mediaBox-269"
+      className="MuiBox-root MuiBox-root-282 makeStyles-mediaBox-279"
     >
       <div
         aria-live="polite"
@@ -216,58 +268,6 @@ exports[`matches the snapshot 1`] = `
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div
-    className="MuiBox-root MuiBox-root-275 makeStyles-root-273"
-  >
-    <div
-      className="MuiBox-root MuiBox-root-276 makeStyles-space-274"
-    >
-      <span
-        className="MuiTypography-root MuiTypography-h2"
-      >
-        Why do 
-        Test title
-        ?
-      </span>
-    </div>
-    <div
-      className="MuiBox-root MuiBox-root-277 makeStyles-space-274"
-    >
-      <span
-        className="MuiTypography-root MuiTypography-body1"
-      >
-        <p>
-          Why do test
-        </p>
-      </span>
-    </div>
-  </div>
-  <div
-    className="MuiBox-root MuiBox-root-280 makeStyles-root-278"
-  >
-    <div
-      className="MuiBox-root MuiBox-root-281 makeStyles-space-279"
-    >
-      <span
-        className="MuiTypography-root MuiTypography-h2"
-      >
-        How to do 
-        Test title
-        ?
-      </span>
-    </div>
-    <div
-      className="MuiBox-root MuiBox-root-282 makeStyles-space-279"
-    >
-      <span
-        className="MuiTypography-root MuiTypography-body1"
-      >
-        <p>
-          how to test
-        </p>
-      </span>
     </div>
   </div>
   <div

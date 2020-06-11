@@ -9,6 +9,7 @@ import AllPracticesHero from "../components/allPractices/AllPracticesHero";
 import ComponentLoading from "../components/shared/QueryState/ComponentLoading";
 import QueryError from "../components/shared/QueryState/QueryError";
 
+
 const useStyles = makeStyles((theme) => ({
   pageWrapper: {
     backgroundColor: theme.palette.common.true_white,
@@ -40,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Practices() {
+export default function Practices(props) {
   const classes = useStyles();
   const { loading, error, data, fetchMore } = useQuery(GET_PRACTICES,
     {

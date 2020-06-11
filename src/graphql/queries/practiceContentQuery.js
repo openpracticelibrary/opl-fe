@@ -39,6 +39,9 @@ const GET_PRACTICE_PAGE = gql`
           updatedAt
         }
       }
+      tags {
+        tag
+      }
     }
   }
 `;

@@ -13,6 +13,7 @@ export { default as DownloadIcon } from './DownloadIcon';
 export { default as LabsIcon } from './LabsIcon';
 export { default as ArrowDownIcon } from './ArrowDownIcon';
 export { default as OPLLogo } from './OPLLogo';
+export { default as EditIcon } from './EditIcon';
 export { default as EmailIcon } from './EmailIcon';
 export { default as GitIcon } from './GitIcon';
 export { default as InstaIcon } from './InstaIcon';

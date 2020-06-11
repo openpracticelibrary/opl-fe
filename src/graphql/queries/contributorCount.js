@@ -1,9 +1,11 @@
 import { gql } from 'apollo-boost';
 
 const GET_CONTRIBUTORS = gql`
-  query Contributors {
-    users {
-      id
+  query ContributorsCount {
+    usersConnection {
+      aggregate {
+        totalCount
+      }
     }
   }
 `;

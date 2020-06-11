@@ -4,17 +4,24 @@ import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 import PracticeCount from '../PracticeCount';
 
-import { GET_PRACTICES } from "../../../graphql";
-import mockPracticeData from "../../../testHelpers/mockPracticeData";
+import { GET_PRACTICE_COUNT } from "../../../graphql";
 
 afterEach(cleanup);
+
+const mockPracticeData = {
+  __typename: "PracticeConnection",
+  aggregate: {
+    __typename: "PracticeAggregator",
+    totalCount: 107
+  }
+};
 
 const apolloMocks = [
   {
     request: {
-      query: GET_PRACTICES
+      query: GET_PRACTICE_COUNT
     },
-    result: { data: { practices: mockPracticeData } }
+    result: { data: { practicesConnection: mockPracticeData } }
   },
 ];
 
@@ -26,6 +33,6 @@ it("renders contributor count successfully", async () => {
   );
 
   await waitFor(() => expect(getByTestId("practiceNum")).toBeInTheDocument());
-  expect(getByTestId("practiceNum")).toHaveTextContent("9");
+  expect(getByTestId("practiceNum")).toHaveTextContent("107");
 });
 

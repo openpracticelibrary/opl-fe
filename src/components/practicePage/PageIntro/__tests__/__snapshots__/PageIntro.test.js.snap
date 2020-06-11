@@ -2,73 +2,27 @@
 
 exports[`matches the snapshot 1`] = `
 <div
-  className="MuiGrid-root makeStyles-layout-182 MuiGrid-container MuiGrid-direction-xs-column"
+  className="MuiGrid-root makeStyles-layout-174 MuiGrid-container MuiGrid-direction-xs-column"
 >
   <div
     className="MuiGrid-root MuiGrid-item"
   >
     <div
-      className="MuiBox-root MuiBox-root-289 makeStyles-space-287"
-    >
-      <nav
-        aria-label="breadcrumb"
-        className="MuiTypography-root MuiBreadcrumbs-root MuiTypography-body1 MuiTypography-colorTextSecondary"
-      >
-        <ol
-          className="MuiBreadcrumbs-ol"
-        >
-          <li
-            className="MuiBreadcrumbs-li"
-          >
-            <a
-              className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-overline MuiTypography-colorPrimary"
-              href="/"
-              onBlur={[Function]}
-              onFocus={[Function]}
-            >
-              Discovery
-            </a>
-          </li>
-          <li
-            aria-hidden={true}
-            className="MuiBreadcrumbs-separator"
-          >
-            /
-          </li>
-          <li
-            className="MuiBreadcrumbs-li"
-          >
-            <a
-              className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-overline MuiTypography-colorPrimary"
-              href="/"
-              onBlur={[Function]}
-              onFocus={[Function]}
-            >
-              Validate
-            </a>
-          </li>
-        </ol>
-      </nav>
-    </div>
-  </div>
-  <div
-    className="MuiGrid-root MuiGrid-item"
-  >
-    <div
-      className="MuiBox-root MuiBox-root-332 makeStyles-root-330"
+      className="MuiBox-root MuiBox-root-286 makeStyles-root-279"
     >
       <div
-        className="MuiBox-root MuiBox-root-333 makeStyles-space-331"
+        className="MuiBox-root MuiBox-root-287 makeStyles-space-280"
       >
         <h1
           className="MuiTypography-root MuiTypography-h1"
           data-testid="title"
         >
           This is a test title
+           
         </h1>
       </div>
       <div
-        className="MuiBox-root MuiBox-root-334 makeStyles-space-331"
+        className="MuiBox-root MuiBox-root-318 makeStyles-space-280"
       >
         <h6
           className="MuiTypography-root MuiTypography-subtitle1"
@@ -80,10 +34,10 @@ exports[`matches the snapshot 1`] = `
     </div>
   </div>
   <div
-    className="MuiGrid-root makeStyles-row-183 MuiGrid-item"
+    className="MuiGrid-root makeStyles-row-175 MuiGrid-item"
   >
     <div
-      className="MuiGrid-root makeStyles-root-335 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start MuiGrid-justify-xs-center"
+      className="MuiGrid-root makeStyles-root-319 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start MuiGrid-justify-xs-center"
     >
       <div
         className="MuiGrid-root MuiGrid-item"
@@ -104,7 +58,7 @@ exports[`matches the snapshot 1`] = `
             className="MuiGrid-root MuiGrid-item"
           >
             <div
-              className="MuiGrid-root makeStyles-space-336 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center"
+              className="MuiGrid-root makeStyles-space-320 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center"
             >
               <div
                 className="MuiGrid-root MuiGrid-item"
@@ -137,7 +91,7 @@ exports[`matches the snapshot 1`] = `
             className="MuiGrid-root MuiGrid-item"
           >
             <div
-              className="MuiGrid-root makeStyles-space-336 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center"
+              className="MuiGrid-root makeStyles-space-320 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center"
             >
               <div
                 className="MuiGrid-root MuiGrid-item"
@@ -174,10 +128,10 @@ exports[`matches the snapshot 1`] = `
               data-testid="dates"
             >
               Published 
-              June 10, 2020
+              July 8, 2020
                | Last edited
                
-              June 10, 2020
+              July 8, 2020
             </span>
           </div>
         </div>
@@ -185,10 +139,10 @@ exports[`matches the snapshot 1`] = `
     </div>
   </div>
   <div
-    className="MuiGrid-root makeStyles-row-183 MuiGrid-item"
+    className="MuiGrid-root makeStyles-row-175 MuiGrid-item"
   >
     <div
-      className="MuiGrid-root makeStyles-root-337 MuiGrid-container"
+      className="MuiGrid-root makeStyles-root-321 MuiGrid-container"
     >
       <div
         className="MuiGrid-root MuiGrid-item"
@@ -203,7 +157,7 @@ exports[`matches the snapshot 1`] = `
         className="MuiGrid-root MuiGrid-item"
       >
         <button
-          className="MuiButtonBase-root MuiIconButton-root makeStyles-button-338"
+          className="MuiButtonBase-root MuiIconButton-root makeStyles-button-322"
           data-testid="heartIcon"
           disabled={false}
           onBlur={[Function]}
@@ -225,7 +179,7 @@ exports[`matches the snapshot 1`] = `
             className="MuiIconButton-label"
           >
             <div
-              className="MuiGrid-root makeStyles-layout-351 MuiGrid-container"
+              className="MuiGrid-root makeStyles-layout-335 MuiGrid-container"
             >
               <div
                 className="MuiGrid-root MuiGrid-item"
@@ -248,7 +202,7 @@ exports[`matches the snapshot 1`] = `
                 className="MuiGrid-root MuiGrid-item"
               >
                 <p
-                  className="MuiTypography-root makeStyles-space-352 MuiTypography-body1"
+                  className="MuiTypography-root makeStyles-space-336 MuiTypography-body1"
                 >
                   42
                 </p>
@@ -281,7 +235,7 @@ exports[`matches the snapshot 1`] = `
             className="MuiIconButton-label"
           >
             <div
-              className="MuiGrid-root makeStyles-layout-351 MuiGrid-container"
+              className="MuiGrid-root makeStyles-layout-335 MuiGrid-container"
             >
               <div
                 className="MuiGrid-root MuiGrid-item"
@@ -310,7 +264,7 @@ exports[`matches the snapshot 1`] = `
                 className="MuiGrid-root MuiGrid-item"
               >
                 <p
-                  className="MuiTypography-root makeStyles-space-352 MuiTypography-body1"
+                  className="MuiTypography-root makeStyles-space-336 MuiTypography-body1"
                 >
                   3
                 </p>
@@ -343,7 +297,7 @@ exports[`matches the snapshot 1`] = `
             className="MuiIconButton-label"
           >
             <div
-              className="MuiGrid-root makeStyles-layout-351 MuiGrid-container"
+              className="MuiGrid-root makeStyles-layout-335 MuiGrid-container"
             >
               <div
                 className="MuiGrid-root MuiGrid-item"
@@ -372,7 +326,7 @@ exports[`matches the snapshot 1`] = `
                 className="MuiGrid-root MuiGrid-item"
               >
                 <p
-                  className="MuiTypography-root makeStyles-space-352 MuiTypography-body1"
+                  className="MuiTypography-root makeStyles-space-336 MuiTypography-body1"
                 >
                   5
                 </p>

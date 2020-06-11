@@ -26,9 +26,13 @@ export default function WhyDo(props) {
           </Typography>
         </Box>
         <Box className={classes.space}>
-          <Typography variant={"body1"} component={'span'}>
-            <ReactMarkdown source={props.source} />
-          </Typography>
+          {props.editing ?
+            props.children
+            :
+            <Typography variant={"body1"} component={'span'}>
+              <ReactMarkdown source={props.source} />
+            </Typography>
+          }
         </Box>
       </Box>
     </>

@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 
 import ComponentLoading from "../shared/QueryState/ComponentLoading";
 import ComponentQueryError from "../shared/QueryState/ComponentQueryError";
-import { GET_PRACTICES } from "../../graphql";
+import { GET_PRACTICE_COUNT } from "../../graphql";
 
 const useStyles = makeStyles((theme) => ({
   practiceNum: {
@@ -19,12 +19,15 @@ const useStyles = makeStyles((theme) => ({
 const PracticeCount = () => {
   const classes = useStyles();
 
-  const { loading, error, data } = useQuery(GET_PRACTICES);
+  const { loading, error, data } = useQuery(GET_PRACTICE_COUNT);
   if (loading) return <ComponentLoading />;
   if (error) return <ComponentQueryError err={error} />;
 
   return (
-    <div data-testid="practiceNum" className={classes.practiceNum}>{data.practices.length}</div>
+    <div
+      data-testid="practiceNum"
+      className={classes.practiceNum}>{data.practicesConnection.aggregate.totalCount}
+    </div>
   )
 };
 
