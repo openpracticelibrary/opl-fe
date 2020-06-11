@@ -14,15 +14,17 @@ const useStyles = makeStyles((theme) => ({
   space: {
     padding: theme.spacing(1),
   },
-  mediaBox: {
-    display: "flex",
-    justifyContent: "center",
-    padding: theme.spacing(1),
-  },
   videoWrapper: {
+    overflow: "hidden",
+    paddingTop: "56.25%",
+    position: "relative",
     "& iframe": {
-      display: "flex",
-      justifyContent: "center",
+      position: "absolute",
+      border: 0,
+      height: "100%",
+      left: 0,
+      top: 0,
+      width: "100%",
     },
   },
 }))
@@ -45,7 +47,7 @@ export default function MediaGallery({ title, mediaGallery, mediaRef }) {
     } else if (url.hostname.includes('youtube') && url.pathname.includes('playlist')) {
       const youtubeId = url.searchParams.get('list');
       const link = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
-      const embedUrl = `https://www.youtube.com/embed/videoSeries?list=${youtubeId}?autoplay=1&showinfo=0`;
+      const embedUrl = `https://www.youtube.com/embed/videoSeries?list=${youtubeId}`;
       return {
         original: link,
         thumbnail: link,
@@ -76,10 +78,7 @@ export default function MediaGallery({ title, mediaGallery, mediaRef }) {
         <div className={classes.videoWrapper}>
           <iframe
             title={item.embedUrl}
-            width='560'
-            height='315'
             src={item.embedUrl}
-            frameBorder='0'
             allowFullScreen
           >
           </iframe>
@@ -96,11 +95,11 @@ export default function MediaGallery({ title, mediaGallery, mediaRef }) {
             Look at {title}
           </Typography>
         </Box>
-        <Box className={classes.mediaBox}>
+        <Box>
           <ImageGallery
             items={images}
             showBullets={true}
-            showIndex={true}
+            showIndex={false}
             showThumbnails={true}
             lazyLoad={true}
             showPlayButton={false}
