@@ -8,23 +8,20 @@ import { GET_CONTRIBUTORS } from "../../../graphql";
 
 afterEach(cleanup);
 
-const mockContributorData = [
-  {
-    __typename: "UsersPermissionsUser",
-    id: "2342123451",
-  },
-  {
-    __typename: "UsersPermissionsUser",
-    id: "478129411",
+const mockContributorData = {
+  __typename: "UsersPermissionsUserConnection",
+  aggregate: {
+    __typename: "UsersPermissionsUserAggregator",
+    totalCount: 50,
   }
-];
+};
 
 const apolloMocks = [
   {
     request: {
       query: GET_CONTRIBUTORS
     },
-    result: { data: { users: mockContributorData } }
+    result: { data: { usersConnection: mockContributorData } }
   },
 ];
 
@@ -36,6 +33,6 @@ it("renders contributor count successfully", async () => {
   );
 
   await waitFor(() => expect(getByTestId("contributorNum")).toBeInTheDocument());
-  expect(getByTestId("contributorNum")).toHaveTextContent("2");
+  expect(getByTestId("contributorNum")).toHaveTextContent("50");
 });
 

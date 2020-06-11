@@ -3,7 +3,6 @@ import {makeStyles} from "@material-ui/core/styles/index";
 import TitleAndSubtitle from "./TitleAndSubtitle";
 import ContributedBy from "./ContributedBy";
 import Collection from "./Collection";
-import BreadcrumbNav from "./BreadcrumbNav";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
@@ -26,10 +25,16 @@ export default function PageIntro(props) {
       <Grid
         container direction="column" className={classes.layout}>
         <Grid item>
-          <BreadcrumbNav/>
-        </Grid>
-        <Grid item>
-          <TitleAndSubtitle title={props.title} subtitle={props.subtitle}/>
+          <TitleAndSubtitle
+            title={props.title}
+            tags={props.tags}
+            subtitle={props.subtitle}
+            editing={props.editing}
+            titleEdit={props.titleEdit}
+            subtitleEdit={props.subtitleEdit}
+          >
+            {props.children}
+          </TitleAndSubtitle>
         </Grid>
         <Grid item className={classes.row}>
           <ContributedBy

@@ -24,25 +24,24 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MediaGallery({ mediaGallery, mediaRef }) {
   const classes = useStyles();
-  const images = [];
-
-  mediaGallery.map(media => {
-    let image = {
-      original: media.link,
-      thumbnail: media.link
+  const images = mediaGallery.map(media => {
+    const url = new URL(media.link);
+    if (url.hostname.includes('youtu')) {
+      const youtubeId = url.pathname.split('/')[1];
+      const link = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
+      return {
+        original: link,
+        thumbnail: link
+      }
+    } else {
+      return {
+        original: media.link,
+        thumbnail: media.link
+      };
     };
-    return images.push(image);
   });
 
   //todo: adding video to the gallery
-  //   if (url.hostname.includes('youtu')) {
-  //     const youtubeId = url.pathname.split('/')[1];
-  //     const link = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
-  //     return {
-  //       link,
-  //       original: media.link
-  //     }
-  //   }
 
   return (
     <>

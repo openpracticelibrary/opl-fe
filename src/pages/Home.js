@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Home() {
+export default function Home(props) {
   const classes = useStyles();
   const communityRef = React.useRef(null);
 
@@ -31,6 +31,7 @@ export default function Home() {
           greeting="Hiya! 😃"
           welcomeMessage="Welcome to this open source library of best practices in digital product development."
           inquiry="Sound up your alley?"
+          navigate={props.navigate}
           communityRef={communityRef}
         />
         <Grid

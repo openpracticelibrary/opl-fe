@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   color: {
-    color: theme.palette.common.black, 
+    color: theme.palette.common.black,
   },
   connect: {
     color: theme.palette.common.black,
@@ -41,40 +41,40 @@ export default function FooterLogoSection() {
       >
         <Grid item>
           <Grid
-            container 
-            direction="row" 
-            spacing={2} 
+            container
+            direction="row"
+            spacing={2}
             alignItems="center"
           >
             <Grid item>
-              <Typography 
-                variant="overline" 
-                data-testid="connect" 
+              <Typography
+                variant="overline"
+                data-testid="connect"
                 className={classes.connect}
               >
                 Connect with us!
               </Typography>
-            </Grid>  
+            </Grid>
             <Grid item>
               <FooterIconSection />
-            </Grid>                 
+            </Grid>
           </Grid>
         </Grid>
         <Grid item>
           <Grid
-            container 
-            direction="row" 
-            spacing={5} 
+            container
+            direction="row"
+            spacing={5}
           >
             {sections.map((section, i) => (
-              <Grid item>              
+              <Grid item key={i}>
                 <Typography
                   variant="overline"
                   className={classes.color}
                   onClick={() => navigate(section.url)}
                 >
                   {section.title}
-                </Typography>           
+                </Typography>
               </Grid>
             ))}
           </Grid>
