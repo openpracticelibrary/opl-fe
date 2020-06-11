@@ -28,7 +28,7 @@ const RichMarkdownEditorTheme = () => {
     blockToolbarTrigger: theme.palette.common.very_light_grey,
     blockToolbarTriggerIcon: theme.palette.common.black,
     blockToolbarItem: theme.palette.common.black,
-    blockToolbarText: theme.palette.common.white,
+    blockToolbarText: theme.palette.common.black,
     blockToolbarDivider: theme.palette.common.brown_grey,
     background: theme.palette.common.white,
     textLight: theme.palette.common.white,
