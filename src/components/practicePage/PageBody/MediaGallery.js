@@ -18,20 +18,29 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     padding: theme.spacing(1),
-  }
+  },
+  videoWrapper: {
+    "& iframe": {
+      display: "flex",
+      justifyContent: "center",
+    },
+  },
 }))
 ;
 
-export default function MediaGallery({ mediaGallery, mediaRef }) {
+export default function MediaGallery({ title, mediaGallery, mediaRef }) {
   const classes = useStyles();
   const images = mediaGallery.map(media => {
     const url = new URL(media.link);
     if (url.hostname.includes('youtu')) {
       const youtubeId = url.pathname.split('/')[1];
       const link = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
+      const embedUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&showinfo=0`;
       return {
         original: link,
-        thumbnail: link
+        thumbnail: link,
+        embedUrl,
+        renderItem: () => renderVideo({ embedUrl, original: link })
       }
     } else {
       return {
@@ -41,14 +50,30 @@ export default function MediaGallery({ mediaGallery, mediaRef }) {
     };
   });
 
-  //todo: adding video to the gallery
+  const renderVideo = (item) => {
+    return (
+      <div>
+        <div className={classes.videoWrapper}>
+          <iframe
+            title={item.embedUrl}
+            width='560'
+            height='315'
+            src={item.embedUrl}
+            frameBorder='0'
+            allowFullScreen
+          >
+          </iframe>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
           <Typography variant={"h2"} ref={mediaRef}>
-            Media Gallery
+            Look at {title}
           </Typography>
         </Box>
         <Box className={classes.mediaBox}>
@@ -58,8 +83,10 @@ export default function MediaGallery({ mediaGallery, mediaRef }) {
             showIndex={true}
             showThumbnails={true}
             lazyLoad={true}
-            showPlayButton={true}
+            showPlayButton={false}
+            showFullscreenButton={false}
             onErrorImageURL={DefaultImage}
+            onPlay={(currentIndex) => console.log(images[currentIndex])}
           />
         </Box>
       </Box>

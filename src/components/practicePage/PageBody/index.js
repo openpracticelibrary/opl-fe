@@ -61,6 +61,7 @@ export default function PageBody(props) {
             {props.howToEditor}
           </HowDo>
           <MediaGallery
+            title={title}
             mediaGallery={mediaGallery}
             mediaRef={mediaRef}
           />
