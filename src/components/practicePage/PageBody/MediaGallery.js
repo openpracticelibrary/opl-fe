@@ -1,10 +1,12 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-import {Typography} from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import DefaultImage from "../../../assets/images/DefaultImage.png"
+import DefaultImage from "../../../assets/images/DefaultImage.png";
+import AddImage from "../../../assets/images/add.png";
+import AddImageCard from "./AddImage";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -76,6 +78,12 @@ export default function MediaGallery({ title, mediaGallery, mediaRef }) {
         thumbnail: media.link
       };
     };
+  });
+
+  images.push({
+    original: AddImage,
+    thumbnail: AddImage,
+    renderThumbInner: () => (<AddImageCard />)
   });
 
   const renderVideo = (item) => {
