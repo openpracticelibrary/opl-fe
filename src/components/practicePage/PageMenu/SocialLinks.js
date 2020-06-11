@@ -61,7 +61,7 @@ export default function SocialLinks(props) {
             className={classes.url}
             variant="overline"
           >
-            POST :
+            POST{" "}
           </Typography>
         </Grid>
         <Grid item>
