@@ -78,9 +78,8 @@ export default function PageMenu(props) {
                 spacing={3}
               >
                 {sections.map((section, i) => (
-                  <Grid item>
+                  <Grid item key={i}>
                     <Button
-                      key={i}
                       onClick={() => handleClick(section.ref)}
                       className={classes.pageNavButton}
                     >
