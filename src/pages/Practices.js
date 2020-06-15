@@ -1,14 +1,14 @@
 import React from "react";
 
 import { useQuery } from "@apollo/react-hooks";
-import { GET_PRACTICES } from "../graphql";
+import { GET_PRACTICES, GET_PRACTICES_BY_TAG_PAGINATION } from "../graphql";
 import { Grid, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles/index";
 import PracticeCardGrid from "../components/shared/PracticeCards/PracticeCardGrid";
 import AllPracticesHero from "../components/allPractices/AllPracticesHero";
 import ComponentLoading from "../components/shared/QueryState/ComponentLoading";
 import QueryError from "../components/shared/QueryState/QueryError";
-
+import FilterTags from "../components/allPractices/FilterBar/FilterTags";
 
 const useStyles = makeStyles((theme) => ({
   pageWrapper: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     paddingTop: 27,
     marginBottom: "75px",
-    height: 'auto',
+    height: "auto",
   },
   titleBox: {
     display: "flex",
@@ -43,17 +43,76 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Practices(props) {
   const classes = useStyles();
-  const { loading, error, data, fetchMore } = useQuery(GET_PRACTICES,
+
+  const filterTags = [
+    "ALL",
+    "VALIDATE",
+    "VALUE",
+    "INSIGHT",
+    "IDEATE",
+    "BUILD",
+    "ANALYZE",
+    "METHODS",
+    "CULTURE",
+  ];
+
+  // manage state of filter tags
+  const [selectedFilterTag, setFilterTag] = React.useState(filterTags[0]);
+
+  // manage state of page value for practice card grid
+  const [page, setPage] = React.useState(0);
+
+  const ChangeFilterTag = (tag) => {
+    setFilterTag(tag);
+    refetch({
+      variables: {
+        start: 0,
+        limit: 8,
+        ...(tag !== "ALL" && {
+          tag: tag.toLowerCase(),
+        }),
+      },
+    });
+    setPage(8);
+  };
+
+  const { loading, error, data, refetch, networkStatus, fetchMore } = useQuery(
+    GET_PRACTICES_BY_TAG_PAGINATION,
     {
       variables: {
         start: 0,
-        limit: 8
+        limit: 8,
+        ...(selectedFilterTag !== "ALL" && {
+          tag: selectedFilterTag.toLowerCase(),
+        }),
       },
-      fetchPolicy: "cache-and-network"
+      fetchPolicy: "cache-and-network",
+      notifyOnNetworkStatusChange: true,
     }
   );
 
+  const onLoadMore = (page) => {
+    const newPage = page + 8;
+    fetchMore({
+      variables: {
+        start: newPage,
+        ...(selectedFilterTag !== "ALL" && {
+          tag: selectedFilterTag.toLowerCase(),
+        }),
+      },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult) return prev;
+        return Object.assign({}, prev, {
+          practices: [...prev.practices, ...fetchMoreResult.practices],
+        });
+      },
+    });
+    setPage(newPage);
+  };
+
   if (error) return <QueryError err={error} />;
+
+  // if (networkStatus === 4) return 'Refetching';
 
   return (
     <>
@@ -68,6 +127,11 @@ export default function Practices(props) {
           <AllPracticesHero />
         </Grid>
         <Divider />
+        <FilterTags
+          tags={filterTags}
+          filter={ChangeFilterTag}
+          selectedFilter={selectedFilterTag}
+        />
         <Grid
           container
           direction="column"
@@ -77,23 +141,16 @@ export default function Practices(props) {
           className={classes.root}
         >
           <Grid className={classes.practicePane} item xs={9}>
-            { loading && !data ? <ComponentLoading /> :
+            {(loading && !data) || networkStatus === 4 ? (
+              <ComponentLoading />
+            ) : (
               <PracticeCardGrid
                 loading={loading}
                 practices={data.practices}
-                onLoadMore={(page) =>
-                  fetchMore({
-                    variables: {
-                      start: page,
-                    },
-                    updateQuery: (prev, { fetchMoreResult }) => {
-                      if (!fetchMoreResult) return prev;
-                      return Object.assign({}, prev, {
-                        practices: [...prev.practices, ...fetchMoreResult.practices]
-                      });
-                    }
-                  })}
-              />}
+                page={page}
+                onLoadMore={onLoadMore}
+              />
+            )}
           </Grid>
         </Grid>
       </Grid>

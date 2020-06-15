@@ -10,6 +10,7 @@ export { default as GET_TAGS } from './queries/tags';
 export { default as GET_CURATED_PRACTICES } from './queries/curatedPractices';
 export { default as GET_CONTRIBUTORS } from './queries/contributorCount';
 export { default as GET_PRACTICE_COUNT } from './queries/practiceCount';
+export { default as GET_PRACTICES_BY_TAG_PAGINATION } from './queries/practicesByTagQueryWithPagination';
 
 // mutations
 export { default as CREATE_TAG } from './mutations/createTagMutation';
