@@ -3,7 +3,7 @@ import { render, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 
-import { GET_PRACTICES } from "../../graphql";
+import { GET_PRACTICES_BY_TAG_PAGINATION } from "../../graphql";
 import Practices from "../Practices";
 
 const mockPracticeData = [{
@@ -46,7 +46,7 @@ const mockPracticeData = [{
 const apolloMocks = [
   {
     request: {
-      query: GET_PRACTICES,
+      query: GET_PRACTICES_BY_TAG_PAGINATION,
       variables: {
         start: 0,
         limit: 8
