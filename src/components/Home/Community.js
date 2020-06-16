@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles/index';
 import Box from '@material-ui/core/Box';
 import Grid from "@material-ui/core/Grid";
+import Button from '@material-ui/core/Button';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import Typography from "@material-ui/core/Typography";
 import { navigate } from "@reach/router";
@@ -14,12 +15,24 @@ import MobiusLogo from "../../assets/images/mobius-small.png";
 import CCHeartLogo from "../../assets/images/ccheart-black.png";
 
 const useStyles = makeStyles((theme) => ({
+  communityBox: {
+    display: "flex",
+    justifyContent: "center",
+  },
   practiceBox: {
     display: "flex",
     alignItems: "center",
     flexFlow: "column",
     justifyContent: "center",
     textAlign: "center",
+    width: "330px",
+    borderRadius: "50%",
+    borderStyle: "solid",
+    borderColor: "#00cc99",
+    borderWidth: "1px",
+    boxShadow: `5px 5px ${theme.palette.common.white}`,
+    padding: theme.spacing(5),
+    margin: theme.spacing(2),
   },
   contribBox: {
     display: "flex",
@@ -27,6 +40,14 @@ const useStyles = makeStyles((theme) => ({
     flexFlow: "column",
     justifyContent: "center",
     textAlign: "center",
+    width: "330px",
+    borderRadius: "50%",
+    borderStyle: "solid",
+    borderColor: "#00cc99",
+    borderWidth: "1px",
+    boxShadow: `5px 5px ${theme.palette.common.white}`,
+    padding: theme.spacing(5),
+    margin: theme.spacing(2),
   },
   collabBox: {
     alignItems: "center",
@@ -39,16 +60,23 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     marginBottom: "70px",
   },
+  aboutButton: {
+    borderRadius: "32px",
+    padding: theme.spacing(2),
+    width: "11rem",
+    borderColor: theme.palette.common.discovery_blue,
+    borderWidth: "2px",
+    borderStyle: "solid",
+    backgroundColor: theme.palette.common.true_white,
+  },
   arrowForward: {
-    top: ".15em",
-    width: "17px",
-    height: "18px",
-    position: "relative",
+    color: theme.palette.common.discovery_blue,
   },
   weHave: {
     textAlign: "center",
   },
   lifecycle: {
+    color: theme.palette.common.black,
     textAlign: "center",
   },
   redHat: {
@@ -85,24 +113,21 @@ const Community = (props) => {
         <Typography variant={"h1"} ref={props.communityRef}>Community driven</Typography>
       </Grid>
       <Grid item xs={2} className={classes.aboutTitle}>
-        <Typography variant={"overline"} onClick={() => navigate("#")}>
-          <b>
+        <Button className={classes.aboutButton} variant="contained" onClick={() => navigate("#")}>
             About us{"  "}<ArrowForwardIcon className={classes.arrowForward}/>
-          </b>
-        </Typography>
+        </Button>
       </Grid>
-      <Grid item xs={6}>
-        <Box className={classes.practiceBox}>
-          <Typography variant={"h3"} className={classes.weHave}>We have</Typography>
-          <PracticeCount />
-          <Typography variant={"h3"} className={classes.lifecycle}>Product Lifecycle <br/> Practices</Typography>
-        </Box>
-      </Grid>
-      <Grid item xs={6}>
-        <Box className={classes.contribBox}>
-          <Typography variant={"h3"} className={classes.weHave}>We have</Typography>
-          <ContributorCount />
-          <Typography variant={"h3"} className={classes.lifecycle}>Creative Commons <br/> Contributors</Typography>
+      <Grid item xs={12}>
+        <Typography variant={"h3"} className={classes.weHave}>We have...</Typography>
+        <Box className={classes.communityBox}>
+          <Box className={classes.practiceBox}>
+            <PracticeCount />
+            <Typography variant={"h3"} className={classes.lifecycle}>Product Lifecycle <br/> Practices</Typography>
+          </Box>
+          <Box className={classes.contribBox}>
+            <ContributorCount />
+            <Typography variant={"h3"} className={classes.lifecycle}>Creative Commons <br/> Contributors</Typography>
+          </Box>
         </Box>
       </Grid>
       <Grid item xs={12}>

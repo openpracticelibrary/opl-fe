@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 ;
 
-export default function MediaGallery({ title, mediaGallery, mediaRef }) {
+export default function MediaGallery({ practiceId, title, mediaGallery, mediaRef }) {
   const classes = useStyles();
   const images = mediaGallery.map(media => {
     const url = new URL(media.link);
@@ -83,7 +83,7 @@ export default function MediaGallery({ title, mediaGallery, mediaRef }) {
   images.push({
     original: AddImage,
     thumbnail: AddImage,
-    renderThumbInner: () => (<AddImageCard />)
+    renderThumbInner: () => (<AddImageCard currentMediaGallery={mediaGallery} practiceId={practiceId} />)
   });
 
   const renderVideo = (item) => {

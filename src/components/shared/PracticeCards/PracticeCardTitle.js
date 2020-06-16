@@ -14,7 +14,7 @@ const PracticeCardTitle = (props) => {
 
   return (
     <div onClick={() => navigate(`/practice/${props.slug}`)}>
-      <Typography className={classes.title} data-testid="practicetitle">{props.practiceTitle}</Typography>
+      <Typography id="cardTitle" className={classes.title} data-testid="practicetitle">{props.practiceTitle}</Typography>
       {props.tags.map((t, i) => (
         <Typography key={i} variant={"overline"}>
           #{t.tag}&nbsp;

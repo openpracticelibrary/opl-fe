@@ -2,8 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles/index';
 import Box from '@material-ui/core/Box';
 import { SvgIcon, Grid } from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { Twemoji } from "react-emoji-render";
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import { ArrowDownIcon, OPLLogo } from "../../assets/icons";
 import LoginButton from "../shared/Login/LoginButton";
 
@@ -11,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   titleBox: {
     position: "relative",
     justifyContent: "center",
-    backgroundColor: theme.palette.common.white,
+    backgroundImage: `linear-gradient(${theme.palette.common.true_white}, ${theme.palette.common.white})`,
     height: "910px",
     width: "100%",
   },
@@ -19,9 +21,8 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     top: 0,
     left: 0,
+    marginTop: theme.spacing(-12),
     padding: theme.spacing(3),
-    height: "50px",
-    width: "183px",
   },
   loginBox: {
     position: "absolute",
@@ -45,17 +46,10 @@ const useStyles = makeStyles((theme) => ({
   welcome: {
     paddingBottom: theme.spacing(8),
   },
-  welcomeBottom: {
-    width: "70%",
-    justifyContent: "center",
-    textAlign: "center",
-    position: "absolute",
-    bottom: 0,
-  },
   arrowIcon: {
     margin: theme.spacing(2),
-    fontSize: "50px",
-    color: theme.palette.common.brownish_grey,
+    color: theme.palette.common.true_white,
+    backgroundColor: theme.palette.common.discovery_blue,
   },
 }));
 
@@ -77,7 +71,7 @@ const Landing = (props) => {
         className={classes.titleBox}
       >
         <Box className={classes.logo}>
-          <OPLLogo />
+          <OPLLogo height="250px" width="383px" />
         </Box>
         <Box className={classes.loginBox}>
           <LoginButton
@@ -89,20 +83,18 @@ const Landing = (props) => {
           <Typography variant={"h4"} className={classes.hello}>
             <Twemoji data-testid="hellotext" text={props.greeting}/>
           </Typography>
-          <Typography variant={"h1"} className={classes.welcome} data-testid="welcomeText">
+          <Typography variant={"h5"} className={classes.welcome} data-testid="welcomeText">
             {props.welcomeMessage}
           </Typography>
-          <Typography variant={"h1"} className={classes.question} data-testid="inquiryText">
+          <Typography variant={"h5"} className={classes.question} data-testid="inquiryText">
             {props.inquiry}
           </Typography>
-        </Box>
-        <Box className={classes.welcomeBottom}>
-          <Typography align="center" variant={"overline"} component="p">
+          <Typography variant={"button"} component="p">
             <b>Tell me more</b>
+            <IconButton className={classes.arrowIcon} onClick={handleClick} >
+              <ArrowDownwardIcon />
+            </IconButton>
           </Typography>
-          <SvgIcon className={classes.arrowIcon} onClick={handleClick} >
-            <ArrowDownIcon />
-          </SvgIcon>
         </Box>
       </Grid>
     </>

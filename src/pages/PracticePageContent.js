@@ -248,6 +248,7 @@ export default function PracticePageContent(props) {
             </Grid>
             <Grid item xs={8}>
               <PageBody
+                practiceId={data.practices[0].id}
                 title={data.practices[0].title}
                 body={data.practices[0].body}
                 mediaGallery={data.practices[0].mediaGallery}
