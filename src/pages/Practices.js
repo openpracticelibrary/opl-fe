@@ -149,9 +149,28 @@ export default function Practices(props) {
             />
           </Grid>
           <Grid item>
-            <KeywordSearchToggle toggle={ToggleKeywordSearch} />
+            <KeywordSearchToggle
+              toggle={ToggleKeywordSearch}
+              keywordSearchToggle={keywordSearchToggle}
+            />
           </Grid>
         </Grid>
+
+        {keywordSearchToggle && (
+          <Grid
+            container
+            direction="row"
+            justify="space-evenly"
+            alignItems="center"
+          >
+            <Grid item>
+              <h1>mobius</h1>
+            </Grid>
+            <Grid item>
+              <h1>keyword</h1>
+            </Grid>
+          </Grid>
+        )}
 
         <Grid
           container
