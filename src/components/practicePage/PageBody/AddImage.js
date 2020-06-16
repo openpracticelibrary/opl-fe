@@ -24,7 +24,7 @@ import { createUploadLink } from "apollo-upload-client";
 import { UPLOAD_FILE, UPDATE_MEDIA_GALLERY } from "../../../graphql";
 import AddImage from "../../../assets/images/add.png";
 
-const MEDIA_ENDPOINT = process.env.REACT_APP_MEDIA_SERVICE_ENDPOINT;
+const MEDIA_ENDPOINT = process.env.REACT_APP_MEDIA_SERVICE_ENDPOINT || "/image-upload";
 
 const useStyles = makeStyles((theme) => ({
   cardImg: {
