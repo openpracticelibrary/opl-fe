@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   practiceItem: {
     backgroundColor: "#fff",
     borderRadius: 10,
+    "&:hover #cardTitle": {
+      color: theme.palette.common.discovery_blue,
+    },
   },
 }));
 

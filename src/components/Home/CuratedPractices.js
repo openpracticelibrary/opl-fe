@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles/index';
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import Button from '@material-ui/core/Button';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { navigate } from "@reach/router";
 import { useQuery } from "@apollo/react-hooks";
@@ -16,10 +17,16 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "right",
   },
   arrowForward: {
-    top: ".15em",
-    width: "17px",
-    height: "18px",
-    position: "relative",
+    color: theme.palette.common.discovery_blue,
+  },
+  libraryButton: {
+    borderRadius: "32px",
+    padding: theme.spacing(2),
+    width: "14rem",
+    borderColor: theme.palette.common.discovery_blue,
+    borderWidth: "2px",
+    borderStyle: "solid",
+    backgroundColor: theme.palette.common.true_white,
   },
 }));
 
@@ -34,18 +41,13 @@ const CuratedPractices = (props) => {
 
   return (
     <>
-      <Grid item xs={10} data-testid="curatedList">
+      <Grid item xs={9} data-testid="curatedList">
         <Typography variant={"h1"}>Popular Practices</Typography>
       </Grid>
-      <Grid item xs={2} className={classes.aboutTitle}>
-        <Typography
-          variant={"overline"}
-          onClick={() => navigate("/practice")}
-        >
-          <b>
-              See Everything{"  "}<ArrowForwardIcon className={classes.arrowForward}/>
-          </b>
-        </Typography>
+      <Grid item xs={3} className={classes.aboutTitle}>
+        <Button className={classes.libraryButton} variant="contained" onClick={() => navigate("/practice")}>
+          See Everything{"  "}<ArrowForwardIcon className={classes.arrowForward}/>
+        </Button>
       </Grid>
       <Grid item xs={12}>
         { loading ? <ComponentLoading /> : <PracticeCardGrid practices={data.practices} /> }

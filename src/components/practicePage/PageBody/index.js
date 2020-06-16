@@ -19,6 +19,7 @@ export default function PageBody(props) {
   const classes = useStyles();
 
   const {
+    practiceId,
     title,
     body: { whatIs, whyDo, howTo, fullText },
     mediaGallery,
@@ -30,6 +31,10 @@ export default function PageBody(props) {
     howToRef,
     resourceRef,
     amaRef,
+    editing,
+    whatIsEditor,
+    whyDoEditor,
+    howToEditor,
   } = props;
 
   if (whatIs && whyDo && howTo) {
@@ -40,27 +45,28 @@ export default function PageBody(props) {
             title={title}
             source={whatIs}
             whatIsRef={whatIsRef}
-            editing={props.editing}
+            editing={editing}
           >
-            {props.whatIsEditor}
+            {whatIsEditor}
           </WhatIs>
           <WhyDo
             title={title}
             source={whyDo}
             whyDoRef={whyDoRef}
-            editing={props.editing}
+            editing={editing}
           >
-            {props.whyDoEditor}
+            {whyDoEditor}
           </WhyDo>
           <HowDo
             title={title}
             source={howTo}
             howToRef={howToRef}
-            editing={props.editing}
+            editing={editing}
           >
-            {props.howToEditor}
+            {howToEditor}
           </HowDo>
           <MediaGallery
+            practiceId={practiceId}
             title={title}
             mediaGallery={mediaGallery}
             mediaRef={mediaRef}
