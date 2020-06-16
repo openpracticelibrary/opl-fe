@@ -10,6 +10,7 @@ import ComponentLoading from "../components/shared/QueryState/ComponentLoading";
 import QueryError from "../components/shared/QueryState/QueryError";
 import FilterTags from "../components/allPractices/FilterBar/FilterTags";
 import KeywordSearchToggle from "../components/allPractices/FilterBar/KeywordSearchToggle";
+import DropDownSelectionFilter from "../components/allPractices/FilterBar/DropDownSelectionFilter";
 
 const useStyles = makeStyles((theme) => ({
   pageWrapper: {
@@ -164,7 +165,10 @@ export default function Practices(props) {
             alignItems="center"
           >
             <Grid item>
-              <h1>mobius</h1>
+              <DropDownSelectionFilter
+                inputLabel="Entire Process Model"
+                items={["Discovery", "Options", "Delivery", "Foundation"]}
+              />
             </Grid>
             <Grid item>
               <h1>keyword</h1>
