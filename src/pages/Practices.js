@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useQuery } from "@apollo/react-hooks";
-import { GET_PRACTICES, GET_PRACTICES_BY_TAG_PAGINATION } from "../graphql";
+import { GET_PRACTICES_BY_TAG_PAGINATION } from "../graphql";
 import { Grid, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles/index";
 import PracticeCardGrid from "../components/shared/PracticeCards/PracticeCardGrid";
