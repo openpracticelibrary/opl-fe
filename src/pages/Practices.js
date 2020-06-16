@@ -9,6 +9,7 @@ import AllPracticesHero from "../components/allPractices/AllPracticesHero";
 import ComponentLoading from "../components/shared/QueryState/ComponentLoading";
 import QueryError from "../components/shared/QueryState/QueryError";
 import FilterTags from "../components/allPractices/FilterBar/FilterTags";
+import KeywordSearchToggle from "../components/allPractices/FilterBar/KeywordSearchToggle";
 
 const useStyles = makeStyles((theme) => ({
   pageWrapper: {
@@ -62,6 +63,12 @@ export default function Practices(props) {
   // manage state of page value for practice card grid
   const [page, setPage] = React.useState(0);
 
+  // manage state of keyword search toggle
+  const [keywordSearchToggle, setKeywordSearchToggle] = React.useState(false);
+
+  const ToggleKeywordSearch = () =>
+    setKeywordSearchToggle(!keywordSearchToggle);
+
   const ChangeFilterTag = (tag) => {
     setFilterTag(tag);
     refetch({
@@ -112,8 +119,6 @@ export default function Practices(props) {
 
   if (error) return <QueryError err={error} />;
 
-  // if (networkStatus === 4) return 'Refetching';
-
   return (
     <>
       <Grid className={classes.pageWrapper}>
@@ -127,11 +132,27 @@ export default function Practices(props) {
           <AllPracticesHero />
         </Grid>
         <Divider />
-        <FilterTags
-          tags={filterTags}
-          filter={ChangeFilterTag}
-          selectedFilter={selectedFilterTag}
-        />
+        <Grid
+          container
+          direction="row"
+          justify="space-around"
+          alignItems="center"
+        >
+          <Grid item>
+            <h1>popular</h1>
+          </Grid>
+          <Grid item>
+            <FilterTags
+              tags={filterTags}
+              filter={ChangeFilterTag}
+              selectedFilter={selectedFilterTag}
+            />
+          </Grid>
+          <Grid item>
+            <KeywordSearchToggle toggle={ToggleKeywordSearch} />
+          </Grid>
+        </Grid>
+
         <Grid
           container
           direction="column"
