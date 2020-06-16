@@ -19,6 +19,6 @@ it("renders login button and popover when clicked", async () => {
   fireEvent.click(getByTestId("loginButton"));
 
   const popover = await getByTestId("loginForm");
-  expect(popover).toHaveTextContent("Login to the Open Practice Library!");
+  expect(popover).toHaveTextContent("Credentials Please?");
 });
 

@@ -1,10 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from "@material-ui/core/Grid";
-import Popover from '@material-ui/core/Popover';
+import Box from "@material-ui/core/Box";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import Typography from "@material-ui/core/Typography";
 import TextField from '@material-ui/core/TextField';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { useMutation, useApolloClient } from "@apollo/react-hooks";
 
 import LoginContext from './LoginContext';
@@ -13,21 +16,27 @@ import { LOGIN } from "../../../graphql";
 const drawerWidth = 350;
 
 const useStyles = makeStyles((theme) => ({
-  popover: {
+  container: {
     width: drawerWidth,
     flexShrink: 0,
   },
   drawerPaper: {
+    borderRadius: "17px",
+    borderWidth: "3px",
+    borderColor: theme.palette.common.discovery_blue,
+    borderStyle: "solid",
     display: "flex",
-    width: drawerWidth,
-    backgroundColor: theme.palette.common.true_white,
-    alignContent: "center",
-    alignItems: "center",
+    textAlign: "center",
+    padding: theme.spacing(3),
   },
   loginButton: {
-    height: "34px",
-    width: "122px",
-    borderRadius: "17px",
+    borderRadius: "32px",
+    width: "7rem",
+    backgroundColor: "#d7e6f4",
+    padding: theme.spacing(2),
+    borderColor: theme.palette.common.discovery_blue,
+    borderWidth: "2px",
+    borderStyle: "solid",
   },
   loginDrawerClose: {
     margin: theme.spacing(2),
@@ -36,19 +45,25 @@ const useStyles = makeStyles((theme) => ({
   loginText: {
     margin: theme.spacing(1),
   },
-  loginForm: {
-  },
   formField: {
     margin: theme.spacing(1),
   },
   submitButton: {
     margin: theme.spacing(1),
-    height: "35px",
-    borderRadius: "17px",
+    borderRadius: "32px",
+    borderStyle: "solid",
+    borderColor: theme.palette.common.discovery_blue,
+    borderWidth: "2px",
   },
   btnText: {
-    color: theme.palette.common.white,
-  }
+    padding: theme.spacing(1),
+    color: theme.palette.common.black,
+  },
+  arrowForward: {
+    top: ".25em",
+    position: "relative",
+    color: theme.palette.common.discovery_blue,
+  },
 }));
 
 const LoginButton = (props) => {
@@ -106,82 +121,73 @@ const LoginButton = (props) => {
     <>
       <Button
         data-testid="loginButton"
-        variant="outlined"
+        variant="contained"
         aria-describedby={id}
         className={classes.loginButton}
         onClick={ loggedIn ? handleLogout : handleClick }
       >
-        <Typography variant={"overline"}>
+        <Typography variant={"button"}>
           <b>{ loggedIn ? "Logout" : "Login" }</b>
         </Typography>
       </Button>
-      <Popover
-        variant="persistent"
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "center",
-        }}
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "center",
-        }}
+      <Dialog
+        maxWidth="md"
         open={open}
-        anchorEl={anchorEl}
         onClose={handleClose}
-        classes={{
-          root: classes.popover,
-          paper: classes.drawerPaper,
+        PaperProps={{
+          className: classes.drawerPaper,
         }}
       >
-        <Grid container>
-          <Grid item xs={12}>
-            <Typography
-              variant="h3"
-              className={classes.loginText}
-              data-testid="loginForm"
+        <DialogTitle disableTypography={true}>
+          <Typography
+            variant="subtitle2"
+            className={classes.loginText}
+            data-testid="loginForm"
+          >
+              Credentials Please?
+          </Typography>
+        </DialogTitle>
+        <DialogContent className={classes.container}>
+          <form
+            className={classes.loginForm}
+            autoComplete="off"
+            onSubmit={handleLogin}
+          >
+            <Box>
+              <TextField
+                required
+                fullWidth
+                id="username"
+                inputRef={uRef}
+                className={classes.formField}
+                label="Username/Email"
+                variant="outlined"
+              />
+            </Box>
+            <Box>
+              <TextField
+                required
+                fullWidth
+                id="password"
+                inputRef={pwdRef}
+                className={classes.formField}
+                label="Password"
+                type="password"
+                variant="outlined"
+              />
+            </Box>
+            <Button
+              type="submit"
+              variant="contained"
+              className={classes.submitButton}
             >
-              Login to the Open Practice Library!
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <form
-              className={classes.loginForm}
-              autoComplete="off"
-              onSubmit={handleLogin}
-            >
-              <div>
-                <TextField
-                  required
-                  id="username"
-                  inputRef={uRef}
-                  className={classes.formField}
-                  label="Username/Email"
-                  variant="outlined"
-                />
-                <TextField
-                  required
-                  id="password"
-                  inputRef={pwdRef}
-                  className={classes.formField}
-                  label="Password"
-                  type="password"
-                  variant="outlined"
-                />
-              </div>
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                className={classes.submitButton}
-              >
-                <Typography variant={"overline"} className={classes.btnText}>
-                  <b>Login</b>
-                </Typography>
-              </Button>
-            </form>
-          </Grid>
-        </Grid>
-      </Popover>
+              <Typography variant={"button"} className={classes.btnText}>
+                Log me in <ArrowForwardIcon className={classes.arrowForward} />
+              </Typography>
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

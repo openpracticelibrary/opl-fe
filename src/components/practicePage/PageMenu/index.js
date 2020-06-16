@@ -40,9 +40,9 @@ const useStyles = makeStyles((theme) => ({
 
 const sections = [
   {title: "What is it", ref: "whatIsRef"},
-  {title: "Media", ref: "mediaRef"},
   {title: "Why do it", ref: "whyDoRef"},
   {title: "How to", ref: "howToRef"},
+  {title: "Media", ref: "mediaRef"},
   {title: "Resources", ref: "resourceRef"},
   {title: "AMA", ref: "amaRef"},
 ];

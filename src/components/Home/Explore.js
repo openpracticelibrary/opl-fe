@@ -10,33 +10,41 @@ import * as animationData from "./lotties/17059-galacticons-animated.json";
 
 const useStyles = makeStyles((theme) => ({
   exploreBox: {
-    position: "absolute",
-    marginRight: "auto",
-    marginLeft: "auto",
-    width: "30%",
-    marginTop: "10%",
-    left: 0,
-    right: 0,
-    justifyContent: "center",
-    textAlign: "center",
+    display: "flex",
+    alignItems: "flex-start",
+    alignContent: "flex-start",
+    justifyContent: "flex-start",
+    textAlign: "left",
+    paddingTop: theme.spacing(10),
+    width: "80%",
+    height: "25rem",
+    flexWrap: "wrap",
   },
   explore: {
     position: "relative",
     justifyContent: "center",
-    backgroundColor: theme.palette.common.white,
-    height: "670px",
+    backgroundImage: `linear-gradient(${theme.palette.common.true_white}, ${theme.palette.common.white})`,
     width: "100%",
   },
   exploreButton: {
-    textAlign: "center",
-    height: "70px",
-    width: "343px",
-    borderRadius: "35px",
-    backgroundColor: theme.palette.common.true_white,
-    margin: "41px",
+    borderRadius: "32px",
+    width: "15rem",
+    backgroundColor: "#d7e6f4",
+    marginTop: theme.spacing(5),
+    padding: theme.spacing(2),
+    borderColor: theme.palette.common.discovery_blue,
+    borderWidth: "2px",
+    borderStyle: "solid",
   },
   learn: {
-    textAlign: "center",
+    textAlign: "left",
+    fontWeight: "normal",
+  },
+  exploreIcon: {
+    display: "flex",
+    alignItems: "end",
+    alignContent: "end",
+    justifyContent: "end",
   },
 }));
 
@@ -57,22 +65,30 @@ const Explore = (props) => {
       direction="row"
       className={classes.explore}
     >
-      <Box className={classes.exploreBox}>
-        <Typography variant={"h1"} className={classes.learn} data-testid="exploreMsg">
-          {props.exploreMessage}
-        </Typography>
-        <Button
-          variant="contained"
-          disableElevation
-          className={classes.exploreButton}
-          onClick={() => navigate("/practice")}
-        >
-          <Typography variant={"overline"}>
-            <b>Explore the library</b>
-          </Typography>
-        </Button>
-        <Lottie lottieRef={lottieRef} height={120} width={120} />
-      </Box>
+      <Grid item xs={6}>
+        <Box className={classes.exploreIcon}>
+          <Lottie lottieRef={lottieRef} height={350} width={350} />
+        </Box>
+      </Grid>
+      <Grid item xs={6}>
+        <Box className={classes.exploreBox}>
+          <Box>
+            <Typography variant={"h1"} className={classes.learn} data-testid="exploreMsg">
+              {props.exploreMessage}
+            </Typography>
+          </Box>
+          <Box>
+            <Button
+              variant="contained"
+              disableElevation
+              className={classes.exploreButton}
+              onClick={() => navigate("/practice")}
+            >
+             Explore the library
+            </Button>
+          </Box>
+        </Box>
+      </Grid>
     </Grid>
   )
 };

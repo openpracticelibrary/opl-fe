@@ -11,6 +11,7 @@ const brownish_grey = "#717171";
 const brown_grey = "#a0a0a0";
 const black = "#2e2e2e";
 const true_white = "#ffffff";
+const green_gray = "#596562";
 
 export default createMuiTheme({
   palette: {
@@ -26,6 +27,7 @@ export default createMuiTheme({
       black: `${black}`,
       lighter_white: `${lighter_white}`,
       true_white: `${true_white}`,
+      green_gray: `${green_gray}`,
     },
     primary: {
       main: `${black}`,
@@ -41,11 +43,11 @@ export default createMuiTheme({
   },
 
   typography: {
-    fontFamily: ["Noto Serif", "Assistant", "Roboto", "Itim"],
+    fontFamily: ["Noto Serif", "Roboto", "Quicksand"],
 
     //Main Title
     h1: {
-      fontFamily: "Noto Serif",
+      fontFamily: "Quicksand",
       fontWeight: "bold",
       fontSize: "2.5rem",
       color: `${black}`,
@@ -53,7 +55,7 @@ export default createMuiTheme({
 
     //Section Titles
     h2: {
-      fontFamily: "Noto Serif",
+      fontFamily: "Quicksand",
       fontWeight: "bold",
       fontSize: "1.625rem",
       color: `${black}`,
@@ -70,15 +72,23 @@ export default createMuiTheme({
 
     // Landing page large text
     h4: {
-      fontFamily: "Itim",
-      fontWeight: "normal",
+      fontFamily: "Quicksand",
+      fontWeight: "bold",
       fontSize: "6rem",
+      color: `${black}`,
+    },
+
+    // Landing page text
+    h5: {
+      fontFamily: "Quicksand",
+      fontWeight: "normal",
+      fontSize: "2.5rem",
       color: `${black}`,
     },
 
     //Subtitle
     subtitle1: {
-      fontFamily: "Noto Serif",
+      fontFamily: "Quicksand",
       fontWeight: "normal",
       fontSize: "1.25rem",
       lineHeight: "1.8125rem",
@@ -87,9 +97,9 @@ export default createMuiTheme({
 
     //List Text
     subtitle2: {
-      fontFamily: "Noto Serif",
+      fontFamily: "Quicksand",
       fontWeight: "normal",
-      fontSize: "1rem",
+      fontSize: "2rem",
       lineHeight: "2.375rem",
       color: `${brownish_grey}`,
     },
@@ -114,7 +124,7 @@ export default createMuiTheme({
 
     //NotoSerif-Bold
     body2: {
-      fontFamily: "Noto Serif",
+      fontFamily: "Quicksand",
       fontWeight: "bold",
       fontSize: "1rem",
       lineHeight: "1.375rem",
@@ -123,17 +133,18 @@ export default createMuiTheme({
 
     //Navigation Text
     button: {
-      fontFamily: "Assistant",
+      fontFamily: "Quicksand",
       fontWeight: "SemiBold",
-      fontSize: "0.75rem",
+      fontSize: "1.00rem",
       lineHeight: "1.8125rem",
       letterSpacing: "0.05625rem",
       color: `${brownish_grey}`,
+      textTransform: "none",
     },
 
     //Tiny Text
     caption: {
-      fontFamily: "Assistant",
+      fontFamily: "Quicksand",
       fontWeight: "normal",
       fontSize: "0.5rem",
       lineHeight: "0.5rem",
@@ -143,7 +154,7 @@ export default createMuiTheme({
 
     //Assistant SemiBold
     overline: {
-      fontFamily: "Assistant",
+      fontFamily: "Quicksand",
       fontWeight: "normal",
       fontSize: "0.75rem",
       lineHeight: "0.15125rem",

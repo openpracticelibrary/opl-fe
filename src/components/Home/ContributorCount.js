@@ -8,11 +8,11 @@ import { GET_CONTRIBUTORS } from "../../graphql";
 
 const useStyles = makeStyles((theme) => ({
   contributorNum: {
-    fontFamily: "Itim",
+    fontFamily: "Quicksand",
     fontSize: "200px",
-    fontWeight: "normal",
+    fontWeight: "bold",
     textAlign: "center",
-    color: theme.palette.common.black,
+    color: theme.palette.common.discovery_blue,
   },
 }));
 

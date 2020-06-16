@@ -2,18 +2,15 @@
 
 exports[`matches the snapshot 1`] = `
 <div
-  className="MuiGrid-root makeStyles-titleBox-209 MuiGrid-container"
+  className="MuiGrid-root makeStyles-titleBox-229 MuiGrid-container"
 >
   <div
-    className="MuiBox-root MuiBox-root-321 makeStyles-logo-210"
+    className="MuiBox-root MuiBox-root-340 makeStyles-logo-230"
   >
     <svg
-      style={
-        Object {
-          "margin": -5,
-        }
-      }
+      height="250px"
       viewBox="0 0 185 18"
+      width="383px"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
@@ -68,10 +65,10 @@ exports[`matches the snapshot 1`] = `
     </svg>
   </div>
   <div
-    className="MuiBox-root MuiBox-root-322 makeStyles-loginBox-211"
+    className="MuiBox-root MuiBox-root-341 makeStyles-loginBox-231"
   >
     <button
-      className="MuiButtonBase-root MuiButton-root MuiButton-outlined makeStyles-loginButton-325"
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-loginButton-344"
       data-testid="loginButton"
       disabled={false}
       onBlur={[Function]}
@@ -93,7 +90,7 @@ exports[`matches the snapshot 1`] = `
         className="MuiButton-label"
       >
         <span
-          className="MuiTypography-root MuiTypography-overline"
+          className="MuiTypography-root MuiTypography-button"
         >
           <b>
             Login
@@ -103,10 +100,10 @@ exports[`matches the snapshot 1`] = `
     </button>
   </div>
   <div
-    className="MuiBox-root MuiBox-root-396 makeStyles-textBox-212"
+    className="MuiBox-root MuiBox-root-428 makeStyles-textBox-232"
   >
     <h4
-      className="MuiTypography-root makeStyles-hello-213 MuiTypography-h4"
+      className="MuiTypography-root makeStyles-hello-233 MuiTypography-h4"
     >
       <span
         className=""
@@ -115,46 +112,58 @@ exports[`matches the snapshot 1`] = `
         Wazzup
       </span>
     </h4>
-    <h1
-      className="MuiTypography-root makeStyles-welcome-214 MuiTypography-h1"
+    <h5
+      className="MuiTypography-root makeStyles-welcome-234 MuiTypography-h5"
       data-testid="welcomeText"
     >
       What's up
-    </h1>
-    <h1
-      className="MuiTypography-root MuiTypography-h1"
+    </h5>
+    <h5
+      className="MuiTypography-root MuiTypography-h5"
       data-testid="inquiryText"
     >
       What is up?
-    </h1>
-  </div>
-  <div
-    className="MuiBox-root MuiBox-root-397 makeStyles-welcomeBottom-215"
-  >
+    </h5>
     <p
-      className="MuiTypography-root MuiTypography-overline MuiTypography-alignCenter"
+      className="MuiTypography-root MuiTypography-button"
     >
       <b>
         Tell me more
       </b>
-    </p>
-    <svg
-      aria-hidden={true}
-      className="MuiSvgIcon-root makeStyles-arrowIcon-216"
-      focusable="false"
-      onClick={[Function]}
-      viewBox="0 0 24 24"
-    >
-      <svg
-        clipRule="evenodd"
-        fillRule="evenodd"
-        xmlns="http://www.w3.org/2000/svg"
+      <button
+        className="MuiButtonBase-root MuiIconButton-root makeStyles-arrowIcon-235"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
       >
-        <path
-          d="M24 12c0-6.623-5.377-12-12-12s-12 5.377-12 12 5.377 12 12 12 12-5.377 12-12zm-1 0c0-6.071-4.929-11-11-11s-11 4.929-11 11 4.929 11 11 11 11-4.929 11-11zm-11.5 4.828l-3.763-4.608-.737.679 5 6.101 5-6.112-.753-.666-3.747 4.604v-11.826h-1v11.828z"
-        />
-      </svg>
-    </svg>
+        <span
+          className="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+            />
+          </svg>
+        </span>
+      </button>
+    </p>
   </div>
 </div>
 `;

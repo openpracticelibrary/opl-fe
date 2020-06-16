@@ -44,7 +44,7 @@ export default function Home(props) {
           <CuratedPractices />
         </Grid>
         <Explore
-          exploreMessage="Learn something new from your peers & experiment with best practices!"
+          exploreMessage="Learn something new from your peers and experiment with best practices!"
         />
       </Grid>
     </>
