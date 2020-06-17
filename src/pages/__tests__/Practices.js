@@ -49,7 +49,7 @@ const apolloMocks = [
       query: GET_PRACTICES,
       variables: {
         start: 0,
-        limit: 8
+        limit: 12
       }
     },
     result: { data: { practices: mockPracticeData } }

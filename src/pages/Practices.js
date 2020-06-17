@@ -47,7 +47,7 @@ export default function Practices(props) {
     {
       variables: {
         start: 0,
-        limit: 8
+        limit: 12
       },
       fetchPolicy: "cache-and-network"
     }
