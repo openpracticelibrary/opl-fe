@@ -1,3 +1,4 @@
+export { default as AddIcon } from './AddIcon';
 export { default as AmaIcon } from './AmaIcon';
 export { default as QuestionIcon } from './QuestionIcon';
 export { default as FilledHeartIcon } from './FilledHeartIcon';
@@ -12,6 +13,7 @@ export { default as PodcastIcon } from './PodcastIcon';
 export { default as DownloadIcon } from './DownloadIcon';
 export { default as LabsIcon } from './LabsIcon';
 export { default as ArrowDownIcon } from './ArrowDownIcon';
+export { default as ArrowRightIcon } from './ArrowRightIcon';
 export { default as OPLLogo } from './OPLLogo';
 export { default as EditIcon } from './EditIcon';
 export { default as EmailIcon } from './EmailIcon';
