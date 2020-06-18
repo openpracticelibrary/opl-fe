@@ -18,7 +18,11 @@ export { default as LIKE_PRACTICE } from './mutations/likePracticeMutation';
 export { default as MODIFY_PRACTICE_TAGS } from './mutations/modifyPracticeTagsMutation';
 export { default as LOGIN } from './mutations/login';
 export { default as UPDATE_PRACTICE } from './mutations/updatePractice';
+<<<<<<< HEAD
 export { default as UPDATE_MEDIA_GALLERY } from './mutations/updateMediaGallery';
+=======
+export { default as UPDATE_PRACTICE_RESOURCES } from './mutations/updatePracticeResources';
+>>>>>>> 0dc9ec296e61fa0df62377e8e5d6c1c6e7073c3d
 
 // cache queries
 export { default as currentUserQuery } from './queries/currentUserQuery';

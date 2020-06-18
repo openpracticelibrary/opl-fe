@@ -2,6 +2,7 @@ import React from "react";
 import { Typography } from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 import ReactMarkdown from "react-markdown";
+import ResourceAddLink from "./ResourceAddLink";
 import ResourceListItem from "./ResourceListItem";
 import { makeStyles } from "@material-ui/core/styles/index";
 import { DownloadIcon, PodcastIcon, WebLinkIcon } from "../../../assets/icons";
@@ -60,6 +61,11 @@ export default function ResourcesWeLove(props) {
               {Icon[resource.linkType]}
             </ResourceListItem>
           ))}
+        </Box>
+
+        <Box className={classes.indent}>
+          <ResourceAddLink>
+          </ResourceAddLink>
         </Box>
       </Box>
     </>
