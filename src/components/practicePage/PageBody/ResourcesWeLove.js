@@ -64,7 +64,7 @@ export default function ResourcesWeLove(props) {
         </Box>
 
         <Box className={classes.indent}>
-          <ResourceAddLink>
+          <ResourceAddLink practiceId={props.practiceId} prevResources={props.links}>
           </ResourceAddLink>
         </Box>
       </Box>

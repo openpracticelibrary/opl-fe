@@ -85,11 +85,22 @@ export default function ResourceAddLink(props) {
   ];
 
   const handleSubmit = async () => {
-    const newResources = [{
-      link: refLinkUrl.current.value,
-      linkType: linkTypes[selectedLinkTypeIndex],
-      description: refLinkDesc.current.value,
-    }];
+    const prevResourceList = props.prevResources.map(resource => {
+      return {
+        link: resource.link,
+        linkType: resource.linkType,
+        description: resource.description
+      }
+    });
+
+    const additionalResource = [
+      {
+        link: refLinkUrl.current.value,
+        linkType: linkTypes[selectedLinkTypeIndex],
+        description: refLinkDesc.current.value,
+      }
+    ];
+    const newResources = prevResourceList.concat(additionalResource);
     const { data } = await updatePracticeResources({
       variables: {
         practiceId: props.practiceId,
@@ -117,7 +128,7 @@ export default function ResourceAddLink(props) {
 
   const handleClose = (event) => {
     setOpen(false);
-    setAnchorEl(null);  
+    setAnchorEl(null);
     console.log(`handleClose: linkType=${linkType}`);
     console.log(`handleClose: refLinkUrl=${refLinkUrl.current ? refLinkUrl.current.value : false}`);
     console.log(`handleClose: refLinkDesc=${refLinkDesc.current ? refLinkDesc.current.value : false}`);
@@ -137,9 +148,9 @@ export default function ResourceAddLink(props) {
           >
             Add a reference link
           </Button>
-          <Dialog 
-            open={open} 
-            onClose={handleClose} 
+          <Dialog
+            open={open}
+            onClose={handleClose}
             aria-labelledby="link-type-dialog-title"
             PaperProps={{
               className: classes.drawerPaper,
@@ -159,12 +170,12 @@ export default function ResourceAddLink(props) {
                   <TextField
                     id="outlined-select-currency"
                     select
-                    label="Link Type *"                
+                    label="Link Type *"
                     variant="outlined"
                     margin="dense"
                     fullWidth
                   >
-                    
+
                     {linkTypes.map((option, index) => (
                       <MenuItem
                         key={option}
@@ -177,8 +188,8 @@ export default function ResourceAddLink(props) {
                   </TextField>
                 </Grid>
 */}               <Grid item xs={12} sm={5}>
-                  <List 
-                    component="nav" 
+                  <List
+                    component="nav"
                     aria-label="Link Type *"
                     variant="outlined"
                   >
@@ -245,11 +256,11 @@ export default function ResourceAddLink(props) {
               >
                 <Grid item>
                   <Button
-                    onClick={handleSubmit} 
+                    onClick={handleSubmit}
                     variant="contained"
                     className={classes.submitButton}
                   >
-                    <Typography 
+                    <Typography
                       variant="button"
                       className={classes.btnText}
                     >
