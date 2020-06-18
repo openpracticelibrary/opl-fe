@@ -5,10 +5,10 @@ import { Grid, Chip } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "transparent",
-    color: "#717171"
+    color: theme.palette.common.brownish_grey,
   },
   label: {
-    color: "#717171",
+    color: theme.palette.common.brownish_grey,
   },
 }));
 

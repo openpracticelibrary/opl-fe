@@ -6,25 +6,18 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: 0,
-    minWidth: 260,
+    marginTop: ".5rem",
+    minWidth: "20rem",
   },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-  selectMenu: {
-    
-  }
 }));
 
 const DropDownSelectionFilter = (props) => {
   const classes = useStyles();
-  const { inputLabel, items, handleFilterSelect, selectedFilter } = props;
+  const { items, handleFilterSelect, selectedFilter } = props;
 
   return (
-    <FormControl className={classes.formControl} variant="outlined">
+    <FormControl className={classes.formControl} variant="outlined" size="small" fullWidth>
       <Select
-        label={inputLabel}
         value={selectedFilter}
         onChange={handleFilterSelect}
         classes={classes.selectEmpty}

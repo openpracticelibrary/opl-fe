@@ -84,12 +84,14 @@ export default function Practices(props) {
   ] = React.useState(mobiusLoopArray[0]);
 
   const popularMenuItems = {
-    Popular:"upvotes:DESC",
-    Newest:"createdAt:DESC",
-    Curated:"curated:DESC"
+    Popular: "upvotes:DESC",
+    Newest: "createdAt:DESC",
+    Curated: "curated:DESC",
   };
 
-  const [selectedPopularFilter, setPopularFilterTitle] = React.useState(Object.keys(popularMenuItems)[0]);
+  const [selectedPopularFilter, setPopularFilterTitle] = React.useState(
+    Object.keys(popularMenuItems)[0]
+  );
 
   const tagArray = [
     ...(selectedFilterTag !== "ALL" ? [selectedFilterTag.toLowerCase()] : []),
@@ -105,7 +107,7 @@ export default function Practices(props) {
         start: 0,
         limit: 8,
         tag: tagArray,
-        sort: popularMenuItems[item]
+        sort: popularMenuItems[item],
       },
     });
     setPage(8);
@@ -126,7 +128,7 @@ export default function Practices(props) {
           ...(selectedMobiusLoopFilter !== "Entire Process Model"
             ? [selectedMobiusLoopFilter.toLowerCase()]
             : []),
-        ]
+        ],
       },
     });
     setPage(8);
@@ -139,7 +141,7 @@ export default function Practices(props) {
       ...(event.target.value !== "Entire Process Model"
         ? [event.target.value.toLowerCase()]
         : []),
-    ]
+    ];
     refetch({
       variables: {
         start: 0,
@@ -158,7 +160,7 @@ export default function Practices(props) {
         start: 0,
         limit: 8,
         tag: tagArray,
-        sort: popularMenuItems[selectedPopularFilter]
+        sort: popularMenuItems[selectedPopularFilter],
       },
       fetchPolicy: "cache-and-network",
       notifyOnNetworkStatusChange: true,
