@@ -87,7 +87,7 @@ export default function ResourceAddLink(props) {
   const handleSubmit = async () => {
     const newResources = [{
       link: refLinkUrl.current.value,
-      linkType: linkTypes.current.value,
+      linkType: linkTypes[selectedLinkTypeIndex],
       description: refLinkDesc.current.value,
     }];
     const { data } = await updatePracticeResources({
@@ -164,6 +164,7 @@ export default function ResourceAddLink(props) {
                     margin="dense"
                     fullWidth
                   >
+                    
                     {linkTypes.map((option, index) => (
                       <MenuItem
                         key={option}
@@ -184,7 +185,7 @@ export default function ResourceAddLink(props) {
                     <ListItem
                       button
                       aria-haspopup="true"
-                      aria-controls="link-type-menu"
+                      aria-controls="llinkType"
                       aria-label="Link Type *"
                       onClick={handleClickListItem}
                     >
@@ -192,7 +193,7 @@ export default function ResourceAddLink(props) {
                     </ListItem>
                   </List>
                   <Menu
-                    id="link-type-menu"
+                    id="linkType"
                     data-link-type={"none-selected"}
                     anchorEl={anchorEl}
                     keepMounted
@@ -214,7 +215,7 @@ export default function ResourceAddLink(props) {
                 <Grid item xs={12} sm={7}>
                   <TextField
                     margin="dense"
-                    id="link-url"
+                    id="link"
                     label="Link URL*"
                     type="url"
                     variant="outlined"
@@ -225,7 +226,7 @@ export default function ResourceAddLink(props) {
                 <Grid item xs={12}>
                   <TextField
                     margin="dense"
-                    id="link-description"
+                    id="description"
                     label="Link Description*"
                     type="text"
                     variant="outlined"
