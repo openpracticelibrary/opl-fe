@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "space-evenly",
     padding: theme.spacing(2, 0),
+    position: "sticky",
   },
   wrapBox: {
     display: "flex",
@@ -62,7 +63,7 @@ export default function PageMenu(props) {
         <Toolbar
           component="nav"
           variant="dense"
-          disableGutters
+          className={classes.toolbar}
         >
           <Grid
             container
@@ -73,9 +74,9 @@ export default function PageMenu(props) {
               <Grid
                 container
                 direction="row"
-                justify="flex-start"
+                justify="space-between"
                 alignItems="flex-start"
-                spacing={8}
+                spacing={1}
               >
                 {sections.map((section, i) => (
                   <Grid item key={i}>
