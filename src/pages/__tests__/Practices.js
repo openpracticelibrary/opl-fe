@@ -49,7 +49,9 @@ const apolloMocks = [
       query: GET_PRACTICES_BY_TAG_PAGINATION,
       variables: {
         start: 0,
-        limit: 8
+        limit: 8,
+        sort: "upvotes:DESC",
+        tag: [],
       }
     },
     result: { data: { practices: mockPracticeData } }
