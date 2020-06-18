@@ -6,13 +6,18 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import Typography from "@material-ui/core/Typography";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import TextField from '@material-ui/core/TextField';
-import { AddIcon, ArrowRightIcon } from "../../../assets/icons";
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import { AddIcon } from "../../../assets/icons";
+import Grid from '@material-ui/core/Grid';
+import { useMutation } from "@apollo/react-hooks";
+import { UPDATE_PRACTICE_RESOURCES } from "../../../graphql";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,47 +26,48 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     margin: theme.spacing(1),
   },
+  container: {
+    flexShrink: 0,
+  },
   space: {
     paddingRight: theme.spacing(2),
+  },
+  drawerPaper: {
+    borderRadius: "17px",
+    borderWidth: "3px",
+    borderStyle: "solid",
+    display: "flex",
+    textAlign: "center",
+    padding: theme.spacing(3),
+  },
+  dialogText: {
+    margin: theme.spacing(1),
+  },
+  submitButton: {
+    margin: theme.spacing(1),
+    borderRadius: "32px",
+    borderStyle: "solid",
+    borderWidth: "2px",
+    borderColor: "#596562",
+  },
+  arrowForward: {
+    top: ".25em",
+    position: "relative",
+  },
+  btnText: {
+    padding: theme.spacing(1),
+    color: theme.palette.common.black,
   },
   color: {
     color: theme.palette.common.black,
   },
 }));
 
-const handleSubmit = async () => {
-  // const prevMediaGallery = props.currentMediaGallery.map(file => { return { link: file.link } });
-  // const additionsGallery = files.map(file => { return { link: file.url } });
-  // const newGallery = prevMediaGallery.concat(additionsGallery);
-  // const { data } = await updateMediaGallery({
-  //   variables: {
-  //     practiceId: props.practiceId,
-  //     newGallery,
-  //   },
-  // });
-
-  // if (data) console.log('Updated!');
-};
-
-const handleAddLink = () => {
-  // if (linkInputRef.current.value.includes(",")) {
-  //   const multiFiles = linkInputRef.current.value.split(",").map(link => {
-  //     return {
-  //       url: link.trim(),
-  //       direct: true
-  //     }
-  //   });
-  //   setFiles([...files, ...multiFiles]);
-  // } else {
-  //   const newFile = { url: linkInputRef.current.value, direct: true };
-  //   setFiles([...files, newFile]);
-  // }
-
-  // linkInputRef.current.value = "";
-};
-
 export default function ResourceAddLink(props) {
   const classes = useStyles();
+
+  const [updatePracticeResources] = useMutation(UPDATE_PRACTICE_RESOURCES);
+
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedLinkTypeIndex, setSelectedLinkTypeIndex] = React.useState(null);
@@ -70,11 +76,28 @@ export default function ResourceAddLink(props) {
   const refLinkDesc = React.useRef();
 
   const linkTypes = [
-    'Choose Link Type',
+    'podcast',
     'web',
-    'shopping list',
+    'download',
     'book',
+    'video',
+    'purchase',
   ];
+
+  const handleSubmit = async () => {
+    const newResources = [{
+      link: refLinkUrl.current.value,
+      linkType: linkTypes.current.value,
+      description: refLinkDesc.current.value,
+    }];
+    const { data } = await updatePracticeResources({
+      variables: {
+        practiceId: props.practiceId,
+        newResources,
+      },
+    });
+    if (data) console.log('Updated!');
+  };
 
   const handleClickListItem = (event) => {
     console.log(`handleClickListItem: event.currentTarget=${event.currentTarget}`);
@@ -94,8 +117,7 @@ export default function ResourceAddLink(props) {
 
   const handleClose = (event) => {
     setOpen(false);
-    setAnchorEl(null);
-    
+    setAnchorEl(null);  
     console.log(`handleClose: linkType=${linkType}`);
     console.log(`handleClose: refLinkUrl=${refLinkUrl.current ? refLinkUrl.current.value : false}`);
     console.log(`handleClose: refLinkDesc=${refLinkDesc.current ? refLinkDesc.current.value : false}`);
@@ -113,78 +135,133 @@ export default function ResourceAddLink(props) {
             startIcon={<AddIcon />}
             onClick={handleClickOpen}
           >
-          Add a reference link
+            Add a reference link
           </Button>
           <Dialog 
             open={open} 
             onClose={handleClose} 
             aria-labelledby="link-type-dialog-title"
+            PaperProps={{
+              className: classes.drawerPaper,
+            }}
           >
-            <DialogTitle id="link-type-dialog-title">Add a link you love!</DialogTitle>
-            <DialogContent>
-              <List 
-                component="nav" 
-                aria-label="Link Type*"
-                variant="outlined"
+            <DialogTitle disableTypography={true} id="link-type-dialog-title">
+              <Typography
+                variant="subtitle2"
+                className={classes.dialogText}
               >
-                <ListItem
-                  button
-                  aria-haspopup="true"
-                  aria-controls="link-type-menu"
-                  aria-label="Link Type*"
-                  onClick={handleClickListItem}
-                >
-                  <ListItemText primary="Link Type*" secondary={linkTypes[selectedLinkTypeIndex]} />
-                </ListItem>
-              </List>
-              <Menu
-                id="link-type-menu"
-                data-link-type={"none-selected"}
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                variant="menu"
-                onClose={handleClose}
-              >
-                {linkTypes.map((option, index) => (
-                  <MenuItem
-                    key={option}
-                    disabled={index === 0}
-                    selected={index === selectedLinkTypeIndex}
-                    onClick={(event) => handleLinkTypeSelect(event, index)}
+                Add a link you love!
+              </Typography>
+            </DialogTitle>
+            <DialogContent className={classes.container}>
+              <Grid container>
+{/*                <Grid item xs={12}>
+                  <TextField
+                    id="outlined-select-currency"
+                    select
+                    label="Link Type *"                
+                    variant="outlined"
+                    margin="dense"
+                    fullWidth
                   >
-                    {option}
-                  </MenuItem>
-                ))}
-              </Menu>
-              <TextField
-                margin="dense"
-                id="link-url"
-                label="Link URL*"
-                type="url"
-                variant="outlined"
-                inputRef={refLinkUrl}
-                fullWidth
-              />
-              <TextField
-                margin="dense"
-                id="link-description"
-                label="Link Description*"
-                type="text"
-                variant="outlined"
-                inputRef={refLinkDesc}
-                fullWidth
-              />
+                    {linkTypes.map((option, index) => (
+                      <MenuItem
+                        key={option}
+                        selected={index === selectedLinkTypeIndex}
+                        onClick={(event) => handleLinkTypeSelect(event, index)}
+                      >
+                        {option}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+                </Grid>
+*/}               <Grid item xs={12} sm={5}>
+                  <List 
+                    component="nav" 
+                    aria-label="Link Type *"
+                    variant="outlined"
+                  >
+                    <ListItem
+                      button
+                      aria-haspopup="true"
+                      aria-controls="link-type-menu"
+                      aria-label="Link Type *"
+                      onClick={handleClickListItem}
+                    >
+                      <ListItemText primary="Link Type *" secondary={linkTypes[selectedLinkTypeIndex]} />
+                    </ListItem>
+                  </List>
+                  <Menu
+                    id="link-type-menu"
+                    data-link-type={"none-selected"}
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    variant="menu"
+                    onClose={handleClose}
+                  >
+                    {linkTypes.map((option, index) => (
+                      <MenuItem
+                        key={option}
+                        selected={index === selectedLinkTypeIndex}
+                        onClick={(event) => handleLinkTypeSelect(event, index)}
+                      >
+                        {option}
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </Grid>
+                <Grid item xs={12} sm={7}>
+                  <TextField
+                    margin="dense"
+                    id="link-url"
+                    label="Link URL*"
+                    type="url"
+                    variant="outlined"
+                    inputRef={refLinkUrl}
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    margin="dense"
+                    id="link-description"
+                    label="Link Description*"
+                    type="text"
+                    variant="outlined"
+                    inputRef={refLinkDesc}
+                    fullWidth
+                  />
+                </Grid>
+              </Grid>
             </DialogContent>
             <DialogActions>
-              <Button 
-                variant="contained"
-                onClick={handleClose} 
-                color="none"
-                endIcon={<ArrowRightIcon />}
+              <Grid
+                container
+                direction="row"
+                justify="space-around"
+                alignItems="center"
               >
-              Contribute this link
-              </Button>
+                <Grid item>
+                  <Button
+                    onClick={handleSubmit} 
+                    variant="contained"
+                    className={classes.submitButton}
+                  >
+                    <Typography 
+                      variant="button"
+                      className={classes.btnText}
+                    >
+                      Contribute this link <ArrowForwardIcon className={classes.arrowForward} />
+                    </Typography>
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Typography variant={"overline"}>
+                    *Required fields :)
+                  </Typography>
+                </Grid>
+              </Grid>
             </DialogActions>
           </Dialog>
         </Box>

@@ -252,7 +252,7 @@ export default function PracticePageContent(props) {
                 title={data.practices[0].title}
                 body={data.practices[0].body}
                 mediaGallery={data.practices[0].mediaGallery}
-                resources={data.practices[0].resources}
+                resources={data.practices[0].resources}                
                 ama={data.practices[0].ama}
                 whatIsRef={whatIsRef}
                 mediaRef={mediaRef}
