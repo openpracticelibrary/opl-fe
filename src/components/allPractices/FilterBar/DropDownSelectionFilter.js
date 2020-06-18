@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 
 const DropDownSelectionFilter = (props) => {
   const classes = useStyles();
-  const { inputLabel, items } = props;
+  const { inputLabel, items, handleFilterSelect, selectedFilter } = props;
 
   return (
     <FormControl className={classes.formControl} variant="outlined">
@@ -26,6 +26,8 @@ const DropDownSelectionFilter = (props) => {
         labelId="demo-simple-select-outlined-label"
         id="demo-simple-select-outlined"
         label={inputLabel}
+        value={selectedFilter}
+        onChange={handleFilterSelect}
       >
         <MenuItem value={inputLabel} disabled>
           {inputLabel}

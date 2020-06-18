@@ -67,6 +67,12 @@ export default function Practices(props) {
   // manage state of keyword search toggle
   const [keywordSearchToggle, setKeywordSearchToggle] = React.useState(false);
 
+  //manage filter selection mobius loop
+  const [
+    selectedMobiusLoopFilter,
+    setSelectedMobiusLoopFilter,
+  ] = React.useState(null);
+
   const ToggleKeywordSearch = () =>
     setKeywordSearchToggle(!keywordSearchToggle);
 
@@ -77,12 +83,37 @@ export default function Practices(props) {
         start: 0,
         limit: 8,
         ...(tag !== "ALL" && {
-          tag: tag.toLowerCase(),
+          tag: [tag.toLowerCase()],
         }),
       },
     });
     setPage(8);
   };
+
+  const HandleMobiusLoopSelect = (event) => {
+    setSelectedMobiusLoopFilter(event.target.value);
+    const tagArray = [
+      ...(selectedFilterTag !== "ALL" ? [selectedFilterTag.toLowerCase()] : []),
+      event.target.value.toLowerCase(),
+    ];
+    console.log("in here");
+    console.log(tagArray);
+    refetch({
+      variables: {
+        start: 0,
+        limit: 8,
+        tag: tagArray,
+      },
+    });
+    setPage(8);
+  };
+
+  const tagArray = [
+    ...(selectedFilterTag !== "ALL" ? [selectedFilterTag.toLowerCase()] : []),
+    ...(selectedMobiusLoopFilter !== null
+      ? [selectedMobiusLoopFilter.toLowerCase()]
+      : []),
+  ];
 
   const { loading, error, data, refetch, networkStatus, fetchMore } = useQuery(
     GET_PRACTICES_BY_TAG_PAGINATION,
@@ -90,9 +121,7 @@ export default function Practices(props) {
       variables: {
         start: 0,
         limit: 8,
-        ...(selectedFilterTag !== "ALL" && {
-          tag: selectedFilterTag.toLowerCase(),
-        }),
+        tag: tagArray,
       },
       fetchPolicy: "cache-and-network",
       notifyOnNetworkStatusChange: true,
@@ -105,7 +134,7 @@ export default function Practices(props) {
       variables: {
         start: newPage,
         ...(selectedFilterTag !== "ALL" && {
-          tag: selectedFilterTag.toLowerCase(),
+          tag: [selectedFilterTag.toLowerCase()],
         }),
       },
       updateQuery: (prev, { fetchMoreResult }) => {
@@ -168,6 +197,8 @@ export default function Practices(props) {
               <DropDownSelectionFilter
                 inputLabel="Entire Process Model"
                 items={["Discovery", "Options", "Delivery", "Foundation"]}
+                selectedFilter={selectedMobiusLoopFilter}
+                handleFilterSelect={HandleMobiusLoopSelect}
               />
             </Grid>
             <Grid item>
