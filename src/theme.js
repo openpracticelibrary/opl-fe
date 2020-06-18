@@ -4,11 +4,11 @@ const white = "#f5f5f5";
 const lighter_white = "#fafafa";
 const insights_yellow = "#fdb815";
 const foundation_purple = "#8977b6";
-const discovery_blue = "#4b90cd";
-const delivery_green = "#3dadae";
+const discovery_blue = "#1975ff";
+const delivery_green = "#10D4A0";
 const very_light_grey = "#e9e9e9";
 const brownish_grey = "#717171";
-const brown_grey = "#a0a0a0";
+const brown_grey = "#596562";
 const black = "#2e2e2e";
 const true_white = "#ffffff";
 const green_gray = "#596562";
@@ -49,7 +49,7 @@ export default createMuiTheme({
     h1: {
       fontFamily: "Quicksand",
       fontWeight: "bold",
-      fontSize: "2.5rem",
+      fontSize: "2.875rem",
       color: `${black}`,
     },
 
@@ -82,7 +82,7 @@ export default createMuiTheme({
     h5: {
       fontFamily: "Quicksand",
       fontWeight: "normal",
-      fontSize: "2.5rem",
+      fontSize: "2rem",
       color: `${black}`,
     },
 
@@ -134,7 +134,7 @@ export default createMuiTheme({
     //Navigation Text
     button: {
       fontFamily: "Quicksand",
-      fontWeight: "SemiBold",
+      fontWeight: "600",
       fontSize: "1.00rem",
       lineHeight: "1.8125rem",
       letterSpacing: "0.05625rem",
@@ -155,11 +155,32 @@ export default createMuiTheme({
     //Assistant SemiBold
     overline: {
       fontFamily: "Quicksand",
-      fontWeight: "normal",
+      fontWeight: "600",
       fontSize: "0.75rem",
       lineHeight: "0.15125rem",
-      letterSpacing: "0.05625rem",
       color: `${brown_grey}`,
     },
+  },
+  overrides: {
+    MuiTooltip: {
+      tooltip: {
+        height: "30px",
+        width: "110px",
+        boxSizing: "border-box",
+        backgroundColor: `${true_white}`,
+        color: `${brown_grey}`,
+        borderRadius: "7px",
+        border: `1px solid ${discovery_blue}`,
+        boxShadow: "2px 0 4px 0 rgba(0,0,0,0.1)",
+        transform: "scaleY(-1)",
+        fontSize: "0.75rem",
+        fontFamily: "Quicksand",
+        fontWeight: "600",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textTransform: "uppercase",
+      },
+    }
   },
 });

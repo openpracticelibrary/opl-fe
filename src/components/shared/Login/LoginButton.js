@@ -32,11 +32,15 @@ const useStyles = makeStyles((theme) => ({
   loginButton: {
     borderRadius: "32px",
     width: "7rem",
-    backgroundColor: "#d7e6f4",
+    backgroundColor: "#dff1ff",
     padding: theme.spacing(2),
     borderColor: theme.palette.common.discovery_blue,
-    borderWidth: "2px",
+    borderWidth: "1px",
     borderStyle: "solid",
+  },
+  buttonText: {
+    fontWeight: "500",
+    color: theme.palette.common.black,
   },
   loginDrawerClose: {
     margin: theme.spacing(2),
@@ -126,8 +130,8 @@ const LoginButton = (props) => {
         className={classes.loginButton}
         onClick={ loggedIn ? handleLogout : handleClick }
       >
-        <Typography variant={"button"}>
-          <b>{ loggedIn ? "Logout" : "Login" }</b>
+        <Typography variant={"button"} className={classes.buttonText}>
+          { loggedIn ? "Logout" : "Login" }
         </Typography>
       </Button>
       <Dialog

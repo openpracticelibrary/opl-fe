@@ -4,7 +4,7 @@ import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 
 import { GET_PRACTICES } from "../../graphql";
-import Practices from "../Practices";
+import AllPractices from "../AllPractices";
 
 const mockPracticeData = [{
   __typename: "Practice",
@@ -59,7 +59,7 @@ const apolloMocks = [
 it("renders with graphql response", async () => {
   const { getByText, getByTestId } = render(
     <MockedProvider mocks={apolloMocks}>
-      <Practices />
+      <AllPractices />
     </MockedProvider>
   );
 

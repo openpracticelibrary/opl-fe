@@ -35,8 +35,14 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 360,
     backgroundColor: "inherit",
   },
+  headers: {
+    color: theme.palette.common.discovery_blue,
+  },
   nested: {
     paddingLeft: theme.spacing(3),
+  },
+  listItems: {
+    color: "#9FA4A3",
   },
 }));
 
@@ -52,29 +58,29 @@ export function TopListItems(props) {
   return (
     <List className={classes.root}>
       <ListSubheader>
-        <Typography variant="overline"> PRACTICES </Typography>
+        <Typography variant="overline" className={classes.headers}>Practices</Typography>
       </ListSubheader>
       <ListItem button>
-        <Typography variant="body2"> Please guide me </Typography>
+        <Typography variant="body2">Please guide me</Typography>
       </ListItem>
       <ListItemLink to="/practice" primary="See everything" toggle={toggle}/>
       <ListItem button onClick={handleClick}>
-        <Typography variant="body2"> By mobius loop </Typography>
+        <Typography variant="body2">By mobius loop</Typography>
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" className={classes.nested}>
           <ListItem button>
-            <Typography variant="body1"> Discovery </Typography>
+            <Typography variant="body2" className={classes.listItems}> Discovery </Typography>
           </ListItem>
           <ListItem button>
-            <Typography variant="body1"> Options </Typography>
+            <Typography variant="body2" className={classes.listItems}> Options </Typography>
           </ListItem>
           <ListItem button>
-            <Typography variant="body1"> Delivery </Typography>
+            <Typography variant="body2" className={classes.listItems}> Delivery </Typography>
           </ListItem>
           <ListItem button>
-            <Typography variant="body1"> Foundation </Typography>
+            <Typography variant="body2" className={classes.listItems}> Foundation </Typography>
           </ListItem>
         </List>
       </Collapse>
@@ -87,7 +93,7 @@ export function BottomListItems() {
   return (
     <List className={classes.root}>
       <ListSubheader>
-        <Typography variant="overline"> COMMUNITY </Typography>
+        <Typography variant="overline" className={classes.headers}>Community</Typography>
       </ListSubheader>
       <ListItem button>
         <Typography variant="body2"> Find a mentor </Typography>

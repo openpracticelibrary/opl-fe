@@ -39,11 +39,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  {title: "What is it", ref: "whatIsRef"},
-  {title: "Why do it", ref: "whyDoRef"},
-  {title: "How to", ref: "howToRef"},
-  {title: "Media", ref: "mediaRef"},
-  {title: "Resources", ref: "resourceRef"},
+  {title: "What", ref: "whatIsRef"},
+  {title: "Why", ref: "whyDoRef"},
+  {title: "How", ref: "howToRef"},
+  {title: "Look", ref: "mediaRef"},
+  {title: "Links", ref: "resourceRef"},
   {title: "AMA", ref: "amaRef"},
 ];
 
@@ -75,7 +75,7 @@ export default function PageMenu(props) {
                 direction="row"
                 justify="flex-start"
                 alignItems="flex-start"
-                spacing={3}
+                spacing={8}
               >
                 {sections.map((section, i) => (
                   <Grid item key={i}>

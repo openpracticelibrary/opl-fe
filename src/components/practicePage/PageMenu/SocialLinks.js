@@ -1,27 +1,22 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import {makeStyles} from "@material-ui/core/styles";
-import linkedinIcon from "../../../assets/images/li-in-bug.png";
-import { TwitterShareButton, LinkedinShareButton } from "react-share";
-import { TwitterIcon, MoreItemsIcon, FilledHeartIcon } from "../../../assets/icons";
+import { makeStyles } from "@material-ui/core/styles";
+import { EmailShareButton, TwitterShareButton, LinkedinShareButton } from "react-share";
+import { TwitterIcon, MoreItemsIcon, NounLoveIcon, LinkedInIcon, EmailIcon } from "../../../assets/icons";
 import Grid from "@material-ui/core/Grid";
 import IconButton from '@material-ui/core/IconButton';
-import {useMutation} from "@apollo/react-hooks";
-import {LIKE_PRACTICE} from "../../../graphql/";
+import { useMutation } from "@apollo/react-hooks";
+import { LIKE_PRACTICE } from "../../../graphql/";
 
 const useStyles = makeStyles((theme) => ({
-  url: {
-    fontSize: "12px",
-    fontWeight: "SemiBold",
+  root: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
     textAlign: "center",
-    lineHeight: 2.42,
-    color: theme.palette.common.brownish_grey,
+    alignContent: "center",
   },
-  button: {
-    "&:hover": {
-      backgroundColor: "transparent"
-    }
-  }
 }));
 
 
@@ -41,8 +36,7 @@ export default function SocialLinks(props) {
       <Grid
         container
         direction="row"
-        justify="flex-end"
-        alignItems="center"
+        className={classes.root}
         spacing={1}
       >
         <Grid item xs={3}>
@@ -50,10 +44,10 @@ export default function SocialLinks(props) {
             className={classes.url}
             variant="overline"
           >
-            LIKE
+            Like
           </Typography>
-          <IconButton onClick={handleLike} className={classes.button} data-testid={"heartIcon"}>
-            <FilledHeartIcon/>
+          <IconButton onClick={handleLike} data-testid={"heartIcon"}>
+            <NounLoveIcon/>
           </IconButton>
         </Grid>
         <Grid item>
@@ -61,17 +55,22 @@ export default function SocialLinks(props) {
             className={classes.url}
             variant="overline"
           >
-            POST{" "}
+            Share{" "}
           </Typography>
         </Grid>
         <Grid item>
+          <EmailShareButton url={window.location.href}>
+            <EmailIcon height="15" width="20" />
+          </EmailShareButton>
+        </Grid>
+        <Grid item>
           <TwitterShareButton url={window.location.href}>
-            <TwitterIcon/>
+            <TwitterIcon fill="#1DA1F2" height="14" width="18" />
           </TwitterShareButton>
         </Grid>
         <Grid item>
           <LinkedinShareButton url={window.location.href}>
-            <img src={linkedinIcon} alt="LinkedIn"/>
+            <LinkedInIcon />
           </LinkedinShareButton>
         </Grid>
         <Grid item>
