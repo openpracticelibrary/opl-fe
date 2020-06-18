@@ -8,7 +8,8 @@ const KeywordSearchToggle = (props) => {
 
   return (
     <Button data-testid="keywordSearchToggle" onClick={toggle}>
-      {keywordSearchToggle ? <Typography>Filter <ExpandMoreIcon /></Typography> : <Typography>Filter <ExpandLessIcon /></Typography>}
+      <Typography>Filter</Typography>
+      {keywordSearchToggle ?  <ExpandMoreIcon /> :<ExpandLessIcon />}
     </Button>
   );
 };

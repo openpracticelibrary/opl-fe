@@ -12,6 +12,7 @@ import FilterTags from "../components/allPractices/FilterBar/FilterTags";
 import KeywordSearchToggle from "../components/allPractices/FilterBar/KeywordSearchToggle";
 import DropDownSelectionFilter from "../components/allPractices/FilterBar/DropDownSelectionFilter";
 import PopularFilter from "../components/allPractices/FilterBar/PopularFilter";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   pageWrapper: {
@@ -59,6 +60,14 @@ export default function Practices(props) {
     "CULTURE",
   ];
 
+  const mobiusLoopArray = [
+    "Entire Process Model",
+    "Discovery",
+    "Options",
+    "Delivery",
+    "Foundation",
+  ];
+
   // manage state of filter tags
   const [selectedFilterTag, setFilterTag] = React.useState(filterTags[0]);
 
@@ -72,16 +81,19 @@ export default function Practices(props) {
   const [
     selectedMobiusLoopFilter,
     setSelectedMobiusLoopFilter,
-  ] = React.useState(null);
+  ] = React.useState(mobiusLoopArray[0]);
 
-  const popularMenuItems = ["Popular", "Newest", "Curated"];
-  const [selectedPopularFilter, setPopularFilterTitle] = React.useState(
-    popularMenuItems[0]
-  );
+  const popularMenuItems = {
+    Popular:"upvotes:DESC",
+    Newest:"createdAt:DESC",
+    Curated:"curated:DESC"
+  };
+
+  const [selectedPopularFilter, setPopularFilterTitle] = React.useState(Object.keys(popularMenuItems)[0]);
 
   const tagArray = [
     ...(selectedFilterTag !== "ALL" ? [selectedFilterTag.toLowerCase()] : []),
-    ...(selectedMobiusLoopFilter !== null
+    ...(selectedMobiusLoopFilter !== "Entire Process Model"
       ? [selectedMobiusLoopFilter.toLowerCase()]
       : []),
   ];
@@ -93,6 +105,7 @@ export default function Practices(props) {
         start: 0,
         limit: 8,
         tag: tagArray,
+        sort: popularMenuItems[item]
       },
     });
     setPage(8);
@@ -107,9 +120,13 @@ export default function Practices(props) {
       variables: {
         start: 0,
         limit: 8,
-        ...(tag !== "ALL" && {
-          tag: [tag.toLowerCase()],
-        }),
+        sort: popularMenuItems[selectedPopularFilter],
+        tag: [
+          ...(tag !== "ALL" ? [tag.toLowerCase()] : []),
+          ...(selectedMobiusLoopFilter !== "Entire Process Model"
+            ? [selectedMobiusLoopFilter.toLowerCase()]
+            : []),
+        ]
       },
     });
     setPage(8);
@@ -119,13 +136,16 @@ export default function Practices(props) {
     setSelectedMobiusLoopFilter(event.target.value);
     const tagArray = [
       ...(selectedFilterTag !== "ALL" ? [selectedFilterTag.toLowerCase()] : []),
-      event.target.value.toLowerCase(),
-    ];
+      ...(event.target.value !== "Entire Process Model"
+        ? [event.target.value.toLowerCase()]
+        : []),
+    ]
     refetch({
       variables: {
         start: 0,
         limit: 8,
         tag: tagArray,
+        sort: popularMenuItems[selectedPopularFilter],
       },
     });
     setPage(8);
@@ -138,6 +158,7 @@ export default function Practices(props) {
         start: 0,
         limit: 8,
         tag: tagArray,
+        sort: popularMenuItems[selectedPopularFilter]
       },
       fetchPolicy: "cache-and-network",
       notifyOnNetworkStatusChange: true,
@@ -150,6 +171,7 @@ export default function Practices(props) {
       variables: {
         start: newPage,
         tag: tagArray,
+        sort: popularMenuItems[selectedPopularFilter],
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult) return prev;
@@ -185,7 +207,7 @@ export default function Practices(props) {
           <PopularFilter
             selectedItem={selectedPopularFilter}
             handleFilterChange={handlePopularFilterChange}
-            menuItems={popularMenuItems}
+            menuItems={Object.keys(popularMenuItems)}
           />
         </Grid>
         <Grid item>
@@ -211,12 +233,24 @@ export default function Practices(props) {
           alignItems="center"
         >
           <Grid item>
-            <DropDownSelectionFilter
-              inputLabel="Entire Process Model"
-              items={["Discovery", "Options", "Delivery", "Foundation"]}
-              selectedFilter={selectedMobiusLoopFilter}
-              handleFilterSelect={HandleMobiusLoopSelect}
-            />
+            <Grid
+              container
+              direction="column"
+              justify="space-between"
+              alignItems="flex-start"
+            >
+              <Grid item>
+                <Typography>BY MOBIUS LOOP</Typography>
+              </Grid>
+              <Grid item>
+                <DropDownSelectionFilter
+                  inputLabel="Entire Process Model"
+                  items={mobiusLoopArray}
+                  selectedFilter={selectedMobiusLoopFilter}
+                  handleFilterSelect={HandleMobiusLoopSelect}
+                />
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item>
             <h1>keyword</h1>

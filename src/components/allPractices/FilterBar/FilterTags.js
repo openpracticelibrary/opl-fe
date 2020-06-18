@@ -1,24 +1,21 @@
 import React from "react";
-// import { makeStyles } from "@material-ui/core/styles/index";
+import { makeStyles } from "@material-ui/core/styles/index";
 import { Grid, Chip } from "@material-ui/core";
 
-// const useStyles = makeStyles((theme) => ({
-//   practiceNum: {
-//     fontFamily: "Itim",
-//     fontSize: "200px",
-//     fontWeight: "normal",
-//     textAlign: "center",
-//     color: theme.palette.common.black,
-//   },
-// }));
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: "transparent",
+    color: "#717171"
+  },
+  label: {
+    color: "#717171",
+  },
+}));
 
 const Tag = ({ tag, filter, selectedFilter }) => {
-  //   const classes = useStyles();
+  const classes = useStyles();
 
   const buttonRef = React.useRef(null);
-
-  //need to consider how to show background of default "selected" button
-  //thought this could be done using useEffect but not sure how to make backgrounda appear selected
 
   React.useEffect(() => {
     let button;
@@ -40,6 +37,7 @@ const Tag = ({ tag, filter, selectedFilter }) => {
         clickable
         label={tag}
         ref={buttonRef}
+        classes={{ root: classes.root, label: classes.practiceNum }}
         onClick={() => filter(tag)}
       ></Chip>
     </Grid>

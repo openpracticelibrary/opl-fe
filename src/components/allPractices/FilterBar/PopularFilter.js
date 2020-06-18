@@ -10,10 +10,10 @@ const useStyles = makeStyles((theme) => ({
     color: "#2e2e2e",
   },
   menuItemFont: {
-    fontFamily: "Noto Serif",
+    fontFamily: "Assistant-SemiBold",
     fontSize: "1rem",
     lineHeight: "1.375rem",
-    color: "#a0a0a0",
+    color: "#717171",
   },
 }));
 
