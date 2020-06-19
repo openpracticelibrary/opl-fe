@@ -68,11 +68,9 @@ export default function ResourceAddLink(props) {
 
   const [updatePracticeResources] = useMutation(UPDATE_PRACTICE_RESOURCES);
 
-  
+
   const [open, setOpen] = React.useState(false);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [selectedLinkTypeIndex, setSelectedLinkTypeIndex] = React.useState(null);
-  const [linkType, setLinkType] = React.useState(false);
+  const [linkType, setLinkType] = React.useState('');
   const refLinkUrl = React.useRef();
   const refLinkDesc = React.useRef();
   const [thankYouOpen, setThankYouOpen] = React.useState(false);
@@ -98,7 +96,7 @@ export default function ResourceAddLink(props) {
     const additionalResource = [
       {
         link: refLinkUrl.current.value,
-        linkType: linkTypes[selectedLinkTypeIndex],
+        linkType: linkType,
         description: refLinkDesc.current.value,
       }
     ];
@@ -117,15 +115,7 @@ export default function ResourceAddLink(props) {
   };
 
   const handleClickListItem = (event) => {
-    console.log(`handleClickListItem: event.currentTarget=${event.currentTarget}`);
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleLinkTypeSelect = (event, index) => {
-    console.log(`handleLinkTypeSelect: selectedIndex=${index} selected=${linkTypes[index]}`);
-    setSelectedLinkTypeIndex(index);
-    setLinkType(linkTypes[index]);
-    setAnchorEl(null);
+    setLinkType(event.target.value)
   };
 
   const handleClickOpen = () => {
@@ -134,7 +124,9 @@ export default function ResourceAddLink(props) {
 
   const handleClose = (event) => {
     setOpen(false);
-    setAnchorEl(null);
+    setLinkType('');
+    refLinkUrl.current.value = "";
+    refLinkDesc.current.value = "";
     console.log(`handleClose: linkType=${linkType}`);
     console.log(`handleClose: refLinkUrl=${refLinkUrl.current ? refLinkUrl.current.value : false}`);
     console.log(`handleClose: refLinkDesc=${refLinkDesc.current ? refLinkDesc.current.value : false}`);
@@ -182,61 +174,27 @@ export default function ResourceAddLink(props) {
             <DialogContent className={classes.container}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={5}>
-                <List
-                    aria-label="Link Type *"
-                    variant="outlined"
-                  >
-                    <ListItem
-                      button
-                      aria-haspopup="true"
-                      aria-controls="linkType"
-                      aria-label="Link Type *"
-                      onClick={handleClickListItem}
-                    >
-                      <ListItemText primary="Link Type *" secondary={linkTypes[selectedLinkTypeIndex]} />
-                    </ListItem>
-                  </List>
-                  <Menu
-                    id="linkType"
-                    data-link-type={"none-selected"}
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={Boolean(anchorEl)}
-                    variant="menu"
-                    onClose={handleClose}
-                  >
-                    {linkTypes.map((option, index) => (
-                      <MenuItem
-                        key={option}
-                        selected={index === selectedLinkTypeIndex}
-                        onClick={(event) => handleLinkTypeSelect(event, index)}
-                      >
-                        {option}
-                      </MenuItem>
-                    ))}
-                  </Menu>
-                </Grid>
-{/*                <Grid item xs={12} sm={5}>
                   <TextField
                     id="outlined-select-{linkTypes[selectedLinkTypeIndex]}"
                     select
-                    label="Link Type *"
+                    required
+                    label="Link Type"
                     variant="outlined"
                     margin="dense"
+                    value={linkType}
+                    onChange={handleClickListItem}
                     fullWidth
                   >
                     {linkTypes.map((option, index) => (
                       <MenuItem
-                        key={option}
-                        selected={index === selectedLinkTypeIndex}
-                        onClick={(event) => handleLinkTypeSelect(event, index)}
+                        key={index}
+                        value={option}
                       >
                         {option}
                       </MenuItem>
-                    ))} 
-                  </TextField>               
+                    ))}
+                  </TextField>
                 </Grid>
-*/}
                 <Grid item xs={12} sm={7}>
                   <TextField
                     margin="dense"
