@@ -75,6 +75,7 @@ export default function ResourceAddLink(props) {
   const [linkType, setLinkType] = React.useState(false);
   const refLinkUrl = React.useRef();
   const refLinkDesc = React.useRef();
+  const [thankYouOpen, setThankYouOpen] = React.useState(false);
 
   const linkTypes = [
     'podcast',
@@ -111,6 +112,7 @@ export default function ResourceAddLink(props) {
     if (data) {
       console.log('Updated!');
       handleClose(true);
+      setThankYouOpen(true);
     }
   };
 
@@ -136,6 +138,15 @@ export default function ResourceAddLink(props) {
     console.log(`handleClose: linkType=${linkType}`);
     console.log(`handleClose: refLinkUrl=${refLinkUrl.current ? refLinkUrl.current.value : false}`);
     console.log(`handleClose: refLinkDesc=${refLinkDesc.current ? refLinkDesc.current.value : false}`);
+  };
+
+  const handleThankYouClose = () => {
+    setThankYouOpen(false);
+  };
+
+  const handleThankYouSubmit = () => {
+    setThankYouOpen(false);
+    setOpen(true);
   };
 
   return (
@@ -277,6 +288,38 @@ export default function ResourceAddLink(props) {
                   </Typography>
                 </Grid>
               </Grid>
+            </DialogActions>
+          </Dialog>
+          <Dialog
+            open={thankYouOpen}
+            onClose={handleThankYouClose}
+            aria-labelledby="thank-you-dialog"
+            PaperProps={{
+              className: classes.drawerPaper,
+            }}
+          >
+            <DialogTitle disableTypography={true} id="thank-you-dialog">
+              <Typography
+                variant="subtitle2"
+                className={classes.dialogText}
+              >
+                Awesome. 
+                Thanks for that!
+              </Typography>
+            </DialogTitle>
+            <DialogActions>
+              <Button
+                onClick={handleThankYouSubmit}
+                variant="contained"
+                className={classes.submitButton}
+              >
+                <Typography
+                  variant="button"
+                  className={classes.btnText}
+                >
+                  <ArrowForwardIcon className={classes.arrowForward} /> Add another link
+                </Typography>
+              </Button>
             </DialogActions>
           </Dialog>
         </Box>
