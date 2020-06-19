@@ -1,12 +1,12 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import {makeStyles} from "@material-ui/core/styles/index";
+import { makeStyles } from "@material-ui/core/styles/index";
 import CollectionItem from "./CollectionItem";
 import Grid from "@material-ui/core/Grid";
-import {AmaIcon, CameraIcon, FilledHeartIcon} from "../../../assets/icons";
+import { AmaIcon, CameraIcon, NounLoveIcon } from "../../../assets/icons";
 import IconButton from '@material-ui/core/IconButton';
-import {useMutation} from "@apollo/react-hooks";
-import {LIKE_PRACTICE} from "../../../graphql/";
+import { useMutation } from "@apollo/react-hooks";
+import { LIKE_PRACTICE } from "../../../graphql/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,7 +45,7 @@ export default function Collection(props) {
         <Grid item>
           <IconButton onClick={handleLike} className={classes.button} data-testid={"heartIcon"}>
             <CollectionItem amount={props.upvotes} >
-              <FilledHeartIcon/>
+              <NounLoveIcon fill="#596562" />
             </CollectionItem>
           </IconButton>
         </Grid>
@@ -59,7 +59,7 @@ export default function Collection(props) {
         <Grid item>
           <IconButton disabled>
             <CollectionItem amount={props.questions}>
-              <AmaIcon/>
+              <AmaIcon fill="#596562" />
             </CollectionItem>
           </IconButton>
         </Grid>

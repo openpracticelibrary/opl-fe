@@ -2,136 +2,152 @@
 
 exports[`matches the snapshot 1`] = `
 <div
-  className="MuiGrid-root makeStyles-titleBox-229 MuiGrid-container"
+  className="MuiGrid-root makeStyles-titleBox-230 MuiGrid-container"
 >
   <div
-    className="MuiBox-root MuiBox-root-340 makeStyles-logo-230"
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+  />
+  <div
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
   >
-    <svg
-      height="250px"
-      viewBox="0 0 185 18"
-      width="383px"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
+    <div
+      className="MuiBox-root MuiBox-root-341 makeStyles-logo-231"
     >
-      <defs>
-        <filter
-          filterUnits="objectBoundingBox"
-          height="113.8%"
-          id="prefix__a"
-          width="102.2%"
-          x="-.5%"
-          y="-3.4%"
-        >
-          <feOffset
-            dx="2"
-            dy="2"
-            in="SourceAlpha"
-            result="shadowOffsetOuter1"
-          />
-          <feColorMatrix
-            in="shadowOffsetOuter1"
-            values="0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 1 0"
-          />
-        </filter>
-        <text
-          fill="#2E2E2E"
-          fontFamily="Chewy-Regular, Chewy"
-          fontSize="19"
-          fontWeight="normal"
-          id="prefix__b"
-        >
-          <tspan
-            x="28"
-            y="43"
+      <svg
+        height="250px"
+        viewBox="0 0 185 18"
+        width="383px"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+      >
+        <defs>
+          <filter
+            filterUnits="objectBoundingBox"
+            height="113.8%"
+            id="prefix__a"
+            width="102.2%"
+            x="-.5%"
+            y="-3.4%"
           >
-            OPEN PRACTICE LIBRARY
-          </tspan>
-        </text>
-      </defs>
-      <g
-        fill="#2E2E2E"
-        fillRule="evenodd"
-        transform="translate(-28 -30)"
-      >
-        <use
-          filter="url(#prefix__a)"
-          xlinkHref="#prefix__b"
-        />
-        <use
-          xlinkHref="#prefix__b"
-        />
-      </g>
-    </svg>
-  </div>
-  <div
-    className="MuiBox-root MuiBox-root-341 makeStyles-loginBox-231"
-  >
-    <button
-      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-loginButton-344"
-      data-testid="loginButton"
-      disabled={false}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onDragLeave={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex={0}
-      type="button"
-    >
-      <span
-        className="MuiButton-label"
-      >
-        <span
-          className="MuiTypography-root MuiTypography-button"
+            <feOffset
+              dx="2"
+              dy="2"
+              in="SourceAlpha"
+              result="shadowOffsetOuter1"
+            />
+            <feColorMatrix
+              in="shadowOffsetOuter1"
+              values="0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 1 0"
+            />
+          </filter>
+          <text
+            fill="#2E2E2E"
+            fontFamily="Chewy-Regular, Chewy"
+            fontSize="19"
+            fontWeight="normal"
+            id="prefix__b"
+          >
+            <tspan
+              x="28"
+              y="43"
+            >
+              OPEN PRACTICE LIBRARY
+            </tspan>
+          </text>
+        </defs>
+        <g
+          fill="#2E2E2E"
+          fillRule="evenodd"
+          transform="translate(-28 -30)"
         >
-          <b>
-            Login
-          </b>
-        </span>
-      </span>
-    </button>
-  </div>
-  <div
-    className="MuiBox-root MuiBox-root-428 makeStyles-textBox-232"
-  >
-    <h4
-      className="MuiTypography-root makeStyles-hello-233 MuiTypography-h4"
+          <use
+            filter="url(#prefix__a)"
+            xlinkHref="#prefix__b"
+          />
+          <use
+            xlinkHref="#prefix__b"
+          />
+        </g>
+      </svg>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-342 makeStyles-textBox-233"
     >
-      <span
-        className=""
+      <h4
+        className="MuiTypography-root makeStyles-hello-234 MuiTypography-h4"
         data-testid="hellotext"
       >
         Wazzup
-      </span>
-    </h4>
-    <h5
-      className="MuiTypography-root makeStyles-welcome-234 MuiTypography-h5"
-      data-testid="welcomeText"
+      </h4>
+      <h5
+        className="MuiTypography-root makeStyles-welcome-235 MuiTypography-h5"
+        data-testid="welcomeText"
+      >
+        What's up
+      </h5>
+      <h5
+        className="MuiTypography-root MuiTypography-h5"
+        data-testid="inquiryText"
+      >
+        What is up?
+      </h5>
+      <p
+        className="MuiTypography-root MuiTypography-button"
+      >
+        <b>
+          Tell me more
+        </b>
+        <button
+          className="MuiButtonBase-root MuiIconButton-root makeStyles-arrowIcon-236"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+              />
+            </svg>
+          </span>
+        </button>
+      </p>
+    </div>
+  </div>
+  <div
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+  >
+    <img
+      alt="Welcome to OPL"
+      height="auto"
+      src="WhiteBoarding.png"
+      width="900px"
+    />
+    <div
+      className="MuiBox-root MuiBox-root-394 makeStyles-loginBox-232"
     >
-      What's up
-    </h5>
-    <h5
-      className="MuiTypography-root MuiTypography-h5"
-      data-testid="inquiryText"
-    >
-      What is up?
-    </h5>
-    <p
-      className="MuiTypography-root MuiTypography-button"
-    >
-      <b>
-        Tell me more
-      </b>
       <button
-        className="MuiButtonBase-root MuiIconButton-root makeStyles-arrowIcon-235"
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-loginButton-397"
+        data-testid="loginButton"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -149,21 +165,16 @@ exports[`matches the snapshot 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label"
+          className="MuiButton-label"
         >
-          <svg
-            aria-hidden={true}
-            className="MuiSvgIcon-root"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <span
+            className="MuiTypography-root makeStyles-buttonText-398 MuiTypography-button"
           >
-            <path
-              d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-            />
-          </svg>
+            Login
+          </span>
         </span>
       </button>
-    </p>
+    </div>
   </div>
 </div>
 `;

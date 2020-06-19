@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     padding: theme.spacing(3),
   },
-  
+
   dialogText: {
     margin: theme.spacing(1),
   },
@@ -47,8 +47,6 @@ const useStyles = makeStyles((theme) => ({
     borderStyle: "solid",
     borderWidth: "2px",
     borderColor: "#596562",
-    width: "240px",
-    height: "53px"
   },
   arrowForward: {
     top: ".25em",
@@ -235,7 +233,7 @@ export default function ResourceAddLink(props) {
                       variant="button"
                       className={classes.btnText}
                     >
-                      Contribute this link <ArrowForwardIcon className={classes.arrowForward} /> 
+                      Contribute this link <ArrowForwardIcon className={classes.arrowForward} />
                     </Typography>
                   </Button>
                 </Grid>

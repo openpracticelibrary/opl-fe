@@ -8,16 +8,20 @@ import MenuIcon from "@material-ui/icons/Menu";
 import {BottomListItems, TopListItems} from "./ListItems";
 import Box from "@material-ui/core/Box";
 import Footer from "./Footer";
-import OPLlogo from "../../../assets/icons/open-practice-librar.png";
+import { OPLLogo } from "../../../assets/icons";
 import { Link } from "@reach/router";
 
-const drawerWidth = "16.5rem";
+const drawerWidth = "18.7rem";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
   },
+  paddedLogo: {
+    paddingTop: theme.spacing(2),
+  },
   paddedHamburger: {
     marginLeft: 20,
+    color: theme.palette.common.discovery_blue,
   },
   box: {
     zIndex: theme.zIndex.drawer + 1,
@@ -28,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   boxShift: {
     marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
+    width: `calc(100% - ${drawerWidth})`,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -47,11 +51,15 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerOpen: {
     width: drawerWidth,
+    height: "100%",
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: theme.palette.common.true_white,
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
   },
   drawerClose: {
     transition: theme.transitions.create("width", {
@@ -63,13 +71,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       width: theme.spacing(8) + 1,
     },
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: theme.palette.common.true_white,
   },
   toolbar: {
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
     padding: theme.spacing(0, 1),
+    paddingTop: theme.spacing(2),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
   },
@@ -94,10 +103,13 @@ export default function OPLDrawer(props) {
             [classes.drawerClose]: !open,
           }),
         }}
+        PaperProps={{
+          elevation: 5,
+        }}
       >
         <div className={classes.toolbar}>
-          <Link to="/" onClick={toggle}>
-            <img src={OPLlogo} alt="OPL" width="170px"/>
+          <Link to="/" onClick={toggle} className={classes.paddedLogo}>
+            <OPLLogo height="29px" width="183px"/>
           </Link>
           <IconButton
             onClick={toggle}

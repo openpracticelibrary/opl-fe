@@ -1,43 +1,59 @@
 import React from "react";
+import {makeStyles} from "@material-ui/core/styles";
 import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import SaveOutlinedIcon from '@material-ui/icons/SaveOutlined';
+import Box from "@material-ui/core/Box";
 import { EditIcon } from "../../../assets/icons";
+
+const useStyles = makeStyles((theme) => ({
+  editingButtonCollection: {
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: theme.palette.common.true_white,
+    borderRadius: "20px",
+    boxShadow: "0 1px 4px 0 rgba(16,16,16,0.29)",
+  },
+}));
 
 const StartEditingButton = (props) => (
   <Tooltip
-    title="Edit Page"
+    title="Edit Practice"
     placement="top"
-    arrow
   >
     <IconButton data-testid="editButton" onClick={props.handleEdit}>
-      <EditIcon height="25" />
+      <EditIcon height="20" />
     </IconButton>
   </Tooltip>
 );
 
-const EditingButtons = (props) => (
-  <>
-    <Tooltip
-      title="Cancel Edits"
-      placement="top"
-      arrow
-    >
-      <IconButton data-testid="closeEditButton" onClick={props.handleEdit}>
-        <CloseIcon />
+const EditingButtons = (props) => {
+  const classes = useStyles();
+
+  return (
+    <Box className={classes.editingButtonCollection}>
+      <IconButton>
+        <EditIcon fill="#1975ff" height="20" />
       </IconButton>
-    </Tooltip>
-    <Tooltip
-      title="Save Edits"
-      placement="top"
-      arrow
-    >
-      <IconButton data-testid="saveEditButton" onClick={props.handleSaveEdits}>
-        <SaveOutlinedIcon />
-      </IconButton>
-    </Tooltip>
-  </>
-);
+      <Tooltip
+        title="Save Edits"
+        placement="left"
+      >
+        <IconButton data-testid="saveEditButton" onClick={props.handleSaveEdits}>
+          <SaveOutlinedIcon />
+        </IconButton>
+      </Tooltip>
+      <Tooltip
+        title="Cancel Edits"
+        placement="left"
+      >
+        <IconButton data-testid="closeEditButton" onClick={props.handleEdit}>
+          <CloseIcon />
+        </IconButton>
+      </Tooltip>
+    </Box>
+  );
+};
 
 export { StartEditingButton, EditingButtons }

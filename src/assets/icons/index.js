@@ -1,6 +1,5 @@
 export { default as AddIcon } from './AddIcon';
 export { default as AmaIcon } from './AmaIcon';
-export { default as QuestionIcon } from './QuestionIcon';
 export { default as FilledHeartIcon } from './FilledHeartIcon';
 export { default as UserIcon } from './UserIcon';
 export { default as CameraIcon } from './CameraIcon';
@@ -23,3 +22,5 @@ export { default as YoutubeIcon } from './YoutubeIcon';
 export { default as PodIcon } from './PodIcon';
 export { default as TwitterIcon } from './TwitterIcon';
 export { default as MoreItemsIcon } from './MoreItemsIcon';
+export { default as NounLoveIcon } from './NounLoveIcon';
+export { default as LinkedInIcon } from './LinkedInIcon';

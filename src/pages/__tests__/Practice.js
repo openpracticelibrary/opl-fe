@@ -2,7 +2,7 @@ import React from "react";
 import { render, waitFor, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
-import PracticePageContent from "../PracticePageContent";
+import Practice from "../Practice";
 import { GET_PRACTICE_PAGE } from "../../graphql";
 
 import LoginContext from "../../components/shared/Login/LoginContext";
@@ -89,7 +89,7 @@ it("renders the practice content page with data", async () => {
   const { getByTestId, getByText, queryByTestId } = render(
     <MockedProvider mocks={apolloMocks}>
       <LoginContext.Provider value={false}>
-        <PracticePageContent />
+        <Practice />
       </LoginContext.Provider>
     </MockedProvider>
   );
@@ -107,7 +107,7 @@ it("renders the practice content page with data and a logged in user", async () 
   const { getByTestId, getByText } = render(
     <MockedProvider mocks={apolloMocks}>
       <LoginContext.Provider value={true}>
-        <PracticePageContent />
+        <Practice />
       </LoginContext.Provider>
     </MockedProvider>
   );

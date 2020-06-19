@@ -9,7 +9,7 @@ import { GET_CONTRIBUTORS } from "../../graphql";
 const useStyles = makeStyles((theme) => ({
   contributorNum: {
     fontFamily: "Quicksand",
-    fontSize: "200px",
+    fontSize: "120px",
     fontWeight: "bold",
     textAlign: "center",
     color: theme.palette.common.discovery_blue,

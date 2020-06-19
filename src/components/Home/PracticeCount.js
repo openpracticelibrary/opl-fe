@@ -9,7 +9,7 @@ import { GET_PRACTICE_COUNT } from "../../graphql";
 const useStyles = makeStyles((theme) => ({
   practiceNum: {
     fontFamily: "Quicksand",
-    fontSize: "200px",
+    fontSize: "120px",
     fontWeight: "bold",
     textAlign: "center",
     color: theme.palette.common.discovery_blue,

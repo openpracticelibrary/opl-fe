@@ -24,7 +24,7 @@ export default function PhotoAndName(props) {
         spacing={1}
       >
         <Grid item>
-          <UserIcon />
+          <UserIcon fill="#101010" />
         </Grid>
         <Grid item>
           <Typography variant="body1" data-testid={"authorName"}>{props.authorName}</Typography>

@@ -1,9 +1,10 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, IconButton, InputAdornment } from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles/index";
 import QuestionsAndAnswers from "./QuestionsAndAnswers";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,14 +14,20 @@ const useStyles = makeStyles((theme) => ({
   space: {
     padding: theme.spacing(1),
   },
+  textField: {
+    borderRadius: "9px",
+  },
+  exitIcon: {
+    color: theme.palette.common.discovery_blue,
+  },
   input: {
     '&::placeholder': {
-      fontStyle: 'italic',
-      fontFamily: "Noto Serif",
-      fontWeight: "normal italic",
+      fontFamily: "Quicksand",
+      fontWeight: "normal",
       fontSize: "1.625rem",
-      color: theme.palette.common.brown_grey,
-      padding: theme.spacing(1)
+      color: theme.palette.common.discovery_blue,
+      padding: theme.spacing(1),
+      opacity: 100,
     },
   },
 }));
@@ -38,7 +45,7 @@ export default function AskMeAnything(props) {
         </Box>
         <Box className={classes.space}>
           <Typography variant={"body1"}>
-            {'Questions from community aliquam id diam maecenas ultricies mi eget mauris. Odio tempor orci dapibus ultrices in. '}
+            Please send a question to the community about anything you may need for using this practice.
           </Typography>
         </Box>
         <Box className={classes.space}>
@@ -49,7 +56,8 @@ export default function AskMeAnything(props) {
             margin="normal"
             placeholder="What questions do you have?"
             InputProps={{
-              classes: { input: classes.input}
+              classes: { input: classes.input, root: classes.textField },
+              endAdornment: <InputAdornment position="end"><IconButton><ExitToAppIcon className={classes.exitIcon}/></IconButton></InputAdornment>
             }}/>
         </Box>
         <QuestionsAndAnswers ama={props.ama}/>

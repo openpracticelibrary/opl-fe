@@ -1,8 +1,8 @@
 import GenericPage from "./GenericPage";
-import Practices from "./Practices";
-import PracticePageContent from "./PracticePageContent";
+import AllPractices from "./AllPractices";
+import Practice from "./Practice";
 import Home from "./Home";
 
-export const PracticesPage = (props) => GenericPage(Practices, props);
-export const PracticePageContentPage = (props) => GenericPage(PracticePageContent, props);
+export const AllPracticesPage = (props) => GenericPage(AllPractices, props);
+export const PracticePage = (props) => GenericPage(Practice, props);
 export const HomePage = (props) => Home(props);
