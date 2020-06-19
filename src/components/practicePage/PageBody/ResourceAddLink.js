@@ -73,15 +73,6 @@ export default function ResourceAddLink(props) {
   const refLinkDesc = React.useRef();
   const [thankYouOpen, setThankYouOpen] = React.useState(false);
 
-  const linkTypes = [
-    'podcast',
-    'web',
-    'download',
-    'book',
-    'video',
-    'purchase',
-  ];
-
   const handleSubmit = async () => {
     const prevResourceList = props.prevResources.map(resource => {
       return {
@@ -145,11 +136,13 @@ export default function ResourceAddLink(props) {
             variant="text"
             color="secondary"
             className={classes.button}
-            startIcon={<AddIcon />}
+            startIcon={<AddIcon fill="#1975ff"/>}
             onClick={handleClickOpen}
             data-testid="addResourcesButton"
           >
-            Add a reference link
+            <Typography variant={"body1"}>
+              Add a link
+            </Typography>
           </Button>
           <Dialog
             open={open}
@@ -182,7 +175,7 @@ export default function ResourceAddLink(props) {
                     onChange={handleClickListItem}
                     fullWidth
                   >
-                    {linkTypes.map((option, index) => (
+                    {props.linkTypes.map((option, index) => (
                       <MenuItem
                         key={index}
                         value={option}
