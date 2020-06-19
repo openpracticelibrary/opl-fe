@@ -13,6 +13,11 @@ import KeywordSearchToggle from "../components/allPractices/FilterBar/KeywordSea
 import DropDownSelectionFilter from "../components/allPractices/FilterBar/DropDownSelectionFilter";
 import PopularFilter from "../components/allPractices/FilterBar/PopularFilter";
 import Typography from "@material-ui/core/Typography";
+import {
+  filterTags,
+  mobiusLoopArray,
+  popularMenuItems,
+} from "../utilities/dropDownValues";
 
 const useStyles = makeStyles((theme) => ({
   pageWrapper: {
@@ -48,47 +53,13 @@ const useStyles = makeStyles((theme) => ({
 export default function Practices(props) {
   const classes = useStyles();
 
-  const filterTags = [
-    "ALL",
-    "VALIDATE",
-    "VALUE",
-    "INSIGHT",
-    "IDEATE",
-    "BUILD",
-    "ANALYZE",
-    "METHODS",
-    "CULTURE",
-  ];
-
-  const mobiusLoopArray = [
-    "Entire Process Model",
-    "Discovery",
-    "Options",
-    "Delivery",
-    "Foundation",
-  ];
-
-  // manage state of filter tags
   const [selectedFilterTag, setFilterTag] = React.useState(filterTags[0]);
-
-  // manage state of page value for practice card grid
   const [page, setPage] = React.useState(0);
-
-  // manage state of keyword search toggle
   const [keywordSearchToggle, setKeywordSearchToggle] = React.useState(false);
-
-  //manage filter selection mobius loop
   const [
     selectedMobiusLoopFilter,
     setSelectedMobiusLoopFilter,
   ] = React.useState(mobiusLoopArray[0]);
-
-  const popularMenuItems = {
-    Popular: "upvotes:DESC",
-    Newest: "createdAt:DESC",
-    Curated: "curated:DESC",
-  };
-
   const [selectedPopularFilter, setPopularFilterTitle] = React.useState(
     Object.keys(popularMenuItems)[0]
   );
@@ -118,17 +89,18 @@ export default function Practices(props) {
 
   const ChangeFilterTag = (tag) => {
     setFilterTag(tag);
+    const tagArray = [
+      ...(tag !== "ALL" ? [tag.toLowerCase()] : []),
+      ...(selectedMobiusLoopFilter !== "Entire Process Model"
+        ? [selectedMobiusLoopFilter.toLowerCase()]
+        : []),
+    ];
     refetch({
       variables: {
         start: 0,
         limit: 8,
         sort: popularMenuItems[selectedPopularFilter],
-        tag: [
-          ...(tag !== "ALL" ? [tag.toLowerCase()] : []),
-          ...(selectedMobiusLoopFilter !== "Entire Process Model"
-            ? [selectedMobiusLoopFilter.toLowerCase()]
-            : []),
-        ],
+        tag: tagArray,
       },
     });
     setPage(8);
@@ -205,7 +177,7 @@ export default function Practices(props) {
         justify="space-around"
         alignItems="center"
       >
-        <Grid item>
+        <Grid item data-testid="popularFilterComponent">
           <PopularFilter
             selectedItem={selectedPopularFilter}
             handleFilterChange={handlePopularFilterChange}

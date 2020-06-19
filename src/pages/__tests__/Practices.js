@@ -72,4 +72,9 @@ it("renders with graphql response", async () => {
 
   // make sure the card is on the page
   expect(getByTestId("practicecard")).toBeInTheDocument();
+
+  expect(getByTestId("popularFilterComponent")).toBeInTheDocument();
+  const popularFilter = getByTestId("popularFilterButton");
+  
+
 });

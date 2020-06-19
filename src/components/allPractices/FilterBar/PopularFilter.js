@@ -63,6 +63,7 @@ export default function PopularFilter(props) {
       <Button
         aria-controls="styled-menu"
         aria-haspopup="true"
+        data-testid="popularFilterButton"
         onClick={handleClick}
       >
         <Typography variant="overline" className={classes.colorTitle}>
