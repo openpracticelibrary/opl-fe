@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "space-evenly",
     padding: theme.spacing(2, 0),
+    position: "sticky",
   },
   wrapBox: {
     display: "flex",
@@ -39,11 +40,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  {title: "What is it", ref: "whatIsRef"},
-  {title: "Why do it", ref: "whyDoRef"},
-  {title: "How to", ref: "howToRef"},
-  {title: "Media", ref: "mediaRef"},
-  {title: "Resources", ref: "resourceRef"},
+  {title: "What", ref: "whatIsRef"},
+  {title: "Why", ref: "whyDoRef"},
+  {title: "How", ref: "howToRef"},
+  {title: "Look", ref: "mediaRef"},
+  {title: "Links", ref: "resourceRef"},
   {title: "AMA", ref: "amaRef"},
 ];
 
@@ -62,7 +63,7 @@ export default function PageMenu(props) {
         <Toolbar
           component="nav"
           variant="dense"
-          disableGutters
+          className={classes.toolbar}
         >
           <Grid
             container
@@ -73,9 +74,9 @@ export default function PageMenu(props) {
               <Grid
                 container
                 direction="row"
-                justify="flex-start"
+                justify="space-between"
                 alignItems="flex-start"
-                spacing={3}
+                spacing={1}
               >
                 {sections.map((section, i) => (
                   <Grid item key={i}>

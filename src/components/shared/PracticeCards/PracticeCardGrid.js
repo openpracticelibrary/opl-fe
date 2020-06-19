@@ -23,8 +23,8 @@ const PracticeCardGrid = (props) => {
       container
       direction="row"
       justify="center"
-      alignContent="center"
-      alignItems="center"
+      alignContent="flex-start"
+      alignItems="flex-start"
       spacing={2}
     >
       {props.practices.map((practice) => (

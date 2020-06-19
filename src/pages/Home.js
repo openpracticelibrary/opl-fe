@@ -26,9 +26,14 @@ export default function Home(props) {
 
   return (
     <>
-      <Grid data-testid="pageGrid" className={classes.pageWrapper}>
+      <Grid
+        data-testid="pageGrid"
+        container
+        direction="column"
+        className={classes.pageWrapper}
+      >
         <Landing
-          greeting="Hiya! 😃"
+          greeting="Hiya!"
           welcomeMessage="Welcome to this open source library of best practices in digital product development."
           inquiry="Sound up your alley?"
           navigate={props.navigate}

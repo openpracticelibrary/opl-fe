@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     width: "14rem",
     borderColor: theme.palette.common.discovery_blue,
-    borderWidth: "2px",
+    borderWidth: "1px",
     borderStyle: "solid",
     backgroundColor: theme.palette.common.true_white,
   },

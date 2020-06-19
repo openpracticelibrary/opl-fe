@@ -11,18 +11,19 @@ const useStyles = makeStyles((theme) => ({
   space: {
     padding: theme.spacing(1),
   },
-  titleTextField: {
-    width: "54%",
+  tagContainer: {
+    display: "flex",
+    flexDirection: "row",
+    flex: 1,
+    justifyContent: "flex-start",
+    marginLeft: theme.spacing(-1),
   },
-  subtitleTextField: {
-    width: "50%",
+  tagBoxes: {
+    borderRadius: "3px",
+    backgroundColor: "rgba(16,16,16,0.1)",
+    paddingLeft: theme.spacing(0.5),
+    marginLeft: theme.spacing(1),
   },
-  titleInput: {
-    ...theme.typography.h1,
-  },
-  subtitleInput: {
-    ...theme.typography.subtitle1,
-  }
 }));
 
 export default function TitleAndSubtitle(props) {
@@ -32,19 +33,24 @@ export default function TitleAndSubtitle(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
+          {props.children}
           <Typography
             variant={"h1"}
             data-testid={"title"}
           >
             {props.editing ?
               props.titleEdit : props.title
-            }{" "}{props.children}
+            }
           </Typography>
-          {props.tags && props.tags.map((t, i) => (
-            <Typography key={i} variant={"overline"}>
+          <Box className={classes.tagContainer}>
+            {props.tags && props.tags.map((t, i) => (
+              <Box key={i} className={classes.tagBoxes}>
+                <Typography variant={"overline"}>
               #{t.tag}&nbsp;&nbsp;
-            </Typography>
-          ))}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
         </Box>
         <Box className={classes.space}>
           <Typography

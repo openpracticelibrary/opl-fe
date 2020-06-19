@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.brownish_grey,
   },
   label: {
-    color: theme.palette.common.brownish_grey,
+    ...theme.typography.overline,
+    padding: theme.spacing(1),
   },
 }));
 
@@ -37,7 +38,7 @@ const Tag = ({ tag, filter, selectedFilter }) => {
         clickable
         label={tag}
         ref={buttonRef}
-        classes={{ root: classes.root, label: classes.practiceNum }}
+        classes={{ root: classes.root, label: classes.label }}
         onClick={() => filter(tag)}
       ></Chip>
     </Grid>
@@ -49,7 +50,7 @@ const FilterTags = (props) => {
 
   return (
     <div data-testid="filterTags">
-      <Grid container direction="row" justify="center" alignItems="center">
+      <Grid container direction="row" spacing={2}>
         {tags.map((tag) => (
           <Tag
             key={tag}

@@ -2,7 +2,7 @@ import theme from '../../../theme';
 
 const RichMarkdownEditorTheme = () => {
   const edit = {
-    borderStyle: "dotted",
+    fontFamily: "NotoSerif",
     fontWeight: 400,
     zIndex: 100,
     link: theme.palette.common.discovery_blue,
