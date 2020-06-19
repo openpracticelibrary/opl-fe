@@ -127,9 +127,6 @@ export default function ResourceAddLink(props) {
     setLinkType('');
     refLinkUrl.current.value = "";
     refLinkDesc.current.value = "";
-    console.log(`handleClose: linkType=${linkType}`);
-    console.log(`handleClose: refLinkUrl=${refLinkUrl.current ? refLinkUrl.current.value : false}`);
-    console.log(`handleClose: refLinkDesc=${refLinkDesc.current ? refLinkDesc.current.value : false}`);
   };
 
   const handleThankYouClose = () => {
