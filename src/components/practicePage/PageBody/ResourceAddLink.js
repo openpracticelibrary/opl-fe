@@ -47,6 +47,8 @@ const useStyles = makeStyles((theme) => ({
     borderStyle: "solid",
     borderWidth: "2px",
     borderColor: "#596562",
+    width: "240px",
+    height: "53px"
   },
   arrowForward: {
     top: ".25em",
@@ -221,7 +223,7 @@ export default function ResourceAddLink(props) {
               <Grid
                 container
                 direction="row"
-                justify="space-around"
+                justify="space-between"
                 alignItems="center"
               >
                 <Grid item>
@@ -239,7 +241,7 @@ export default function ResourceAddLink(props) {
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Typography variant={"overline"}>
+                  <Typography variant="overline">
                     *Required fields :)
                   </Typography>
                 </Grid>
