@@ -8,7 +8,7 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import { OPLLogo } from "../../assets/icons";
 import LoginButton from "../shared/Login/LoginButton";
 import GrayDiagonals from "../../assets/icons/graylines.svg";
-import HomeStickies from "../../assets/icons/homestickies.png";
+import HomeStickies from "../../assets/images/WhiteBoarding.png";
 
 const useStyles = makeStyles((theme) => ({
   titleBox: {

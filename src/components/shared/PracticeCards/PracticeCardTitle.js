@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "row",
     flex: 1,
     justifyContent: "flex-start",
-    marginLeft: theme.spacing(-1),
+    margin: theme.spacing(1, -1),
   },
   tagBoxes: {
     borderRadius: "3px",

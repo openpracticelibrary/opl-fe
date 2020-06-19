@@ -3,9 +3,10 @@ import Grid from "@material-ui/core/Grid";
 import PracticeCard from "./PracticeCard";
 import ComponentLoading from "../QueryState/ComponentLoading";
 
-let page = 0;
+
 
 const PracticeCardGrid = (props) => {
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -13,8 +14,7 @@ const PracticeCardGrid = (props) => {
 
   function handleScroll() {
     if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || !props.onLoadMore) return;
-    page = page + 8;
-    props.onLoadMore(page);
+    props.onLoadMore(props.page);
   }
 
   if (props.loading && !props.practices) return <ComponentLoading />;
@@ -23,8 +23,8 @@ const PracticeCardGrid = (props) => {
       container
       direction="row"
       justify="center"
-      alignContent="center"
-      alignItems="center"
+      alignContent="flex-start"
+      alignItems="flex-start"
       spacing={2}
     >
       {props.practices.map((practice) => (

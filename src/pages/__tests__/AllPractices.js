@@ -3,7 +3,7 @@ import { render, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 
-import { GET_PRACTICES } from "../../graphql";
+import { GET_PRACTICES_BY_TAG_PAGINATION } from "../../graphql";
 import AllPractices from "../AllPractices";
 
 const mockPracticeData = [{
@@ -46,10 +46,12 @@ const mockPracticeData = [{
 const apolloMocks = [
   {
     request: {
-      query: GET_PRACTICES,
+      query: GET_PRACTICES_BY_TAG_PAGINATION,
       variables: {
         start: 0,
-        limit: 8
+        limit: 12,
+        sort: "upvotes:DESC",
+        tag: [],
       }
     },
     result: { data: { practices: mockPracticeData } }
@@ -70,4 +72,7 @@ it("renders with graphql response", async () => {
 
   // make sure the card is on the page
   expect(getByTestId("practicecard")).toBeInTheDocument();
+
+  expect(getByTestId("popularFilterComponent")).toBeInTheDocument();
+  const popularFilter = getByTestId("popularFilterButton");
 });

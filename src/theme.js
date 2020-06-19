@@ -131,7 +131,6 @@ export default createMuiTheme({
       color: `${brownish_grey}`,
     },
 
-    //Navigation Text
     button: {
       fontFamily: "Quicksand",
       fontWeight: "600",
@@ -152,7 +151,7 @@ export default createMuiTheme({
       color: `${brownish_grey}`,
     },
 
-    //Assistant SemiBold
+    //Navigation Text
     overline: {
       fontFamily: "Quicksand",
       fontWeight: "600",
