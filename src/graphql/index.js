@@ -20,6 +20,7 @@ export { default as MODIFY_PRACTICE_TAGS } from './mutations/modifyPracticeTagsM
 export { default as LOGIN } from './mutations/login';
 export { default as UPDATE_PRACTICE } from './mutations/updatePractice';
 export { default as UPDATE_MEDIA_GALLERY } from './mutations/updateMediaGallery';
+export { default as UPDATE_PRACTICE_RESOURCES } from './mutations/updatePracticeResources';
 
 // cache queries
 export { default as currentUserQuery } from './queries/currentUserQuery';

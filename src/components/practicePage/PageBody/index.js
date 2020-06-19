@@ -70,8 +70,12 @@ export default function PageBody(props) {
             title={title}
             mediaGallery={mediaGallery}
             mediaRef={mediaRef}
+          /> 
+          <ResourcesWeLove 
+            practiceId={practiceId}
+            links={resources}
+            resourceRef={resourceRef} 
           />
-          <ResourcesWeLove links={resources} resourceRef={resourceRef} />
           <AskMeAnything ama={ama} amaRef={amaRef} />
         </Box>
       </>
