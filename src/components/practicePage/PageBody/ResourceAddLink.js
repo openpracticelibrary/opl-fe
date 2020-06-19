@@ -149,6 +149,7 @@ export default function ResourceAddLink(props) {
             className={classes.button}
             startIcon={<AddIcon />}
             onClick={handleClickOpen}
+            data-testid="addResourcesButton"
           >
             Add a reference link
           </Button>
@@ -164,6 +165,7 @@ export default function ResourceAddLink(props) {
               <Typography
                 variant="subtitle2"
                 className={classes.dialogText}
+                data-testid="addResourceForm"
               >
                 Add a link you love!
               </Typography>
@@ -172,7 +174,7 @@ export default function ResourceAddLink(props) {
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={5}>
                   <TextField
-                    id="outlined-select-{linkTypes[selectedLinkTypeIndex]}"
+                    id="selectedLinkType"
                     select
                     required
                     label="Link Type"
@@ -233,7 +235,7 @@ export default function ResourceAddLink(props) {
                       variant="button"
                       className={classes.btnText}
                     >
-                      Contribute this link <ArrowForwardIcon className={classes.arrowForward} />
+                      Contribute this link <ArrowForwardIcon className={classes.arrowForward} /> 
                     </Typography>
                   </Button>
                 </Grid>
