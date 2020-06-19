@@ -7,13 +7,10 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Typography from "@material-ui/core/Typography";
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
 import TextField from '@material-ui/core/TextField';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import ArrowBack from '@material-ui/icons/ArrowBack';
 import { AddIcon } from "../../../assets/icons";
 import Grid from '@material-ui/core/Grid';
 import { useMutation } from "@apollo/react-hooks";
@@ -40,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     padding: theme.spacing(3),
   },
+  
   dialogText: {
     margin: theme.spacing(1),
   },
@@ -256,29 +254,39 @@ export default function ResourceAddLink(props) {
               className: classes.drawerPaper,
             }}
           >
-            <DialogTitle disableTypography={true} id="thank-you-dialog">
-              <Typography
-                variant="subtitle2"
-                className={classes.dialogText}
-              >
-                Awesome. 
-                Thanks for that!
-              </Typography>
-            </DialogTitle>
-            <DialogActions>
-              <Button
-                onClick={handleThankYouSubmit}
-                variant="contained"
-                className={classes.submitButton}
-              >
-                <Typography
-                  variant="button"
-                  className={classes.btnText}
-                >
-                  <ArrowForwardIcon className={classes.arrowForward} /> Add another link
-                </Typography>
-              </Button>
-            </DialogActions>
+            <Grid
+              container
+              direction="column"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item>
+                <DialogTitle disableTypography={true} id="thank-you-dialog">
+                  <Typography
+                    variant="subtitle2"
+                    className={classes.dialogText}
+                  >
+                    Awesome.<br/>Thanks for that!
+                  </Typography>
+                </DialogTitle>
+              </Grid>
+              <Grid item>
+                <DialogActions>
+                  <Button
+                    onClick={handleThankYouSubmit}
+                    variant="contained"
+                    className={classes.submitButton}
+                  >
+                    <Typography
+                      variant="button"
+                      className={classes.btnText}
+                    >
+                      <ArrowBack className={classes.arrowForward} /> Add another link
+                    </Typography>
+                  </Button>
+                </DialogActions>
+              </Grid>
+            </Grid>
           </Dialog>
         </Box>
       </Box>
