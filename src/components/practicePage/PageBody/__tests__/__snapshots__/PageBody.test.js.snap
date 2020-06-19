@@ -2,13 +2,13 @@
 
 exports[`matches the snapshot 1`] = `
 <div
-  className="MuiBox-root MuiBox-root-337 makeStyles-root-335"
+  className="MuiBox-root MuiBox-root-335 makeStyles-root-333"
 >
   <div
-    className="MuiBox-root MuiBox-root-340 makeStyles-root-338"
+    className="MuiBox-root MuiBox-root-338 makeStyles-root-336"
   >
     <div
-      className="MuiBox-root MuiBox-root-341 makeStyles-space-339"
+      className="MuiBox-root MuiBox-root-339 makeStyles-space-337"
     >
       <span
         className="MuiTypography-root MuiTypography-h2"
@@ -19,7 +19,7 @@ exports[`matches the snapshot 1`] = `
       </span>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-372 makeStyles-space-339"
+      className="MuiBox-root MuiBox-root-370 makeStyles-space-337"
     >
       <span
         className="MuiTypography-root MuiTypography-body1"
@@ -31,10 +31,10 @@ exports[`matches the snapshot 1`] = `
     </div>
   </div>
   <div
-    className="MuiBox-root MuiBox-root-375 makeStyles-root-373"
+    className="MuiBox-root MuiBox-root-373 makeStyles-root-371"
   >
     <div
-      className="MuiBox-root MuiBox-root-376 makeStyles-space-374"
+      className="MuiBox-root MuiBox-root-374 makeStyles-space-372"
     >
       <span
         className="MuiTypography-root MuiTypography-h2"
@@ -45,7 +45,7 @@ exports[`matches the snapshot 1`] = `
       </span>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-377 makeStyles-space-374"
+      className="MuiBox-root MuiBox-root-375 makeStyles-space-372"
     >
       <span
         className="MuiTypography-root MuiTypography-body1"
@@ -57,10 +57,10 @@ exports[`matches the snapshot 1`] = `
     </div>
   </div>
   <div
-    className="MuiBox-root MuiBox-root-380 makeStyles-root-378"
+    className="MuiBox-root MuiBox-root-378 makeStyles-root-376"
   >
     <div
-      className="MuiBox-root MuiBox-root-381 makeStyles-space-379"
+      className="MuiBox-root MuiBox-root-379 makeStyles-space-377"
     >
       <span
         className="MuiTypography-root MuiTypography-h2"
@@ -71,7 +71,7 @@ exports[`matches the snapshot 1`] = `
       </span>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-382 makeStyles-space-379"
+      className="MuiBox-root MuiBox-root-380 makeStyles-space-377"
     >
       <span
         className="MuiTypography-root MuiTypography-body1"
@@ -83,10 +83,10 @@ exports[`matches the snapshot 1`] = `
     </div>
   </div>
   <div
-    className="MuiBox-root MuiBox-root-387 makeStyles-root-383"
+    className="MuiBox-root MuiBox-root-385 makeStyles-root-381"
   >
     <div
-      className="MuiBox-root MuiBox-root-388 makeStyles-space-384"
+      className="MuiBox-root MuiBox-root-386 makeStyles-space-382"
     >
       <h2
         className="MuiTypography-root MuiTypography-h2"
@@ -96,7 +96,7 @@ exports[`matches the snapshot 1`] = `
       </h2>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-389 makeStyles-mediaBox-385"
+      className="MuiBox-root MuiBox-root-387 makeStyles-mediaBox-383"
     >
       <div
         aria-live="polite"
@@ -303,7 +303,7 @@ exports[`matches the snapshot 1`] = `
                 >
                   <img
                     alt="Add new media"
-                    className="makeStyles-cardImg-390"
+                    className="makeStyles-cardImg-388"
                     onClick={[Function]}
                     src="add.png"
                   />
@@ -316,32 +316,30 @@ exports[`matches the snapshot 1`] = `
     </div>
   </div>
   <div
-    className="MuiBox-root MuiBox-root-416 makeStyles-root-413"
+    className="MuiBox-root MuiBox-root-414 makeStyles-root-411"
   >
     <div
-      className="MuiBox-root MuiBox-root-417 makeStyles-space-414"
+      className="MuiBox-root MuiBox-root-415 makeStyles-space-412"
     >
       <h2
         className="MuiTypography-root MuiTypography-h2"
       >
         Links we love
       </h2>
-    </div>
-    <div
-      className="MuiBox-root MuiBox-root-418 makeStyles-space-414"
-    >
       <p
         className="MuiTypography-root MuiTypography-body1"
-      />
+      >
+        Check out these great links which can help you dive a little deeper into running an event storming workshop with your team, customers or stakeholders.
+      </p>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-419 makeStyles-indent-415"
+      className="MuiBox-root MuiBox-root-416 makeStyles-indent-413"
     >
       <div
-        className="MuiBox-root MuiBox-root-423 makeStyles-root-420"
+        className="MuiBox-root MuiBox-root-420 makeStyles-root-417"
       >
         <div
-          className="MuiBox-root MuiBox-root-424 makeStyles-space-421"
+          className="MuiBox-root MuiBox-root-421 makeStyles-space-418"
         >
           <svg
             height="17"
@@ -365,7 +363,7 @@ exports[`matches the snapshot 1`] = `
           </svg>
         </div>
         <div
-          className="MuiBox-root MuiBox-root-425"
+          className="MuiBox-root MuiBox-root-422"
         >
           <a
             className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
@@ -374,25 +372,21 @@ exports[`matches the snapshot 1`] = `
             onFocus={[Function]}
           >
             <p
-              className="MuiTypography-root makeStyles-color-422 MuiTypography-body1"
+              className="MuiTypography-root makeStyles-color-419 MuiTypography-body1"
             >
               Test desc
             </p>
           </a>
         </div>
       </div>
-    </div>
-    <div
-      className="MuiBox-root MuiBox-root-432 makeStyles-indent-415"
-    >
       <div
-        className="MuiBox-root MuiBox-root-442 makeStyles-root-433"
+        className="MuiBox-root MuiBox-root-438 makeStyles-root-429"
       >
         <div
-          className="MuiBox-root MuiBox-root-443"
+          className="MuiBox-root MuiBox-root-439"
         />
         <div
-          className="MuiBox-root MuiBox-root-444"
+          className="MuiBox-root MuiBox-root-440"
         >
           <button
             className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textSecondary"
@@ -426,7 +420,7 @@ exports[`matches the snapshot 1`] = `
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <g
-                    fill="#A0A0A0"
+                    fill="#1975ff"
                   >
                     <path
                       d="M15.125 12.273c-.301 1.242-1.604 2.548-2.848 2.85-2.55.585-5.028.586-7.57.002-1.245-.301-2.551-1.608-2.85-2.844-.586-2.55-.586-5.031-.003-7.573.302-1.245 1.608-2.551 2.845-2.85 1.276-.294 2.535-.44 3.793-.44 1.255 0 2.51.146 3.78.437 1.246.302 2.552 1.608 2.85 2.844.586 2.551.586 5.031.003 7.574m1.376-7.9C16.076 2.616 14.364.904 12.598.476 9.832-.159 7.146-.159 4.374.478 2.615.904.903 2.615.474 4.382c-.633 2.764-.633 5.451.004 8.225.425 1.758 2.137 3.469 3.904 3.897 1.382.317 2.745.476 4.108.476 1.362 0 2.725-.159 4.108-.476l.008-.002c1.758-.426 3.47-2.137 3.898-3.904.634-2.765.634-5.452-.003-8.225"
@@ -437,7 +431,11 @@ exports[`matches the snapshot 1`] = `
                   </g>
                 </svg>
               </span>
-              Add a reference link
+              <p
+                className="MuiTypography-root MuiTypography-body1"
+              >
+                Add a link
+              </p>
             </span>
           </button>
         </div>
@@ -445,10 +443,10 @@ exports[`matches the snapshot 1`] = `
     </div>
   </div>
   <div
-    className="MuiBox-root MuiBox-root-482 makeStyles-root-477"
+    className="MuiBox-root MuiBox-root-478 makeStyles-root-473"
   >
     <div
-      className="MuiBox-root MuiBox-root-483 makeStyles-space-478"
+      className="MuiBox-root MuiBox-root-479 makeStyles-space-474"
     >
       <h2
         className="MuiTypography-root MuiTypography-h2"
@@ -457,7 +455,7 @@ exports[`matches the snapshot 1`] = `
       </h2>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-484 makeStyles-space-478"
+      className="MuiBox-root MuiBox-root-480 makeStyles-space-474"
     >
       <p
         className="MuiTypography-root MuiTypography-body1"
@@ -466,19 +464,19 @@ exports[`matches the snapshot 1`] = `
       </p>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-485 makeStyles-space-478"
+      className="MuiBox-root MuiBox-root-481 makeStyles-space-474"
     >
       <div
         className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
       >
         <div
-          className="MuiInputBase-root MuiOutlinedInput-root makeStyles-textField-479 MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd"
+          className="MuiInputBase-root MuiOutlinedInput-root makeStyles-textField-475 MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd"
           onClick={[Function]}
         >
           <input
             aria-invalid={false}
             autoFocus={false}
-            className="MuiInputBase-input MuiOutlinedInput-input makeStyles-input-481 MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd"
+            className="MuiInputBase-input MuiOutlinedInput-input makeStyles-input-477 MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd"
             disabled={false}
             id="ama"
             onAnimationStart={[Function]}
@@ -514,7 +512,7 @@ exports[`matches the snapshot 1`] = `
               >
                 <svg
                   aria-hidden={true}
-                  className="MuiSvgIcon-root makeStyles-exitIcon-480"
+                  className="MuiSvgIcon-root makeStyles-exitIcon-476"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -527,7 +525,7 @@ exports[`matches the snapshot 1`] = `
           </div>
           <fieldset
             aria-hidden={true}
-            className="PrivateNotchedOutline-root-549 MuiOutlinedInput-notchedOutline"
+            className="PrivateNotchedOutline-root-545 MuiOutlinedInput-notchedOutline"
             style={
               Object {
                 "paddingLeft": 8,
@@ -535,7 +533,7 @@ exports[`matches the snapshot 1`] = `
             }
           >
             <legend
-              className="PrivateNotchedOutline-legend-550"
+              className="PrivateNotchedOutline-legend-546"
               style={
                 Object {
                   "width": 0.01,
@@ -555,10 +553,10 @@ exports[`matches the snapshot 1`] = `
       </div>
     </div>
     <div
-      className="MuiGrid-root makeStyles-root-553 MuiGrid-container MuiGrid-align-items-xs-flex-start"
+      className="MuiGrid-root makeStyles-root-549 MuiGrid-container MuiGrid-align-items-xs-flex-start"
     >
       <div
-        className="MuiGrid-root makeStyles-space-554 MuiGrid-item"
+        className="MuiGrid-root makeStyles-space-550 MuiGrid-item"
       >
         <svg
           height="27px"
@@ -619,7 +617,7 @@ exports[`matches the snapshot 1`] = `
         className="MuiGrid-root MuiGrid-item"
       >
         <h6
-          className="MuiTypography-root makeStyles-question-555 MuiTypography-subtitle1"
+          className="MuiTypography-root makeStyles-question-551 MuiTypography-subtitle1"
         >
           When do I do this?
         </h6>

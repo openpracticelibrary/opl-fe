@@ -6,19 +6,26 @@ import ResourceAddLink from '../ResourceAddLink';
 
 afterEach(cleanup);
 
+const mockLinkTypes = [
+  "web",
+  "podcast",
+  "purchase"
+];
+
+
 it("renders login button and popover when clicked", async () => {
   const { getByTestId } = render(
     <MockedProvider mocks={[]}>
-      <ResourceAddLink />
+      <ResourceAddLink linkTypes={mockLinkTypes} />
     </MockedProvider>
   );
 
   expect(getByTestId("addResourcesButton")).toBeInTheDocument();
-  expect(getByTestId("addResourcesButton")).toHaveTextContent("Add a reference link");
+  expect(getByTestId("addResourcesButton")).toHaveTextContent("Add a link");
 
   fireEvent.click(getByTestId("addResourcesButton"));
 
-  const popover = await getByTestId("addResourceForm"); 
+  const popover = await getByTestId("addResourceForm");
   expect(popover).toHaveTextContent("Add a link you love!");
 });
 
