@@ -68,6 +68,7 @@ export default function ResourceAddLink(props) {
 
   const [updatePracticeResources] = useMutation(UPDATE_PRACTICE_RESOURCES);
 
+  
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedLinkTypeIndex, setSelectedLinkTypeIndex] = React.useState(null);
@@ -107,7 +108,10 @@ export default function ResourceAddLink(props) {
         newResources,
       },
     });
-    if (data) console.log('Updated!');
+    if (data) {
+      console.log('Updated!');
+      handleClose(true);
+    }
   };
 
   const handleClickListItem = (event) => {
@@ -165,38 +169,16 @@ export default function ResourceAddLink(props) {
               </Typography>
             </DialogTitle>
             <DialogContent className={classes.container}>
-              <Grid container>
-{/*                <Grid item xs={12}>
-                  <TextField
-                    id="outlined-select-currency"
-                    select
-                    label="Link Type *"
-                    variant="outlined"
-                    margin="dense"
-                    fullWidth
-                  >
-
-                    {linkTypes.map((option, index) => (
-                      <MenuItem
-                        key={option}
-                        selected={index === selectedLinkTypeIndex}
-                        onClick={(event) => handleLinkTypeSelect(event, index)}
-                      >
-                        {option}
-                      </MenuItem>
-                    ))}
-                  </TextField>
-                </Grid>
-*/}               <Grid item xs={12} sm={5}>
-                  <List
-                    component="nav"
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={5}>
+                <List
                     aria-label="Link Type *"
                     variant="outlined"
                   >
                     <ListItem
                       button
                       aria-haspopup="true"
-                      aria-controls="llinkType"
+                      aria-controls="linkType"
                       aria-label="Link Type *"
                       onClick={handleClickListItem}
                     >
@@ -223,6 +205,27 @@ export default function ResourceAddLink(props) {
                     ))}
                   </Menu>
                 </Grid>
+{/*                <Grid item xs={12} sm={5}>
+                  <TextField
+                    id="outlined-select-{linkTypes[selectedLinkTypeIndex]}"
+                    select
+                    label="Link Type *"
+                    variant="outlined"
+                    margin="dense"
+                    fullWidth
+                  >
+                    {linkTypes.map((option, index) => (
+                      <MenuItem
+                        key={option}
+                        selected={index === selectedLinkTypeIndex}
+                        onClick={(event) => handleLinkTypeSelect(event, index)}
+                      >
+                        {option}
+                      </MenuItem>
+                    ))} 
+                  </TextField>               
+                </Grid>
+*/}
                 <Grid item xs={12} sm={7}>
                   <TextField
                     margin="dense"
