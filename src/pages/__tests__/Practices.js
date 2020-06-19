@@ -49,7 +49,7 @@ const apolloMocks = [
       query: GET_PRACTICES_BY_TAG_PAGINATION,
       variables: {
         start: 0,
-        limit: 8,
+        limit: 12,
         sort: "upvotes:DESC",
         tag: [],
       }
@@ -75,6 +75,4 @@ it("renders with graphql response", async () => {
 
   expect(getByTestId("popularFilterComponent")).toBeInTheDocument();
   const popularFilter = getByTestId("popularFilterButton");
-  
-
 });

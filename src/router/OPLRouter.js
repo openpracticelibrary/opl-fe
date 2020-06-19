@@ -1,10 +1,31 @@
 import React from "react";
-import { Router } from "@reach/router";
+import { Router, Location } from "@reach/router";
 import { useQuery } from "@apollo/react-hooks";
 
 import LoginContext from '../components/shared/Login/LoginContext';
 import { HomePage, PracticesPage, PracticePageContentPage } from "../pages";
 import { currentUserQuery } from "../graphql";
+
+/* Somewhat hacky workaround the scroll position problem
+ * https://stackoverflow.com/questions/53058110/stop-reach-router-scrolling-down-the-page-after-navigating-to-new-page
+ */
+class OnRouteChangeWorker extends React.Component {
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.props.action()
+    }
+  }
+
+  render() {
+    return null
+  }
+}
+
+const OnRouteChange = ({ action }) => (
+  <Location>
+    {({ location }) => <OnRouteChangeWorker location={location} action={action} />}
+  </Location>
+)
 
 const OPLRouter = (props) => {
   const { data: loggedIn } = useQuery(currentUserQuery);
@@ -16,6 +37,7 @@ const OPLRouter = (props) => {
         <PracticesPage path="/practice"/>
         <PracticePageContentPage path="/practice/:name"/>
       </Router>
+      <OnRouteChange action={() => window.scrollTo(0, 0) } />
     </LoginContext.Provider>
   );
 };

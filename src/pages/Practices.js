@@ -50,11 +50,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const paginationLimit = 12;
+
 export default function Practices(props) {
   const classes = useStyles();
 
   const [selectedFilterTag, setFilterTag] = React.useState(filterTags[0]);
-  const [page, setPage] = React.useState(0);
+  const [page, setPage] = React.useState(16);
   const [keywordSearchToggle, setKeywordSearchToggle] = React.useState(false);
   const [
     selectedMobiusLoopFilter,
@@ -76,12 +78,12 @@ export default function Practices(props) {
     refetch({
       variables: {
         start: 0,
-        limit: 8,
+        limit: paginationLimit,
         tag: tagArray,
         sort: popularMenuItems[item],
       },
     });
-    setPage(8);
+    setPage(paginationLimit);
   };
 
   const ToggleKeywordSearch = () =>
@@ -98,12 +100,12 @@ export default function Practices(props) {
     refetch({
       variables: {
         start: 0,
-        limit: 8,
+        limit: paginationLimit,
         sort: popularMenuItems[selectedPopularFilter],
         tag: tagArray,
       },
     });
-    setPage(8);
+    setPage(paginationLimit);
   };
 
   const HandleMobiusLoopSelect = (event) => {
@@ -117,12 +119,12 @@ export default function Practices(props) {
     refetch({
       variables: {
         start: 0,
-        limit: 8,
+        limit: paginationLimit,
         tag: tagArray,
         sort: popularMenuItems[selectedPopularFilter],
       },
     });
-    setPage(8);
+    setPage(paginationLimit);
   };
 
   const { loading, error, data, refetch, networkStatus, fetchMore } = useQuery(
@@ -130,7 +132,7 @@ export default function Practices(props) {
     {
       variables: {
         start: 0,
-        limit: 8,
+        limit: paginationLimit,
         tag: tagArray,
         sort: popularMenuItems[selectedPopularFilter],
       },
@@ -140,7 +142,7 @@ export default function Practices(props) {
   );
 
   const onLoadMore = (page) => {
-    const newPage = page + 8;
+    const newPage = page + paginationLimit;
     fetchMore({
       variables: {
         start: newPage,
