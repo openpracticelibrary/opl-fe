@@ -11,8 +11,7 @@ import {
   popularMenuItems,
 } from "../utilities/dropDownValues";
 
-
-const paginationLimit = 12;
+const paginationLimit = 20;
 
 const PracticesWithData = (props) => {
   const [selectedFilterTag, setFilterTag] = React.useState(filterTags[0]);
@@ -117,20 +116,23 @@ const PracticesWithData = (props) => {
 
   const onLoadMore = (page) => {
     const newPage = page + paginationLimit;
-    fetchMore({
-      variables: {
-        start: newPage,
-        tag: tagArray,
-        sort: popularMenuItems[selectedPopularFilter],
-      },
-      updateQuery: (prev, { fetchMoreResult }) => {
-        if (!fetchMoreResult) return prev;
-        return Object.assign({}, prev, {
-          practices: [...prev.practices, ...fetchMoreResult.practices],
-        });
-      },
-    });
-    setPage(newPage);
+    if (newPage < data.practicesConnection.aggregate.totalCount) {
+      fetchMore({
+        variables: {
+          start: newPage,
+          tag: tagArray,
+          sort: popularMenuItems[selectedPopularFilter],
+        },
+        updateQuery: (prev, { fetchMoreResult }) => {
+          if (!fetchMoreResult) return prev;
+          return Object.assign({}, prev, {
+            practices: [...prev.practices, ...fetchMoreResult.practices],
+          });
+        },
+      });
+      setPage(newPage);
+    }
+    return;
   };
 
   if (error) return <QueryError err={error} />;

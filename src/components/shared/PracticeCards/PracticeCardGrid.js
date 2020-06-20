@@ -3,8 +3,6 @@ import Grid from "@material-ui/core/Grid";
 import PracticeCard from "./PracticeCard";
 import ComponentLoading from "../QueryState/ComponentLoading";
 
-
-
 const PracticeCardGrid = (props) => {
 
   useEffect(() => {

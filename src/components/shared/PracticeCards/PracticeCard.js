@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     "&:hover #cardTitle": {
       color: theme.palette.common.discovery_blue,
     },
+    "&:hover #tags": {
+      overflow: "visible",
+    },
   },
 }));
 
@@ -64,6 +67,7 @@ export default function PracticeCard(props) {
             slug={props.slug}
             practiceTitle={props.practiceTitle}
             tags={props.tags}
+            isHovered={hovered ? true : false}
           />
           <Paper
             data-testid="expandedcard"

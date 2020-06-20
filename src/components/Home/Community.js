@@ -15,6 +15,12 @@ import MobiusLogo from "../../assets/images/mobius-small.png";
 import CCHeartLogo from "../../assets/images/ccheart-black.png";
 
 const useStyles = makeStyles((theme) => ({
+  communityHeader: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingBottom: theme.spacing(12),
+  },
   communityBox: {
     display: "flex",
     justifyContent: "center",
@@ -56,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
   collabBox: {
     alignItems: "center",
     justifyContent: "center",
+    paddingTop: theme.spacing(9),
   },
   iconBox: {
     display: "flex",
@@ -114,10 +121,8 @@ const Community = (props) => {
 
   return (
     <>
-      <Grid item xs={10} data-testid="communityHeader">
+      <Grid item xs={12} className={classes.communityHeader} data-testid="communityHeader">
         <Typography variant={"h1"} ref={props.communityRef}>Community driven</Typography>
-      </Grid>
-      <Grid item xs={2} className={classes.aboutTitle}>
         <Button className={classes.aboutButton} variant="contained" onClick={() => navigate("#")}>
             About us{"  "}<ArrowForwardIcon className={classes.arrowForward}/>
         </Button>

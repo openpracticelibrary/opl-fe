@@ -22,6 +22,12 @@ const GET_PRACTICES_BY_TAG_PAGINATION = gql`
       ama {
         question
       }
+      curated
+    }
+    practicesConnection {
+      aggregate {
+        totalCount
+      }
     }
   }
 `;

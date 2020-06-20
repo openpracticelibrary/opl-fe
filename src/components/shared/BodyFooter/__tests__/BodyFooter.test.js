@@ -18,7 +18,7 @@ it("renders BodyFooter correctly", ()=>{
 
 it("renders children components correctly", ()=>{
   const { getByTestId } = render(<BodyFooter/>);
-  expect(getByTestId("connect")).toHaveTextContent("Connect with us!");
+  expect(getByTestId("connect")).toHaveTextContent("Please connect with us:");
   expect(getByTestId("poweredBy")).toHaveTextContent("powered by");
 });
 

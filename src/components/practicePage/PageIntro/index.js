@@ -7,8 +7,8 @@ import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   layout: {
-    alignItems: "left",
-    justify: "flex-start",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
     flexGrow: 1,
     marginTop: theme.spacing(2),
   },
