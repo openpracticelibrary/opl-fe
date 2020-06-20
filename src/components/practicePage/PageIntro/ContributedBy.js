@@ -50,44 +50,43 @@ export default function ContributedBy(props) {
         className={classes.root}
         spacing={1}
       >
-        <Grid container direction="row">
-          <Grid item xs={3}>
-            <Typography variant="overline">Contributed by</Typography>
-          </Grid>
-          { (editors.length) > 0 &&
-          <Grid item xs={3}>
-            <Typography variant="overline">Edited by</Typography>
-          </Grid>
-          }
-        </Grid>
-
         <Grid item>
           <Grid
             container
             direction="row"
-            justify="space-between"
+            justify="space-around"
             alignItems="center"
           >
-            {contributors.map((author, i) => (
-              <Grid item key={i}>
-                <PhotoAndName
-                  key={author.id}
-                  authorName={`${author.firstName} ${author.lastName}`}
-                  authorLink={author.mediaLink}
-                />
-              </Grid>
-            ))}
-            { (editors.length > 0) &&
+            <Box className={classes.contributedBy}>
+              <Typography variant="overline">Contributed by</Typography>
               <Grid item>
                 <Box className={classes.editorBox}>
-                  {editors.map((author, i) => (
-                    <div key={i}>
-                      <EditorPhotos />
-                    </div>
+                  {contributors.map((author, i) => (
+                    <PhotoAndName
+                      key={author.id}
+                      authorName={`${author.firstName} ${author.lastName}`}
+                      authorLink={author.mediaLink}
+                    />
                   ))}
                 </Box>
               </Grid>
-            }
+            </Box>
+            <Box className={classes.editedBy}>
+              { (editors.length > 0) &&
+                <>
+                  <Typography variant="overline">Edited by</Typography>
+                  <Grid item>
+                    <Box className={classes.editorBox}>
+                      {editors.map((author, i) => (
+                        <div key={i}>
+                          <EditorPhotos />
+                        </div>
+                      ))}
+                    </Box>
+                  </Grid>
+                </>
+              }
+            </Box>
             <Grid item className={classes.space}>
               <Typography variant="overline" data-testid={"dates"}>
                 Published {formatDate(props.createdAt)} | Last edited{" "}

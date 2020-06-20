@@ -17,9 +17,17 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
   },
   mediaBox: {
-    "& img": {
+    "& .image-gallery-slide img": {
       borderRadius: 17,
-    }
+      width: "100%",
+      height: "530px",
+      objectFit: "fill",
+    },
+    "& .fullscreen .image-gallery-slide img": {
+      height: "auto",
+      width: "auto",
+      minHeight: "50vh",
+    },
   },
   videoWrapper: {
     overflow: "hidden",
@@ -117,7 +125,7 @@ export default function MediaGallery({ practiceId, title, mediaGallery, mediaRef
             showThumbnails={true}
             lazyLoad={true}
             showPlayButton={false}
-            showFullscreenButton={false}
+            showFullscreenButton={true}
             onErrorImageURL={DefaultImage}
             onPlay={(currentIndex) => console.log(images[currentIndex])}
           />

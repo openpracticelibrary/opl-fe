@@ -1,7 +1,5 @@
 import React, { useRef, useState } from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
 import Box from '@material-ui/core/Box';
 import TextField from "@material-ui/core/TextField";
 
@@ -15,16 +13,37 @@ import blueDiagonals from "../../assets/icons/bluelines.svg";
 
 const useStyles = makeStyles((theme) => ({
   alignComponentContent: {
-    alignItems: "flex-start",
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "baseline",
+    alignContent: "center",
+  },
+  contentBox: {
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+    alignContent: "center",
+  },
+  boxOfContent: {
+    maxWidth: "950px",
+    marginLeft: "25px",
+    marginRight: "25px",
   },
   whiteColor: {
     backgroundImage: `linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.76) 70.4%, #FFFFFF 900%), url(${blueDiagonals})`,
+    justifyContent: "space-around",
   },
   trueWhiteColor: {
     backgroundColor: theme.palette.common.true_white,
   },
   pageIntro: {
     paddingTop: theme.spacing(6),
+    maxWidth: "950px",
+    marginLeft: "25px",
+    marginRight: "25px",
+    [theme.breakpoints.up('md')]: {
+      width: "950px",
+    },
   },
   editButton: {
     paddingTop: theme.spacing(9),
@@ -38,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
   titleTextField: {
-    width: "54%",
+    width: "inherit",
   },
   titleInput: {
     ...theme.typography.h1,
@@ -51,6 +70,21 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "6px",
     backgroundColor: theme.palette.common.white,
     padding: theme.spacing(1),
+  },
+  stickyToolbar: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "sticky",
+    top: 0,
+    backgroundColor: theme.palette.common.true_white,
+    borderTop: "1px solid rgba(0, 0, 0, 0.12)",
+    borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
+    zIndex: 1001,
+  },
+  toolbarContent: {
+    width: "100%",
+    padding: theme.spacing(0,2),
   },
 }));
 
@@ -168,7 +202,7 @@ const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
   const handleSaveEdits = () => {
     updatePractice({
       variables: {
-        practiceId: data.practiceId,
+        practiceId: practiceId,
         title: state.title,
         subtitle: state.subtitle,
         whatIs: state.whatIs,
@@ -252,51 +286,36 @@ const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
               redirect={`/practice/${data.slug}`}
             />
           </Box>
-          <Grid container className={classes.alignComponentContent}>
-            <Grid item xs={2} className={classes.editButton}>
+          <Box className={classes.alignComponentContent}>
+            <Box className={classes.editButton}>
               {loggedInEditing()}
-            </Grid>
-            <Grid item xs={8} className={classes.pageIntro}>
+            </Box>
+            <Box className={classes.pageIntro}>
               <PageIntro
                 editing={editing}
                 {...pageIntroData}
                 {...introEditors}
               >
               </PageIntro>
-            </Grid>
-            <Grid item xs={2}>
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
         </Box>
-        <Divider/>
-        <Box display="flex">
-          <Grid container className={classes.alignComponentContent}>
-            <Grid item xs={2}>
-            </Grid>
-            <Grid item xs={8}>
-              <PageMenu {...pageMenuData} { ...pageRefs } />
-            </Grid>
-            <Grid item xs={2}>
-            </Grid>
-          </Grid>
-        </Box>
-        <Divider/>
 
-        <Box display="flex">
-          <Grid container className={classes.alignComponentContent}>
-            <Grid item xs={2}>
-            </Grid>
-            <Grid item xs={8}>
-              <PageBody
-                editing={editing}
-                {...pageBodyData}
-                {...pageRefs}
-                {...bodyEditors}
-              />
-            </Grid>
-            <Grid item xs={2}>
-            </Grid>
-          </Grid>
+        <Box className={classes.stickyToolbar}>
+          <Box className={classes.toolbarContent}>
+            <PageMenu {...pageMenuData} { ...pageRefs } />
+          </Box>
+        </Box>
+
+        <Box className={classes.contentBox}>
+          <Box className={classes.boxOfContent}>
+            <PageBody
+              editing={editing}
+              {...pageBodyData}
+              {...pageRefs}
+              {...bodyEditors}
+            />
+          </Box>
         </Box>
       </Box>
     </>

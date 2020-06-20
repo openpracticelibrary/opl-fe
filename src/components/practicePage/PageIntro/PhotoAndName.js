@@ -7,6 +7,7 @@ import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles((theme) => ({
   space: {
     paddingRight: theme.spacing(3),
+    minWidth: "fit-content",
   },
 }));
 

@@ -82,6 +82,9 @@ const useStyles = makeStyles((theme) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
   },
+  pageBox: {
+    backgroundColor: theme.palette.common.true_white,
+  },
 }));
 
 export default function OPLDrawer(props) {
@@ -133,7 +136,7 @@ export default function OPLDrawer(props) {
           </>
         )}
       </Drawer>
-      <Box width="100%">{props.children}</Box>
+      <Box className={classes.pageBox} width="100%">{props.children}</Box>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles/index';
 import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
 
 import Landing from "../components/Home/Landing";
 import Community from "../components/Home/Community";
@@ -13,10 +14,14 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     display: "flex",
-    flexDirection: "center",
     justifyContent: "center",
-    padding: theme.spacing(20),
+    padding: theme.spacing(20, 2),
     width: "100%",
+  },
+  contentBox: {
+    display: "flex",
+    flexDirection: "column",
+    maxWidth: "1300px",
   },
 }));
 
@@ -45,8 +50,10 @@ export default function Home(props) {
           className={classes.content}
           spacing={10}
         >
-          <Community communityRef={communityRef} />
-          <CuratedPractices />
+          <Box className={classes.contentBox}>
+            <Community communityRef={communityRef} />
+            <CuratedPractices />
+          </Box>
         </Grid>
         <Explore
           exploreMessage="Learn something new from your peers and experiment with best practices!"

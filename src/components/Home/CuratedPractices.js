@@ -13,6 +13,12 @@ import { GET_CURATED_PRACTICES } from "../../graphql";
 import PracticeCardGrid from "../shared/PracticeCards/PracticeCardGrid";
 
 const useStyles = makeStyles((theme) => ({
+  practiceHeader: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingBottom: theme.spacing(12),
+  },
   aboutTitle: {
     textAlign: "right",
   },
@@ -41,10 +47,8 @@ const CuratedPractices = (props) => {
 
   return (
     <>
-      <Grid item xs={9} data-testid="curatedList">
+      <Grid item xs={12} className={classes.practiceHeader} data-testid="curatedList">
         <Typography variant={"h1"}>Popular Practices</Typography>
-      </Grid>
-      <Grid item xs={3} className={classes.aboutTitle}>
         <Button className={classes.libraryButton} variant="contained" onClick={() => navigate("/practice")}>
           See Everything{"  "}<ArrowForwardIcon className={classes.arrowForward}/>
         </Button>

@@ -20,9 +20,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     flexGrow: 1,
     padding: theme.spacing(1),
-    width: "100%",
+    width: "95%",
     paddingTop: 27,
-    marginBottom: "75px",
+    marginBottom: "100px",
+    marginLeft: "66px",
     height: 'auto',
   },
   titleBox: {
@@ -36,10 +37,8 @@ const useStyles = makeStyles((theme) => ({
   },
   practicesPane: {
     display: "flex",
-    flexDirection: "center",
-    paddingLeft: theme.spacing(10),
-    width: "100%",
-    padding: theme.spacing(2, 0),
+    paddingLeft: theme.spacing(8),
+    maxWidth: "95%",
   },
   filterBar: {
     padding: theme.spacing(3, 0),
@@ -157,7 +156,7 @@ const Practices = (props) => {
           alignContent="center"
           className={classes.root}
         >
-          <Grid className={classes.practicePane} item xs={11}>
+          <Grid item xs={12}>
             {props.children}
           </Grid>
         </Grid>

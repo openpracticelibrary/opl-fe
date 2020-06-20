@@ -11,11 +11,12 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   color: {
-    color: theme.palette.common.black,
+    fontSize: "0.9rem",
+    color: "#6c6c6c",
   },
   connect: {
     color: theme.palette.common.black,
-    fontWeight: "SemiBold",
+    fontWeight: "500",
   },
 }));
 
@@ -48,11 +49,11 @@ export default function FooterLogoSection() {
           >
             <Grid item>
               <Typography
-                variant="overline"
+                variant="button"
                 data-testid="connect"
                 className={classes.connect}
               >
-                Connect with us!
+                Please connect with us:
               </Typography>
             </Grid>
             <Grid item>
@@ -64,12 +65,12 @@ export default function FooterLogoSection() {
           <Grid
             container
             direction="row"
-            spacing={5}
+            spacing={3}
           >
             {sections.map((section, i) => (
               <Grid item key={i}>
                 <Typography
-                  variant="overline"
+                  variant="button"
                   className={classes.color}
                   onClick={() => navigate(section.url)}
                 >

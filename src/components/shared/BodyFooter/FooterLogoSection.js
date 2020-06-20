@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import logoOPL from "../../../assets/icons/open-practice-librar.png";
+import { OPLLogo } from "../../../assets/icons";
 import logoLabs from "../../../assets/images/logo-red-hat-open-innovation-labs-a-standard-rgb.png";
 import Grid from "@material-ui/core/Grid";
 
@@ -12,10 +12,9 @@ export default function FooterLogoSection() {
         direction="column"
         justify="flex-start"
         alignItems="center"
-        spacing={1}
       >
         <Grid item>
-          <img src={logoOPL} alt="OPL"/>
+          <OPLLogo height="37px" width="221px" />
         </Grid>
         <Grid item>
           <Grid
@@ -24,12 +23,12 @@ export default function FooterLogoSection() {
             justify="flex-start"
             alignItems="flex-start"
           >
-            <Grid item xs={3}>
-              <Typography variant="caption" data-testid="poweredBy">
+            <Grid item xs={6}>
+              <Typography variant="overline" data-testid="poweredBy">
                 {`powered by`}
               </Typography>
             </Grid>
-            <Grid item xs={9}>
+            <Grid item xs={6}>
               <img
                 src={logoLabs}
                 alt="Open Innovation Labs"

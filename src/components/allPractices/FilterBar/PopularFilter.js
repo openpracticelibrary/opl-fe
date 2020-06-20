@@ -10,18 +10,22 @@ const useStyles = makeStyles((theme) => ({
     color: "#2e2e2e",
   },
   menuItemFont: {
-    fontFamily: "Assistant-SemiBold",
     fontSize: "1rem",
     lineHeight: "1.375rem",
     color: "#717171",
+  },
+  flip: {
+    color: theme.palette.common.discovery_blue,
   },
 }));
 
 const StyledMenu = withStyles({
   paper: {
     width: "118px",
-    height: "107px",
     border: "solid 0.8px #c4c4c4",
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
   },
 })((props) => (
   <Menu
@@ -69,7 +73,7 @@ export default function PopularFilter(props) {
         <Typography variant="overline" className={classes.colorTitle}>
           {selectedItem}
         </Typography>
-        {anchorEl ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        {anchorEl ? <ExpandLessIcon className={classes.flip} /> : <ExpandMoreIcon className={classes.flip} />}
       </Button>
       <StyledMenu
         id="styled-menu"
@@ -84,7 +88,7 @@ export default function PopularFilter(props) {
             selected={menuList === selectedItem}
             onClick={() => handleMenuItemClick(menuList)}
           >
-            <Typography className={classes.menuItemFont}>{menuList}</Typography>
+            <Typography variant={"button"} className={classes.menuItemFont}>{menuList}</Typography>
           </MenuItem>
         ))}
       </StyledMenu>

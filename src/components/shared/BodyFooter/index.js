@@ -24,9 +24,9 @@ export default function BodyFooter() {
         <Divider/>
         <footer className={classes.footer} data-testid="footer">
           <Grid container>
-            <Grid item xs={2}>
+            <Grid item xs={1}>
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={10}>
               <Box display="flex">
                 <Box flexShrink={1}>
                   <FooterLogoSection/>
@@ -35,8 +35,6 @@ export default function BodyFooter() {
                   <FooterLinkSection/>
                 </Box>
               </Box>
-            </Grid>
-            <Grid item xs={2}>
             </Grid>
           </Grid>
         </footer>

@@ -15,13 +15,18 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "space-evenly",
     padding: theme.spacing(2, 0),
-    position: "sticky",
   },
   wrapBox: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
     textAlign: "center",
+  },
+  menu: {
+    justifyContent: "flex-end",
+  },
+  menuLinks: {
+    maxWidth: "700px",
   },
   pageNavButton: {
     display: "inline-block",
@@ -68,9 +73,9 @@ export default function PageMenu(props) {
           <Grid
             container
             direction="row"
-            alignItems="center"
+            className={classes.menu}
           >
-            <Grid item xs={8}>
+            <Grid item xs={8} className={classes.menuLinks}>
               <Grid
                 container
                 direction="row"
