@@ -104,6 +104,7 @@ export default function PageMenu(props) {
               <SocialLinks
                 practiceId={props.practiceId}
                 upvotes={props.upvotes}
+                coverImage={props.coverImage}
               />
             </Grid>
           </Grid>

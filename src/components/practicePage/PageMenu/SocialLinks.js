@@ -28,6 +28,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const StyledPopover = ((props) =>(
+  <Popover
+    anchorOrigin={{
+      vertical: 'bottom',
+      horizontal: 'right',
+    }}
+    transformOrigin={{
+      vertical: 'top',
+      horizontal: 'right',
+    }}{...props} 
+  />
+));
 
 export default function SocialLinks(props) {
   const classes = useStyles();
@@ -100,23 +112,14 @@ export default function SocialLinks(props) {
           <IconButton aria-describedby={id} onClick={handleClick}>
             <MoreItemsIcon/>
           </IconButton>
-          <Popover
+          <StyledPopover
             id={id}
             open={open}
             anchorEl={anchorEl}
             onClose={handleClose}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'right',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
             PaperProps={{
               className: classes.drawerPaper,
             }}
-            className="popover_class"
           >
             <Grid
               container
@@ -125,7 +128,7 @@ export default function SocialLinks(props) {
               spacing={2}
             >
               <Grid item>
-                <PinterestShareButton url={window.location.href}>
+                <PinterestShareButton url={window.location.href} media={props.coverImage}>
                   <PinterestIcon/>
                 </PinterestShareButton>
               </Grid>
@@ -140,7 +143,7 @@ export default function SocialLinks(props) {
                 </FacebookShareButton>
               </Grid>
             </Grid>
-          </Popover>
+          </StyledPopover>
         </Grid>
       </Grid>
     </>
