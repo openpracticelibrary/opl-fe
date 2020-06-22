@@ -156,7 +156,7 @@ const mockPracticeDataCuratedSorted = [
         question: "When do I do this?",
       },
     ],
-    curated: 1,
+    curated: 5,
   },
 ];
 
@@ -192,7 +192,7 @@ const apolloMocks = [
       variables: {
         start: 0,
         limit: 20,
-        sort: "curated:DESC",
+        sort: "curated:ASC",
         tag: [],
       },
     },

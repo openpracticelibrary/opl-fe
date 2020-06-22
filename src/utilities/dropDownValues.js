@@ -21,7 +21,7 @@ const mobiusLoopArray = [
 const popularMenuItems = {
   Popular: "upvotes:DESC",
   Newest: "createdAt:DESC",
-  Curated: "curated:DESC",
+  Curated: "curated:ASC",
 };
 
 export { filterTags, mobiusLoopArray, popularMenuItems };
