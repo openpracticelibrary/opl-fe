@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 2.42,
     color: theme.palette.common.brownish_grey,
   },
-}));
+})); 
 
 const sections = [
   {title: "What", ref: "whatIsRef"},
