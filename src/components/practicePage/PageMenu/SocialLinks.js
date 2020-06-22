@@ -7,7 +7,6 @@ import Grid from "@material-ui/core/Grid";
 import IconButton from '@material-ui/core/IconButton';
 import { useMutation } from "@apollo/react-hooks";
 import { LIKE_PRACTICE } from "../../../graphql/";
-import Button from '@material-ui/core/Button';
 import Popover from '@material-ui/core/Popover';
 
 const useStyles = makeStyles((theme) => ({
@@ -18,6 +17,14 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     textAlign: "center",
     alignContent: "center",
+  },
+  drawerPaper: {
+    borderRadius: "10px",
+    borderWidth: "3px",
+    borderColor: theme.palette.common.discovery_blue,
+    borderStyle: "solid",
+    textAlign: "center",
+    padding: theme.spacing(2,4),
   },
 }));
 
@@ -86,13 +93,13 @@ export default function SocialLinks(props) {
         </Grid>
         <Grid item>
           <LinkedinShareButton url={window.location.href}>
-            <LinkedInIcon />
+            <LinkedInIcon/>
           </LinkedinShareButton>
         </Grid>
         <Grid item>
-          <Button aria-describedby={id} onClick={handleClick}>
-            <MoreItemsIcon />
-          </Button>
+          <IconButton aria-describedby={id} onClick={handleClick}>
+            <MoreItemsIcon/>
+          </IconButton>
           <Popover
             id={id}
             open={open}
@@ -100,22 +107,39 @@ export default function SocialLinks(props) {
             onClose={handleClose}
             anchorOrigin={{
               vertical: 'bottom',
-              horizontal: 'center',
+              horizontal: 'right',
             }}
             transformOrigin={{
               vertical: 'top',
-              horizontal: 'center',
+              horizontal: 'right',
             }}
+            PaperProps={{
+              className: classes.drawerPaper,
+            }}
+            className="popover_class"
           >
-            <PinterestShareButton url={window.location.href}>
-              <PinterestIcon />
-            </PinterestShareButton>
-            <RedditShareButton url={window.location.href}>
-              <RedditIcon />
-            </RedditShareButton>
-            <FacebookShareButton url={window.location.href}>
-              <FacebookIcon />
-            </FacebookShareButton>
+            <Grid
+              container
+              direction="row"
+              className={classes.root}
+              spacing={2}
+            >
+              <Grid item>
+                <PinterestShareButton url={window.location.href}>
+                  <PinterestIcon/>
+                </PinterestShareButton>
+              </Grid>
+              <Grid item>
+                <RedditShareButton url={window.location.href}>
+                  <RedditIcon/>
+                </RedditShareButton>
+              </Grid>
+              <Grid item>
+                <FacebookShareButton url={window.location.href}>
+                  <FacebookIcon/>
+                </FacebookShareButton>
+              </Grid>
+            </Grid>
           </Popover>
         </Grid>
       </Grid>
