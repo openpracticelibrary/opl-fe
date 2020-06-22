@@ -136,6 +136,7 @@ const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
     body,
     tags,
     upvotes,
+    coverImage,
     mediaGallery,
     ama,
     resources,
@@ -177,7 +178,7 @@ const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
     questions: ama.length
   };
 
-  const pageMenuData = { practiceId, upvotes }
+  const pageMenuData = { practiceId, upvotes, coverImage }
 
   const pageBodyData = {
     practiceId,

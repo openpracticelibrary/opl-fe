@@ -42,6 +42,7 @@ const GET_PRACTICE_PAGE = gql`
       tags {
         tag
       }
+      coverImage
     }
   }
 `;
