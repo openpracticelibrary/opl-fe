@@ -8,10 +8,14 @@ export default function FooterList(props) {
   return (
     <>
       <Box display="flex" p={1}>
-        {props.children}
-        <Link href={props.link} onClick={preventDefault}>
-          <Typography variant="button"> {props.text} </Typography>
-        </Link>
+        <Box>
+          {props.children}
+        </Box>
+        <Box ml={1}>
+          <Link href={props.link} onClick={preventDefault}>
+            <Typography variant="body2"> {props.text} </Typography>
+          </Link>
+        </Box>
       </Box>
     </>
   );

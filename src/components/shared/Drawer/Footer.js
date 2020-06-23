@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import FooterList from "./FooterList";
 import Grid from "@material-ui/core/Grid";
 import Disclaimer from "./Disclaimer";
-import Typography from "@material-ui/core/Typography";
 import { BetaIcon, PodIcon } from "../../../assets/icons";
 
 const iconColor = "#1975ff";
@@ -37,9 +36,8 @@ export default function Footer() {
       >
         {sections.map((section) => (
           <Grid item>
-            <FooterList link={section.url}>
+            <FooterList link={section.url} text={section.title}>
               {section.icon}
-              <Typography variant="body2"> {section.title} </Typography>
             </FooterList>
           </Grid>
         ))}
