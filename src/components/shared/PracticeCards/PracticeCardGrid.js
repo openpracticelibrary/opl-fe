@@ -24,6 +24,7 @@ const PracticeCardGrid = (props) => {
       alignContent="flex-start"
       alignItems="flex-start"
       spacing={2}
+      data-testid="practicecardgrid"
     >
       {props.practices.map((practice) => (
         <PracticeCard
