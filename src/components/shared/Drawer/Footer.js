@@ -3,7 +3,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import FooterList from "./FooterList";
 import Grid from "@material-ui/core/Grid";
 import Disclaimer from "./Disclaimer";
-import { BetaIcon, NewTabIcon, RockIcon } from "../../../assets/icons";
+import Typography from "@material-ui/core/Typography";
+import { BetaIcon, PodIcon } from "../../../assets/icons";
+
+const iconColor = "#1975ff";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -17,11 +20,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  { title: "ABOUT US", url: "#", icon: <RockIcon /> },
-  { title: "JOIN BETA", url: "#", icon: <BetaIcon /> },
-  { title: "MEETUP", url: "#", icon: <NewTabIcon /> },
-  { title: "GITHUB", url: "#", icon: <NewTabIcon /> },
-  { title: "PODCAST", url: "#", icon: <NewTabIcon /> },
+  { title: "JOIN BETA", url: "#", icon: <BetaIcon fill={iconColor} /> },
+  { title: "PODCAST", url: "#", icon: <PodIcon width="15px" height="15px" fill={iconColor} /> },
 ];
 
 export default function Footer() {
@@ -37,8 +37,9 @@ export default function Footer() {
       >
         {sections.map((section) => (
           <Grid item>
-            <FooterList link={section.url} text={section.title}>
+            <FooterList link={section.url}>
               {section.icon}
+              <Typography variant="body2"> {section.title} </Typography>
             </FooterList>
           </Grid>
         ))}
