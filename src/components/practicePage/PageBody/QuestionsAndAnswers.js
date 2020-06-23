@@ -1,48 +1,61 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles/index";
+import { Box, Grid, Typography } from "@material-ui/core";
+import QuestionStamp from './QuestionStamp';
+import { makeStyles, useTheme } from "@material-ui/core/styles/index";
 import { AmaIcon } from "../../../assets/icons";
-import Grid from "@material-ui/core/Grid";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: theme.spacing(1)
-  },
-  space: {
-    marginRight: theme.spacing(2),
-  },
-  question: {
-    color: theme.palette.common.black,
-  }
-}));
 
 export default function QuestionsAndAnswers(props) {
-  const classes = useStyles();
-
+  const theme = useTheme();
   return (
     <>
       {props.ama.map((qAndA, i) => (
         <Grid
+          direction="column"
           container
           key={i}
-          direction="row"
           justify="flex-start"
-          alignItems="flex-start"
-          className={classes.root}
         >
-          <Grid item className={classes.space}>
-            <AmaIcon fill="#1975FF" height="27px" width="27px" />
+          <Grid item>
+            <QuestionStamp />
+          </Grid>      
+          <Grid
+            direction="row"
+            alignItems="flex-start" 
+            container
+            spacing={2}
+            wrap="nowrap"
+          >
+            <Grid item>
+              <AmaIcon
+                fill={theme.palette.common.discovery_blue}
+                height="1.75rem"
+                width="1.75rem" 
+              />
+            </Grid>
+            <Grid item>
+              <Typography
+                variant={"h2"}
+              >
+                {qAndA.question}
+              </Typography>
+            </Grid>
           </Grid>
           <Grid item>
-            <Typography variant={"subtitle1"} className={classes.question}>
-              {qAndA.question}
-            </Typography>
-            <br/>
-            <Typography variant="button">Answer</Typography>
-            <Typography variant="body1">
-              {qAndA.answers.map((a) => a.answer)}
-            </Typography>
-          </Grid>
+            {qAndA.answers.map((response, i) => (
+              <Box 
+                marginY={2} 
+                ml={6}
+              >
+                <QuestionStamp
+                  key={i}
+                  isQuestion={false}
+                />
+                <Typography variant="body1">
+                 {response.answer}
+                </Typography>
+              </Box>
+            ))}
+          </Grid>    
         </Grid>
       ))}
     </>

@@ -1,67 +1,109 @@
 import React from "react";
-import { Typography, IconButton, InputAdornment } from "@material-ui/core";
-import Box from "@material-ui/core/Box";
-import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles/index";
+import {
+  Box,
+  Button,
+  Grid,
+  Typography,
+  TextField } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles/index";
 import QuestionsAndAnswers from "./QuestionsAndAnswers";
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  space: {
-    padding: theme.spacing(1),
-  },
-  textField: {
-    borderRadius: "9px",
-  },
-  exitIcon: {
-    color: theme.palette.common.discovery_blue,
-  },
   input: {
     '&::placeholder': {
       fontFamily: "Quicksand",
-      fontWeight: "normal",
-      fontSize: "1.625rem",
-      color: theme.palette.common.discovery_blue,
-      padding: theme.spacing(1),
-      opacity: 100,
+      opacity: 100
     },
   },
 }));
 
 export default function AskMeAnything(props) {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <>
-      <Box className={classes.root}>
-        <Box className={classes.space}>
-          <Typography variant={"h2"} ref={props.amaRef}>
-            Ask me anything
-          </Typography>
+      <Grid container direction="column">
+        <Box mb={4}>
+          <Grid item xs={12}>
+            <Typography
+              variant={"h2"}
+              ref={props.amaRef}
+            >
+              Ask me anything
+            </Typography>
+            <Box marginY={2}>
+              <Typography variant={"body1"}>
+                Please send a question to the community about anything you may need for using this practice.
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid item>
+            <TextField
+              id="ama"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              multiline
+              placeholder="e.g. How do I know when to use this practice?"
+              rows="4"
+              type="textarea"
+              InputProps={
+                {classes: { input: classes.input }}
+              }
+            />
+            <Grid
+              alignItems="center"
+              container
+              spacing={3}
+            >
+              <Grid item xs={4}>
+                <TextField
+                  variant="outlined"
+                  fullWidth
+                  placeholder="Your name"
+                  size="small"
+                  InputProps={
+                    {classes: { input: classes.input }}
+                  }
+                />
+              </Grid>
+              <Grid item xs={5}>
+                <TextField
+                  variant="outlined"
+                  fullWidth
+                  placeholder="Your email"
+                  type="email"
+                  size="small"
+                  InputProps={
+                    {classes: { input: classes.input }}
+                  }
+                />               
+              </Grid>
+              <Grid item xs={3}>
+                <Button
+                  fullWidth
+                  size="medium"
+                  variant="outlined"
+                >
+                  Send Question
+                </Button>               
+              </Grid>
+            </Grid>
+            <Box marginY={1}>
+              <Typography
+                variant={"h6"}
+              >
+                Name / email are optional for posting. We will use your name next to the question and email to let you know when it has been answered.
+              </Typography>
+            </Box>
+          </Grid>
         </Box>
-        <Box className={classes.space}>
-          <Typography variant={"body1"}>
-            Please send a question to the community about anything you may need for using this practice.
-          </Typography>
-        </Box>
-        <Box className={classes.space}>
-          <TextField
-            id="ama"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            placeholder="What questions do you have?"
-            InputProps={{
-              classes: { input: classes.input, root: classes.textField },
-              endAdornment: <InputAdornment position="end"><IconButton><ExitToAppIcon className={classes.exitIcon}/></IconButton></InputAdornment>
-            }}/>
-        </Box>
-        <QuestionsAndAnswers ama={props.ama}/>
-      </Box>
+        <QuestionsAndAnswers
+          ama={props.ama}
+        />
+      </Grid>
+  
     </>
   );
 }
