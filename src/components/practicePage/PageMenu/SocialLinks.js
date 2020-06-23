@@ -1,12 +1,13 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import { EmailShareButton, TwitterShareButton, LinkedinShareButton } from "react-share";
-import { TwitterIcon, MoreItemsIcon, NounLoveIcon, LinkedInIcon, EmailIcon } from "../../../assets/icons";
+import { EmailShareButton, TwitterShareButton, LinkedinShareButton, PinterestShareButton, RedditShareButton, FacebookShareButton } from "react-share";
+import { FacebookIcon, RedditIcon, PinterestIcon, TwitterIcon, MoreItemsIcon, NounLoveIcon, LinkedInIcon, EmailIcon } from "../../../assets/icons";
 import Grid from "@material-ui/core/Grid";
 import IconButton from '@material-ui/core/IconButton';
 import { useMutation } from "@apollo/react-hooks";
 import { LIKE_PRACTICE } from "../../../graphql/";
+import Popover from '@material-ui/core/Popover';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,8 +18,28 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     alignContent: "center",
   },
+  drawerPaper: {
+    borderRadius: "10px",
+    borderWidth: "3px",
+    borderColor: theme.palette.common.discovery_blue,
+    borderStyle: "solid",
+    textAlign: "center",
+    padding: theme.spacing(2,4),
+  },
 }));
 
+const StyledPopover = ((props) =>(
+  <Popover
+    anchorOrigin={{
+      vertical: 'bottom',
+      horizontal: 'right',
+    }}
+    transformOrigin={{
+      vertical: 'top',
+      horizontal: 'right',
+    }}{...props} 
+  />
+));
 
 export default function SocialLinks(props) {
   const classes = useStyles();
@@ -31,6 +52,20 @@ export default function SocialLinks(props) {
       variables: {practiceId: props.practiceId, upvotes: newUpvotes},
     });
   };
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
+
   return (
     <>
       <Grid
@@ -70,11 +105,45 @@ export default function SocialLinks(props) {
         </Grid>
         <Grid item>
           <LinkedinShareButton url={window.location.href}>
-            <LinkedInIcon />
+            <LinkedInIcon/>
           </LinkedinShareButton>
         </Grid>
         <Grid item>
-          <MoreItemsIcon />
+          <IconButton aria-describedby={id} onClick={handleClick}>
+            <MoreItemsIcon/>
+          </IconButton>
+          <StyledPopover
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            PaperProps={{
+              className: classes.drawerPaper,
+            }}
+          >
+            <Grid
+              container
+              direction="row"
+              className={classes.root}
+              spacing={2}
+            >
+              <Grid item>
+                <PinterestShareButton url={window.location.href} media={props.coverImage}>
+                  <PinterestIcon/>
+                </PinterestShareButton>
+              </Grid>
+              <Grid item>
+                <RedditShareButton url={window.location.href}>
+                  <RedditIcon/>
+                </RedditShareButton>
+              </Grid>
+              <Grid item>
+                <FacebookShareButton url={window.location.href}>
+                  <FacebookIcon/>
+                </FacebookShareButton>
+              </Grid>
+            </Grid>
+          </StyledPopover>
         </Grid>
       </Grid>
     </>
