@@ -5,6 +5,10 @@ import { gql } from "apollo-boost";
  * manipulating the AMA collection of an individual Practice as identified by its ID, not its title or slug.  
  */
 const MODIFY_PRACTICE_AMAS = gql`
+  mutation modifyPracticeAmas(
+    $practiceId: ID!, 
+    $newQuestions: [ID!]!
+  ) {
     updatePractice (
       input: {
         where: {id: $practiceId},

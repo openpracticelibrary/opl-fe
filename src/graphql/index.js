@@ -13,7 +13,7 @@ export { default as GET_PRACTICE_COUNT } from './queries/practiceCount';
 export { default as GET_PRACTICES_BY_TAG_PAGINATION } from './queries/practicesByTagQueryWithPagination';
 
 // mutations
-export { efault as CREATE_AMA_QUESTION } from './mutations/createAmaQuestionMutation';
+export { default as CREATE_AMA_QUESTION } from './mutations/createAmaQuestionMutation';
 export { default as CREATE_TAG } from './mutations/createTagMutation';
 export { default as DELETE_TAG } from './mutations/deleteTagMutation';
 export { default as LIKE_PRACTICE } from './mutations/likePracticeMutation';
