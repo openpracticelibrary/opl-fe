@@ -84,7 +84,6 @@ export default function ResourceAddLink(props) {
   const isValidText = () => {
     const filter = new Filter();
     const hasBadWords = filter.isProfane(refLinkDesc.current.value);
-    console.log(hasBadWords);
     if (!refLinkDesc.current.value && hasBadWords) {
       setTextValid(false);
       return;
@@ -99,7 +98,7 @@ export default function ResourceAddLink(props) {
       return;
     }
 
-    if (textValid) {
+    if (!refLinkDesc.current.value && textValid) {
       return;
     }
    
