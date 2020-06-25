@@ -61,19 +61,38 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function ResourceAddLink(props) {
   const classes = useStyles();
 
   const [updatePracticeResources] = useMutation(UPDATE_PRACTICE_RESOURCES);
-
 
   const [open, setOpen] = React.useState(false);
   const [linkType, setLinkType] = React.useState('');
   const refLinkUrl = React.useRef();
   const refLinkDesc = React.useRef();
   const [thankYouOpen, setThankYouOpen] = React.useState(false);
+  const isValidURL = require('url-validation');
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if(refLinkUrl.current.value === '' || refLinkUrl.current.value === null) {
+      console.log("URL required");
+      const urlVarify = isValidURL(refLinkUrl.current.value);
+      if (urlVarify === false) {
+        console.log("URL Invalid");
+        return (e === true);
+      }
+      return (e === true);
+    }
+
+    if(refLinkDesc.current.value === '' || refLinkDesc.current.value === null) {
+      console.log("Descriptison required");
+      return e;
+    }
+   
+
     const prevResourceList = props.prevResources.map(resource => {
       return {
         link: resource.link,
@@ -187,9 +206,11 @@ export default function ResourceAddLink(props) {
                 </Grid>
                 <Grid item xs={12} sm={7}>
                   <TextField
+                    required
+                    error
                     margin="dense"
                     id="link"
-                    label="Link URL*"
+                    label="Link URL"
                     type="url"
                     variant="outlined"
                     inputRef={refLinkUrl}
@@ -198,9 +219,11 @@ export default function ResourceAddLink(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
+                    required
+                    error
                     margin="dense"
                     id="description"
-                    label="Link Description*"
+                    label="Link Description"
                     type="text"
                     variant="outlined"
                     inputRef={refLinkDesc}
