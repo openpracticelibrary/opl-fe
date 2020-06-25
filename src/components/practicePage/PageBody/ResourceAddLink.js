@@ -15,6 +15,7 @@ import { AddIcon } from "../../../assets/icons";
 import Grid from '@material-ui/core/Grid';
 import { useMutation } from "@apollo/react-hooks";
 import { UPDATE_PRACTICE_RESOURCES } from "../../../graphql";
+import isValidURL from "url-validation";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,35 +65,40 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ResourceAddLink(props) {
   const classes = useStyles();
-
   const [updatePracticeResources] = useMutation(UPDATE_PRACTICE_RESOURCES);
-
   const [open, setOpen] = React.useState(false);
   const [linkType, setLinkType] = React.useState('');
+  const [urlValid, setURLValid] = React.useState(true);
+  const [textValid, setTextValid] = React.useState(false);
   const refLinkUrl = React.useRef();
   const refLinkDesc = React.useRef();
-  const [thankYouOpen, setThankYouOpen] = React.useState(false);
-  const isValidURL = require('url-validation');
+  const [thankYouOpen, setThankYouOpen] = React.useState(false);  
+
+  const isURLValid = () => {
+    const res = isValidURL(refLinkUrl.current.value);
+    console.log(res);
+    setURLValid(res);
+  };
+
+  const isValidText = () => {
+    if (!refLinkDesc.current.value) {
+      setTextValid(false);
+      return;
+    }
+    setTextValid(true);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if(refLinkUrl.current.value === '' || refLinkUrl.current.value === null) {
-      console.log("URL required");
-      const urlVarify = isValidURL(refLinkUrl.current.value);
-      if (urlVarify === false) {
-        console.log("URL Invalid");
-        return (e === true);
-      }
-      return (e === true);
+    if (!refLinkUrl.current.value || !urlValid) {
+      return;
     }
 
-    if(refLinkDesc.current.value === '' || refLinkDesc.current.value === null) {
-      console.log("Descriptison required");
-      return e;
+    if (!refLinkDesc.current.value) {
+      return;
     }
    
-
     const prevResourceList = props.prevResources.map(resource => {
       return {
         link: resource.link,
@@ -104,7 +110,7 @@ export default function ResourceAddLink(props) {
     const additionalResource = [
       {
         link: refLinkUrl.current.value,
-        linkType: linkType,
+        linkType: linkType || "web",
         description: refLinkDesc.current.value,
       }
     ];
@@ -186,7 +192,6 @@ export default function ResourceAddLink(props) {
                   <TextField
                     id="selectedLinkType"
                     select
-                    required
                     label="Link Type"
                     variant="outlined"
                     margin="dense"
@@ -207,7 +212,8 @@ export default function ResourceAddLink(props) {
                 <Grid item xs={12} sm={7}>
                   <TextField
                     required
-                    error
+                    error={!urlValid}
+                    onChange={isURLValid}
                     margin="dense"
                     id="link"
                     label="Link URL"
@@ -220,7 +226,8 @@ export default function ResourceAddLink(props) {
                 <Grid item xs={12}>
                   <TextField
                     required
-                    error
+                    error={!textValid}
+                    onChange={isValidText}
                     margin="dense"
                     id="description"
                     label="Link Description"
