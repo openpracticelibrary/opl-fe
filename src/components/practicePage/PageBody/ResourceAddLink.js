@@ -18,7 +18,6 @@ import { UPDATE_PRACTICE_RESOURCES } from "../../../graphql";
 import isValidURL from "url-validation";
 import Filter from "bad-words";
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -64,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 export default function ResourceAddLink(props) {
   const classes = useStyles();
   const [updatePracticeResources] = useMutation(UPDATE_PRACTICE_RESOURCES);
@@ -84,7 +82,7 @@ export default function ResourceAddLink(props) {
   const isValidText = () => {
     const filter = new Filter();
     const hasBadWords = filter.isProfane(refLinkDesc.current.value);
-    if (!refLinkDesc.current.value && hasBadWords) {
+    if (!refLinkDesc.current.value || hasBadWords) {
       setTextValid(false);
       return;
     }
@@ -98,7 +96,7 @@ export default function ResourceAddLink(props) {
       return;
     }
 
-    if (!refLinkDesc.current.value && textValid) {
+    if (!refLinkDesc.current.value || textValid) {
       return;
     }
    

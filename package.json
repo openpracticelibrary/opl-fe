@@ -19,7 +19,6 @@
     "graphql": "^15.0.0",
     "markdown-draft-js": "^2.2.0",
     "moment": "^2.25.3",
-    "profanease": "^1.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-dropzone": "^11.0.1",
