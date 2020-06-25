@@ -16,6 +16,8 @@ import Grid from '@material-ui/core/Grid';
 import { useMutation } from "@apollo/react-hooks";
 import { UPDATE_PRACTICE_RESOURCES } from "../../../graphql";
 import isValidURL from "url-validation";
+import Filter from "bad-words";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,7 +70,7 @@ export default function ResourceAddLink(props) {
   const [updatePracticeResources] = useMutation(UPDATE_PRACTICE_RESOURCES);
   const [open, setOpen] = React.useState(false);
   const [linkType, setLinkType] = React.useState('');
-  const [urlValid, setURLValid] = React.useState(true);
+  const [urlValid, setUrlValid] = React.useState(true);
   const [textValid, setTextValid] = React.useState(false);
   const refLinkUrl = React.useRef();
   const refLinkDesc = React.useRef();
@@ -76,18 +78,20 @@ export default function ResourceAddLink(props) {
 
   const isURLValid = () => {
     const res = isValidURL(refLinkUrl.current.value);
-    console.log(res);
-    setURLValid(res);
+    setUrlValid(res);
   };
 
   const isValidText = () => {
-    if (!refLinkDesc.current.value) {
+    const filter = new Filter();
+    const hasBadWords = filter.isProfane(refLinkDesc.current.value);
+    console.log(hasBadWords);
+    if (!refLinkDesc.current.value && hasBadWords) {
       setTextValid(false);
       return;
     }
     setTextValid(true);
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -95,7 +99,7 @@ export default function ResourceAddLink(props) {
       return;
     }
 
-    if (!refLinkDesc.current.value) {
+    if (textValid) {
       return;
     }
    
@@ -122,7 +126,6 @@ export default function ResourceAddLink(props) {
       },
     });
     if (data) {
-      console.log('Updated!');
       handleClose(true);
       setThankYouOpen(true);
     }
