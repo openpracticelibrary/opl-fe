@@ -96,7 +96,7 @@ export default function ResourceAddLink(props) {
       return;
     }
 
-    if (!refLinkDesc.current.value || textValid) {
+    if (!refLinkDesc.current.value || !textValid) {
       return;
     }
    
