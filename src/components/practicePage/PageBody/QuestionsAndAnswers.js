@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, Typography } from "@material-ui/core";
 import QuestionStamp from './QuestionStamp';
-import { makeStyles, useTheme } from "@material-ui/core/styles/index";
+import { useTheme } from "@material-ui/core/styles/index";
 import { AmaIcon } from "../../../assets/icons";
 
 export default function QuestionsAndAnswers(props) {
@@ -16,7 +16,10 @@ export default function QuestionsAndAnswers(props) {
           justify="flex-start"
         >
           <Grid item>
-            <QuestionStamp />
+            <QuestionStamp
+              userName={qAndA.questionerName}
+              datePosted={qAndA.createdAt}
+            />
           </Grid>      
           <Grid
             direction="row"
@@ -51,7 +54,7 @@ export default function QuestionsAndAnswers(props) {
                   isQuestion={false}
                 />
                 <Typography variant="body1">
-                 {response.answer}
+                  {response.answer}
                 </Typography>
               </Box>
             ))}

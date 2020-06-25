@@ -17,7 +17,10 @@ const GET_PRACTICES = gql`
         link
       }
       ama {
+        createdAt
         question
+        questionerName
+        qustionerEmail
       }
     }
   }

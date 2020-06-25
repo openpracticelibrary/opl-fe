@@ -33,6 +33,9 @@ const GET_PRACTICE_PAGE = gql`
       }
       ama {
         question
+        questionerName
+        questionerEmail
+        createdAt
         answers {
           answer
           createdAt

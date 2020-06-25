@@ -12,8 +12,7 @@ const useStyles = makeStyles((theme) => ({
 
 const QuestionStamp = ({ 
   isQuestion = true,
-  firstName = "Anonymous",
-  lastName = "User", 
+  userName = "Anonymous User",
   datePosted = new Date(2020, 0, 1).toDateString()
 }) => {
   const classes = useStyles();
@@ -25,7 +24,7 @@ const QuestionStamp = ({
           className={classes.questionStamp} 
           variant={"h6"}
         >
-          {`${isQuestion ? 'Asked' : 'Answered'} By ${firstName} ${lastName} | ${datePosted}`}
+          {`${isQuestion ? 'Asked' : 'Answered'} By ${userName} | ${new Date(datePosted).toDateString()}`}
         </Typography>
       </Box>         
     </>

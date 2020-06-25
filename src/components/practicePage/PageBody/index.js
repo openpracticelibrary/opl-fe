@@ -1,4 +1,5 @@
 import React from "react";
+import Box from "@material-ui/core/Box";
 import MediaGallery from "./MediaGallery";
 import AskMeAnything from "./AskMeAnything";
 import WhatIs from "./WhatIs";
@@ -6,18 +7,8 @@ import WhyDo from "./WhyDo";
 import HowDo from "./HowDo";
 import ResourcesWeLove from "./ResourcesWeLove";
 import FullText from "./FullText";
-import Box from "@material-ui/core/Box";
-import { makeStyles } from "@material-ui/core/styles/index";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    margin: theme.spacing(6, 0),
-  },
-}));
 
 export default function PageBody(props) {
-  const classes = useStyles();
-
   const {
     practiceId,
     title,
@@ -40,7 +31,7 @@ export default function PageBody(props) {
   if (whatIs && whyDo && howTo) {
     return (
       <>
-        <Box className={classes.root}>
+        <Box m={6}>
           <WhatIs
             title={title}
             source={whatIs}
@@ -76,13 +67,17 @@ export default function PageBody(props) {
             links={resources}
             resourceRef={resourceRef} 
           />
-          <AskMeAnything ama={ama} amaRef={amaRef} />
+          <AskMeAnything
+            ama={ama}
+            practiceId={practiceId}
+            amaRef={amaRef}
+          />
         </Box>
       </>
     );
   } else {
     return (
-      <Box className={classes.root}>
+      <Box m={6}>
         <FullText source={fullText} />
       </Box>
     );
