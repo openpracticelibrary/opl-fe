@@ -24,3 +24,6 @@ export { default as TwitterIcon } from './TwitterIcon';
 export { default as MoreItemsIcon } from './MoreItemsIcon';
 export { default as NounLoveIcon } from './NounLoveIcon';
 export { default as LinkedInIcon } from './LinkedInIcon';
+export { default as FacebookIcon } from './FacebookIcon';
+export { default as RedditIcon } from './RedditIcon';
+export { default as PinterestIcon } from './PinterestIcon';
