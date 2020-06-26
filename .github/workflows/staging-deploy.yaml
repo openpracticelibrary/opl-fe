@@ -1,0 +1,44 @@
+name: E2E Tests and Staging Deploy
+
+on:
+  repository_dispatch:
+    types: [synced]
+
+jobs:
+  test:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cypress Tests
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+          env: HOST=http://openpracticelibrary-opl-dev.apps.s44.core.rht-labs.com/
+
+  kustomize:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Setup Kustomize
+        uses: imranismail/setup-kustomize@v1
+        with:
+          kustomize-version: "3.5.5"
+
+      - name: Checkout cd repo
+        uses: actions/checkout@v2
+        with:
+          repository: openpracticelibrary/opl-cd
+          token: ${{ secrets.SERVICE_PAT }}
+
+      - name: Kustomize build
+        run: |
+          cd openpracticelibrary/frontend/overlays/prerelease
+          kustomize edit set image quay.io/openpracticelibrary/opl-fe:${{ github.sha }}
+          git config --global user.email "shahein@redhat.com"
+          git config --global user.name "GitHub Actions"
+          git add .
+          git commit -m "Automated Action: Updated opl-fe staging image tag to `${{ github.sha }}`"
+          git push origin master
