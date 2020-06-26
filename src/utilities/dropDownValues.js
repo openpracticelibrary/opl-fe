@@ -21,7 +21,16 @@ const mobiusLoopArray = [
 const popularMenuItems = {
   Popular: "upvotes:DESC",
   Newest: "createdAt:DESC",
-  Curated: "curated:asc",
+  Curated: "curated:ASC",
 };
 
-export { filterTags, mobiusLoopArray, popularMenuItems };
+
+const formTagArray = (selectedFilterTag, selectedMobiusLoopFilter) => ([
+  ...(selectedFilterTag !== "ALL" ? [selectedFilterTag.toLowerCase()] : []),
+  ...(selectedMobiusLoopFilter !== "Entire Process Model"
+    ? [selectedMobiusLoopFilter.toLowerCase()]
+    : []),
+]);
+
+
+export { filterTags, mobiusLoopArray, popularMenuItems, formTagArray };

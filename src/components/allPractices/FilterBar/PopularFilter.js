@@ -58,7 +58,7 @@ export default function PopularFilter(props) {
   };
 
   const handleMenuItemClick = (menuList) => {
-    handleFilterChange(menuList);
+    handleFilterChange({ type: 'popularFilterChange', content: menuList});
     setAnchorEl(null);
   };
 
@@ -81,12 +81,14 @@ export default function PopularFilter(props) {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        data-testid="popularFilterMenu"
       >
         {menuItems.map((menuList) => (
           <MenuItem
             key={menuList}
             selected={menuList === selectedItem}
             onClick={() => handleMenuItemClick(menuList)}
+            data-testid={menuList}
           >
             <Typography variant={"button"} className={classes.menuItemFont}>{menuList}</Typography>
           </MenuItem>

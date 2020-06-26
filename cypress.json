@@ -1,0 +1,13 @@
+{
+    "fixturesFolder": false,
+    "screenshotsFolder": false,
+    "supportFile": "cypress/support/index.js",
+    "testFiles": "**/*.js",
+    "video": false,
+    "env": {
+      "HOST": "http://localhost:3000/"
+    },
+    "defaultCommandTimeout": 10000,
+    "requestTimeout": 10000
+  }
+  
