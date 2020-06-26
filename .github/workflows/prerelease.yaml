@@ -3,6 +3,8 @@ name: FE Prerelease
 on:
   release:
     types: [prereleased]
+  repository_dispatch:
+    types: [passed]
 
 jobs:
   rc-release:
