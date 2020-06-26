@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  { title: "JOIN BETA", url: "#", icon: <BetaIcon fill={iconColor} /> },
-  { title: "PODCAST", url: "#", icon: <PodIcon width="15px" height="15px" fill={iconColor} /> },
+  { title: "SEND FEEDBACK", url: "https://forms.gle/nXCvPEkjx6VdF6Px6", icon: <BetaIcon fill={iconColor} /> },
+  { title: "PODCAST", url: "https://podcasts.apple.com/us/podcast/open-practice-podcast/id1501715186", icon: <PodIcon width="15px" height="15px" fill={iconColor} /> },
 ];
 
 export default function Footer() {
