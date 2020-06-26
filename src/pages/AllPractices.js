@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
-import { GET_PRACTICES_BY_TAG_PAGINATION } from "../graphql";
+import { GET_PRACTICES_BY_KEYWORD } from "../graphql";
 import PracticeCardGrid from "../components/shared/PracticeCards/PracticeCardGrid";
 import Practices from "../components/allPractices";
 import ComponentLoading from "../components/shared/QueryState/ComponentLoading";
@@ -9,105 +9,83 @@ import {
   filterTags,
   mobiusLoopArray,
   popularMenuItems,
+  formTagArray,
 } from "../utilities/dropDownValues";
 
 const paginationLimit = 20;
 
+function reducer(state, action) {
+  switch (action.type) {
+  case "popularFilterChange":
+    state.selectedPopularFilter = action.content;
+    return state;
+  case "tagFilterChange":
+    state.selectedFilterTag = action.content;
+    state.tagArray = formTagArray(state.selectedFilterTag, state.selectedMobiusLoopFilter);
+    return state;
+  case "mobiusFilterChange":
+    state.selectedMobiusLoopFilter = action.content;
+    state.tagArray = formTagArray(state.selectedFilterTag, state.selectedMobiusLoopFilter);
+    return state;
+  case "keywordSearchChange":
+    state.keywords = action.content;
+    return state;
+  default:
+    throw new Error();
+  }
+};
+
 const PracticesWithData = (props) => {
-  const [selectedFilterTag, setFilterTag] = React.useState(filterTags[0]);
-  const [page, setPage] = React.useState(16);
+  const [page, setPage] = React.useState(paginationLimit);
   const [keywordSearchToggle, setKeywordSearchToggle] = React.useState(false);
-  const [
-    selectedMobiusLoopFilter,
-    setSelectedMobiusLoopFilter,
-  ] = React.useState(mobiusLoopArray[0]);
-  const [selectedPopularFilter, setPopularFilterTitle] = React.useState(
-    Object.keys(popularMenuItems)[0]
-  );
 
-  const tagArray = [
-    ...(selectedFilterTag !== "ALL" ? [selectedFilterTag.toLowerCase()] : []),
-    ...(selectedMobiusLoopFilter !== "Entire Process Model"
-      ? [selectedMobiusLoopFilter.toLowerCase()]
-      : []),
-  ];
+  const [state, dispatch] = React.useReducer(reducer, {}, () => {
+    return {
+      tagArray: [],
+      selectedFilterTag: filterTags[0],
+      selectedMobiusLoopFilter: mobiusLoopArray[0],
+      selectedPopularFilter: Object.keys(popularMenuItems)[0],
+      keywords: []
+    }
+  });
 
-  const handlePopularFilterChange = (item) => {
-    setPopularFilterTitle(item);
+  const handleFilterChange = (dispatchObj) => {
+    dispatch(dispatchObj);
     refetch({
       variables: {
         start: 0,
         limit: paginationLimit,
-        tag: tagArray,
-        sort: popularMenuItems[item],
+        tag: state.tagArray,
+        sort: popularMenuItems[state.selectedPopularFilter],
+        keyword: state.keywords
       },
     });
     setPage(paginationLimit);
   };
 
-  const toggleKeywordSearch = () =>
-    setKeywordSearchToggle(!keywordSearchToggle);
-
-  const changeFilterTag = (tag) => {
-    setFilterTag(tag);
-    const tagArray = [
-      ...(tag !== "ALL" ? [tag.toLowerCase()] : []),
-      ...(selectedMobiusLoopFilter !== "Entire Process Model"
-        ? [selectedMobiusLoopFilter.toLowerCase()]
-        : []),
-    ];
-    refetch({
-      variables: {
-        start: 0,
-        limit: paginationLimit,
-        sort: popularMenuItems[selectedPopularFilter],
-        tag: tagArray,
-      },
-    });
-    setPage(paginationLimit);
-  };
-
-  const handleMobiusLoopSelect = (event) => {
-    setSelectedMobiusLoopFilter(event.target.value);
-    const tagArray = [
-      ...(selectedFilterTag !== "ALL" ? [selectedFilterTag.toLowerCase()] : []),
-      ...(event.target.value !== "Entire Process Model"
-        ? [event.target.value.toLowerCase()]
-        : []),
-    ];
-    refetch({
-      variables: {
-        start: 0,
-        limit: paginationLimit,
-        tag: tagArray,
-        sort: popularMenuItems[selectedPopularFilter],
-      },
-    });
-    setPage(paginationLimit);
-  };
+  const toggleKeywordSearch = () => setKeywordSearchToggle(!keywordSearchToggle);
 
   const dataProps = {
-    selectedPopularFilter,
+    selectedPopularFilter: state.selectedPopularFilter,
     popularMenuItems,
     filterTags,
-    selectedFilterTag,
+    selectedFilterTag: state.selectedFilterTag,
     keywordSearchToggle,
     mobiusLoopArray,
-    selectedMobiusLoopFilter,
-    handlePopularFilterChange,
+    selectedMobiusLoopFilter: state.selectedMobiusLoopFilter,
+    handleFilterChange,
     toggleKeywordSearch,
-    changeFilterTag,
-    handleMobiusLoopSelect,
   };
 
   const { loading, error, data, refetch, networkStatus, fetchMore } = useQuery(
-    GET_PRACTICES_BY_TAG_PAGINATION,
+    GET_PRACTICES_BY_KEYWORD,
     {
       variables: {
         start: 0,
         limit: paginationLimit,
-        tag: tagArray,
-        sort: popularMenuItems[selectedPopularFilter],
+        tag: state.tagArray,
+        sort: popularMenuItems[state.selectedPopularFilter],
+        keyword: state.keywords
       },
       fetchPolicy: "cache-and-network",
       notifyOnNetworkStatusChange: true,
@@ -116,17 +94,18 @@ const PracticesWithData = (props) => {
 
   const onLoadMore = (page) => {
     const newPage = page + paginationLimit;
-    if (newPage < data.practicesConnection.aggregate.totalCount) {
+    if (newPage < data.practicesConnection.aggregate.totalCount + paginationLimit) {
       fetchMore({
         variables: {
           start: newPage,
-          tag: tagArray,
-          sort: popularMenuItems[selectedPopularFilter],
+          tag: state.tagArray,
+          sort: popularMenuItems[state.selectedPopularFilter],
+          keyword: state.keywords
         },
         updateQuery: (prev, { fetchMoreResult }) => {
           if (!fetchMoreResult) return prev;
           return Object.assign({}, prev, {
-            practices: [...prev.practices, ...fetchMoreResult.practices],
+            practicesByKeyword: [...prev.practicesByKeyword, ...fetchMoreResult.practicesByKeyword],
           });
         },
       });
@@ -142,7 +121,7 @@ const PracticesWithData = (props) => {
       { (loading && !data) || (networkStatus === 4) ? <ComponentLoading /> :
         <PracticeCardGrid
           loading={loading}
-          practices={data.practices}
+          practices={data.practicesByKeyword}
           page={page}
           onLoadMore={onLoadMore}
         />}

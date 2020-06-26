@@ -12,11 +12,13 @@ const brown_grey = "#596562";
 const black = "#2e2e2e";
 const true_white = "#ffffff";
 const green_gray = "#596562";
+const highlight_blue = "#DFF1FF";
 
 export default createMuiTheme({
   palette: {
     common: {
       discovery_blue: `${discovery_blue}`,
+      highlight_blue: `${highlight_blue}`,
       foundation_purple: `${foundation_purple}`,
       delivery_green: `${delivery_green}`,
       insights_yellow: `${insights_yellow}`,
@@ -33,11 +35,11 @@ export default createMuiTheme({
       main: `${black}`,
     },
     secondary: {
-      main: `${brownish_grey}`,
+      main: `${discovery_blue}`,
     },
     text: {
       primary: `${black}`,
-      secondary: `${brownish_grey}`,
+      secondary: `${discovery_blue}`,
       brown_grey: `${brown_grey}`,
     },
   },
@@ -180,6 +182,30 @@ export default createMuiTheme({
         alignItems: "center",
         textTransform: "uppercase",
       },
-    }
+    },
+    MuiChip: {
+      root: {
+        backgroundColor: "transparent",
+        color: `${discovery_blue}`,
+        fontWeight: "600",
+      },
+      clickable: {
+        "&:hover": {
+          backgroundColor: `${highlight_blue}`,
+          fontWeight: "800",
+        },
+        "&:focus": {
+          backgroundColor: `${highlight_blue}`,
+          fontWeight: "800",
+        },
+      },
+      label: {
+        fontFamily: "Quicksand",
+        fontSize: "0.75rem",
+        lineHeight: "0.15125rem",
+        color: `${brown_grey}`,
+        padding: "8px",
+      },
+    },
   },
 });
