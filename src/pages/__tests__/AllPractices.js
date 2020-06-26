@@ -3,7 +3,7 @@ import { render, waitFor, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 
-import { GET_PRACTICES_BY_TAG_PAGINATION } from "../../graphql";
+import { GET_PRACTICES_BY_KEYWORD } from "../../graphql";
 import AllPractices from "../AllPractices";
 
 const mockPracticeDataPopularSorted = [
@@ -171,51 +171,54 @@ const mockPracticeCountData = {
 const apolloMocks = [
   {
     request: {
-      query: GET_PRACTICES_BY_TAG_PAGINATION,
+      query: GET_PRACTICES_BY_KEYWORD,
       variables: {
         start: 0,
         limit: 20,
         sort: "upvotes:DESC",
         tag: [],
+        keyword: [],
       },
     },
     result: {
       data: {
-        practices: mockPracticeDataPopularSorted,
+        practicesByKeyword: mockPracticeDataPopularSorted,
         practicesConnection: mockPracticeCountData,
       },
     },
   },
   {
     request: {
-      query: GET_PRACTICES_BY_TAG_PAGINATION,
+      query: GET_PRACTICES_BY_KEYWORD,
       variables: {
         start: 0,
         limit: 20,
         sort: "curated:ASC",
         tag: [],
+        keyword: [],
       },
     },
     result: {
       data: {
-        practices: mockPracticeDataCuratedSorted,
+        practicesByKeyword: mockPracticeDataCuratedSorted,
         practicesConnection: mockPracticeCountData,
       },
     },
   },
   {
     request: {
-      query: GET_PRACTICES_BY_TAG_PAGINATION,
+      query: GET_PRACTICES_BY_KEYWORD,
       variables: {
         start: 0,
         limit: 20,
         sort: "createdAt:DESC",
         tag: [],
+        keyword: [],
       },
     },
     result: {
       data: {
-        practices: mockPracticeDataPopularSorted,
+        practicesByKeyword: mockPracticeDataPopularSorted,
         practicesConnection: mockPracticeCountData,
       },
     },
