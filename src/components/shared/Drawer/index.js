@@ -111,7 +111,7 @@ export default function OPLDrawer(props) {
         }}
       >
         <div className={classes.toolbar}>
-          <Link to="/practice" onClick={toggle} className={classes.paddedLogo}>
+          <Link to="/" onClick={toggle} className={classes.paddedLogo}>
             <OPLLogo height="29px" width="183px"/>
           </Link>
           <IconButton
