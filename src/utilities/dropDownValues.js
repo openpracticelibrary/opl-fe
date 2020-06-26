@@ -12,10 +12,10 @@ const filterTags = [
 
 const mobiusLoopArray = [
   "Entire Process Model",
-  "Discovery",
-  "Options",
-  "Delivery",
-  "Foundation",
+  "#Discovery",
+  "#Options",
+  "#Delivery",
+  "#Foundation",
 ];
 
 const popularMenuItems = {

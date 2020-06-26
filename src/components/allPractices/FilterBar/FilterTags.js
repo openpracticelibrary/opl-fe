@@ -36,7 +36,7 @@ const Tag = ({ tag, filter, selectedFilter }) => {
     <Grid item>
       <Chip
         clickable
-        label={tag}
+        label={`#${tag}`}
         ref={buttonRef}
         classes={{ root: classes.root, label: classes.label }}
         onClick={() => filter(tag)}
