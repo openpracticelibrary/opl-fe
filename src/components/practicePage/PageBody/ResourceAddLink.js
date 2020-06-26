@@ -73,7 +73,7 @@ export default function ResourceAddLink(props) {
   const [open, setOpen] = useState(false);
   const [linkType, setLinkType] = useState('');
   const [urlValid, setUrlValid] = useState(true);
-  const [textValid, setTextValid] = useState(false);
+  const [textValid, setTextValid] = useState(true);
   const [thankYouOpen, setThankYouOpen] = useState(false);
   const [linkUrlTooltip, setLinkUrlTooltip] = useState(false);
   const [linkDescTooltip, setLinkDescTooltip] = useState(false);
