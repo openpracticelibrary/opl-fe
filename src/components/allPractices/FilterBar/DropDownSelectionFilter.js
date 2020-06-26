@@ -20,6 +20,8 @@ const DropDownSelectionFilter = (props) => {
   const classes = useStyles();
   const { items, handleFilterSelect, selectedFilter } = props;
 
+  const hashtag = items.map(tag => tag === "Entire Process Model" ? tag : `#${tag}`);
+
   return (
     <FormControl className={classes.formControl} variant="outlined" size="small" fullWidth>
       <Select
@@ -27,7 +29,7 @@ const DropDownSelectionFilter = (props) => {
         onChange={(event) => handleFilterSelect({ type: 'mobiusFilterChange', content: event.target.value })}
         classes={classes.selectEmpty}
       >
-        {items.map((item, i) => (
+        {hashtag.map((item, i) => (
           <MenuItem value={item} key={i}>
             <Typography variant="button" className={classes.mobiusLoopFilters}>
               {item}
