@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 const sections = [
   { title: "Practices", url: "/practice" },
-  { title: "About", url: "/about" },
+  { title: "About", url: "#" },
   { title: "Terms", url: "https://creativecommons.org/licenses/by-sa/4.0/" },
 ];
 
