@@ -166,7 +166,7 @@ export default createMuiTheme({
     MuiTooltip: {
       tooltip: {
         height: "30px",
-        width: "110px",
+        minWidth: "110px",
         boxSizing: "border-box",
         backgroundColor: `${true_white}`,
         color: `${brown_grey}`,
