@@ -229,7 +229,7 @@ export default function ResourceAddLink(props) {
                   <Tooltip
                     open={linkUrlTooltip}
                     title="Link URL must be a valid URL"
-                    placement="top"
+                    placement="bottom-end"
                     classes={{ tooltip: classes.errorTooltip }}
                   >
                     <TextField
@@ -250,7 +250,7 @@ export default function ResourceAddLink(props) {
                   <Tooltip
                     open={linkDescTooltip}
                     title="Link Description must be appropriate"
-                    placement="top"
+                    placement="bottom-end"
                     classes={{ tooltip: classes.errorTooltip }}
                   >
                     <TextField
