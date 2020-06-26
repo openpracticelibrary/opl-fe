@@ -4,11 +4,13 @@ import { Grid, Chip } from "@material-ui/core";
 const Tag = ({ tag, filter, selectedFilter }) => {
   const buttonRef = React.useRef(null);
 
+  const hashtag = tag === "ALL" ? tag : `#${tag}`;
+
   return (
     <Grid item>
       <Chip
         clickable
-        label={`#${tag}`}
+        label={hashtag}
         ref={buttonRef}
         onClick={() => filter({ type: 'tagFilterChange', content: tag })}
       ></Chip>
