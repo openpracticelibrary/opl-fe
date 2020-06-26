@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles/index";
 import Button from '@material-ui/core/Button';
@@ -17,6 +17,7 @@ import { useMutation } from "@apollo/react-hooks";
 import { UPDATE_PRACTICE_RESOURCES } from "../../../graphql";
 import isValidURL from "url-validation";
 import Filter from "bad-words";
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,45 +62,59 @@ const useStyles = makeStyles((theme) => ({
   color: {
     color: theme.palette.common.black,
   },
+  errorTooltip: {
+    border: "1px solid red",
+  },
 }));
 
 export default function ResourceAddLink(props) {
   const classes = useStyles();
   const [updatePracticeResources] = useMutation(UPDATE_PRACTICE_RESOURCES);
-  const [open, setOpen] = React.useState(false);
-  const [linkType, setLinkType] = React.useState('');
-  const [urlValid, setUrlValid] = React.useState(true);
-  const [textValid, setTextValid] = React.useState(false);
-  const refLinkUrl = React.useRef();
-  const refLinkDesc = React.useRef();
-  const [thankYouOpen, setThankYouOpen] = React.useState(false);  
+  const [open, setOpen] = useState(false);
+  const [linkType, setLinkType] = useState('');
+  const [urlValid, setUrlValid] = useState(true);
+  const [textValid, setTextValid] = useState(false);
+  const [thankYouOpen, setThankYouOpen] = useState(false);
+  const [linkUrlTooltip, setLinkUrlTooltip] = useState(false);
+  const [linkDescTooltip, setLinkDescTooltip] = useState(false);
+
+  const refLinkUrl = useRef();
+  const refLinkDesc = useRef();
 
   const isURLValid = () => {
+    setLinkUrlTooltip(false);
     const res = isValidURL(refLinkUrl.current.value);
     setUrlValid(res);
   };
 
   const isValidText = () => {
+    setLinkDescTooltip(false);
     const filter = new Filter();
     const hasBadWords = filter.isProfane(refLinkDesc.current.value);
     if (!refLinkDesc.current.value || hasBadWords) {
       setTextValid(false);
+      setLinkDescTooltip(true);
       return;
     }
     setTextValid(true);
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!refLinkUrl.current.value || !urlValid) {
+      setLinkUrlTooltip(true);
       return;
     }
 
     if (!refLinkDesc.current.value || !textValid) {
+      setLinkDescTooltip(true);
       return;
     }
-   
+
+    setLinkUrlTooltip(false);
+    setLinkDescTooltip(false);
+
     const prevResourceList = props.prevResources.map(resource => {
       return {
         link: resource.link,
@@ -138,6 +153,7 @@ export default function ResourceAddLink(props) {
 
   const handleClose = (event) => {
     setOpen(false);
+    setLinkUrlTooltip(false);
     setLinkType('');
     refLinkUrl.current.value = "";
     refLinkDesc.current.value = "";
@@ -210,32 +226,46 @@ export default function ResourceAddLink(props) {
                   </TextField>
                 </Grid>
                 <Grid item xs={12} sm={7}>
-                  <TextField
-                    required
-                    error={!urlValid}
-                    onChange={isURLValid}
-                    margin="dense"
-                    id="link"
-                    label="Link URL"
-                    type="url"
-                    variant="outlined"
-                    inputRef={refLinkUrl}
-                    fullWidth
-                  />
+                  <Tooltip
+                    open={linkUrlTooltip}
+                    title="Link URL must be a valid URL"
+                    placement="top"
+                    classes={{ tooltip: classes.errorTooltip }}
+                  >
+                    <TextField
+                      required
+                      error={!urlValid}
+                      onChange={isURLValid}
+                      margin="dense"
+                      id="link"
+                      label="Link URL"
+                      type="url"
+                      variant="outlined"
+                      inputRef={refLinkUrl}
+                      fullWidth
+                    />
+                  </Tooltip>
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField
-                    required
-                    error={!textValid}
-                    onChange={isValidText}
-                    margin="dense"
-                    id="description"
-                    label="Link Description"
-                    type="text"
-                    variant="outlined"
-                    inputRef={refLinkDesc}
-                    fullWidth
-                  />
+                  <Tooltip
+                    open={linkDescTooltip}
+                    title="Link Description must be appropriate"
+                    placement="top"
+                    classes={{ tooltip: classes.errorTooltip }}
+                  >
+                    <TextField
+                      required
+                      error={!textValid}
+                      onChange={isValidText}
+                      margin="dense"
+                      id="description"
+                      label="Link Description"
+                      type="text"
+                      variant="outlined"
+                      inputRef={refLinkDesc}
+                      fullWidth
+                    />
+                  </Tooltip>
                 </Grid>
               </Grid>
             </DialogContent>
