@@ -49,7 +49,7 @@
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
     "e2e:local": "cypress run --headless --browser chrome",
-    "e2e:ci": "cypress run --headless --browser chrome -- --env HOST=http://openpracticelibrary-svc:8080"
+    "e2e:ci": "cypress run --headless --browser chrome --env HOST=http://openpracticelibrary-opl-dev.apps.s44.core.rht-labs.com/"
   },
   "eslintConfig": {
     "extends": "react-app"
