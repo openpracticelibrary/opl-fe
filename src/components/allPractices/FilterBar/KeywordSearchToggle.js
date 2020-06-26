@@ -22,7 +22,7 @@ const KeywordSearchToggle = (props) => {
 
   return (
     <Button data-testid="keywordSearchToggle" onClick={toggle}>
-      <Typography variant={"overline"} className={classes.filterText}>Filter</Typography>
+      <Typography variant={"overline"} className={classes.filterText}>Filters</Typography>
       {keywordSearchToggle ?
         <FilterListIcon className={classes.flipActive} fontSize="small" />
         :

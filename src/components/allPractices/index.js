@@ -56,10 +56,8 @@ const Practices = (props) => {
     keywordSearchToggle,
     mobiusLoopArray,
     selectedMobiusLoopFilter,
-    handlePopularFilterChange,
+    handleFilterChange,
     toggleKeywordSearch,
-    changeFilterTag,
-    handleMobiusLoopSelect
   } = props;
 
   return (
@@ -85,14 +83,14 @@ const Practices = (props) => {
           <Grid item data-testid="popularFilterComponent">
             <PopularFilter
               selectedItem={selectedPopularFilter}
-              handleFilterChange={handlePopularFilterChange}
+              handleFilterChange={handleFilterChange}
               menuItems={Object.keys(popularMenuItems)}
             />
           </Grid>
           <Grid item>
             <FilterTags
               tags={filterTags}
-              filter={changeFilterTag}
+              filter={handleFilterChange}
               selectedFilter={selectedFilterTag}
             />
           </Grid>
@@ -120,14 +118,14 @@ const Practices = (props) => {
                 alignItems="flex-start"
               >
                 <Grid item>
-                  <Typography variant={"overline"}>By Mobius Loop</Typography>
+                  <Typography variant={"overline"} color="textSecondary">By Mobius Loop</Typography>
                 </Grid>
                 <Grid item>
                   <DropDownSelectionFilter
                     inputLabel="Entire Process Model"
                     items={mobiusLoopArray}
                     selectedFilter={selectedMobiusLoopFilter}
-                    handleFilterSelect={handleMobiusLoopSelect}
+                    handleFilterSelect={handleFilterChange}
                   />
                 </Grid>
               </Grid>
@@ -140,10 +138,10 @@ const Practices = (props) => {
                 alignItems="flex-start"
               >
                 <Grid item>
-                  <Typography variant={"overline"}>Keyword Search</Typography>
+                  <Typography variant={"overline"} color="textSecondary" >Keyword Search</Typography>
                 </Grid>
                 <Grid item>
-                  <KeywordSearchBox />
+                  <KeywordSearchBox dispatch={handleFilterChange} />
                 </Grid>
               </Grid>
             </Grid>
