@@ -47,7 +47,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "e2e:local": "cypress run --headless --browser chrome",
+    "e2e:ci": "cypress run --headless --browser chrome --env HOST=http://openpracticelibrary-svc:8080"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -67,6 +69,7 @@
   "devDependencies": {
     "@apollo/react-testing": "^3.1.4",
     "@testing-library/react": "^10.0.4",
+    "cypress": "^4.8.0",
     "jest-canvas-mock": "^2.2.0",
     "jest-environment-jsdom-sixteen": "^1.0.3"
   }
