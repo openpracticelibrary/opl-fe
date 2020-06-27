@@ -2,6 +2,7 @@ import React from 'react';
 import { useMutation, useApolloClient } from "@apollo/react-hooks";
 
 import {
+  useTheme,
   useDisclosure,
   Stack,
   Button,
@@ -19,6 +20,7 @@ import { LOGIN } from "../../../graphql";
 
 const LoginButton = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const theme = useTheme();
   const loggedIn = React.useContext(LoginContext);
   const uRef = React.useRef();
   const pwdRef = React.useRef();
@@ -61,17 +63,8 @@ const LoginButton = (props) => {
     <>
       <Button
         data-testid="loginButton"
-        variantColor="lightBlue"
         aria-describedby={id}
-        size="lg"
-        border="1px"
-        borderColor="blue.500"
-        rounded="32px"
-        px={8}
-        fontSize="md"
-        color="black"
-        fontFamily="heading"
-        fontWeight="500"
+        {...theme.brand.buttons.loginButton}
         onClick={loggedIn ? handleLogout : onOpen}
       >
         { loggedIn ? "Logout" : "Login" }

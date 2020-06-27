@@ -9,7 +9,6 @@ import KeywordSearchToggle from "./FilterBar/KeywordSearchToggle";
 import DropDownSelectionFilter from "./FilterBar/DropDownSelectionFilter";
 import KeywordSearchBox from "./FilterBar/KeywordSearchBox";
 import PopularFilter from "./FilterBar/PopularFilter";
-import Typography from "@material-ui/core/Typography";
 import grayDiagonals from "../../assets/icons/graylines.svg";
 
 const Practices = (props) => {

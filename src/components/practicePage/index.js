@@ -1,7 +1,13 @@
 import React, { useRef, useState } from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import Box from '@material-ui/core/Box';
 import TextField from "@material-ui/core/TextField";
+
+import {
+  Box,
+  InputGroup,
+  InputLabel,
+  Input,
+} from "@chakra-ui/core";
 
 import LoginButton from "../shared/Login/LoginButton";
 import PageIntro from "./PageIntro";
