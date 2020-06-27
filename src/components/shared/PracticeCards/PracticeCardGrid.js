@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Grid from "@material-ui/core/Grid";
+import { SimpleGrid } from "@chakra-ui/core";
 import PracticeCard from "./PracticeCard";
 import ComponentLoading from "../QueryState/ComponentLoading";
 
@@ -17,12 +17,8 @@ const PracticeCardGrid = (props) => {
 
   if (props.loading && !props.practices) return <ComponentLoading />;
   return (
-    <Grid
-      container
-      direction="row"
-      justify="center"
-      alignContent="flex-start"
-      alignItems="flex-start"
+    <SimpleGrid
+      columns={{ xs: 1, md: 3, lg: 4 }}
       spacing={2}
       data-testid="practicecardgrid"
     >
@@ -41,7 +37,7 @@ const PracticeCardGrid = (props) => {
         />
       ))}
       {props.loading && <ComponentLoading />}
-    </Grid>
+    </SimpleGrid>
   );
 };
 

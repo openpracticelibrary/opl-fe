@@ -1,52 +1,37 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
+import {
+  Box,
+  Stack,
+  Heading,
+  Image,
+  Flex,
+} from "@chakra-ui/core";
 import { navigate } from "@reach/router";
-import ExploreStickies from "../../../assets/icons/explorestickies.png";
+import ExploreStickies from "../../../assets/images/home-practices.png";
 import LoginButton from "../../shared/Login/LoginButton";
 
-const useStyles = makeStyles((theme) => ({
-  textBox: {
-    display: "flex",
-    flexWrap: "wrap",
-    width: "80%",
-  },
-  loginBox: {
-    position: "absolute",
-    top: 0,
-    right: 0,
-    padding: theme.spacing(3),
-  },
-}));
-
-const AllPracticesHero = () => {
-  const classes = useStyles();
-
-  return (
-    <>
-      <Grid item xs={4}>
-        <Box className={classes.textBox}>
-          <Typography align="left" variant={"h1"} data-testid="herotext">
+const AllPracticesHero = (props) => (
+  <Flex justify="center" px={20} bgImage={props.bg} minH="24.25rem">
+    <Flex align="center">
+      <Stack spacing={3} maxW={450} mt={{ base: 4, md: 0}} mr={{ md: 6 }}>
+        <Heading fontSize="5xl" data-testid="herotext">
             Explore the library
-          </Typography>
-          <Typography align="left" variant={"h5"}>
+        </Heading>
+        <Heading fontSize="3xl" fontWeight="400">
             Check out the practices to learn about ways of working with your team.
-          </Typography>
-        </Box>
-      </Grid>
-      <Grid item xs={6}>
-        <img src={ExploreStickies} alt="Explore the library" />
-        <Box className={classes.loginBox}>
-          <LoginButton
-            navigate={navigate}
-            redirect="/practice"
-          />
-        </Box>
-      </Grid>
-    </>
-  );
-};
+        </Heading>
+      </Stack>
+      <Box flexShrink="0">
+        <Image src={ExploreStickies} alt="Explore the library" width={{ md: 581 }} />
+      </Box>
+    </Flex>
+    <Box position="absolute" top="0" right="0" p={4}>
+      <LoginButton
+        navigate={navigate}
+        redirect="/practice"
+      />
+    </Box>
+  </Flex>
+);
 
 export default AllPracticesHero;

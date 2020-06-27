@@ -1,45 +1,19 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles/index';
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Button from '@material-ui/core/Button';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { navigate } from "@reach/router";
 import { useQuery } from "@apollo/react-hooks";
+import {
+  Flex,
+  Heading,
+  Button,
+  Icon,
+} from "@chakra-ui/core";
 
 import ComponentLoading from "../shared/QueryState/ComponentLoading";
 import ComponentQueryError from "../shared/QueryState/ComponentQueryError";
 import { GET_CURATED_PRACTICES } from "../../graphql";
 import PracticeCardGrid from "../shared/PracticeCards/PracticeCardGrid";
 
-const useStyles = makeStyles((theme) => ({
-  practiceHeader: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingBottom: theme.spacing(12),
-  },
-  aboutTitle: {
-    textAlign: "right",
-  },
-  arrowForward: {
-    color: theme.palette.common.discovery_blue,
-  },
-  libraryButton: {
-    borderRadius: "32px",
-    padding: theme.spacing(2),
-    width: "14rem",
-    borderColor: theme.palette.common.discovery_blue,
-    borderWidth: "1px",
-    borderStyle: "solid",
-    backgroundColor: theme.palette.common.true_white,
-  },
-}));
-
-
 const CuratedPractices = (props) => {
-  const classes = useStyles();
-
   const { loading, error, data } = useQuery(GET_CURATED_PRACTICES, {
     variables: { sort: "upvotes:desc" }
   });
@@ -47,15 +21,26 @@ const CuratedPractices = (props) => {
 
   return (
     <>
-      <Grid item xs={12} className={classes.practiceHeader} data-testid="curatedList">
-        <Typography variant={"h1"}>Popular Practices</Typography>
-        <Button className={classes.libraryButton} variant="contained" onClick={() => navigate("/practice")}>
-          See Everything{"  "}<ArrowForwardIcon className={classes.arrowForward}/>
+      <Flex justify="space-between" py={10} data-testid="curatedList">
+        <Heading>Popular Practices</Heading>
+        <Button
+          rounded="32px"
+          fontFamily="heading"
+          fontWeight="400"
+          variantColor="transparent"
+          border="1px"
+          borderColor="blue.500"
+          color="black"
+          height={53}
+          px={8}
+          onClick={() => navigate("/practice")}
+        >
+          See Everything <Icon name="arrow-forward" fontSize="xl" color="blue.500" ml={2} />
         </Button>
-      </Grid>
-      <Grid item xs={12}>
+      </Flex>
+      <Flex justify="space-around">
         { loading ? <ComponentLoading /> : <PracticeCardGrid practices={data.practices} /> }
-      </Grid>
+      </Flex>
     </>
   );
 };

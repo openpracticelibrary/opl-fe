@@ -1,92 +1,75 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Paper, Box } from "@material-ui/core";
+import { PseudoBox } from "@chakra-ui/core";
+
 import CardCollection from "./CardCollection";
 import CoverImage from "./CoverImage";
 import PracticeCardTitle from "./PracticeCardTitle";
 import Subtitle from "./Subtitle";
 
-const useStyles = makeStyles((theme) => ({
-  practiceItemBound: {
-    overflow: "visible",
-    height: 220,
-    margin: 10,
-  },
-  practiceItem: {
-    backgroundColor: "#fff",
-    borderRadius: 10,
-    "&:hover #cardTitle": {
-      color: theme.palette.common.discovery_blue,
-    },
-    "&:hover #tags": {
-      overflow: "visible",
-    },
-  },
-}));
-
-export default function PracticeCard(props) {
-  const classes = useStyles();
-  const [hovered, setHovered] = React.useState(false);
-
-  return (
-    <Box
-      className={classes.practiceItemBound}
-      style={{
-        zIndex: `${hovered ? "10" : "1"}`,
-        transition: `${hovered ? "0.5s" : "0.5s"}`,
+const PracticeCard = (props) => (
+  <PseudoBox
+    role="group"
+    overflow="visible"
+    height={220}
+    m={3}
+    _hover={{
+      zIndex: 10,
+      transition: "0.5s",
+    }}
+    data-testid={props.practiceId}
+  >
+    <PseudoBox
+      data-testid="practicecard"
+      rounded="10px"
+      bg="white"
+      transform="scale(1,1)"
+      transition="0.5s"
+      _groupHover={{
+        transform: "scale(1.1,1.05)",
+        transition: "0.5s",
+        zIndex: 10,
+        boxShadow: "1px 2px 2px 1px rgba(0,0,0,.2)"
       }}
-      data-testid={props.practiceId}
     >
-      <Box
-        data-testid="practicecard"
-        className={classes.practiceItem}
-        onMouseOut={() => setHovered(false)}
-        onMouseOver={() => setHovered(true)}
-        style={{
-          transform: `${hovered ? "scale(1.1,1.05)" : "scale(1, 1)"}`,
-          transition: `${hovered ? "0.5s" : "0.5s"}`,
-          zIndex: `${hovered ? "10" : "1"}`,
-          boxShadow: `${
-            hovered ? "1px 2px 2px 1px rgba(0,0,0,.2)" : "0px 0px 0px 0px"
-          }`,
+      <CoverImage
+        slug={props.slug}
+        practiceTitle={props.practiceTitle}
+        coverImage={props.coverImage}
+      />
+      <PseudoBox
+        transition="0.5s"
+        _groupHover={{
+          transform: "scale(.9, .95)",
+          transition: "0.5s",
+          color: "blue.500",
         }}
       >
-        <CoverImage
+        <PracticeCardTitle
           slug={props.slug}
           practiceTitle={props.practiceTitle}
-          coverImage={props.coverImage}
+          tags={props.tags}
         />
-        <Paper
-          elevation={0}
-          style={{
-            transform: `${hovered ? "scale(.9, .95)" : "scale(1, 1)"}`,
-            transition: `${hovered ? "0.5s" : "0.5s"}`,
+        <PseudoBox
+          data-testid="expandedcard"
+          transition="0.5s"
+          opacity="0"
+          _groupHover={{
+            opacity: "1",
+            transition: "1.0s",
+            color: "grey.500",
           }}
         >
-          <PracticeCardTitle
-            slug={props.slug}
-            practiceTitle={props.practiceTitle}
-            tags={props.tags}
-            isHovered={hovered ? true : false}
+          <Subtitle subtitle={props.subtitle} slug={props.slug} />
+          <CardCollection
+            practiceId={props.practiceId}
+            upvotes={props.upvotes}
+            imgCount={props.mediaGallery}
+            questions={props.ama}
           />
-          <Paper
-            data-testid="expandedcard"
-            elevation={0}
-            style={{
-              opacity: `${hovered ? "1" : "0"}`,
-              transition: `${hovered ? "1.0s" : "0.5s"}`,
-            }}
-          >
-            <Subtitle subtitle={props.subtitle} slug={props.slug} />
-            <CardCollection
-              practiceId={props.practiceId}
-              upvotes={props.upvotes}
-              imgCount={props.mediaGallery}
-              questions={props.ama}
-            />
-          </Paper>
-        </Paper>
-      </Box>
-    </Box>
-  );
-}
+        </PseudoBox>
+      </PseudoBox>
+    </PseudoBox>
+  </PseudoBox>
+);
+
+export default PracticeCard;

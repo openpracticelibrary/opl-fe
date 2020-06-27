@@ -1,38 +1,41 @@
 import React from "react";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    marginTop: ".5rem",
-    minWidth: "20rem",
-  },
-  mobiusLoopFilters: {
-    fontSize: "0.75rem",
-    textTransform: "uppercase",
-  },
-}));
+import {
+  FormControl,
+  FormLabel,
+  Select,
+} from "@chakra-ui/core";
 
 const DropDownSelectionFilter = (props) => {
-  const classes = useStyles();
   const { items, handleFilterSelect, selectedFilter } = props;
-
+  console.log(selectedFilter);
   return (
-    <FormControl className={classes.formControl} variant="outlined" size="small" fullWidth>
+    <FormControl>
+      <FormLabel
+        textTransform="uppercase"
+        color="grey.500"
+        fontSize="sm"
+        fontWeight="400"
+        mb={2}
+        htmlFor="mobiusFilter"
+      >
+        By Mobius Loop
+      </FormLabel>
       <Select
+        size="lg"
+        rounded={6.5}
+        minW="20rem"
+        fontFamily="heading"
+        fontSize="0.875rem"
+        textTransform="uppercase"
         value={selectedFilter}
+        focusBorderColor="blue.500"
+        iconColor="blue.500"
         onChange={(event) => handleFilterSelect({ type: 'mobiusFilterChange', content: event.target.value })}
-        classes={classes.selectEmpty}
       >
         {items.map((item, i) => (
-          <MenuItem value={item} key={i}>
-            <Typography variant="button" className={classes.mobiusLoopFilters}>
-              {item === "Entire Process Model" ? "" : "#"}{item}
-            </Typography>
-          </MenuItem>
+          <option value={item} key={i}>
+            {item === "Entire Process Model" ? "" : "#"}{item}
+          </option>
         ))}
       </Select>
     </FormControl>
