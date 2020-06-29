@@ -71,6 +71,7 @@ const Explore = (props) => {
           <Box>
             <Button
               variant="contained"
+              data-testid="exploreLibraryButton"
               disableElevation
               className={classes.exploreButton}
               onClick={() => navigate("/practice")}

@@ -87,7 +87,7 @@ const Landing = (props) => {
             </Typography>
             <Typography variant={"button"} component="p">
               <b>Tell me more</b>
-              <IconButton className={classes.arrowIcon} onClick={handleClick} >
+              <IconButton className={classes.arrowIcon} onClick={handleClick} data-testid="tellMeMoreButton">
                 <ArrowDownwardIcon />
               </IconButton>
             </Typography>
