@@ -110,17 +110,8 @@ const LoginButton = (props) => {
               </Stack>
               <Button
                 type="submit"
-                variantColor="lightBlue"
-                size="lg"
-                border="1px"
-                borderColor="blue.500"
-                rounded="32px"
-                px={8}
+                {...theme.brand.buttons.loginButton}
                 mt={8}
-                fontSize="md"
-                color="black"
-                fontFamily="heading"
-                fontWeight="400"
               >
                 Log me in <Icon name="arrow-forward" fontSize="xl" color="blue.500" />
               </Button>

@@ -1,33 +1,9 @@
 import React from "react";
+import { Flex, Box, Heading } from "@chakra-ui/core";
 import { useLottie, Lottie } from "react-lottie-hook";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-import { makeStyles } from '@material-ui/core/styles/index';
 import * as animationData from "./lotties/17896-wash-your-hands.json";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    position: "relative",
-    backgroundColor: theme.palette.common.white,
-    opacity: "40",
-    width: "100%",
-    height: "1000px",
-  },
-  loadingContainer: {
-    position: "absolute",
-    marginTop: "10%",
-    left: 0,
-    right: 0,
-  },
-  loadingText: {
-    color: theme.palette.common.black,
-    textAlign: "center"
-  },
-}));
-
 const Loading = () => {
-  const classes = useStyles();
   const [lottieRef] = useLottie({
     renderer: "svg",
     animationData: animationData.default,
@@ -37,14 +13,18 @@ const Loading = () => {
   });
 
   return (
-    <Box
-      className={classes.root}
+    <Flex
+      position="relative"
+      bg="grey.50"
+      opacity={40}
+      w="100%"
+      h="1000px"
     >
-      <Box data-testid="loadingPage" className={classes.loadingContainer}>
-        <Typography variant={"h4"} className={classes.loadingText}>Washing our hands...</Typography>
+      <Box position="absolute" mt="10%" left={0} right={0} data-testid="loadingPage">
+        <Heading textAlign="center">Washing our hands...</Heading>
         <Lottie lottieRef={lottieRef} height={400} width={400} />
       </Box>
-    </Box>
+    </Flex>
   );
 };
 

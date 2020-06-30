@@ -13,7 +13,7 @@ import ContributorCount from "./ContributorCount";
 import RedHatLogo from "../../assets/images/logo-red-hat-hat-color-rgb.png";
 import NounProjectLogo from "../../assets/images/noun-project.png";
 import MobiusLogo from "../../assets/images/mobius-small.png";
-import CCHeartLogo from "../../assets/images/ccheart-black.png";
+import CCHeartLogo from "../../assets/images/ccheart_red.svg";
 import Collaborators from "./Collaborators";
 
 const collaborators = [

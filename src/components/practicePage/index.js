@@ -1,13 +1,5 @@
 import React, { useRef, useState } from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-
-import {
-  Box,
-  InputGroup,
-  InputLabel,
-  Input,
-} from "@chakra-ui/core";
+import { useTheme, Box, Flex, Input, Textarea } from "@chakra-ui/core";
 
 import LoginButton from "../shared/Login/LoginButton";
 import PageIntro from "./PageIntro";
@@ -16,83 +8,9 @@ import PageBody from "./PageBody";
 import RichMarkdownEditor from "../shared/Editor/RichMarkdownEditor";
 import { StartEditingButton, EditingButtons } from "./PageIntro/EditControls";
 import blueDiagonals from "../../assets/icons/bluelines.svg";
-
-const useStyles = makeStyles((theme) => ({
-  alignComponentContent: {
-    display: "flex",
-    justifyContent: "space-around",
-    alignItems: "baseline",
-    alignContent: "center",
-  },
-  contentBox: {
-    display: "flex",
-    justifyContent: "space-around",
-    alignItems: "center",
-    alignContent: "center",
-  },
-  boxOfContent: {
-    maxWidth: "950px",
-    marginLeft: "25px",
-    marginRight: "25px",
-  },
-  whiteColor: {
-    backgroundImage: `linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.76) 70.4%, #FFFFFF 900%), url(${blueDiagonals})`,
-    justifyContent: "space-around",
-  },
-  trueWhiteColor: {
-    backgroundColor: theme.palette.common.true_white,
-  },
-  pageIntro: {
-    paddingTop: theme.spacing(6),
-    maxWidth: "950px",
-    marginLeft: "25px",
-    marginRight: "25px",
-    [theme.breakpoints.up('md')]: {
-      width: "950px",
-    },
-  },
-  editButton: {
-    paddingTop: theme.spacing(9),
-    display: "flex",
-    justifyContent: "flex-end",
-  },
-  loginBox: {
-    position: "absolute",
-    top: 0,
-    right: 0,
-    padding: theme.spacing(3),
-  },
-  titleTextField: {
-    width: "inherit",
-  },
-  titleInput: {
-    ...theme.typography.h1,
-  },
-  subtitleInput: {
-    ...theme.typography.subtitle1,
-  },
-  editorStyle: {
-    boxShadow: "inset 0 1px 3px 0 rgba(16,16,16,0.26)",
-    borderRadius: "6px",
-    backgroundColor: theme.palette.common.white,
-    padding: theme.spacing(1),
-  },
-  stickyToolbar: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "sticky",
-    top: 0,
-    backgroundColor: theme.palette.common.true_white,
-    borderTop: "1px solid rgba(0, 0, 0, 0.12)",
-    borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
-    zIndex: 1001,
-  },
-  toolbarContent: {
-    width: "100%",
-    padding: theme.spacing(0,2),
-  },
-}));
+import purpleGrid from "../../assets/images/graph-paper.svg";
+import yellowRain from "../../assets/images/rain.svg";
+import greenDots from "../../assets/images/polka-dots.svg";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -151,7 +69,21 @@ const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
   } = data;
 
   // Styles
-  const classes = useStyles();
+  const theme = useTheme();
+  const backgroundImage = () => {
+    const tagMatch = tags.map(t => t.tag.toLowerCase());
+    if (tagMatch.includes('discovery')) {
+      return `linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.76) 70.4%, #FFFFFF 900%), url(${blueDiagonals})`;
+    }
+    if (tagMatch.includes('delivery')) {
+      return `linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.76) 70.4%, #FFFFFF 900%), url(${greenDots})`;
+    }
+    if (tagMatch.includes('options')) {
+      return `linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.76) 70.4%, #FFFFFF 900%), url(${yellowRain})`;
+    }
+
+    return `linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.76) 70.4%, #FFFFFF 900%), url(${purpleGrid})`;
+  };
 
   // Refs
   const whatIsRef = useRef(null);
@@ -233,21 +165,25 @@ const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
 
   const introEditors = {
     titleEdit: (
-      <TextField
-        variant="outlined"
-        className={classes.titleTextField}
-        InputProps={{ classes: { input: classes.titleInput, root: classes.editorStyle } }}
+      <Input
+        {...theme.brand.editor.box}
+        h="auto"
+        w="auto"
+        fontFamily="heading"
+        fontSize="5xl"
+        fontWeight="bold"
         defaultValue={data.title}
         onChange={(event) => dispatch({ type: "titleUpdate", content: event.target.value }) }
       />
     ),
 
     subtitleEdit: (
-      <TextField
-        variant="outlined"
-        fullWidth
-        multiline
-        InputProps={{ classes: { input: classes.subtitleInput, root: classes.editorStyle } }}
+      <Textarea
+        {...theme.brand.editor.box}
+        w={["950px", "auto", "auto", "950px"]}
+        resize="none"
+        fontFamily="heading"
+        fontSize="lg"
         defaultValue={data.subtitle}
         onChange={(event) => dispatch({ type: "subtitleUpdate", content: event.target.value }) }
       />
@@ -255,76 +191,84 @@ const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
   };
 
   const bodyEditors = {
-    whatIsEditor: () => (
-      <div className={classes.editorStyle}>
+    whatIsEditor: (
+      <Box {...theme.brand.editor.box}>
         <RichMarkdownEditor
           source={data.body.whatIs}
           handleChange={(callback) => dispatch({ type: "whatIsUpdate", content: callback() }) }
         />
-      </div>
+      </Box>
     ),
 
-    whyDoEditor: () => (
-      <div className={classes.editorStyle}>
+    whyDoEditor: (
+      <Box {...theme.brand.editor.box}>
         <RichMarkdownEditor
           source={data.body.whyDo}
           handleChange={(callback) => dispatch({ type: "whyDoUpdate", content: callback() }) }
         />
-      </div>
+      </Box>
     ),
 
-    howToEditor: () => (
-      <div className={classes.editorStyle}>
+    howToEditor: (
+      <Box {...theme.brand.editor.box}>
         <RichMarkdownEditor
           source={data.body.howTo}
           handleChange={(callback) => dispatch({ type: "howToUpdate", content: callback() }) }
         />
-      </div>
+      </Box>
     ),
   };
 
   return (
     <>
-      <Box className={classes.trueWhiteColor}>
-        <Box display="flex" className={classes.whiteColor}>
-          <Box className={classes.loginBox}>
-            <LoginButton
-              navigate={navigate}
-              redirect={`/practice/${data.slug}`}
-            />
-          </Box>
-          <Box className={classes.alignComponentContent}>
-            <Box className={classes.editButton}>
-              {loggedInEditing()}
-            </Box>
-            <Box className={classes.pageIntro}>
-              <PageIntro
-                editing={editing}
-                {...pageIntroData}
-                {...introEditors}
-              >
-              </PageIntro>
-            </Box>
-          </Box>
+      <Flex justify="space-around" bgImg={backgroundImage()}>
+        <Box position="absolute" top="0" right="0" p={4}>
+          <LoginButton
+            navigate={navigate}
+            redirect={`/practice/${data.slug}`}
+          />
         </Box>
-
-        <Box className={classes.stickyToolbar}>
-          <Box className={classes.toolbarContent}>
-            <PageMenu {...pageMenuData} { ...pageRefs } />
-          </Box>
-        </Box>
-
-        <Box className={classes.contentBox}>
-          <Box className={classes.boxOfContent}>
-            <PageBody
+        <Flex justify="space-around" alignItems="baseline" alignContent="center">
+          <Flex justify="flex-end">
+            {loggedInEditing()}
+          </Flex>
+          <Box
+            pt={12}
+            mx={25}
+            maxW={950}
+            w={["950px", "auto", "auto", "950px"]}
+          >
+            <PageIntro
               editing={editing}
-              {...pageBodyData}
-              {...pageRefs}
-              {...bodyEditors}
-            />
+              {...pageIntroData}
+              {...introEditors}
+            >
+            </PageIntro>
           </Box>
+        </Flex>
+      </Flex>
+
+      <Flex
+        position="sticky"
+        top={0}
+        zIndex={1001}
+        bg="white"
+        borderTop="1px solid rgba(0, 0, 0, 0.12)"
+        borderBottom="1px solid rgba(0, 0, 0, 0.12)"
+      >
+        <PageMenu {...pageMenuData} { ...pageRefs } />
+      </Flex>
+
+      <Flex justify="space-around" align="center">
+        <Box maxW="950px" mx={25}>
+          <PageBody
+            editing={editing}
+            {...pageBodyData}
+            {...pageRefs}
+            {...bodyEditors}
+          />
         </Box>
-      </Box>
+      </Flex>
     </>
   );
 }

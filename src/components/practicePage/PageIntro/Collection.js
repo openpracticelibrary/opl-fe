@@ -1,31 +1,9 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles/index";
-import CollectionItem from "./CollectionItem";
-import Grid from "@material-ui/core/Grid";
-import { AmaIcon, CameraIcon, NounLoveIcon } from "../../../assets/icons";
-import IconButton from '@material-ui/core/IconButton';
+import { Stack, IconButton, Box, Text } from "@chakra-ui/core";
 import { useMutation } from "@apollo/react-hooks";
 import { LIKE_PRACTICE } from "../../../graphql/";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    alignItems: "center",
-    justify: "flex-start",
-    direction: "row",
-    paddingLeft: theme.spacing(1),
-    marginBottom: theme.spacing(5)
-  },
-  button: {
-    "&:hover": {
-      backgroundColor: "transparent"
-    }
-  }
-}));
-
 export default function Collection(props) {
-  const classes = useStyles();
   const [likePractice] = useMutation(LIKE_PRACTICE);
 
   const handleLike = () => {
@@ -37,33 +15,53 @@ export default function Collection(props) {
   };
 
   return (
-    <>
-      <Grid container className={classes.root}>
-        <Grid item>
-          <Typography variant="overline">Collection</Typography>
-        </Grid>
-        <Grid item>
-          <IconButton onClick={handleLike} className={classes.button} data-testid={"heartIcon"}>
-            <CollectionItem amount={props.upvotes} >
-              <NounLoveIcon fill="#596562" />
-            </CollectionItem>
-          </IconButton>
-        </Grid>
-        <Grid item>
-          <IconButton disabled>
-            <CollectionItem amount={props.imgCount}>
-              <CameraIcon/>
-            </CollectionItem>
-          </IconButton>
-        </Grid>
-        <Grid item>
-          <IconButton disabled>
-            <CollectionItem amount={props.questions}>
-              <AmaIcon fill="#596562" />
-            </CollectionItem>
-          </IconButton>
-        </Grid>
-      </Grid>
-    </>
+    <Stack isInline pt={4} pb={8}>
+      <Text
+        fontFamily="heading"
+        fontSize="sm"
+        fontWeight="500"
+        textTransform="uppercase"
+      >
+          Collection
+      </Text>
+      <Box verticalAlign="middle">
+        <Text as="b" fontFamily="heading" data-testid="heartIcon">
+          <IconButton
+            isRound
+            onClick={handleLike}
+            height="auto"
+            variant="ghost"
+            aria-label="Like Practice"
+            icon="like"
+            color="grey.500"
+            data-testid={"heartIcon"}
+          />
+          {props.upvotes}
+        </Text>
+        <Text as="b" fontFamily="heading">
+          <IconButton
+            isRound
+            variant="ghost"
+            height="auto"
+            size="lg"
+            aria-label="Image Count"
+            color="grey.500"
+            icon="camera"
+          />
+          {props.imgCount}
+        </Text>
+        <Text as="b" fontFamily="heading">
+          <IconButton
+            isRound
+            variant="ghost"
+            height="auto"
+            aria-label="Questions Count"
+            color="grey.500"
+            icon="questions"
+          />
+          {props.questions}
+        </Text>
+      </Box>
+    </Stack>
   );
 }

@@ -1,21 +1,27 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Box from "@material-ui/core/Box";
-import Chip from '@material-ui/core/Chip';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
-import IconButton from "@material-ui/core/IconButton";
 import { useDropzone } from 'react-dropzone';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import CloseIcon from '@material-ui/icons/Close';
+import {
+  useTheme,
+  useDisclosure,
+  CircularProgress,
+  Box,
+  Flex,
+  Image,
+  Stack,
+  Text,
+  IconButton,
+  Input,
+  InputGroup,
+  InputRightElement,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Icon,
+  Button
+} from "@chakra-ui/core";
 
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { useMutation } from "@apollo/react-hooks";
@@ -26,64 +32,9 @@ import AddImage from "../../../assets/images/add.png";
 
 const MEDIA_ENDPOINT = process.env.REACT_APP_MEDIA_SERVICE_ENDPOINT || "/image-upload";
 
-const useStyles = makeStyles((theme) => ({
-  cardImg: {
-    verticalAlign: "middle",
-    height: "69px",
-    width: "92px",
-  },
-  dialog: {
-    borderRadius: "17px",
-    borderWidth: "3px",
-    borderColor: theme.palette.common.green_gray,
-    borderStyle: "solid",
-  },
-  title: {
-    textAlign: "center",
-  },
-  chips: {
-    padding: theme.spacing(2),
-    margin: theme.spacing(1),
-  },
-  container: {
-    flex: 1,
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  dropzone: {
-    flex: 1,
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    textAlign: "center",
-    minHeight: "9.375rem",
-    alignContent: "center",
-    padding: theme.spacing(2),
-    margin: theme.spacing(1),
-    borderWidth: "2px",
-    borderRadius: "2px",
-    borderColor: theme.palette.common.brown_grey,
-    borderStyle: "dashed",
-    backgroundColor: theme.palette.common.white,
-    color: theme.palette.common.brown_grey,
-    outline: "none",
-    transition: "border .24s ease-in-out",
-  },
-  filesAdded: {
-    margin: theme.spacing(2,0),
-  },
-  buttons: {
-    borderRadius: "17px",
-    borderWidth: "2px",
-    borderStyle: "solid",
-    borderColor: theme.palette.common.green_gray,
-  },
-}));
-
 const AddImageCard = (props) => {
-  const [open, setOpen] = React.useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const theme = useTheme();
   const [files, setFiles] = React.useState([]);
   const linkInputRef = React.useRef();
   const {
@@ -102,7 +53,6 @@ const AddImageCard = (props) => {
       });
     }
   });
-  const classes = useStyles();
 
   const [updateMediaGallery] = useMutation(UPDATE_MEDIA_GALLERY);
 
@@ -117,15 +67,6 @@ const AddImageCard = (props) => {
       })
     }
   );
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setFiles([]);
-    setOpen(false);
-  };
 
   const handleSubmit = async () => {
     const prevMediaGallery = props.currentMediaGallery.map(file => { return { link: file.link } });
@@ -158,74 +99,106 @@ const AddImageCard = (props) => {
     linkInputRef.current.value = "";
   };
 
-  const AddLinkButton = () => (
-    <InputAdornment position="end">
-      <IconButton onClick={handleAddLink}>
-        <AddCircleOutlineOutlinedIcon />
-      </IconButton>
-    </InputAdornment>
-  );
-
   const accepted = files.map((file, i) => {
-    return (<Chip key={i} label={file.url} className={classes.chips} />);
+    return (
+      <Box
+        key={i}
+        p={2}
+        my={1}
+        bg="grey.50"
+        fontFamily="heading"
+        color="black"
+        display="inline-block"
+        borderRadius={17}
+      >
+        {file.url}
+      </Box>
+    );
   });
 
   return (
     <>
-      <img src={AddImage} alt="Add new media" className={classes.cardImg} onClick={handleClickOpen} />
-      <Dialog
+      <Image
+        src={AddImage}
+        alt="Add new media"
+        onClick={onOpen}
+      />
+      <Modal
         maxWidth="sm"
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="form-dialog-title"
-        PaperProps={{
-          className: classes.dialog
-        }}
+        isOpen={isOpen}
+        onClose={onClose}
+        isCentered
       >
-        <DialogTitle id="form-dialog-title" className={classes.title} disableTypography={true}>
-          <Typography variant={"subtitle2"}>Add a new link to the media gallery</Typography>
-        </DialogTitle>
-        <DialogContent>
-          <Box className="container">
-            <Box className={classes.dropzone} {...getRootProps()}>
-              <input {...getInputProps()} />
-              <Typography variant={"overline"} paragraph={true}>
+        <ModalOverlay />
+        <ModalContent
+          borderWidth="3px"
+          borderColor="blue.500"
+          borderRadius={17}
+          minW={600}
+          pt={4}
+        >
+          <ModalHeader
+            fontFamily="heading"
+            fontWeight="400"
+            fontSize="3xl"
+            textAlign="center"
+          >
+            Add an image or video to this gallery!
+          </ModalHeader>
+          <ModalBody px={12}>
+            <Stack spacing={2}>
+              <Flex
+                direction="column"
+                align="center"
+                justify="center"
+                minH="9.375rem"
+                p={2}
+                m={1}
+                border="2px"
+                borderRadius="2px"
+                borderStyle="dashed"
+                borderColor="grey.500"
+                outline="none"
+                fontFamily="heading"
+                {...getRootProps()}
+              >
+                <Input {...getInputProps()} />
                     Drop some images here, or click to select images
-              </Typography>
-              <Typography variant={"overline"}>
                 <em>Or Paste a link to an image or YouTube video</em>
-              </Typography>
-            </Box>
-            <TextField
-              variant="outlined"
-              margin="dense"
-              id="name"
-              label="Image or YouTube Web Link"
-              inputRef={linkInputRef}
-              InputProps={{
-                endAdornment: <AddLinkButton />
-              }}
-              fullWidth
-            />
-            <Box className={classes.filesAdded}>
-              <Typography variant={"overline"}>Uploaded Files</Typography>
+              </Flex>
+              <InputGroup>
+                <Input
+                  rounded={6.5}
+                  placeholder="Image or YouTube Web Link"
+                  ref={linkInputRef}
+                  fontFamily="heading"
+                  focusBorderColor="blue.500"
+                  isFullWidth
+                />
+                <InputRightElement
+                  children={
+                    <IconButton fontSize="lg" variant="ghost" icon="addCircle" color="blue.500" />
+                  }
+                  onClick={handleAddLink}
+                />
+              </InputGroup>
+              <Text fontFamily="heading" textTransform="uppercase">Uploaded Files</Text>
               <Box>
-                {uploadLoading ? <CircularProgress /> : accepted}
+                {uploadLoading ? <CircularProgress isIndeterminate color="blue.500" /> : accepted}
               </Box>
-            </Box>
-          </Box>
-          <Box>
-            <Button onClick={handleSubmit} className={classes.buttons} variant="contained">
-                Submit Links <ArrowForwardIcon />
+            </Stack>
+            <Button
+              {...theme.brand.buttons.loginButton}
+              onClick={handleSubmit}
+            >
+                Submit Links <Icon name="arrow-forward" fontSize="xl" color="blue.500" />
             </Button>
-          </Box>
-        </DialogContent>
-        <DialogActions>
-          <IconButton onClick={handleClose}>
-            <CloseIcon />
-          </IconButton>
-        </DialogActions>
-      </Dialog>
+          </ModalBody>
+          <ModalFooter>
+            <IconButton variant="ghost" icon="close" onClick={onClose} />
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </>
   );
 };

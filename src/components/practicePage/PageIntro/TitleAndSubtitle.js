@@ -1,69 +1,41 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles/index";
-import Box from "@material-ui/core/Box";
+import { Stack, Heading, Text, Box } from "@chakra-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  space: {
-    padding: theme.spacing(1),
-  },
-  tagContainer: {
-    display: "flex",
-    flexDirection: "row",
-    flex: 1,
-    justifyContent: "flex-start",
-    marginLeft: theme.spacing(-1),
-  },
-  tagBoxes: {
-    borderRadius: "3px",
-    backgroundColor: "rgba(16,16,16,0.1)",
-    paddingLeft: theme.spacing(0.5),
-    marginLeft: theme.spacing(1),
-  },
-}));
-
-export default function TitleAndSubtitle(props) {
-  const classes = useStyles();
-
-  return (
-    <>
-      <Box className={classes.root}>
-        <Box className={classes.space}>
-          {props.children}
-          <Typography
-            variant={"h1"}
-            data-testid={"title"}
-          >
-            {props.editing ?
-              props.titleEdit : props.title
-            }
-          </Typography>
-          <Box className={classes.tagContainer}>
-            {props.tags && props.tags.map((t, i) => (
-              <Box key={i} className={classes.tagBoxes}>
-                <Typography variant={"overline"}>
-              #{t.tag}&nbsp;&nbsp;
-                </Typography>
-              </Box>
-            ))}
+const TitleAndSubtitle = props => (
+  <Stack>
+    <Box>
+      {props.children}
+      <Heading
+        as="h1"
+        fontSize="5xl"
+        data-testid={"title"}
+      >
+        {props.editing ?
+          props.titleEdit : props.title
+        }
+      </Heading>
+      <Stack isInline spacing={2}>
+        {props.tags && props.tags.map((t, i) => (
+          <Box key={i} rounded={3} pl={1} bg="rgba(16,16,16,0.1)">
+            <Text fontFamily="heading" fontSize="sm" textTransform="uppercase" color="grey.500">
+              #{t.tag}&nbsp;
+            </Text>
           </Box>
-        </Box>
-        <Box className={classes.space}>
-          <Typography
-            variant={"subtitle1"}
-            data-testid={"subtitle"}
-          >
-            {props.editing ?
-              props.subtitleEdit :
-              props.subtitle
-            }
-          </Typography>
-        </Box>
-      </Box>
-    </>
-  );
-}
+        ))}
+      </Stack>
+    </Box>
+    <Box py={2}>
+      <Text
+        fontSize="lg"
+        data-testid={"subtitle"}
+      >
+        {props.editing ?
+          props.subtitleEdit :
+          props.subtitle
+        }
+      </Text>
+    </Box>
+  </Stack>
+);
+
+export default TitleAndSubtitle;

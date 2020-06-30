@@ -20,6 +20,7 @@ const PracticeCardGrid = (props) => {
     <SimpleGrid
       columns={{ xs: 1, md: 3, lg: 4 }}
       spacing={2}
+      maxW={1300}
       data-testid="practicecardgrid"
     >
       {props.practices.map((practice) => (

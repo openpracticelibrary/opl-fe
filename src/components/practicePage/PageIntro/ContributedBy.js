@@ -1,32 +1,15 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles/index";
 import moment from "moment";
+import {
+  Text,
+  Flex,
+  Stack,
+} from "@chakra-ui/core";
+
 import PhotoAndName from "./PhotoAndName";
 import EditorPhotos from "./EditorPhotos";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    padding: theme.spacing(1),
-  },
-  space: {
-    paddingLeft: theme.spacing(3),
-  },
-  editorBox: {
-    display: "flex",
-    flex: 1,
-    flexDirection: "row",
-  },
-  editorDiv: {
-    position: "absolute",
-  },
-}));
 
 export default function ContributedBy(props) {
-  const classes = useStyles();
   const formatDate = (date) => {
     return moment(date).format("MMMM D, YYYY");
   };
@@ -41,61 +24,51 @@ export default function ContributedBy(props) {
   }
 
   return (
-    <>
-      <Grid
-        container
-        direction="column"
-        justify="center"
-        alignItems="flex-start"
-        className={classes.root}
-        spacing={1}
-      >
-        <Grid item>
-          <Grid
-            container
-            direction="row"
-            justify="space-around"
-            alignItems="center"
+    <Stack isInline spacing={3} py={2}>
+      <Stack>
+        <Text
+          fontFamily="heading"
+          fontSize="sm"
+          fontWeight="500"
+          textTransform="uppercase"
+        >
+          Contributed by
+        </Text>
+        <Flex direction="row">
+          {contributors.map((author, i) => (
+            <PhotoAndName
+              key={author.id}
+              authorName={`${author.firstName} ${author.lastName}`}
+              authorLink={author.mediaLink}
+              avatar={author.Avatar}
+            />
+          ))}
+        </Flex>
+      </Stack>
+      { (editors.length > 0) &&
+        <Stack>
+          <Text
+            fontFamily="heading"
+            fontSize="sm"
+            fontWeight="500"
+            textTransform="uppercase"
           >
-            <Box className={classes.contributedBy}>
-              <Typography variant="overline">Contributed by</Typography>
-              <Grid item>
-                <Box className={classes.editorBox}>
-                  {contributors.map((author, i) => (
-                    <PhotoAndName
-                      key={author.id}
-                      authorName={`${author.firstName} ${author.lastName}`}
-                      authorLink={author.mediaLink}
-                    />
-                  ))}
-                </Box>
-              </Grid>
-            </Box>
-            <Box className={classes.editedBy}>
-              { (editors.length > 0) &&
-                <>
-                  <Typography variant="overline">Edited by</Typography>
-                  <Grid item>
-                    <Box className={classes.editorBox}>
-                      {editors.map((author, i) => (
-                        <div key={i}>
-                          <EditorPhotos />
-                        </div>
-                      ))}
-                    </Box>
-                  </Grid>
-                </>
-              }
-            </Box>
-            <Grid item className={classes.space}>
-              <Typography variant="overline" data-testid={"dates"}>
-                Published {formatDate(props.createdAt)} | Last edited{" "}
-                {formatDate(props.updatedAt)}
-              </Typography>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-    </>
+            Edited By
+          </Text>
+          <Flex direction="row">
+            <EditorPhotos editors={editors} />
+          </Flex>
+        </Stack>
+      }
+      <Text
+        fontFamily="heading"
+        fontSize="sm"
+        textTransform="uppercase"
+        mt="auto"
+      >
+        Published {formatDate(props.createdAt)} | Last edited{" "}
+        {formatDate(props.updatedAt)}
+      </Text>
+    </Stack>
   );
 }

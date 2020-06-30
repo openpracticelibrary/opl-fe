@@ -3,7 +3,6 @@ import { Stack, Text, Flex, Skeleton } from "@chakra-ui/core";
 
 const StatBox = (props) => (
   <Flex
-    data-testid="practiceNum"
     border="1px"
     borderRadius="50%"
     borderStyle="solid"

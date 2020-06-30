@@ -1,31 +1,28 @@
-import React from "react";
-import { Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles/index";
+/** @jsx jsx */
 import ReactMarkdown from "react-markdown";
-import Box from "@material-ui/core/Box";
+import { Flex, Box, Text } from "@chakra-ui/core";
+import { jsx } from '@emotion/core'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  space: {
-    padding: theme.spacing(1),
-  },
-}));
+const FullText = props => (
+  <Flex direction="column">
+    <Box p={4}>
+      <Text
+        as="span"
+        fontSize="md"
+        css={{
+          "& > ol, ul": {
+            marginBlockStart: "1rem",
+            marginBlockEnd: "1rem",
+            marginInlineStart: "0px",
+            marginInlineEnd: "0px",
+            paddingLeft: "1.25rem",
+          }
+        }}
+      >
+        <ReactMarkdown source={props.source} />
+      </Text>
+    </Box>
+  </Flex>
+);
 
-export default function WhatIs(props) {
-  const classes = useStyles();
-
-  return (
-    <>
-      <Box className={classes.root}>
-        <Box className={classes.space}>
-          <Typography variant={"body1"}>
-            <ReactMarkdown source={props.source} />
-          </Typography>
-        </Box>
-      </Box>
-    </>
-  );
-}
+export default FullText;

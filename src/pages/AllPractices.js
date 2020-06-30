@@ -38,12 +38,12 @@ function reducer(state, action) {
 const PracticesWithData = (props) => {
   const [page, setPage] = React.useState(paginationLimit);
   const [keywordSearchToggle, setKeywordSearchToggle] = React.useState(false);
-
+  const { location: { state: passedState } } = props;
   const [state, dispatch] = React.useReducer(reducer, {}, () => {
     return {
-      tagArray: [],
+      tagArray: passedState ? passedState.tagArray.map(t => t.toLowerCase()) : [],
       selectedFilterTag: filterTags[0],
-      selectedMobiusLoopFilter: mobiusLoopArray[0],
+      selectedMobiusLoopFilter: passedState && passedState.tagArray ? passedState.tagArray[0] : mobiusLoopArray[0],
       selectedPopularFilter: Object.keys(popularMenuItems)[0],
       keywords: []
     }

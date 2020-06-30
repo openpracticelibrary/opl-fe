@@ -1,109 +1,109 @@
 import React from "react";
-import ListItem from "@material-ui/core/ListItem";
-import ListSubheader from "@material-ui/core/ListSubheader";
-import ExpandLess from "@material-ui/icons/ExpandLess";
-import ExpandMore from "@material-ui/icons/ExpandMore";
-import Collapse from "@material-ui/core/Collapse";
-import List from "@material-ui/core/List";
-import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import { Link as RouterLink } from "@reach/router";
+import {
+  Stack,
+  Box,
+  Button,
+  Accordion,
+  Text,
+  AccordionItem,
+  AccordionHeader,
+  AccordionPanel,
+  AccordionIcon,
+} from "@chakra-ui/core";
+import { navigate } from "@reach/router";
 
-function ListItemLink(props) {
-  const { primary, to, toggle } = props;
+const TopListItems = props => (
+  <Stack pt={8}>
+    <Text
+      fontFamily="heading"
+      textTransform="uppercase"
+      fontSize="sm"
+      fontWeight="600"
+      color="blue.500"
+    >
+      Practices
+    </Text>
+    <Button
+      variant="ghost"
+      fontFamily="heading"
+      fontWeight="600"
+      justifyContent="flex-start"
+      onClick={() => navigate("/practice", { state: { tagArray: [] } })}
+    >
+      See Everything
+    </Button>
+    <Accordion allowToggle w="100%">
+      <AccordionItem border="0px">
+        <AccordionHeader>
+          <Box
+            border="0px"
+            flex="1"
+            textAlign="left"
+            fontFamily="heading"
+            fontSize="md"
+            fontWeight="600"
+          >
+            By Mobius Loop
+          </Box>
+          <AccordionIcon />
+        </AccordionHeader>
+        <AccordionPanel pb={4}>
+          <Stack fontFamily="heading" fontWeight="400" color="grey.500">
+            <Button
+              variant="ghost"
+              justifyContent="flex-start"
+              onClick={() => navigate("/practice", { state: { tagArray: ["Discovery"] } })}
+            >
+              #Discovery
+            </Button>
+            <Button
+              variant="ghost"
+              justifyContent="flex-start"
+              onClick={() => navigate("/practice", { state: { tagArray: ["Options"] } })}
+            >
+              #Options
+            </Button>
+            <Button
+              variant="ghost"
+              justifyContent="flex-start"
+              onClick={() => navigate("/practice", { state: { tagArray: ["Delivery"] } })}
+            >
+              #Delivery
+            </Button>
+            <Button
+              variant="ghost"
+              justifyContent="flex-start"
+              onClick={() => navigate("/practice", { state: { tagArray: ["Foundation"] } })}
+            >
+              #Foundation
+            </Button>
+          </Stack>
+        </AccordionPanel>
+      </AccordionItem>
+    </Accordion>
+  </Stack>
+);
 
-  const renderLink = React.useMemo(
-    () =>
-      React.forwardRef((itemProps, ref) => (
-        <RouterLink to={to} ref={ref} {...itemProps} />
-      )),
-    [to]
-  );
+const BottomListItems = () => (
+  <Stack>
+    <Text
+      fontFamily="heading"
+      textTransform="uppercase"
+      fontSize="sm"
+      fontWeight="600"
+      color="blue.500"
+    >
+      Community
+    </Text>
+    <Button
+      variant="ghost"
+      fontFamily="heading"
+      fontWeight="600"
+      justifyContent="flex-start"
+    >
+      Learn about us
+    </Button>
+  </Stack>
+);
 
-  return (
-    <li>
-      <ListItem button component={renderLink} onClick={toggle}>
-        <Typography variant="body2">{primary}</Typography>
-      </ListItem>
-    </li>
-  );
-}
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    maxWidth: 360,
-    backgroundColor: "inherit",
-  },
-  headers: {
-    color: theme.palette.common.discovery_blue,
-  },
-  nested: {
-    paddingLeft: theme.spacing(3),
-  },
-  listItems: {
-    color: "#9FA4A3",
-  },
-}));
-
-export function TopListItems(props) {
-  const {toggle} = props;
-  const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
-
-  const handleClick = () => {
-    setOpen(!open);
-  };
-
-  return (
-    <List className={classes.root}>
-      <ListSubheader>
-        <Typography variant="overline" className={classes.headers}>Practices</Typography>
-      </ListSubheader>
-      <ListItem button>
-        <Typography variant="body2">Please guide me</Typography>
-      </ListItem>
-      <ListItemLink to="/practice" primary="See everything" toggle={toggle}/>
-      <ListItem button onClick={handleClick}>
-        <Typography variant="body2">By mobius loop</Typography>
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" className={classes.nested}>
-          <ListItem button>
-            <Typography variant="body2" className={classes.listItems}> Discovery </Typography>
-          </ListItem>
-          <ListItem button>
-            <Typography variant="body2" className={classes.listItems}> Options </Typography>
-          </ListItem>
-          <ListItem button>
-            <Typography variant="body2" className={classes.listItems}> Delivery </Typography>
-          </ListItem>
-          <ListItem button>
-            <Typography variant="body2" className={classes.listItems}> Foundation </Typography>
-          </ListItem>
-        </List>
-      </Collapse>
-    </List>
-  );
-}
-
-export function BottomListItems() {
-  const classes = useStyles();
-  return (
-    <List className={classes.root}>
-      <ListSubheader>
-        <Typography variant="overline" className={classes.headers}>Community</Typography>
-      </ListSubheader>
-      <ListItem button>
-        <Typography variant="body2"> Find a mentor </Typography>
-      </ListItem>
-      <ListItem button>
-        <Typography variant="body2"> Become a contributor </Typography>
-      </ListItem>
-      <ListItem button>
-        <Typography variant="body2"> Latest happenings </Typography>
-      </ListItem>
-    </List>
-  );
-}
+export { TopListItems, BottomListItems };

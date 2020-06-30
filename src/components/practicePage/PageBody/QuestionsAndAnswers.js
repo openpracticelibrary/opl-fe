@@ -1,50 +1,50 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles/index";
-import { AmaIcon } from "../../../assets/icons";
-import Grid from "@material-ui/core/Grid";
+import {
+  Stack,
+  Icon,
+  Heading,
+  Text,
+} from "@chakra-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: theme.spacing(1)
-  },
-  space: {
-    marginRight: theme.spacing(2),
-  },
-  question: {
-    color: theme.palette.common.black,
-  }
-}));
-
-export default function QuestionsAndAnswers(props) {
-  const classes = useStyles();
-
-  return (
-    <>
-      {props.ama.map((qAndA, i) => (
-        <Grid
-          container
-          key={i}
-          direction="row"
-          justify="flex-start"
-          alignItems="flex-start"
-          className={classes.root}
+const QuestionsAndAnswers = props => (
+  <Stack spacing={4} mt={8}>
+    {props.ama.map((qAndA, i) => (
+      <React.Fragment key={i}>
+        <Text
+          fontFamily="heading"
+          fontSize="sm"
+          textTransform="uppercase"
+          fontWeight="600"
         >
-          <Grid item className={classes.space}>
-            <AmaIcon fill="#1975FF" height="27px" width="27px" />
-          </Grid>
-          <Grid item>
-            <Typography variant={"subtitle1"} className={classes.question}>
+            Asked by Nova Facilitator | May 28, 2020
+        </Text>
+        <Stack isInline spacing={4}>
+          <Icon name="questions" size="1.6875rem" color="blue.500" />
+          <Stack ml={4}>
+            <Heading fontSize="lg">
               {qAndA.question}
-            </Typography>
+            </Heading>
             <br/>
-            <Typography variant="button">Answer</Typography>
-            <Typography variant="body1">
+            <Text
+              fontFamily="heading"
+              fontSize="sm"
+              textTransform="uppercase"
+              fontWeight="600"
+            >
+              Reply by OPL Team | June 1, 2020
+            </Text>
+            <Text
+              fontSize="md"
+              fontWeight="400"
+              color="grey.500"
+            >
               {qAndA.answers.map((a) => a.answer)}
-            </Typography>
-          </Grid>
-        </Grid>
-      ))}
-    </>
-  );
-}
+            </Text>
+          </Stack>
+        </Stack>
+      </React.Fragment>
+    ))}
+  </Stack>
+);
+
+export default QuestionsAndAnswers;

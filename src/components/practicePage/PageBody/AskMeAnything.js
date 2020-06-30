@@ -1,67 +1,42 @@
 import React from "react";
-import { Typography, IconButton, InputAdornment } from "@material-ui/core";
-import Box from "@material-ui/core/Box";
-import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles/index";
+import {
+  PseudoBox,
+  Heading,
+  Text,
+} from "@chakra-ui/core";
+
 import QuestionsAndAnswers from "./QuestionsAndAnswers";
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+const AskMeAnything = props => (
+  <>
+    <Heading fontSize="section" ref={props.amaRef} py={4}>
+      Ask me anything
+    </Heading>
+    <Text fontSize="md" color="grey.500">
+      Please send a question to the community about anything you may need for using this practice.
+    </Text>
+    <PseudoBox
+      id="ama"
+      as="button"
+      w="100%"
+      h={70}
+      my={4}
+      border="1px"
+      borderColor="grey.500"
+      rounded={6.5}
+      alignItems="center"
+      display="flex"
+    >
+      <Heading
+        pl={4}
+        fontSize="xl"
+        fontWeight="500"
+        color="blue.500"
+      >
+        Do you have a question?
+      </Heading>
+    </PseudoBox>
+    <QuestionsAndAnswers ama={props.ama}/>
+  </>
+);
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  space: {
-    padding: theme.spacing(1),
-  },
-  textField: {
-    borderRadius: "9px",
-  },
-  exitIcon: {
-    color: theme.palette.common.discovery_blue,
-  },
-  input: {
-    '&::placeholder': {
-      fontFamily: "Quicksand",
-      fontWeight: "normal",
-      fontSize: "1.625rem",
-      color: theme.palette.common.discovery_blue,
-      padding: theme.spacing(1),
-      opacity: 100,
-    },
-  },
-}));
-
-export default function AskMeAnything(props) {
-  const classes = useStyles();
-
-  return (
-    <>
-      <Box className={classes.root}>
-        <Box className={classes.space}>
-          <Typography variant={"h2"} ref={props.amaRef}>
-            Ask me anything
-          </Typography>
-        </Box>
-        <Box className={classes.space}>
-          <Typography variant={"body1"}>
-            Please send a question to the community about anything you may need for using this practice.
-          </Typography>
-        </Box>
-        <Box className={classes.space}>
-          <TextField
-            id="ama"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            placeholder="What questions do you have?"
-            InputProps={{
-              classes: { input: classes.input, root: classes.textField },
-              endAdornment: <InputAdornment position="end"><IconButton><ExitToAppIcon className={classes.exitIcon}/></IconButton></InputAdornment>
-            }}/>
-        </Box>
-        <QuestionsAndAnswers ama={props.ama}/>
-      </Box>
-    </>
-  );
-}
+export default AskMeAnything;

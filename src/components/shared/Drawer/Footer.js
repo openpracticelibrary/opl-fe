@@ -1,52 +1,36 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import FooterList from "./FooterList";
-import Grid from "@material-ui/core/Grid";
-import Disclaimer from "./Disclaimer";
-import { BetaIcon, NewTabIcon, RockIcon } from "../../../assets/icons";
+import { Stack, Icon, Link } from "@chakra-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    padding: theme.spacing(3),
-    marginTop: "auto",
-    color: theme.palette.common.brownish_grey,
-  },
-  space: {
-    marginTop: theme.spacing(3),
-  },
-}));
+import Disclaimer from "./Disclaimer";
 
 const sections = [
-  { title: "ABOUT US", url: "#", icon: <RockIcon /> },
-  { title: "JOIN BETA", url: "#", icon: <BetaIcon /> },
-  { title: "MEETUP", url: "#", icon: <NewTabIcon /> },
-  { title: "GITHUB", url: "#", icon: <NewTabIcon /> },
-  { title: "PODCAST", url: "#", icon: <NewTabIcon /> },
+  { title: "Send feedback", url: "#", icon: "webLink" },
+  { title: "Our Podcast", url: "#", icon: "webLink" },
 ];
 
-export default function Footer() {
-  const classes = useStyles();
-
-  return (
-    <footer className={classes.footer}>
-      <Grid
-        container
-        direction="column"
-        justify="flex-end"
-        alignItems="flex-start"
+const Footer = () => (
+  <Stack
+    justify="center"
+    align="flex-start"
+    spacing={6}
+    p={4}
+  >
+    {sections.map((section, i) => (
+      <Link
+        key={i}
+        fontFamily="heading"
+        fontSize="sm"
+        fontWeight="600"
+        textTransform="uppercase"
+        ml={4}
+        href={section.url}
+        isExternal
       >
-        {sections.map((section) => (
-          <Grid item>
-            <FooterList link={section.url} text={section.title}>
-              {section.icon}
-            </FooterList>
-          </Grid>
-        ))}
+        <Icon name={section.icon} color="blue.500" /> {section.title}
+      </Link>
+    ))}
+    <Disclaimer />
+  </Stack>
+);
 
-        <Grid item className={classes.space}>
-          <Disclaimer />
-        </Grid>
-      </Grid>
-    </footer>
-  );
-}
+export default Footer;

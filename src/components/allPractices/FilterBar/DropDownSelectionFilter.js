@@ -7,7 +7,7 @@ import {
 
 const DropDownSelectionFilter = (props) => {
   const { items, handleFilterSelect, selectedFilter } = props;
-  console.log(selectedFilter);
+
   return (
     <FormControl>
       <FormLabel

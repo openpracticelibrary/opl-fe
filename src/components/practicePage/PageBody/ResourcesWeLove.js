@@ -1,41 +1,30 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
-import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
+import {
+  Text,
+  Heading,
+  Link,
+  Icon,
+  Stack,
+} from "@chakra-ui/core";
+
 import ResourceAddLink from "./ResourceAddLink";
 import ResourceListItem from "./ResourceListItem";
-import { makeStyles } from "@material-ui/core/styles/index";
-import { DownloadIcon, PodcastIcon, WebLinkIcon } from "../../../assets/icons";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  space: {
-    padding: theme.spacing(1),
-  },
-  indent: {
-    marginLeft: theme.spacing(4),
-  },
-}));
 
 //todo: (@Darcie) icons for video, purchase, books
 //todo: review the structure of the resource.description
 
-const Icon = {
-  web: <WebLinkIcon />,
-  download: <DownloadIcon />,
-  podcast: <PodcastIcon />,
-  video: <PodcastIcon />,
-  purchase: <WebLinkIcon />,
-  book: <WebLinkIcon />,
+const LinkIcon = {
+  web: <Icon name="webLink" />,
+  download: <Icon name="nounDownload" size="1.25rem" ml={-1} />,
+  podcast: <Icon name="podcast" size="1.25rem" ml={-1} />,
+  video: <Icon name="video" size="1.15rem" ml={-1} />,
+  purchase: <Icon name="webLink" />,
+  book: <Icon name="webLink" />,
 };
 
 export default function ResourcesWeLove(props) {
   const [expanded, setExpanded] = React.useState(false);
-  const classes = useStyles();
-  const linkTypes = Object.keys(Icon);
+  const linkTypes = Object.keys(LinkIcon);
 
   const resourceLinkList = () => {
     const resourceList = props.links.filter(resource => resource.link.length > 0);
@@ -60,8 +49,9 @@ export default function ResourcesWeLove(props) {
               listItemKey={i}
               url={resource.link}
               description={resource.description}
+              linkType={resource.linkType}
             >
-              {Icon[resource.linkType]}
+              {LinkIcon[resource.linkType]}
             </ResourceListItem>
           ))}
         </React.Fragment>
@@ -76,16 +66,20 @@ export default function ResourcesWeLove(props) {
             listItemKey={i}
             url={resource.link}
             description={resource.description}
+            linkType={resource.linkType}
           >
-            {Icon[resource.linkType]}
+            {LinkIcon[resource.linkType]}
           </ResourceListItem>
         ))}
         {(resourceList.length > 5 && !expanded) &&
-          <Button>
-            <Typography variant={"overline"} onClick={handleExpand}>
-              See {expandedListLength} more links
-            </Typography>
-          </Button>
+          <Link
+            fontSize="sm"
+            fontFamily="heading"
+            textTransform="uppercase"
+            onClick={handleExpand}
+          >
+            See {expandedListLength} more links
+          </Link>
         }
       </React.Fragment>
     );
@@ -98,22 +92,17 @@ export default function ResourcesWeLove(props) {
 
   return (
     <>
-      <Box className={classes.root}>
-        <Box className={classes.space}>
-          <Typography variant={"h2"} ref={props.resourceRef}>
-            Links we love
-          </Typography>
-          <Typography variant={"body1"}>
-            Check out these great links which can help you dive a little deeper into running an event storming workshop with your team, customers or stakeholders.
-          </Typography>
-        </Box>
+      <Heading fontSize="section" ref={props.resourceRef} py={4}>
+        Links we love
+      </Heading>
+      <Text fontSize="md">
+        Check out these great links which can help you dive a little deeper into running an event storming workshop with your team, customers or stakeholders.
+      </Text>
 
-        <Box className={classes.indent}>
-          {resourceLinkList()}
-          <ResourceAddLink practiceId={props.practiceId} prevResources={props.links} linkTypes={linkTypes}>
-          </ResourceAddLink>
-        </Box>
-      </Box>
+      <Stack ml={8}>
+        {resourceLinkList()}
+        <ResourceAddLink practiceId={props.practiceId} prevResources={props.links} linkTypes={linkTypes} />
+      </Stack>
     </>
   );
 }

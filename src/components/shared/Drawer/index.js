@@ -1,142 +1,94 @@
 import React from "react";
-import clsx from "clsx";
-import {makeStyles} from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import {BottomListItems, TopListItems} from "./ListItems";
-import Box from "@material-ui/core/Box";
-import Footer from "./Footer";
-import { OPLLogo } from "../../../assets/icons";
+import {
+  useDisclosure,
+  Box,
+  Flex,
+  IconButton,
+  Stack,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+} from "@chakra-ui/core";
 import { Link } from "@reach/router";
 
-const drawerWidth = "18.7rem";
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-  },
-  paddedLogo: {
-    paddingTop: theme.spacing(2),
-  },
-  paddedHamburger: {
-    marginLeft: 20,
-    color: theme.palette.common.discovery_blue,
-  },
-  box: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  boxShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth})`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: 36,
-  },
-  hide: {
-    display: "none",
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-    whiteSpace: "nowrap",
-  },
-  drawerOpen: {
-    width: drawerWidth,
-    height: "100%",
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    backgroundColor: theme.palette.common.true_white,
-    "&::-webkit-scrollbar": {
-      display: "none",
-    },
-  },
-  drawerClose: {
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    overflowX: "hidden",
-    width: theme.spacing(7) + 1,
-    [theme.breakpoints.up("sm")]: {
-      width: theme.spacing(8) + 1,
-    },
-    backgroundColor: theme.palette.common.true_white,
-  },
-  toolbar: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: theme.spacing(0, 1),
-    paddingTop: theme.spacing(2),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-  },
-  pageBox: {
-    backgroundColor: theme.palette.common.true_white,
-  },
-}));
+import { BottomListItems, TopListItems } from "./ListItems";
+import Footer from "./Footer";
+import { OPLLogo } from "../../../assets/icons";
 
-export default function OPLDrawer(props) {
-  const classes = useStyles();
-  const {open, toggle} = props;
+const OPLDrawer = (props) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <div className={classes.root}>
-      <CssBaseline/>
-      <Drawer
-        variant="permanent"
-        className={clsx(classes.drawer, {
-          [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open,
-        })}
-        classes={{
-          paper: clsx({
-            [classes.drawerOpen]: open,
-            [classes.drawerClose]: !open,
-          }),
-        }}
-        PaperProps={{
-          elevation: 5,
-        }}
+    <Flex>
+      <Box
+        h="100vh"
+        w="68px"
+        bg="white"
+        borderRight="1px solid rgba(0,0,0,0.12)"
+        shadow="0 0 10px 0 rgba(0, 0, 0, 0.2)"
+        position="sticky"
+        top={0}
+        zIndex="overlay"
+        justify="center"
       >
-        <div className={classes.toolbar}>
-          <Link to="/" onClick={toggle} className={classes.paddedLogo}>
-            <OPLLogo height="29px" width="183px"/>
-          </Link>
-          <IconButton
-            onClick={toggle}
-            className={clsx(classes.paddedHamburger)}
+        <IconButton
+          mt={4}
+          ml={1}
+          size="lg"
+          icon="navicon"
+          color="blue.500"
+          variant="ghost"
+          isRound
+          onClick={onOpen}
+        />
+        <Drawer
+          isOpen={isOpen}
+          placement="left"
+          onClose={onClose}
+          blockScrollOnMount={false}
+        >
+          <DrawerOverlay opacity={0} />
+          <DrawerContent
+            bgImage="linear-gradient(to bottom, #ffffff, #fbfbfb 60%, #f3f3f3)"
           >
-            <MenuIcon/>
-          </IconButton>
-        </div>
+            <DrawerHeader
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              pb={0}
+            >
+              <Link to="/">
+                <OPLLogo height="29px" width="183px"/>
+              </Link>
+              <IconButton
+                size="lg"
+                icon="navicon"
+                color="blue.500"
+                variant="ghost"
+                isRound
+                onClick={onClose}
+              />
+            </DrawerHeader>
 
-        {open && (
-          <>
-            <Box m={2}>
-              <Box>
-                <TopListItems drawerOpen={open} toggle={toggle}/>
-              </Box>
-              <Box>
-                <BottomListItems/>
-              </Box>
-            </Box>
-            <Footer/>
-          </>
-        )}
-      </Drawer>
-      <Box className={classes.pageBox} width="100%">{props.children}</Box>
-    </div>
-  );
-}
+            <DrawerBody>
+              <Stack>
+                <TopListItems drawerOpen={isOpen} toggle={props.toggle} />
+                <BottomListItems />
+              </Stack>
+            </DrawerBody>
+
+            <DrawerFooter justifyContent="flex-start" px={0}>
+              <Footer />
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+      </Box>
+      <Box w="-webkit-fill-available" bg="white">{props.children}</Box>
+    </Flex>
+  )
+};
+
+export default OPLDrawer;

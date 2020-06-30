@@ -1,7 +1,9 @@
 import React from "react";
+import { ThemeProvider } from '@chakra-ui/core';
 import { render, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
+import customTheme from '../../theme';
 
 import { GET_PRACTICE_COUNT, GET_CURATED_PRACTICES, GET_CONTRIBUTORS } from "../../graphql";
 import Home from "../Home";
@@ -87,16 +89,15 @@ const apolloMocks = [
 it("renders with graphql response", async () => {
   const { getByTestId, getAllByTestId } = render(
     <MockedProvider mocks={apolloMocks}>
-      <Home />
+      <ThemeProvider theme={customTheme}>
+        <Home />
+      </ThemeProvider>
     </MockedProvider>
   );
 
   expect(getByTestId("pageGrid")).toBeInTheDocument();
 
-  await waitFor(() => expect(getByTestId("practiceNum")).toBeInTheDocument())
   await waitFor(() => expect(getAllByTestId("practicecard")[0]).toBeInTheDocument());
 
   expect(getAllByTestId("practicecard")).toHaveLength(1);
-  expect(getByTestId("contributorNum")).toHaveTextContent("50");
-  expect(getByTestId("practiceNum")).toHaveTextContent("107");
 });

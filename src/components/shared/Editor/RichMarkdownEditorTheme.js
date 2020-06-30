@@ -1,11 +1,11 @@
-import theme from '../../../theme.mui';
+import theme from '../../../theme';
 
 const RichMarkdownEditorTheme = () => {
   const edit = {
     fontFamily: "NotoSerif",
     fontWeight: 400,
     zIndex: 100,
-    link: theme.palette.common.discovery_blue,
+    link: theme.colors.blue[500],
     placeholder: "#B1BECC",
     textSecondary: "#4E5C6E",
     textHighlight: "#b3e7ff",
@@ -25,21 +25,21 @@ const RichMarkdownEditorTheme = () => {
     codeInserted: "#202746",
     codeImportant: "#c94922",
 
-    blockToolbarTrigger: theme.palette.common.very_light_grey,
-    blockToolbarTriggerIcon: theme.palette.common.black,
-    blockToolbarItem: theme.palette.common.black,
-    blockToolbarText: theme.palette.common.black,
-    blockToolbarDivider: theme.palette.common.brown_grey,
-    background: theme.palette.common.white,
-    textLight: theme.palette.common.white,
-    text: theme.palette.common.black,
-    cursor: theme.palette.common.black,
-    divider: theme.palette.common.black,
-    toolbarBackground: theme.palette.common.very_light_grey,
-    toolbarInput: theme.palette.common.white,
-    toolbarItem: theme.palette.common.black,
-    blockToolbarBackground: theme.palette.common.true_white,
-    blockToolbarHoverBackground: theme.palette.common.very_light_grey,
+    blockToolbarTrigger: theme.colors.grey[100],
+    blockToolbarTriggerIcon: theme.colors.black,
+    blockToolbarItem: theme.colors.black,
+    blockToolbarText: theme.colors.black,
+    blockToolbarDivider: theme.colors.grey[500],
+    background: theme.colors.grey[50],
+    textLight: theme.colors.grey[100],
+    text: theme.colors.black,
+    cursor: theme.colors.black,
+    divider: theme.colors.black,
+    toolbarBackground: theme.colors.grey[100],
+    toolbarInput: theme.colors.grey[50],
+    toolbarItem: theme.colors.black,
+    blockToolbarBackground: theme.colors.white,
+    blockToolbarHoverBackground: theme.colors.grey[50],
   };
 
   return edit;

@@ -6,6 +6,7 @@ export default {
   fonts: {
     heading: "Quicksand",
     body: "Noto Serif",
+    caption: "Assistant",
   },
   fontSizes: {
     xs: "0.5rem",
@@ -18,6 +19,7 @@ export default {
     "4xl": "2.5rem",
     "5xl": "2.875rem",
     "6xl": "6rem",
+    "section": "1.875rem",
   },
   colors: {
     ...theme.colors,
@@ -28,6 +30,7 @@ export default {
       500: "#1975FF"
     },
     grey: {
+      50: "#E2E8F0",
       100: "#9fa4a3",
       500: "#596562",
     },
@@ -58,6 +61,14 @@ export default {
         color: "black",
         fontFamily: "heading",
         fontWeight: "500",
+      },
+    },
+    editor: {
+      box: {
+        boxShadow: "inset 0 1px 3px 0 rgba(16,16,16,0.26)",
+        borderRadius: "6px",
+        backgroundColor: "grey.50",
+        padding: 2,
       },
     },
   },

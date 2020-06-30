@@ -1,27 +1,11 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles/index";
-
 import {
   Button,
   Text,
   Icon,
 } from "@chakra-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  filterText: {
-    paddingRight: theme.spacing(1),
-  },
-  flip: {
-    color: theme.palette.common.discovery_blue,
-  },
-  flipActive: {
-    transform: "rotate(180deg)",
-    color: theme.palette.common.discovery_blue,
-  },
-}));
-
 const KeywordSearchToggle = (props) => {
-  const classes = useStyles();
   const { toggle, keywordSearchToggle } = props;
 
   return (
@@ -44,7 +28,6 @@ const KeywordSearchToggle = (props) => {
         <Icon
           name="filter"
           color="blue.500"
-          className={classes.flip}
           fontSize="lg"
         />
       }

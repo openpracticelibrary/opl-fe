@@ -1,44 +1,20 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
+import { Flex } from "@chakra-ui/core";
+
 import FooterLogoSection from "./FooterLogoSection";
 import FooterLinkSection from "./FooterLinkSection";
-import Box from '@material-ui/core/Box';
-import Divider from "@material-ui/core/Divider";
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    padding: theme.spacing(6, 0),
-  },
-  trueWhiteColor: {
-    backgroundColor: theme.palette.common.true_white,
-  }
-}));
+const BodyFooter = () => (
+  <Flex
+    borderTop="1px solid rgba(0, 0, 0, 0.12)"
+    py={6}
+    h={141}
+    justify="space-around"
+    data-testid="footer"
+  >
+    <FooterLogoSection/>
+    <FooterLinkSection/>
+  </Flex>
+);
 
-export default function BodyFooter() {
-  const classes = useStyles();
-
-  return (
-    <>
-      <Box className={classes.trueWhiteColor}>
-        <Divider/>
-        <footer className={classes.footer} data-testid="footer">
-          <Grid container>
-            <Grid item xs={1}>
-            </Grid>
-            <Grid item xs={10}>
-              <Box display="flex">
-                <Box flexShrink={1}>
-                  <FooterLogoSection/>
-                </Box>
-                <Box width="100%">
-                  <FooterLinkSection/>
-                </Box>
-              </Box>
-            </Grid>
-          </Grid>
-        </footer>
-      </Box>
-    </>
-  );
-}
+export default BodyFooter;

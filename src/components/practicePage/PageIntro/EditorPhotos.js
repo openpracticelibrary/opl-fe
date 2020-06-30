@@ -1,8 +1,12 @@
 import React from "react";
-import { UserIcon } from "../../../assets/icons";
+import { AvatarGroup, Avatar } from "@chakra-ui/core";
 
-export default function EditorPhotos() {
-  return (
-    <UserIcon fill="#101010" />
-  );
-}
+const EditorPhotos = props => (
+  <AvatarGroup max={3} size="xs">
+    {props.editors.map(editor => (
+      <Avatar showBorder key={editor.id} src={editor.Avatar} bg="grey.500" />
+    ))}
+  </AvatarGroup>
+);
+
+export default EditorPhotos;

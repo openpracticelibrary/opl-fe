@@ -1,59 +1,72 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import Tooltip from '@material-ui/core/Tooltip';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import SaveOutlinedIcon from '@material-ui/icons/SaveOutlined';
-import Box from "@material-ui/core/Box";
-import { EditIcon } from "../../../assets/icons";
+import { Stack, IconButton } from "@chakra-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  editingButtonCollection: {
-    display: "flex",
-    flexDirection: "column",
-    backgroundColor: theme.palette.common.true_white,
-    borderRadius: "20px",
-    boxShadow: "0 1px 4px 0 rgba(16,16,16,0.29)",
-  },
-}));
+import Tooltip from "../../shared/Tooltip";
 
 const StartEditingButton = (props) => (
   <Tooltip
-    title="Edit Practice"
+    text="Edit Practice"
     placement="top"
+    transform="uppercase"
+    minH="30px"
+    w="120px"
   >
-    <IconButton data-testid="editButton" onClick={props.handleEdit}>
-      <EditIcon height="20" />
-    </IconButton>
+    <IconButton
+      data-testid="editButton"
+      aria-label="Edit Content"
+      rounded={20}
+      variant="ghost"
+      onClick={props.handleEdit}
+      icon="edit"
+    />
   </Tooltip>
 );
 
-const EditingButtons = (props) => {
-  const classes = useStyles();
-
-  return (
-    <Box className={classes.editingButtonCollection}>
-      <IconButton>
-        <EditIcon fill="#1975ff" height="20" />
-      </IconButton>
-      <Tooltip
-        title="Save Edits"
-        placement="left"
-      >
-        <IconButton data-testid="saveEditButton" onClick={props.handleSaveEdits}>
-          <SaveOutlinedIcon />
-        </IconButton>
-      </Tooltip>
-      <Tooltip
-        title="Cancel Edits"
-        placement="left"
-      >
-        <IconButton data-testid="closeEditButton" onClick={props.handleEdit}>
-          <CloseIcon />
-        </IconButton>
-      </Tooltip>
-    </Box>
-  );
-};
+const EditingButtons = (props) => (
+  <Stack
+    rounded={20}
+    bg="white"
+    shadow="0 1px 4px 0 rgba(16,16,16,0.29)"
+  >
+    <IconButton
+      isDisabled
+      data-testid="editButton"
+      aria-label="Editing Content"
+      icon="edit"
+    />
+    <Tooltip
+      text="Save Edits"
+      placement="left"
+      transform="uppercase"
+      minH="30px"
+      w="120px"
+    >
+      <IconButton
+        data-testid="saveEditButton"
+        aria-label="Save Edits"
+        onClick={props.handleSaveEdits}
+        variant="ghost"
+        rounded={20}
+        icon="copy"
+      />
+    </Tooltip>
+    <Tooltip
+      text="Cancel Edits"
+      placement="left"
+      transform="uppercase"
+      minH="30px"
+      w="120px"
+    >
+      <IconButton
+        data-testid="closeEditButton"
+        aria-label="Cancel Edits"
+        onClick={props.handleEdit}
+        variant="ghost"
+        icon="close"
+        rounded={20}
+      />
+    </Tooltip>
+  </Stack>
+);
 
 export { StartEditingButton, EditingButtons }

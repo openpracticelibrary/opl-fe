@@ -18,7 +18,7 @@ export default function Home(props) {
         navigate={props.navigate}
         communityRef={communityRef}
       />
-      <Flex justify="center">
+      <Flex justify="center" data-testid="pageGrid">
         <Flex direction="column" maxW={1300}>
           <Community communityRef={communityRef} />
           <CuratedPractices />

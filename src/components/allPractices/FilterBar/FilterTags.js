@@ -15,6 +15,7 @@ const Tag = ({ tag, filter, selectedFilter }) => {
       ref={buttonRef}
       rounded={16.5}
       fontSize="sm"
+      fontFamily="heading"
       p={4}
       _hover={{
         bg: "lightBlue.500",

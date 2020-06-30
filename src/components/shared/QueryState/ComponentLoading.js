@@ -1,18 +1,9 @@
 import React from "react";
+import { Flex } from "@chakra-ui/core";
 import { useLottie, Lottie } from "react-lottie-hook";
-import Box from "@material-ui/core/Box";
-import { makeStyles } from '@material-ui/core/styles/index';
 import * as animationData from "./lotties/23590-loading.json";
 
-const useStyles = makeStyles((theme) => ({
-  loadingContainer: {
-    display: "flex",
-    margin: "5%",
-  },
-}));
-
 const ComponentLoading = () => {
-  const classes = useStyles();
   const [lottieRef] = useLottie({
     renderer: "svg",
     rendererSettings: {
@@ -23,9 +14,9 @@ const ComponentLoading = () => {
   });
 
   return (
-    <Box data-testid="loadingComponent" className={classes.loadingContainer}>
+    <Flex m="5%" data-testid="loadingComponent">
       <Lottie lottieRef={lottieRef} height={250} width={350} />
-    </Box>
+    </Flex>
   );
 };
 

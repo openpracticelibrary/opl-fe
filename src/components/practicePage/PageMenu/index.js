@@ -1,48 +1,7 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import Toolbar from "@material-ui/core/Toolbar";
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
-import SocialLinks from "./SocialLinks";
-import PropTypes from "prop-types";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+import { Flex, Button } from "@chakra-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-evenly",
-    padding: theme.spacing(2, 0),
-  },
-  wrapBox: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    textAlign: "center",
-  },
-  menu: {
-    justifyContent: "flex-end",
-  },
-  menuLinks: {
-    maxWidth: "700px",
-  },
-  pageNavButton: {
-    display: "inline-block",
-    borderRadius: "16.5px",
-    "&:focus": {
-      backgroundColor: theme.palette.common.white,
-    },
-  },
-  url: {
-    fontSize: "12px",
-    fontWeight: "SemiBold",
-    textAlign: "center",
-    lineHeight: 2.42,
-    color: theme.palette.common.brownish_grey,
-  },
-})); 
+import SocialLinks from "./SocialLinks";
 
 const sections = [
   {title: "What", ref: "whatIsRef"},
@@ -54,8 +13,6 @@ const sections = [
 ];
 
 export default function PageMenu(props) {
-  const classes = useStyles();
-
   const handleClick = (ref) => {
     props[ref].current.scrollIntoView({
       behavior: "smooth",
@@ -63,58 +20,53 @@ export default function PageMenu(props) {
     });
   };
   return (
-    <>
-      <Box className={classes.root}>
-        <Toolbar
-          component="nav"
-          variant="dense"
-          className={classes.toolbar}
-        >
-          <Grid
-            container
-            direction="row"
-            className={classes.menu}
+    <Flex
+      direction="row"
+      justify="flex-end"
+      align="center"
+      w={["950px", "30%", "40%", "55%"]}
+      py="1.25rem"
+    >
+      <Flex
+        direction="row"
+        justify="space-between"
+        maxW={950}
+        display={["flex", "none", "none", "flex"]}
+      >
+        {sections.map((section, i) => (
+          <Button
+            key={i}
+            variant="ghost"
+            rounded={17}
+            minW={90}
+            maxH={34}
+            color="grey.500"
+            fontFamily="heading"
+            fontSize="sm"
+            textTransform="uppercase"
+            _hover={{ bg: "lightBlue.500", color: "blue.500" }}
+            _focus={{ bg: "lightBlue.500", color: "blue.500" }}
+            _active={{ bg: "lightBlue.500" }}
+            onClick={() => handleClick(section.ref)}
           >
-            <Grid item xs={8} className={classes.menuLinks}>
-              <Grid
-                container
-                direction="row"
-                justify="space-between"
-                alignItems="flex-start"
-                spacing={1}
-              >
-                {sections.map((section, i) => (
-                  <Grid item key={i}>
-                    <Button
-                      onClick={() => handleClick(section.ref)}
-                      className={classes.pageNavButton}
-                    >
-                      <Typography
-                        className={classes.url}
-                        variant="overline"
-                      >
-                        {section.title}
-                      </Typography>
-                    </Button>
-                  </Grid>
-                ))}
-              </Grid>
-            </Grid>
-            <Grid item xs={4}>
-              <SocialLinks
-                practiceId={props.practiceId}
-                upvotes={props.upvotes}
-                coverImage={props.coverImage}
-              />
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </Box>
-    </>
+            {section.title}
+          </Button>
+        ))}
+      </Flex>
+      <Flex
+        justify="flex-end"
+        align="center"
+        position="absolute"
+        right={0}
+        w={["40%", "100%", "100%", "40%"]}
+        pr={25}
+      >
+        <SocialLinks
+          practiceId={props.practiceId}
+          upvotes={props.upvotes}
+          coverImage={props.coverImage}
+        />
+      </Flex>
+    </Flex>
   );
 }
-
-PageMenu.propTypes = {
-  sections: PropTypes.array,
-  title: PropTypes.string,
-};

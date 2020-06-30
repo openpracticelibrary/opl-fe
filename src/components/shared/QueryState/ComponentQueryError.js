@@ -1,18 +1,9 @@
 import React from "react";
+import { Flex } from "@chakra-ui/core";
 import { useLottie, Lottie } from "react-lottie-hook";
-import Box from "@material-ui/core/Box";
-import { makeStyles } from '@material-ui/core/styles/index';
 import * as animationData from "./lotties/3227-error-404-facebook-style.json";
 
-const useStyles = makeStyles((theme) => ({
-  errorContainer: {
-    display: "flex",
-    margin: "5%",
-  },
-}));
-
 const ComponentLoading = (props) => {
-  const classes = useStyles();
   const [lottieRef] = useLottie({
     renderer: "svg",
     rendererSettings: {
@@ -25,9 +16,9 @@ const ComponentLoading = (props) => {
   console.error(props.err);
 
   return (
-    <Box data-testid="errorComponent" className={classes.errorContainer}>
+    <Flex m="5%" data-testid="errorComponent">
       <Lottie lottieRef={lottieRef} height={250} width={350} />
-    </Box>
+    </Flex>
   );
 };
 

@@ -1,53 +1,54 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
+/** @jsx jsx */
+import { useTheme, css, Box, Flex, Heading } from "@chakra-ui/core";
+import { jsx } from "@emotion/core";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+
 import DefaultImage from "../../../assets/images/DefaultImage.png";
 import AddImage from "../../../assets/images/add.png";
 import AddImageCard from "./AddImage";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  space: {
-    padding: theme.spacing(1),
-  },
-  mediaBox: {
+export default function MediaGallery({ practiceId, title, mediaGallery, mediaRef }) {
+  const theme = useTheme();
+  const styles = css({
     "& .image-gallery-slide img": {
-      borderRadius: 17,
-      width: "100%",
       height: "530px",
+      width: "100%",
+      borderRadius: "17px",
       objectFit: "fill",
+    },
+    "& .image-gallery-thumbnail img": {
+      borderRadius: "17px",
+      height: "75px",
+      objectFit: "cover",
+    },
+    "& .image-gallery-thumbnail": {
+      transition: "none",
+      border: 0,
+      mx: "12px",
+      "&:hover": {
+        borderRadius: "17px",
+        border: "2px",
+        borderColor: "blue.500",
+      },
+      "&:active": {
+        borderRadius: "17px",
+        border: "2px",
+        borderColor: "blue.500",
+      },
+      "&:focus": {
+        borderRadius: "17px",
+        border: "2px",
+        borderColor: "blue.500",
+      },
     },
     "& .fullscreen .image-gallery-slide img": {
       height: "auto",
       width: "auto",
       minHeight: "50vh",
     },
-  },
-  videoWrapper: {
-    overflow: "hidden",
-    paddingTop: "56.25%",
-    position: "relative",
-    "& iframe": {
-      position: "absolute",
-      border: 0,
-      height: "100%",
-      left: 0,
-      top: 0,
-      width: "100%",
-      borderRadius: 17,
-    },
-  },
-}))
-;
+  })(theme);
 
-export default function MediaGallery({ practiceId, title, mediaGallery, mediaRef }) {
-  const classes = useStyles();
   const images = mediaGallery.map(media => {
     const url = new URL(media.link);
     if (url.hostname.includes('youtube') && url.pathname.includes('watch')) {
@@ -96,41 +97,42 @@ export default function MediaGallery({ practiceId, title, mediaGallery, mediaRef
 
   const renderVideo = (item) => {
     return (
-      <div>
-        <div className={classes.videoWrapper}>
-          <iframe
-            title={item.embedUrl}
-            src={item.embedUrl}
-            allowFullScreen
-          >
-          </iframe>
-        </div>
-      </div>
+      <Box position="relative" overflow="hidden" pt="56.25%">
+        <Box
+          as="iframe"
+          position="absolute"
+          border={0}
+          height="100%"
+          left={0}
+          top={0}
+          width="100%"
+          rounded={17}
+          title={item.embedUrl}
+          src={item.embedUrl}
+          allowFullScreen
+        />
+      </Box>
     );
   }
 
   return (
-    <>
-      <Box className={classes.root}>
-        <Box className={classes.space}>
-          <Typography variant={"h2"} ref={mediaRef}>
-            Look at {title}
-          </Typography>
-        </Box>
-        <Box className={classes.mediaBox}>
-          <ImageGallery
-            items={images}
-            showBullets={true}
-            showIndex={false}
-            showThumbnails={true}
-            lazyLoad={true}
-            showPlayButton={false}
-            showFullscreenButton={true}
-            onErrorImageURL={DefaultImage}
-            onPlay={(currentIndex) => console.log(images[currentIndex])}
-          />
-        </Box>
+    <Flex direction="column">
+      <Heading fontSize="section" ref={mediaRef} py={4}>
+        Look at {title}
+      </Heading>
+      <Box css={styles}>
+        <ImageGallery
+          items={images}
+          showBullets={true}
+          showIndex={false}
+          showThumbnails={true}
+          lazyLoad={true}
+          showPlayButton={false}
+          showFullscreenButton={true}
+          onErrorImageURL={DefaultImage}
+          onPlay={(currentIndex) => console.log(images[currentIndex])}
+        />
       </Box>
-    </>
+    </Flex>
   );
 }
