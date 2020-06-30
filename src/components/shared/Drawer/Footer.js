@@ -36,7 +36,7 @@ export default function Footer() {
         alignItems="flex-start"
       >
         {sections.map((section) => (
-          <Grid item>
+          <Grid item key={section.title}>
             <FooterList link={section.url} text={section.title}>
               {section.icon}
             </FooterList>
