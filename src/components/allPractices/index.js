@@ -87,14 +87,14 @@ const Practices = (props) => {
               menuItems={Object.keys(popularMenuItems)}
             />
           </Grid>
-          <Grid item>
+          <Grid item data-testid="filterTagComponent">
             <FilterTags
               tags={filterTags}
               filter={handleFilterChange}
               selectedFilter={selectedFilterTag}
             />
           </Grid>
-          <Grid item>
+          <Grid item data-testid="filtersToggleButton">
             <KeywordSearchToggle
               toggle={toggleKeywordSearch}
               keywordSearchToggle={keywordSearchToggle}
@@ -109,6 +109,7 @@ const Practices = (props) => {
             justify="space-evenly"
             alignItems="center"
             className={classes.filterBar}
+            data-testid="extraFilter"
           >
             <Grid item>
               <Grid
@@ -116,11 +117,12 @@ const Practices = (props) => {
                 direction="column"
                 justify="space-between"
                 alignItems="flex-start"
+                
               >
                 <Grid item>
                   <Typography variant={"overline"} color="textSecondary">By Mobius Loop</Typography>
                 </Grid>
-                <Grid item>
+                <Grid item data-testid="dropDownFilter">
                   <DropDownSelectionFilter
                     inputLabel="Entire Process Model"
                     items={mobiusLoopArray}
@@ -136,6 +138,7 @@ const Practices = (props) => {
                 direction="column"
                 justify="space-between"
                 alignItems="flex-start"
+                data-testid="keywordSearch"
               >
                 <Grid item>
                   <Typography variant={"overline"} color="textSecondary" >Keyword Search</Typography>

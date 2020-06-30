@@ -26,9 +26,10 @@ const DropDownSelectionFilter = (props) => {
         value={selectedFilter}
         onChange={(event) => handleFilterSelect({ type: 'mobiusFilterChange', content: event.target.value })}
         classes={classes.selectEmpty}
+        data-testid="selectedDropDown"
       >
         {items.map((item, i) => (
-          <MenuItem value={item} key={i}>
+          <MenuItem value={item} key={i} data-testid={item}>
             <Typography variant="button" className={classes.mobiusLoopFilters}>
               {item === "Entire Process Model" ? "" : "#"}{item}
             </Typography>
