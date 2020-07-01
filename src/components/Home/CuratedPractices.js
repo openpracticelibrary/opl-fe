@@ -1,8 +1,5 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles/index';
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { navigate } from "@reach/router";
 import { useQuery } from "@apollo/react-hooks";
@@ -11,6 +8,8 @@ import ComponentLoading from "../shared/QueryState/ComponentLoading";
 import ComponentQueryError from "../shared/QueryState/ComponentQueryError";
 import { GET_CURATED_PRACTICES } from "../../graphql";
 import PracticeCardGrid from "../shared/PracticeCards/PracticeCardGrid";
+
+import { Typography, Button, Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   practiceHeader: {
@@ -47,15 +46,13 @@ const CuratedPractices = (props) => {
 
   return (
     <>
-      <Grid item xs={12} className={classes.practiceHeader} data-testid="curatedList">
+      <Box className={classes.practiceHeader} data-testid="curatedList">
         <Typography variant={"h1"}>Popular Practices</Typography>
         <Button data-testid="seeEverythingButton" className={classes.libraryButton} variant="contained" onClick={() => navigate("/practice")}>
           See Everything{"  "}<ArrowForwardIcon className={classes.arrowForward}/>
         </Button>
-      </Grid>
-      <Grid item xs={12}>
-        { loading ? <ComponentLoading /> : <PracticeCardGrid practices={data.practices} /> }
-      </Grid>
+      </Box>
+      { loading ? <ComponentLoading /> : <PracticeCardGrid practices={data.practices} /> }
     </>
   );
 };

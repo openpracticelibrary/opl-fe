@@ -1,9 +1,8 @@
 import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles/index";
-import Typography from "@material-ui/core/Typography";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { Button, Menu, MenuItem } from "@material-ui/core";
+import { Button, Menu, MenuItem, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   colorTitle: {

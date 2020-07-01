@@ -1,23 +1,26 @@
 import React, { useState, useRef } from "react";
-import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles/index";
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Typography from "@material-ui/core/Typography";
-import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBack from '@material-ui/icons/ArrowBack';
 import { AddIcon } from "../../../assets/icons";
-import Grid from '@material-ui/core/Grid';
 import { useMutation } from "@apollo/react-hooks";
 import { UPDATE_PRACTICE_RESOURCES } from "../../../graphql";
 import isValidURL from "url-validation";
 import Filter from "bad-words";
-import Tooltip from '@material-ui/core/Tooltip';
+
+import {
+  Box,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Typography,
+  MenuItem,
+  TextField,
+  Grid,
+  Tooltip,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {

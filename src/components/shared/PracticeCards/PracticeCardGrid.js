@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import Grid from "@material-ui/core/Grid";
 import PracticeCard from "./PracticeCard";
 import ComponentLoading from "../QueryState/ComponentLoading";
+import { Grid } from '@material-ui/core';
 
 const PracticeCardGrid = (props) => {
 

@@ -3,7 +3,7 @@ import {makeStyles} from "@material-ui/core/styles/index";
 import TitleAndSubtitle from "./TitleAndSubtitle";
 import ContributedBy from "./ContributedBy";
 import Collection from "./Collection";
-import Grid from "@material-ui/core/Grid";
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   layout: {

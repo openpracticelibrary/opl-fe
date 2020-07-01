@@ -1,7 +1,5 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
-import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
+import { Typography, Box, Button } from "@material-ui/core";
 import ResourceAddLink from "./ResourceAddLink";
 import ResourceListItem from "./ResourceListItem";
 import { makeStyles } from "@material-ui/core/styles/index";

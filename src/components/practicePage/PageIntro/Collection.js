@@ -1,12 +1,11 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles/index";
 import CollectionItem from "./CollectionItem";
-import Grid from "@material-ui/core/Grid";
 import { AmaIcon, CameraIcon, NounLoveIcon } from "../../../assets/icons";
-import IconButton from '@material-ui/core/IconButton';
 import { useMutation } from "@apollo/react-hooks";
 import { LIKE_PRACTICE } from "../../../graphql/";
+
+import { Typography, Grid, IconButton } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {

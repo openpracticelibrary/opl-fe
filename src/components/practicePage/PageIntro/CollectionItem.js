@@ -1,7 +1,6 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles/index";
-import Grid from "@material-ui/core/Grid";
+import { Typography, Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   layout: {

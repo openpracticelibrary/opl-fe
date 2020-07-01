@@ -1,12 +1,8 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import Toolbar from "@material-ui/core/Toolbar";
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
 import SocialLinks from "./SocialLinks";
 import PropTypes from "prop-types";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+import { Toolbar, Box, Grid, Button, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 2.42,
     color: theme.palette.common.brownish_grey,
   },
-})); 
+}));
 
 const sections = [
   {title: "What", ref: "whatIsRef"},

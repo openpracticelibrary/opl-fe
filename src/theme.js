@@ -32,134 +32,22 @@ export default createMuiTheme({
       green_gray: `${green_gray}`,
     },
     primary: {
-      main: `${black}`,
+      main: "#1975ff",
     },
     secondary: {
-      main: `${discovery_blue}`,
+      main: "#10d4a0",
     },
     text: {
-      primary: `${black}`,
-      secondary: `${discovery_blue}`,
+      primary: "#2e2e2e",
+      secondary: "#1975ff",
       brown_grey: `${brown_grey}`,
     },
   },
 
   typography: {
-    fontFamily: ["Noto Serif", "Roboto", "Quicksand"],
-
-    //Main Title
-    h1: {
-      fontFamily: "Quicksand",
-      fontWeight: "bold",
-      fontSize: "2.875rem",
-      color: `${black}`,
-    },
-
-    //Section Titles
-    h2: {
-      fontFamily: "Quicksand",
-      fontWeight: "bold",
-      fontSize: "1.625rem",
-      color: `${black}`,
-    },
-
-    //Pull quote
-    h3: {
-      fontFamily: "Noto Serif",
-      fontWeight: "normal",
-      fontStyle: "italic",
-      fontSize: "1.625rem",
-      color: `${brown_grey}`,
-    },
-
-    // Landing page large text
-    h4: {
-      fontFamily: "Quicksand",
-      fontWeight: "bold",
-      fontSize: "6rem",
-      color: `${black}`,
-    },
-
-    // Landing page text
-    h5: {
-      fontFamily: "Quicksand",
-      fontWeight: "normal",
-      fontSize: "2rem",
-      color: `${black}`,
-    },
-
-    //Subtitle
-    subtitle1: {
-      fontFamily: "Quicksand",
-      fontWeight: "normal",
-      fontSize: "1.25rem",
-      lineHeight: "1.8125rem",
-      color: `${brownish_grey}`,
-    },
-
-    //List Text
-    subtitle2: {
-      fontFamily: "Quicksand",
-      fontWeight: "normal",
-      fontSize: "2rem",
-      lineHeight: "2.375rem",
-      color: `${brownish_grey}`,
-    },
-
-    //card sub Text
-    h6: {
-      fontFamily: "Noto Serif",
-      fontWeight: "normal",
-      fontSize: "0.75rem",
-      lineHeight: "1.375rem",
-      color: `${brown_grey}`,
-    },
-
-    //Body text
+    fontFamily: ["Quicksand", "Noto Serif"],
     body1: {
       fontFamily: "Noto Serif",
-      fontWeight: "normal",
-      fontSize: "1rem",
-      lineHeight: "1.375rem",
-      color: `${brownish_grey}`,
-    },
-
-    //NotoSerif-Bold
-    body2: {
-      fontFamily: "Quicksand",
-      fontWeight: "bold",
-      fontSize: "1rem",
-      lineHeight: "1.375rem",
-      color: `${brownish_grey}`,
-    },
-
-    button: {
-      fontFamily: "Quicksand",
-      fontWeight: "600",
-      fontSize: "1.00rem",
-      lineHeight: "1.8125rem",
-      letterSpacing: "0.05625rem",
-      color: `${brownish_grey}`,
-      textTransform: "none",
-    },
-
-    //Tiny Text
-    caption: {
-      fontFamily: "Quicksand",
-      fontWeight: "normal",
-      fontSize: "0.5rem",
-      lineHeight: "0.5rem",
-      letterSpacing: "-0.00625rem",
-      color: `${brownish_grey}`,
-    },
-
-    //Navigation Text
-    overline: {
-      fontFamily: "Quicksand",
-      fontWeight: "600",
-      fontSize: "0.75rem",
-      lineHeight: "0.15125rem",
-      color: `${brown_grey}`,
     },
   },
   overrides: {

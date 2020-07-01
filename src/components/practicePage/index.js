@@ -1,7 +1,5 @@
 import React, { useRef, useState } from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import Box from '@material-ui/core/Box';
-import TextField from "@material-ui/core/TextField";
 
 import LoginButton from "../shared/Login/LoginButton";
 import PageIntro from "./PageIntro";
@@ -10,6 +8,8 @@ import PageBody from "./PageBody";
 import RichMarkdownEditor from "../shared/Editor/RichMarkdownEditor";
 import { StartEditingButton, EditingButtons } from "./PageIntro/EditControls";
 import blueDiagonals from "../../assets/icons/bluelines.svg";
+
+import { Box, TextField } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   alignComponentContent: {
@@ -114,7 +114,7 @@ function reducer(state, action) {
   default:
     throw new Error();
   }
-};
+}
 
 const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
   // State

@@ -1,8 +1,7 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import { OPLLogo } from "../../../assets/icons";
 import logoLabs from "../../../assets/images/logo-red-hat-open-innovation-labs-a-standard-rgb.png";
-import Grid from "@material-ui/core/Grid";
 
 export default function FooterLogoSection() {
   return (

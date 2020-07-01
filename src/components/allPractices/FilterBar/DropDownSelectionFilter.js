@@ -1,9 +1,7 @@
 import React from "react";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+
+import { MenuItem, FormControl, Select, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {

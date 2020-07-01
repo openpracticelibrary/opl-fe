@@ -1,8 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles/index';
-import Box from '@material-ui/core/Box';
-import { Grid, Button } from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid, Button, Box, Typography } from "@material-ui/core";
 import { navigate } from "@reach/router";
 import GrayRain from "../../assets/icons/rain.svg";
 import ClosingStickies from "../../assets/icons/closingstickies.png";

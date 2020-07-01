@@ -1,11 +1,10 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import Tooltip from '@material-ui/core/Tooltip';
-import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import SaveOutlinedIcon from '@material-ui/icons/SaveOutlined';
-import Box from "@material-ui/core/Box";
 import { EditIcon } from "../../../assets/icons";
+
+import { Tooltip, IconButton, Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   editingButtonCollection: {

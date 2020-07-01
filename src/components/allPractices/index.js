@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Grid, Divider } from "@material-ui/core";
+import { Grid, Divider, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles/index";
 import AllPracticesHero from "./AllPracticesHero";
 import FilterTags from "./FilterBar/FilterTags";
@@ -8,7 +8,6 @@ import KeywordSearchToggle from "./FilterBar/KeywordSearchToggle";
 import DropDownSelectionFilter from "./FilterBar/DropDownSelectionFilter";
 import KeywordSearchBox from "./FilterBar/KeywordSearchBox";
 import PopularFilter from "./FilterBar/PopularFilter";
-import Typography from "@material-ui/core/Typography";
 import grayDiagonals from "../../assets/icons/graylines.svg";
 
 const useStyles = makeStyles((theme) => ({

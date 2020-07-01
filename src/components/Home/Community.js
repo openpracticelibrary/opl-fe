@@ -1,10 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles/index';
-import Box from '@material-ui/core/Box';
-import Grid from "@material-ui/core/Grid";
-import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import Typography from "@material-ui/core/Typography";
 import { navigate } from "@reach/router";
 
 import PracticeCount from "./PracticeCount";
@@ -13,6 +9,8 @@ import RedHatLogo from "../../assets/images/logo-red-hat-hat-color-rgb.png";
 import NounProjectLogo from "../../assets/images/noun-project.png";
 import MobiusLogo from "../../assets/images/mobius-small.png";
 import CCHeartLogo from "../../assets/images/ccheart-black.png";
+
+import { Box, Grid, Button, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   communityHeader: {

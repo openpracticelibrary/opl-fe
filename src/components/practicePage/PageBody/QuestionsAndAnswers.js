@@ -1,8 +1,7 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles/index";
 import { AmaIcon } from "../../../assets/icons";
-import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   root: {

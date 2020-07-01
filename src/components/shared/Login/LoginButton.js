@@ -1,17 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Box from "@material-ui/core/Box";
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Button from '@material-ui/core/Button';
-import Typography from "@material-ui/core/Typography";
-import TextField from '@material-ui/core/TextField';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { useMutation, useApolloClient } from "@apollo/react-hooks";
 
 import LoginContext from './LoginContext';
 import { LOGIN } from "../../../graphql";
+
+import { Box, Dialog, DialogContent, DialogTitle, Button, Typography, TextField } from '@material-ui/core';
 
 const drawerWidth = 350;
 
