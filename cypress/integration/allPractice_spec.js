@@ -11,6 +11,26 @@ describe('My allPractice page Test', () => {
     cy.url().should("include", "/practice");
   });
 
+  it("Verify lists in Drawer", () => {
+    cy.visit(Cypress.env("HOST"));
+    cy.get('[data-testid="seeEverythingButton"]').click();
+    cy.get('[data-testid="drawerActions"]').click();
+    cy.get('[data-testid="drawerPractices"]');
+    cy.get('[data-testid="drawerCommunity"]');
+    cy.get('[data-testid="drawerActions"]').click();
+  });
+
+  it("Verify OPL Logo action in Drawer", () => {
+    cy.visit(Cypress.env("HOST"));
+    cy.get('[data-testid="seeEverythingButton"]').click();
+    cy.get('[data-testid="drawer"]');
+    cy.get('[data-testid="oplLogo"]').should("not.be.visible");
+    cy.get('[data-testid="drawerActions"]').click();
+    cy.get('[data-testid="oplLogo"]').should("be.visible");
+    cy.get('[data-testid="oplLogo"]').click();
+    cy.url().should("include", "/");
+  });
+
   it("Verify Login Button Shows Dialogue", () => {
     cy.visit(Cypress.env("HOST"));
     cy.get('[data-testid="seeEverythingButton"]').click();
