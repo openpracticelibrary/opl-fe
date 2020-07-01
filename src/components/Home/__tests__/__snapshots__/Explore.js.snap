@@ -37,6 +37,7 @@ exports[`matches the snapshot 1`] = `
       >
         <button
           className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-exploreButton-188 MuiButton-disableElevation"
+          data-testid="exploreLibraryButton"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
