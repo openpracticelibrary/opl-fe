@@ -10,7 +10,7 @@ describe('My allPractice page Tests', () => {
     cy.get('[data-testid="seeEverythingButton"]').click();
     cy.url().should("include", "/practice");
   });
-
+  //tests for Drawer here
   it("Verify lists in Drawer", () => {
     cy.visit(Cypress.env("HOST"));
     cy.get('[data-testid="seeEverythingButton"]').click();
@@ -30,7 +30,7 @@ describe('My allPractice page Tests', () => {
     cy.get('[data-testid="oplLogo"]').click();
     cy.url().should("include", "/");
   });
-
+  //tests for allPractice page BODY here onwards
   it("Verify Login Button Shows Dialogue", () => {
     cy.visit(Cypress.env("HOST"));
     cy.get('[data-testid="seeEverythingButton"]').click();

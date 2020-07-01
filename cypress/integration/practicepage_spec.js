@@ -27,14 +27,7 @@ describe('My Practice page Tests', () => {
     eventStorming.click();
     //like button tests
   });
-/*
-  it("Verify Like Button on Practice Page", () => {
-    cy.visit(Cypress.env("HOST"));
-    const eventStorming = cy.get('[data-testid="practicecardgrid"]').contains("Event Storming");
-    eventStorming.click();
-    //like button tests
-  });
-*/
+
   it("Verify Page Menu on Practice Page", () => {
     cy.visit(Cypress.env("HOST"));
     const eventStorming = cy.get('[data-testid="practicecardgrid"]').contains("Event Storming");

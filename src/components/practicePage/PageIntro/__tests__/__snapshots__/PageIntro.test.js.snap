@@ -162,6 +162,7 @@ exports[`matches the snapshot 1`] = `
       </div>
       <div
         className="MuiGrid-root MuiGrid-item"
+        data-testid="likeInCollection"
       >
         <button
           className="MuiButtonBase-root MuiIconButton-root makeStyles-button-332"
