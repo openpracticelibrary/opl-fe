@@ -1,6 +1,6 @@
 const { wait } = require("@testing-library/react");
 
-describe('My allPractice page Test', () => {
+describe('My allPractice page Tests', () => {
   it('Verify Home Page', () => {
     cy.visit(Cypress.env('HOST'));
   });

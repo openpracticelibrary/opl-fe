@@ -1,6 +1,6 @@
 const { wait } = require("@testing-library/react");
 
-describe('My allPractice page Test', () => {
+describe('My Practice page Tests', () => {
   it('Verify Home Page', () => {
     cy.visit(Cypress.env('HOST'));
   });
@@ -27,7 +27,14 @@ describe('My allPractice page Test', () => {
     eventStorming.click();
     //like button tests
   });
-
+/*
+  it("Verify Like Button on Practice Page", () => {
+    cy.visit(Cypress.env("HOST"));
+    const eventStorming = cy.get('[data-testid="practicecardgrid"]').contains("Event Storming");
+    eventStorming.click();
+    //like button tests
+  });
+*/
   it("Verify Page Menu on Practice Page", () => {
     cy.visit(Cypress.env("HOST"));
     const eventStorming = cy.get('[data-testid="practicecardgrid"]').contains("Event Storming");
