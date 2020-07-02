@@ -27,7 +27,7 @@ const AllPracticesHero = () => {
     <>
       <Grid item xs={4}>
         <Box className={classes.textBox}>
-          <Typography align="left" variant={"h1"} data-testid="herotext">
+          <Typography align="left" variant={"h2"} data-testid="herotext">
             Explore the library
           </Typography>
           <Typography align="left" variant={"h5"}>

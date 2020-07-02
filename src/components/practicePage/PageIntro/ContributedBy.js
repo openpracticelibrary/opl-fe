@@ -64,6 +64,7 @@ export default function ContributedBy(props) {
                       key={author.id}
                       authorName={`${author.firstName} ${author.lastName}`}
                       authorLink={author.mediaLink}
+                      avatar={author.Avatar}
                     />
                   ))}
                 </Box>
@@ -75,11 +76,7 @@ export default function ContributedBy(props) {
                   <Typography variant="overline">Edited by</Typography>
                   <Grid item>
                     <Box className={classes.editorBox}>
-                      {editors.map((author, i) => (
-                        <div key={i}>
-                          <EditorPhotos />
-                        </div>
-                      ))}
+                      <EditorPhotos editors={editors} />
                     </Box>
                   </Grid>
                 </>

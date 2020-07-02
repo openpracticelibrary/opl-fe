@@ -34,7 +34,7 @@ export default function TitleAndSubtitle(props) {
         <Box className={classes.space}>
           {props.children}
           <Typography
-            variant={"h1"}
+            variant={"h2"}
             data-testid={"title"}
           >
             {props.editing ?

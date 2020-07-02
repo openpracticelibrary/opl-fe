@@ -113,8 +113,8 @@ export default function MediaGallery({ practiceId, title, mediaGallery, mediaRef
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} ref={mediaRef}>
-            Look at {title}
+          <Typography variant={"h4"} ref={mediaRef}>
+            <b>Look at {title}</b>
           </Typography>
         </Box>
         <Box className={classes.mediaBox}>

@@ -20,8 +20,8 @@ export default function WhatIs(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} ref={props.whatIsRef} component={'span'}>
-            What is {props.title}?
+          <Typography variant={"h4"} ref={props.whatIsRef}>
+            <b>What is {props.title}?</b>
           </Typography>
         </Box>
         <Box className={classes.space}>

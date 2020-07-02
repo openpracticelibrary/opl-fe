@@ -1,12 +1,13 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { useTheme, makeStyles } from '@material-ui/core/styles';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { useMutation, useApolloClient } from "@apollo/react-hooks";
 
 import LoginContext from './LoginContext';
 import { LOGIN } from "../../../graphql";
 
-import { Box, Dialog, DialogContent, DialogTitle, Button, Typography, TextField } from '@material-ui/core';
+import { Box, Dialog, DialogContent, DialogTitle, TextField } from '@material-ui/core';
+import OplButton from "../components/OplButton";
 
 const drawerWidth = 350;
 
@@ -67,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
 
 const LoginButton = (props) => {
   const [anchorEl, setAnchorEl] = React.useState();
+  const theme = useTheme();
   const loggedIn = React.useContext(LoginContext);
   const uRef = React.useRef();
   const pwdRef = React.useRef();
@@ -118,17 +120,15 @@ const LoginButton = (props) => {
 
   return (
     <>
-      <Button
+      <OplButton
         data-testid="loginButton"
         variant="contained"
         aria-describedby={id}
-        className={classes.loginButton}
+        bg={theme.palette.primary.light}
         onClick={ loggedIn ? handleLogout : handleClick }
       >
-        <Typography variant={"button"} className={classes.buttonText}>
-          { loggedIn ? "Logout" : "Login" }
-        </Typography>
-      </Button>
+        { loggedIn ? "Logout" : "Login" }
+      </OplButton>
       <Dialog
         maxWidth="md"
         open={open}
@@ -137,20 +137,15 @@ const LoginButton = (props) => {
           className: classes.drawerPaper,
         }}
       >
-        <DialogTitle disableTypography={true}>
-          <Typography
-            variant="subtitle2"
-            className={classes.loginText}
-            data-testid="loginForm"
-          >
-              Credentials Please?
-          </Typography>
+        <DialogTitle>
+          Credentials Please?
         </DialogTitle>
         <DialogContent className={classes.container}>
           <form
             className={classes.loginForm}
             autoComplete="off"
             onSubmit={handleLogin}
+            data-testid="loginForm"
           >
             <Box>
               <TextField
@@ -175,15 +170,13 @@ const LoginButton = (props) => {
                 variant="outlined"
               />
             </Box>
-            <Button
+            <OplButton
               type="submit"
               variant="contained"
-              className={classes.submitButton}
+              bg={theme.palette.primary.light}
             >
-              <Typography variant={"button"} className={classes.btnText}>
-                Log me in <ArrowForwardIcon className={classes.arrowForward} />
-              </Typography>
-            </Button>
+              Log me in <ArrowForwardIcon color="primary" />
+            </OplButton>
           </form>
         </DialogContent>
       </Dialog>

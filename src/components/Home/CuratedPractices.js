@@ -9,32 +9,14 @@ import ComponentQueryError from "../shared/QueryState/ComponentQueryError";
 import { GET_CURATED_PRACTICES } from "../../graphql";
 import PracticeCardGrid from "../shared/PracticeCards/PracticeCardGrid";
 
-import { Typography, Button, Box } from '@material-ui/core';
+import { Typography, Grid, Box } from '@material-ui/core';
+import OplButton from "../shared/components/OplButton";
 
 const useStyles = makeStyles((theme) => ({
   practiceHeader: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
     paddingBottom: theme.spacing(12),
   },
-  aboutTitle: {
-    textAlign: "right",
-  },
-  arrowForward: {
-    color: theme.palette.common.discovery_blue,
-  },
-  libraryButton: {
-    borderRadius: "32px",
-    padding: theme.spacing(2),
-    width: "14rem",
-    borderColor: theme.palette.common.discovery_blue,
-    borderWidth: "1px",
-    borderStyle: "solid",
-    backgroundColor: theme.palette.common.true_white,
-  },
 }));
-
 
 const CuratedPractices = (props) => {
   const classes = useStyles();
@@ -46,12 +28,23 @@ const CuratedPractices = (props) => {
 
   return (
     <>
-      <Box className={classes.practiceHeader} data-testid="curatedList">
-        <Typography variant={"h1"}>Popular Practices</Typography>
-        <Button data-testid="seeEverythingButton" className={classes.libraryButton} variant="contained" onClick={() => navigate("/practice")}>
-          See Everything{"  "}<ArrowForwardIcon className={classes.arrowForward}/>
-        </Button>
-      </Box>
+      <Grid
+        container
+        item
+        xs={11}
+        direction="row"
+        justify="space-between"
+        alignItems="center"
+        className={classes.practiceHeader}
+        data-testid="curatedList"
+      >
+        <Typography variant={"h3"}>Popular Practices</Typography>
+        <Box display="flex" alignItems="center">
+          <OplButton data-testid="seeEverythingButton" onClick={() => navigate("/practice")}>
+          See Everything{"  "}<ArrowForwardIcon color="primary" />
+          </OplButton>
+        </Box>
+      </Grid>
       { loading ? <ComponentLoading /> : <PracticeCardGrid practices={data.practices} /> }
     </>
   );

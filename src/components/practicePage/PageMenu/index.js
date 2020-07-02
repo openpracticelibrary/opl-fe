@@ -2,7 +2,7 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import SocialLinks from "./SocialLinks";
 import PropTypes from "prop-types";
-import { Toolbar, Box, Grid, Button, Typography } from '@material-ui/core';
+import { Toolbar, Container, Grid, Button, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,25 +18,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     textAlign: "center",
   },
-  menu: {
-    justifyContent: "flex-end",
-  },
   menuLinks: {
     maxWidth: "700px",
   },
   pageNavButton: {
-    display: "inline-block",
     borderRadius: "16.5px",
     "&:focus": {
-      backgroundColor: theme.palette.common.white,
+      backgroundColor: theme.palette.primary.light,
     },
-  },
-  url: {
-    fontSize: "12px",
-    fontWeight: "SemiBold",
-    textAlign: "center",
-    lineHeight: 2.42,
-    color: theme.palette.common.brownish_grey,
   },
 }));
 
@@ -59,54 +48,52 @@ export default function PageMenu(props) {
     });
   };
   return (
-    <>
-      <Box className={classes.root}>
-        <Toolbar
-          component="nav"
-          variant="dense"
-          className={classes.toolbar}
-        >
-          <Grid
-            container
-            direction="row"
-            className={classes.menu}
-          >
-            <Grid item xs={8} className={classes.menuLinks}>
-              <Grid
-                container
-                direction="row"
-                justify="space-between"
-                alignItems="flex-start"
-                spacing={1}
-              >
-                {sections.map((section, i) => (
-                  <Grid item key={i}>
-                    <Button
-                      onClick={() => handleClick(section.ref)}
-                      className={classes.pageNavButton}
+    <Toolbar
+      component="nav"
+      variant="dense"
+      className={classes.root}
+    >
+      <Grid
+        container
+        direction="row"
+        justify="center"
+      >
+        <Grid item xs={false} md={1} xl={2}></Grid>
+        <Grid item xs={8} md={6} xl={5}>
+          <Container maxWidth="md">
+            <Grid
+              container
+              direction="row"
+              justify="space-between"
+              alignItems="flex-start"
+              spacing={1}
+            >
+              {sections.map((section, i) => (
+                <Grid item key={i}>
+                  <Button
+                    onClick={() => handleClick(section.ref)}
+                    className={classes.pageNavButton}
+                  >
+                    <Typography
+                      variant="overline"
                     >
-                      <Typography
-                        className={classes.url}
-                        variant="overline"
-                      >
-                        {section.title}
-                      </Typography>
-                    </Button>
-                  </Grid>
-                ))}
-              </Grid>
+                      {section.title}
+                    </Typography>
+                  </Button>
+                </Grid>
+              ))}
             </Grid>
-            <Grid item xs={4}>
-              <SocialLinks
-                practiceId={props.practiceId}
-                upvotes={props.upvotes}
-                coverImage={props.coverImage}
-              />
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </Box>
-    </>
+          </Container>
+        </Grid>
+        <Grid item xs={4}>
+          <SocialLinks
+            practiceId={props.practiceId}
+            upvotes={props.upvotes}
+            coverImage={props.coverImage}
+          />
+        </Grid>
+      </Grid>
+    </Toolbar>
   );
 }
 

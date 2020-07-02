@@ -98,8 +98,8 @@ export default function ResourcesWeLove(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} ref={props.resourceRef}>
-            Links we love
+          <Typography variant={"h4"} ref={props.resourceRef}>
+            <b>Links we love</b>
           </Typography>
           <Typography variant={"body1"}>
             Check out these great links which can help you dive a little deeper into running an event storming workshop with your team, customers or stakeholders.

@@ -177,16 +177,11 @@ export default function ResourceAddLink(props) {
         <Box>{props.children}</Box>
         <Box>
           <Button
-            variant="text"
-            color="secondary"
-            className={classes.button}
             startIcon={<AddIcon fill="#1975ff"/>}
             onClick={handleClickOpen}
             data-testid="addResourcesButton"
           >
-            <Typography variant={"body1"}>
               Add a link
-            </Typography>
           </Button>
           <Dialog
             open={open}

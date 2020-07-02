@@ -20,8 +20,8 @@ export default function HowDo(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} ref={props.howToRef} component={'span'}>
-            How to do {props.title}?
+          <Typography variant={"h4"} ref={props.howToRef}>
+            <b>How to do {props.title}?</b>
           </Typography>
         </Box>
         <Box className={classes.space}>

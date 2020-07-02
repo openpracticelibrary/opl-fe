@@ -9,7 +9,7 @@ import RichMarkdownEditor from "../shared/Editor/RichMarkdownEditor";
 import { StartEditingButton, EditingButtons } from "./PageIntro/EditControls";
 import blueDiagonals from "../../assets/icons/bluelines.svg";
 
-import { Box, TextField } from '@material-ui/core';
+import { Container, Box, TextField } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   alignComponentContent: {
@@ -18,20 +18,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "baseline",
     alignContent: "center",
   },
-  contentBox: {
-    display: "flex",
-    justifyContent: "space-around",
-    alignItems: "center",
-    alignContent: "center",
-  },
-  boxOfContent: {
-    maxWidth: "950px",
-    marginLeft: "25px",
-    marginRight: "25px",
-  },
   whiteColor: {
     backgroundImage: `linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.76) 70.4%, #FFFFFF 900%), url(${blueDiagonals})`,
-    justifyContent: "space-around",
   },
   trueWhiteColor: {
     backgroundColor: theme.palette.common.true_white,
@@ -287,19 +275,17 @@ const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
               redirect={`/practice/${data.slug}`}
             />
           </Box>
-          <Box className={classes.alignComponentContent}>
-            <Box className={classes.editButton}>
-              {loggedInEditing()}
-            </Box>
-            <Box className={classes.pageIntro}>
-              <PageIntro
-                editing={editing}
-                {...pageIntroData}
-                {...introEditors}
-              >
-              </PageIntro>
-            </Box>
+          <Box className={classes.editButton}>
+            {loggedInEditing()}
           </Box>
+          <Container maxWidth="md">
+            <PageIntro
+              editing={editing}
+              {...pageIntroData}
+              {...introEditors}
+            >
+            </PageIntro>
+          </Container>
         </Box>
 
         <Box className={classes.stickyToolbar}>
@@ -308,16 +294,14 @@ const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
           </Box>
         </Box>
 
-        <Box className={classes.contentBox}>
-          <Box className={classes.boxOfContent}>
-            <PageBody
-              editing={editing}
-              {...pageBodyData}
-              {...pageRefs}
-              {...bodyEditors}
-            />
-          </Box>
-        </Box>
+        <Container maxWidth="md">
+          <PageBody
+            editing={editing}
+            {...pageBodyData}
+            {...pageRefs}
+            {...bodyEditors}
+          />
+        </Container>
       </Box>
     </>
   );

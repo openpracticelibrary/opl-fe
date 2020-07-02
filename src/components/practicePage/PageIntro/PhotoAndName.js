@@ -1,12 +1,17 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles/index";
 import { UserIcon } from "../../../assets/icons";
-import { Typography, Grid } from '@material-ui/core';
+import { Typography, Grid, Avatar } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   space: {
     paddingRight: theme.spacing(3),
     minWidth: "fit-content",
+  },
+  small: {
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+    backgroundColor: "transparent",
   },
 }));
 
@@ -24,7 +29,9 @@ export default function PhotoAndName(props) {
         spacing={1}
       >
         <Grid item>
-          <UserIcon fill="#101010" />
+          <Avatar src={props.avatar} className={classes.small}>
+            <UserIcon />
+          </Avatar>
         </Grid>
         <Grid item>
           <Typography variant="body1" data-testid={"authorName"}>{props.authorName}</Typography>

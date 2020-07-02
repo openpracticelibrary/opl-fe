@@ -37,8 +37,8 @@ export default function AskMeAnything(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} ref={props.amaRef}>
-            Ask me anything
+          <Typography variant={"h4"} ref={props.amaRef}>
+            <b>Ask me anything</b>
           </Typography>
         </Box>
         <Box className={classes.space}>

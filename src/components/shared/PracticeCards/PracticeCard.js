@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
     margin: 10,
   },
   practiceItem: {
-    backgroundColor: "#fff",
     borderRadius: 10,
     "&:hover #cardTitle": {
       color: theme.palette.common.discovery_blue,
@@ -32,7 +31,7 @@ export default function PracticeCard(props) {
     <Box
       className={classes.practiceItemBound}
       style={{
-        zIndex: `${hovered ? "10" : "1"}`,
+        zIndex: `${hovered ? "10" : "0"}`,
         transition: `${hovered ? "0.5s" : "0.5s"}`,
       }}
       data-testid={props.practiceId}
@@ -49,6 +48,7 @@ export default function PracticeCard(props) {
           boxShadow: `${
             hovered ? "1px 2px 2px 1px rgba(0,0,0,.2)" : "0px 0px 0px 0px"
           }`,
+          background: hovered ? "white" : "transparent",
         }}
       >
         <CoverImage
@@ -61,6 +61,7 @@ export default function PracticeCard(props) {
           style={{
             transform: `${hovered ? "scale(.9, .95)" : "scale(1, 1)"}`,
             transition: `${hovered ? "0.5s" : "0.5s"}`,
+            background: hovered ? "white" : "transparent",
           }}
         >
           <PracticeCardTitle

@@ -74,7 +74,7 @@ const Landing = (props) => {
         </Box>
         <Box className={classes.textBox}>
           <Typography variant={"h1"} className={classes.hello} data-testid="hellotext">
-            <b>{props.greeting}</b>
+            {props.greeting}
           </Typography>
           <Typography variant={"h5"} className={classes.welcome} data-testid="welcomeText">
             {props.welcomeMessage}

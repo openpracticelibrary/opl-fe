@@ -26,7 +26,9 @@ const PracticeCount = () => {
   return (
     <div
       data-testid="practiceNum"
-      className={classes.practiceNum}>{data.practicesConnection.aggregate.totalCount}
+      className={classes.practiceNum}
+    >
+      {data.practicesConnection.aggregate.totalCount}
     </div>
   )
 };
