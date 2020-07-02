@@ -109,14 +109,16 @@ export default function OPLDrawer(props) {
         PaperProps={{
           elevation: 5,
         }}
+        data-testid="drawer"
       >
         <div className={classes.toolbar}>
-          <Link to="/" onClick={toggle} className={classes.paddedLogo}>
+          <Link to="/" onClick={toggle} className={classes.paddedLogo} data-testid="oplLogo">
             <OPLLogo height="29px" width="183px"/>
           </Link>
           <IconButton
             onClick={toggle}
             className={clsx(classes.paddedHamburger)}
+            data-testid="drawerActions"
           >
             <MenuIcon/>
           </IconButton>

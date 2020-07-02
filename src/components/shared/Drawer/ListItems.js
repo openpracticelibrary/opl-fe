@@ -57,14 +57,14 @@ export function TopListItems(props) {
   };
 
   return (
-    <List className={classes.root}>
+    <List className={classes.root} data-testid="drawerPractices">
       <ListSubheader>
         <Typography variant="overline" className={classes.headers}>Practices</Typography>
       </ListSubheader>
       <ListItem button>
         <Typography variant="body2">Please guide me</Typography>
       </ListItem>
-      <ListItemLink to="/practice" primary="See everything" toggle={toggle}/>
+      <ListItemLink to="/practice" primary="See everything" toggle={toggle} data-testid="SeeEverything"/>
       <ListItem button onClick={handleClick}>
         <ListItemText>
           <Typography variant="body2">By mobius loop</Typography>
@@ -94,7 +94,7 @@ export function TopListItems(props) {
 export function BottomListItems() {
   const classes = useStyles();
   return (
-    <List className={classes.root}>
+    <List className={classes.root} data-testid="drawerCommunity">
       <ListSubheader>
         <Typography variant="overline" className={classes.headers}>Community</Typography>
       </ListSubheader>

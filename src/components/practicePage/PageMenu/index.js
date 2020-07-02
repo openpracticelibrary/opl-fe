@@ -82,12 +82,14 @@ export default function PageMenu(props) {
                 justify="space-between"
                 alignItems="flex-start"
                 spacing={1}
+                data-testid="pageMenu"
               >
                 {sections.map((section, i) => (
                   <Grid item key={i}>
                     <Button
                       onClick={() => handleClick(section.ref)}
                       className={classes.pageNavButton}
+                      data-testid={section.title}
                     >
                       <Typography
                         className={classes.url}
