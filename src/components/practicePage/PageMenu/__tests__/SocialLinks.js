@@ -44,9 +44,9 @@ it("modifies upvotes when mutation is run", async () => {
   ];
 
   const {getByTestId} = render(
-      <MockedProvider mocks={apolloMocks}>
-        <SocialLinks {...mockProps} />
-      </MockedProvider>
+    <MockedProvider mocks={apolloMocks}>
+      <SocialLinks {...mockProps} />
+    </MockedProvider>
   );
 
   expect(getByTestId("heartIcon"));
