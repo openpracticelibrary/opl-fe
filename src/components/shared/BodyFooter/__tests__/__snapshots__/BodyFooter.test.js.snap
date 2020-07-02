@@ -96,7 +96,7 @@ exports[`matches the snapshot 1`] = `
                   className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-flex-start"
                 >
                   <div
-                    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+                    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5"
                   >
                     <span
                       className="MuiTypography-root MuiTypography-overline"
@@ -106,7 +106,7 @@ exports[`matches the snapshot 1`] = `
                     </span>
                   </div>
                   <div
-                    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+                    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-7"
                   >
                     <img
                       alt="Open Innovation Labs"
@@ -125,6 +125,44 @@ exports[`matches the snapshot 1`] = `
             <div
               className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-space-between"
             >
+              <div
+                className="MuiGrid-root MuiGrid-item"
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+                >
+                  <div
+                    className="MuiGrid-root MuiGrid-item"
+                  >
+                    <span
+                      className="MuiTypography-root makeStyles-color-617 MuiTypography-button"
+                      onClick={[Function]}
+                    >
+                      Practices
+                    </span>
+                  </div>
+                  <div
+                    className="MuiGrid-root MuiGrid-item"
+                  >
+                    <span
+                      className="MuiTypography-root makeStyles-color-617 MuiTypography-button"
+                      onClick={[Function]}
+                    >
+                      About
+                    </span>
+                  </div>
+                  <div
+                    className="MuiGrid-root MuiGrid-item"
+                  >
+                    <span
+                      className="MuiTypography-root makeStyles-color-617 MuiTypography-button"
+                      onClick={[Function]}
+                    >
+                      Terms
+                    </span>
+                  </div>
+                </div>
+              </div>
               <div
                 className="MuiGrid-root MuiGrid-item"
               >
@@ -286,64 +324,6 @@ exports[`matches the snapshot 1`] = `
                         </a>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="MuiGrid-root MuiGrid-item"
-              >
-                <div
-                  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
-                >
-                  <div
-                    className="MuiGrid-root MuiGrid-item"
-                  >
-                    <span
-                      className="MuiTypography-root makeStyles-color-617 MuiTypography-button"
-                      onClick={[Function]}
-                    >
-                      Practices
-                    </span>
-                  </div>
-                  <div
-                    className="MuiGrid-root MuiGrid-item"
-                  >
-                    <span
-                      className="MuiTypography-root makeStyles-color-617 MuiTypography-button"
-                      onClick={[Function]}
-                    >
-                      About
-                    </span>
-                  </div>
-                  <div
-                    className="MuiGrid-root MuiGrid-item"
-                  >
-                    <span
-                      className="MuiTypography-root makeStyles-color-617 MuiTypography-button"
-                      onClick={[Function]}
-                    >
-                      Latest
-                    </span>
-                  </div>
-                  <div
-                    className="MuiGrid-root MuiGrid-item"
-                  >
-                    <span
-                      className="MuiTypography-root makeStyles-color-617 MuiTypography-button"
-                      onClick={[Function]}
-                    >
-                      Terms
-                    </span>
-                  </div>
-                  <div
-                    className="MuiGrid-root MuiGrid-item"
-                  >
-                    <span
-                      className="MuiTypography-root makeStyles-color-617 MuiTypography-button"
-                      onClick={[Function]}
-                    >
-                      Help
-                    </span>
                   </div>
                 </div>
               </div>
