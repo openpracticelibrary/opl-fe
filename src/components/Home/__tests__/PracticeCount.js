@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup, render, waitFor } from "@testing-library/react";
+import { cleanup, render, waitFor } from "../../../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 import PracticeCount from '../PracticeCount';
@@ -32,7 +32,6 @@ it("renders contributor count successfully", async () => {
     </MockedProvider>
   );
 
-  await waitFor(() => expect(getByTestId("practiceNum")).toBeInTheDocument());
-  expect(getByTestId("practiceNum")).toHaveTextContent("107");
+  await waitFor(() => expect(getByTestId("practiceNum")).toHaveTextContent("107"));
 });
 

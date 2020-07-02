@@ -1,5 +1,5 @@
 import React from "react";
-import {cleanup, fireEvent, render, waitFor} from "@testing-library/react";
+import {cleanup, fireEvent, render, waitFor} from "../../../../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import {MockedProvider} from "@apollo/react-testing";
 import SocialLinks from "../SocialLinks";

@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup, render, fireEvent } from "@testing-library/react";
+import { cleanup, render, fireEvent } from "../../../../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 import LoginButton from '../LoginButton';

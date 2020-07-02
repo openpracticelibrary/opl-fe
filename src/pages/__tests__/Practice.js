@@ -1,5 +1,5 @@
 import React from "react";
-import { render, waitFor, fireEvent } from "@testing-library/react";
+import { render, waitFor, fireEvent } from "../../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 import Practice from "../Practice";
@@ -29,7 +29,8 @@ const mockPracticeData = [
       id: "aUs3r",
       firstName: "Mock",
       lastName: "User",
-      mediaLink: "an.avatar.com"
+      mediaLink: "an.avatar.com",
+      Avatar: "firebender.png"
     }],
     body: {
       __typename: "ComponentPracticeBodyBody",
@@ -114,9 +115,7 @@ it("renders the practice content page with data and a logged in user", async () 
 
   expect(getByText("Washing our hands...")).toBeInTheDocument();
 
-  await waitFor(() => expect(getByTestId("loginButton")).toBeInTheDocument());
-
-  expect(getByTestId("loginButton")).toHaveTextContent("Logout");
+  await waitFor(() => expect(getByTestId("loginButton")).toHaveTextContent("Logout"));
 
   const edit = await getByTestId("editButton");
 

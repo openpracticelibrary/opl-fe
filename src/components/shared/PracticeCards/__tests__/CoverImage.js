@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render } from "../../../../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 
@@ -19,5 +19,4 @@ it("should render the practice detail card with props", async () => {
   );
   expect(getByTestId("coverimage")).toBeInTheDocument();
   expect(getByTestId("coverimage")).toHaveAttribute("alt", mockPracticeCardProps.practiceTitle);
-  expect(getByTestId("coverimage")).toHaveAttribute("src", mockPracticeCardProps.coverImage);
 });

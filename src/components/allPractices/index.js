@@ -46,7 +46,7 @@ const Practices = (props) => {
     <>
       <AllPracticesHero bg={backgroundImage} />
       <Flex direction="row" justify="space-between" py={8} mx={10}>
-        <Box>
+        <Box data-testid="popularFilterComponent">
           <PopularFilter
             selectedItem={selectedPopularFilter}
             handleFilterChange={handleFilterChange}

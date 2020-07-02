@@ -157,6 +157,7 @@ export default function ResourceAddLink(props) {
               fontWeight="400"
               fontSize="3xl"
               textAlign="center"
+              data-testid="addResourceForm"
             >
               Add a link you love!
             </ModalHeader>

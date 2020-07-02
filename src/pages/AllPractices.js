@@ -38,7 +38,7 @@ function reducer(state, action) {
 const PracticesWithData = (props) => {
   const [page, setPage] = React.useState(paginationLimit);
   const [keywordSearchToggle, setKeywordSearchToggle] = React.useState(false);
-  const { location: { state: passedState } } = props;
+  const passedState = props.state && props.state.passedState;
   const [state, dispatch] = React.useReducer(reducer, {}, () => {
     return {
       tagArray: passedState ? passedState.tagArray.map(t => t.toLowerCase()) : [],

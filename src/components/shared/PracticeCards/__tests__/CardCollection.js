@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, waitFor } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "../../../../test-utils";
 import { MockedProvider } from "@apollo/react-testing";
 
 import CardCollection from "../CardCollection";
@@ -24,8 +24,6 @@ describe("Card collection", () => {
     expect(getByText(`${mockCardCollectionProps.upvotes}`)).toContainElement(
       getByTestId("heartIcon")
     );
-
-    expect(getByTestId("heartSvg")).toBeInTheDocument();
 
     expect(
       getByText(`${mockCardCollectionProps.imgCount}`)
@@ -76,7 +74,7 @@ describe("Card collection", () => {
       </MockedProvider>
     );
 
-    fireEvent.click(getByTestId("heartSvg"));
+    fireEvent.click(getByTestId("heartIcon"));
 
     expect(getByTestId("heartIcon")).toHaveTextContent("42");
     await waitFor(() => expect(practiceLiked).toBe(true));

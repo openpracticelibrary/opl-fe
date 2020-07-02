@@ -1,8 +1,7 @@
 import React from "react";
-import {cleanup, render} from "@testing-library/react";
+import {cleanup, render} from "../../../../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import {MockedProvider} from "@apollo/react-testing";
-import renderer from 'react-test-renderer';
 import PageBody from '../index';
 
 afterEach(cleanup);
@@ -38,17 +37,17 @@ const mockProps = {
 
 it("renders Page Body without crashing", () => {
   render(
-      <MockedProvider mocks={[]}>
-        <PageBody {...mockProps} />
-      </MockedProvider>
+    <MockedProvider mocks={[]}>
+      <PageBody {...mockProps} />
+    </MockedProvider>
   );
 });
 
 it("matches the snapshot", () => {
-  const tree = renderer.create(
-      <MockedProvider mocks={[]}>
-        <PageBody {...mockProps} />
-      </MockedProvider>
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  const { asFragment } = render(
+    <MockedProvider mocks={[]}>
+      <PageBody {...mockProps} />
+    </MockedProvider>
+  )
+  expect(asFragment()).toMatchSnapshot();
 });

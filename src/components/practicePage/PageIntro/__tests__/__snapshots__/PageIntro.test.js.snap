@@ -1,411 +1,217 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches the snapshot 1`] = `
-<div
-  className="MuiGrid-root makeStyles-layout-179 MuiGrid-container MuiGrid-direction-xs-column"
->
+<DocumentFragment>
   <div
-    className="MuiGrid-root MuiGrid-item"
+    class="css-j7qwjs"
   >
     <div
-      className="MuiBox-root MuiBox-root-289 makeStyles-root-284"
+      class="css-j7qwjs"
     >
       <div
-        className="MuiBox-root MuiBox-root-290 makeStyles-space-285"
+        class="css-cet0rr"
       >
         <h1
-          className="MuiTypography-root MuiTypography-h1"
+          class="css-1dujbrp"
           data-testid="title"
         >
           This is a test title
         </h1>
         <div
-          className="MuiBox-root MuiBox-root-321 makeStyles-tagContainer-286"
+          class="css-1xhj18k"
         />
       </div>
       <div
-        className="MuiBox-root MuiBox-root-322 makeStyles-space-285"
+        class="css-gmi9j0"
       >
-        <h6
-          className="MuiTypography-root MuiTypography-subtitle1"
+        <p
+          class="css-9ir3lt"
           data-testid="subtitle"
         >
           A subtitle for your title
-        </h6>
+        </p>
       </div>
     </div>
-  </div>
-  <div
-    className="MuiGrid-root makeStyles-row-180 MuiGrid-item"
-  >
     <div
-      className="MuiGrid-root makeStyles-root-323 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start MuiGrid-justify-xs-center"
+      class="css-1t6j593"
     >
       <div
-        className="MuiGrid-root MuiGrid-item"
+        class="css-12x97iq"
       >
+        <p
+          class="css-5xhogj"
+        >
+          Contributed by
+        </p>
         <div
-          className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-around"
+          class="css-1xhj18k"
         >
           <div
-            className="MuiBox-root MuiBox-root-327"
+            class="css-6k89jb"
           >
-            <span
-              className="MuiTypography-root MuiTypography-overline"
-            >
-              Contributed by
-            </span>
             <div
-              className="MuiGrid-root MuiGrid-item"
+              class="css-1bk5zed"
             >
               <div
-                className="MuiBox-root MuiBox-root-328 makeStyles-editorBox-325"
+                class="css-uwwqev"
               >
-                <div
-                  className="MuiGrid-root makeStyles-space-329 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center"
+                <svg
+                  fill="#fff"
+                  role="img"
+                  viewBox="0 0 128 128"
                 >
-                  <div
-                    className="MuiGrid-root MuiGrid-item"
-                  >
-                    <svg
-                      height="24"
-                      viewBox="0 0 25 24"
-                      width="25"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12.696 0C6.084 0 .704 5.383.704 12s5.38 12 11.992 12c6.612 0 11.992-5.383 11.992-12S19.308 0 12.696 0zm2.058 17.213c1.863-1.444 3.17-4.571 3.17-6.771 0-2.946-2.341-5.334-5.228-5.334-2.887 0-5.227 2.388-5.227 5.334 0 2.2 1.306 5.327 3.169 6.771-2.584.34-4.647 1.308-5.49 2.551-1.874-1.948-3.033-4.616-3.033-7.556 0-5.953 4.747-10.796 10.581-10.796s10.58 4.843 10.58 10.796c0 2.94-1.158 5.608-3.032 7.557-.843-1.244-2.905-2.211-5.49-2.552z"
-                        fill="#101010"
-                        fillRule="nonzero"
-                      />
-                    </svg>
-                  </div>
-                  <div
-                    className="MuiGrid-root MuiGrid-item"
-                  >
-                    <p
-                      className="MuiTypography-root MuiTypography-body1"
-                      data-testid="authorName"
-                    >
-                      Tim Beattie
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className="MuiGrid-root makeStyles-space-329 MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-align-items-xs-center"
-                >
-                  <div
-                    className="MuiGrid-root MuiGrid-item"
-                  >
-                    <svg
-                      height="24"
-                      viewBox="0 0 25 24"
-                      width="25"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12.696 0C6.084 0 .704 5.383.704 12s5.38 12 11.992 12c6.612 0 11.992-5.383 11.992-12S19.308 0 12.696 0zm2.058 17.213c1.863-1.444 3.17-4.571 3.17-6.771 0-2.946-2.341-5.334-5.228-5.334-2.887 0-5.227 2.388-5.227 5.334 0 2.2 1.306 5.327 3.169 6.771-2.584.34-4.647 1.308-5.49 2.551-1.874-1.948-3.033-4.616-3.033-7.556 0-5.953 4.747-10.796 10.581-10.796s10.58 4.843 10.58 10.796c0 2.94-1.158 5.608-3.032 7.557-.843-1.244-2.905-2.211-5.49-2.552z"
-                        fill="#101010"
-                        fillRule="nonzero"
-                      />
-                    </svg>
-                  </div>
-                  <div
-                    className="MuiGrid-root MuiGrid-item"
-                  >
-                    <p
-                      className="MuiTypography-root MuiTypography-body1"
-                      data-testid="authorName"
-                    >
-                      Matt Takane
-                    </p>
-                  </div>
-                </div>
+                  <g>
+                    <path
+                      d="M103,102.1388 C93.094,111.92 79.3504,118 64.1638,118 C48.8056,118 34.9294,111.768 25,101.7892 L25,95.2 C25,86.8096 31.981,80 40.6,80 L87.4,80 C96.019,80 103,86.8096 103,95.2 L103,102.1388 Z"
+                    />
+                    <path
+                      d="M63.9961647,24 C51.2938136,24 41,34.2938136 41,46.9961647 C41,59.7061864 51.2938136,70 63.9961647,70 C76.6985159,70 87,59.7061864 87,46.9961647 C87,34.2938136 76.6985159,24 63.9961647,24"
+                    />
+                  </g>
+                </svg>
               </div>
             </div>
+            <a
+              class="css-1gsb75u"
+              data-testid="authorName"
+              href="https://github.com/tdbeattie"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Tim Beattie
+            </a>
           </div>
           <div
-            className="MuiBox-root MuiBox-root-330"
-          />
-          <div
-            className="MuiGrid-root makeStyles-space-324 MuiGrid-item"
+            class="css-6k89jb"
           >
-            <span
-              className="MuiTypography-root MuiTypography-overline"
-              data-testid="dates"
+            <div
+              class="css-1bk5zed"
             >
-              Published 
-              July 8, 2020
-               | Last edited
-               
-              July 8, 2020
-            </span>
+              <div
+                class="css-uwwqev"
+              >
+                <svg
+                  fill="#fff"
+                  role="img"
+                  viewBox="0 0 128 128"
+                >
+                  <g>
+                    <path
+                      d="M103,102.1388 C93.094,111.92 79.3504,118 64.1638,118 C48.8056,118 34.9294,111.768 25,101.7892 L25,95.2 C25,86.8096 31.981,80 40.6,80 L87.4,80 C96.019,80 103,86.8096 103,95.2 L103,102.1388 Z"
+                    />
+                    <path
+                      d="M63.9961647,24 C51.2938136,24 41,34.2938136 41,46.9961647 C41,59.7061864 51.2938136,70 63.9961647,70 C76.6985159,70 87,59.7061864 87,46.9961647 C87,34.2938136 76.6985159,24 63.9961647,24"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <a
+              class="css-1gsb75u"
+              data-testid="authorName"
+              href="https://github.com/mtakane"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Matt Takane
+            </a>
           </div>
         </div>
       </div>
+      <p
+        class="css-1gqdcop"
+        data-testid="dates"
+      >
+        Published July 8, 2020 | Last edited July 8, 2020
+      </p>
     </div>
-  </div>
-  <div
-    className="MuiGrid-root makeStyles-row-180 MuiGrid-item"
-  >
     <div
-      className="MuiGrid-root makeStyles-root-331 MuiGrid-container"
+      class="css-81fbkz"
     >
-      <div
-        className="MuiGrid-root MuiGrid-item"
+      <p
+        class="css-hbyu8x"
       >
-        <span
-          className="MuiTypography-root MuiTypography-overline"
-        >
-          Collection
-        </span>
-      </div>
+        Collection
+      </p>
       <div
-        className="MuiGrid-root MuiGrid-item"
+        class="css-uk6cul"
       >
-        <button
-          className="MuiButtonBase-root MuiIconButton-root makeStyles-button-332"
+        <b
+          class="css-13oietq"
           data-testid="heartIcon"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
         >
-          <span
-            className="MuiIconButton-label"
+          <button
+            aria-label="Like Practice"
+            class="css-1d3nfz3"
+            data-testid="heartIcon"
+            type="button"
           >
-            <div
-              className="MuiGrid-root makeStyles-layout-345 MuiGrid-container"
+            <svg
+              aria-hidden="true"
+              class="css-1im46kq"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 45.743 45.743"
             >
-              <div
-                className="MuiGrid-root MuiGrid-item"
-              >
-                <svg
-                  height="17px"
-                  version="1.1"
-                  viewBox="0 0 20 17"
-                  width="20px"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                >
-                  <title>
-                    DB31F47E-55D5-437E-95A3-7A5BAD5EF398
-                  </title>
-                  <g
-                    fill="#596562"
-                    fillRule="evenodd"
-                    id="Practice-Page---Product"
-                    stroke="none"
-                    strokeWidth="1"
-                  >
-                    <g
-                      fillRule="nonzero"
-                      id="OPL_Practice-Pg--All-Content-New-Link"
-                      stroke="#596562"
-                      transform="translate(-1235.000000, -423.000000)"
-                    >
-                      <g
-                        id="Practice-Nav---Wide"
-                        transform="translate(0.000000, 389.000000)"
-                      >
-                        <g
-                          id="noun_Love_1969794"
-                          transform="translate(1236.000000, 35.000000)"
-                        >
-                          <path
-                            d="M17.9963086,4.81542188 C17.908418,2.15792578 15.8348672,0.00028125 13.1690742,0.00028125 C11.3911172,0.00028125 9.83826562,0.958253906 9,2.38422656 C8.16176953,0.958253906 6.60895312,0.00028125 4.83089062,0.00028125 C2.16464062,0.00028125 0.0910546875,2.15792578 0.0037265625,4.81542188 C-0.196207031,10.841168 9,15.1872188 9,15.1872188 C9,15.1872188 18.1956797,10.841168 17.9963086,4.81542188 Z"
-                            id="Path"
-                          />
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-              <div
-                className="MuiGrid-root MuiGrid-item"
-              >
-                <p
-                  className="MuiTypography-root makeStyles-space-346 MuiTypography-body1"
-                >
-                  42
-                </p>
-              </div>
-            </div>
-          </span>
-        </button>
-      </div>
-      <div
-        className="MuiGrid-root MuiGrid-item"
-      >
-        <button
-          className="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
-          disabled={true}
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={-1}
-          type="button"
+              <g>
+                <path
+                  d="M34.199,3.83c-3.944,0-7.428,1.98-9.51,4.997c0,0-0.703,1.052-1.818,1.052c-1.114,0-1.817-1.052-1.817-1.052 c-2.083-3.017-5.565-4.997-9.51-4.997C5.168,3.83,0,8.998,0,15.376c0,1.506,0.296,2.939,0.82,4.258 c3.234,10.042,17.698,21.848,22.051,22.279c4.354-0.431,18.816-12.237,22.052-22.279c0.524-1.318,0.82-2.752,0.82-4.258 C45.743,8.998,40.575,3.83,34.199,3.83z"
+                  fill="currentColor"
+                />
+              </g>
+            </svg>
+          </button>
+          42
+        </b>
+        <b
+          class="css-13oietq"
         >
-          <span
-            className="MuiIconButton-label"
+          <button
+            aria-label="Image Count"
+            class="css-1r5h7wy"
+            type="button"
           >
-            <div
-              className="MuiGrid-root makeStyles-layout-345 MuiGrid-container"
+            <svg
+              aria-hidden="true"
+              class="css-1im46kq"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 16 16"
             >
-              <div
-                className="MuiGrid-root MuiGrid-item"
-              >
-                <svg
-                  height="16"
-                  viewBox="0 0 22 16"
-                  width="22"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g
-                    fill="#A0A0A0"
-                  >
-                    <path
-                      d="M19.565 2.754H16.45L14.493.724C14.058.29 13.478 0 12.899 0H8.84c-.58 0-1.16.29-1.595.725L5.29 2.754H2.174C.942 2.754 0 3.696 0 4.928v8.84c0 1.232.942 2.174 2.174 2.174h17.391c1.232 0 2.174-.942 2.174-2.174v-8.84c0-1.16-.942-2.174-2.174-2.174zm-8.695 10.87c-2.682 0-4.856-2.175-4.856-4.856s2.174-4.855 4.856-4.855c2.68 0 4.855 2.174 4.855 4.855 0 2.681-2.174 4.855-4.855 4.855z"
-                    />
-                    <circle
-                      cx="10.87"
-                      cy="8.768"
-                      r="3.406"
-                    />
-                  </g>
-                </svg>
-              </div>
-              <div
-                className="MuiGrid-root MuiGrid-item"
-              >
-                <p
-                  className="MuiTypography-root makeStyles-space-346 MuiTypography-body1"
-                >
-                  3
-                </p>
-              </div>
-            </div>
-          </span>
-        </button>
-      </div>
-      <div
-        className="MuiGrid-root MuiGrid-item"
-      >
-        <button
-          className="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
-          disabled={true}
-          onBlur={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={-1}
-          type="button"
+              <path
+                d="m401.94 543.64c-.422-.413-.932-.619-1.528-.619h-1.892l-.431-1.122c-.107-.27-.303-.502-.587-.697-.284-.195-.576-.293-.874-.293h-4.324c-.298 0-.59.098-.874.293-.284.195-.48.428-.587.697l-.431 1.122h-1.892c-.597 0-1.106.206-1.529.619-.422.413-.633.911-.633 1.494v7.395c0 .583.211 1.081.633 1.494.422.413.932.619 1.529.619h11.89c.597 0 1.106-.206 1.528-.619.422-.413.633-.911.633-1.494v-7.395c0-.583-.211-1.081-.633-1.494m-4.801 7.804c-.74.724-1.631 1.085-2.673 1.085-1.042 0-1.932-.362-2.673-1.085-.74-.724-1.111-1.594-1.111-2.612 0-1.018.37-1.889 1.111-2.612.74-.724 1.631-1.085 2.673-1.085 1.042 0 1.932.362 2.673 1.085.74.724 1.111 1.594 1.111 2.612 0 1.018-.37 1.889-1.111 2.612m-2.673-4.989c-.67 0-1.243.232-1.719.697-.476.465-.714 1.025-.714 1.68 0 .655.238 1.215.714 1.68.476.465 1.049.697 1.719.697.67 0 1.243-.232 1.719-.697.476-.465.714-1.025.714-1.68 0-.655-.238-1.215-.714-1.68-.476-.465-1.049-.697-1.719-.697"
+                fill="currentColor"
+                transform="matrix(.78637 0 0 .78395-302.25-421.36)"
+              />
+            </svg>
+          </button>
+          3
+        </b>
+        <b
+          class="css-13oietq"
         >
-          <span
-            className="MuiIconButton-label"
+          <button
+            aria-label="Questions Count"
+            class="css-1d3nfz3"
+            type="button"
           >
-            <div
-              className="MuiGrid-root makeStyles-layout-345 MuiGrid-container"
+            <svg
+              aria-hidden="true"
+              class="css-1im46kq"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 18 15"
             >
-              <div
-                className="MuiGrid-root MuiGrid-item"
-              >
-                <svg
-                  height="15px"
-                  version="1.1"
-                  viewBox="0 0 18 15"
-                  width="18px"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                >
-                  <title>
-                    6E24265F-DCD4-4060-AD24-1D9A528732F8
-                  </title>
-                  <g
-                    fill="none"
-                    fillRule="evenodd"
-                    id="Practice-Page---Product"
-                    stroke="none"
-                    strokeWidth="1"
-                  >
-                    <g
-                      fill="#596562"
-                      fillRule="nonzero"
-                      id="OPL_Practice-Pg--All-Content"
-                      transform="translate(-438.000000, -310.000000)"
-                    >
-                      <g
-                        id="Practice-Intro---Wide"
-                      >
-                        <g
-                          id="collection"
-                        >
-                          <g
-                            transform="translate(265.815406, 304.000000)"
-                          >
-                            <g
-                              id="icons"
-                              transform="translate(87.938931, 0.000000)"
-                            >
-                              <g
-                                id="noun_Question_2965389"
-                                transform="translate(94.434421, 13.500000) scale(-1, 1) translate(-94.434421, -13.500000) translate(86.939625, 6.000000)"
-                              >
-                                <path
-                                  d="M11.5828654,0 C12.4863851,0 13.352899,0.359171047 13.9917839,0.99849961 C14.6306688,1.63782817 14.9895906,2.50494378 14.9895906,3.40909091 L14.9895906,8.86363636 C14.9895906,10.7464253 13.4643478,12.2727273 11.5828654,12.2727273 L8.38054381,12.2727273 L4.46280992,14.8840909 C4.35195049,14.9586494 4.22163656,14.9989563 4.08807015,15 C3.97623357,14.9994408 3.86625402,14.9713414 3.76783799,14.9181818 C3.54616431,14.8000648 3.40739525,14.5694957 3.40672513,14.3181818 L3.40672513,12.2727273 C2.50320545,12.2727273 1.63669158,11.9135562 0.997806688,11.2742277 C0.358921795,10.6348991 -9.08863547e-13,9.76778349 -9.08863547e-13,8.86363636 L-9.08863547e-13,3.40909091 C-9.08863547e-13,1.52630199 1.52524279,0 3.40672513,0 L11.5828654,0 Z M7.40944938,8.57111111 C6.85427936,8.57111111 6.41014335,9.01555556 6.41014335,9.57111111 C6.41014335,10.1266667 6.85427936,10.5711111 7.40944938,10.5711111 C7.96461941,10.5711111 8.40875542,10.1266667 8.40875542,9.57111111 C8.40875542,9.01555556 7.96461941,8.57111111 7.40944938,8.57111111 Z M7.3720379,1.57111111 C6.92388781,1.57111111 6.53005895,1.64533792 6.1633907,1.78142039 C5.81030275,1.91750286 5.49795572,2.10306987 5.23992991,2.35049255 C4.98190411,2.59791523 4.77819952,2.88245132 4.64239647,3.21647194 C4.49301311,3.55049255 4.42511158,3.92162658 4.41153127,4.31750286 L4.41153127,4.31750286 L4.41924489,4.36035647 C4.4392351,4.4149874 4.49572917,4.45853379 4.56091463,4.47832761 C4.56091463,4.47832761 4.88684197,4.57729668 5.30783144,4.57729668 C5.72882092,4.57729668 6.05474825,4.47832761 6.05474825,4.47832761 C6.13623009,4.45358534 6.20413161,4.39172967 6.20413161,4.31750286 C6.20413161,4.31750286 6.21771192,3.93399771 6.27203314,3.76080183 C6.32635436,3.58760596 6.4078362,3.42678121 6.50289834,3.30306987 C6.61154078,3.17935853 6.73376353,3.06801833 6.8967272,2.99379152 C7.05969087,2.91956472 7.24981515,2.88245132 7.46710004,2.88245132 C7.79302737,2.88245132 8.05105318,2.96904926 8.22759715,3.129874 C8.40414112,3.29069874 8.49920326,3.55049255 8.49920326,3.88451317 C8.49920326,4.08245132 8.45846235,4.24327606 8.37698051,4.37935853 C8.28191837,4.51544101 8.17327593,4.63915235 8.03747287,4.75049255 C7.90166982,4.86183276 7.75228645,4.97317297 7.58932279,5.08451317 C7.42635912,5.19585338 7.27697576,5.33193585 7.1275924,5.48038946 C6.97820903,5.62884307 6.85598628,5.81441008 6.74734384,6.02471936 C6.63870139,6.24739977 6.57079987,6.50719359 6.54363925,6.82884307 L6.54363925,6.82884307 L6.54363925,7.32368843 C6.54363925,7.39791523 6.61154078,7.44739977 6.67944231,7.47214204 C6.67944231,7.47214204 6.99178934,7.57111111 7.3720379,7.57111111 C7.76586676,7.57111111 8.06463348,7.47214204 8.06463348,7.47214204 C8.14611532,7.44739977 8.20043654,7.39791523 8.20043654,7.32368843 L8.20043654,7.32368843 L8.20043654,6.90306987 C8.22759715,6.68038946 8.30907898,6.49482245 8.43130174,6.34636884 C8.55352449,6.19791523 8.70290785,6.06183276 8.86587151,5.95049255 C9.02883518,5.83915235 9.20537916,5.71544101 9.38192313,5.6041008 C9.57204741,5.48038946 9.73501107,5.34430699 9.88439444,5.18348225 C10.0337778,5.01028637 10.1695809,4.82471936 10.264643,4.58966781 C10.3732854,4.3669874 10.4276067,4.07008018 10.400446,3.69894616 C10.400446,3.48863688 10.3461248,3.25358534 10.2510627,3.00616266 C10.1560005,2.75873998 9.97945658,2.52368843 9.74859138,2.31337915 C9.50414588,2.10306987 9.19179885,1.929874 8.81155029,1.78142039 C8.43130174,1.64533792 7.94241073,1.57111111 7.3720379,1.57111111 Z"
-                                  id="Shape"
-                                  transform="translate(7.494795, 7.500000) scale(-1, 1) translate(-7.494795, -7.500000) "
-                                />
-                              </g>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-              <div
-                className="MuiGrid-root MuiGrid-item"
-              >
-                <p
-                  className="MuiTypography-root makeStyles-space-346 MuiTypography-body1"
-                >
-                  5
-                </p>
-              </div>
-            </div>
-          </span>
-        </button>
+              <path
+                d="M14.277 0c.903 0 1.77.36 2.409.998.639.64.998 1.507.998 2.411v5.455c0 1.882-1.526 3.409-3.407 3.409h-3.202l-3.918 2.611c-.111.075-.241.115-.375.116-.112 0-.222-.029-.32-.082-.222-.118-.36-.349-.361-.6v-2.045c-.904 0-1.77-.36-2.41-.999-.638-.64-.997-1.506-.997-2.41V3.409C2.694 1.526 4.219 0 6.101 0h8.176zm-4.174 8.571c-.555 0-.999.445-.999 1 0 .556.444 1 1 1 .555 0 .999-.444.999-1 0-.555-.444-1-1-1zm-.037-7c-.448 0-.842.074-1.209.21-.353.137-.665.322-.923.57-.258.247-.462.531-.598.865-.149.334-.217.706-.23 1.102l.007.042c.02.055.077.099.142.118 0 0 .326.1.747.1.42 0 .747-.1.747-.1.081-.024.15-.086.15-.16 0 0 .013-.384.067-.557.054-.173.136-.334.23-.458.11-.124.232-.235.395-.31.163-.073.353-.11.57-.11.326 0 .584.086.76.247.177.16.272.42.272.755 0 .197-.04.358-.122.494-.095.136-.204.26-.34.371-.135.112-.285.223-.448.335-.163.11-.312.247-.461.395-.15.149-.272.334-.38.545-.11.222-.177.482-.204.804v.495c0 .074.068.123.135.148 0 0 .313.1.693.1.394 0 .693-.1.693-.1.081-.025.135-.074.135-.148v-.42c.028-.224.109-.41.231-.558.122-.148.272-.284.435-.396.163-.11.34-.235.516-.346.19-.124.353-.26.502-.42.15-.174.286-.36.38-.594.11-.223.164-.52.136-.891 0-.21-.054-.445-.149-.693-.095-.247-.272-.482-.502-.693-.245-.21-.557-.383-.937-.532-.38-.136-.87-.21-1.44-.21z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          5
+        </b>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

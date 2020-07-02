@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup } from "@testing-library/react";
+import { render, cleanup } from "../../../../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 import PhotoAndName from "../PhotoAndName";
@@ -12,9 +12,9 @@ const mockProps = {
 
 it("renders the author name and photo", async () => {
   const { getByTestId } = render(
-      <MockedProvider mocks={[]}>
-        <PhotoAndName {...mockProps} />
-      </MockedProvider>
+    <MockedProvider mocks={[]}>
+      <PhotoAndName {...mockProps} />
+    </MockedProvider>
   );
 
   expect(getByTestId("authorName")).toBeInTheDocument();

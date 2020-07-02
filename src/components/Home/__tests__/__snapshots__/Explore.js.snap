@@ -1,66 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches the snapshot 1`] = `
-<div
-  className="MuiGrid-root makeStyles-explore-187 MuiGrid-container"
->
+<DocumentFragment>
   <div
-    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+    class="css-orapiz"
   >
     <div
-      className="MuiBox-root MuiBox-root-295 makeStyles-exploreIcon-190"
+      class="css-1tzf62d"
     >
       <img
         alt="Closing Message"
-        src="closingstickies.png"
+        class="css-sgjdw3"
       />
-    </div>
-  </div>
-  <div
-    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
-  >
-    <div
-      className="MuiBox-root MuiBox-root-296 makeStyles-exploreBox-186"
-    >
       <div
-        className="MuiBox-root MuiBox-root-297"
+        class="css-131srj"
       >
-        <h5
-          className="MuiTypography-root makeStyles-learn-189 MuiTypography-h5"
+        <h2
+          class="css-18uxb91"
           data-testid="exploreMsg"
         >
           Snapshottin it up
-        </h5>
-      </div>
-      <div
-        className="MuiBox-root MuiBox-root-328"
-      >
-        <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-exploreButton-188 MuiButton-disableElevation"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
+        </h2>
+        <div
+          class="css-0"
         >
-          <span
-            className="MuiButton-label"
+          <button
+            class="css-15hktin"
+            type="button"
           >
             Explore the library
-          </span>
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

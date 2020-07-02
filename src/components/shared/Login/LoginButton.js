@@ -88,6 +88,7 @@ const LoginButton = (props) => {
             fontWeight="400"
             fontSize="3xl"
             textAlign="center"
+            data-testid="loginForm"
           >
             Credentials Please?
           </ModalHeader>

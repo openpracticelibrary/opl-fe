@@ -1,24 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches the snapshot 1`] = `
-<div
-  className="MuiGrid-root makeStyles-titleBox-230 MuiGrid-container"
->
+<DocumentFragment>
   <div
-    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
-  />
-  <div
-    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
+    class="css-1mffhgn"
   >
     <div
-      className="MuiBox-root MuiBox-root-341 makeStyles-logo-231"
+      class="css-1lhk5nx"
     >
       <svg
         height="250px"
         viewBox="0 0 185 18"
         width="383px"
         xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <defs>
           <filter
@@ -29,22 +24,22 @@ exports[`matches the snapshot 1`] = `
             x="-.5%"
             y="-3.4%"
           >
-            <feOffset
+            <feoffset
               dx="2"
               dy="2"
               in="SourceAlpha"
               result="shadowOffsetOuter1"
             />
-            <feColorMatrix
+            <fecolormatrix
               in="shadowOffsetOuter1"
               values="0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 1 0"
             />
           </filter>
           <text
             fill="#2E2E2E"
-            fontFamily="Chewy-Regular, Chewy"
-            fontSize="19"
-            fontWeight="normal"
+            font-family="Chewy-Regular, Chewy"
+            font-size="19"
+            font-weight="normal"
             id="prefix__b"
           >
             <tspan
@@ -57,124 +52,83 @@ exports[`matches the snapshot 1`] = `
         </defs>
         <g
           fill="#2E2E2E"
-          fillRule="evenodd"
+          fill-rule="evenodd"
           transform="translate(-28 -30)"
         >
           <use
             filter="url(#prefix__a)"
-            xlinkHref="#prefix__b"
+            xlink:href="#prefix__b"
           />
           <use
-            xlinkHref="#prefix__b"
+            xlink:href="#prefix__b"
           />
         </g>
       </svg>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-342 makeStyles-textBox-233"
+      class="css-1tzf62d"
     >
-      <h4
-        className="MuiTypography-root makeStyles-hello-234 MuiTypography-h4"
-        data-testid="hellotext"
+      <div
+        class="css-y4cvok"
       >
-        Wazzup
-      </h4>
-      <h5
-        className="MuiTypography-root makeStyles-welcome-235 MuiTypography-h5"
-        data-testid="welcomeText"
-      >
-        What's up
-      </h5>
-      <h5
-        className="MuiTypography-root MuiTypography-h5"
-        data-testid="inquiryText"
-      >
-        What is up?
-      </h5>
-      <p
-        className="MuiTypography-root MuiTypography-button"
-      >
-        <b>
-          Tell me more
-        </b>
-        <button
-          className="MuiButtonBase-root MuiIconButton-root makeStyles-arrowIcon-236"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
+        <h1
+          class="css-1tq9xtx"
+          data-testid="hellotext"
         >
-          <span
-            className="MuiIconButton-label"
+          Wazzup
+        </h1>
+        <h2
+          class="css-1yy1d4e"
+          data-testid="welcomeText"
+        >
+          What's up
+        </h2>
+        <h2
+          class="css-1yy1d4e"
+          data-testid="inquiryText"
+        >
+          What is up?
+        </h2>
+        <h3
+          class="css-170hos2"
+        >
+          Tell me more
+          <button
+            aria-label="Scroll to Community"
+            class="css-8kw3cu"
+            type="button"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="css-1im46kq"
               focusable="false"
+              role="presentation"
               viewBox="0 0 24 24"
             >
               <path
                 d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                fill="currentColor"
               />
             </svg>
-          </span>
-        </button>
-      </p>
+          </button>
+        </h3>
+      </div>
+      <img
+        alt="Welcome to OPL"
+        class="css-1a1h1dg"
+      />
     </div>
-  </div>
-  <div
-    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
-  >
-    <img
-      alt="Welcome to OPL"
-      height="auto"
-      src="WhiteBoarding.png"
-      width="900px"
-    />
     <div
-      className="MuiBox-root MuiBox-root-394 makeStyles-loginBox-232"
+      class="css-ly2qwz"
     >
       <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-loginButton-397"
+        class="css-15hktin"
         data-testid="loginButton"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={0}
         type="button"
       >
-        <span
-          className="MuiButton-label"
-        >
-          <span
-            className="MuiTypography-root makeStyles-buttonText-398 MuiTypography-button"
-          >
-            Login
-          </span>
-        </span>
+        Login
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -65,6 +65,7 @@ export default function ContributedBy(props) {
         fontSize="sm"
         textTransform="uppercase"
         mt="auto"
+        data-testid="dates"
       >
         Published {formatDate(props.createdAt)} | Last edited{" "}
         {formatDate(props.updatedAt)}

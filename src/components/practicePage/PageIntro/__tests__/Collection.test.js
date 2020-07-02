@@ -1,5 +1,5 @@
 import React from "react";
-import {cleanup, fireEvent, render, waitFor} from "@testing-library/react";
+import {cleanup, fireEvent, render, waitFor} from "../../../../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import {MockedProvider} from "@apollo/react-testing";
 import Collection from "../Collection";
@@ -15,12 +15,12 @@ const mockProps = {
 };
 
 it("renders collection items", async () => {
-  const {getByTestId} = render(
-      <MockedProvider mocks={[]}>
-        <Collection {...mockProps} />
-      </MockedProvider>
+  const {getAllByTestId} = render(
+    <MockedProvider mocks={[]}>
+      <Collection {...mockProps} />
+    </MockedProvider>
   );
-  expect(getByTestId("heartIcon")).toBeInTheDocument();
+  expect(getAllByTestId("heartIcon")[0]).toBeInTheDocument();
 
 });
 
@@ -52,13 +52,13 @@ it("modifies upvotes when mutation is run", async () => {
     },
   ];
 
-  const {getByTestId} = render(
-      <MockedProvider mocks={apolloMocks}>
-        <Collection {...mockProps}/>
-      </MockedProvider>
+  const { getAllByTestId } = render(
+    <MockedProvider mocks={apolloMocks}>
+      <Collection {...mockProps}/>
+    </MockedProvider>
   );
 
-  expect(getByTestId("heartIcon")).toHaveTextContent("42");
-  fireEvent.click(getByTestId("heartIcon"));
+  expect(getAllByTestId("heartIcon")[0]).toHaveTextContent("42");
+  fireEvent.click(getAllByTestId("heartIcon")[1]);
   await waitFor(() => expect(practiceLiked).toBe(true));
 });

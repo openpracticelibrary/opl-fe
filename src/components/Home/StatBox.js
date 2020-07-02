@@ -21,6 +21,7 @@ const StatBox = (props) => (
           textAlign="center"
           fontWeight="700"
           color="blue.500"
+          data-testid="practiceNum"
         >
           {props.data}
         </Text>
