@@ -11,9 +11,6 @@ import PopularFilter from "./FilterBar/PopularFilter";
 import grayDiagonals from "../../assets/icons/graylines.svg";
 
 const useStyles = makeStyles((theme) => ({
-  pageWrapper: {
-    backgroundColor: theme.palette.common.true_white,
-  },
   root: {
     display: "flex",
     flexDirection: "column",
@@ -30,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "row",
     justifyContent: "center",
     backgroundImage: `linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.76) 63.23%, rgba(255,255,255,0) 100%), url(${grayDiagonals})`,
-    height: "24.25rem",
+    height: "24.5rem",
     width: "100%",
     paddingLeft: theme.spacing(12),
   },
@@ -61,101 +58,99 @@ const Practices = (props) => {
 
   return (
     <>
-      <Grid className={classes.pageWrapper}>
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-          className={classes.titleBox}
-        >
-          <AllPracticesHero />
+      <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+        className={classes.titleBox}
+      >
+        <AllPracticesHero />
+      </Grid>
+      <Divider />
+      <Grid
+        container
+        direction="row"
+        justify="space-around"
+        alignItems="center"
+        className={classes.filterBar}
+      >
+        <Grid item data-testid="popularFilterComponent">
+          <PopularFilter
+            selectedItem={selectedPopularFilter}
+            handleFilterChange={handleFilterChange}
+            menuItems={Object.keys(popularMenuItems)}
+          />
         </Grid>
-        <Divider />
+        <Grid item>
+          <FilterTags
+            tags={filterTags}
+            filter={handleFilterChange}
+            selectedFilter={selectedFilterTag}
+          />
+        </Grid>
+        <Grid item>
+          <KeywordSearchToggle
+            toggle={toggleKeywordSearch}
+            keywordSearchToggle={keywordSearchToggle}
+          />
+        </Grid>
+      </Grid>
+
+      {keywordSearchToggle && (
         <Grid
           container
           direction="row"
-          justify="space-around"
+          justify="space-evenly"
           alignItems="center"
           className={classes.filterBar}
         >
-          <Grid item data-testid="popularFilterComponent">
-            <PopularFilter
-              selectedItem={selectedPopularFilter}
-              handleFilterChange={handleFilterChange}
-              menuItems={Object.keys(popularMenuItems)}
-            />
+          <Grid item>
+            <Grid
+              container
+              direction="column"
+              justify="space-between"
+              alignItems="flex-start"
+            >
+              <Grid item>
+                <Typography variant={"overline"} color="textSecondary">By Mobius Loop</Typography>
+              </Grid>
+              <Grid item>
+                <DropDownSelectionFilter
+                  inputLabel="Entire Process Model"
+                  items={mobiusLoopArray}
+                  selectedFilter={selectedMobiusLoopFilter}
+                  handleFilterSelect={handleFilterChange}
+                />
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item>
-            <FilterTags
-              tags={filterTags}
-              filter={handleFilterChange}
-              selectedFilter={selectedFilterTag}
-            />
-          </Grid>
-          <Grid item>
-            <KeywordSearchToggle
-              toggle={toggleKeywordSearch}
-              keywordSearchToggle={keywordSearchToggle}
-            />
+            <Grid
+              container
+              direction="column"
+              justify="space-between"
+              alignItems="flex-start"
+            >
+              <Grid item>
+                <Typography variant={"overline"} color="textSecondary" >Keyword Search</Typography>
+              </Grid>
+              <Grid item>
+                <KeywordSearchBox dispatch={handleFilterChange} />
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
-
-        {keywordSearchToggle && (
-          <Grid
-            container
-            direction="row"
-            justify="space-evenly"
-            alignItems="center"
-            className={classes.filterBar}
-          >
-            <Grid item>
-              <Grid
-                container
-                direction="column"
-                justify="space-between"
-                alignItems="flex-start"
-              >
-                <Grid item>
-                  <Typography variant={"overline"} color="textSecondary">By Mobius Loop</Typography>
-                </Grid>
-                <Grid item>
-                  <DropDownSelectionFilter
-                    inputLabel="Entire Process Model"
-                    items={mobiusLoopArray}
-                    selectedFilter={selectedMobiusLoopFilter}
-                    handleFilterSelect={handleFilterChange}
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Grid
-                container
-                direction="column"
-                justify="space-between"
-                alignItems="flex-start"
-              >
-                <Grid item>
-                  <Typography variant={"overline"} color="textSecondary" >Keyword Search</Typography>
-                </Grid>
-                <Grid item>
-                  <KeywordSearchBox dispatch={handleFilterChange} />
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        )}
-        <Grid
-          container
-          direction="column"
-          justify="space-evenly"
-          alignContent="center"
-          className={classes.root}
-        >
-          <Grid item xs={12}>
-            {props.children}
-          </Grid>
+      )}
+      <Grid
+        container
+        direction="column"
+        justify="space-evenly"
+        alignContent="center"
+        className={classes.root}
+      >
+        <Grid item xs={12}>
+          {props.children}
         </Grid>
       </Grid>
     </>

@@ -1,10 +1,12 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
+import { useTheme, makeStyles } from "@material-ui/core/styles";
 import CloseIcon from '@material-ui/icons/Close';
 import SaveOutlinedIcon from '@material-ui/icons/SaveOutlined';
 import { EditIcon } from "../../../assets/icons";
 
-import { Tooltip, IconButton, Box } from '@material-ui/core';
+import { IconButton, Box } from '@material-ui/core';
+
+import OplTooltip from "../../shared/components/OplTooltip";
 
 const useStyles = makeStyles((theme) => ({
   editingButtonCollection: {
@@ -17,40 +19,41 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const StartEditingButton = (props) => (
-  <Tooltip
+  <OplTooltip
     title="Edit Practice"
     placement="top"
   >
     <IconButton data-testid="editButton" onClick={props.handleEdit}>
       <EditIcon height="20" />
     </IconButton>
-  </Tooltip>
+  </OplTooltip>
 );
 
 const EditingButtons = (props) => {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <Box className={classes.editingButtonCollection}>
       <IconButton>
-        <EditIcon fill="#1975ff" height="20" />
+        <EditIcon fill={theme.palette.primary.main} height="20" />
       </IconButton>
-      <Tooltip
+      <OplTooltip
         title="Save Edits"
         placement="left"
       >
         <IconButton data-testid="saveEditButton" onClick={props.handleSaveEdits}>
           <SaveOutlinedIcon />
         </IconButton>
-      </Tooltip>
-      <Tooltip
+      </OplTooltip>
+      <OplTooltip
         title="Cancel Edits"
         placement="left"
       >
         <IconButton data-testid="closeEditButton" onClick={props.handleEdit}>
           <CloseIcon />
         </IconButton>
-      </Tooltip>
+      </OplTooltip>
     </Box>
   );
 };

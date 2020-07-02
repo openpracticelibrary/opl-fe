@@ -1,91 +1,102 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { navigate } from "@reach/router";
 
 import PracticeCount from "./PracticeCount";
 import ContributorCount from "./ContributorCount";
+import Collaborators from "./Collaborators";
 import RedHatLogo from "../../assets/images/logo-red-hat-hat-color-rgb.png";
 import NounProjectLogo from "../../assets/images/noun-project.png";
 import MobiusLogo from "../../assets/images/mobius-small.png";
 import CCHeartLogo from "../../assets/images/ccheart-black.png";
+import styled from 'styled-components';
 
 import { Box, Grid, Typography } from '@material-ui/core';
 import OplButton from "../shared/components/OplButton";
+import { palette, spacing, typography } from '@material-ui/system';
 
-const useStyles = makeStyles((theme) => ({
-  communityHeader: {
-    padding: theme.spacing(12,0),
-  },
-  practiceBox: {
-    display: "flex",
-    alignItems: "center",
-    flexFlow: "column",
-    justifyContent: "center",
-    textAlign: "center",
-    boxSizing: "border-box",
-    height: "340px",
-    width: "330px",
-    borderRadius: "50%",
-    borderStyle: "solid",
-    borderColor: theme.palette.secondary.main,
-    borderWidth: "1px",
-    boxShadow: "2px 2px 8px 0 rgba(0,0,0,0.1)",
-    padding: theme.spacing(5),
-    margin: theme.spacing(2,2,12,0),
-  },
-  collaborators: {
-    width: 134,
-    height: 72,
-    objectFit: "contain",
-    margin: theme.spacing(2,6,12,0)
-  },
-}));
+const StyledGrid = styled(Grid)`${palette}${spacing}${typography}`;
 
-const Community = (props) => {
-  const classes = useStyles();
+const collaborators = [
+  {
+    name: "Red Hat",
+    logo: RedHatLogo,
+    text: "Home of our product team and our largest Open Source Contributor."
+  },
+  {
+    name: "The Noun Project",
+    logo: NounProjectLogo,
+    text: "The community driven icon library we love so much and use for UI design."
+  },
+  {
+    name: "Mobius Loop",
+    logo: MobiusLogo,
+    text: "Our process model and partner in defining product lifecycle practices."
+  },
+  {
+    name: "Creative Commons",
+    logo: CCHeartLogo,
+    text: "Under this license, our content is as open source as our application software."
+  }
+];
 
-  return (
-    <>
-      <Grid
-        container
-        item
-        xs={11}
-        direction="row"
-        justify="space-between"
-        alignItems="center"
-        className={classes.communityHeader}
-        data-testid="communityHeader"
-      >
-        <Typography variant={"h3"} ref={props.communityRef}>Community driven</Typography>
-        <OplButton onClick={() => navigate("#")}>
-            About us{"  "}<ArrowForwardIcon color="primary" />
-        </OplButton>
+const StatBox = (props) => (
+  <Box
+    display="flex"
+    flexDirection="column"
+    width={330}
+    height={340}
+    p={5}
+    mt={2}
+    mb={12}
+    ml={2}
+    borderRadius="50%"
+    borderColor="secondary.main"
+    border={1}
+    justifyContent="center"
+  >
+    {props.children}
+  </Box>
+);
+
+const Community = (props) => (
+  <>
+    <Box
+      display="flex"
+      flexDirection="row"
+      justifyContent="space-between"
+      alignItems="center"
+      width="90%"
+      py={12}
+      data-testid="communityHeader"
+    >
+      <Typography variant={"h3"} ref={props.communityRef}>Community driven</Typography>
+      <OplButton onClick={() => navigate("#")}>
+        About us{"  "}<ArrowForwardIcon color="primary" />
+      </OplButton>
+    </Box>
+    <Grid container item xs={12} justify="center">
+      <Grid item xs={12}>
+        <Typography variant={"h4"} align="center">We have...</Typography>
       </Grid>
-      <Grid container item xs={12} justify="center">
-        <Grid item xs={12}>
-          <Typography variant={"h4"} align="center">We have...</Typography>
-        </Grid>
-        <Box className={classes.practiceBox}>
-          <PracticeCount />
-          <Typography variant={"h6"} align="center">Product Lifecycle <br/> Practices</Typography>
-        </Box>
-        <Box className={classes.practiceBox}>
-          <ContributorCount />
-          <Typography variant={"h6"} align="center">Creative Commons <br/> Contributors</Typography>
-        </Box>
-        <Grid item xs={12}>
-          <Typography variant={"h4"} align="center">We have collaborations with...</Typography>
-          <Grid container direction="row" justify="center" alignItems="center">
-            <img src={RedHatLogo} alt="Red Hat" className={classes.collaborators} />
-            <img src={NounProjectLogo} alt="Noun Project" className={classes.collaborators} />
-            <img src={MobiusLogo} alt="Mobius Project" className={classes.collaborators} />
-            <img src={CCHeartLogo} alt="Creative Commons" className={classes.collaborators} />
-          </Grid>
+      <StatBox>
+        <PracticeCount />
+        <Typography variant={"h6"} align="center">Product Lifecycle <br/> Practices</Typography>
+      </StatBox>
+      <StatBox>
+        <ContributorCount />
+        <Typography variant={"h6"} align="center">Creative Commons <br/> Contributors</Typography>
+      </StatBox>
+      <Grid item xs={12}>
+        <Typography variant={"h4"} align="center">We have collaborations with...</Typography>
+        <Grid container direction="row" justify="center" alignItems="center">
+          {collaborators.map(({ logo, name, text }) => (
+            <Collaborators key={name} logo={logo} name={name} text={text} />
+          ))}
         </Grid>
       </Grid>
-    </>
-  )
-};
+    </Grid>
+  </>
+);
 
 export default Community;

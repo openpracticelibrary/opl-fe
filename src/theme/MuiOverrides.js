@@ -6,45 +6,6 @@ export default {
       },
     },
   },
-  MuiButton: {
-    root: {
-      padding: 12,
-      paddingLeft: 32,
-      paddingRight: 32,
-      textTransform: "none",
-      borderRadius: 26.5,
-      fontSize: "1rem",
-    },
-    contained: {
-      backgroundColor: "#dff1ff",
-      border: 1,
-      borderColor: "#1975ff",
-      borderStyle: "solid",
-    },
-    outlined: {
-      borderColor: "#1975ff",
-    },
-  },
-  MuiTooltip: {
-    tooltip: {
-      height: "30px",
-      minWidth: "110px",
-      boxSizing: "border-box",
-      backgroundColor: "#ffffff",
-      color: "#596562",
-      borderRadius: "7px",
-      border: "1px solid #1975ff",
-      boxShadow: "2px 0 4px 0 rgba(0,0,0,0.1)",
-      transform: "scaleY(-1)",
-      fontSize: "0.75rem",
-      fontFamily: "Quicksand",
-      fontWeight: "600",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      textTransform: "uppercase",
-    },
-  },
   MuiChip: {
     root: {
       backgroundColor: "transparent",

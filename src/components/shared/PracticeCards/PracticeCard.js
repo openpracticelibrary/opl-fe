@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Paper, Box } from "@material-ui/core";
+import { Paper, Box, Grid } from "@material-ui/core";
 import CardCollection from "./CardCollection";
 import CoverImage from "./CoverImage";
 import PracticeCardTitle from "./PracticeCardTitle";
@@ -9,7 +9,7 @@ import Subtitle from "./Subtitle";
 const useStyles = makeStyles((theme) => ({
   practiceItemBound: {
     overflow: "visible",
-    height: 220,
+    height: 250,
     margin: 10,
   },
   practiceItem: {
@@ -28,7 +28,8 @@ export default function PracticeCard(props) {
   const [hovered, setHovered] = React.useState(false);
 
   return (
-    <Box
+    <Grid
+      item
       className={classes.practiceItemBound}
       style={{
         zIndex: `${hovered ? "10" : "0"}`,
@@ -39,6 +40,7 @@ export default function PracticeCard(props) {
       <Box
         data-testid="practicecard"
         className={classes.practiceItem}
+        maxWidth={295}
         onMouseOut={() => setHovered(false)}
         onMouseOver={() => setHovered(true)}
         style={{
@@ -88,6 +90,6 @@ export default function PracticeCard(props) {
           </Paper>
         </Paper>
       </Box>
-    </Box>
+    </Grid>
   );
 }

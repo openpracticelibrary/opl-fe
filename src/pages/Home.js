@@ -19,7 +19,7 @@ export default function Home(props) {
         navigate={props.navigate}
         communityRef={communityRef}
       />
-      <Grid container direction="column" alignItems="center" spacing={20}>
+      <Grid container direction="column" alignItems="center">
         <Community communityRef={communityRef} />
         <CuratedPractices />
       </Grid>
