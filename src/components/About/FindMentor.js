@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(3),
+    paddingBottom: theme.spacing(10),
   },
 }));
 

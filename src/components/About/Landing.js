@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     alignContent: "center",
     alignItems: "center",
     backgroundImage: `linear-gradient(180.18deg, #F3F3F3 0%, #FFFFFF 13.64%, #FFFFFF 43.94%, rgba(255,255,255,0.94) 79.58%, rgba(255,255,255,0.62) 100%), url(${GrayDiagonals})`,
-    height: "450px",
+    height: theme.spacing(55),
     width: "100%",
   },
   loginBox: {

@@ -10,11 +10,12 @@ import ProcessModel from "../components/About/ProcessModel";
 import FindMentor from "../components/About/FindMentor";
 import Feedback from "../components/About/Feedback";
 
-import FriendlyIcon from "../assets/icons/about-friendly.png"
-import InspiringIcon from "../assets/icons/about-inspiring.png"
-import TrustworthyIcon from "../assets/icons/about-trustworthy.png"
+import FriendlyIcon from "../assets/icons/about-friendly.svg"
+import InspiringIcon from "../assets/icons/about-inspiring.svg"
+import TrustworthyIcon from "../assets/icons/about-trustworthy.svg"
 import SlackLogo from "../assets/images/slack.png";
 import { ArrowRightIcon, WebLinkIcon } from "../assets/icons";
+import OPLProductTeamImage from "../assets/images/opl-product-team.png";
 
 const useStyles = makeStyles((theme) => ({
   pageWrapper: {
@@ -72,6 +73,10 @@ export default function About(props) {
           />
           <ProductTeam 
             header="Our product team"
+            bodyPara1="The 2020 pandemic led to forming a small Global remote product team for improving the library and delivering upon the growth strategy. This cross-functional group included product management, product design, and engineering to bring a balanced approach for continuous discovery and continuous delivery."
+            bodyPara2="There was a focus on bringing the team together culturally and using various activities for getting to know one another. To align with a process that meets the most user needs the team based discovery practices on human-centered design methodologies with regular user feedback cycles for informing design and product decision making."
+            bodyPara3="The development approach included pulling from [open source technology, middleware, test-driven, Agile, devops] because... liquam id diam maecenas ultricies mi eget mauris. Odio tempor orci dapibus ultrices in. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Suspendisse faucibus interdum posuere lorem ipsum."
+            teamImage={OPLProductTeamImage}
           />
           <ProcessModel 
             header="Our process model"

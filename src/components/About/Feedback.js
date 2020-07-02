@@ -5,7 +5,7 @@ import { Grid, Button } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import { navigate } from "@reach/router";
 import GrayRain from "../../assets/icons/rain.svg";
-import FeedbackIcon from "../../assets/icons/about-feedback.png"
+import FeedbackIcon from "../../assets/icons/about-feedback.svg"
 
 const useStyles = makeStyles((theme) => ({
   feedbackBox: {
@@ -22,12 +22,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     backgroundImage: `linear-gradient(0deg, #FFFFFF 0%, rgba(255,255,255,0.95) 71.03%, rgba(255,255,255,0.85) 100%), url(${GrayRain})`,
     width: "100%",
-    height: "500px"
+    height: theme.spacing(50)
   },
   feedbackButton: {
-    borderRadius: "32px",
-    width: "15rem",
-    backgroundColor: "#ffffff",
+    borderRadius: theme.spacing(4),
+    backgroundColor: theme.palette.common.true_white,
     marginTop: theme.spacing(5),
     padding: theme.spacing(2),
     borderColor: theme.palette.common.discovery_blue,

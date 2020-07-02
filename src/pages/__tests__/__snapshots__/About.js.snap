@@ -117,7 +117,7 @@ exports[`matches the About page snapshot 1`] = `
             >
               <img
                 alt="Friendly"
-                src="about-friendly.png"
+                src="about-friendly.svg"
               />
               <p
                 className="MuiTypography-root makeStyles-circleHeader-451 MuiTypography-body1"
@@ -135,7 +135,7 @@ exports[`matches the About page snapshot 1`] = `
             >
               <img
                 alt="Trustworthy"
-                src="about-trustworthy.png"
+                src="about-trustworthy.svg"
               />
               <p
                 className="MuiTypography-root makeStyles-circleHeader-451 MuiTypography-body1"
@@ -153,7 +153,7 @@ exports[`matches the About page snapshot 1`] = `
             >
               <img
                 alt="Inspiring"
-                src="about-inspiring.png"
+                src="about-inspiring.svg"
               />
               <p
                 className="MuiTypography-root makeStyles-circleHeader-451 MuiTypography-body1"
@@ -200,7 +200,7 @@ exports[`matches the About page snapshot 1`] = `
           <p
             className="MuiTypography-root MuiTypography-body1"
           >
-            The 2020 pandemic led to forming a small Global remote product team for improving the library and delivering upon the growth strategy. This cross-functional group included product management, product design, and engineering to bring a balanced approach for continuous discovery and continuous delivery. 
+            The 2020 pandemic led to forming a small Global remote product team for improving the library and delivering upon the growth strategy. This cross-functional group included product management, product design, and engineering to bring a balanced approach for continuous discovery and continuous delivery.
           </p>
         </div>
         <div
@@ -440,7 +440,7 @@ exports[`matches the About page snapshot 1`] = `
           >
             <img
               alt="Feedback"
-              src="about-feedback.png"
+              src="about-feedback.svg"
             />
           </div>
         </div>
