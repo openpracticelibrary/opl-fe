@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 const sections = [
   { title: "SEND FEEDBACK", url: "https://forms.gle/nXCvPEkjx6VdF6Px6", icon: <WebLinkIcon fill={iconColor} width="14px" height="15px" /> },
-  { title: "PODCAST", url: "https://podcasts.apple.com/us/podcast/open-practice-podcast/id1501715186", icon: <PodIcon width="15px" height="15px" fill={iconColor} /> },
+  { title: "OUR PODCAST", url: "https://podcasts.apple.com/us/podcast/open-practice-podcast/id1501715186", icon: <PodIcon width="15px" height="15px" fill={iconColor} /> },
 ];
 
 export default function Footer() {

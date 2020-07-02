@@ -123,7 +123,7 @@ const Community = (props) => {
     <>
       <Grid item xs={12} className={classes.communityHeader} data-testid="communityHeader">
         <Typography variant={"h1"} ref={props.communityRef}>Community driven</Typography>
-        <Button className={classes.aboutButton} variant="contained" onClick={() => navigate("#")}>
+        <Button className={classes.aboutButton} variant="contained" onClick={() => navigate("/about")}>
             About us{"  "}<ArrowForwardIcon className={classes.arrowForward}/>
         </Button>
       </Grid>
