@@ -23,12 +23,12 @@ export default function FooterLogoSection() {
             justify="flex-start"
             alignItems="flex-start"
           >
-            <Grid item xs={6}>
+            <Grid item xs={5}>
               <Typography variant="overline" data-testid="poweredBy">
                 {`powered by`}
               </Typography>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={7}>
               <img
                 src={logoLabs}
                 alt="Open Innovation Labs"
