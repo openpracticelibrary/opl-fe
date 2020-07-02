@@ -26,6 +26,7 @@ describe('My Practice page Tests', () => {
     const eventStorming = cy.get('[data-testid="practicecardgrid"]').contains("Event Storming");
     eventStorming.click();
     //like button tests
+    //using dummy values
   });
 
   it("Verify Page Menu on Practice Page", () => {
