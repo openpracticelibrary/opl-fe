@@ -49,7 +49,7 @@ const CuratedPractices = (props) => {
     <>
       <Grid item xs={12} className={classes.practiceHeader} data-testid="curatedList">
         <Typography variant={"h1"}>Popular Practices</Typography>
-        <Button className={classes.libraryButton} variant="contained" onClick={() => navigate("/practice")}>
+        <Button data-testid="seeEverythingButton" className={classes.libraryButton} variant="contained" onClick={() => navigate("/practice")}>
           See Everything{"  "}<ArrowForwardIcon className={classes.arrowForward}/>
         </Button>
       </Grid>

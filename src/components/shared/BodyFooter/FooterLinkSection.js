@@ -23,9 +23,7 @@ const useStyles = makeStyles((theme) => ({
 const sections = [
   { title: "Practices", url: "/practice" },
   { title: "About", url: "/about" },
-  { title: "Latest", url: "#" },
-  { title: "Terms", url: "#" },
-  { title: "Help", url: "#" },
+  { title: "Terms", url: "https://creativecommons.org/licenses/by-sa/4.0/" },
 ];
 
 export default function FooterLogoSection() {
@@ -40,6 +38,25 @@ export default function FooterLogoSection() {
         alignItems="flex-end"
         spacing={2}
       >
+        <Grid item>
+          <Grid
+            container
+            direction="row"
+            spacing={3}
+          >
+            {sections.map((section, i) => (
+              <Grid item key={i}>
+                <Typography
+                  variant="button"
+                  className={classes.color}
+                  onClick={() => navigate(section.url)}
+                >
+                  {section.title}
+                </Typography>
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
         <Grid item>
           <Grid
             container
@@ -59,25 +76,6 @@ export default function FooterLogoSection() {
             <Grid item>
               <FooterIconSection />
             </Grid>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Grid
-            container
-            direction="row"
-            spacing={3}
-          >
-            {sections.map((section, i) => (
-              <Grid item key={i}>
-                <Typography
-                  variant="button"
-                  className={classes.color}
-                  onClick={() => navigate(section.url)}
-                >
-                  {section.title}
-                </Typography>
-              </Grid>
-            ))}
           </Grid>
         </Grid>
       </Grid>

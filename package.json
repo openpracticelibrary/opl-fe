@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^7.1.2",
     "apollo-boost": "^0.4.9",
     "apollo-upload-client": "^13.0.0",
+    "bad-words": "^3.0.3",
     "draft-js": "^0.10.5",
     "draftail": "^1.3.0",
     "graphql": "^15.0.0",
@@ -28,7 +29,8 @@
     "react-scripts": "3.4.1",
     "react-share": "^4.2.0",
     "react-test-renderer": "^16.13.1",
-    "rich-markdown-editor": "^10.0.3"
+    "rich-markdown-editor": "^10.0.3",
+    "url-validation": "^2.1.0"
   },
   "jest": {
     "coverageThreshold": {
@@ -47,7 +49,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "e2e:local": "cypress run --headless --browser chrome",
+    "e2e:browser": "cypress run --browser chrome",
+    "e2e:ci": "cypress run --headless --browser chrome --env HOST=http://openpracticelibrary-svc:8080"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -66,7 +71,9 @@
   },
   "devDependencies": {
     "@apollo/react-testing": "^3.1.4",
+    "@testing-library/cypress": "^6.0.0",
     "@testing-library/react": "^10.0.4",
+    "cypress": "^4.8.0",
     "jest-canvas-mock": "^2.2.0",
     "jest-environment-jsdom-sixteen": "^1.0.3"
   }

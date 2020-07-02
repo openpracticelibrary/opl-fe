@@ -4,6 +4,7 @@ on:
   release:
     types: [prereleased]
 
+
 jobs:
   rc-release:
     runs-on: ubuntu-latest

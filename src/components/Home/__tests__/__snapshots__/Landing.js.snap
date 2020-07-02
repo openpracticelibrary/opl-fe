@@ -99,6 +99,7 @@ exports[`matches the snapshot 1`] = `
         </b>
         <button
           className="MuiButtonBase-root MuiIconButton-root makeStyles-arrowIcon-236"
+          data-testid="tellMeMoreButton"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}

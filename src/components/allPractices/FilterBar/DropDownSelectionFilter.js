@@ -24,13 +24,14 @@ const DropDownSelectionFilter = (props) => {
     <FormControl className={classes.formControl} variant="outlined" size="small" fullWidth>
       <Select
         value={selectedFilter}
-        onChange={handleFilterSelect}
+        onChange={(event) => handleFilterSelect({ type: 'mobiusFilterChange', content: event.target.value })}
         classes={classes.selectEmpty}
+        data-testid="selectedDropDown"
       >
-        {items.map((item) => (
-          <MenuItem value={item}>
+        {items.map((item, i) => (
+          <MenuItem value={item} key={i} data-testid={item}>
             <Typography variant="button" className={classes.mobiusLoopFilters}>
-              {item}
+              {item === "Entire Process Model" ? "" : "#"}{item}
             </Typography>
           </MenuItem>
         ))}

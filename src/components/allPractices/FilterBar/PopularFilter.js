@@ -58,7 +58,7 @@ export default function PopularFilter(props) {
   };
 
   const handleMenuItemClick = (menuList) => {
-    handleFilterChange(menuList);
+    handleFilterChange({ type: 'popularFilterChange', content: menuList});
     setAnchorEl(null);
   };
 

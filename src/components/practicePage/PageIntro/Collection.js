@@ -42,7 +42,7 @@ export default function Collection(props) {
         <Grid item>
           <Typography variant="overline">Collection</Typography>
         </Grid>
-        <Grid item>
+        <Grid item data-testid="likeInCollection">
           <IconButton onClick={handleLike} className={classes.button} data-testid={"heartIcon"}>
             <CollectionItem amount={props.upvotes} >
               <NounLoveIcon fill="#596562" />

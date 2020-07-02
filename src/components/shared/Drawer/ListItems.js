@@ -8,6 +8,7 @@ import List from "@material-ui/core/List";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { Link as RouterLink } from "@reach/router";
+import ListItemText from '@material-ui/core/ListItemText';
 
 function ListItemLink(props) {
   const { primary, to, toggle } = props;
@@ -56,31 +57,33 @@ export function TopListItems(props) {
   };
 
   return (
-    <List className={classes.root}>
+    <List className={classes.root} data-testid="drawerPractices">
       <ListSubheader>
         <Typography variant="overline" className={classes.headers}>Practices</Typography>
       </ListSubheader>
       <ListItem button>
         <Typography variant="body2">Please guide me</Typography>
       </ListItem>
-      <ListItemLink to="/practice" primary="See everything" toggle={toggle}/>
+      <ListItemLink to="/practice" primary="See everything" toggle={toggle} data-testid="SeeEverything"/>
       <ListItem button onClick={handleClick}>
-        <Typography variant="body2">By mobius loop</Typography>
-        {open ? <ExpandLess /> : <ExpandMore />}
+        <ListItemText>
+          <Typography variant="body2">By mobius loop</Typography>
+        </ListItemText>
+        {open ? <ExpandLess className={classes.headers}/> : <ExpandMore className={classes.headers} />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" className={classes.nested}>
           <ListItem button>
-            <Typography variant="body2" className={classes.listItems}> Discovery </Typography>
+            <Typography variant="body2" className={classes.listItems}> #Discovery </Typography>
           </ListItem>
           <ListItem button>
-            <Typography variant="body2" className={classes.listItems}> Options </Typography>
+            <Typography variant="body2" className={classes.listItems}> #Options </Typography>
           </ListItem>
           <ListItem button>
-            <Typography variant="body2" className={classes.listItems}> Delivery </Typography>
+            <Typography variant="body2" className={classes.listItems}> #Delivery </Typography>
           </ListItem>
           <ListItem button>
-            <Typography variant="body2" className={classes.listItems}> Foundation </Typography>
+            <Typography variant="body2" className={classes.listItems}> #Foundation </Typography>
           </ListItem>
         </List>
       </Collapse>
@@ -91,18 +94,12 @@ export function TopListItems(props) {
 export function BottomListItems() {
   const classes = useStyles();
   return (
-    <List className={classes.root}>
+    <List className={classes.root} data-testid="drawerCommunity">
       <ListSubheader>
         <Typography variant="overline" className={classes.headers}>Community</Typography>
       </ListSubheader>
       <ListItem button>
-        <Typography variant="body2"> Find a mentor </Typography>
-      </ListItem>
-      <ListItem button>
-        <Typography variant="body2"> Become a contributor </Typography>
-      </ListItem>
-      <ListItem button>
-        <Typography variant="body2"> Latest happenings </Typography>
+        <Typography variant="body2"> Learn about us </Typography>
       </ListItem>
     </List>
   );
