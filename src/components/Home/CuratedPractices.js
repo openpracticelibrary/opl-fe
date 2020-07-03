@@ -8,7 +8,7 @@ import ComponentQueryError from "../shared/QueryState/ComponentQueryError";
 import { GET_CURATED_PRACTICES } from "../../graphql";
 import PracticeCardGrid from "../shared/PracticeCards/PracticeCardGrid";
 
-import { Typography, Box, Container } from '@material-ui/core';
+import { Typography, Box } from '@material-ui/core';
 import OplButton from "../shared/components/OplButton";
 
 const CuratedPractices = (props) => {

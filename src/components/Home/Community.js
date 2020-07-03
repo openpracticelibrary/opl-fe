@@ -9,13 +9,9 @@ import RedHatLogo from "../../assets/images/logo-red-hat-hat-color-rgb.png";
 import NounProjectLogo from "../../assets/images/noun-project.png";
 import MobiusLogo from "../../assets/images/mobius-small.png";
 import CCHeartLogo from "../../assets/images/ccheart-black.png";
-import styled from 'styled-components';
 
 import { Box, Grid, Typography } from '@material-ui/core';
 import OplButton from "../shared/components/OplButton";
-import { palette, spacing, typography } from '@material-ui/system';
-
-const StyledGrid = styled(Grid)`${palette}${spacing}${typography}`;
 
 const collaborators = [
   {

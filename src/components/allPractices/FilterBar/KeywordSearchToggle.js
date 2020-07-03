@@ -1,18 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles/index";
-import { Typography, Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
+import OplTypography from "../../shared/components/OplTypography";
 import FilterListIcon from '@material-ui/icons/FilterList';
 
 const useStyles = makeStyles((theme) => ({
-  filterText: {
-    paddingRight: theme.spacing(1),
-  },
-  flip: {
-    color: theme.palette.common.discovery_blue,
-  },
   flipActive: {
     transform: "rotate(180deg)",
-    color: theme.palette.common.discovery_blue,
   },
 }));
 
@@ -22,11 +16,11 @@ const KeywordSearchToggle = (props) => {
 
   return (
     <Button data-testid="keywordSearchToggle" onClick={toggle}>
-      <Typography variant={"overline"} className={classes.filterText}>Filters</Typography>
+      <OplTypography variant={"overline"} pr={1}>Filters</OplTypography>
       {keywordSearchToggle ?
-        <FilterListIcon className={classes.flipActive} fontSize="small" />
+        <FilterListIcon color="primary" className={classes.flipActive} fontSize="small" />
         :
-        <FilterListIcon className={classes.flip} fontSize="small" />
+        <FilterListIcon color="primary" fontSize="small" />
       }
     </Button>
   );

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Tooltip } from "@material-ui/core";
 import { withStyles } from '@material-ui/styles';
-import clsx from 'clsx';
 
 const styles = theme => ({
   tooltip: {
@@ -22,7 +21,7 @@ const styles = theme => ({
 const OplTooltip = ({ classes, children, className, ...other }) => (
   <Tooltip
     classes={{
-      tooltip: clsx(classes.tooltip)
+      tooltip: classes.tooltip
     }}
     {...other}
   >

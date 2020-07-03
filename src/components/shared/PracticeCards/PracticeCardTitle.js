@@ -2,7 +2,7 @@ import React from "react";
 import { navigate } from "@reach/router";
 
 import OplTypography from "../components/OplTypography";
-import Tags from "./Tags";
+import { Tags } from "./Tags";
 
 const PracticeCardTitle = (props) => (
   <div onClick={() => navigate(`/practice/${props.slug}`)}>

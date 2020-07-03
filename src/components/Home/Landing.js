@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import { OPLLogo } from "../../assets/icons";
 import LoginButton from "../shared/Login/LoginButton";
@@ -8,17 +8,11 @@ import HomeStickies from "../../assets/images/WhiteBoarding.png";
 
 import { Box } from '@material-ui/core';
 
+import OplBox from "../shared/components/OplBox";
 import OplTypography from "../shared/components/OplTypography";
 import OplIconButton from "../shared/components/OplIconButton";
 
-const useStyles = makeStyles((theme) => ({
-  titleBox: {
-    backgroundImage: `linear-gradient(180.18deg, #F3F3F3 0%, #FFFFFF 13.64%, #FFFFFF 33.94%, rgba(255,255,255,0.94) 69.58%, rgba(255,255,255,0.62) 100%), url(${GrayDiagonals})`,
-  },
-}));
-
 const Landing = (props) => {
-  const classes = useStyles();
   const theme = useTheme();
 
   const handleClick = () => {
@@ -29,13 +23,13 @@ const Landing = (props) => {
   };
 
   return (
-    <Box
+    <OplBox
       display="flex"
       flexDirection="row"
       justifyContent="center"
       alignItems="center"
       height="100vh"
-      className={classes.titleBox}
+      bg={`linear-gradient(180.18deg, #F3F3F3 0%, #FFFFFF 13.64%, #FFFFFF 33.94%, rgba(255,255,255,0.94) 69.58%, rgba(255,255,255,0.62) 100%), url(${GrayDiagonals})`}
       px={8}
     >
       <Box position="absolute" top={0} left={0} p={3} mt={-12}>
@@ -71,13 +65,11 @@ const Landing = (props) => {
         </OplTypography>
       </Box>
       <img src={HomeStickies} alt="Welcome to OPL" height="auto" width="50%" />
-      <Box position="absolute" top={0} right={0} p={3}>
-        <LoginButton
-          navigate={props.navigate}
-          redirect="/practice"
-        />
-      </Box>
-    </Box>
+      <LoginButton
+        navigate={props.navigate}
+        redirect="/practice"
+      />
+    </OplBox>
   )
 };
 

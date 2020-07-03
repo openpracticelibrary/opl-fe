@@ -1,80 +1,16 @@
 import React, { useRef, useState } from "react";
-import {makeStyles} from "@material-ui/core/styles";
 
 import LoginButton from "../shared/Login/LoginButton";
 import PageIntro from "./PageIntro";
 import PageMenu from "./PageMenu";
 import PageBody from "./PageBody";
-import RichMarkdownEditor from "../shared/Editor/RichMarkdownEditor";
+import TitleEditor from "./PageEdits/TitleEditor";
+import BodyEditor from "./PageEdits/BodyEditor";
 import { StartEditingButton, EditingButtons } from "./PageIntro/EditControls";
-import blueDiagonals from "../../assets/icons/bluelines.svg";
+import backgroundImage from "../shared/utilities/microBackgrounds";
 
-import { Container, Box, TextField } from '@material-ui/core';
-
-const useStyles = makeStyles((theme) => ({
-  alignComponentContent: {
-    display: "flex",
-    justifyContent: "space-around",
-    alignItems: "baseline",
-    alignContent: "center",
-  },
-  whiteColor: {
-    backgroundImage: `linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.76) 70.4%, #FFFFFF 900%), url(${blueDiagonals})`,
-  },
-  trueWhiteColor: {
-    backgroundColor: theme.palette.common.true_white,
-  },
-  pageIntro: {
-    paddingTop: theme.spacing(6),
-    maxWidth: "950px",
-    marginLeft: "25px",
-    marginRight: "25px",
-    [theme.breakpoints.up('md')]: {
-      width: "950px",
-    },
-  },
-  editButton: {
-    paddingTop: theme.spacing(9),
-    display: "flex",
-    justifyContent: "flex-end",
-  },
-  loginBox: {
-    position: "absolute",
-    top: 0,
-    right: 0,
-    padding: theme.spacing(3),
-  },
-  titleTextField: {
-    width: "inherit",
-  },
-  titleInput: {
-    ...theme.typography.h1,
-  },
-  subtitleInput: {
-    ...theme.typography.subtitle1,
-  },
-  editorStyle: {
-    boxShadow: "inset 0 1px 3px 0 rgba(16,16,16,0.26)",
-    borderRadius: "6px",
-    backgroundColor: theme.palette.common.white,
-    padding: theme.spacing(1),
-  },
-  stickyToolbar: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "sticky",
-    top: 0,
-    backgroundColor: theme.palette.common.true_white,
-    borderTop: "1px solid rgba(0, 0, 0, 0.12)",
-    borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
-    zIndex: 1001,
-  },
-  toolbarContent: {
-    width: "100%",
-    padding: theme.spacing(0,2),
-  },
-}));
+import { Container, Box } from '@material-ui/core';
+import OplBox from "../shared/components/OplBox";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -133,7 +69,7 @@ const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
   } = data;
 
   // Styles
-  const classes = useStyles();
+  const background = backgroundImage(tags);
 
   // Refs
   const whatIsRef = useRef(null);
@@ -203,7 +139,7 @@ const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
   };
 
   // Composition
-  const loggedInEditing = () => {
+  const LoggedInEditing = () => {
     if (loggedIn && editing) {
       return (<EditingButtons handleEdit={handleEdit} handleSaveEdits={handleSaveEdits} />);
     } else if (loggedIn && !editing) {
@@ -215,94 +151,91 @@ const PracticePage = ({ data, updatePractice, loggedIn, navigate }) => {
 
   const introEditors = {
     titleEdit: (
-      <TextField
-        variant="outlined"
-        className={classes.titleTextField}
-        InputProps={{ classes: { input: classes.titleInput, root: classes.editorStyle } }}
-        defaultValue={data.title}
-        onChange={(event) => dispatch({ type: "titleUpdate", content: event.target.value }) }
+      <TitleEditor
+        value={data.title}
+        dispatch={(event) => dispatch({ type: "titleUpdate", content: event.target.value }) }
       />
     ),
 
     subtitleEdit: (
-      <TextField
-        variant="outlined"
+      <TitleEditor
         fullWidth
         multiline
-        InputProps={{ classes: { input: classes.subtitleInput, root: classes.editorStyle } }}
-        defaultValue={data.subtitle}
-        onChange={(event) => dispatch({ type: "subtitleUpdate", content: event.target.value }) }
+        subtitle
+        value={data.subtitle}
+        dispatch={(event) => dispatch({ type: "subtitleUpdate", content: event.target.value }) }
       />
     ),
   };
 
   const bodyEditors = {
-    whatIsEditor: () => (
-      <div className={classes.editorStyle}>
-        <RichMarkdownEditor
-          source={data.body.whatIs}
-          handleChange={(callback) => dispatch({ type: "whatIsUpdate", content: callback() }) }
-        />
-      </div>
+    whatIsEditor: (
+      <BodyEditor
+        source={data.body.whatIs}
+        dispatch={(callback) => dispatch({ type: "whatIsUpdate", content: callback() })}
+      />
     ),
 
-    whyDoEditor: () => (
-      <div className={classes.editorStyle}>
-        <RichMarkdownEditor
-          source={data.body.whyDo}
-          handleChange={(callback) => dispatch({ type: "whyDoUpdate", content: callback() }) }
-        />
-      </div>
+    whyDoEditor: (
+      <BodyEditor
+        source={data.body.whyDo}
+        dispatch={(callback) => dispatch({ type: "whyDoUpdate", content: callback() })}
+      />
     ),
 
-    howToEditor: () => (
-      <div className={classes.editorStyle}>
-        <RichMarkdownEditor
-          source={data.body.howTo}
-          handleChange={(callback) => dispatch({ type: "howToUpdate", content: callback() }) }
-        />
-      </div>
+    howToEditor: (
+      <BodyEditor
+        source={data.body.howTo}
+        dispatch={(callback) => dispatch({ type: "howToUpdate", content: callback() })}
+      />
     ),
   };
 
   return (
     <>
-      <Box className={classes.trueWhiteColor}>
-        <Box display="flex" className={classes.whiteColor}>
-          <Box className={classes.loginBox}>
-            <LoginButton
-              navigate={navigate}
-              redirect={`/practice/${data.slug}`}
-            />
-          </Box>
-          <Box className={classes.editButton}>
-            {loggedInEditing()}
-          </Box>
-          <Container maxWidth="md">
+      <OplBox
+        display="flex"
+        bg={background}
+      >
+        <LoginButton
+          navigate={navigate}
+          redirect={`/practice/${data.slug}`}
+        />
+        <Container maxWidth="md">
+          <Box display="flex" flexDirection="row" justifyContent="center" alignItems="baseline">
+            <LoggedInEditing />
             <PageIntro
               editing={editing}
               {...pageIntroData}
               {...introEditors}
-            >
-            </PageIntro>
-          </Container>
-        </Box>
-
-        <Box className={classes.stickyToolbar}>
-          <Box className={classes.toolbarContent}>
-            <PageMenu {...pageMenuData} { ...pageRefs } />
+            />
           </Box>
-        </Box>
-
-        <Container maxWidth="md">
-          <PageBody
-            editing={editing}
-            {...pageBodyData}
-            {...pageRefs}
-            {...bodyEditors}
-          />
         </Container>
+      </OplBox>
+
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        position="sticky"
+        top={0}
+        bgcolor="white"
+        borderTop="1px solid rgba(0, 0, 0, 0.12)"
+        borderBottom="1px solid rgba(0, 0, 0, 0.12)"
+        zIndex={1001}
+        py={1}
+      >
+        <PageMenu {...pageMenuData} { ...pageRefs } />
       </Box>
+
+      <Container maxWidth="md">
+        <PageBody
+          editing={editing}
+          {...pageBodyData}
+          {...pageRefs}
+          {...bodyEditors}
+        />
+      </Container>
     </>
   );
 }

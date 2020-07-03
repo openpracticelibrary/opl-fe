@@ -39,10 +39,12 @@ const theme = createMuiTheme({
     secondary: {
       main: "#10d4a0",
     },
+    grey: {
+      A400: "#596562",
+    },
     text: {
       primary: "#2e2e2e",
       secondary: "#1975ff",
-      brown_grey: `${brown_grey}`,
     },
   },
 

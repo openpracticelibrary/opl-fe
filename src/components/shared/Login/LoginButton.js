@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const LoginButton = (props) => {
+const Login = (props) => {
   const [anchorEl, setAnchorEl] = React.useState();
   const theme = useTheme();
   const loggedIn = React.useContext(LoginContext);
@@ -137,7 +137,7 @@ const LoginButton = (props) => {
           className: classes.drawerPaper,
         }}
       >
-        <DialogTitle>
+        <DialogTitle data-testid="loginForm">
           Credentials Please?
         </DialogTitle>
         <DialogContent className={classes.container}>
@@ -145,7 +145,6 @@ const LoginButton = (props) => {
             className={classes.loginForm}
             autoComplete="off"
             onSubmit={handleLogin}
-            data-testid="loginForm"
           >
             <Box>
               <TextField
@@ -183,5 +182,17 @@ const LoginButton = (props) => {
     </>
   );
 }
+
+const LoginButton = (props) => (
+  <Box
+    display={{ xs: "none", md: "flex" }}
+    position="absolute"
+    top={0}
+    right={0}
+    p={3}
+  >
+    <Login {...props} />
+  </Box>
+);
 
 export default LoginButton;

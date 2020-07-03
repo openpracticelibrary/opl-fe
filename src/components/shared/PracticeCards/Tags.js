@@ -78,5 +78,5 @@ const Tags = (props) => {
   );
 };
 
-export default Tags;
+export { Tags, TagBox };
 

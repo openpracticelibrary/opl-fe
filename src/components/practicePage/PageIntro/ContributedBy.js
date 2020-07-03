@@ -1,30 +1,10 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles/index";
 import moment from "moment";
 import PhotoAndName from "./PhotoAndName";
 import EditorPhotos from "./EditorPhotos";
 import { Typography, Grid, Box } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    padding: theme.spacing(1),
-  },
-  space: {
-    paddingLeft: theme.spacing(3),
-  },
-  editorBox: {
-    display: "flex",
-    flex: 1,
-    flexDirection: "row",
-  },
-  editorDiv: {
-    position: "absolute",
-  },
-}));
-
 export default function ContributedBy(props) {
-  const classes = useStyles();
   const formatDate = (date) => {
     return moment(date).format("MMMM D, YYYY");
   };
@@ -39,58 +19,49 @@ export default function ContributedBy(props) {
   }
 
   return (
-    <>
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="flex-start"
+      alignItems="flex-start"
+      my={2}
+    >
       <Grid
         container
-        direction="column"
-        justify="center"
-        alignItems="flex-start"
-        className={classes.root}
-        spacing={1}
+        direction="row"
+        justify="flex-start"
+        alignItems="flex-end"
       >
-        <Grid item>
-          <Grid
-            container
-            direction="row"
-            justify="space-around"
-            alignItems="center"
-          >
-            <Box className={classes.contributedBy}>
-              <Typography variant="overline">Contributed by</Typography>
-              <Grid item>
-                <Box className={classes.editorBox}>
-                  {contributors.map((author, i) => (
-                    <PhotoAndName
-                      key={author.id}
-                      authorName={`${author.firstName} ${author.lastName}`}
-                      authorLink={author.mediaLink}
-                      avatar={author.Avatar}
-                    />
-                  ))}
-                </Box>
-              </Grid>
+        <Box mr={2}>
+          <Typography variant="overline">Contributed by</Typography>
+          <Grid item>
+            <Box display="flex" flexDirection="row">
+              {contributors.map((author, i) => (
+                <PhotoAndName
+                  key={author.id}
+                  authorName={`${author.firstName} ${author.lastName}`}
+                  authorLink={author.mediaLink}
+                  avatar={author.Avatar}
+                />
+              ))}
             </Box>
-            <Box className={classes.editedBy}>
-              { (editors.length > 0) &&
-                <>
-                  <Typography variant="overline">Edited by</Typography>
-                  <Grid item>
-                    <Box className={classes.editorBox}>
-                      <EditorPhotos editors={editors} />
-                    </Box>
-                  </Grid>
-                </>
-              }
-            </Box>
-            <Grid item className={classes.space}>
-              <Typography variant="overline" data-testid={"dates"}>
-                Published {formatDate(props.createdAt)} | Last edited{" "}
-                {formatDate(props.updatedAt)}
-              </Typography>
-            </Grid>
           </Grid>
+        </Box>
+        { (editors.length > 0) &&
+        <Box mr={3}>
+          <Typography variant="overline">Edited by</Typography>
+          <Grid item>
+            <EditorPhotos editors={editors} />
+          </Grid>
+        </Box>
+        }
+        <Grid item>
+          <Typography variant="overline" data-testid={"dates"}>
+                Published {formatDate(props.createdAt)} | Last edited{" "}
+            {formatDate(props.updatedAt)}
+          </Typography>
         </Grid>
       </Grid>
-    </>
+    </Box>
   );
 }

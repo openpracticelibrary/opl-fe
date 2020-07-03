@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Grid, Divider, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles/index";
+import { Box, Typography } from "@material-ui/core";
 import AllPracticesHero from "./AllPracticesHero";
 import FilterTags from "./FilterBar/FilterTags";
 import KeywordSearchToggle from "./FilterBar/KeywordSearchToggle";
@@ -10,151 +9,89 @@ import KeywordSearchBox from "./FilterBar/KeywordSearchBox";
 import PopularFilter from "./FilterBar/PopularFilter";
 import grayDiagonals from "../../assets/icons/graylines.svg";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-    flexGrow: 1,
-    padding: theme.spacing(1),
-    width: "95%",
-    paddingTop: 27,
-    marginBottom: "100px",
-    marginLeft: "66px",
-    height: 'auto',
-  },
-  titleBox: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    backgroundImage: `linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.76) 63.23%, rgba(255,255,255,0) 100%), url(${grayDiagonals})`,
-    height: "24.5rem",
-    width: "100%",
-    paddingLeft: theme.spacing(12),
-  },
-  practicesPane: {
-    display: "flex",
-    paddingLeft: theme.spacing(8),
-    maxWidth: "95%",
-  },
-  filterBar: {
-    padding: theme.spacing(3, 0),
-  },
-}));
+import OplBox from "../shared/components/OplBox";
 
-const Practices = (props) => {
-  const classes = useStyles();
+const Practices = (props) => (
+  <>
+    <OplBox
+      display="flex"
+      flexDirection="row"
+      justifyContent="center"
+      alignItems="center"
+      height="24.5rem"
+      width="100%"
+      bg={`linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.76) 63.23%, rgba(255,255,255,0) 100%), url(${grayDiagonals})`}
+    >
+      <AllPracticesHero />
+    </OplBox>
+    <Box
+      display="flex"
+      flexDirection={{ xs: "column", md: "row" }}
+      justifyContent="space-around"
+      alignItems="center"
+      py={3}
+      data-testid="popularFilterComponent"
+    >
+      <PopularFilter
+        selectedItem={props.selectedPopularFilter}
+        handleFilterChange={props.handleFilterChange}
+        menuItems={Object.keys(props.popularMenuItems)}
+      />
+      <FilterTags
+        tags={props.filterTags}
+        filter={props.handleFilterChange}
+        selectedFilter={props.selectedFilterTag}
+      />
+      <KeywordSearchToggle
+        toggle={props.toggleKeywordSearch}
+        keywordSearchToggle={props.keywordSearchToggle}
+      />
+    </Box>
 
-  const {
-    selectedPopularFilter,
-    popularMenuItems,
-    filterTags,
-    selectedFilterTag,
-    keywordSearchToggle,
-    mobiusLoopArray,
-    selectedMobiusLoopFilter,
-    handleFilterChange,
-    toggleKeywordSearch,
-  } = props;
-
-  return (
-    <>
-      <Grid
-        container
-        direction="row"
-        justify="center"
+    {props.keywordSearchToggle &&
+      <Box
+        display="flex"
+        flexDirection={{ xs: "column", md: "row" }}
+        justifyContent="space-around"
         alignItems="center"
-        className={classes.titleBox}
+        py={3}
+        data-testid="popularFilterComponent"
       >
-        <AllPracticesHero />
-      </Grid>
-      <Divider />
-      <Grid
-        container
-        direction="row"
-        justify="space-around"
-        alignItems="center"
-        className={classes.filterBar}
-      >
-        <Grid item data-testid="popularFilterComponent">
-          <PopularFilter
-            selectedItem={selectedPopularFilter}
-            handleFilterChange={handleFilterChange}
-            menuItems={Object.keys(popularMenuItems)}
-          />
-        </Grid>
-        <Grid item>
-          <FilterTags
-            tags={filterTags}
-            filter={handleFilterChange}
-            selectedFilter={selectedFilterTag}
-          />
-        </Grid>
-        <Grid item>
-          <KeywordSearchToggle
-            toggle={toggleKeywordSearch}
-            keywordSearchToggle={keywordSearchToggle}
-          />
-        </Grid>
-      </Grid>
-
-      {keywordSearchToggle && (
-        <Grid
-          container
-          direction="row"
-          justify="space-evenly"
-          alignItems="center"
-          className={classes.filterBar}
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="flex-start"
         >
-          <Grid item>
-            <Grid
-              container
-              direction="column"
-              justify="space-between"
-              alignItems="flex-start"
-            >
-              <Grid item>
-                <Typography variant={"overline"} color="textSecondary">By Mobius Loop</Typography>
-              </Grid>
-              <Grid item>
-                <DropDownSelectionFilter
-                  inputLabel="Entire Process Model"
-                  items={mobiusLoopArray}
-                  selectedFilter={selectedMobiusLoopFilter}
-                  handleFilterSelect={handleFilterChange}
-                />
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Grid
-              container
-              direction="column"
-              justify="space-between"
-              alignItems="flex-start"
-            >
-              <Grid item>
-                <Typography variant={"overline"} color="textSecondary" >Keyword Search</Typography>
-              </Grid>
-              <Grid item>
-                <KeywordSearchBox dispatch={handleFilterChange} />
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-      )}
-      <Grid
-        container
-        direction="column"
-        justify="space-evenly"
-        alignContent="center"
-        className={classes.root}
-      >
-        <Grid item xs={12}>
-          {props.children}
-        </Grid>
-      </Grid>
-    </>
-  );
-};
+          <Typography variant={"overline"} color="textSecondary">By Mobius Loop</Typography>
+          <DropDownSelectionFilter
+            inputLabel="Entire Process Model"
+            items={props.mobiusLoopArray}
+            selectedFilter={props.selectedMobiusLoopFilter}
+            handleFilterSelect={props.handleFilterChange}
+          />
+        </Box>
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="flex-start"
+        >
+          <Typography variant={"overline"} color="textSecondary" >Keyword Search</Typography>
+          <KeywordSearchBox dispatch={props.handleFilterChange} />
+        </Box>
+      </Box>
+    }
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="space-around"
+      alignContent="center"
+      mx={6}
+    >
+      {props.children}
+    </Box>
+  </>
+);
 
 export default Practices;

@@ -1,67 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches the snapshot 1`] = `
-<div
-  className="MuiGrid-root makeStyles-explore-187 MuiGrid-container"
->
+<DocumentFragment>
   <div
-    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+    class="MuiBox-root MuiBox-root-84 makeStyles-explore-82"
   >
     <div
-      className="MuiBox-root MuiBox-root-295 makeStyles-exploreIcon-190"
+      class="MuiBox-root MuiBox-root-85"
     >
       <img
         alt="Closing Message"
+        height="auto"
         src="closingstickies.png"
+        width="60%"
       />
     </div>
-  </div>
-  <div
-    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
-  >
     <div
-      className="MuiBox-root MuiBox-root-296 makeStyles-exploreBox-186"
+      class="MuiBox-root MuiBox-root-86"
     >
       <div
-        className="MuiBox-root MuiBox-root-297"
+        class="MuiBox-root MuiBox-root-87"
       >
         <h5
-          className="MuiTypography-root makeStyles-learn-189 MuiTypography-h5"
+          class="MuiTypography-root MuiTypography-h5 MuiTypography-alignLeft"
           data-testid="exploreMsg"
         >
           Snapshottin it up
         </h5>
-      </div>
-      <div
-        className="MuiBox-root MuiBox-root-328"
-      >
-        <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-exploreButton-188 MuiButton-disableElevation"
-          data-testid="exploreLibraryButton"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
+        <div
+          class="MuiBox-root MuiBox-root-118"
         >
-          <span
-            className="MuiButton-label"
+          <button
+            bg="#dff1ff"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained OplButton-root-119 OplButton-root-120 MuiButton-disableElevation"
+            data-testid="exploreLibraryButton"
+            tabindex="0"
+            type="button"
           >
-            Explore the library
-          </span>
-        </button>
+            <span
+              class="MuiButton-label"
+            >
+              Explore the library
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -1,40 +1,26 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { MenuItem, FormControl } from '@material-ui/core';
 
-import { MenuItem, FormControl, Select, Typography } from '@material-ui/core';
+import OplTypography from "../../shared/components/OplTypography";
+import OplSelect from "../../shared/components/OplSelect";
 
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    marginTop: ".5rem",
-    minWidth: "20rem",
-  },
-  mobiusLoopFilters: {
-    fontSize: "0.75rem",
-    textTransform: "uppercase",
-  },
-}));
-
-const DropDownSelectionFilter = (props) => {
-  const classes = useStyles();
-  const { items, handleFilterSelect, selectedFilter } = props;
-
-  return (
-    <FormControl className={classes.formControl} variant="outlined" size="small" fullWidth>
-      <Select
-        value={selectedFilter}
-        onChange={(event) => handleFilterSelect({ type: 'mobiusFilterChange', content: event.target.value })}
-        classes={classes.selectEmpty}
-      >
-        {items.map((item, i) => (
-          <MenuItem value={item} key={i}>
-            <Typography variant="button" className={classes.mobiusLoopFilters}>
-              {item === "Entire Process Model" ? "" : "#"}{item}
-            </Typography>
-          </MenuItem>
-        ))}
-      </Select>
-    </FormControl>
-  );
-};
+const DropDownSelectionFilter = (props) => (
+  <FormControl variant="outlined">
+    <OplSelect
+      minWidth="20rem"
+      rounded={6.5}
+      value={props.selectedFilter}
+      onChange={(event) => props.handleFilterSelect({ type: 'mobiusFilterChange', content: event.target.value })}
+    >
+      {props.items.map((item, i) => (
+        <MenuItem value={item} key={i}>
+          <OplTypography variant="button" fontSize="0.75rem">
+            {item === "Entire Process Model" ? "" : "#"}{item}
+          </OplTypography>
+        </MenuItem>
+      ))}
+    </OplSelect>
+  </FormControl>
+);
 
 export default DropDownSelectionFilter;

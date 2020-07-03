@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Box, Grid } from "@material-ui/core";
-import CardCollection from "./CardCollection";
+import CardCollection from "../Collection";
 import CoverImage from "./CoverImage";
 import PracticeCardTitle from "./PracticeCardTitle";
 import Subtitle from "./Subtitle";
@@ -86,6 +86,7 @@ export default function PracticeCard(props) {
               upvotes={props.upvotes}
               imgCount={props.mediaGallery}
               questions={props.ama}
+              spacing={2}
             />
           </Paper>
         </Paper>

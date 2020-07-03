@@ -1,5 +1,5 @@
 import React from "react";
-import { render, waitFor } from "@testing-library/react";
+import { render, waitFor } from "../../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 
@@ -90,8 +90,6 @@ it("renders with graphql response", async () => {
       <Home />
     </MockedProvider>
   );
-
-  expect(getByTestId("pageGrid")).toBeInTheDocument();
 
   await waitFor(() => expect(getByTestId("practiceNum")).toBeInTheDocument())
   await waitFor(() => expect(getAllByTestId("practicecard")[0]).toBeInTheDocument());

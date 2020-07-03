@@ -1,5 +1,5 @@
 import React from "react";
-import { render, waitFor, fireEvent } from "@testing-library/react";
+import { render, waitFor, fireEvent } from "../../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
 import Practice from "../Practice";
@@ -29,7 +29,8 @@ const mockPracticeData = [
       id: "aUs3r",
       firstName: "Mock",
       lastName: "User",
-      mediaLink: "an.avatar.com"
+      mediaLink: "an.avatar.com",
+      Avatar: "a.cool.avatar",
     }],
     body: {
       __typename: "ComponentPracticeBodyBody",
