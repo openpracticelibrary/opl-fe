@@ -98,9 +98,7 @@ export function BottomListItems() {
       <ListSubheader>
         <Typography variant="overline" className={classes.headers}>Community</Typography>
       </ListSubheader>
-      <ListItem button>
-        <Typography variant="body2"> Learn about us </Typography>
-      </ListItem>
+      <ListItemLink to="/about" primary="Learn about us" data-testid="LearnAboutUs"/>
     </List>
   );
 }
