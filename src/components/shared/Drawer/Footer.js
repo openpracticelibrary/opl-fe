@@ -2,8 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import FooterList from "./FooterList";
 import Disclaimer from "./Disclaimer";
-import { BetaIcon, NewTabIcon, RockIcon } from "../../../assets/icons";
 import { Grid } from '@material-ui/core';
+import { PodIcon, WebLinkIcon } from "../../../assets/icons";
+
+const iconColor = "#1975ff";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -17,11 +19,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  { title: "ABOUT US", url: "#", icon: <RockIcon /> },
-  { title: "JOIN BETA", url: "#", icon: <BetaIcon /> },
-  { title: "MEETUP", url: "#", icon: <NewTabIcon /> },
-  { title: "GITHUB", url: "#", icon: <NewTabIcon /> },
-  { title: "PODCAST", url: "#", icon: <NewTabIcon /> },
+  { title: "SEND FEEDBACK", url: "https://forms.gle/nXCvPEkjx6VdF6Px6", icon: <WebLinkIcon fill={iconColor} width="14px" height="15px" /> },
+  { title: "OUR PODCAST", url: "https://podcasts.apple.com/us/podcast/open-practice-podcast/id1501715186", icon: <PodIcon width="15px" height="15px" fill={iconColor} /> },
 ];
 
 export default function Footer() {

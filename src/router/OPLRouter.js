@@ -3,7 +3,7 @@ import { Router, Location } from "@reach/router";
 import { useQuery } from "@apollo/react-hooks";
 
 import LoginContext from '../components/shared/Login/LoginContext';
-import { HomePage, AllPracticesPage, PracticePage } from "../pages";
+import { HomePage, AllPracticesPage, PracticePage, AboutPage } from "../pages";
 import { currentUserQuery } from "../graphql";
 
 /* Somewhat hacky workaround the scroll position problem
@@ -36,6 +36,7 @@ const OPLRouter = (props) => {
         <HomePage path="/" />
         <AllPracticesPage path="/practice"/>
         <PracticePage path="/practice/:name"/>
+        <AboutPage path="/about"/>
       </Router>
       <OnRouteChange action={() => window.scrollTo(0, 0) } />
     </LoginContext.Provider>
