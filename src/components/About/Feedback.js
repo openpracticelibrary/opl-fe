@@ -11,7 +11,6 @@ import { ArrowRightIcon } from "../../assets/icons";
 
 const Feedback = () => (
   <Box
-    display=""
     width={1}
     height="25rem"
     px={4}

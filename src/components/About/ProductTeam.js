@@ -42,7 +42,7 @@ const ProductTeam = () => (
       variant={"body1"}
       gutterBottom
     >
-      The development approach included pulling from [open source technology, middleware, test-driven, Agile, devops] because... liquam id diam maecenas ultricies mi eget mauris. Odio tempor orci dapibus ultrices in. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Suspendisse faucibus interdum posuere lorem ipsum.
+      The development approach included pulling from [open source technology, middleware, test-driven, Agile, devops.
     </Typography>
   </Box>
 );
