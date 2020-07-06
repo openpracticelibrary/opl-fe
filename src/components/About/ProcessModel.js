@@ -1,70 +1,47 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles/index';
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+import {
+  Box,
+  Typography
+} from "@material-ui/core";
 import Link from "@material-ui/core/Link";
 import VideoPlayer from "./VideoPlayer";
+import { WebLinkIcon } from "../../assets/icons";
 
-const useStyles = makeStyles((theme) => ({
-  teamHeader: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingTop: theme.spacing(12),
-    paddingBottom: theme.spacing(1),
-  },
-  paraSpacer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(1),
-  },
-}));
 
 const ProcessModel = (props) => {
-  const classes = useStyles();
-
   return (
-    <>
-      <Grid
-        data-testid="pageGrid"
-        container
-        direction="row"
-        className={classes.pageWrapper}
+    <Box
+      data-testid="pageGrid"
+      width={1}
+    >
+      <Typography
+        gutterBottom
+        variant={"h1"}
+        data-testid="processModel"
       >
-        <Grid item xs={1}/>
-        <Grid item xs={11} className={classes.teamHeader} data-testid="processModel">
-          <Typography variant={"h1"}>
-            {props.header}
-          </Typography>
-        </Grid>
-        <Grid item xs={1}/>
-        <Grid item xs={11} className={classes.paraSpacer}>
-          <Typography variant={"body1"}>
-            {props.bodyPara1}
-          </Typography>
-        </Grid>
-        <Grid item xs={1}/>
-        <Grid item xs={11} className={classes.paraSpacer}>
-          <VideoPlayer videoUrl={props.videoUrl}/>
-        </Grid>
-        <Grid item xs={1}/>
-        <Grid item xs={11} className={classes.paraSpacer}>
-          <Link href={props.mobiusLinkRef}>
-            <Typography variant="body1">
-              {props.mobiusLinkIcon} {props.mobiusLinkText}
-            </Typography>
-          </Link>
-        </Grid>
-        <Grid item xs={1}/>
-        <Grid item xs={11} className={classes.paraSpacer}>
-          <Typography variant={"body1"}>
-            {props.bodyPara2}
-          </Typography> 
-        </Grid>
-      </Grid>
-    </>
+        Our process model
+      </Typography>
+      <Typography
+        gutterBottom
+        variant={"body1"}
+      >
+        The 2020 pandemic led to forming a small Global remote product team for improving the library and delivering upon the growth strategy. This cross-functional group included product management, product design, and engineering to bring a balanced approach for continuous discovery and continuous delivery.
+      </Typography>
+      <Box my={2}>
+        <VideoPlayer videoUrl="https://www.youtube.com/embed/N4mBIZg8MnQ" />
+      </Box>
+      <Box my={2}>
+        <Link
+          href="https://mobiusloop.com/"
+        
+        >
+          <WebLinkIcon/> Learn more on mobiusloop.com
+        </Link>
+      </Box>
+      <Typography variant={"body1"}>
+        The Open Practice Library utilizes the sections of this process model for tagging and organizing practices within the application. 
+      </Typography> 
+    </Box>
   )
 };
 
