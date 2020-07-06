@@ -52,7 +52,6 @@
     "eject": "react-scripts eject",
     "e2e:local": "cypress run --headless --browser chrome",
     "e2e:browser": "cypress run --browser chrome",
-    "e2e:dev": "cypress run --headless --browser chrome --env HOST=http://openpracticelibrary-opl-dev.apps.s44.core.rht-labs.com/",
     "e2e:ci": "cypress run --headless --browser chrome --env HOST=http://openpracticelibrary-svc:8080"
   },
   "eslintConfig": {
