@@ -28,7 +28,7 @@ export default function WhyDo(props) {
           {props.editing ?
             props.children
             :
-            <Typography variant={"body1"} component={'span'}>
+            <Typography component={'span'}>
               <ReactMarkdown source={props.source} />
             </Typography>
           }

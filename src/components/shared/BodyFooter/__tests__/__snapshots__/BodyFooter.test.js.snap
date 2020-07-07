@@ -2,13 +2,13 @@
 
 exports[`matches the snapshot 1`] = `
 <div
-  className="MuiBox-root MuiBox-root-472 makeStyles-trueWhiteColor-470"
+  className="MuiBox-root MuiBox-root-478 makeStyles-trueWhiteColor-476"
 >
   <hr
     className="MuiDivider-root"
   />
   <footer
-    className="makeStyles-footer-469"
+    className="MuiBox-root MuiBox-root-486"
     data-testid="footer"
   >
     <div
@@ -21,10 +21,10 @@ exports[`matches the snapshot 1`] = `
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10"
       >
         <div
-          className="MuiBox-root MuiBox-root-583"
+          className="MuiBox-root MuiBox-root-590"
         >
           <div
-            className="MuiBox-root MuiBox-root-584"
+            className="MuiBox-root MuiBox-root-591"
           >
             <div
               className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center"
@@ -109,10 +109,8 @@ exports[`matches the snapshot 1`] = `
                     className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-7"
                   >
                     <img
-                      alt="Open Innovation Labs"
-                      height="31px"
+                      alt="Open Innovation Labs Logo"
                       src="logo-red-hat-open-innovation-labs-a-standard-rgb.png"
-                      width="162px"
                     />
                   </div>
                 </div>
@@ -120,7 +118,7 @@ exports[`matches the snapshot 1`] = `
             </div>
           </div>
           <div
-            className="MuiBox-root MuiBox-root-615"
+            className="MuiBox-root MuiBox-root-622"
           >
             <div
               className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-space-between"
@@ -134,32 +132,44 @@ exports[`matches the snapshot 1`] = `
                   <div
                     className="MuiGrid-root MuiGrid-item"
                   >
-                    <span
-                      className="MuiTypography-root makeStyles-color-617 MuiTypography-button"
-                      onClick={[Function]}
+                    <div
+                      className="MuiBox-root MuiBox-root-623"
                     >
-                      Practices
-                    </span>
+                      <span
+                        className="MuiTypography-root MuiTypography-button"
+                        onClick={[Function]}
+                      >
+                        Practices
+                      </span>
+                    </div>
                   </div>
                   <div
                     className="MuiGrid-root MuiGrid-item"
                   >
-                    <span
-                      className="MuiTypography-root makeStyles-color-617 MuiTypography-button"
-                      onClick={[Function]}
+                    <div
+                      className="MuiBox-root MuiBox-root-624"
                     >
-                      About
-                    </span>
+                      <span
+                        className="MuiTypography-root MuiTypography-button"
+                        onClick={[Function]}
+                      >
+                        About
+                      </span>
+                    </div>
                   </div>
                   <div
                     className="MuiGrid-root MuiGrid-item"
                   >
-                    <span
-                      className="MuiTypography-root makeStyles-color-617 MuiTypography-button"
-                      onClick={[Function]}
+                    <div
+                      className="MuiBox-root MuiBox-root-625"
                     >
-                      Terms
-                    </span>
+                      <span
+                        className="MuiTypography-root MuiTypography-button"
+                        onClick={[Function]}
+                      >
+                        Terms
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -172,12 +182,16 @@ exports[`matches the snapshot 1`] = `
                   <div
                     className="MuiGrid-root MuiGrid-item"
                   >
-                    <span
-                      className="MuiTypography-root makeStyles-connect-618 MuiTypography-button"
-                      data-testid="connect"
+                    <div
+                      className="MuiBox-root MuiBox-root-626"
                     >
-                      Please connect with us:
-                    </span>
+                      <span
+                        className="MuiTypography-root MuiTypography-button"
+                        data-testid="connect"
+                      >
+                        Please connect with us:
+                      </span>
+                    </div>
                   </div>
                   <div
                     className="MuiGrid-root MuiGrid-item"
@@ -202,7 +216,7 @@ exports[`matches the snapshot 1`] = `
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
-                              fill="#1975ff"
+                              fill="#717171"
                             >
                               <path
                                 d="M25.713 2.794L24.707 1.79l-9.521 9.523c-1.213 1.212-3.185 1.212-4.398 0L1.267 1.789.26 2.794l7.11 7.11-7.11 7.11 1.006 1.004 7.109-7.109 1.408 1.407c.855.856 1.993 1.327 3.203 1.327 1.21 0 2.348-.471 3.203-1.327l1.408-1.407 7.11 7.11 1.005-1.005-7.11-7.11 7.11-7.11"
@@ -231,7 +245,7 @@ exports[`matches the snapshot 1`] = `
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <g
-                              fill="#1975ff"
+                              fill="#717171"
                               fillRule="evenodd"
                             >
                               <path
@@ -262,7 +276,7 @@ exports[`matches the snapshot 1`] = `
                           >
                             <path
                               d="M11.277 0C5.05 0 0 5.05 0 11.279c0 4.983 3.231 9.21 7.713 10.701.564.104.77-.244.77-.543 0-.268-.01-.977-.015-1.918-3.137.68-3.8-1.513-3.8-1.513-.512-1.303-1.252-1.65-1.252-1.65-1.024-.699.078-.685.078-.685 1.132.08 1.727 1.163 1.727 1.163 1.006 1.723 2.64 1.225 3.283.936.102-.728.394-1.225.716-1.507-2.505-.284-5.138-1.252-5.138-5.574 0-1.231.44-2.239 1.161-3.027-.116-.285-.503-1.432.111-2.984 0 0 .947-.304 3.101 1.156.9-.25 1.865-.375 2.824-.38.958.005 1.922.13 2.823.38 2.153-1.46 3.099-1.156 3.099-1.156.615 1.552.228 2.7.112 2.984.723.788 1.16 1.796 1.16 3.027 0 4.333-2.638 5.286-5.15 5.565.405.348.765 1.037.765 2.089 0 1.507-.013 2.724-.013 3.094 0 .301.203.652.775.542 4.478-1.495 7.707-5.719 7.707-10.7C22.557 5.049 17.507 0 11.277 0"
-                              fill="#1975ff"
+                              fill="#717171"
                               fillRule="evenodd"
                             />
                           </svg>
@@ -286,7 +300,7 @@ exports[`matches the snapshot 1`] = `
                           >
                             <path
                               d="M10.997 0C4.93 0 0 4.936 0 11.003c0 4.374 2.593 8.336 6.602 10.084.227.102.49.075.692-.071.2-.147.307-.39.278-.637-.028-.246-.187-.459-.416-.556-3.512-1.53-5.781-4.99-5.781-8.82 0-5.324 4.298-9.628 9.622-9.628s9.628 4.304 9.628 9.628c0 3.828-2.266 7.289-5.775 8.82-.233.094-.396.307-.426.556-.03.25.078.495.281.641.204.146.472.17.698.062C19.41 19.332 22 15.374 22 11.002 22 4.937 17.064 0 10.997 0zm0 4.385c-3.646 0-6.611 2.971-6.611 6.618 0 1.82.746 3.561 2.07 4.81.276.262.712.249.972-.027.26-.277.248-.712-.028-.973-1.049-.99-1.64-2.368-1.64-3.81 0-2.904 2.334-5.243 5.237-5.243 2.904 0 5.242 2.34 5.242 5.243 0 1.443-.593 2.82-1.643 3.81-.179.17-.254.42-.197.66.056.238.236.43.472.5.235.07.49.01.669-.16 1.325-1.25 2.076-2.989 2.076-4.81 0-3.647-2.972-6.618-6.619-6.618zm0 3.46c-1.496 0-2.72 1.225-2.72 2.721s1.224 2.726 2.72 2.726c1.496 0 2.726-1.23 2.726-2.726s-1.23-2.72-2.726-2.72zm0 6.141c-1.511 0-2.744 1.24-2.744 2.752v2.512c0 1.512 1.233 2.75 2.744 2.75 1.512 0 2.752-1.238 2.752-2.75v-2.512c0-1.512-1.24-2.752-2.752-2.752z"
-                              fill="#1975ff"
+                              fill="#717171"
                             />
                           </svg>
                         </a>
@@ -313,7 +327,7 @@ exports[`matches the snapshot 1`] = `
                             >
                               <path
                                 d="M27.662 3.088C27.337 1.873 26.38.915 25.164.59 22.961 0 14.126 0 14.126 0S5.291 0 3.088.59C1.873.915.915 1.873.59 3.088 0 5.29 0 9.888 0 9.888s0 4.597.59 6.8c.325 1.216 1.283 2.173 2.498 2.498 2.203.59 11.038.59 11.038.59s8.835 0 11.038-.59c1.216-.325 2.173-1.282 2.498-2.498.59-2.203.59-6.8.59-6.8s0-4.597-.59-6.8"
-                                fill="#1975ff"
+                                fill="#717171"
                               />
                               <path
                                 d="M11.301 14.126L18.641 9.888 11.301 5.65 11.301 14.126"

@@ -14,27 +14,27 @@ const Feedback = () => (
     width={1}
     height="25rem"
     px={4}
+    display="flex"
     style={{
       backgroundImage: `linear-gradient(0deg, #FFFFFF 0%, rgba(255,255,255,0.95) 71.03%, rgba(255,255,255,0.85) 100%), url(${GrayRain})`}}
   >
     <Grid
       container
-      spacing={3}
+      justify="space-between"
       alignItems="center"
-      justify="center"
     >
       <Grid
         item
-        lg={1}
+        md={1}
       >
         <img width="100%" src={FeedbackIcon} alt="Feedback" />
       </Grid>
       <Grid
         item
-        lg={8}
+        md={7}
       >
         <Typography
-          variant={"h1"}
+          variant="h3"
           data-testid="feedbackMsg"
         >
           Please give us feedback
@@ -45,11 +45,10 @@ const Feedback = () => (
       </Grid>
       <Grid
         item
-        lg={3}
+        md={3}
       >
         <Button
-          variant="contained"
-          disableElevation
+          variant="outlined"
           href="https://forms.gle/nXCvPEkjx6VdF6Px6"
         >
           Share your thoughts &nbsp;<ArrowRightIcon/>

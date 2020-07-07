@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     borderRadius: "17px",
     borderWidth: "3px",
-    borderColor: theme.palette.common.discovery_blue,
+    borderColor: theme.palette.primary.main,
     borderStyle: "solid",
     display: "flex",
     textAlign: "center",
@@ -30,13 +30,13 @@ const useStyles = makeStyles((theme) => ({
     width: "7rem",
     backgroundColor: "#dff1ff",
     padding: theme.spacing(2),
-    borderColor: theme.palette.common.discovery_blue,
+    borderColor: theme.palette.primary.main,
     borderWidth: "1px",
     borderStyle: "solid",
   },
   buttonText: {
     fontWeight: "500",
-    color: theme.palette.common.black,
+    color: theme.palette.grey["900"],
   },
   loginDrawerClose: {
     margin: theme.spacing(2),
@@ -52,17 +52,17 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     borderRadius: "32px",
     borderStyle: "solid",
-    borderColor: theme.palette.common.discovery_blue,
+    borderColor: theme.palette.primary.main,
     borderWidth: "2px",
   },
   btnText: {
     padding: theme.spacing(1),
-    color: theme.palette.common.black,
+    color: theme.palette.grey["900"],
   },
   arrowForward: {
     top: ".25em",
     position: "relative",
-    color: theme.palette.common.discovery_blue,
+    color: theme.palette.primary.main,
   },
 }));
 

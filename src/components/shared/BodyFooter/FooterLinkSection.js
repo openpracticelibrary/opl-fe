@@ -1,23 +1,7 @@
 import React from "react";
-import { Typography, Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Typography, Box, Grid } from "@material-ui/core";
 import FooterIconSection from "./FooterIconSection";
-//import Link from "@material-ui/core/Link";
 import { navigate } from "@reach/router";
-
-const useStyles = makeStyles((theme) => ({
-  space: {
-    padding: theme.spacing(2),
-  },
-  color: {
-    fontSize: "0.9rem",
-    color: "#6c6c6c",
-  },
-  connect: {
-    color: theme.palette.common.black,
-    fontWeight: "500",
-  },
-}));
 
 const sections = [
   { title: "Practices", url: "/practice" },
@@ -26,8 +10,6 @@ const sections = [
 ];
 
 export default function FooterLogoSection() {
-  const classes = useStyles();
-
   return (
     <>
       <Grid
@@ -45,13 +27,14 @@ export default function FooterLogoSection() {
           >
             {sections.map((section, i) => (
               <Grid item key={i}>
-                <Typography
-                  variant="button"
-                  className={classes.color}
-                  onClick={() => navigate(section.url)}
-                >
-                  {section.title}
-                </Typography>
+                <Box color="grey.A400">
+                  <Typography
+                    variant="button"
+                    onClick={() => navigate(section.url)}
+                  >
+                    {section.title}
+                  </Typography>
+                </Box>
               </Grid>
             ))}
           </Grid>
@@ -64,13 +47,17 @@ export default function FooterLogoSection() {
             alignItems="center"
           >
             <Grid item>
-              <Typography
-                variant="button"
-                data-testid="connect"
-                className={classes.connect}
+              <Box
+                color="common.black"
+                fontWeight={500}
               >
-                Please connect with us:
-              </Typography>
+                <Typography
+                  variant="button"
+                  data-testid="connect"
+                >
+                  Please connect with us:
+                </Typography>
+              </Box>
             </Grid>
             <Grid item>
               <FooterIconSection />

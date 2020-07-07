@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     position: "relative",
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.palette.grey["900"],
     opacity: "40",
     width: "100%",
     height: "1000px",
@@ -43,11 +43,10 @@ const QueryError = (props) => {
       <Box data-testid="errorPage" className={classes.errorContainer}>
         <Typography variant={"h4"} className={classes.errorText}>That's an error...</Typography>
         <Lottie lottieRef={lottieRef} height={400} width={400} />
-        <Typography variant={"body1"} className={classes.errorText}>{props.err}</Typography>
+        <Typography className={classes.errorText}>{props.err}</Typography>
       </Box>
     </Box>
   );
 };
 
 export default QueryError;
-

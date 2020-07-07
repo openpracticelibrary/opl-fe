@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   practiceItem: {
     borderRadius: 10,
     "&:hover #cardTitle": {
-      color: theme.palette.common.discovery_blue,
+      color: theme.palette.primary.main,
     },
     "&:hover #tags": {
       overflow: "visible",

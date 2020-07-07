@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(6, 0),
   },
   trueWhiteColor: {
-    backgroundColor: theme.palette.common.true_white,
+    backgroundColor: theme.palette.common.white,
   }
 }));
 
@@ -20,7 +20,11 @@ export default function BodyFooter() {
     <>
       <Box className={classes.trueWhiteColor}>
         <Divider/>
-        <footer className={classes.footer} data-testid="footer">
+        <Box
+          p={6}
+          component="footer"
+          data-testid="footer"
+        >
           <Grid container>
             <Grid item xs={1}>
             </Grid>
@@ -35,7 +39,7 @@ export default function BodyFooter() {
               </Box>
             </Grid>
           </Grid>
-        </footer>
+        </Box>
       </Box>
     </>
   );

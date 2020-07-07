@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paddedHamburger: {
     marginLeft: 20,
-    color: theme.palette.common.discovery_blue,
+    color: theme.palette.primary.main,
   },
   box: {
     zIndex: theme.zIndex.drawer + 1,
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    backgroundColor: theme.palette.common.true_white,
+    backgroundColor: theme.palette.common.white,
     "&::-webkit-scrollbar": {
       display: "none",
     },
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       width: theme.spacing(8) + 1,
     },
-    backgroundColor: theme.palette.common.true_white,
+    backgroundColor: theme.palette.common.white,
   },
   toolbar: {
     display: "flex",
@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   pageBox: {
-    backgroundColor: theme.palette.common.true_white,
+    backgroundColor: theme.palette.common.white,
   },
 }));
 

@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "inherit",
   },
   headers: {
-    color: theme.palette.common.discovery_blue,
+    color: theme.palette.primary.main,
   },
   nested: {
     paddingLeft: theme.spacing(3),

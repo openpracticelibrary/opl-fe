@@ -1,6 +1,6 @@
 import React from 'react';
 import OPLRouter from './router/OPLRouter';
-import {ThemeProvider} from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './theme';
 import { ApolloProvider } from '@apollo/react-hooks';
 import BodyFooter from './components/shared/BodyFooter'
