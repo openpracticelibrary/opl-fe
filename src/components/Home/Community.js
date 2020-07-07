@@ -1,158 +1,98 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles/index';
-import Box from '@material-ui/core/Box';
-import Grid from "@material-ui/core/Grid";
-import Button from '@material-ui/core/Button';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import Typography from "@material-ui/core/Typography";
 import { navigate } from "@reach/router";
 
 import PracticeCount from "./PracticeCount";
 import ContributorCount from "./ContributorCount";
+import Collaborators from "./Collaborators";
 import RedHatLogo from "../../assets/images/logo-red-hat-hat-color-rgb.png";
 import NounProjectLogo from "../../assets/images/noun-project.png";
 import MobiusLogo from "../../assets/images/mobius-small.png";
 import CCHeartLogo from "../../assets/images/ccheart-black.png";
 
-const useStyles = makeStyles((theme) => ({
-  communityHeader: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingBottom: theme.spacing(12),
-  },
-  communityBox: {
-    display: "flex",
-    justifyContent: "center",
-  },
-  practiceBox: {
-    display: "flex",
-    alignItems: "center",
-    flexFlow: "column",
-    justifyContent: "center",
-    textAlign: "center",
-    boxSizing: "border-box",
-    height: "340px",
-    width: "330px",
-    borderRadius: "50%",
-    borderStyle: "solid",
-    borderColor: "#00cc99",
-    borderWidth: "1px",
-    boxShadow: "2px 2px 8px 0 rgba(0,0,0,0.1)",
-    padding: theme.spacing(5),
-    margin: theme.spacing(2),
-  },
-  contribBox: {
-    display: "flex",
-    alignItems: "center",
-    flexFlow: "column",
-    justifyContent: "center",
-    textAlign: "center",
-    boxSizing: "border-box",
-    height: "340px",
-    width: "340px",
-    borderRadius: "50%",
-    borderStyle: "solid",
-    borderColor: "#00cc99",
-    borderWidth: "1px",
-    boxShadow: "2px 2px 8px 0 rgba(0,0,0,0.1)",
-    padding: theme.spacing(5),
-    margin: theme.spacing(2),
-  },
-  collabBox: {
-    alignItems: "center",
-    justifyContent: "center",
-    paddingTop: theme.spacing(9),
-  },
-  iconBox: {
-    display: "flex",
-    padding: theme.spacing(2),
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: "70px",
-  },
-  aboutButton: {
-    borderRadius: "32px",
-    padding: theme.spacing(2),
-    width: "11rem",
-    borderColor: theme.palette.common.discovery_blue,
-    borderWidth: "1px",
-    borderStyle: "solid",
-    backgroundColor: theme.palette.common.true_white,
-  },
-  arrowForward: {
-    color: theme.palette.common.discovery_blue,
-  },
-  weHave: {
-    textAlign: "center",
-  },
-  lifecycle: {
-    color: theme.palette.common.black,
-    textAlign: "center",
-    fontSize: "1.375rem",
-  },
-  redHat: {
-    width: "92.2px",
-    height: "70px",
-    objectFit: "contain",
-    marginRight: "47.8px",
-  },
-  nounProject: {
-    width: "148px",
-    height: "148px",
-    objectFit: "contain",
-    marginRight: "54px",
-  },
-  mobius: {
-    width: "140px",
-    height: "63px",
-    objectFit: "contain",
-    marginRight: "57px",
-  },
-  ccHeart: {
-    width: "82px",
-    height: "72px",
-    objectFit: "contain",
-  },
-}));
+import { Box, Grid, Typography } from '@material-ui/core';
+import OplButton from "../shared/components/OplButton";
 
-const Community = (props) => {
-  const classes = useStyles();
+const collaborators = [
+  {
+    name: "Red Hat",
+    logo: RedHatLogo,
+    text: "Home of our product team and our largest Open Source Contributor."
+  },
+  {
+    name: "The Noun Project",
+    logo: NounProjectLogo,
+    text: "The community driven icon library we love so much and use for UI design."
+  },
+  {
+    name: "Mobius Loop",
+    logo: MobiusLogo,
+    text: "Our process model and partner in defining product lifecycle practices."
+  },
+  {
+    name: "Creative Commons",
+    logo: CCHeartLogo,
+    text: "Under this license, our content is as open source as our application software."
+  }
+];
 
-  return (
-    <>
-      <Grid item xs={12} className={classes.communityHeader} data-testid="communityHeader">
-        <Typography variant={"h1"} ref={props.communityRef}>Community driven</Typography>
-        <Button className={classes.aboutButton} variant="contained" onClick={() => navigate("/about")}>
-            About us{"  "}<ArrowForwardIcon className={classes.arrowForward}/>
-        </Button>
-      </Grid>
+const StatBox = (props) => (
+  <Box
+    display="flex"
+    flexDirection="column"
+    width={330}
+    height={340}
+    p={5}
+    mt={2}
+    mb={12}
+    ml={2}
+    borderRadius="50%"
+    borderColor="secondary.main"
+    border={1}
+    justifyContent="center"
+  >
+    {props.children}
+  </Box>
+);
+
+const Community = (props) => (
+  <>
+    <Box
+      display="flex"
+      flexDirection="row"
+      justifyContent="space-between"
+      alignItems="center"
+      width="90%"
+      py={12}
+      data-testid="communityHeader"
+    >
+      <Typography variant={"h3"} ref={props.communityRef}>Community driven</Typography>
+      <OplButton onClick={() => navigate("#")}>
+        About us{"  "}<ArrowForwardIcon color="primary" />
+      </OplButton>
+    </Box>
+    <Grid container item xs={12} justify="center">
       <Grid item xs={12}>
-        <Typography variant={"h3"} className={classes.weHave}>We have...</Typography>
-        <Box className={classes.communityBox}>
-          <Box className={classes.practiceBox}>
-            <PracticeCount />
-            <Typography variant={"h3"} className={classes.lifecycle}>Product Lifecycle <br/> Practices</Typography>
-          </Box>
-          <Box className={classes.contribBox}>
-            <ContributorCount />
-            <Typography variant={"h3"} className={classes.lifecycle}>Creative Commons <br/> Contributors</Typography>
-          </Box>
-        </Box>
+        <Typography variant={"h4"} align="center">We have...</Typography>
       </Grid>
+      <StatBox>
+        <PracticeCount />
+        <Typography variant={"h6"} align="center">Product Lifecycle <br/> Practices</Typography>
+      </StatBox>
+      <StatBox>
+        <ContributorCount />
+        <Typography variant={"h6"} align="center">Creative Commons <br/> Contributors</Typography>
+      </StatBox>
       <Grid item xs={12}>
-        <Box className={classes.collabBox}>
-          <Typography variant={"h3"} className={classes.weHave}>We have collaborations with...</Typography>
-          <Box className={classes.iconBox}>
-            <img src={RedHatLogo} alt="Red Hat" className={classes.redHat} />
-            <img src={NounProjectLogo} alt="Noun Project" className={classes.nounProject} />
-            <img src={MobiusLogo} alt="Mobius Project" className={classes.mobius} />
-            <img src={CCHeartLogo} alt="Creative Commons" className={classes.ccHeart} />
-          </Box>
-        </Box>
+        <Typography variant={"h4"} align="center">We have collaborations with...</Typography>
+        <Grid container direction="row" justify="center" alignItems="center">
+          {collaborators.map(({ logo, name, text }) => (
+            <Collaborators key={name} logo={logo} name={name} text={text} />
+          ))}
+        </Grid>
       </Grid>
-    </>
-  )
-};
+    </Grid>
+  </>
+);
 
 export default Community;

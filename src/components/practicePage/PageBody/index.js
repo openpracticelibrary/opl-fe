@@ -6,8 +6,8 @@ import WhyDo from "./WhyDo";
 import HowDo from "./HowDo";
 import ResourcesWeLove from "./ResourcesWeLove";
 import FullText from "./FullText";
-import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles/index";
+import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,11 +70,11 @@ export default function PageBody(props) {
             title={title}
             mediaGallery={mediaGallery}
             mediaRef={mediaRef}
-          /> 
-          <ResourcesWeLove 
+          />
+          <ResourcesWeLove
             practiceId={practiceId}
             links={resources}
-            resourceRef={resourceRef} 
+            resourceRef={resourceRef}
           />
           <AskMeAnything ama={ama} amaRef={amaRef} />
         </Box>

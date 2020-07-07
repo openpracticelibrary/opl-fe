@@ -10,13 +10,15 @@ exports[`matches the snapshot 1`] = `
     <div
       className="MuiBox-root MuiBox-root-340 makeStyles-space-338"
     >
-      <span
-        className="MuiTypography-root MuiTypography-h2"
+      <h4
+        className="MuiTypography-root MuiTypography-h4"
       >
-        What is 
-        Test title
-        ?
-      </span>
+        <b>
+          What is 
+          Test title
+          ?
+        </b>
+      </h4>
     </div>
     <div
       className="MuiBox-root MuiBox-root-371 makeStyles-space-338"
@@ -36,13 +38,15 @@ exports[`matches the snapshot 1`] = `
     <div
       className="MuiBox-root MuiBox-root-375 makeStyles-space-373"
     >
-      <span
-        className="MuiTypography-root MuiTypography-h2"
+      <h4
+        className="MuiTypography-root MuiTypography-h4"
       >
-        Why do 
-        Test title
-        ?
-      </span>
+        <b>
+          Why do 
+          Test title
+          ?
+        </b>
+      </h4>
     </div>
     <div
       className="MuiBox-root MuiBox-root-376 makeStyles-space-373"
@@ -62,13 +66,15 @@ exports[`matches the snapshot 1`] = `
     <div
       className="MuiBox-root MuiBox-root-380 makeStyles-space-378"
     >
-      <span
-        className="MuiTypography-root MuiTypography-h2"
+      <h4
+        className="MuiTypography-root MuiTypography-h4"
       >
-        How to do 
-        Test title
-        ?
-      </span>
+        <b>
+          How to do 
+          Test title
+          ?
+        </b>
+      </h4>
     </div>
     <div
       className="MuiBox-root MuiBox-root-381 makeStyles-space-378"
@@ -88,12 +94,14 @@ exports[`matches the snapshot 1`] = `
     <div
       className="MuiBox-root MuiBox-root-387 makeStyles-space-383"
     >
-      <h2
-        className="MuiTypography-root MuiTypography-h2"
+      <h4
+        className="MuiTypography-root MuiTypography-h4"
       >
-        Look at 
-        Test title
-      </h2>
+        <b>
+          Look at 
+          Test title
+        </b>
+      </h4>
     </div>
     <div
       className="MuiBox-root MuiBox-root-388 makeStyles-mediaBox-384"
@@ -342,11 +350,13 @@ exports[`matches the snapshot 1`] = `
     <div
       className="MuiBox-root MuiBox-root-416 makeStyles-space-413"
     >
-      <h2
-        className="MuiTypography-root MuiTypography-h2"
+      <h4
+        className="MuiTypography-root MuiTypography-h4"
       >
-        Links we love
-      </h2>
+        <b>
+          Links we love
+        </b>
+      </h4>
       <p
         className="MuiTypography-root MuiTypography-body1"
       >
@@ -410,7 +420,7 @@ exports[`matches the snapshot 1`] = `
           className="MuiBox-root MuiBox-root-442"
         >
           <button
-            className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textSecondary"
+            className="MuiButtonBase-root MuiButton-root MuiButton-text"
             data-testid="addResourcesButton"
             disabled={false}
             onBlur={[Function]}
@@ -452,11 +462,7 @@ exports[`matches the snapshot 1`] = `
                   </g>
                 </svg>
               </span>
-              <p
-                className="MuiTypography-root MuiTypography-body1"
-              >
-                Add a link
-              </p>
+              Add a link
             </span>
           </button>
         </div>
@@ -469,11 +475,13 @@ exports[`matches the snapshot 1`] = `
     <div
       className="MuiBox-root MuiBox-root-481 makeStyles-space-476"
     >
-      <h2
-        className="MuiTypography-root MuiTypography-h2"
+      <h4
+        className="MuiTypography-root MuiTypography-h4"
       >
-        Ask me anything
-      </h2>
+        <b>
+          Ask me anything
+        </b>
+      </h4>
     </div>
     <div
       className="MuiBox-root MuiBox-root-482 makeStyles-space-476"

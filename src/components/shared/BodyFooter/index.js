@@ -1,10 +1,8 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
 import FooterLogoSection from "./FooterLogoSection";
 import FooterLinkSection from "./FooterLinkSection";
-import Box from '@material-ui/core/Box';
-import Divider from "@material-ui/core/Divider";
+import { Grid, Box, Divider } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   footer: {

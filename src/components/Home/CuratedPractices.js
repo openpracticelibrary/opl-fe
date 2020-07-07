@@ -1,8 +1,4 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles/index';
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Button from '@material-ui/core/Button';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { navigate } from "@reach/router";
 import { useQuery } from "@apollo/react-hooks";
@@ -12,34 +8,10 @@ import ComponentQueryError from "../shared/QueryState/ComponentQueryError";
 import { GET_CURATED_PRACTICES } from "../../graphql";
 import PracticeCardGrid from "../shared/PracticeCards/PracticeCardGrid";
 
-const useStyles = makeStyles((theme) => ({
-  practiceHeader: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingBottom: theme.spacing(12),
-  },
-  aboutTitle: {
-    textAlign: "right",
-  },
-  arrowForward: {
-    color: theme.palette.common.discovery_blue,
-  },
-  libraryButton: {
-    borderRadius: "32px",
-    padding: theme.spacing(2),
-    width: "14rem",
-    borderColor: theme.palette.common.discovery_blue,
-    borderWidth: "1px",
-    borderStyle: "solid",
-    backgroundColor: theme.palette.common.true_white,
-  },
-}));
-
+import { Typography, Box } from '@material-ui/core';
+import OplButton from "../shared/components/OplButton";
 
 const CuratedPractices = (props) => {
-  const classes = useStyles();
-
   const { loading, error, data } = useQuery(GET_CURATED_PRACTICES, {
     variables: { sort: "upvotes:desc" }
   });
@@ -47,15 +19,23 @@ const CuratedPractices = (props) => {
 
   return (
     <>
-      <Grid item xs={12} className={classes.practiceHeader} data-testid="curatedList">
-        <Typography variant={"h1"}>Popular Practices</Typography>
-        <Button data-testid="seeEverythingButton" className={classes.libraryButton} variant="contained" onClick={() => navigate("/practice")}>
-          See Everything{"  "}<ArrowForwardIcon className={classes.arrowForward}/>
-        </Button>
-      </Grid>
-      <Grid item xs={12}>
+      <Box
+        display="flex"
+        flexDirection="row"
+        justifyContent="space-between"
+        alignItems="center"
+        width="90%"
+        pb={12}
+        data-testid="curatedList"
+      >
+        <Typography variant={"h3"}>Popular Practices</Typography>
+        <OplButton data-testid="seeEverythingButton" onClick={() => navigate("/practice")}>
+          See Everything{"  "}<ArrowForwardIcon color="primary" />
+        </OplButton>
+      </Box>
+      <Box maxWidth="1440px">
         { loading ? <ComponentLoading /> : <PracticeCardGrid practices={data.practices} /> }
-      </Grid>
+      </Box>
     </>
   );
 };

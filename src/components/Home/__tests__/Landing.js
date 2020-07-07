@@ -1,8 +1,7 @@
 import React from "react";
-import { cleanup, render } from "@testing-library/react";
+import { cleanup, render } from "../../../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
-import renderer from 'react-test-renderer';
 import Landing from '../Landing';
 
 afterEach(cleanup);
@@ -20,10 +19,10 @@ it("renders the Explore hero without crashing", () => {
 });
 
 it("matches the snapshot", () => {
-  const tree = renderer.create(
+  const { asFragment } = render(
     <MockedProvider mocks={[]}>
       <Landing greeting="Wazzup" welcomeMessage="What's up" inquiry="What is up?" />
     </MockedProvider>
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  );
+  expect(asFragment()).toMatchSnapshot();
 });

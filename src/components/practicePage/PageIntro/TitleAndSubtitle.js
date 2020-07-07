@@ -1,69 +1,44 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles/index";
-import Box from "@material-ui/core/Box";
+import { Typography, Box } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  space: {
-    padding: theme.spacing(1),
-  },
-  tagContainer: {
-    display: "flex",
-    flexDirection: "row",
-    flex: 1,
-    justifyContent: "flex-start",
-    marginLeft: theme.spacing(-1),
-  },
-  tagBoxes: {
-    borderRadius: "3px",
-    backgroundColor: "rgba(16,16,16,0.1)",
-    paddingLeft: theme.spacing(0.5),
-    marginLeft: theme.spacing(1),
-  },
-}));
+import OplTypography from "../../shared/components/OplTypography";
+import { TagBox } from "../../shared/PracticeCards/Tags";
 
-export default function TitleAndSubtitle(props) {
-  const classes = useStyles();
-
-  return (
-    <>
-      <Box className={classes.root}>
-        <Box className={classes.space}>
-          {props.children}
-          <Typography
-            variant={"h1"}
-            data-testid={"title"}
-          >
-            {props.editing ?
-              props.titleEdit : props.title
-            }
-          </Typography>
-          <Box className={classes.tagContainer}>
-            {props.tags && props.tags.map((t, i) => (
-              <Box key={i} className={classes.tagBoxes}>
-                <Typography variant={"overline"}>
+const TitleAndSubtitle = (props) => (
+  <Box display="flex" flexDirection="column">
+    <OplTypography
+      py={1}
+      variant={"h3"}
+      data-testid={"title"}
+    >
+      {props.editing ?
+        props.titleEdit : props.title
+      }
+    </OplTypography>
+    <Box
+      display="flex"
+      flexDirection="row"
+      justifyContent="flex-start"
+    >
+      {props.tags && props.tags.map((t, i) => (
+        <TagBox key={i}>
+          <Typography variant={"overline"}>
               #{t.tag}&nbsp;&nbsp;
-                </Typography>
-              </Box>
-            ))}
-          </Box>
-        </Box>
-        <Box className={classes.space}>
-          <Typography
-            variant={"subtitle1"}
-            data-testid={"subtitle"}
-          >
-            {props.editing ?
-              props.subtitleEdit :
-              props.subtitle
-            }
           </Typography>
-        </Box>
-      </Box>
-    </>
-  );
-}
+        </TagBox>
+      ))}
+    </Box>
+    <OplTypography
+      pt={2}
+      variant={"subtitle1"}
+      data-testid={"subtitle"}
+    >
+      {props.editing ?
+        props.subtitleEdit :
+        props.subtitle
+      }
+    </OplTypography>
+  </Box>
+);
+
+export default TitleAndSubtitle;

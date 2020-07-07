@@ -1,52 +1,11 @@
 import React from "react";
-import { makeStyles, withStyles } from "@material-ui/core/styles/index";
-import Typography from "@material-ui/core/Typography";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { Button, Menu, MenuItem } from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
-  colorTitle: {
-    color: "#2e2e2e",
-  },
-  menuItemFont: {
-    fontSize: "1rem",
-    lineHeight: "1.375rem",
-    color: "#717171",
-  },
-  flip: {
-    color: theme.palette.common.discovery_blue,
-  },
-}));
-
-const StyledMenu = withStyles({
-  paper: {
-    width: "118px",
-    border: "solid 0.8px #c4c4c4",
-    "&::-webkit-scrollbar": {
-      display: "none",
-    },
-  },
-})((props) => (
-  <Menu
-    elevation={0}
-    getContentAnchorEl={null}
-    anchorOrigin={{
-      vertical: "bottom",
-      horizontal: "center",
-    }}
-    transformOrigin={{
-      vertical: "top",
-      horizontal: "center",
-    }}
-    {...props}
-  />
-));
+import { Button, Menu, MenuItem, Typography } from "@material-ui/core";
 
 export default function PopularFilter(props) {
   const { selectedItem, handleFilterChange, menuItems } = props;
 
-  const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClose = () => {
@@ -70,17 +29,26 @@ export default function PopularFilter(props) {
         data-testid="popularFilterButton"
         onClick={handleClick}
       >
-        <Typography variant="overline" className={classes.colorTitle}>
+        <Typography variant="overline">
           {selectedItem}
         </Typography>
-        {anchorEl ? <ExpandLessIcon className={classes.flip} /> : <ExpandMoreIcon className={classes.flip} />}
+        {anchorEl ? <ExpandLessIcon color="primary" /> : <ExpandMoreIcon color="primary" />}
       </Button>
-      <StyledMenu
+      <Menu
         id="styled-menu"
         anchorEl={anchorEl}
+        getContentAnchorEl={null}
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "center",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
         data-testid="popularFilterMenu"
       >
         {menuItems.map((menuList) => (
@@ -90,10 +58,10 @@ export default function PopularFilter(props) {
             onClick={() => handleMenuItemClick(menuList)}
             data-testid={menuList}
           >
-            <Typography variant={"button"} className={classes.menuItemFont}>{menuList}</Typography>
+            <Typography variant={"button"}>{menuList}</Typography>
           </MenuItem>
         ))}
-      </StyledMenu>
+      </Menu>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import {useDropzone} from 'react-dropzone'
-import RootRef from '@material-ui/core/RootRef'
-import Paper from '@material-ui/core/Paper'
+import { RootRef, Paper } from '@material-ui/core';
 
 function PaperDropzone() {
   const {getRootProps, getInputProps} = useDropzone()

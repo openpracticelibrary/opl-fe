@@ -1,12 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import DefaultImage from "../../../assets/images/DefaultImage.png";
 import AddImage from "../../../assets/images/add.png";
 import AddImageCard from "./AddImage";
+
+import { Box, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -113,8 +113,8 @@ export default function MediaGallery({ practiceId, title, mediaGallery, mediaRef
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} ref={mediaRef}>
-            Look at {title}
+          <Typography variant={"h4"} ref={mediaRef}>
+            <b>Look at {title}</b>
           </Typography>
         </Box>
         <Box className={classes.mediaBox}>

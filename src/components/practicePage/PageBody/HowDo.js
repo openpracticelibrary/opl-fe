@@ -1,8 +1,7 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles/index";
 import ReactMarkdown from "react-markdown";
-import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,8 +20,8 @@ export default function HowDo(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"h2"} ref={props.howToRef} component={'span'}>
-            How to do {props.title}?
+          <Typography variant={"h4"} ref={props.howToRef}>
+            <b>How to do {props.title}?</b>
           </Typography>
         </Box>
         <Box className={classes.space}>

@@ -12,6 +12,7 @@ const GET_PRACTICE_PAGE = gql`
         firstName
         lastName
         mediaLink
+        Avatar
       }
       body {
         whyDo

@@ -1,9 +1,9 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import { CCHeartIcon } from "../../../assets/icons/index";
 import disclaimerIcon from "../../../assets/icons/noun-project@3x.png";
-import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles/index";
+
+import { Typography, Grid } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   footerField: {

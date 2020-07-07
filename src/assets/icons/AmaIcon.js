@@ -20,7 +20,7 @@ function AmaIcon(props) {
         <g
           id="OPL_Practice-Pg--All-Content"
           transform="translate(-438.000000, -310.000000)"
-          fill={props.fill || "#596562"}
+          fill={props.fill || "#9FA4A3"}
           fillRule="nonzero"
         >
           <g id="Practice-Intro---Wide">

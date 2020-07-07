@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import Grid from "@material-ui/core/Grid";
 import PracticeCard from "./PracticeCard";
 import ComponentLoading from "../QueryState/ComponentLoading";
+import { Grid } from '@material-ui/core';
 
 const PracticeCardGrid = (props) => {
 
@@ -21,9 +21,7 @@ const PracticeCardGrid = (props) => {
       container
       direction="row"
       justify="center"
-      alignContent="flex-start"
-      alignItems="flex-start"
-      spacing={2}
+      alignItems="center"
       data-testid="practicecardgrid"
     >
       {props.practices.map((practice) => (

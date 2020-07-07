@@ -1,8 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import FooterList from "./FooterList";
-import Grid from "@material-ui/core/Grid";
 import Disclaimer from "./Disclaimer";
+import { Grid } from '@material-ui/core';
 import { PodIcon, WebLinkIcon } from "../../../assets/icons";
 
 const iconColor = "#1975ff";

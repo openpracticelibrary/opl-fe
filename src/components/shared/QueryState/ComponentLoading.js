@@ -1,8 +1,8 @@
 import React from "react";
 import { useLottie, Lottie } from "react-lottie-hook";
-import Box from "@material-ui/core/Box";
 import { makeStyles } from '@material-ui/core/styles/index';
 import * as animationData from "./lotties/23590-loading.json";
+import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   loadingContainer: {

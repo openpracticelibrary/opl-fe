@@ -1,7 +1,6 @@
 import React from "react";
-import Link from "@material-ui/core/Link";
 import { YoutubeIcon, EmailIcon, PodIcon, InstaIcon, GitIcon } from "../../../assets/icons";
-import Grid from "@material-ui/core/Grid";
+import { Link, Grid } from '@material-ui/core';
 
 const iconColor = "#1975ff";
 

@@ -1,24 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches the snapshot 1`] = `
-<div
-  className="MuiGrid-root makeStyles-titleBox-230 MuiGrid-container"
->
+<DocumentFragment>
   <div
-    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
-  />
-  <div
-    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
+    class="MuiBox-root MuiBox-root-130 OplBox-root-127 OplBox-root-128"
   >
     <div
-      className="MuiBox-root MuiBox-root-341 makeStyles-logo-231"
+      class="MuiBox-root MuiBox-root-131"
     >
       <svg
         height="250px"
         viewBox="0 0 185 18"
         width="383px"
         xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <defs>
           <filter
@@ -29,22 +24,22 @@ exports[`matches the snapshot 1`] = `
             x="-.5%"
             y="-3.4%"
           >
-            <feOffset
+            <feoffset
               dx="2"
               dy="2"
               in="SourceAlpha"
               result="shadowOffsetOuter1"
             />
-            <feColorMatrix
+            <fecolormatrix
               in="shadowOffsetOuter1"
               values="0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 1 0"
             />
           </filter>
           <text
             fill="#2E2E2E"
-            fontFamily="Chewy-Regular, Chewy"
-            fontSize="19"
-            fontWeight="normal"
+            font-family="Chewy-Regular, Chewy"
+            font-size="19"
+            font-weight="normal"
             id="prefix__b"
           >
             <tspan
@@ -57,71 +52,62 @@ exports[`matches the snapshot 1`] = `
         </defs>
         <g
           fill="#2E2E2E"
-          fillRule="evenodd"
+          fill-rule="evenodd"
           transform="translate(-28 -30)"
         >
           <use
             filter="url(#prefix__a)"
-            xlinkHref="#prefix__b"
+            xlink:href="#prefix__b"
           />
           <use
-            xlinkHref="#prefix__b"
+            xlink:href="#prefix__b"
           />
         </g>
       </svg>
     </div>
     <div
-      className="MuiBox-root MuiBox-root-342 makeStyles-textBox-233"
+      class="MuiBox-root MuiBox-root-132"
     >
-      <h4
-        className="MuiTypography-root makeStyles-hello-234 MuiTypography-h4"
+      <h1
+        class="MuiTypography-root sc-AxjAm gkhgMM MuiTypography-h1"
         data-testid="hellotext"
+        pb="8"
       >
         Wazzup
-      </h4>
+      </h1>
       <h5
-        className="MuiTypography-root makeStyles-welcome-235 MuiTypography-h5"
+        class="MuiTypography-root sc-AxjAm gkhgMM MuiTypography-h5"
         data-testid="welcomeText"
+        pb="8"
       >
         What's up
       </h5>
       <h5
-        className="MuiTypography-root MuiTypography-h5"
+        class="MuiTypography-root sc-AxjAm fDEmJk MuiTypography-h5"
         data-testid="inquiryText"
       >
         What is up?
       </h5>
       <p
-        className="MuiTypography-root MuiTypography-button"
+        class="MuiTypography-root sc-AxjAm fDEmJk MuiTypography-button"
       >
         <b>
           Tell me more
         </b>
         <button
-          className="MuiButtonBase-root MuiIconButton-root makeStyles-arrowIcon-236"
+          bgcolor="#1975ff"
+          class="MuiButtonBase-root MuiIconButton-root sc-AxirZ fRIIfd OplIconButton-root-163 OplIconButton-root-164"
           data-testid="tellMeMoreButton"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
+          m="2"
+          tabindex="0"
           type="button"
         >
           <span
-            className="MuiIconButton-label"
+            class="MuiIconButton-label"
           >
             <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root"
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -130,52 +116,38 @@ exports[`matches the snapshot 1`] = `
               />
             </svg>
           </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
         </button>
       </p>
     </div>
-  </div>
-  <div
-    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
-  >
     <img
       alt="Welcome to OPL"
       height="auto"
       src="WhiteBoarding.png"
-      width="900px"
+      width="50%"
     />
     <div
-      className="MuiBox-root MuiBox-root-394 makeStyles-loginBox-232"
+      class="MuiBox-root MuiBox-root-186"
     >
       <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-loginButton-397"
+        bg="#dff1ff"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained OplButton-root-197 OplButton-root-198"
         data-testid="loginButton"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={0}
+        tabindex="0"
         type="button"
       >
         <span
-          className="MuiButton-label"
+          class="MuiButton-label"
         >
-          <span
-            className="MuiTypography-root makeStyles-buttonText-398 MuiTypography-button"
-          >
-            Login
-          </span>
+          Login
         </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

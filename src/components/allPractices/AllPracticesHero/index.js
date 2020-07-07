@@ -1,52 +1,39 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import { navigate } from "@reach/router";
 import ExploreStickies from "../../../assets/icons/explorestickies.png";
 import LoginButton from "../../shared/Login/LoginButton";
 
-const useStyles = makeStyles((theme) => ({
-  textBox: {
-    display: "flex",
-    flexWrap: "wrap",
-    width: "80%",
-  },
-  loginBox: {
-    position: "absolute",
-    top: 0,
-    right: 0,
-    padding: theme.spacing(3),
-  },
-}));
+import { Box } from '@material-ui/core';
+import OplTypography from "../../shared/components/OplTypography";
 
-const AllPracticesHero = () => {
-  const classes = useStyles();
-
-  return (
-    <>
-      <Grid item xs={4}>
-        <Box className={classes.textBox}>
-          <Typography align="left" variant={"h1"} data-testid="herotext">
+const AllPracticesHero = () => (
+  <Box
+    display="flex"
+    flexDirection="row"
+    justifyContent="center"
+    alignItems="center"
+  >
+    <Box
+      display="flex"
+      flexDirection="column"
+      width={{ xs: "100%", md: "30%" }}
+      mx={2}
+    >
+      <OplTypography align="left" py={2} variant={"h3"} data-testid="herotext">
             Explore the library
-          </Typography>
-          <Typography align="left" variant={"h5"}>
+      </OplTypography>
+      <OplTypography align="left" variant={"h4"}>
             Check out the practices to learn about ways of working with your team.
-          </Typography>
-        </Box>
-      </Grid>
-      <Grid item xs={6}>
-        <img src={ExploreStickies} alt="Explore the library" />
-        <Box className={classes.loginBox}>
-          <LoginButton
-            navigate={navigate}
-            redirect="/practice"
-          />
-        </Box>
-      </Grid>
-    </>
-  );
-};
+      </OplTypography>
+    </Box>
+    <Box display={{ xs: "none", md: "flex" }} flexDirection="column" width="40%">
+      <img src={ExploreStickies} alt="Explore the library" height="auto" width="90%" />
+    </Box>
+    <LoginButton
+      navigate={navigate}
+      redirect="/practice"
+    />
+  </Box>
+);
 
 export default AllPracticesHero;

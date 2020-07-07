@@ -1,20 +1,8 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Box from "@material-ui/core/Box";
-import Chip from '@material-ui/core/Chip';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
-import IconButton from "@material-ui/core/IconButton";
 import { useDropzone } from 'react-dropzone';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import CloseIcon from '@material-ui/icons/Close';
 
 import { ApolloClient, InMemoryCache } from "@apollo/client";
@@ -23,6 +11,21 @@ import { createUploadLink } from "apollo-upload-client";
 
 import { UPLOAD_FILE, UPDATE_MEDIA_GALLERY } from "../../../graphql";
 import AddImage from "../../../assets/images/add.png";
+
+import {
+  Typography,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Box,
+  Chip,
+  InputAdornment,
+  IconButton,
+  Button,
+  TextField,
+  CircularProgress,
+} from '@material-ui/core';
 
 const MEDIA_ENDPOINT = process.env.REACT_APP_MEDIA_SERVICE_ENDPOINT || "/image-upload";
 

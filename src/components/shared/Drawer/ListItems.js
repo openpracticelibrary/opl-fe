@@ -1,14 +1,11 @@
 import React from "react";
-import ListItem from "@material-ui/core/ListItem";
-import ListSubheader from "@material-ui/core/ListSubheader";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
-import Collapse from "@material-ui/core/Collapse";
-import List from "@material-ui/core/List";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import { Link as RouterLink } from "@reach/router";
 import ListItemText from '@material-ui/core/ListItemText';
+
+import { ListItem, ListSubheader, Collapse, List, Typography } from '@material-ui/core';
 
 function ListItemLink(props) {
   const { primary, to, toggle } = props;

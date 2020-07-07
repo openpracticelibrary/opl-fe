@@ -1,31 +1,26 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles/index';
 import { useQuery } from "@apollo/react-hooks";
-
+import OplTypography from "../shared/components/OplTypography";
 import ComponentLoading from "../shared/QueryState/ComponentLoading";
 import ComponentQueryError from "../shared/QueryState/ComponentQueryError";
 import { GET_CONTRIBUTORS } from "../../graphql";
 
-const useStyles = makeStyles((theme) => ({
-  contributorNum: {
-    fontFamily: "Quicksand",
-    fontSize: "120px",
-    fontWeight: "bold",
-    textAlign: "center",
-    color: theme.palette.common.discovery_blue,
-  },
-}));
-
-const PracticeCount = (props) => {
-  const classes = useStyles();
-
+const ContributorCount = (props) => {
   const { loading, error, data } = useQuery(GET_CONTRIBUTORS);
   if (loading) return <ComponentLoading />;
   if (error) return  <ComponentQueryError err={error} />;
 
   return (
-    <div data-testid="contributorNum" className={classes.contributorNum}>{data.usersConnection.aggregate.totalCount}</div>
+    <OplTypography
+      variant="h1"
+      fontSize={120}
+      color="primary"
+      align="center"
+      data-testid="contributorNum"
+    >
+      {data.usersConnection.aggregate.totalCount}
+    </OplTypography>
   )
 };
 
-export default PracticeCount;
+export default ContributorCount;

@@ -1,87 +1,53 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles/index';
-import Box from '@material-ui/core/Box';
-import { Grid, Button } from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
+import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { Box, Typography } from "@material-ui/core";
+import OplButton from "../shared/components/OplButton";
 import { navigate } from "@reach/router";
 import GrayRain from "../../assets/icons/rain.svg";
 import ClosingStickies from "../../assets/icons/closingstickies.png";
 
 const useStyles = makeStyles((theme) => ({
-  exploreBox: {
-    display: "flex",
-    alignContent: "flex-start",
-    textAlign: "left",
-    width: "80%",
-    flexWrap: "wrap",
-  },
   explore: {
-    display: "flex",
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
     backgroundImage: `linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.95) 71.03%, rgba(255,255,255,0.85) 100%), url(${GrayRain})`,
-    width: "100%",
-    height: "500px",
-  },
-  exploreButton: {
-    borderRadius: "32px",
-    width: "15rem",
-    backgroundColor: "#DFF1FF",
-    marginTop: theme.spacing(5),
-    padding: theme.spacing(2),
-    borderColor: theme.palette.common.discovery_blue,
-    borderWidth: "1px",
-    borderStyle: "solid",
-  },
-  learn: {
-    textAlign: "left",
-    fontWeight: "normal",
-  },
-  exploreIcon: {
-    display: "flex",
-    alignItems: "flex-end",
-    alignContent: "flex-end",
-    justifyContent: "flex-end",
-    padding: theme.spacing(0, 4),
   },
 }));
 
 const Explore = (props) => {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
-    <Grid
-      container
-      direction="row"
+    <Box
+      display="flex"
+      flexDirection="row"
+      justifyContent="center"
+      alignItems="center"
+      alignContent="center"
+      py={8}
       className={classes.explore}
     >
-      <Grid item xs={6}>
-        <Box className={classes.exploreIcon}>
-          <img src={ClosingStickies} alt="Closing Message" />
-        </Box>
-      </Grid>
-      <Grid item xs={6}>
-        <Box className={classes.exploreBox}>
-          <Box>
-            <Typography variant={"h5"} className={classes.learn} data-testid="exploreMsg">
-              {props.exploreMessage}
-            </Typography>
-          </Box>
-          <Box>
-            <Button
+      <Box display="flex" justifyContent="flex-end" width={{ sm: "100%", md: "50%" }}>
+        <img src={ClosingStickies} alt="Closing Message" height="auto" width="60%" />
+      </Box>
+      <Box display="flex" justifyContent="center" width={{ sm: "100%", md: "50%" }}>
+        <Box display="flex" flexDirection="column" alignContent="flex-start" width="60%">
+          <Typography variant={"h5"} align="left"data-testid="exploreMsg">
+            {props.exploreMessage}
+          </Typography>
+          <Box pt={3}>
+            <OplButton
               variant="contained"
+              bg={theme.palette.primary.light}
               data-testid="exploreLibraryButton"
               disableElevation
-              className={classes.exploreButton}
               onClick={() => navigate("/practice")}
             >
              Explore the library
-            </Button>
+            </OplButton>
           </Box>
         </Box>
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   )
 };
 

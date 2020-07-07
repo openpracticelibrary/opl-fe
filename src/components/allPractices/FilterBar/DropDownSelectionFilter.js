@@ -1,43 +1,26 @@
 import React from "react";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
+import { MenuItem, FormControl } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    marginTop: ".5rem",
-    minWidth: "20rem",
-  },
-  mobiusLoopFilters: {
-    fontSize: "0.75rem",
-    textTransform: "uppercase",
-  },
-}));
+import OplTypography from "../../shared/components/OplTypography";
+import OplSelect from "../../shared/components/OplSelect";
 
-const DropDownSelectionFilter = (props) => {
-  const classes = useStyles();
-  const { items, handleFilterSelect, selectedFilter } = props;
-
-  return (
-    <FormControl className={classes.formControl} variant="outlined" size="small" fullWidth>
-      <Select
-        value={selectedFilter}
-        onChange={(event) => handleFilterSelect({ type: 'mobiusFilterChange', content: event.target.value })}
-        classes={classes.selectEmpty}
-        data-testid="selectedDropDown"
-      >
-        {items.map((item, i) => (
-          <MenuItem value={item} key={i} data-testid={item}>
-            <Typography variant="button" className={classes.mobiusLoopFilters}>
-              {item === "Entire Process Model" ? "" : "#"}{item}
-            </Typography>
-          </MenuItem>
-        ))}
-      </Select>
-    </FormControl>
-  );
-};
+const DropDownSelectionFilter = (props) => (
+  <FormControl variant="outlined">
+    <OplSelect
+      minWidth="20rem"
+      rounded={6.5}
+      value={props.selectedFilter}
+      onChange={(event) => props.handleFilterSelect({ type: 'mobiusFilterChange', content: event.target.value })}
+    >
+      {props.items.map((item, i) => (
+        <MenuItem value={item} key={i}>
+          <OplTypography variant="button" fontSize="0.75rem">
+            {item === "Entire Process Model" ? "" : "#"}{item}
+          </OplTypography>
+        </MenuItem>
+      ))}
+    </OplSelect>
+  </FormControl>
+);
 
 export default DropDownSelectionFilter;

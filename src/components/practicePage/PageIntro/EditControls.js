@@ -1,57 +1,57 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import Tooltip from '@material-ui/core/Tooltip';
-import IconButton from '@material-ui/core/IconButton';
+import { useTheme } from "@material-ui/core/styles";
 import CloseIcon from '@material-ui/icons/Close';
 import SaveOutlinedIcon from '@material-ui/icons/SaveOutlined';
-import Box from "@material-ui/core/Box";
 import { EditIcon } from "../../../assets/icons";
 
-const useStyles = makeStyles((theme) => ({
-  editingButtonCollection: {
-    display: "flex",
-    flexDirection: "column",
-    backgroundColor: theme.palette.common.true_white,
-    borderRadius: "20px",
-    boxShadow: "0 1px 4px 0 rgba(16,16,16,0.29)",
-  },
-}));
+import { IconButton, Box } from '@material-ui/core';
+
+import OplTooltip from "../../shared/components/OplTooltip";
 
 const StartEditingButton = (props) => (
-  <Tooltip
-    title="Edit Practice"
-    placement="top"
-  >
-    <IconButton data-testid="editButton" onClick={props.handleEdit}>
-      <EditIcon height="20" />
-    </IconButton>
-  </Tooltip>
+  <Box ml={-6}>
+    <OplTooltip
+      title="Edit Practice"
+      placement="top"
+    >
+      <IconButton data-testid="editButton" onClick={props.handleEdit}>
+        <EditIcon height="20" />
+      </IconButton>
+    </OplTooltip>
+  </Box>
 );
 
 const EditingButtons = (props) => {
-  const classes = useStyles();
+  const theme = useTheme();
 
   return (
-    <Box className={classes.editingButtonCollection}>
+    <Box
+      display="flex"
+      flexDirection="column"
+      bgcolor="white"
+      borderRadius={20}
+      boxShadow="0 1px 4px 0 rgba(16,16,16,0.29)"
+      ml={-6}
+    >
       <IconButton>
-        <EditIcon fill="#1975ff" height="20" />
+        <EditIcon fill={theme.palette.primary.main} height="20" />
       </IconButton>
-      <Tooltip
+      <OplTooltip
         title="Save Edits"
         placement="left"
       >
         <IconButton data-testid="saveEditButton" onClick={props.handleSaveEdits}>
           <SaveOutlinedIcon />
         </IconButton>
-      </Tooltip>
-      <Tooltip
+      </OplTooltip>
+      <OplTooltip
         title="Cancel Edits"
         placement="left"
       >
         <IconButton data-testid="closeEditButton" onClick={props.handleEdit}>
           <CloseIcon />
         </IconButton>
-      </Tooltip>
+      </OplTooltip>
     </Box>
   );
 };
