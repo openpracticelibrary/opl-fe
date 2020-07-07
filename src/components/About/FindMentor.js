@@ -1,66 +1,51 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles/index';
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+import { 
+  Box,
+  Grid,
+  Typography
+} from "@material-ui/core";
 import Link from "@material-ui/core/Link";
+import SlackLogo from "../../assets/images/slack.png";
+import { WebLinkIcon } from "../../assets/icons";
 
-const useStyles = makeStyles((theme) => ({
-  teamHeader: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingTop: theme.spacing(12),
-    paddingBottom: theme.spacing(6),
-  },
-  paraSpacer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(10),
-  },
-}));
-
-const FindMentor = (props) => {
-  const classes = useStyles();
-
-  return (
-    <>
+const FindMentor = () => (
+  <Box
+    my={4}
+    data-testid="pageGrid"
+  >
+    <Typography
+      variant={"h1"}
+      data-testid="findMentor"
+    >
+      Find a mentor & more
+    </Typography>
+    <Grid
+      container
+      alignItems="center"
+      spacing={4}
+    >
       <Grid
-        data-testid="pageGrid"
-        container
-        direction="row"
-        className={classes.pageWrapper}
-      >
-        <Grid item xs={1}/>
-        <Grid item xs={11} className={classes.teamHeader} data-testid="findMentor">
-          <Typography variant={"h1"}>
-            {props.header}
-          </Typography>
-        </Grid>
-        <Grid item xs={1}/>
-        <Grid item xs={4}>
-          <Typography variant={"body1"}>
-            {props.bodyPara}
-          </Typography>
-        </Grid>
-        <Grid item xs={1}/>
-        <Grid item xs={6}>
-          <Link href={props.linkTarget}>
-            <img src={props.logo} alt="Logo" width="400rem"/>
-          </Link>
-        </Grid>
-        <Grid item xs={1}/>
-        <Grid item xs={11} className={classes.paraSpacer}>
-          <Link href={props.linkTarget}>
-            <Typography variant="body1">
-              {props.linkIcon}&nbsp;&nbsp;{props.linkText}
-            </Typography>
-          </Link>
-        </Grid>
+        item
+        xs={7}
+      >  
+        <Typography variant={"body1"}>
+          We are dedicated to our core values and seek to connect directly with the Open Practice Library community. We love engaging in conversation about the practices and are looking to develop a mentorship program, formulate a beta group, and are always recruiting users for testing needs.
+        </Typography>
       </Grid>
-    </>
-  )
-};
+      <Grid
+        item
+        xs={5}
+      >
+        <Link href="https://openpracticelibrary.slack.com/">
+          <img src={SlackLogo} alt="Logo" width="100%"/>
+        </Link>
+      </Grid>
+
+    </Grid>
+    <Link href="https://openpracticelibrary.slack.com/">
+      <WebLinkIcon/> Join the conversation
+    </Link>
+  </Box>
+);
 
 export default FindMentor;
