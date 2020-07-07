@@ -12,14 +12,14 @@ describe('My Practice page Tests', () => {
     cy.url().should("include", "/practice/event-storming");
   });
 
-  it("Verify Login Button Shows Dialogue", () => {
-    cy.visit(Cypress.env("HOST"));
-    const eventStorming = cy.get('[data-testid="practicecardgrid"]').contains("Event Storming");
-    eventStorming.click();
-    cy.get('[data-testid="loginForm"]').should("not.be.visible");
-    cy.get('[data-testid="loginButton"]').click();
-    cy.get('[data-testid="loginForm"]').should("be.visible");
-  });
+  // it("Verify Login Button Shows Dialogue", () => {
+  //   cy.visit(Cypress.env("HOST"));
+  //   const eventStorming = cy.get('[data-testid="practicecardgrid"]').contains("Event Storming");
+  //   eventStorming.click();
+  //   cy.get('[data-testid="loginForm"]').should("not.be.visible");
+  //   cy.get('[data-testid="loginButton"]').click();
+  //   cy.get('[data-testid="loginForm"]').should("be.visible");
+  // });
 
   it("Verify Like Button on Practice Page", () => {
     cy.visit(Cypress.env("HOST"));

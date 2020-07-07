@@ -1,108 +1,72 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles/index';
-import Box from '@material-ui/core/Box';
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+import { 
+  Box,
+  Grid,
+  Typography
+} from '@material-ui/core';
+import FriendlyIcon from "../../assets/icons/about-friendly.svg"
+import InspiringIcon from "../../assets/icons/about-inspiring.svg"
+import TrustworthyIcon from "../../assets/icons/about-trustworthy.svg"
+import TextCircle from './TextCircle';
 
-const useStyles = makeStyles((theme) => ({
-  pageWrapper: {
-    backgroundColor: theme.palette.common.true_white,
-  },
-  historyValuesHeader: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingBottom: theme.spacing(3),
-  },
-  valuesBox: {
-    display: "flex",
-    justifyContent: "center",
-    paddingBottom: theme.spacing(2),
-  },
-  attributeBox: {
-    display: "flex",
-    alignItems: "center",
-    flexFlow: "column",
-    justifyContent: "center",
-    textAlign: "center",
-    boxSizing: "border-box",
-    height: theme.spacing(40),
-    width: theme.spacing(40),
-    borderRadius: "50%",
-    borderStyle: "solid",
-    borderColor: theme.palette.common.light_grey,
-    borderWidth: "1px",
-    boxShadow: "2px 2px 8px 0 rgba(0,0,0,0.1)",
-    padding: theme.spacing(5),
-    margin: theme.spacing(2),
-  },
-  circleHeader: {
-    fontFamily: "Quicksand",
-    fontSize: theme.spacing(5),
-    fontWeight: "normal",
-    textAlign: "center",
-    lineHeight: "1.67",
-    color: theme.palette.common.discovery_blue,
-  },
-  circleBody: {
-    fontFamily: "Quicksand",
-    fontSize: theme.spacing(2),
-    fontWeight: "normal",
-    textAlign: "center",
-    lineHeight: "1.33",
-    color: theme.palette.common.light_grey,
-  },
-  paraBody: {
-    paddingBottom: theme.spacing(2),
-  }
-}));
-
-const HistoryValues = (props) => {
-  const classes = useStyles();
-
-  return (
-    <>
+const HistoryValues = () => (
+  <Box
+    my={4}
+  >
+    <Typography
+      variant={"h1"}
+      data-testid="historyValuesHeader"
+      gutterBottom
+    >
+      Our history & values
+    </Typography>
+    <Typography
+      variant={"body1"}
+      gutterBottom
+    >
+      [3 years and 7 months ago], Red Hat Open Innovation Labs saw an opportunity to document the open practices and principles they used during customer engagements, thus was born the Open Practice Library. That vision turned into a website of DevOps and product development practices for running workshops and learning about the discovery and delivery of software."
+    </Typography>
+    <Box
+      my={4}
+    >
       <Grid
-        data-testid="pageGrid"
         container
-        direction="row"
-        className={classes.pageWrapper}
+        justify="center"
+        spacing={2}
       >
-        <Grid item xs={1}/>
-        <Grid item xs={11} className={classes.historyValuesHeader} data-testid="historyValuesHeader">
-          <Typography variant={"h1"}>
-            {props.header}
-          </Typography>
+        <Grid
+          item
+        >
+          <TextCircle
+            icon={FriendlyIcon}
+            title="Friendly"
+            text="We are here to be friends with and make connections for the Open Practice Library community."
+          />
         </Grid>
-        <Grid item xs={1}/>
-        <Grid item xs={11}>
-          <Typography variant={"body1"} className={classes.paraBody}>
-            {props.bodyPara1}
-          </Typography>
-          <Box className={classes.valuesBox}>
-            <Box className={classes.attributeBox}>
-              <img src={props.circleIcon1} alt={props.circleTitle1}/>
-              <Typography className={classes.circleHeader}>{props.circleTitle1}</Typography>
-              <Typography className={classes.circleBody}>{props.circleText1}</Typography>
-            </Box>
-            <Box className={classes.attributeBox}>
-              <img src={props.circleIcon2} alt={props.circleTitle2}/>
-              <Typography className={classes.circleHeader}>{props.circleTitle2}</Typography>
-              <Typography className={classes.circleBody}>{props.circleText2}</Typography>
-            </Box>
-            <Box className={classes.attributeBox}>
-              <img src={props.circleIcon3} alt={props.circleTitle3}/>
-              <Typography className={classes.circleHeader}>{props.circleTitle3}</Typography>
-              <Typography className={classes.circleBody}>{props.circleText3}</Typography>
-            </Box>
-          </Box>
-          <Typography variant={"body1"}>
-            {props.bodyPara2}
-          </Typography>
+        <Grid
+          item
+        >
+          <TextCircle
+            icon={TrustworthyIcon}
+            title="Trustworthy"
+            text="We strive to provide expertise and advice that will seamless fit into our users work life."
+          />
+        </Grid>
+        <Grid
+          item
+        >       
+          <TextCircle
+            icon={InspiringIcon}
+            title="Inspiring"
+            text="We will venture into the unknown and share experiments that will drive innovation of the library."
+          />
         </Grid>
       </Grid>
-    </>
-  )
-};
+    </Box>
+    <Typography variant={"body1"}>
+      Fast forward through a few iterations and to the present day, the library has grown quite a bit in its strategy and approach to include the above core values. The product vision has evolved to adopt a value proposition with inclusion for a broader cross-functional community.
+    </Typography>
+  </Box>
+);
 
 export default HistoryValues;

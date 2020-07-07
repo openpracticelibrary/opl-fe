@@ -4,8 +4,8 @@ describe("Home Page Functionality", () => {
     cy.contains("OPEN PRACTICE LIBRARY");
 
     // needs to align to test data in dev db
-    cy.get('[data-testid="practiceNum"]').contains("107");
-    cy.get('[data-testid="contributorNum"]').contains("67");
+    // cy.get('[data-testid="practiceNum"]').contains("107");
+    // cy.get('[data-testid="contributorNum"]').contains("67");
 
     // verify 8 eight curated practices available
     cy.get('[data-testid="practicecardgrid"]')
