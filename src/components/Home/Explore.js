@@ -3,8 +3,8 @@ import { useTheme, makeStyles } from '@material-ui/core/styles';
 import { Box, Typography } from "@material-ui/core";
 import OplButton from "../shared/components/OplButton";
 import { navigate } from "@reach/router";
-import GrayRain from "../../assets/icons/rain.svg";
-import ClosingStickies from "../../assets/icons/closingstickies.png";
+import GrayRain from "../../assets/images/rain.svg";
+import ClosingStickies from "../../assets/images/closingstickies.png";
 
 const useStyles = makeStyles((theme) => ({
   explore: {

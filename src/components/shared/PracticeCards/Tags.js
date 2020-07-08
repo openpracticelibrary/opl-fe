@@ -1,5 +1,4 @@
 import React from "react";
-import { useTheme } from "@material-ui/styles";
 import { Box } from "@material-ui/core";
 import OplTypography from "../components/OplTypography";
 
@@ -19,14 +18,13 @@ const TagContainer = ({ children }) => (
 );
 
 const TagBox = ({ children }) => {
-  const theme = useTheme();
   return (
     <Box
       display="flex"
       alignItems="center"
       width="fit-content"
       borderRadius={5}
-      bgcolor={theme.palette.grey[200]}
+      bgcolor="grey.200"
       ml={1}
       my={0.5}
       px={0.5}
@@ -79,4 +77,3 @@ const Tags = (props) => {
 };
 
 export { Tags, TagBox };
-

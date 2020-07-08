@@ -1,6 +1,6 @@
 import React from "react";
 import { navigate } from "@reach/router";
-import ExploreStickies from "../../../assets/icons/explorestickies.png";
+import ExploreStickies from "../../../assets/images/explorestickies.png";
 import LoginButton from "../../shared/Login/LoginButton";
 
 import { Box } from '@material-ui/core';

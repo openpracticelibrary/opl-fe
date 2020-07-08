@@ -4,9 +4,9 @@ import {
   Grid,
   Typography
 } from '@material-ui/core';
-import FriendlyIcon from "../../assets/icons/about-friendly.svg"
-import InspiringIcon from "../../assets/icons/about-inspiring.svg"
-import TrustworthyIcon from "../../assets/icons/about-trustworthy.svg"
+import FriendlyIcon from "../../assets/images/about-friendly.svg"
+import InspiringIcon from "../../assets/images/about-inspiring.svg"
+import TrustworthyIcon from "../../assets/images/about-trustworthy.svg"
 import TextCircle from './TextCircle';
 
 const HistoryValues = () => (

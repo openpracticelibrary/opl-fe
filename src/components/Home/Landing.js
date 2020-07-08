@@ -3,7 +3,7 @@ import { useTheme } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import { OPLLogo } from "../../assets/icons";
 import LoginButton from "../shared/Login/LoginButton";
-import GrayDiagonals from "../../assets/icons/graylines.svg";
+import GrayDiagonals from "../../assets/images/graylines.svg";
 import HomeStickies from "../../assets/images/WhiteBoarding.png";
 
 import { Box } from '@material-ui/core';
