@@ -3,8 +3,8 @@ import {
   Box,
   Typography
 } from '@material-ui/core';
-import GrayDiagonals from "../../assets/icons/graylines.svg";
-import ExploreStickies from "../../assets/icons/explorestickies.png";
+import GrayDiagonals from "../../assets/images/graylines.svg";
+import ExploreStickies from "../../assets/images/explorestickies.png";
 
 const Hero = (props) => (
   <Box

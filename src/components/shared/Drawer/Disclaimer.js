@@ -1,6 +1,6 @@
 import React from "react";
 import { CCHeartIcon } from "../../../assets/icons/index";
-import disclaimerIcon from "../../../assets/icons/noun-project@3x.png";
+import disclaimerIcon from "../../../assets/images/noun-project@3x.png";
 import { makeStyles } from "@material-ui/core/styles/index";
 
 import { Typography, Grid } from '@material-ui/core';

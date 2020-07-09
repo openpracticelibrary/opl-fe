@@ -7,7 +7,7 @@ import KeywordSearchToggle from "./FilterBar/KeywordSearchToggle";
 import DropDownSelectionFilter from "./FilterBar/DropDownSelectionFilter";
 import KeywordSearchBox from "./FilterBar/KeywordSearchBox";
 import PopularFilter from "./FilterBar/PopularFilter";
-import grayDiagonals from "../../assets/icons/graylines.svg";
+import grayDiagonals from "../../assets/images/graylines.svg";
 
 import OplBox from "../shared/components/OplBox";
 

@@ -5,8 +5,8 @@ import {
   Button,
   Typography
 } from "@material-ui/core";
-import GrayRain from "../../assets/icons/rain.svg";
-import FeedbackIcon from "../../assets/icons/about-feedback.svg"
+import GrayRain from "../../assets/images/rain.svg";
+import FeedbackIcon from "../../assets/images/about-feedback.svg"
 import { ArrowRightIcon } from "../../assets/icons";
 
 const Feedback = () => (
