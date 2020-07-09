@@ -11,6 +11,8 @@ export default function About(props) {
   return (
     <Box
       data-testid="aboutPageGrid"
+      display="flex"
+      flexDirection="column"
     >
       <Hero
         greeting="Learn about us"
@@ -28,6 +30,6 @@ export default function About(props) {
         <FindMentor />
         <Feedback />
       </Box>
-    </Box> 
+    </Box>
   );
 };

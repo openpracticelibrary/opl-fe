@@ -6,9 +6,8 @@ import { CssBaseline } from '@material-ui/core';
 
 ReactDOM.render(
   <React.Fragment>
-    <CssBaseline>
-      <App />
-    </CssBaseline>
+    <CssBaseline />
+    <App />
   </React.Fragment>,
   document.getElementById('root')
 );

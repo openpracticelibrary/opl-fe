@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     borderRadius: "10px",
     borderWidth: "3px",
-    borderColor: theme.palette.common.discovery_blue,
+    borderColor: theme.palette.primary.main,
     borderStyle: "solid",
     textAlign: "center",
     padding: theme.spacing(2,4),

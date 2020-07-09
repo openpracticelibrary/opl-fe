@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
   },
   loadingText: {
-    color: theme.palette.common.black,
+    color: theme.palette.grey["900"],
     textAlign: "center"
   },
 }));

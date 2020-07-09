@@ -60,10 +60,10 @@ const useStyles = makeStyles((theme) => ({
   },
   btnText: {
     padding: theme.spacing(1),
-    color: theme.palette.common.black,
+    color: theme.palette.grey["900"],
   },
   color: {
-    color: theme.palette.common.black,
+    color: theme.palette.grey["900"],
   },
   errorTooltip: {
     border: "1px solid red",

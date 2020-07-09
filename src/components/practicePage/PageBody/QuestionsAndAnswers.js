@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   question: {
-    color: theme.palette.common.black,
+    color: theme.palette.grey["900"],
   }
 }));
 

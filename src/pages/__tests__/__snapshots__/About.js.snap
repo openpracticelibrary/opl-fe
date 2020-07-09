@@ -3,17 +3,17 @@
 exports[`matches the About page snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="MuiBox-root MuiBox-root-207"
+    class="MuiBox-root MuiBox-root-201"
     data-testid="aboutPageGrid"
   >
     <div
-      class="MuiBox-root MuiBox-root-208"
+      class="MuiBox-root MuiBox-root-202"
     >
       <div
-        class="MuiBox-root MuiBox-root-209"
+        class="MuiBox-root MuiBox-root-203"
       >
         <h1
-          class="MuiTypography-root MuiTypography-h1 MuiTypography-gutterBottom"
+          class="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom"
           data-testid="hellotext"
         >
           Learn about us
@@ -24,7 +24,7 @@ exports[`matches the About page snapshot 1`] = `
         />
       </div>
       <div
-        class="MuiBox-root MuiBox-root-240"
+        class="MuiBox-root MuiBox-root-234"
       >
         <img
           alt="About Us"
@@ -34,24 +34,24 @@ exports[`matches the About page snapshot 1`] = `
       </div>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-241"
+      class="MuiBox-root MuiBox-root-235"
     >
       <div
-        class="MuiBox-root MuiBox-root-242"
+        class="MuiBox-root MuiBox-root-236"
       >
-        <h1
-          class="MuiTypography-root MuiTypography-h1 MuiTypography-gutterBottom"
+        <h3
+          class="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom"
           data-testid="historyValuesHeader"
         >
           Our history & values
-        </h1>
+        </h3>
         <p
           class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
         >
           [3 years and 7 months ago], Red Hat Open Innovation Labs saw an opportunity to document the open practices and principles they used during customer engagements, thus was born the Open Practice Library. That vision turned into a website of DevOps and product development practices for running workshops and learning about the discovery and delivery of software."
         </p>
         <div
-          class="MuiBox-root MuiBox-root-243"
+          class="MuiBox-root MuiBox-root-237"
         >
           <div
             class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
@@ -60,66 +60,66 @@ exports[`matches the About page snapshot 1`] = `
               class="MuiGrid-root MuiGrid-item"
             >
               <div
-                class="MuiBox-root MuiBox-root-347"
+                class="MuiBox-root MuiBox-root-341"
               >
                 <img
                   alt="Friendly"
                   src="about-friendly.svg"
                 />
-                <div
-                  class="MuiBox-root MuiBox-root-348"
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 MuiTypography-colorPrimary"
                 >
                   Friendly
-                </div>
-                <div
-                  class="MuiBox-root MuiBox-root-349"
+                </h4>
+                <h6
+                  class="MuiTypography-root MuiTypography-subtitle2"
                 >
                   We are here to be friends with and make connections for the Open Practice Library community.
-                </div>
+                </h6>
               </div>
             </div>
             <div
               class="MuiGrid-root MuiGrid-item"
             >
               <div
-                class="MuiBox-root MuiBox-root-350"
+                class="MuiBox-root MuiBox-root-342"
               >
                 <img
                   alt="Trustworthy"
                   src="about-trustworthy.svg"
                 />
-                <div
-                  class="MuiBox-root MuiBox-root-351"
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 MuiTypography-colorPrimary"
                 >
                   Trustworthy
-                </div>
-                <div
-                  class="MuiBox-root MuiBox-root-352"
+                </h4>
+                <h6
+                  class="MuiTypography-root MuiTypography-subtitle2"
                 >
                   We strive to provide expertise and advice that will seamless fit into our users work life.
-                </div>
+                </h6>
               </div>
             </div>
             <div
               class="MuiGrid-root MuiGrid-item"
             >
               <div
-                class="MuiBox-root MuiBox-root-353"
+                class="MuiBox-root MuiBox-root-343"
               >
                 <img
                   alt="Inspiring"
                   src="about-inspiring.svg"
                 />
-                <div
-                  class="MuiBox-root MuiBox-root-354"
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 MuiTypography-colorPrimary"
                 >
                   Inspiring
-                </div>
-                <div
-                  class="MuiBox-root MuiBox-root-355"
+                </h4>
+                <h6
+                  class="MuiTypography-root MuiTypography-subtitle2"
                 >
                   We will venture into the unknown and share experiments that will drive innovation of the library.
-                </div>
+                </h6>
               </div>
             </div>
           </div>
@@ -131,21 +131,21 @@ exports[`matches the About page snapshot 1`] = `
         </p>
       </div>
       <div
-        class="MuiBox-root MuiBox-root-356"
+        class="MuiBox-root MuiBox-root-344"
         data-testid="pageGrid"
       >
-        <h1
-          class="MuiTypography-root MuiTypography-h1 MuiTypography-gutterBottom"
+        <h3
+          class="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom"
         >
           Our product team
-        </h1>
+        </h3>
         <p
           class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
         >
           The 2020 pandemic led to forming a small Global remote product team for improving the library and delivering upon the growth strategy. This cross-functional group included product management, product design, and engineering to bring a balanced approach for continuous discovery and continuous delivery.
         </p>
         <div
-          class="MuiBox-root MuiBox-root-357"
+          class="MuiBox-root MuiBox-root-345"
         >
           <img
             alt="OPL Product Team"
@@ -166,22 +166,22 @@ exports[`matches the About page snapshot 1`] = `
         </p>
       </div>
       <div
-        class="MuiBox-root MuiBox-root-358"
+        class="MuiBox-root MuiBox-root-346"
         data-testid="pageGrid"
       >
-        <h1
-          class="MuiTypography-root MuiTypography-h1 MuiTypography-gutterBottom"
+        <h3
+          class="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom"
           data-testid="processModel"
         >
           Our process model
-        </h1>
+        </h3>
         <p
           class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
         >
           The 2020 pandemic led to forming a small Global remote product team for improving the library and delivering upon the growth strategy. This cross-functional group included product management, product design, and engineering to bring a balanced approach for continuous discovery and continuous delivery.
         </p>
         <div
-          class="MuiBox-root MuiBox-root-359"
+          class="MuiBox-root MuiBox-root-347"
         >
           <iframe
             allowfullscreen=""
@@ -192,7 +192,7 @@ exports[`matches the About page snapshot 1`] = `
           />
         </div>
         <div
-          class="MuiBox-root MuiBox-root-360"
+          class="MuiBox-root MuiBox-root-348"
         >
           <a
             class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
@@ -228,15 +228,15 @@ exports[`matches the About page snapshot 1`] = `
         </p>
       </div>
       <div
-        class="MuiBox-root MuiBox-root-367"
+        class="MuiBox-root MuiBox-root-355"
         data-testid="pageGrid"
       >
-        <h1
-          class="MuiTypography-root MuiTypography-h1"
+        <h3
+          class="MuiTypography-root MuiTypography-h3"
           data-testid="findMentor"
         >
           Find a mentor & more
-        </h1>
+        </h3>
         <div
           class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-align-items-xs-center"
         >
@@ -292,13 +292,13 @@ exports[`matches the About page snapshot 1`] = `
         </a>
       </div>
       <div
-        class="MuiBox-root MuiBox-root-368"
+        class="MuiBox-root MuiBox-root-356"
       >
         <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+          class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
         >
           <div
-            class="MuiGrid-root MuiGrid-item MuiGrid-grid-lg-1"
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-1"
           >
             <img
               alt="Feedback"
@@ -307,14 +307,14 @@ exports[`matches the About page snapshot 1`] = `
             />
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item MuiGrid-grid-lg-8"
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-7"
           >
-            <h1
-              class="MuiTypography-root MuiTypography-h1"
+            <h3
+              class="MuiTypography-root MuiTypography-h3"
               data-testid="feedbackMsg"
             >
               Please give us feedback
-            </h1>
+            </h3>
             <h5
               class="MuiTypography-root MuiTypography-h5"
             >
@@ -322,11 +322,11 @@ exports[`matches the About page snapshot 1`] = `
             </h5>
           </div>
           <div
-            class="MuiGrid-root MuiGrid-item MuiGrid-grid-lg-3"
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3"
           >
             <a
               aria-disabled="false"
-              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-disableElevation"
+              class="MuiButtonBase-root MuiButton-root MuiButton-outlined"
               href="https://forms.gle/nXCvPEkjx6VdF6Px6"
               tabindex="0"
             >

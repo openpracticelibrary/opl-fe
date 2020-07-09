@@ -1,5 +1,5 @@
 import React from 'react';
-import { 
+import {
   Box,
   Grid,
   Typography
@@ -14,7 +14,8 @@ const FindMentor = () => (
     data-testid="pageGrid"
   >
     <Typography
-      variant={"h1"}
+      component="h3"
+      variant="h3"
       data-testid="findMentor"
     >
       Find a mentor & more
@@ -27,8 +28,8 @@ const FindMentor = () => (
       <Grid
         item
         xs={7}
-      >  
-        <Typography variant={"body1"}>
+      >
+        <Typography>
           We are dedicated to our core values and seek to connect directly with the Open Practice Library community. We love engaging in conversation about the practices and are looking to develop a mentorship program, formulate a beta group, and are always recruiting users for testing needs.
         </Typography>
       </Grid>

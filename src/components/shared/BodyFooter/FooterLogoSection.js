@@ -30,9 +30,7 @@ export default function FooterLogoSection() {
             <Grid item xs={7}>
               <img
                 src={logoLabs}
-                alt="Open Innovation Labs"
-                height="31px"
-                width="162px"
+                alt="Open Innovation Labs Logo"
               />
             </Grid>
           </Grid>

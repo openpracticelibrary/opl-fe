@@ -20,7 +20,7 @@ export default function WhatIs(props) {
     <>
       <Box className={classes.root}>
         <Box className={classes.space}>
-          <Typography variant={"body1"}>
+          <Typography>
             <ReactMarkdown source={props.source} />
           </Typography>
         </Box>

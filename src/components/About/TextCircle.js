@@ -1,6 +1,7 @@
 import React from 'react';
-import { 
-  Box
+import {
+  Box,
+  Typography
 } from '@material-ui/core';
 
 const TextCircle = ({
@@ -9,30 +10,31 @@ const TextCircle = ({
   text = "Placeholder Text",
 }) => (
   <Box
-    color="common.light_grey"
     display="flex"
     flexDirection="column"
     alignItems="center"
     justifyContent="center"
-    fontWeight="400"
     width="22rem"
     height="22rem"
     borderRadius="50%"
     border={1}
-    p={6}
+    p={4}
     textAlign="center"
-  > 
-    { icon ? <img src={icon} alt={title}/> : null}  
-    <Box
-      fontSize="2.5rem"
-      color="common.discovery_blue"
-      my={2}
+  >
+    { icon ? <img src={icon} alt={title}/> : null}
+    <Typography
+      variant="h4"
+      component="h4"
+      color="primary"
     >
       {title}
-    </Box>
-    <Box>
+    </Typography>
+    <Typography
+      component="h6"
+      variant="subtitle2"
+    >
       {text}
-    </Box>
+    </Typography>
   </Box>
 );
 export default TextCircle;

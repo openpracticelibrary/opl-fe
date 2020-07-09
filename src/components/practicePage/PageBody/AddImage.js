@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   dialog: {
     borderRadius: "17px",
     borderWidth: "3px",
-    borderColor: theme.palette.common.green_gray,
+    borderColor: theme.palette.grey["700"],
     borderStyle: "solid",
   },
   title: {
@@ -67,10 +67,10 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     borderWidth: "2px",
     borderRadius: "2px",
-    borderColor: theme.palette.common.brown_grey,
+    borderColor: theme.palette.grey["700"],
     borderStyle: "dashed",
     backgroundColor: theme.palette.common.white,
-    color: theme.palette.common.brown_grey,
+    color: theme.palette.grey["700"],
     outline: "none",
     transition: "border .24s ease-in-out",
   },
@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "17px",
     borderWidth: "2px",
     borderStyle: "solid",
-    borderColor: theme.palette.common.green_gray,
+    borderColor: theme.palette.grey["700"],
   },
 }));
 

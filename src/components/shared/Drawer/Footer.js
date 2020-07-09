@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     padding: theme.spacing(3),
     marginTop: "auto",
-    color: theme.palette.common.brownish_grey,
+    color: theme.palette.grey["600"],
   },
   space: {
     marginTop: theme.spacing(3),

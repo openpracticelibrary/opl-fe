@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(2),
   },
   color: {
-    color: theme.palette.common.black,
+    color: theme.palette.grey["900"],
   },
 }));
 
