@@ -1,29 +1,26 @@
 import React from "react";
 
 import { Box, Typography } from "@material-ui/core";
-import AllPracticesHero from "./AllPracticesHero";
+import MobiusLoopHero from "./MobiusLoopHero";
 import FilterTags from "./FilterBar/FilterTags";
 import KeywordSearchToggle from "./FilterBar/KeywordSearchToggle";
 import DropDownSelectionFilter from "./FilterBar/DropDownSelectionFilter";
 import KeywordSearchBox from "./FilterBar/KeywordSearchBox";
 import PopularFilter from "./FilterBar/PopularFilter";
-import grayDiagonals from "../../assets/images/graylines.svg";
 
-import OplBox from "../shared/components/OplBox";
-
-const Practices = (props) => (
+const Practices = ({
+  children,
+  filterTags,
+  handleFilterChange,
+  keywordSearchToggle,
+  mobiusLoopArray,
+  popularMenuItems,
+  selectedFilterTag,
+  selectedPopularFilter,
+  toggleKeywordSearch
+}) => (
   <>
-    <OplBox
-      display="flex"
-      flexDirection="row"
-      justifyContent="center"
-      alignItems="center"
-      height="24.5rem"
-      width="100%"
-      bg={`linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.76) 63.23%, rgba(255,255,255,0) 100%), url(${grayDiagonals})`}
-    >
-      <AllPracticesHero />
-    </OplBox>
+    <MobiusLoopHero displaySection={selectedFilterTag} />
     <Box
       display="flex"
       flexDirection={{ xs: "column", md: "row" }}
@@ -33,22 +30,22 @@ const Practices = (props) => (
       data-testid="popularFilterComponent"
     >
       <PopularFilter
-        selectedItem={props.selectedPopularFilter}
-        handleFilterChange={props.handleFilterChange}
-        menuItems={Object.keys(props.popularMenuItems)}
+        selectedItem={selectedPopularFilter}
+        handleFilterChange={handleFilterChange}
+        menuItems={Object.keys(popularMenuItems)}
       />
       <FilterTags
-        tags={props.filterTags}
-        filter={props.handleFilterChange}
-        selectedFilter={props.selectedFilterTag}
+        tags={mobiusLoopArray}
+        filter={handleFilterChange}
+        selectedFilter={selectedFilterTag}
       />
       <KeywordSearchToggle
-        toggle={props.toggleKeywordSearch}
-        keywordSearchToggle={props.keywordSearchToggle}
+        toggle={toggleKeywordSearch}
+        keywordSearchToggle={keywordSearchToggle}
       />
     </Box>
 
-    {props.keywordSearchToggle &&
+    {keywordSearchToggle && (
       <Box
         display="flex"
         flexDirection={{ xs: "column", md: "row" }}
@@ -63,12 +60,14 @@ const Practices = (props) => (
           justifyContent="center"
           alignItems="flex-start"
         >
-          <Typography variant={"overline"} color="textSecondary">By Mobius Loop</Typography>
+          <Typography variant="overline" color="textSecondary">
+            By Tags
+          </Typography>
           <DropDownSelectionFilter
-            inputLabel="Entire Process Model"
-            items={props.mobiusLoopArray}
-            selectedFilter={props.selectedMobiusLoopFilter}
-            handleFilterSelect={props.handleFilterChange}
+            inputLabel="Advanced Filters"
+            items={filterTags}
+            selectedFilter={selectedFilterTag}
+            handleFilterSelect={handleFilterChange}
           />
         </Box>
         <Box
@@ -77,11 +76,13 @@ const Practices = (props) => (
           justifyContent="center"
           alignItems="flex-start"
         >
-          <Typography variant={"overline"} color="textSecondary" >Keyword Search</Typography>
-          <KeywordSearchBox dispatch={props.handleFilterChange} />
+          <Typography variant="overline" color="textSecondary">
+            Keyword Search
+          </Typography>
+          <KeywordSearchBox dispatch={handleFilterChange} />
         </Box>
       </Box>
-    }
+    )}
     <Box
       display="flex"
       flexDirection="column"
@@ -89,7 +90,7 @@ const Practices = (props) => (
       alignContent="center"
       mx={6}
     >
-      {props.children}
+      {children}
     </Box>
   </>
 );

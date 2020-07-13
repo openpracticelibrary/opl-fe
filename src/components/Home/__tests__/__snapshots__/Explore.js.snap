@@ -31,7 +31,7 @@ exports[`matches the snapshot 1`] = `
           class="MuiBox-root MuiBox-root-118"
         >
           <button
-            bg="rgb(71, 144, 255)"
+            bg="rgb(126, 99, 207)"
             class="MuiButtonBase-root MuiButton-root MuiButton-contained OplButton-root-119 OplButton-root-120 MuiButton-disableElevation"
             data-testid="exploreLibraryButton"
             tabindex="0"

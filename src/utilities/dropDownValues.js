@@ -7,30 +7,28 @@ const filterTags = [
   "BUILD",
   "ANALYZE",
   "METHODS",
-  "CULTURE",
+  "CULTURE"
 ];
 
 const mobiusLoopArray = [
-  "Entire Process Model",
+  "All",
   "Discovery",
   "Options",
   "Delivery",
-  "Foundation",
+  "Foundation"
 ];
 
 const popularMenuItems = {
   Popular: "upvotes:DESC",
   Newest: "createdAt:DESC",
-  Curated: "curated:ASC",
+  Curated: "curated:ASC"
 };
 
-
-const formTagArray = (selectedFilterTag, selectedMobiusLoopFilter) => ([
+const formTagArray = (selectedFilterTag, selectedMobiusLoopFilter) => [
   ...(selectedFilterTag !== "ALL" ? [selectedFilterTag.toLowerCase()] : []),
-  ...(selectedMobiusLoopFilter !== "Entire Process Model"
+  ...(selectedMobiusLoopFilter !== "All"
     ? [selectedMobiusLoopFilter.toLowerCase()]
-    : []),
-]);
-
+    : [])
+];
 
 export { filterTags, mobiusLoopArray, popularMenuItems, formTagArray };

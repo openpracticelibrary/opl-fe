@@ -1,31 +1,35 @@
 import React from "react";
 import { Box, Chip, Select, MenuItem, Typography } from "@material-ui/core";
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const Tag = ({ tag, filter, selectedFilter }) => {
   const buttonRef = React.useRef(null);
-
-  const hashtag = tag === "ALL" ? tag : `#${tag}`;
+  const hashtag = tag === "All" ? tag : `#${tag}`;
 
   return (
     <Chip
       clickable
       label={hashtag}
       ref={buttonRef}
-      onClick={() => filter({ type: 'tagFilterChange', content: tag })}
-    ></Chip>
+      onClick={() => filter({ type: "tagFilterChange", content: tag })}
+      variant={selectedFilter === tag ? "default" : "outlined"}
+    />
   );
 };
 
-const FilterTags = (props) => {
+const FilterTags = ({ filter, selectedFilter, tags }) => {
   const matches = useMediaQuery("(min-width:600px)");
-  const { tags, selectedFilter, filter } = props;
 
   return (
     <div data-testid="filterTags">
-      {matches ?
-        <Box display="flex" justifyContent="space-evenly" flexDirection="row" spacing={2}>
-          {tags.map((tag) => (
+      {matches ? (
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          spacing={2}
+          width={{ xs: "100%", lg: "30rem" }}
+        >
+          {tags.map(tag => (
             <Tag
               key={tag}
               tag={tag}
@@ -34,19 +38,24 @@ const FilterTags = (props) => {
             />
           ))}
         </Box>
-        :
+      ) : (
         <Select
           variant="outlined"
+          fullWidth
           value={selectedFilter}
-          onChange={(event) => filter({ type: 'tagFilterChange', content: event.target.value })}
+          onChange={event =>
+            filter({ type: "tagFilterChange", content: event.target.value })
+          }
         >
           {tags.map(tag => (
             <MenuItem value={tag} key={tag}>
-              <Typography variant="body2">{tag === "ALL" ? tag : `#${tag}`}</Typography>
+              <Typography variant="body2">
+                {tag === "All" ? tag : `#${tag}`}
+              </Typography>
             </MenuItem>
           ))}
         </Select>
-      }
+      )}
     </div>
   );
 };

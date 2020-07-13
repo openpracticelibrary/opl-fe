@@ -27,22 +27,23 @@ const theme = createMuiTheme({
       white: "#fff"
     },
     primary: {
-      main: "#1975ff",
+      main: "#5e3dc4",
     },
     secondary: {
       main: "#10d4a0",
     },
     error: {
-      main: "#d32f2f",
+      main: "#f64c72",
+      dark: "#e30f8d"
     },
     warning: {
-      main: "#fdb815",
+      main: "#ff6d38",
     },
     info: {
-      main: "#8977b6",
+      main: "#bac9ff",
     },
     success: {
-      main: "#4caf50",
+      main: "#a14599",
     },
     grey: {
       "50": "#fafafa",
@@ -147,7 +148,7 @@ const theme = createMuiTheme({
 
     h1: {
       fontFamily: ["Quicksand", "sans-serif"],
-      fontWeight: 300,
+      fontWeight: 700,
       fontSize: "6rem",
       lineHeight: 1.167,
       letterSpacing: "-0.01562em",
