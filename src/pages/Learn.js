@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import Landing from "../components/Home/Landing";
-import Community from "../components/Home/Community";
-import CuratedPractices from "../components/Home/CuratedPractices";
-import Explore from "../components/Home/Explore";
+import Landing from "../components/Learn/Landing";
+import Community from "../components/Learn/Community";
+import CuratedPractices from "../components/Learn/CuratedPractices";
+import Explore from "../components/Learn/Explore";
 
-import { Grid } from '@material-ui/core';
+import { Grid } from "@material-ui/core";
 
-export default function Home(props) {
+export default function Learn(props) {
   const communityRef = React.useRef(null);
 
   return (
@@ -23,10 +23,7 @@ export default function Home(props) {
         <Community communityRef={communityRef} />
         <CuratedPractices />
       </Grid>
-      <Explore
-        exploreMessage="Learn something new from your peers and experiment with best practices!"
-      />
+      <Explore exploreMessage="Learn something new from your peers and experiment with best practices!" />
     </>
-  )
+  );
 }
-

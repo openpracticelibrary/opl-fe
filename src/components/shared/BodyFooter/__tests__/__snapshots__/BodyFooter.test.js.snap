@@ -2,13 +2,13 @@
 
 exports[`matches the snapshot 1`] = `
 <div
-  className="MuiBox-root MuiBox-root-478 makeStyles-trueWhiteColor-476"
+  className="MuiBox-root MuiBox-root-481 makeStyles-trueWhiteColor-479"
 >
   <hr
     className="MuiDivider-root"
   />
   <footer
-    className="MuiBox-root MuiBox-root-486"
+    className="MuiBox-root MuiBox-root-489"
     data-testid="footer"
   >
     <div
@@ -21,104 +21,33 @@ exports[`matches the snapshot 1`] = `
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10"
       >
         <div
-          className="MuiBox-root MuiBox-root-590"
+          className="MuiBox-root MuiBox-root-593"
         >
           <div
-            className="MuiBox-root MuiBox-root-591"
+            className="MuiBox-root MuiBox-root-594"
           >
-            <div
-              className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center"
+            <h6
+              className="MuiTypography-root MuiTypography-h6"
             >
-              <div
-                className="MuiGrid-root MuiGrid-item"
+              Open Practice Library
+            </h6>
+            <div
+              className="MuiBox-root MuiBox-root-625"
+            >
+              <span
+                className="MuiTypography-root MuiTypography-overline"
+                data-testid="poweredBy"
               >
-                <svg
-                  height="37px"
-                  viewBox="0 0 185 18"
-                  width="221px"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs>
-                    <filter
-                      filterUnits="objectBoundingBox"
-                      height="113.8%"
-                      id="prefix__a"
-                      width="102.2%"
-                      x="-.5%"
-                      y="-3.4%"
-                    >
-                      <feOffset
-                        dx="2"
-                        dy="2"
-                        in="SourceAlpha"
-                        result="shadowOffsetOuter1"
-                      />
-                      <feColorMatrix
-                        in="shadowOffsetOuter1"
-                        values="0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 1 0"
-                      />
-                    </filter>
-                    <text
-                      fill="#2E2E2E"
-                      fontFamily="Chewy-Regular, Chewy"
-                      fontSize="19"
-                      fontWeight="normal"
-                      id="prefix__b"
-                    >
-                      <tspan
-                        x="28"
-                        y="43"
-                      >
-                        OPEN PRACTICE LIBRARY
-                      </tspan>
-                    </text>
-                  </defs>
-                  <g
-                    fill="#2E2E2E"
-                    fillRule="evenodd"
-                    transform="translate(-28 -30)"
-                  >
-                    <use
-                      filter="url(#prefix__a)"
-                      xlinkHref="#prefix__b"
-                    />
-                    <use
-                      xlinkHref="#prefix__b"
-                    />
-                  </g>
-                </svg>
-              </div>
-              <div
-                className="MuiGrid-root MuiGrid-item"
-              >
-                <div
-                  className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-flex-start"
-                >
-                  <div
-                    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5"
-                  >
-                    <span
-                      className="MuiTypography-root MuiTypography-overline"
-                      data-testid="poweredBy"
-                    >
-                      powered by
-                    </span>
-                  </div>
-                  <div
-                    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-7"
-                  >
-                    <img
-                      alt="Open Innovation Labs Logo"
-                      src="logo-red-hat-open-innovation-labs-a-standard-rgb.png"
-                    />
-                  </div>
-                </div>
-              </div>
+                powered by
+              </span>
+              <img
+                alt="Open Innovation Labs Logo"
+                src="logo-red-hat-open-innovation-labs-a-standard-rgb.png"
+              />
             </div>
           </div>
           <div
-            className="MuiBox-root MuiBox-root-622"
+            className="MuiBox-root MuiBox-root-626"
           >
             <div
               className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-space-between"
@@ -133,7 +62,7 @@ exports[`matches the snapshot 1`] = `
                     className="MuiGrid-root MuiGrid-item"
                   >
                     <div
-                      className="MuiBox-root MuiBox-root-623"
+                      className="MuiBox-root MuiBox-root-627"
                     >
                       <span
                         className="MuiTypography-root MuiTypography-button"
@@ -147,7 +76,7 @@ exports[`matches the snapshot 1`] = `
                     className="MuiGrid-root MuiGrid-item"
                   >
                     <div
-                      className="MuiBox-root MuiBox-root-624"
+                      className="MuiBox-root MuiBox-root-628"
                     >
                       <span
                         className="MuiTypography-root MuiTypography-button"
@@ -161,7 +90,7 @@ exports[`matches the snapshot 1`] = `
                     className="MuiGrid-root MuiGrid-item"
                   >
                     <div
-                      className="MuiBox-root MuiBox-root-625"
+                      className="MuiBox-root MuiBox-root-629"
                     >
                       <span
                         className="MuiTypography-root MuiTypography-button"
@@ -183,7 +112,7 @@ exports[`matches the snapshot 1`] = `
                     className="MuiGrid-root MuiGrid-item"
                   >
                     <div
-                      className="MuiBox-root MuiBox-root-626"
+                      className="MuiBox-root MuiBox-root-630"
                     >
                       <span
                         className="MuiTypography-root MuiTypography-button"

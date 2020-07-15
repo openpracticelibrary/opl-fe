@@ -1,24 +1,22 @@
-import React from 'react';
-import { useTheme } from '@material-ui/core/styles';
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import { OPLLogo } from "../../assets/icons";
+import React from "react";
+import { useTheme } from "@material-ui/core/styles";
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+
 import LoginButton from "../shared/Login/LoginButton";
 import GrayDiagonals from "../../assets/images/graylines.svg";
 import HomeStickies from "../../assets/images/WhiteBoarding.png";
-
-import { Box } from '@material-ui/core';
-
+import { Box } from "@material-ui/core";
 import OplBox from "../shared/components/OplBox";
 import OplTypography from "../shared/components/OplTypography";
 import OplIconButton from "../shared/components/OplIconButton";
 
-const Landing = (props) => {
+const Landing = props => {
   const theme = useTheme();
 
   const handleClick = () => {
     props.communityRef.current.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "start"
     });
   };
 
@@ -32,13 +30,15 @@ const Landing = (props) => {
       bg={`linear-gradient(180.18deg, #F3F3F3 0%, #FFFFFF 13.64%, #FFFFFF 33.94%, rgba(255,255,255,0.94) 69.58%, rgba(255,255,255,0.62) 100%), url(${GrayDiagonals})`}
       px={8}
     >
-      <Box position="absolute" top={0} left={0} p={3} mt={-12}>
-        <OPLLogo height="250px" width="383px" />
+      <Box position="absolute" top={2} left={2} p={3}>
+        <OplTypography variant="h6" color="primary">
+          Open Practice Library
+        </OplTypography>
       </Box>
       <Box
         display="flex"
         flexDirection="column"
-        width={{ xs: "100%", md: "25%"}}
+        width={{ xs: "100%", md: "25%" }}
         justifyContent="flex-start"
       >
         <OplTypography variant={"h1"} pb={8} data-testid="hellotext">
@@ -65,12 +65,9 @@ const Landing = (props) => {
         </OplTypography>
       </Box>
       <img src={HomeStickies} alt="Welcome to OPL" height="auto" width="50%" />
-      <LoginButton
-        navigate={props.navigate}
-        redirect="/practice"
-      />
+      <LoginButton navigate={props.navigate} redirect="/practice" />
     </OplBox>
-  )
+  );
 };
 
 export default Landing;

@@ -1,33 +1,39 @@
 import React from "react";
-import { Typography, IconButton, InputAdornment, Box, TextField } from "@material-ui/core";
+import {
+  Typography,
+  IconButton,
+  InputAdornment,
+  Box,
+  TextField
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles/index";
 import QuestionsAndAnswers from "./QuestionsAndAnswers";
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "column"
   },
   space: {
-    padding: theme.spacing(1),
+    padding: theme.spacing(1)
   },
   textField: {
-    borderRadius: "9px",
+    borderRadius: "9px"
   },
   exitIcon: {
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.main
   },
   input: {
-    '&::placeholder': {
-      fontFamily: "Quicksand",
+    "&::placeholder": {
+      fontFamily: "Montserrat",
       fontWeight: "normal",
       fontSize: "1.625rem",
       color: theme.palette.primary.main,
       padding: theme.spacing(1),
-      opacity: 100,
-    },
-  },
+      opacity: 100
+    }
+  }
 }));
 
 export default function AskMeAnything(props) {
@@ -43,7 +49,8 @@ export default function AskMeAnything(props) {
         </Box>
         <Box className={classes.space}>
           <Typography>
-            Please send a question to the community about anything you may need for using this practice.
+            Please send a question to the community about anything you may need
+            for using this practice.
           </Typography>
         </Box>
         <Box className={classes.space}>
@@ -55,10 +62,17 @@ export default function AskMeAnything(props) {
             placeholder="What questions do you have?"
             InputProps={{
               classes: { input: classes.input, root: classes.textField },
-              endAdornment: <InputAdornment position="end"><IconButton><ExitToAppIcon className={classes.exitIcon}/></IconButton></InputAdornment>
-            }}/>
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton>
+                    <ExitToAppIcon className={classes.exitIcon} />
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
+          />
         </Box>
-        <QuestionsAndAnswers ama={props.ama}/>
+        <QuestionsAndAnswers ama={props.ama} />
       </Box>
     </>
   );

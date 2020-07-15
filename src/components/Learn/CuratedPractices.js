@@ -1,5 +1,5 @@
 import React from "react";
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { navigate } from "@reach/router";
 import { useQuery } from "@apollo/react-hooks";
 
@@ -8,10 +8,10 @@ import ComponentQueryError from "../shared/QueryState/ComponentQueryError";
 import { GET_CURATED_PRACTICES } from "../../graphql";
 import PracticeCardGrid from "../shared/PracticeCards/PracticeCardGrid";
 
-import { Typography, Box } from '@material-ui/core';
+import { Typography, Box } from "@material-ui/core";
 import OplButton from "../shared/components/OplButton";
 
-const CuratedPractices = (props) => {
+const CuratedPractices = props => {
   const { loading, error, data } = useQuery(GET_CURATED_PRACTICES, {
     variables: { sort: "upvotes:desc" }
   });
@@ -29,12 +29,20 @@ const CuratedPractices = (props) => {
         data-testid="curatedList"
       >
         <Typography variant={"h3"}>Popular Practices</Typography>
-        <OplButton data-testid="seeEverythingButton" onClick={() => navigate("/practice")}>
-          See Everything{"  "}<ArrowForwardIcon color="primary" />
+        <OplButton
+          data-testid="seeEverythingButton"
+          onClick={() => navigate("/")}
+        >
+          See Everything{"  "}
+          <ArrowForwardIcon color="primary" />
         </OplButton>
       </Box>
       <Box maxWidth="1440px">
-        { loading ? <ComponentLoading /> : <PracticeCardGrid practices={data.practices} /> }
+        {loading ? (
+          <ComponentLoading />
+        ) : (
+          <PracticeCardGrid practices={data.practices} />
+        )}
       </Box>
     </>
   );

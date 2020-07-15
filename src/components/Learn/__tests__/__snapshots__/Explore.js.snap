@@ -3,10 +3,10 @@
 exports[`matches the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="MuiBox-root MuiBox-root-84 makeStyles-explore-82"
+    class="MuiBox-root MuiBox-root-80"
   >
     <div
-      class="MuiBox-root MuiBox-root-85"
+      class="MuiBox-root MuiBox-root-81"
     >
       <img
         alt="Closing Message"
@@ -16,10 +16,10 @@ exports[`matches the snapshot 1`] = `
       />
     </div>
     <div
-      class="MuiBox-root MuiBox-root-86"
+      class="MuiBox-root MuiBox-root-82"
     >
       <div
-        class="MuiBox-root MuiBox-root-87"
+        class="MuiBox-root MuiBox-root-83"
       >
         <h5
           class="MuiTypography-root MuiTypography-h5 MuiTypography-alignLeft"
@@ -28,11 +28,10 @@ exports[`matches the snapshot 1`] = `
           Snapshottin it up
         </h5>
         <div
-          class="MuiBox-root MuiBox-root-118"
+          class="MuiBox-root MuiBox-root-114"
         >
           <button
-            bg="rgb(126, 99, 207)"
-            class="MuiButtonBase-root MuiButton-root MuiButton-contained OplButton-root-119 OplButton-root-120 MuiButton-disableElevation"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
             data-testid="exploreLibraryButton"
             tabindex="0"
             type="button"
@@ -40,7 +39,7 @@ exports[`matches the snapshot 1`] = `
             <span
               class="MuiButton-label"
             >
-              Explore the library
+              Explore the Library
             </span>
             <span
               class="MuiTouchRipple-root"
