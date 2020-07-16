@@ -8,65 +8,14 @@ exports[`matches the snapshot 1`] = `
     <div
       class="MuiBox-root MuiBox-root-131"
     >
-      <svg
-        height="250px"
-        viewBox="0 0 185 18"
-        width="383px"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+      <h6
+        class="MuiTypography-root sc-AxjAm fDEmJk MuiTypography-h6 MuiTypography-colorPrimary"
       >
-        <defs>
-          <filter
-            filterUnits="objectBoundingBox"
-            height="113.8%"
-            id="prefix__a"
-            width="102.2%"
-            x="-.5%"
-            y="-3.4%"
-          >
-            <feoffset
-              dx="2"
-              dy="2"
-              in="SourceAlpha"
-              result="shadowOffsetOuter1"
-            />
-            <fecolormatrix
-              in="shadowOffsetOuter1"
-              values="0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 0 0.912335824 0 0 0 1 0"
-            />
-          </filter>
-          <text
-            fill="#2E2E2E"
-            font-family="Chewy-Regular, Chewy"
-            font-size="19"
-            font-weight="normal"
-            id="prefix__b"
-          >
-            <tspan
-              x="28"
-              y="43"
-            >
-              OPEN PRACTICE LIBRARY
-            </tspan>
-          </text>
-        </defs>
-        <g
-          fill="#2E2E2E"
-          fill-rule="evenodd"
-          transform="translate(-28 -30)"
-        >
-          <use
-            filter="url(#prefix__a)"
-            xlink:href="#prefix__b"
-          />
-          <use
-            xlink:href="#prefix__b"
-          />
-        </g>
-      </svg>
+        Open Practice Library
+      </h6>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-132"
+      class="MuiBox-root MuiBox-root-162"
     >
       <h1
         class="MuiTypography-root sc-AxjAm gkhgMM MuiTypography-h1"
