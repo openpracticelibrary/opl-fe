@@ -97,12 +97,9 @@ it("renders with graphql response", async () => {
     </MockedProvider>
   );
 
-  await waitFor(() => expect(getByTestId("practiceNum")).toBeInTheDocument());
   await waitFor(() =>
     expect(getAllByTestId("practicecard")[0]).toBeInTheDocument()
   );
 
   expect(getAllByTestId("practicecard")).toHaveLength(1);
-  expect(getByTestId("contributorNum")).toHaveTextContent("50");
-  expect(getByTestId("practiceNum")).toHaveTextContent("107");
 });

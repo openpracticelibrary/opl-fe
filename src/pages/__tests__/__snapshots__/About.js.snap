@@ -3,44 +3,31 @@
 exports[`matches the About page snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="MuiBox-root MuiBox-root-201"
+    class="MuiBox-root MuiBox-root-2"
     data-testid="aboutPageGrid"
   >
     <div
-      class="MuiBox-root MuiBox-root-202"
+      class="MuiBox-root MuiBox-root-3"
     >
       <div
-        class="MuiBox-root MuiBox-root-203"
+        class="MuiBox-root MuiBox-root-4"
       >
         <h1
-          class="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom"
+          class="MuiTypography-root MuiTypography-h3 MuiTypography-colorInherit"
           data-testid="hellotext"
         >
-          Learn about us
+          About Us
         </h1>
-        <h5
-          class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
-          data-testid="welcomeText"
-        />
-      </div>
-      <div
-        class="MuiBox-root MuiBox-root-234"
-      >
-        <img
-          alt="About Us"
-          src="explorestickies.png"
-          width="100%"
-        />
       </div>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-235"
+      class="MuiBox-root MuiBox-root-35"
     >
       <div
-        class="MuiBox-root MuiBox-root-236"
+        class="MuiBox-root MuiBox-root-36"
       >
         <h3
-          class="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom"
+          class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom"
           data-testid="historyValuesHeader"
         >
           Our history & values
@@ -48,10 +35,17 @@ exports[`matches the About page snapshot 1`] = `
         <p
           class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
         >
-          [3 years and 7 months ago], Red Hat Open Innovation Labs saw an opportunity to document the open practices and principles they used during customer engagements, thus was born the Open Practice Library. That vision turned into a website of DevOps and product development practices for running workshops and learning about the discovery and delivery of software."
+          In 2016, 
+          <a
+            class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+            href="https://www.redhat.com/en/services/consulting/open-innovation-labs"
+          >
+            Red Hat Open Innovation Labs
+          </a>
+           saw an opportunity to document the open practices and principles they used during customer engagements, thus was born the Open Practice Library. That vision turned into a website of DevOps and product development practices for running workshops and learning about the discovery and delivery of software.
         </p>
         <div
-          class="MuiBox-root MuiBox-root-237"
+          class="MuiBox-root MuiBox-root-43"
         >
           <div
             class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
@@ -60,10 +54,10 @@ exports[`matches the About page snapshot 1`] = `
               class="MuiGrid-root MuiGrid-item"
             >
               <div
-                class="MuiBox-root MuiBox-root-341"
+                class="MuiBox-root MuiBox-root-147"
               >
                 <img
-                  alt="Friendly"
+                  alt="Friendly Icon"
                   src="about-friendly.svg"
                 />
                 <h4
@@ -82,10 +76,10 @@ exports[`matches the About page snapshot 1`] = `
               class="MuiGrid-root MuiGrid-item"
             >
               <div
-                class="MuiBox-root MuiBox-root-342"
+                class="MuiBox-root MuiBox-root-148"
               >
                 <img
-                  alt="Trustworthy"
+                  alt="Trustworthy Icon"
                   src="about-trustworthy.svg"
                 />
                 <h4
@@ -96,7 +90,7 @@ exports[`matches the About page snapshot 1`] = `
                 <h6
                   class="MuiTypography-root MuiTypography-subtitle2"
                 >
-                  We strive to provide expertise and advice that will seamless fit into our users work life.
+                  We strive to provide expertise and advice that will seamlessly fit into our users' work life.
                 </h6>
               </div>
             </div>
@@ -104,10 +98,10 @@ exports[`matches the About page snapshot 1`] = `
               class="MuiGrid-root MuiGrid-item"
             >
               <div
-                class="MuiBox-root MuiBox-root-343"
+                class="MuiBox-root MuiBox-root-149"
               >
                 <img
-                  alt="Inspiring"
+                  alt="Inspiring Icon"
                   src="about-inspiring.svg"
                 />
                 <h4
@@ -131,11 +125,11 @@ exports[`matches the About page snapshot 1`] = `
         </p>
       </div>
       <div
-        class="MuiBox-root MuiBox-root-344"
+        class="MuiBox-root MuiBox-root-150"
         data-testid="pageGrid"
       >
         <h3
-          class="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom"
+          class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom"
         >
           Our product team
         </h3>
@@ -144,16 +138,6 @@ exports[`matches the About page snapshot 1`] = `
         >
           The 2020 pandemic led to forming a small Global remote product team for improving the library and delivering upon the growth strategy. This cross-functional group included product management, product design, and engineering to bring a balanced approach for continuous discovery and continuous delivery.
         </p>
-        <div
-          class="MuiBox-root MuiBox-root-345"
-        >
-          <img
-            alt="OPL Product Team"
-            height="auto"
-            src="opl-product-team.png"
-            width="100%"
-          />
-        </div>
         <p
           class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
         >
@@ -166,191 +150,149 @@ exports[`matches the About page snapshot 1`] = `
         </p>
       </div>
       <div
-        class="MuiBox-root MuiBox-root-346"
-        data-testid="pageGrid"
+        class="MuiBox-root MuiBox-root-151"
+        data-testid="communityHeader"
       >
         <h3
-          class="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom"
-          data-testid="processModel"
+          class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom"
         >
-          Our process model
+          Community Driven
         </h3>
         <p
           class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
         >
-          The 2020 pandemic led to forming a small Global remote product team for improving the library and delivering upon the growth strategy. This cross-functional group included product management, product design, and engineering to bring a balanced approach for continuous discovery and continuous delivery.
+          This project relies on an active and involved community, and we really appreciate your support. To date we currently have:
         </p>
         <div
-          class="MuiBox-root MuiBox-root-347"
+          class="MuiBox-root MuiBox-root-152"
         >
-          <iframe
-            allowfullscreen=""
-            height="600rem"
-            src="https://www.youtube.com/embed/N4mBIZg8MnQ"
-            title="Open Practice Library"
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item"
+            >
+              <div
+                class="MuiBox-root MuiBox-root-153"
+              >
+                <h5
+                  class="MuiTypography-root MuiTypography-h1 MuiTypography-colorPrimary"
+                >
+                  <div
+                    class="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+                    role="progressbar"
+                    style="width: 10rem; height: 10rem;"
+                  >
+                    <svg
+                      class="MuiCircularProgress-svg"
+                      viewBox="22 22 44 44"
+                    >
+                      <circle
+                        class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+                        cx="44"
+                        cy="44"
+                        fill="none"
+                        r="20.2"
+                        stroke-width="3.6"
+                      />
+                    </svg>
+                  </div>
+                </h5>
+                <h6
+                  class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter"
+                >
+                  Product Lifecycle Practices
+                </h6>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item"
+            >
+              <div
+                class="MuiBox-root MuiBox-root-166"
+              >
+                <h5
+                  class="MuiTypography-root MuiTypography-h1 MuiTypography-colorPrimary"
+                >
+                  <div
+                    class="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+                    role="progressbar"
+                    style="width: 10rem; height: 10rem;"
+                  >
+                    <svg
+                      class="MuiCircularProgress-svg"
+                      viewBox="22 22 44 44"
+                    >
+                      <circle
+                        class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+                        cx="44"
+                        cy="44"
+                        fill="none"
+                        r="20.2"
+                        stroke-width="3.6"
+                      />
+                    </svg>
+                  </div>
+                </h5>
+                <h6
+                  class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter"
+                >
+                  Creative Commons Contributors
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiBox-root MuiBox-root-167"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-1"
+        >
+          <img
+            alt="Feedback"
+            src="about-feedback.svg"
             width="100%"
           />
         </div>
         <div
-          class="MuiBox-root MuiBox-root-348"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-7"
+        >
+          <h4
+            class="MuiTypography-root MuiTypography-h4"
+            data-testid="feedbackMsg"
+          >
+            Please give us feedback
+          </h4>
+          <h5
+            class="MuiTypography-root MuiTypography-h5"
+          >
+            We are human-centered at our core and rely on user feedback for product iterations.
+          </h5>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3"
         >
           <a
-            class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
-            href="https://mobiusloop.com/"
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-outlinedSizeLarge MuiButton-sizeLarge"
+            href="https://forms.gle/nXCvPEkjx6VdF6Px6"
+            tabindex="0"
           >
-            <svg
-              height="17"
-              viewBox="0 0 17 17"
-              width="17"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              class="MuiButton-label"
             >
-              <g
-                fill="#2E2E2E"
-              >
-                <path
-                  d="M15.099 8.79V12.748c0 .264.007.528-.027.79l.034-.252c-.036.254-.102.5-.201.737l.095-.226c-.099.23-.224.446-.376.644l.148-.192c-.152.196-.329.372-.524.524l.191-.148c-.2.152-.414.28-.644.376.076-.032.152-.065.226-.095-.235.099-.482.165-.737.201l.253-.034c-.397.052-.811.027-1.21.027H4.888c-.345 0-.691.002-1.035 0-.133 0-.264-.01-.395-.027l.253.034c-.255-.036-.5-.102-.737-.2L3.2 15c-.23-.099-.447-.224-.644-.376l.192.148c-.196-.152-.373-.328-.525-.524.05.064.1.127.148.192-.151-.2-.279-.414-.376-.644.033.076.065.152.095.226-.098-.236-.165-.483-.201-.737l.034.253c-.051-.397-.026-.811-.026-1.21v-2.272-2.788V4.89c0-.346-.002-.692 0-1.035 0-.133.01-.264.026-.395l-.034.252c.036-.254.103-.5.201-.737l-.095.226c.1-.23.225-.446.376-.644l-.148.192c.152-.195.329-.372.525-.524l-.192.148c.2-.152.414-.279.644-.376-.076.032-.152.065-.226.095.235-.099.482-.165.737-.201l-.253.034c.23-.03.462-.027.693-.027h4.056c.243 0 .5-.106.672-.277.166-.165.29-.435.278-.672-.012-.245-.091-.5-.278-.673C8.693.107 8.465 0 8.207 0H3.87c-.623 0-1.217.152-1.774.425C1.473.731.946 1.24.578 1.823c-.38.6-.575 1.322-.577 2.03-.002.267 0 .533 0 .8v8.492c.002.67.178 1.343.513 1.924.68 1.186 1.98 1.926 3.343 1.93.294.002.589 0 .883 0h8.206c.084 0 .17.002.253 0 .709-.013 1.436-.218 2.029-.611.575-.382 1.079-.91 1.373-1.54.255-.55.399-1.118.399-1.725v-1.69-2.244-.397c0-.243-.106-.5-.277-.672-.166-.166-.435-.289-.673-.278-.245.012-.5.092-.672.278-.171.184-.28.412-.28.67zM11.932 2h4.136c.238 0 .49-.112.66-.292.161-.174.282-.458.271-.708-.01-.258-.09-.526-.272-.708-.182-.18-.406-.292-.66-.292H11.933c-.238 0-.49.112-.66.292-.161.174-.282.458-.271.708.01.258.09.526.272.708.182.178.408.292.66.292z"
-                />
-                <path
-                  d="M17 5.068v-1.4-2.227-.509c0-.238-.112-.49-.292-.66C16.534.112 16.25-.01 16 .002c-.258.01-.526.09-.708.272-.18.182-.292.406-.292.66V5.067c0 .238.112.49.292.66.174.161.458.282.708.271.258-.01.526-.09.708-.272.178-.182.292-.408.292-.66z"
-                />
-                <path
-                  d="M9.547 8.735l.72-.72 1.714-1.713 2.073-2.073 1.797-1.797c.29-.29.585-.578.872-.871l.012-.013C16.9 1.383 17 1.14 17 .907c0-.223-.098-.488-.265-.642-.172-.157-.398-.275-.641-.264-.241.01-.467.092-.641.264l-.72.72-1.714 1.713-2.073 2.073L9.15 6.568c-.29.29-.585.578-.872.871l-.012.013C8.1 7.617 8 7.86 8 8.093c0 .223.098.488.265.642.172.157.398.275.641.264.241-.009.467-.09.641-.264z"
-                />
-              </g>
-            </svg>
-             Learn more on mobiusloop.com
-          </a>
-        </div>
-        <p
-          class="MuiTypography-root MuiTypography-body1"
-        >
-          The Open Practice Library utilizes the sections of this process model for tagging and organizing practices within the application.
-        </p>
-      </div>
-      <div
-        class="MuiBox-root MuiBox-root-355"
-        data-testid="pageGrid"
-      >
-        <h3
-          class="MuiTypography-root MuiTypography-h3"
-          data-testid="findMentor"
-        >
-          Find a mentor & more
-        </h3>
-        <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-align-items-xs-center"
-        >
-          <div
-            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-7"
-          >
-            <p
-              class="MuiTypography-root MuiTypography-body1"
-            >
-              We are dedicated to our core values and seek to connect directly with the Open Practice Library community. We love engaging in conversation about the practices and are looking to develop a mentorship program, formulate a beta group, and are always recruiting users for testing needs.
-            </p>
-          </div>
-          <div
-            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5"
-          >
-            <a
-              class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
-              href="https://openpracticelibrary.slack.com/"
-            >
-              <img
-                alt="Logo"
-                src="slack.png"
-                width="100%"
-              />
-            </a>
-          </div>
-        </div>
-        <a
-          class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
-          href="https://openpracticelibrary.slack.com/"
-        >
-          <svg
-            height="17"
-            viewBox="0 0 17 17"
-            width="17"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g
-              fill="#2E2E2E"
-            >
-              <path
-                d="M15.099 8.79V12.748c0 .264.007.528-.027.79l.034-.252c-.036.254-.102.5-.201.737l.095-.226c-.099.23-.224.446-.376.644l.148-.192c-.152.196-.329.372-.524.524l.191-.148c-.2.152-.414.28-.644.376.076-.032.152-.065.226-.095-.235.099-.482.165-.737.201l.253-.034c-.397.052-.811.027-1.21.027H4.888c-.345 0-.691.002-1.035 0-.133 0-.264-.01-.395-.027l.253.034c-.255-.036-.5-.102-.737-.2L3.2 15c-.23-.099-.447-.224-.644-.376l.192.148c-.196-.152-.373-.328-.525-.524.05.064.1.127.148.192-.151-.2-.279-.414-.376-.644.033.076.065.152.095.226-.098-.236-.165-.483-.201-.737l.034.253c-.051-.397-.026-.811-.026-1.21v-2.272-2.788V4.89c0-.346-.002-.692 0-1.035 0-.133.01-.264.026-.395l-.034.252c.036-.254.103-.5.201-.737l-.095.226c.1-.23.225-.446.376-.644l-.148.192c.152-.195.329-.372.525-.524l-.192.148c.2-.152.414-.279.644-.376-.076.032-.152.065-.226.095.235-.099.482-.165.737-.201l-.253.034c.23-.03.462-.027.693-.027h4.056c.243 0 .5-.106.672-.277.166-.165.29-.435.278-.672-.012-.245-.091-.5-.278-.673C8.693.107 8.465 0 8.207 0H3.87c-.623 0-1.217.152-1.774.425C1.473.731.946 1.24.578 1.823c-.38.6-.575 1.322-.577 2.03-.002.267 0 .533 0 .8v8.492c.002.67.178 1.343.513 1.924.68 1.186 1.98 1.926 3.343 1.93.294.002.589 0 .883 0h8.206c.084 0 .17.002.253 0 .709-.013 1.436-.218 2.029-.611.575-.382 1.079-.91 1.373-1.54.255-.55.399-1.118.399-1.725v-1.69-2.244-.397c0-.243-.106-.5-.277-.672-.166-.166-.435-.289-.673-.278-.245.012-.5.092-.672.278-.171.184-.28.412-.28.67zM11.932 2h4.136c.238 0 .49-.112.66-.292.161-.174.282-.458.271-.708-.01-.258-.09-.526-.272-.708-.182-.18-.406-.292-.66-.292H11.933c-.238 0-.49.112-.66.292-.161.174-.282.458-.271.708.01.258.09.526.272.708.182.178.408.292.66.292z"
-              />
-              <path
-                d="M17 5.068v-1.4-2.227-.509c0-.238-.112-.49-.292-.66C16.534.112 16.25-.01 16 .002c-.258.01-.526.09-.708.272-.18.182-.292.406-.292.66V5.067c0 .238.112.49.292.66.174.161.458.282.708.271.258-.01.526-.09.708-.272.178-.182.292-.408.292-.66z"
-              />
-              <path
-                d="M9.547 8.735l.72-.72 1.714-1.713 2.073-2.073 1.797-1.797c.29-.29.585-.578.872-.871l.012-.013C16.9 1.383 17 1.14 17 .907c0-.223-.098-.488-.265-.642-.172-.157-.398-.275-.641-.264-.241.01-.467.092-.641.264l-.72.72-1.714 1.713-2.073 2.073L9.15 6.568c-.29.29-.585.578-.872.871l-.012.013C8.1 7.617 8 7.86 8 8.093c0 .223.098.488.265.642.172.157.398.275.641.264.241-.009.467-.09.641-.264z"
-              />
-            </g>
-          </svg>
-           Join the conversation
-        </a>
-      </div>
-      <div
-        class="MuiBox-root MuiBox-root-356"
-      >
-        <div
-          class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
-        >
-          <div
-            class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-1"
-          >
-            <img
-              alt="Feedback"
-              src="about-feedback.svg"
-              width="100%"
+              Share Thoughts
+            </span>
+            <span
+              class="MuiTouchRipple-root"
             />
-          </div>
-          <div
-            class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-7"
-          >
-            <h3
-              class="MuiTypography-root MuiTypography-h3"
-              data-testid="feedbackMsg"
-            >
-              Please give us feedback
-            </h3>
-            <h5
-              class="MuiTypography-root MuiTypography-h5"
-            >
-              We are human-centered at our core and rely on user feedback for product iterations.
-            </h5>
-          </div>
-          <div
-            class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3"
-          >
-            <a
-              aria-disabled="false"
-              class="MuiButtonBase-root MuiButton-root MuiButton-outlined"
-              href="https://forms.gle/nXCvPEkjx6VdF6Px6"
-              tabindex="0"
-            >
-              <span
-                class="MuiButton-label"
-              >
-                Share your thoughts  
-                <svg
-                  height="18"
-                  viewBox="0 0 23 18"
-                  width="23"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15.912 9.718l-6.017 6.881c-.4.478-1.117.534-1.604.14-.487-.393-.545-1.095-.144-1.572 0 0 0-.028.03-.028l4.354-5.028H2.646c-.63 0-1.146-.506-1.146-1.124 0-.618.516-1.123 1.146-1.123h9.885L8.12 2.836c-.401-.478-.344-1.18.143-1.573s1.175-.337 1.605.112l6.017 6.882c.372.393.372 1.04.028 1.46z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </a>
-          </div>
+          </a>
         </div>
       </div>
     </div>

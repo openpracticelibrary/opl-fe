@@ -2,7 +2,7 @@ import React from "react";
 import { cleanup, render, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
-import PracticeCount from '../PracticeCount';
+import PracticeCount from "../PracticeCount";
 
 import { GET_PRACTICE_COUNT } from "../../../graphql";
 
@@ -22,7 +22,7 @@ const apolloMocks = [
       query: GET_PRACTICE_COUNT
     },
     result: { data: { practicesConnection: mockPracticeData } }
-  },
+  }
 ];
 
 it("renders contributor count successfully", async () => {
@@ -35,4 +35,3 @@ it("renders contributor count successfully", async () => {
   await waitFor(() => expect(getByTestId("practiceNum")).toBeInTheDocument());
   expect(getByTestId("practiceNum")).toHaveTextContent("107");
 });
-
