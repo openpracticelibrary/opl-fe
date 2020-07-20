@@ -5,11 +5,11 @@ const Hero = props => (
   <Box
     display="flex"
     alignItems="center"
-    bgcolor="primary.main"
+    bgcolor="grey.100"
     height="15vh"
     width={1}
   >
-    <Box px={6} color="common.white">
+    <Box px={6}>
       <Typography
         component="h1"
         variant="h3"

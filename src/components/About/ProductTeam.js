@@ -3,7 +3,7 @@ import { Box, Typography } from "@material-ui/core";
 
 const ProductTeam = () => (
   <Box data-testid="pageGrid" width="100%" my={8}>
-    <Typography gutterBottom variant="h4" component="h3">
+    <Typography gutterBottom variant="h4" component="h3" color="primary">
       Our product team
     </Typography>
     <Typography gutterBottom>

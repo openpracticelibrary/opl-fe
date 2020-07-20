@@ -33,12 +33,12 @@ const collaborators = [
 ];
 
 const Partnerships = props => (
-  <Box data-testid="communityHeader">
-    <Typography variant="h4" gutterBottom>
+  <Box marginTop={4} data-testid="communityHeader">
+    <Typography color="primary" variant="h4" gutterBottom>
       Partnerships
     </Typography>
     <Typography variant="body1">
-      No great open source project is without great collaboration
+      No great open source project is without great collaboration.
     </Typography>
     <Box
       display="flex"

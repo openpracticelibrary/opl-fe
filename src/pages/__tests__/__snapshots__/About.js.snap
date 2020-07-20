@@ -27,7 +27,7 @@ exports[`matches the About page snapshot 1`] = `
         class="MuiBox-root MuiBox-root-36"
       >
         <h3
-          class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom"
+          class="MuiTypography-root MuiTypography-h4 MuiTypography-colorPrimary MuiTypography-gutterBottom"
           data-testid="historyValuesHeader"
         >
           Our history & values
@@ -61,7 +61,7 @@ exports[`matches the About page snapshot 1`] = `
                   src="about-friendly.svg"
                 />
                 <h4
-                  class="MuiTypography-root MuiTypography-h4 MuiTypography-colorPrimary"
+                  class="MuiTypography-root MuiTypography-h5 MuiTypography-colorPrimary"
                 >
                   Friendly
                 </h4>
@@ -83,7 +83,7 @@ exports[`matches the About page snapshot 1`] = `
                   src="about-trustworthy.svg"
                 />
                 <h4
-                  class="MuiTypography-root MuiTypography-h4 MuiTypography-colorPrimary"
+                  class="MuiTypography-root MuiTypography-h5 MuiTypography-colorPrimary"
                 >
                   Trustworthy
                 </h4>
@@ -105,7 +105,7 @@ exports[`matches the About page snapshot 1`] = `
                   src="about-inspiring.svg"
                 />
                 <h4
-                  class="MuiTypography-root MuiTypography-h4 MuiTypography-colorPrimary"
+                  class="MuiTypography-root MuiTypography-h5 MuiTypography-colorPrimary"
                 >
                   Inspiring
                 </h4>
@@ -129,7 +129,7 @@ exports[`matches the About page snapshot 1`] = `
         data-testid="pageGrid"
       >
         <h3
-          class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom"
+          class="MuiTypography-root MuiTypography-h4 MuiTypography-colorPrimary MuiTypography-gutterBottom"
         >
           Our product team
         </h3>
@@ -154,7 +154,7 @@ exports[`matches the About page snapshot 1`] = `
         data-testid="communityHeader"
       >
         <h3
-          class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom"
+          class="MuiTypography-root MuiTypography-h4 MuiTypography-colorPrimary MuiTypography-gutterBottom"
         >
           Community Driven
         </h3>
@@ -256,6 +256,7 @@ exports[`matches the About page snapshot 1`] = `
         >
           <img
             alt="Feedback"
+            color="black"
             src="about-feedback.svg"
             width="100%"
           />
@@ -280,9 +281,11 @@ exports[`matches the About page snapshot 1`] = `
         >
           <a
             aria-disabled="false"
-            class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-outlinedSizeLarge MuiButton-sizeLarge"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-containedSizeLarge MuiButton-sizeLarge"
             href="https://forms.gle/nXCvPEkjx6VdF6Px6"
+            rel="noopener"
             tabindex="0"
+            target="_blank"
           >
             <span
               class="MuiButton-label"

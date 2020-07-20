@@ -10,6 +10,7 @@ const HistoryValues = () => (
     <Typography
       component="h3"
       variant="h4"
+      color="primary"
       data-testid="historyValuesHeader"
       gutterBottom
     >
@@ -31,7 +32,7 @@ const HistoryValues = () => (
         <Grid item>
           <ContentCircle size="20rem">
             <img src={FriendlyIcon} alt={"Friendly Icon"} />
-            <Typography variant="h4" component="h4" color="primary">
+            <Typography variant="h5" component="h4" color="primary">
               Friendly
             </Typography>
             <Typography component="h6" variant="subtitle2">
@@ -43,7 +44,7 @@ const HistoryValues = () => (
         <Grid item>
           <ContentCircle size="20rem">
             <img src={TrustworthyIcon} alt={"Trustworthy Icon"} />
-            <Typography variant="h4" component="h4" color="primary">
+            <Typography variant="h5" component="h4" color="primary">
               Trustworthy
             </Typography>
             <Typography component="h6" variant="subtitle2">
@@ -55,7 +56,7 @@ const HistoryValues = () => (
         <Grid item>
           <ContentCircle size="20rem">
             <img src={InspiringIcon} alt={"Inspiring Icon"} />
-            <Typography variant="h4" component="h4" color="primary">
+            <Typography variant="h5" component="h4" color="primary">
               Inspiring
             </Typography>
             <Typography component="h6" variant="subtitle2">

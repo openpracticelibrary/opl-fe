@@ -7,7 +7,7 @@ import { Box, Grid, Typography } from "@material-ui/core";
 
 const Contributors = () => (
   <Box data-testid="communityHeader" my={8}>
-    <Typography gutterBottom variant="h4" component="h3">
+    <Typography gutterBottom variant="h4" component="h3" color="primary">
       Community Driven
     </Typography>
     <Typography gutterBottom>

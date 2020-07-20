@@ -32,7 +32,7 @@ const CuratedPractices = props => {
           endIcon={<ArrowForwardIcon />}
           onClick={() => navigate("/")}
         >
-          See Everything
+          Explore Practices
         </Button>
       </Box>
       {loading ? (
