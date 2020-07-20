@@ -38,6 +38,7 @@ export function TopListItems(props) {
         toggle={toggle}
         data-testid="SeeEverything"
       />
+      <ListItemLink to="/" primary="View Library" toggle={toggle} />
     </List>
   );
 }

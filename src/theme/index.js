@@ -149,7 +149,7 @@ const theme = createMuiTheme({
     },
     h2: {
       fontFamily: ["Montserrat", "sans-serif"],
-      fontWeight: 300,
+      fontWeight: 500,
       fontSize: "3.75rem",
       lineHeight: 1.2,
       letterSpacing: "-0.00833em"
@@ -163,7 +163,7 @@ const theme = createMuiTheme({
     },
     h4: {
       fontFamily: ["Montserrat", "sans-serif"],
-      fontWeight: 400,
+      fontWeight: 500,
       fontSize: "2.125rem",
       lineHeight: 1.235,
       letterSpacing: "0.00735em"
@@ -197,7 +197,7 @@ const theme = createMuiTheme({
       letterSpacing: "0.00714em"
     },
     body1: {
-      fontFamily: ["Noto Serif", "sans-serif"],
+      fontFamily: ["Montserrat", "sans-serif"],
       fontWeight: 400,
       fontSize: "1rem",
       lineHeight: 1.5,

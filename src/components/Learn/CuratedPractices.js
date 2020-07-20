@@ -7,9 +7,7 @@ import ComponentLoading from "../shared/QueryState/ComponentLoading";
 import ComponentQueryError from "../shared/QueryState/ComponentQueryError";
 import { GET_CURATED_PRACTICES } from "../../graphql";
 import PracticeCardGrid from "../shared/PracticeCards/PracticeCardGrid";
-
-import { Typography, Box } from "@material-ui/core";
-import OplButton from "../shared/components/OplButton";
+import { Button, Typography, Box } from "@material-ui/core";
 
 const CuratedPractices = props => {
   const { loading, error, data } = useQuery(GET_CURATED_PRACTICES, {
@@ -24,26 +22,24 @@ const CuratedPractices = props => {
         flexDirection="row"
         justifyContent="space-between"
         alignItems="center"
-        width="90%"
         pb={12}
         data-testid="curatedList"
       >
-        <Typography variant={"h3"}>Popular Practices</Typography>
-        <OplButton
-          data-testid="seeEverythingButton"
+        <Typography variant="h4">Popular Practices</Typography>
+        <Button
+          variant="outlined"
+          color="primary"
+          endIcon={<ArrowForwardIcon />}
           onClick={() => navigate("/")}
         >
-          See Everything{"  "}
-          <ArrowForwardIcon color="primary" />
-        </OplButton>
+          Explore Practices
+        </Button>
       </Box>
-      <Box maxWidth="1440px">
-        {loading ? (
-          <ComponentLoading />
-        ) : (
-          <PracticeCardGrid practices={data.practices} />
-        )}
-      </Box>
+      {loading ? (
+        <ComponentLoading />
+      ) : (
+        <PracticeCardGrid practices={data.practices} />
+      )}
     </>
   );
 };

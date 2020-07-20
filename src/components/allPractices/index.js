@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Box, Typography } from "@material-ui/core";
-import MobiusLoopHero from "./MobiusLoopHero";
+import MobiusLoopHero from "../shared/MobiusLoopHero";
 import FilterTags from "./FilterBar/FilterTags";
 import KeywordSearchToggle from "./FilterBar/KeywordSearchToggle";
 import DropDownSelectionFilter from "./FilterBar/DropDownSelectionFilter";

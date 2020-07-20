@@ -2,7 +2,7 @@ import React from "react";
 import { cleanup, render, waitFor } from "../../../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/react-testing";
-import Community from '../Community';
+import Contributors from "../Contributors";
 
 import { GET_PRACTICE_COUNT, GET_CONTRIBUTORS } from "../../../graphql";
 
@@ -20,7 +20,7 @@ const mockContributorData = {
   __typename: "UsersPermissionsUserConnection",
   aggregate: {
     __typename: "UsersPermissionsUserAggregator",
-    totalCount: 50,
+    totalCount: 50
   }
 };
 
@@ -37,17 +37,16 @@ const apolloMocks = [
       query: GET_CONTRIBUTORS
     },
     result: { data: { usersConnection: mockContributorData } }
-  },
+  }
 ];
 
 it("renders Community section properly", async () => {
   const { getByTestId } = render(
     <MockedProvider mocks={apolloMocks}>
-      <Community />
+      <Contributors />
     </MockedProvider>
   );
 
   await waitFor(() => expect(getByTestId("practiceNum")).toBeInTheDocument());
   expect(getByTestId("communityHeader")).toBeInTheDocument();
 });
-
