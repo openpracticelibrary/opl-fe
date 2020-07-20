@@ -6,21 +6,21 @@ import CoverImage from "./CoverImage";
 import PracticeCardTitle from "./PracticeCardTitle";
 import Subtitle from "./Subtitle";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   practiceItemBound: {
     overflow: "visible",
     height: 250,
-    margin: 10,
+    margin: 10
   },
   practiceItem: {
     borderRadius: 10,
     "&:hover #cardTitle": {
-      color: theme.palette.primary.main,
+      color: theme.palette.primary.main
     },
     "&:hover #tags": {
-      overflow: "visible",
-    },
-  },
+      overflow: "visible"
+    }
+  }
 }));
 
 export default function PracticeCard(props) {
@@ -33,7 +33,7 @@ export default function PracticeCard(props) {
       className={classes.practiceItemBound}
       style={{
         zIndex: `${hovered ? "10" : "0"}`,
-        transition: `${hovered ? "0.5s" : "0.5s"}`,
+        transition: `${hovered ? "0.5s" : "0.5s"}`
       }}
       data-testid={props.practiceId}
     >
@@ -50,7 +50,7 @@ export default function PracticeCard(props) {
           boxShadow: `${
             hovered ? "1px 2px 2px 1px rgba(0,0,0,.2)" : "0px 0px 0px 0px"
           }`,
-          background: hovered ? "white" : "transparent",
+          background: hovered ? "white" : "transparent"
         }}
       >
         <CoverImage
@@ -63,7 +63,7 @@ export default function PracticeCard(props) {
           style={{
             transform: `${hovered ? "scale(.9, .95)" : "scale(1, 1)"}`,
             transition: `${hovered ? "0.5s" : "0.5s"}`,
-            background: hovered ? "white" : "transparent",
+            background: hovered ? "white" : "transparent"
           }}
         >
           <PracticeCardTitle
@@ -77,7 +77,7 @@ export default function PracticeCard(props) {
             elevation={0}
             style={{
               opacity: `${hovered ? "1" : "0"}`,
-              transition: `${hovered ? "1.0s" : "0.5s"}`,
+              transition: `${hovered ? "1.0s" : "0.5s"}`
             }}
           >
             <Subtitle subtitle={props.subtitle} slug={props.slug} />

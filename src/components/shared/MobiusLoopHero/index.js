@@ -43,7 +43,7 @@ const descripton = status => {
   return message;
 };
 
-const MobiusLoopHero = ({ displaySection = "all" }) => {
+const MobiusLoopHero = ({ displayContent = true, displaySection = "all" }) => {
   const section = displaySection.toLocaleLowerCase();
   const { palette, typography } = useTheme();
   return (
@@ -213,20 +213,22 @@ const MobiusLoopHero = ({ displaySection = "all" }) => {
           </g>
         </svg>
       </Box>
-      <Box display="flex" justifyContent="center">
-        <Box maxWidth="60%" marginTop={-4}>
-          <Card>
-            <CardContent>
-              <Typography
-                data-testid={`mobius-display-${section}`}
-                variant="subtitle1"
-              >
-                {descripton(section)}
-              </Typography>
-            </CardContent>
-          </Card>
+      {displayContent ? (
+        <Box display="flex" justifyContent="center">
+          <Box maxWidth="60%" marginTop={-4}>
+            <Card>
+              <CardContent>
+                <Typography
+                  data-testid={`mobius-display-${section}`}
+                  variant="subtitle1"
+                >
+                  {descripton(section)}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
         </Box>
-      </Box>
+      ) : null}
     </Box>
   );
 };

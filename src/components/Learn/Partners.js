@@ -1,22 +1,20 @@
-import React from 'react';
+import React from "react";
 import { Typography } from "@material-ui/core";
 import OplTooltip from "../shared/components/OplTooltip";
 import OplImage from "../shared/components/OplImage";
 
-const Collaborators = (props) => {
+const Partners = props => {
   const title = (
     <>
-      <Typography variant={"h6"}><b>{props.name}</b></Typography>
-      <Typography variant={"body2"}>{props.text}</Typography>
+      <Typography variant={"h6"}>
+        <b>{props.name}</b>
+      </Typography>
+      <Typography variant={"subtitle2"}>{props.text}</Typography>
     </>
   );
 
   return (
-    <OplTooltip
-      title={title}
-      placement="bottom"
-      minH="50px"
-    >
+    <OplTooltip title={title} placement="bottom" minH="50px">
       <OplImage
         src={props.logo}
         alt="Red Hat"
@@ -29,7 +27,6 @@ const Collaborators = (props) => {
       />
     </OplTooltip>
   );
-}
+};
 
-export default Collaborators;
-
+export default Partners;
