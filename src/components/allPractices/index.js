@@ -17,10 +17,11 @@ const Practices = ({
   popularMenuItems,
   selectedFilterTag,
   selectedPopularFilter,
+  selectedMobiusLoopFilter,
   toggleKeywordSearch
 }) => (
   <>
-    <MobiusLoopHero displaySection={selectedFilterTag} />
+    <MobiusLoopHero displaySection={selectedMobiusLoopFilter} />
     <Box
       display="flex"
       flexDirection={{ xs: "column", md: "row" }}
@@ -37,7 +38,7 @@ const Practices = ({
       <FilterTags
         tags={mobiusLoopArray}
         filter={handleFilterChange}
-        selectedFilter={selectedFilterTag}
+        selectedFilter={selectedMobiusLoopFilter}
       />
       <KeywordSearchToggle
         toggle={toggleKeywordSearch}
