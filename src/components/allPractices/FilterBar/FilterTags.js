@@ -11,7 +11,7 @@ const Tag = ({ tag, filter, selectedFilter }) => {
       clickable
       label={hashtag}
       ref={buttonRef}
-      onClick={() => filter({ type: "tagFilterChange", content: tag })}
+      onClick={() => filter({ type: "mobiusFilterChange", content: tag })}
       variant={selectedFilter === tag ? "default" : "outlined"}
     />
   );
@@ -44,7 +44,7 @@ const FilterTags = ({ filter, selectedFilter, tags }) => {
           fullWidth
           value={selectedFilter}
           onChange={event =>
-            filter({ type: "tagFilterChange", content: event.target.value })
+            filter({ type: "mobiusFilterChange", content: event.target.value })
           }
         >
           {tags.map(tag => (
