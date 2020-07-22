@@ -1,8 +1,8 @@
-import theme from '../../../theme';
+import theme from "../../../theme";
 
 const RichMarkdownEditorTheme = () => {
   const edit = {
-    fontFamily: "NotoSerif",
+    fontFamily: "Montserrat",
     fontWeight: 400,
     zIndex: 100,
     link: theme.palette.primary.main,
@@ -39,7 +39,7 @@ const RichMarkdownEditorTheme = () => {
     toolbarInput: theme.palette.common.white,
     toolbarItem: theme.palette.grey["900"],
     blockToolbarBackground: theme.palette.common.white,
-    blockToolbarHoverBackground: theme.palette.grey["500"],
+    blockToolbarHoverBackground: theme.palette.grey["500"]
   };
 
   return edit;
