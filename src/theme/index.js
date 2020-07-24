@@ -21,23 +21,22 @@ const theme = createMuiTheme({
       white: "#fff"
     },
     primary: {
-      main: "#5e3dc4"
+      main: "#272c8c"
     },
     secondary: {
-      main: "#10d4a0"
+      main: "#6535cc"
     },
     error: {
-      main: "#f64c72",
-      dark: "#e30f8d"
+      main: "#E30F8D"
     },
     warning: {
-      main: "#ff6d38"
+      main: "#FF6D38"
     },
     info: {
       main: "#bac9ff"
     },
     success: {
-      main: "#a14599"
+      main: "#76F598"
     },
     grey: {
       "50": "#fafafa",
@@ -110,6 +109,12 @@ const theme = createMuiTheme({
     "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
     "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
     "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)"
+  ],
+  linearGradient: [
+    "linear-gradient(90deg, #bdbdbd 0%, #eeeeee 100%)",
+    "linear-gradient(90deg, #272c8c 0%, #583bbf 100%)",
+    "linear-gradient(270deg, #E30F8D 0%, #6535cc 100%)",
+    "linear-gradient(90deg, #E30F8D 0%, #FF6D38 100%)9"
   ],
   shape: {
     borderRadius: 4

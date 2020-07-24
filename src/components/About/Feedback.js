@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Grid, Button, Typography } from "@material-ui/core";
+import { Grid, Button, Typography } from "@material-ui/core";
+import HeroColor from "../../components/shared/HeroColor";
 import FeedbackIcon from "../../assets/images/about-feedback.svg";
 
 const Feedback = () => (
-  <Box width={1} height="18rem" px={4} display="flex" bgcolor="grey.200">
+  <HeroColor color="common.black" height="18rem" px={4} type="gradient">
     <Grid container justify="space-between" alignItems="center">
       <Grid item md={1}>
         <img width="100%" color="black" src={FeedbackIcon} alt="Feedback" />
@@ -30,7 +31,7 @@ const Feedback = () => (
         </Button>
       </Grid>
     </Grid>
-  </Box>
+  </HeroColor>
 );
 
 export default Feedback;
