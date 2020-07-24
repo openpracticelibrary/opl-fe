@@ -51,7 +51,7 @@ const MobiusLoopHero = ({ displayContent = true, displaySection = "all" }) => {
       <Box
         height="50vh"
         width="100%"
-        bgcolor={section === "all" ? palette.info.main : palette.grey["300"]}
+        bgcolor={section === "all" ? palette.grey["100"] : palette.grey["300"]}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ const MobiusLoopHero = ({ displayContent = true, displaySection = "all" }) => {
                   fill={coloraton(
                     section,
                     "discovery",
-                    palette.primary.light,
+                    palette.secondary.main,
                     palette.grey[500]
                   )}
                   d="M -817.906,3175.526 H 1554.638 V -186.271 H -817.906 Z"
@@ -114,7 +114,7 @@ const MobiusLoopHero = ({ displayContent = true, displaySection = "all" }) => {
                   fill={coloraton(
                     section,
                     "options",
-                    palette.error.dark,
+                    palette.error.main,
                     palette.grey[500]
                   )}
                   d="M 1163.813,2731.653 H 2232.048 V 256.333 H 1163.813 Z"
@@ -128,7 +128,7 @@ const MobiusLoopHero = ({ displayContent = true, displaySection = "all" }) => {
                   fill={coloraton(
                     section,
                     "delivery",
-                    palette.error.main,
+                    palette.warning.main,
                     palette.grey[500]
                   )}
                   d="M 1841.188,3175.526 H 4213.732 V -186.905 H 1841.188 Z"
