@@ -3,11 +3,13 @@ import { AmaIcon, CameraIcon, FilledHeartIcon } from "../../../assets/icons";
 import { useMutation } from "@apollo/react-hooks";
 import { LIKE_PRACTICE } from "../../../graphql/";
 
-import { Box } from '@material-ui/core';
+import { Box } from "@material-ui/core";
 import OplTypography from "../components/OplTypography";
 
 const Collection = (props) => {
   const [likePractice] = useMutation(LIKE_PRACTICE);
+
+  const [upvoteNotClicked, setUpvoteNotClicked] = React.useState(true);
 
   const handleLike = () => {
     const originalLikes = props.upvotes;
@@ -15,6 +17,7 @@ const Collection = (props) => {
     likePractice({
       variables: { practiceId: props.practiceId, upvotes: newUpvotes },
     });
+    setUpvoteNotClicked(false);
   };
 
   return (
@@ -25,14 +28,25 @@ const Collection = (props) => {
       py={props.alignment}
     >
       {props.children}
-      <OplTypography
-        fontWeight="bold"
-        variant="subtitle1"
-        data-testid="heartIcon"
-        onClick={handleLike}
-      >
-        <FilledHeartIcon fill={props.fill} /> {props.upvotes}{" "}
-      </OplTypography>
+      {upvoteNotClicked ? (
+        <OplTypography
+          fontWeight="bold"
+          variant="subtitle1"
+          data-testid="heartIcon"
+          onClick={handleLike}
+        >
+          <FilledHeartIcon fill={props.fill} /> {props.upvotes}{" "}
+        </OplTypography>
+      ) : (
+        <OplTypography
+          fontWeight="bold"
+          variant="subtitle1"
+          data-testid="heartIcon"
+        >
+          <FilledHeartIcon fill="#DDDDDD"/> {props.upvotes}{" "}
+        </OplTypography>
+      )}
+
       <OplTypography
         fontWeight="bold"
         variant="subtitle1"
@@ -50,6 +64,6 @@ const Collection = (props) => {
       </OplTypography>
     </Box>
   );
-}
+};
 
 export default Collection;
